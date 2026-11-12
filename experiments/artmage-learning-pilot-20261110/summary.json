@@ -1,0 +1,1845 @@
+{
+ "registration_sha256": "8c708da54ae5a5764b48b46ada34695a93ef52a288937e88d9168d7b906fb4b1",
+ "amendment_sha256": "98266876fd25e0aeafde57f77369146c55472cc0d1aa6728d4086d9edd7b4cc3",
+ "evaluation_runs": {
+  "used": 18,
+  "cap": 18,
+  "statuses": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ]
+ },
+ "training": {
+  "attempt_2": {
+   "total": 4096,
+   "learner": 2266,
+   "frozen": 1830,
+   "episodes": 11,
+   "windows": 32,
+   "minibatches": 128,
+   "rehearsal_counts": {
+    "old": 224,
+    "C1": 16,
+    "C2": 16
+   },
+   "loss_steps_ppo": 2165,
+   "learner_adapter_controlled": 101,
+   "bootstraps": {
+    "exact": 31,
+    "neutral": 1
+   },
+   "learner_outcomes": {
+    "1.0": 7,
+    "-1.0": 3,
+    "None": 1
+   },
+   "learner_first_seat_episodes": 6,
+   "seconds": 171.37675285339355,
+   "visibility": {
+    "events": 1,
+    "cards": 4,
+    "unverified": 0,
+    "selection_prompt": 4
+   },
+   "saved": {
+    "candidate_base_sha256": "58a39a61a12f5ee3a142fbbba2bdc71c9e27ae6026b092037b55843feca9742a",
+    "candidate_head_sha256": "fabf2b857bceecf690f59044cd42b6d8ef6237be33bef11216bf289fe10a518a",
+    "reload_through_isolated_entry": true,
+    "histories": {
+     "C1": {
+      "decisions": 113,
+      "max_abs_logit_diff_memory_vs_saved": 0.0,
+      "argmax_equal_memory_vs_saved": true,
+      "max_abs_logit_diff_candidate_vs_start": 11.791874885559082,
+      "label_argmax_agreement_start": 78,
+      "label_argmax_agreement_candidate": 82
+     },
+     "C2": {
+      "decisions": 100,
+      "max_abs_logit_diff_memory_vs_saved": 0.0,
+      "argmax_equal_memory_vs_saved": true,
+      "max_abs_logit_diff_candidate_vs_start": 9.429145812988281,
+      "label_argmax_agreement_start": 70,
+      "label_argmax_agreement_candidate": 79
+     }
+    },
+    "parameter_change_norm": {
+     "base": 0.3733898997306824,
+     "head": 0.004610270727425814
+    },
+    "both_parts_changed": true
+   },
+   "adapter": {
+    "C1": {
+     "final_actions_equal": true,
+     "position_decisions": 9,
+     "position_changed_by_adapter": 2
+    },
+    "C2": {
+     "final_actions_equal": true,
+     "position_decisions": 7,
+     "position_changed_by_adapter": 2
+    }
+   },
+   "lua_errors": 0
+  },
+  "attempt_1_failed": {
+   "decisions": 2680,
+   "windows": 20
+  },
+  "metrics": {
+   "approx_kl": {
+    "mean": 0.0010070184264313552,
+    "max": 0.018661679700016975
+   },
+   "clipfrac": {
+    "mean": 0.008201006858143955,
+    "max": 0.2142857313156128
+   },
+   "pg": {
+    "mean": 0.021629851785249343,
+    "max": 0.865221381187439
+   },
+   "v": {
+    "mean": 0.01954141254462627,
+    "max": 0.5090616941452026
+   },
+   "ent": {
+    "mean": 0.2821777819696081,
+    "max": 0.7751534581184387
+   },
+   "reh_ce": {
+    "mean": 0.20002539007691666,
+    "max": 0.9624885320663452
+   },
+   "ppo_grad": {
+    "mean": 3.9560770051357395,
+    "max": 71.00640869140625
+   },
+   "reh_grad_weighted": {
+    "mean": 37.56879112171009,
+    "max": 247.03939819335938
+   },
+   "combined_grad": {
+    "mean": 39.99880344676785,
+    "max": 247.2750701904297
+   },
+   "ppo_reh_cosine": {
+    "mean": -0.024532464218395944,
+    "max": 0.538529098033905
+   },
+   "base_update": {
+    "mean": 0.005174361642275471,
+    "max": 0.013137640431523323
+   },
+   "head_update": {
+    "mean": 5.192425884104068e-05,
+    "max": 0.00014887996076140553
+   }
+  },
+  "rehearsal_by_source": {
+   "old": {
+    "minibatches": 128,
+    "loss_steps": 17980.0,
+    "ce_first": 0.09422794729471207,
+    "ce_last": 0.07637922465801239,
+    "ce_mean": 0.07774494920158759,
+    "weighted_grad_mean": 0.8364436171250418
+   },
+   "C2": {
+    "minibatches": 16,
+    "loss_steps": 1360.0,
+    "ce_first": 1.2847486734390259,
+    "ce_last": 0.5547670125961304,
+    "ce_mean": 0.853483647108078,
+    "weighted_grad_mean": 94.65054321289062
+   },
+   "C1": {
+    "minibatches": 16,
+    "loss_steps": 1504.0,
+    "ce_first": 1.632386326789856,
+    "ce_last": 0.7084071040153503,
+    "ce_mean": 1.1274730525910854,
+    "weighted_grad_mean": 200.19800853729248
+   }
+  },
+  "cumulative_decisions": 6776
+ },
+ "rt1": [
+  {
+   "case_id": "Artmage-g06-p0",
+   "baseline_source": "pilot start run",
+   "baseline_passed": true,
+   "candidate_passed": true,
+   "candidate_reason": "goal_reached",
+   "baseline_steps": 93,
+   "candidate_steps": 93,
+   "same_action_sequence": true,
+   "visibility_events": []
+  },
+  {
+   "case_id": "Artmage-g07-p0",
+   "baseline_source": "pilot start run",
+   "baseline_passed": true,
+   "candidate_passed": true,
+   "candidate_reason": "goal_reached",
+   "baseline_steps": 92,
+   "candidate_steps": 92,
+   "same_action_sequence": true,
+   "visibility_events": []
+  },
+  {
+   "case_id": "Artmage-g08-p0",
+   "baseline_source": "artmage-parallel regression (start model)",
+   "baseline_passed": true,
+   "candidate_passed": true,
+   "candidate_reason": "goal_reached",
+   "baseline_steps": 97,
+   "candidate_steps": 97,
+   "same_action_sequence": true,
+   "visibility_events": []
+  },
+  {
+   "case_id": "Artmage-g09-p0",
+   "baseline_source": "artmage-parallel regression (start model)",
+   "baseline_passed": true,
+   "candidate_passed": true,
+   "candidate_reason": "goal_reached",
+   "baseline_steps": 136,
+   "candidate_steps": 136,
+   "same_action_sequence": true,
+   "visibility_events": []
+  },
+  {
+   "case_id": "Artmage-g10-p0",
+   "baseline_source": "artmage-parallel regression (start model)",
+   "baseline_passed": true,
+   "candidate_passed": true,
+   "candidate_reason": "goal_reached",
+   "baseline_steps": 97,
+   "candidate_steps": 97,
+   "same_action_sequence": true,
+   "visibility_events": []
+  },
+  {
+   "case_id": "Artmage-g11-p0",
+   "baseline_source": "artmage-parallel regression (start model)",
+   "baseline_passed": true,
+   "candidate_passed": true,
+   "candidate_reason": "goal_reached",
+   "baseline_steps": 136,
+   "candidate_steps": 136,
+   "same_action_sequence": true,
+   "visibility_events": []
+  }
+ ],
+ "nt1": {
+  "start/C1": {
+   "model": "start",
+   "condition": "C1",
+   "reason": "own_turn3_end",
+   "failure": null,
+   "game_over": null,
+   "fallbacks": 0,
+   "decisions": 188,
+   "model_decisions": 128,
+   "lua_errors": 0,
+   "visibility_events": null,
+   "legacy_goal": {
+    "monsters": false,
+    "field_and_assault_active": true,
+    "medius_redirected": false
+   },
+   "turn1": {
+    "moves": [
+     "Activate:アルトメギア・ヴァンダリズム－襲撃－",
+     "Activate:アルトメギア・ヴァンダリズム－襲撃－[10011]",
+     "None:無垢なる者 メディウス",
+     "Summon:無垢なる者 メディウス",
+     "Activate:無垢なる者 メディウス[221]",
+     "None:アルトメギアの獄神獣",
+     "Activate:0[1152]",
+     "Activate:アルトメギア・ヴァンダリズム－襲撃－[10010]",
+     "Activate:アルトメギアの獄神獣[10010]",
+     "None:神芸なる知恵の乙女",
+     "Activate:神芸なる知恵の乙女[10010]",
+     "Activate:アルトメギアの獄神獣[10011]",
+     "None:アルトメギア・メセナ－覚醒－",
+     "None:神芸学都アルトメギア",
+     "Activate:神芸学都アルトメギア",
+     "Activate:神芸学都アルトメギア",
+     "None:無限泡影",
+     "None:神芸学徒 グラフレア",
+     "Activate:神芸学都アルトメギア",
+     "None:神芸学徒 リテラ",
+     "Activate:神芸学徒 グラフレア[10010]",
+     "Activate:神芸学徒 グラフレア[10012]",
+     "None:アルトメギア・バーニッシュ－改変－",
+     "Activate:アルトメギア・バーニッシュ－改変－[10010]",
+     "None:アルトメギア・ヴァンダリズム－襲撃－",
+     "Activate:神芸学都アルトメギア",
+     "None:神芸学徒 ファインメルト",
+     "None:神芸学徒 ファインメルト",
+     "SpSummon:クロシープ",
+     "None:神芸学徒 グラフレア",
+     "Activate:神芸学徒 ファインメルト[10010]",
+     "Activate:神芸学徒 ファインメルト[10012]",
+     "Activate:予幻なき日々のまぼろし[10010]",
+     "Activate:無垢なる者 メディウス[10011]",
+     "None:無垢なる者 メディウス",
+     "Activate:神芸学徒 リテラ[10010]",
+     "Activate:神芸学徒 リテラ[10012]",
+     "None:神芸学徒 グラフレア",
+     "Phase:End"
+    ],
+    "first_divergence_from_script": 5,
+    "script_move_at_divergence": "None:獄神影獣－ネルヴェド",
+    "model_move_at_divergence": "None:アルトメギアの獄神獣",
+    "end": {
+     "turn": 2,
+     "phase": 1,
+     "lp0": 8000,
+     "lp1": 8000,
+     "monsters": [
+      34541940,
+      50277355,
+      97434754,
+      97556336
+     ],
+     "monsters_face_up": [
+      34541940,
+      50277355,
+      97434754,
+      97556336
+     ],
+     "spell_trap": [
+      1122030,
+      74733322
+     ],
+     "spell_trap_face_up": [
+      1122030,
+      74733322
+     ],
+     "hand": [
+      14558127,
+      23434538,
+      60946049,
+      73642296
+     ],
+     "graveyard": [
+      1122030,
+      10045474,
+      23599634,
+      23829452,
+      36709484,
+      74011784,
+      74631897
+     ],
+     "banished": [],
+     "extra_face_up": [],
+     "opponent_monsters": [],
+     "opponent_hand_count": 5
+    }
+   },
+   "turn2": {
+    "own_used": [
+     "Activate:神芸学徒 リテラ[10011]"
+    ],
+    "own_offered": [
+     "Activate:増殖するＧ[10010]",
+     "Activate:屋敷わらし[10010]",
+     "Activate:神芸学徒 リテラ[10011]"
+    ],
+    "end": {
+     "turn": 3,
+     "phase": 1,
+     "lp0": 8000,
+     "lp1": 8000,
+     "monsters": [
+      34541940,
+      50277355,
+      60946049,
+      97556336
+     ],
+     "monsters_face_up": [
+      34541940,
+      50277355,
+      60946049,
+      97556336
+     ],
+     "spell_trap": [
+      1122030,
+      74733322
+     ],
+     "spell_trap_face_up": [
+      1122030,
+      74733322
+     ],
+     "hand": [
+      14558127,
+      23434538,
+      73642296,
+      97434754
+     ],
+     "graveyard": [
+      1122030,
+      10045474,
+      23599634,
+      23829452,
+      36709484,
+      74011784,
+      74631897
+     ],
+     "banished": [],
+     "extra_face_up": [],
+     "opponent_monsters": [],
+     "opponent_hand_count": 5
+    }
+   },
+   "turn3": {
+    "used": [
+     "MSet:神芸学徒 リテラ",
+     "Activate:アルトメギア・ヴァンダリズム－襲撃－[10010]",
+     "DirectAttack:神芸学徒 ファインメルト",
+     "DirectAttack:クロシープ"
+    ],
+    "attacks": [
+     "DirectAttack:神芸学徒 ファインメルト",
+     "DirectAttack:クロシープ"
+    ],
+    "end": {
+     "turn": 4,
+     "phase": 1,
+     "lp0": 8000,
+     "lp1": 4900,
+     "monsters": [
+      34541940,
+      50277355,
+      60946049,
+      97434754,
+      97556336
+     ],
+     "monsters_face_up": [
+      34541940,
+      50277355,
+      60946049,
+      97556336
+     ],
+     "spell_trap": [
+      1122030,
+      74733322
+     ],
+     "spell_trap_face_up": [
+      1122030,
+      74733322
+     ],
+     "hand": [
+      14558127,
+      23434538,
+      73642296
+     ],
+     "graveyard": [
+      1122030,
+      10045474,
+      23599634,
+      23829452,
+      36709484,
+      74011784,
+      74631897
+     ],
+     "banished": [],
+     "extra_face_up": [],
+     "opponent_monsters": [],
+     "opponent_hand_count": 5
+    }
+   }
+  },
+  "start/C2": {
+   "model": "start",
+   "condition": "C2",
+   "reason": "own_turn3_end",
+   "failure": null,
+   "game_over": null,
+   "fallbacks": 0,
+   "decisions": 49,
+   "model_decisions": 19,
+   "lua_errors": 0,
+   "visibility_events": null,
+   "legacy_goal": {
+    "monsters": false,
+    "field_and_assault_active": false,
+    "medius_redirected": false
+   },
+   "turn1": {
+    "moves": [
+     "Activate:神芸学都アルトメギア",
+     "MSet:増殖するＧ",
+     "Activate:神芸学都アルトメギア",
+     "None:神芸学徒 グラフレア",
+     "Activate:神芸学徒 グラフレア[10010]",
+     "Activate:神芸学徒 グラフレア[10012]",
+     "None:神芸学都アルトメギア",
+     "Activate:神芸学都アルトメギア"
+    ],
+    "first_divergence_from_script": 1,
+    "script_move_at_divergence": "Activate:神芸学都アルトメギア",
+    "model_move_at_divergence": "MSet:増殖するＧ",
+    "end": {
+     "turn": 2,
+     "phase": 1,
+     "lp0": 8000,
+     "lp1": 8000,
+     "monsters": [
+      23434538,
+      60946049
+     ],
+     "monsters_face_up": [
+      60946049
+     ],
+     "spell_trap": [
+      74733322
+     ],
+     "spell_trap_face_up": [
+      74733322
+     ],
+     "hand": [
+      14558127,
+      73642296
+     ],
+     "graveyard": [
+      10045474,
+      74733322
+     ],
+     "banished": [],
+     "extra_face_up": [],
+     "opponent_monsters": [],
+     "opponent_hand_count": 5
+    }
+   },
+   "turn2": {
+    "own_used": [],
+    "own_offered": [],
+    "end": {
+     "turn": 3,
+     "phase": 1,
+     "lp0": 8000,
+     "lp1": 8000,
+     "monsters": [
+      23434538,
+      60946049
+     ],
+     "monsters_face_up": [
+      60946049
+     ],
+     "spell_trap": [
+      74733322
+     ],
+     "spell_trap_face_up": [
+      74733322
+     ],
+     "hand": [
+      14558127,
+      73642296
+     ],
+     "graveyard": [
+      10045474,
+      74733322
+     ],
+     "banished": [],
+     "extra_face_up": [],
+     "opponent_monsters": [],
+     "opponent_hand_count": 5
+    }
+   },
+   "turn3": {
+    "used": [],
+    "attacks": [],
+    "end": {
+     "turn": 4,
+     "phase": 1,
+     "lp0": 8000,
+     "lp1": 8000,
+     "monsters": [
+      23434538,
+      60946049
+     ],
+     "monsters_face_up": [
+      60946049
+     ],
+     "spell_trap": [
+      74733322
+     ],
+     "spell_trap_face_up": [
+      74733322
+     ],
+     "hand": [
+      14558127,
+      73642296
+     ],
+     "graveyard": [
+      10045474,
+      74733322
+     ],
+     "banished": [],
+     "extra_face_up": [],
+     "opponent_monsters": [],
+     "opponent_hand_count": 5
+    }
+   }
+  },
+  "start/C1v": {
+   "model": "start",
+   "condition": "C1v",
+   "reason": "own_turn3_end",
+   "failure": null,
+   "game_over": null,
+   "fallbacks": 0,
+   "decisions": 96,
+   "model_decisions": 77,
+   "lua_errors": 0,
+   "visibility_events": null,
+   "legacy_goal": {
+    "monsters": false,
+    "field_and_assault_active": true,
+    "medius_redirected": false
+   },
+   "turn1": {
+    "moves": [
+     "Activate:アルトメギア・ヴァンダリズム－襲撃－",
+     "Activate:アルトメギア・ヴァンダリズム－襲撃－[10011]",
+     "None:無垢なる者 メディウス",
+     "Summon:無垢なる者 メディウス",
+     "Activate:無垢なる者 メディウス[221]",
+     "None:アルトメギアの獄神獣",
+     "Activate:0[1152]",
+     "Activate:アルトメギア・ヴァンダリズム－襲撃－[10010]",
+     "Activate:アルトメギアの獄神獣[10010]",
+     "None:神芸なる知恵の乙女",
+     "Activate:神芸なる知恵の乙女[10010]",
+     "Activate:アルトメギアの獄神獣[10011]",
+     "None:アルトメギア・メセナ－覚醒－",
+     "None:神芸学都アルトメギア",
+     "Activate:神芸学都アルトメギア",
+     "Activate:神芸学都アルトメギア",
+     "None:聖王の粉砕",
+     "None:神芸学徒 グラフレア",
+     "Activate:神芸学都アルトメギア",
+     "None:神芸学徒 リテラ",
+     "Activate:神芸学徒 グラフレア[10010]",
+     "Activate:神芸学徒 グラフレア[10012]",
+     "None:アルトメギア・バーニッシュ－改変－",
+     "Activate:アルトメギア・バーニッシュ－改変－[10010]",
+     "None:アルトメギア・ヴァンダリズム－襲撃－",
+     "Activate:神芸学都アルトメギア",
+     "None:神芸学徒 ファインメルト",
+     "None:神芸学徒 ファインメルト",
+     "SpSummon:クロシープ",
+     "None:神芸学徒 グラフレア",
+     "Activate:神芸学徒 ファインメルト[10010]",
+     "Activate:神芸学徒 ファインメルト[10012]",
+     "Activate:神芸学都アルトメギア",
+     "Activate:無垢なる者 メディウス[10011]",
+     "None:幽鬼うさぎ",
+     "Activate:神芸学徒 リテラ[10010]",
+     "Activate:神芸学徒 リテラ[10012]",
+     "None:神芸学徒 グラフレア",
+     "Phase:End"
+    ],
+    "first_divergence_from_script": 5,
+    "script_move_at_divergence": "None:獄神影獣－ネルヴェド",
+    "model_move_at_divergence": "None:アルトメギアの獄神獣",
+    "end": {
+     "turn": 2,
+     "phase": 4,
+     "lp0": 8000,
+     "lp1": 8000,
+     "monsters": [
+      34541940,
+      50277355,
+      97434754,
+      97556336
+     ],
+     "monsters_face_up": [
+      34541940,
+      50277355,
+      97434754,
+      97556336
+     ],
+     "spell_trap": [
+      1122030,
+      74733322
+     ],
+     "spell_trap_face_up": [
+      1122030,
+      74733322
+     ],
+     "hand": [
+      23829452,
+      38814750,
+      49036338,
+      60946049
+     ],
+     "graveyard": [
+      1122030,
+      10045474,
+      23599634,
+      23829452,
+      74011784,
+      74631897,
+      97045737
+     ],
+     "banished": [],
+     "extra_face_up": [],
+     "opponent_monsters": [],
+     "opponent_hand_count": 5
+    }
+   },
+   "turn2": {
+    "own_used": [
+     "Activate:神芸学徒 リテラ[10011]"
+    ],
+    "own_offered": [
+     "Activate:神芸学徒 リテラ[10011]"
+    ],
+    "end": {
+     "turn": 3,
+     "phase": 4,
+     "lp0": 8000,
+     "lp1": 8000,
+     "monsters": [
+      34541940,
+      50277355,
+      60946049,
+      97556336
+     ],
+     "monsters_face_up": [
+      34541940,
+      50277355,
+      60946049,
+      97556336
+     ],
+     "spell_trap": [
+      1122030,
+      74733322
+     ],
+     "spell_trap_face_up": [
+      1122030,
+      74733322
+     ],
+     "hand": [
+      23829452,
+      38814750,
+      49036338,
+      97434754
+     ],
+     "graveyard": [
+      1122030,
+      10045474,
+      23599634,
+      23829452,
+      74011784,
+      74631897,
+      97045737
+     ],
+     "banished": [],
+     "extra_face_up": [],
+     "opponent_monsters": [],
+     "opponent_hand_count": 5
+    }
+   },
+   "turn3": {
+    "used": [
+     "Activate:アルトメギア・ヴァンダリズム－襲撃－[10010]",
+     "MSet:神芸学徒 リテラ",
+     "DirectAttack:神芸学徒 ファインメルト",
+     "DirectAttack:クロシープ"
+    ],
+    "attacks": [
+     "DirectAttack:神芸学徒 ファインメルト",
+     "DirectAttack:クロシープ"
+    ],
+    "end": {
+     "turn": 4,
+     "phase": 4,
+     "lp0": 8000,
+     "lp1": 4900,
+     "monsters": [
+      34541940,
+      50277355,
+      60946049,
+      97434754,
+      97556336
+     ],
+     "monsters_face_up": [
+      34541940,
+      50277355,
+      60946049,
+      97556336
+     ],
+     "spell_trap": [
+      1122030,
+      74733322
+     ],
+     "spell_trap_face_up": [
+      1122030,
+      74733322
+     ],
+     "hand": [
+      23829452,
+      38814750,
+      49036338
+     ],
+     "graveyard": [
+      1122030,
+      10045474,
+      23599634,
+      23829452,
+      74011784,
+      74631897,
+      97045737
+     ],
+     "banished": [],
+     "extra_face_up": [],
+     "opponent_monsters": [],
+     "opponent_hand_count": 5
+    }
+   }
+  },
+  "start/C2v": {
+   "model": "start",
+   "condition": "C2v",
+   "reason": "own_turn3_end",
+   "failure": null,
+   "game_over": null,
+   "fallbacks": 0,
+   "decisions": 33,
+   "model_decisions": 27,
+   "lua_errors": 0,
+   "visibility_events": null,
+   "legacy_goal": {
+    "monsters": false,
+    "field_and_assault_active": false,
+    "medius_redirected": false
+   },
+   "turn1": {
+    "moves": [
+     "Activate:神芸学都アルトメギア",
+     "Activate:神芸学都アルトメギア",
+     "None:神芸学徒 グラフレア",
+     "Activate:神芸学徒 グラフレア[10010]",
+     "Activate:神芸学徒 グラフレア[10012]",
+     "None:アルトメギア・バーニッシュ－改変－",
+     "Activate:アルトメギア・バーニッシュ－改変－[10010]",
+     "None:アルトメギア・メセナ－覚醒－",
+     "Activate:神芸学都アルトメギア",
+     "None:神芸学徒 リテラ",
+     "MSet:神芸学徒 リテラ"
+    ],
+    "first_divergence_from_script": 7,
+    "script_move_at_divergence": "None:神芸学徒 リテラ",
+    "model_move_at_divergence": "None:アルトメギア・メセナ－覚醒－",
+    "end": {
+     "turn": 2,
+     "phase": 4,
+     "lp0": 8000,
+     "lp1": 8000,
+     "monsters": [
+      60946049,
+      97434754
+     ],
+     "monsters_face_up": [
+      60946049
+     ],
+     "spell_trap": [
+      74733322
+     ],
+     "spell_trap_face_up": [
+      74733322
+     ],
+     "hand": [
+      38814750,
+      49036338,
+      59438930
+     ],
+     "graveyard": [
+      23599634,
+      25311006,
+      74011784
+     ],
+     "banished": [],
+     "extra_face_up": [],
+     "opponent_monsters": [],
+     "opponent_hand_count": 5
+    }
+   },
+   "turn2": {
+    "own_used": [],
+    "own_offered": [],
+    "end": {
+     "turn": 3,
+     "phase": 4,
+     "lp0": 8000,
+     "lp1": 8000,
+     "monsters": [
+      60946049,
+      97434754
+     ],
+     "monsters_face_up": [
+      60946049
+     ],
+     "spell_trap": [
+      74733322
+     ],
+     "spell_trap_face_up": [
+      74733322
+     ],
+     "hand": [
+      38814750,
+      49036338,
+      59438930
+     ],
+     "graveyard": [
+      23599634,
+      25311006,
+      74011784
+     ],
+     "banished": [],
+     "extra_face_up": [],
+     "opponent_monsters": [],
+     "opponent_hand_count": 5
+    }
+   },
+   "turn3": {
+    "used": [
+     "MSet:幽鬼うさぎ",
+     "SpSummon:転生炎獣アルミラージ",
+     "Activate:転生炎獣アルミラージ[10010]"
+    ],
+    "attacks": [],
+    "end": {
+     "turn": 4,
+     "phase": 4,
+     "lp0": 8000,
+     "lp1": 8000,
+     "monsters": [
+      59438930,
+      60946049
+     ],
+     "monsters_face_up": [
+      60946049
+     ],
+     "spell_trap": [
+      74733322
+     ],
+     "spell_trap_face_up": [
+      74733322
+     ],
+     "hand": [
+      38814750,
+      49036338
+     ],
+     "graveyard": [
+      23599634,
+      25311006,
+      60303245,
+      74011784,
+      97434754
+     ],
+     "banished": [],
+     "extra_face_up": [],
+     "opponent_monsters": [],
+     "opponent_hand_count": 5
+    }
+   }
+  },
+  "candidate/C1": {
+   "model": "candidate",
+   "condition": "C1",
+   "reason": "own_turn3_end",
+   "failure": null,
+   "game_over": null,
+   "fallbacks": 0,
+   "decisions": 200,
+   "model_decisions": 135,
+   "lua_errors": 0,
+   "visibility_events": [],
+   "legacy_goal": {
+    "monsters": false,
+    "field_and_assault_active": true,
+    "medius_redirected": false
+   },
+   "turn1": {
+    "moves": [
+     "Activate:アルトメギア・ヴァンダリズム－襲撃－",
+     "Activate:アルトメギア・ヴァンダリズム－襲撃－[10011]",
+     "None:無垢なる者 メディウス",
+     "Summon:無垢なる者 メディウス",
+     "Activate:無垢なる者 メディウス[221]",
+     "None:アルトメギアの獄神獣",
+     "Activate:0[1152]",
+     "Activate:アルトメギア・ヴァンダリズム－襲撃－[10010]",
+     "Activate:アルトメギアの獄神獣[10010]",
+     "None:神芸なる知恵の乙女",
+     "Activate:神芸なる知恵の乙女[10010]",
+     "Activate:アルトメギアの獄神獣[10011]",
+     "None:アルトメギア・メセナ－覚醒－",
+     "None:神芸学都アルトメギア",
+     "Activate:神芸学都アルトメギア",
+     "Activate:神芸学都アルトメギア",
+     "None:無限泡影",
+     "None:神芸学徒 グラフレア",
+     "Activate:神芸学都アルトメギア",
+     "None:神芸学徒 リテラ",
+     "Activate:神芸学徒 グラフレア[10010]",
+     "Activate:神芸学徒 グラフレア[10012]",
+     "None:アルトメギア・バーニッシュ－改変－",
+     "Activate:アルトメギア・バーニッシュ－改変－[10010]",
+     "None:アルトメギア・ヴァンダリズム－襲撃－",
+     "Activate:神芸学都アルトメギア",
+     "None:神芸学徒 ファインメルト",
+     "None:神芸学徒 ファインメルト",
+     "SpSummon:クロシープ",
+     "None:神芸学徒 グラフレア",
+     "Activate:神芸学徒 ファインメルト[10010]",
+     "Activate:神芸学徒 ファインメルト[10012]",
+     "Activate:神芸学都アルトメギア",
+     "Activate:神芸学徒 リテラ[10010]",
+     "Activate:神芸学徒 リテラ[10012]",
+     "None:神芸学徒 グラフレア",
+     "Activate:無垢なる者 メディウス[10011]",
+     "None:神芸学徒 グラフレア",
+     "Phase:End"
+    ],
+    "first_divergence_from_script": 5,
+    "script_move_at_divergence": "None:獄神影獣－ネルヴェド",
+    "model_move_at_divergence": "None:アルトメギアの獄神獣",
+    "end": {
+     "turn": 2,
+     "phase": 1,
+     "lp0": 8000,
+     "lp1": 8000,
+     "monsters": [
+      34541940,
+      50277355,
+      97434754,
+      97556336
+     ],
+     "monsters_face_up": [
+      34541940,
+      50277355,
+      97434754,
+      97556336
+     ],
+     "spell_trap": [
+      1122030,
+      74733322
+     ],
+     "spell_trap_face_up": [
+      1122030,
+      74733322
+     ],
+     "hand": [
+      14558127,
+      23434538,
+      23829452,
+      73642296
+     ],
+     "graveyard": [
+      1122030,
+      10045474,
+      23599634,
+      23829452,
+      36709484,
+      74011784,
+      74631897
+     ],
+     "banished": [],
+     "extra_face_up": [],
+     "opponent_monsters": [],
+     "opponent_hand_count": 5
+    }
+   },
+   "turn2": {
+    "own_used": [
+     "Activate:神芸学徒 リテラ[10011]"
+    ],
+    "own_offered": [
+     "Activate:アルトメギアの獄神獣[10010]",
+     "Activate:増殖するＧ[10010]",
+     "Activate:屋敷わらし[10010]",
+     "Activate:神芸学徒 リテラ[10011]"
+    ],
+    "end": {
+     "turn": 3,
+     "phase": 1,
+     "lp0": 8000,
+     "lp1": 8000,
+     "monsters": [
+      23829452,
+      34541940,
+      50277355,
+      97556336
+     ],
+     "monsters_face_up": [
+      23829452,
+      34541940,
+      50277355,
+      97556336
+     ],
+     "spell_trap": [
+      1122030,
+      74733322
+     ],
+     "spell_trap_face_up": [
+      1122030,
+      74733322
+     ],
+     "hand": [
+      14558127,
+      23434538,
+      73642296,
+      97434754
+     ],
+     "graveyard": [
+      1122030,
+      10045474,
+      23599634,
+      23829452,
+      36709484,
+      74011784,
+      74631897
+     ],
+     "banished": [],
+     "extra_face_up": [],
+     "opponent_monsters": [],
+     "opponent_hand_count": 5
+    }
+   },
+   "turn3": {
+    "used": [
+     "MSet:神芸学徒 リテラ",
+     "Activate:アルトメギア・ヴァンダリズム－襲撃－[10010]",
+     "DirectAttack:神芸学徒 ファインメルト",
+     "DirectAttack:アルトメギアの獄神獣",
+     "DirectAttack:クロシープ",
+     "Activate:アルトメギアの獄神獣[10010]",
+     "Activate:アルトメギアの獄神獣[221]"
+    ],
+    "attacks": [
+     "DirectAttack:神芸学徒 ファインメルト",
+     "DirectAttack:アルトメギアの獄神獣",
+     "DirectAttack:クロシープ"
+    ],
+    "end": {
+     "turn": 4,
+     "phase": 1,
+     "lp0": 8000,
+     "lp1": 4600,
+     "monsters": [
+      27184601,
+      34541940,
+      50277355,
+      97434754
+     ],
+     "monsters_face_up": [
+      27184601,
+      34541940,
+      50277355
+     ],
+     "spell_trap": [
+      1122030,
+      74733322
+     ],
+     "spell_trap_face_up": [
+      1122030,
+      74733322
+     ],
+     "hand": [
+      14558127,
+      23434538,
+      73642296,
+      74733322
+     ],
+     "graveyard": [
+      1122030,
+      10045474,
+      23599634,
+      23829452,
+      23829452,
+      36709484,
+      74011784,
+      74631897
+     ],
+     "banished": [
+      97556336
+     ],
+     "extra_face_up": [],
+     "opponent_monsters": [],
+     "opponent_hand_count": 5
+    }
+   }
+  },
+  "candidate/C2": {
+   "model": "candidate",
+   "condition": "C2",
+   "reason": "own_turn3_end",
+   "failure": null,
+   "game_over": null,
+   "fallbacks": 0,
+   "decisions": 98,
+   "model_decisions": 62,
+   "lua_errors": 0,
+   "visibility_events": [],
+   "legacy_goal": {
+    "monsters": false,
+    "field_and_assault_active": false,
+    "medius_redirected": false
+   },
+   "turn1": {
+    "moves": [
+     "Activate:神芸学都アルトメギア",
+     "Activate:神芸学都アルトメギア",
+     "None:神芸学徒 グラフレア",
+     "Activate:神芸学徒 グラフレア[10010]",
+     "Activate:神芸学徒 グラフレア[10012]",
+     "None:アルトメギア・バーニッシュ－改変－",
+     "Activate:アルトメギア・バーニッシュ－改変－[10010]",
+     "None:アルトメギア・メセナ－覚醒－",
+     "Activate:神芸学都アルトメギア",
+     "None:神芸学徒 リテラ",
+     "Activate:神芸学徒 リテラ[10010]",
+     "Activate:神芸学徒 リテラ[10012]",
+     "None:アルトメギア・バーニッシュ－改変－",
+     "Activate:神芸学都アルトメギア",
+     "None:神芸学徒 ファインメルト",
+     "None:神芸学徒 ファインメルト",
+     "MSet:神芸学徒 ファインメルト",
+     "None:神芸学徒 グラフレア",
+     "None:神芸学徒 リテラ",
+     "Phase:End"
+    ],
+    "first_divergence_from_script": 7,
+    "script_move_at_divergence": "None:神芸学徒 リテラ",
+    "model_move_at_divergence": "None:アルトメギア・メセナ－覚醒－",
+    "end": {
+     "turn": 2,
+     "phase": 1,
+     "lp0": 8000,
+     "lp1": 8000,
+     "monsters": [
+      34541940
+     ],
+     "monsters_face_up": [],
+     "spell_trap": [
+      74733322
+     ],
+     "spell_trap_face_up": [
+      74733322
+     ],
+     "hand": [
+      14558127,
+      23434538,
+      73642296
+     ],
+     "graveyard": [
+      10045474,
+      23599634,
+      60946049,
+      74011784,
+      97434754
+     ],
+     "banished": [],
+     "extra_face_up": [],
+     "opponent_monsters": [],
+     "opponent_hand_count": 5
+    }
+   },
+   "turn2": {
+    "own_used": [],
+    "own_offered": [
+     "Activate:増殖するＧ[10010]"
+    ],
+    "end": {
+     "turn": 3,
+     "phase": 1,
+     "lp0": 8000,
+     "lp1": 8000,
+     "monsters": [
+      34541940
+     ],
+     "monsters_face_up": [],
+     "spell_trap": [
+      74733322
+     ],
+     "spell_trap_face_up": [
+      74733322
+     ],
+     "hand": [
+      14558127,
+      23434538,
+      73642296
+     ],
+     "graveyard": [
+      10045474,
+      23599634,
+      60946049,
+      74011784,
+      97434754
+     ],
+     "banished": [],
+     "extra_face_up": [],
+     "opponent_monsters": [],
+     "opponent_hand_count": 5
+    }
+   },
+   "turn3": {
+    "used": [],
+    "attacks": [],
+    "end": {
+     "turn": 4,
+     "phase": 1,
+     "lp0": 8000,
+     "lp1": 8000,
+     "monsters": [
+      34541940
+     ],
+     "monsters_face_up": [
+      34541940
+     ],
+     "spell_trap": [
+      74733322
+     ],
+     "spell_trap_face_up": [
+      74733322
+     ],
+     "hand": [
+      14558127,
+      23434538,
+      73642296
+     ],
+     "graveyard": [
+      10045474,
+      23599634,
+      60946049,
+      74011784,
+      97434754
+     ],
+     "banished": [],
+     "extra_face_up": [],
+     "opponent_monsters": [],
+     "opponent_hand_count": 5
+    }
+   }
+  },
+  "candidate/C1v": {
+   "model": "candidate",
+   "condition": "C1v",
+   "reason": "own_turn3_end",
+   "failure": null,
+   "game_over": null,
+   "fallbacks": 0,
+   "decisions": 112,
+   "model_decisions": 91,
+   "lua_errors": 0,
+   "visibility_events": [],
+   "legacy_goal": {
+    "monsters": false,
+    "field_and_assault_active": true,
+    "medius_redirected": false
+   },
+   "turn1": {
+    "moves": [
+     "Activate:アルトメギア・ヴァンダリズム－襲撃－",
+     "Activate:アルトメギア・ヴァンダリズム－襲撃－[10011]",
+     "None:無垢なる者 メディウス",
+     "Summon:無垢なる者 メディウス",
+     "Activate:無垢なる者 メディウス[221]",
+     "None:アルトメギアの獄神獣",
+     "Activate:0[1152]",
+     "Activate:アルトメギア・ヴァンダリズム－襲撃－[10010]",
+     "Activate:アルトメギアの獄神獣[10010]",
+     "None:神芸なる知恵の乙女",
+     "Activate:神芸なる知恵の乙女[10010]",
+     "Activate:アルトメギアの獄神獣[10011]",
+     "None:アルトメギア・メセナ－覚醒－",
+     "None:神芸学都アルトメギア",
+     "Activate:神芸学都アルトメギア",
+     "Activate:神芸学都アルトメギア",
+     "None:聖王の粉砕",
+     "None:神芸学徒 グラフレア",
+     "Activate:神芸学都アルトメギア",
+     "None:神芸学徒 リテラ",
+     "Activate:神芸学徒 グラフレア[10010]",
+     "Activate:神芸学徒 グラフレア[10012]",
+     "None:アルトメギア・バーニッシュ－改変－",
+     "Activate:アルトメギア・バーニッシュ－改変－[10010]",
+     "None:アルトメギア・ヴァンダリズム－襲撃－",
+     "Activate:神芸学都アルトメギア",
+     "None:神芸学徒 ファインメルト",
+     "None:神芸学徒 ファインメルト",
+     "SpSummon:クロシープ",
+     "None:神芸学徒 グラフレア",
+     "Activate:神芸学徒 ファインメルト[10010]",
+     "Activate:神芸学徒 ファインメルト[10012]",
+     "Activate:神芸学都アルトメギア",
+     "Activate:神芸学徒 リテラ[10010]",
+     "Activate:神芸学徒 リテラ[10012]",
+     "None:神芸学徒 グラフレア",
+     "Activate:無垢なる者 メディウス[10011]",
+     "None:神芸学徒 グラフレア",
+     "Phase:End"
+    ],
+    "first_divergence_from_script": 5,
+    "script_move_at_divergence": "None:獄神影獣－ネルヴェド",
+    "model_move_at_divergence": "None:アルトメギアの獄神獣",
+    "end": {
+     "turn": 2,
+     "phase": 4,
+     "lp0": 8000,
+     "lp1": 8000,
+     "monsters": [
+      34541940,
+      50277355,
+      97434754,
+      97556336
+     ],
+     "monsters_face_up": [
+      34541940,
+      50277355,
+      97434754,
+      97556336
+     ],
+     "spell_trap": [
+      1122030,
+      74733322
+     ],
+     "spell_trap_face_up": [
+      1122030,
+      74733322
+     ],
+     "hand": [
+      23829452,
+      38814750,
+      49036338,
+      59438930
+     ],
+     "graveyard": [
+      1122030,
+      10045474,
+      23599634,
+      23829452,
+      74011784,
+      74631897,
+      97045737
+     ],
+     "banished": [],
+     "extra_face_up": [],
+     "opponent_monsters": [],
+     "opponent_hand_count": 5
+    }
+   },
+   "turn2": {
+    "own_used": [
+     "Activate:神芸学徒 リテラ[10011]"
+    ],
+    "own_offered": [
+     "Activate:アルトメギアの獄神獣[10010]",
+     "Activate:幽鬼うさぎ",
+     "Activate:神芸学徒 リテラ[10011]"
+    ],
+    "end": {
+     "turn": 3,
+     "phase": 4,
+     "lp0": 8000,
+     "lp1": 8000,
+     "monsters": [
+      23829452,
+      34541940,
+      50277355,
+      97556336
+     ],
+     "monsters_face_up": [
+      23829452,
+      34541940,
+      50277355,
+      97556336
+     ],
+     "spell_trap": [
+      1122030,
+      74733322
+     ],
+     "spell_trap_face_up": [
+      1122030,
+      74733322
+     ],
+     "hand": [
+      38814750,
+      49036338,
+      59438930,
+      97434754
+     ],
+     "graveyard": [
+      1122030,
+      10045474,
+      23599634,
+      23829452,
+      74011784,
+      74631897,
+      97045737
+     ],
+     "banished": [],
+     "extra_face_up": [],
+     "opponent_monsters": [],
+     "opponent_hand_count": 5
+    }
+   },
+   "turn3": {
+    "used": [
+     "MSet:神芸学徒 リテラ",
+     "Activate:アルトメギア・ヴァンダリズム－襲撃－[10010]",
+     "DirectAttack:神芸学徒 ファインメルト",
+     "DirectAttack:アルトメギアの獄神獣",
+     "DirectAttack:クロシープ",
+     "Activate:アルトメギアの獄神獣[10010]",
+     "Activate:アルトメギアの獄神獣[221]"
+    ],
+    "attacks": [
+     "DirectAttack:神芸学徒 ファインメルト",
+     "DirectAttack:アルトメギアの獄神獣",
+     "DirectAttack:クロシープ"
+    ],
+    "end": {
+     "turn": 4,
+     "phase": 4,
+     "lp0": 8000,
+     "lp1": 4600,
+     "monsters": [
+      27184601,
+      34541940,
+      50277355,
+      97434754
+     ],
+     "monsters_face_up": [
+      27184601,
+      34541940,
+      50277355
+     ],
+     "spell_trap": [
+      1122030,
+      74733322
+     ],
+     "spell_trap_face_up": [
+      1122030,
+      74733322
+     ],
+     "hand": [
+      38814750,
+      49036338,
+      59438930,
+      74733322
+     ],
+     "graveyard": [
+      1122030,
+      10045474,
+      23599634,
+      23829452,
+      23829452,
+      74011784,
+      74631897,
+      97045737
+     ],
+     "banished": [
+      97556336
+     ],
+     "extra_face_up": [],
+     "opponent_monsters": [],
+     "opponent_hand_count": 5
+    }
+   }
+  },
+  "candidate/C2v": {
+   "model": "candidate",
+   "condition": "C2v",
+   "reason": "own_turn3_end",
+   "failure": null,
+   "game_over": null,
+   "fallbacks": 0,
+   "decisions": 29,
+   "model_decisions": 24,
+   "lua_errors": 0,
+   "visibility_events": [],
+   "legacy_goal": {
+    "monsters": false,
+    "field_and_assault_active": false,
+    "medius_redirected": false
+   },
+   "turn1": {
+    "moves": [
+     "Activate:神芸学都アルトメギア",
+     "Activate:神芸学都アルトメギア",
+     "None:神芸学徒 グラフレア",
+     "Activate:神芸学徒 グラフレア[10010]",
+     "Activate:神芸学徒 グラフレア[10012]",
+     "None:アルトメギア・バーニッシュ－改変－",
+     "Activate:アルトメギア・バーニッシュ－改変－[10010]",
+     "None:アルトメギア・メセナ－覚醒－",
+     "Activate:神芸学都アルトメギア",
+     "None:神芸学徒 リテラ",
+     "MSet:神芸学徒 リテラ"
+    ],
+    "first_divergence_from_script": 7,
+    "script_move_at_divergence": "None:神芸学徒 リテラ",
+    "model_move_at_divergence": "None:アルトメギア・メセナ－覚醒－",
+    "end": {
+     "turn": 2,
+     "phase": 4,
+     "lp0": 8000,
+     "lp1": 8000,
+     "monsters": [
+      60946049,
+      97434754
+     ],
+     "monsters_face_up": [
+      60946049
+     ],
+     "spell_trap": [
+      74733322
+     ],
+     "spell_trap_face_up": [
+      74733322
+     ],
+     "hand": [
+      38814750,
+      49036338,
+      59438930
+     ],
+     "graveyard": [
+      23599634,
+      25311006,
+      74011784
+     ],
+     "banished": [],
+     "extra_face_up": [],
+     "opponent_monsters": [],
+     "opponent_hand_count": 5
+    }
+   },
+   "turn2": {
+    "own_used": [],
+    "own_offered": [],
+    "end": {
+     "turn": 3,
+     "phase": 4,
+     "lp0": 8000,
+     "lp1": 8000,
+     "monsters": [
+      60946049,
+      97434754
+     ],
+     "monsters_face_up": [
+      60946049
+     ],
+     "spell_trap": [
+      74733322
+     ],
+     "spell_trap_face_up": [
+      74733322
+     ],
+     "hand": [
+      38814750,
+      49036338,
+      59438930
+     ],
+     "graveyard": [
+      23599634,
+      25311006,
+      74011784
+     ],
+     "banished": [],
+     "extra_face_up": [],
+     "opponent_monsters": [],
+     "opponent_hand_count": 5
+    }
+   },
+   "turn3": {
+    "used": [
+     "SpSummon:クロシープ"
+    ],
+    "attacks": [],
+    "end": {
+     "turn": 4,
+     "phase": 4,
+     "lp0": 8000,
+     "lp1": 8000,
+     "monsters": [
+      50277355
+     ],
+     "monsters_face_up": [
+      50277355
+     ],
+     "spell_trap": [
+      74733322
+     ],
+     "spell_trap_face_up": [
+      74733322
+     ],
+     "hand": [
+      38814750,
+      49036338,
+      59438930
+     ],
+     "graveyard": [
+      23599634,
+      25311006,
+      60946049,
+      74011784,
+      97434754
+     ],
+     "banished": [],
+     "extra_face_up": [],
+     "opponent_monsters": [],
+     "opponent_hand_count": 5
+    }
+   }
+  }
+ },
+ "variants": {
+  "C1v": {
+   "script_completed": true,
+   "own_turn_end": {
+    "monsters": [
+     "神芸獄徒 ディアクトロス",
+     "無垢なる祈りの獄神使",
+     "神芸学徒 ファインメルト",
+     "神芸なる知恵の乙女",
+     "神芸学徒 リテラ",
+     "無垢なる者 メディウス"
+    ],
+    "spell_trap": [
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "アルトメギア・メセナ－覚醒－",
+     "神芸学都アルトメギア"
+    ],
+    "hand": [
+     "無限泡影",
+     "ＰＳＹフレームギア・γ",
+     "幽鬼うさぎ"
+    ],
+    "graveyard": 5,
+    "banished": 1,
+    "lp0": 8000,
+    "lp1": 8000
+   },
+   "next_own_turn_start": {
+    "monsters": [
+     "Ｗ：Ｐファンシーボール",
+     "神芸獄徒 ディアクトロス",
+     "神芸学徒 ファインメルト",
+     "神芸なる知恵の乙女",
+     "神芸学徒 リテラ"
+    ],
+    "spell_trap": [
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "アルトメギア・メセナ－覚醒－",
+     "神芸学都アルトメギア"
+    ],
+    "hand": [
+     "無限泡影",
+     "ＰＳＹフレームギア・γ",
+     "幽鬼うさぎ"
+    ],
+    "graveyard": 6,
+    "banished": 2,
+    "lp0": 8000,
+    "lp1": 8000
+   },
+   "visibility_events": null
+  },
+  "C2v": {
+   "script_completed": true,
+   "own_turn_end": {
+    "monsters": [
+     "無垢なる祈りの獄神使",
+     "神芸学徒 ファインメルト",
+     "神芸なる知恵の乙女",
+     "神芸学徒 リテラ",
+     "無垢なる者 メディウス"
+    ],
+    "spell_trap": [
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "アルトメギア・メセナ－覚醒－",
+     "神芸学都アルトメギア"
+    ],
+    "hand": [
+     "ＰＳＹフレームギア・γ",
+     "ＰＳＹフレーム・ドライバー",
+     "幽鬼うさぎ",
+     "屋敷わらし"
+    ],
+    "graveyard": 5,
+    "banished": 0,
+    "lp0": 8000,
+    "lp1": 8000
+   },
+   "next_own_turn_start": {
+    "monsters": [
+     "無垢なる祈りの獄神使",
+     "神芸学徒 ファインメルト",
+     "神芸なる知恵の乙女",
+     "神芸学徒 リテラ",
+     "無垢なる者 メディウス"
+    ],
+    "spell_trap": [
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "アルトメギア・メセナ－覚醒－",
+     "神芸学都アルトメギア"
+    ],
+    "hand": [
+     "ＰＳＹフレームギア・γ",
+     "ＰＳＹフレーム・ドライバー",
+     "幽鬼うさぎ",
+     "屋敷わらし"
+    ],
+    "graveyard": 5,
+    "banished": 0,
+    "lp0": 8000,
+    "lp1": 8000
+   },
+   "visibility_events": null
+  }
+ },
+ "exposure": {
+  "episodes": 11,
+  "hands_recorded": 22,
+  "hands_seen_after_draw": 4,
+  "overlaps": []
+ },
+ "code": {
+  "artmage_entry.py": "ca47f56d29431b48d60337de6dcc6ce23d524fba31cbbbdce31e6d7399b78e0f",
+  "artmage_pins.py": "10c4e053d05f44498cff77c45301a3fb5222c7598a658decc52f4539fd96bde8",
+  "artmage_teacher.py": "a126284eff7a2d7ef3c602ade0aa5f196f7ddea77333213c27a197ade21b78f3",
+  "pilot_data.py": "dc749fb5ea77419741d0e7469edd7f423db241eae11ccafe399f76a04c3417e8",
+  "pilot_eval.py": "80cecdf44996f269226f5032bd33f18e66194f2f33b984a7cae7563498fec646",
+  "pilot_launch.py": "0f19ad0806170685879f56a80221c7f43b3f18754103023c1d32d6cf2f106804",
+  "pilot_model.py": "8bec14fb9a1e6c02cbfa715c21146aafeb45b00f060d4cd7afa57b7c84e0ad56",
+  "pilot_register.py": "50fe04ccd45e88d15db6c070c60c210df0da1ae8575de4bde11d185a52bbd93b",
+  "pilot_summarize.py": "d9c341460524bf1206c07d59806d781579aea76fcc1d4842c1e09b7d419841dd",
+  "pilot_train.py": "d39754a325f62dfbe2049c9e19fd0f7a03466781597a1297d42381839247484f"
+ }
+}

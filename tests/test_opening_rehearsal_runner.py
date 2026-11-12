@@ -1,0 +1,597 @@
+"""Experiment runner safety: no result reuse across different conditions, and every exit
+path leaves experiment arms stopped. Temporary directories only; production is never written."""
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+import tempfile
+import textwrap
+import unittest
+from types import SimpleNamespace
+from unittest.mock import patch
+
+P = Path('/home/hatk8/projects/yugioh-ai')
+sys.path.insert(0, str(P / 'scripts'))
+sys.dont_write_bytecode = True
+import continuous_learning as C  # noqa: E402
+import opening_rehearsal_ab as AB  # noqa: E402
+
+SEED = 10000555
+
+
+def write(path, value):
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    if isinstance(value, bytes):
+        path.write_bytes(value)
+    else:
+        path.write_text(value if isinstance(value, str) else json.dumps(value))
+
+
+class Experiment:
+    """A miniature experiment root shaped like the real one."""
+
+    def __init__(self, tmp, name='a-ppo'):
+        self.exp, self.name = Path(tmp) / 'exp', name
+        self.root = self.exp / name
+        self.plan = dict(experiment_root=str(self.exp), base_config=str(P / 'config/continuous-elfnotes.json'),
+                         steps=256, seeds=[SEED], battle_episodes=32, battle_seed=90000555,
+                         arms={name: {'rehearsal': None, 'learning_rate': 3e-5}}, _file=str(self.exp / 'plan.json'))
+        for part, data in [('base.flax_model', b'initial-base'), ('chain-head.flax_model', b'initial-head')]:
+            write(self.root / 'models/initial' / part, data)
+        write(self.root / 'snapshot/hashes.json', {'train.py': '0' * 64})
+        self.cfg = AB.arm_config(self.plan, name, self.plan['arms'][name])  # the same config path run() uses
+
+    def completed_run(self, seed=SEED, steps=256, episodes=32, battle_seed=90000555, plan=None):
+        plan = plan or dict(self.plan, steps=steps, battle_episodes=episodes, battle_seed=battle_seed)
+        steps, episodes, battle_seed = plan['steps'], plan['battle_episodes'], plan['battle_seed']
+        d = self.root / 'cycles' / f'{steps}-seed{seed}'
+        write(d / 'run-conditions.json', AB.requested_conditions(plan, self.name, plan['arms'][self.name], self.cfg, seed))
+        for part in ['base.flax_model', 'chain-head.flax_model']:
+            write(d / 'source-model' / part, (AB.start_model(plan, self.root) / part).read_bytes())
+            write(d / 'candidate' / part, b'candidate-' + part.encode())
+        write(d / 'training-result.json', {})
+        write(d / 'train-command.json', {'command': ['python', 'train.py', '--learning-rate', str(self.cfg['learning_rate']),
+                                                    '--save-interval', str(min(32, steps // 128)),
+                                                    '--total-timesteps', str(steps), '--seed', str(seed),
+                                                    '--checkpoint', str(d / 'source-combined.flax_model')]})
+        write(d / 'battle-command.json', {'command': ['python', 'continuous_learning.py', 'job-eval', '--candidate', str(d / 'candidate'),
+                                                     '--opponent', str(self.root / 'models/initial'),
+                                                     '--episodes', str(episodes), '--seed', str(battle_seed)]})
+        result = dict(arm=self.name, seed=seed, steps=steps, base_sha256=C.sha(d / 'candidate/base.flax_model'),
+                      head_sha256=C.sha(d / 'candidate/chain-head.flax_model'), opening_passed=65, opening_total=66,
+                      regression_passed=True, lost_case_ids=[], new_case_ids=[],
+                      teacher_forced={'train': {'ce': .06}, 'validation': {'ce': .08}}, resources={},
+                      battle=dict(status='complete', terminations={'abnormal_total': 0, 'truncated': 0, 'engine_timeout': 0,
+                                                                       'timeout_suspected': 0},
+                                  results=dict(total_episodes=episodes, verified_episodes=episodes, wins=16, losses=16,
+                                               draws=0, win_rate=.5)))
+        write(d / 'run-result.json', result)
+        return d, result
+
+
+class ReuseTests(unittest.TestCase):
+    def test_identical_conditions_are_reused_without_jobs(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            e = Experiment(tmp)
+            _, result = e.completed_run()
+            self.assertEqual(AB.run_one(None, e.plan, e.name, e.plan['arms'][e.name], e.cfg, {}, SEED), result)
+
+    def test_changed_battle_plan_is_refused(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            e = Experiment(tmp)
+            e.completed_run()
+            changed = dict(e.plan, battle_episodes=8, battle_seed=123)
+            with self.assertRaisesRegex(RuntimeError, r"battle_episodes.*battle_seed"):
+                AB.run_one(None, changed, e.name, changed['arms'][e.name], e.cfg, {}, SEED)
+
+    def test_changed_rehearsal_or_initial_model_is_refused(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            e = Experiment(tmp)
+            e.completed_run()
+            rehearsal = dict(enabled=True, split='train', lambda_bc=5.0, lambda_kl=0.0, sequences_per_minibatch=2, seed=1,
+                             sha256='0' * 64)
+            with self.assertRaisesRegex(RuntimeError, 'rehearsal'):
+                AB.run_one(None, e.plan, e.name, {'rehearsal': rehearsal}, e.cfg, {}, SEED)
+            (e.root / 'models/initial/base.flax_model').write_bytes(b'another-start')
+            with self.assertRaisesRegex(RuntimeError, 'initial_base_sha256'):
+                AB.run_one(None, e.plan, e.name, e.plan['arms'][e.name], e.cfg, {}, SEED)
+
+    def test_run_without_recorded_conditions_is_refused(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            e = Experiment(tmp)
+            d, _ = e.completed_run()
+            (d / 'run-conditions.json').unlink()
+            with self.assertRaisesRegex(RuntimeError, 'no recorded run conditions'):
+                AB.run_one(None, e.plan, e.name, e.plan['arms'][e.name], e.cfg, {}, SEED)
+
+    def test_evidence_that_disagrees_with_recorded_conditions_is_refused(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            e = Experiment(tmp)
+            d, _ = e.completed_run()
+            command = json.loads((d / 'battle-command.json').read_text())
+            command['command'][command['command'].index('--episodes') + 1] = '8'
+            write(d / 'battle-command.json', command)
+            with self.assertRaisesRegex(RuntimeError, 'battle episodes in battle-command.json'):
+                AB.run_one(None, e.plan, e.name, e.plan['arms'][e.name], e.cfg, {}, SEED)
+            e.completed_run()  # restore, then swap the candidate weights behind the result
+            (d / 'candidate/base.flax_model').write_bytes(b'swapped')
+            with self.assertRaisesRegex(RuntimeError, 'candidate base.flax_model hash'):
+                AB.run_one(None, e.plan, e.name, e.plan['arms'][e.name], e.cfg, {}, SEED)
+
+    def test_summary_refuses_runs_outside_the_current_plan(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            e = Experiment(tmp)
+            e.completed_run()  # 256 steps, seed 10000555
+            later = dict(e.plan, steps=4096, seeds=[10000999], battle_episodes=8, battle_seed=123)
+            with patch.object(AB, 'load_plan', return_value=later), patch('builtins.print'):
+                with self.assertRaisesRegex(RuntimeError, 'Refusing to summarize'):
+                    AB.summarize(SimpleNamespace(plan=later['_file']))
+            self.assertFalse((e.exp / 'summary.json').exists())
+
+    def test_summary_keeps_matching_runs_and_lists_missing_ones(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            e = Experiment(tmp)
+            e.completed_run()
+            plan = dict(e.plan, seeds=[SEED, 10000777])
+            with patch.object(AB, 'load_plan', return_value=plan), patch('builtins.print'):
+                AB.summarize(SimpleNamespace(plan=plan['_file']))
+            summary = json.loads((e.exp / 'summary.json').read_text())
+            self.assertEqual([r['seed'] for r in summary['runs']], [SEED])
+            self.assertEqual((summary['missing_runs'], summary['complete'], summary['conditions_verified']),
+                             ([f'{e.name}/10000777'], False, True))
+
+
+REHEARSAL = dict(enabled=True, split='train', lambda_bc=5.0, lambda_kl=0.0, sequences_per_minibatch=2, seed=20261109,
+                 sha256='0ef4700c92ddb6f26c3e3f5dc04d4893d2cb02c096304af0bbdc546f8070e4da')
+FOUR = {'a-lr3e-5': {'rehearsal': None, 'learning_rate': 3e-5}, 'b-lr3e-5-l5': {'rehearsal': REHEARSAL, 'learning_rate': 3e-5},
+        'c-lr1.5e-5': {'rehearsal': None, 'learning_rate': 1.5e-5}, 'd-lr1.5e-5-l5': {'rehearsal': REHEARSAL, 'learning_rate': 1.5e-5}}
+
+
+class ArmSettingTests(unittest.TestCase):
+    """Per-arm learning rate: effective config, recorded conditions, command evidence. No jobs run."""
+
+    def plan(self, tmp, arms):
+        exp = Path(tmp) / 'exp'
+        return dict(experiment_root=str(exp), base_config=str(P / 'config/continuous-elfnotes.json'), steps=256,
+                    seeds=[10000555, 10000777, 10000999], battle_episodes=32, battle_seed=90000555, arms=arms,
+                    limits=dict(max_environment_decisions=3072, max_battle_episodes=384, max_candidates=12),
+                    _file=str(exp / 'plan.json'))
+
+    def test_four_conditions_have_the_intended_effective_settings(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            plan = self.plan(tmp, FOUR)
+            write(plan['_file'], {k: v for k, v in plan.items() if k != '_file'})
+            AB.load_plan(plan['_file'])  # within 12 candidates / 3072 decisions / 384 battles
+            seen = {}
+            for name, arm in FOUR.items():
+                cfg = AB.arm_config(plan, name, arm)
+                for part, data in [('base.flax_model', b'b'), ('chain-head.flax_model', b'h')]:
+                    write(Path(cfg['root']) / 'models/initial' / part, data)
+                write(Path(cfg['root']) / 'snapshot/hashes.json', {})
+                wanted = AB.requested_conditions(plan, name, arm, cfg, 10000555)
+                seen[name] = (cfg['learning_rate'], wanted['learning_rate'], (wanted['rehearsal'] or {}).get('lambda_bc'))
+            self.assertEqual(seen, {'a-lr3e-5': (3e-5, 3e-5, None), 'b-lr3e-5-l5': (3e-5, 3e-5, 5.0),
+                                    'c-lr1.5e-5': (1.5e-5, 1.5e-5, None), 'd-lr1.5e-5-l5': (1.5e-5, 1.5e-5, 5.0)})
+
+    def test_unknown_or_invalid_arm_settings_are_refused(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            for arm, message in [({'learning_rate': 1.5e-5, 'lr': 1e-5}, 'unsupported settings'),
+                                 ({'rehearsal': None, 'learning_rate': '1.5e-5'}, 'learning_rate'),
+                                 ({'rehearsal': None, 'learning_rate': 0}, 'learning_rate'),
+                                 ({'rehearsal': None}, 'must be explicit'), ({'learning_rate': 3e-5}, 'must be explicit')]:
+                plan = self.plan(tmp, {'x': arm})
+                write(plan['_file'], {k: v for k, v in plan.items() if k != '_file'})
+                with self.assertRaisesRegex(ValueError, message):
+                    AB.load_plan(plan['_file'])
+                with self.assertRaisesRegex(ValueError, message):
+                    AB.arm_config(plan, 'x', arm)
+
+    def test_plan_limits_are_enforced(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            plan = self.plan(tmp, dict(FOUR, extra={'rehearsal': None, 'learning_rate': 1e-5}))
+            write(plan['_file'], {k: v for k, v in plan.items() if k != '_file'})
+            with self.assertRaisesRegex(ValueError, 'limit'):
+                AB.load_plan(plan['_file'])
+
+    def test_changing_the_learning_rate_in_the_same_root_is_refused(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            e = Experiment(tmp)
+            e.completed_run()
+            faster = dict(e.plan, arms={e.name: {'rehearsal': None, 'learning_rate': 1.5e-5}})
+            with self.assertRaisesRegex(RuntimeError, 'Arm config changed'):
+                AB.arm_config(faster, e.name, faster['arms'][e.name])
+            with patch.object(AB, 'load_plan', return_value=faster), patch('builtins.print'):
+                with self.assertRaisesRegex(RuntimeError, 'saved arm config differs'):
+                    AB.summarize(SimpleNamespace(plan=faster['_file']))
+            # Editing the saved config behind the runner's back is caught by the recorded conditions.
+            saved = json.loads(Path(e.cfg['_file']).read_text())
+            write(e.cfg['_file'], dict(saved, learning_rate=1.5e-5))
+            edited = C.load_config(e.cfg['_file'])
+            with self.assertRaisesRegex(RuntimeError, 'arm_config_sha256.*learning_rate'):
+                AB.run_one(None, e.plan, e.name, e.plan['arms'][e.name], edited, {}, SEED)
+
+    def test_learning_rate_in_the_training_command_must_match(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            e = Experiment(tmp)
+            d, _ = e.completed_run()
+            command = json.loads((d / 'train-command.json').read_text())
+            command['command'][command['command'].index('--learning-rate') + 1] = '1.5e-05'
+            write(d / 'train-command.json', command)
+            with self.assertRaisesRegex(RuntimeError, 'learning rate in train-command.json'):
+                AB.run_one(None, e.plan, e.name, e.plan['arms'][e.name], e.cfg, {}, SEED)
+
+
+class CheckpointBattleAndFixedTestTests(unittest.TestCase):
+    """Plan-level checkpoint settings, battle-free plans, frozen fixed tests. No training jobs."""
+
+    def plan(self, tmp, **extra):
+        exp = Path(tmp) / 'exp'
+        plan = dict(experiment_root=str(exp), base_config=str(P / 'config/continuous-elfnotes.json'), steps=4096, seeds=[10001109],
+                    battle_episodes=0, battle_seed=0, save_interval_updates=8, keep_all_checkpoints=True,
+                    arms={'d': {'rehearsal': REHEARSAL, 'learning_rate': 1.5e-5}},
+                    limits=dict(max_environment_decisions=4096, max_battle_episodes=0, max_candidates=1), _file=str(exp / 'plan.json'))
+        plan.update(extra)
+        write(plan['_file'], {k: v for k, v in plan.items() if k != '_file'})
+        return plan
+
+    def test_plan_training_settings_are_effective_and_recorded(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            plan = self.plan(tmp)
+            AB.load_plan(plan['_file'])
+            cfg = AB.arm_config(plan, 'd', plan['arms']['d'])
+            for part, data in [('base.flax_model', b'b'), ('chain-head.flax_model', b'h')]:
+                write(Path(cfg['root']) / 'models/initial' / part, data)
+            write(Path(cfg['root']) / 'snapshot/hashes.json', {})
+            wanted = AB.requested_conditions(plan, 'd', plan['arms']['d'], cfg, 10001109)
+            self.assertEqual((cfg['save_interval_updates'], cfg['keep_all_checkpoints'], cfg['learning_rate']), (8, True, 1.5e-5))
+            self.assertEqual((wanted['save_interval_updates'], wanted['keep_all_checkpoints'], wanted['battle_episodes']), (8, True, 0))
+            for bad in [dict(save_interval_updates=0), dict(keep_all_checkpoints='yes'), dict(battle_episodes=-8),
+                        dict(limits=dict(max_environment_decisions=2048, max_battle_episodes=0, max_candidates=1))]:
+                with self.assertRaises(ValueError):
+                    AB.load_plan(self.plan(tmp, **bad)['_file'])
+
+    def test_save_interval_in_the_training_command_must_match(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            e = Experiment(tmp)
+            d, _ = e.completed_run()
+            command = json.loads((d / 'train-command.json').read_text())
+            command['command'][command['command'].index('--save-interval') + 1] = '1'
+            write(d / 'train-command.json', command)
+            with self.assertRaisesRegex(RuntimeError, 'save interval in train-command.json'):
+                AB.run_one(None, e.plan, e.name, e.plan['arms'][e.name], e.cfg, {}, SEED)
+
+    def test_keep_all_checkpoints_patch_and_configured_save_interval(self):
+        import continuous_opening_backend as backend
+        cfg = C.read_json(P / 'config/continuous-elfnotes.json')
+        text = backend.patched_trainer((Path(cfg['runtime']) / 'agent/scripts/cleanba.py').read_text())
+        kept = backend.keep_all_checkpoints(text)
+        self.assertEqual((kept.count('n_saved=1000000)'), kept.count('n_saved=2)')), (1, 0))
+        with self.assertRaises(RuntimeError):
+            backend.keep_all_checkpoints(kept)
+        self.assertIn('install_rehearsal(globals())', AB.R.patch_trainer(kept))  # rehearsal hooks still apply
+        B = C.backend()
+        captured = []
+
+        def run_job(cfg, state, command, directory, name):
+            captured.append([str(x) for x in command])
+            raise InterruptedError('stop before training')
+        B.control.run_job = run_job
+        with tempfile.TemporaryDirectory() as tmp:
+            for steps, interval, expected in [(4096, 8, '8'), (256, None, '2'), (4096, None, '32')]:
+                d = Path(tmp) / f'{steps}-{interval}'
+                d.mkdir()
+                run_cfg = dict(C.load_config(P / 'config/continuous-elfnotes.json'), root=str(Path(tmp) / 'root'))
+                if interval:
+                    run_cfg['save_interval_updates'] = interval
+                pending = dict(directory=str(d), source=str(Path(cfg['root']) / 'models/initial'), steps=steps, training_seed=1)
+                with self.assertRaises(InterruptedError):
+                    B.train_cycle(run_cfg, {}, pending)
+                self.assertEqual(captured[-1][captured[-1].index('--save-interval') + 1], expected)
+
+    def test_frozen_fixed_test_is_refused_after_any_change(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            cases = Path(tmp) / 'cases.json'
+            write(cases, {'cases': [{'case_id': 'x', 'eval_family': 'f', 'hand': [1, 2, 3, 4, 5]}]})
+            manifest = Path(tmp) / 'manifest.json'
+            write(manifest, dict(name='t', status='frozen', cases_file='cases.json', cases_sha256=C.sha(cases)))
+            self.assertEqual(AB.frozen_fixed_test(manifest)[1]['cases'][0]['case_id'], 'x')
+            write(cases, {'cases': [{'case_id': 'x', 'eval_family': 'f', 'hand': [1, 2, 3, 4, 6]}]})
+            with self.assertRaisesRegex(RuntimeError, 'not frozen or its cases changed'):
+                AB.frozen_fixed_test(manifest)
+            write(manifest, dict(name='t', status='draft', cases_file='cases.json', cases_sha256=C.sha(cases)))
+            with self.assertRaises(RuntimeError):
+                AB.frozen_fixed_test(manifest)
+
+    def test_before_after_comparison(self):
+        before = {'cases': [dict(case_id=c, family=c[0], passed=p) for c, p in [('a1', True), ('a2', True), ('b1', False)]]}
+        after = {'cases': [dict(case_id=c, family=c[0], passed=p) for c, p in [('a1', True), ('a2', False), ('b1', True)]]}
+        out = AB.compare_cases(before, after)
+        self.assertEqual((out['before_passed'], out['after_passed'], out['lost_case_ids'], out['new_case_ids'],
+                          out['retained_all_before_passing']), (2, 2, ['a2'], ['b1'], False))
+        self.assertEqual(out['families']['a'], dict(before=2, after=1, total=2))
+        with self.assertRaises(RuntimeError):
+            AB.compare_cases(before, {'cases': after['cases'][:2]})
+
+    def test_intermediate_checkpoints_are_validated_and_unpacked_as_pairs(self):
+        import numpy as np
+        import flax.serialization as ser
+        import continuous_opening_backend as backend
+        B = C.backend()
+        with tempfile.TemporaryDirectory() as tmp:
+            d = Path(tmp) / 'run'
+            source = d / 'source-model'
+            write(source / 'base.flax_model', ser.to_bytes({'params': {'x': np.arange(4, dtype=np.float32)}, 'batch_stats': {}}))
+            write(source / 'chain-head.flax_model', ser.to_bytes({'params': {'y': np.ones(2, np.float32)}}))
+            backend.pack_bundle(source, d / 'source-combined.flax_model')
+            (d / 'checkpoints').mkdir()
+            write(d / 'checkpoints/initial.flax_model', (d / 'source-combined.flax_model').read_bytes())
+            for steps, shift in [(1024, .1), (2048, .2)]:
+                value = {'params': {'base': {'x': np.arange(4, dtype=np.float32) + shift}, 'head': {'y': np.ones(2, np.float32)}},
+                         'batch_stats': {}}
+                write(d / f'checkpoints/1_{steps}steps.flax_model', ser.to_bytes(value))
+            rows = AB.intermediate_checkpoints(B, d, dict(source=str(source)), 2048)
+            self.assertEqual([(r['decisions'], r['final']) for r in rows], [(1024, False), (2048, True)])
+            for r, shift in zip(rows, [.1, .2]):
+                restored = ser.msgpack_restore((Path(r['directory']) / 'base.flax_model').read_bytes())['params']['x']
+                np.testing.assert_allclose(restored, np.arange(4) + shift, rtol=1e-6)
+                self.assertAlmostEqual(r['weight_change']['base']['max_abs'], shift, places=5)
+                self.assertEqual(r['weight_change']['chain-head']['changed'], 0)
+            write(d / 'checkpoints/1_3072steps.flax_model', ser.to_bytes({'params': {'base': {'x': np.full(4, np.nan, np.float32)},
+                                                                                     'head': {'y': np.ones(2, np.float32)}}}))
+            with self.assertRaises(RuntimeError):
+                AB.intermediate_checkpoints(B, d, dict(source=str(source)), 3072)
+
+
+class ContinuationTests(unittest.TestCase):
+    """Training that starts from a pinned earlier candidate; reuse of recorded fixed-test references."""
+
+    def start(self, tmp):
+        e = Experiment(tmp)
+        src = Path(tmp) / 'candidate-4096'
+        for part, data in [('base.flax_model', b'cand-base'), ('chain-head.flax_model', b'cand-head')]:
+            write(src / part, data)
+        spec = dict(path=str(src), base_sha256=C.sha(src / 'base.flax_model'), head_sha256=C.sha(src / 'chain-head.flax_model'),
+                    cumulative_decisions=4096)
+        plan = dict(e.plan, start_checkpoint=spec)
+        return e, src, spec, plan
+
+    def test_start_checkpoint_is_pinned_and_recorded(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            e, src, spec, plan = self.start(tmp)
+            AB.pin_start_checkpoint(plan, e.root)
+            self.assertEqual(C.sha(e.root / 'models/start/base.flax_model'), spec['base_sha256'])
+            wanted = AB.requested_conditions(plan, e.name, plan['arms'][e.name], e.cfg, SEED)
+            self.assertEqual((wanted['start_base_sha256'], wanted['start_cumulative_decisions']), (spec['base_sha256'], 4096))
+            self.assertEqual(wanted['initial_base_sha256'], C.sha(e.root / 'models/initial/base.flax_model'))  # gate reference unchanged
+            write(src / 'base.flax_model', b'changed-later')
+            with self.assertRaisesRegex(RuntimeError, 'differs from the plan'):
+                AB.pin_start_checkpoint(dict(plan, start_checkpoint=dict(spec, base_sha256=C.sha(src / 'base.flax_model'))), e.root)
+            write(plan['_file'], {k: v for k, v in plan.items() if k != '_file'})
+            with self.assertRaisesRegex(ValueError, 'start_checkpoint base.flax_model'):
+                AB.load_plan(plan['_file'])
+
+    def test_training_must_have_started_from_the_pinned_checkpoint(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            e, src, spec, plan = self.start(tmp)
+            AB.pin_start_checkpoint(plan, e.root)
+            _, result = e.completed_run(plan=plan)
+            self.assertEqual(AB.run_one(None, plan, e.name, plan['arms'][e.name], e.cfg, {}, SEED), result)
+            d = e.root / 'cycles' / f'256-seed{SEED}'
+            write(d / 'source-model/base.flax_model', (e.root / 'models/initial/base.flax_model').read_bytes())
+            with self.assertRaisesRegex(RuntimeError, 'starting base.flax_model'):
+                AB.run_one(None, plan, e.name, plan['arms'][e.name], e.cfg, {}, SEED)
+
+    def test_fixed_test_reference_needs_same_test_weights_and_code(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            tmp = Path(tmp)
+            for arm in ['old', 'new']:
+                write(tmp / arm / 'snapshot/hashes.json', {'policy-code/center_placement.py': 'v2', 'evaluator.py': 'e'})
+            manifest = dict(cases_sha256='c' * 64)
+            found = dict(status='complete', cases_sha256='c' * 64, lua_errors=0, base_sha256='b', head_sha256='h', cases=[])
+            write(tmp / 'ref.json', found)
+            spec = dict(result=str(tmp / 'ref.json'), base_sha256='b', head_sha256='h', arm_root=str(tmp / 'old'))
+            self.assertEqual(AB.verified_reference(spec, manifest, tmp / 'new'), found)
+            for bad_spec, bad_manifest in [(dict(spec, base_sha256='x'), manifest), (spec, dict(cases_sha256='d' * 64))]:
+                with self.assertRaisesRegex(RuntimeError, 'does not match'):
+                    AB.verified_reference(bad_spec, bad_manifest, tmp / 'new')
+            write(tmp / 'new' / 'snapshot/hashes.json', {'policy-code/center_placement.py': 'v1', 'evaluator.py': 'e'})
+            with self.assertRaisesRegex(RuntimeError, 'different evaluation code'):
+                AB.verified_reference(spec, manifest, tmp / 'new')
+
+
+class EffectiveTrainerTests(unittest.TestCase):
+    """check_snapshot() compares each arm with the trainer ITS effective config requires, so it works
+    when production itself trains with rehearsal (condition D). No jobs; temporary roots only."""
+
+    SHARED = {'policy-code/center_placement.py': 'v2', 'evaluator.py': 'e', 'opening-manifest.json': 'm', 'opening-policy.json': 'o',
+              'runtime.json': 'r', 'meta-run-manifest.json': 'mm'}
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        tmp = Path(self.tmp.name)
+        base = dict(json.loads((P / 'config/continuous-elfnotes.json').read_text()), learning_rate=1.5e-5, rehearsal=REHEARSAL)
+        write(tmp / 'base-d.json', base)  # a production config that itself runs condition D
+        self.plan = dict(experiment_root=str(tmp / 'exp'), base_config=str(tmp / 'base-d.json'), steps=256, seeds=[1],
+                         battle_episodes=0, battle_seed=0, _file=str(tmp / 'exp/plan.json'),
+                         arms={'d': {'rehearsal': REHEARSAL, 'learning_rate': 1.5e-5}, 'control': {'rehearsal': None, 'learning_rate': 3e-5}})
+        import continuous_opening_backend as backend
+        self.backend = backend
+        self.cfg = {n: AB.build_arm_config(self.plan, n, a) for n, a in self.plan['arms'].items()}
+        self.text = {n: backend.expected_trainer_text(c) for n, c in self.cfg.items()}
+        self.production = tmp / 'production'
+        self.root(self.production, self.text['d'], rehearsal=True)
+        self.patch = patch.object(AB, 'production_root', return_value=self.production)
+        self.patch.start()
+
+    def tearDown(self):
+        self.patch.stop()
+        self.tmp.cleanup()
+
+    def root(self, root, trainer, rehearsal, data_sha=None):
+        write(root / 'snapshot/train.py', trainer)
+        hashes = dict(self.SHARED, **{'train.py': C.sha(root / 'snapshot/train.py'), 'continuous_opening_backend.py': 'b'})
+        if rehearsal:
+            hashes.update({'opening_rehearsal.py': 'R', 'rehearsal/train.npz': data_sha or REHEARSAL['sha256']})
+            write(root / 'snapshot/rehearsal/settings.json', {'settings': AB.R.validate_settings(REHEARSAL)})
+        write(root / 'snapshot/hashes.json', hashes)
+        for part in ['base.flax_model', 'chain-head.flax_model']:
+            write(root / 'models/initial' / part, b'adopted-' + part.encode())
+
+    def check(self, name, trainer, rehearsal, **kw):
+        root = Path(self.cfg[name]['root'])
+        self.root(root, trainer, rehearsal, **kw)
+        return AB.check_snapshot(self.cfg[name], self.plan['arms'][name])
+
+    def test_control_arm_never_inherits_production_rehearsal(self):
+        self.assertNotIn('rehearsal', self.cfg['control'])
+        self.assertEqual(self.cfg['control']['learning_rate'], 3e-5)
+        self.assertEqual((self.cfg['d']['rehearsal'], self.cfg['d']['learning_rate']), (REHEARSAL, 1.5e-5))
+        self.assertNotIn('install_rehearsal', self.text['control'])
+        self.assertIn('install_rehearsal(globals())', self.text['d'])
+
+    def test_both_arms_are_accepted_with_their_own_expected_trainer(self):
+        d = self.check('d', self.text['d'], True)
+        control = self.check('control', self.text['control'], False)
+        self.assertEqual((d['trainer_identical_to_production'], d['rehearsal_hooked'], d['production_trainer_rehearsal_hooked']), (True, True, True))
+        self.assertEqual((control['trainer_identical_to_production'], control['rehearsal_hooked']), (False, False))
+
+    def test_wrong_trainers_and_rehearsal_pins_are_refused(self):
+        for name, trainer, rehearsal, kw, message in [
+                ('control', self.text['d'], False, {}, 'required by its effective config'),   # D trainer in a control arm
+                ('d', self.text['control'], True, {}, 'required by its effective config'),    # plain trainer in a D arm
+                ('d', self.text['d'], True, {'data_sha': '0' * 64}, 'Pinned rehearsal settings or data'),
+                ('control', self.text['control'], True, {}, 'no-rehearsal arm has rehearsal files'),
+                ('d', self.text['d'].replace("~jnp.reshape(obs['adapter_controlled_'], mask.shape)", 'True', 1), True, {},
+                 'required by its effective config')]:
+            with self.assertRaisesRegex(RuntimeError, message):
+                self.check(name, trainer, rehearsal, **kw)
+
+
+class StopTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.e = Experiment(self.tmp.name)
+        self.production = Path(self.tmp.name) / 'fake-production'
+        baseline = dict(passed=65, total=66, passed_case_ids=['known'], lua_errors=0)
+        write(self.production / 'opening-baseline.json', baseline)
+        root = self.e.root
+        write(root / 'STOP', 'now')  # completion marker left by an earlier run of this runner
+        write(root / 'arm-setup.json', {})
+        write(root / 'opening-baseline.json', baseline)
+        write(root / 'baseline/teacher-forced-initial.json', {})
+        write(root / 'state.json', dict(status='stopped'))
+        self.state = dict(status='stopped')
+        self.patches = [patch.object(AB, 'load_plan', return_value=self.e.plan),
+                        patch.object(AB, 'production_root', return_value=self.production),
+                        patch.object(AB, 'production_fingerprint', return_value={'unchanged': True}),
+                        patch.object(AB, 'resident_learners', return_value=[]),
+                        patch.object(AB, 'check_snapshot', return_value={}),
+                        patch.object(AB, 'raise_on_termination_signal'),
+                        patch.object(AB, 'LEFTOVER_WAIT_SECONDS', 0.5),
+                        patch('builtins.print')]
+        for p in self.patches:
+            p.start()
+
+    def tearDown(self):
+        for p in reversed(self.patches):
+            p.stop()
+        self.tmp.cleanup()
+
+    def backend(self, job_error=None):
+        def run_job(*args, **kwargs):
+            self.assertFalse((self.e.root / 'STOP').exists(), 'jobs run only while the marker is lifted')
+            raise job_error
+        return SimpleNamespace(initialize=lambda cfg: self.state, control=SimpleNamespace(run_job=run_job))
+
+    def final_state(self):
+        return json.loads((self.e.root / 'state.json').read_text())
+
+    def test_job_failure_restores_stop_and_records_failure(self):
+        with patch.object(AB, 'backend', return_value=self.backend()), \
+             patch.object(AB, 'run_one', side_effect=RuntimeError('simulated finite-job failure')):
+            with self.assertRaisesRegex(RuntimeError, 'simulated finite-job failure'):
+                AB.run(SimpleNamespace(plan='unused', arms=None, seeds=None))
+        self.assertEqual((self.e.root / 'STOP').read_text(), 'now')
+        state = self.final_state()
+        self.assertEqual((state['status'], state['last_decision']), ('stopped', 'finite_ab_experiment_failed_not_adopted'))
+        self.assertIn('simulated finite-job failure', state['last_error'])
+
+    def test_setup_failure_after_the_stop_marker_was_lifted(self):
+        (self.e.root / 'opening-baseline.json').unlink()  # setup must run the baseline job, which fails
+        with patch.object(AB, 'backend', return_value=self.backend(RuntimeError('baseline job failed'))):
+            with self.assertRaisesRegex(RuntimeError, 'baseline job failed'):
+                AB.run(SimpleNamespace(plan='unused', arms=None, seeds=None))
+        self.assertEqual((self.e.root / 'STOP').read_text(), 'now')
+        self.assertIn('baseline job failed', self.final_state()['last_error'])
+
+    def test_interrupt_also_restores_stop(self):
+        with patch.object(AB, 'backend', return_value=self.backend()), \
+             patch.object(AB, 'run_one', side_effect=KeyboardInterrupt):
+            with self.assertRaises(KeyboardInterrupt):
+                AB.run(SimpleNamespace(plan='unused', arms=None, seeds=None))
+        self.assertTrue((self.e.root / 'STOP').exists())
+
+    def test_successful_run_leaves_stop_and_complete_state(self):
+        _, result = self.e.completed_run()
+        with patch.object(AB, 'backend', return_value=self.backend()), patch.object(AB, 'summarize') as summarize:
+            AB.run(SimpleNamespace(plan='unused', arms=None, seeds=None))
+        summarize.assert_called_once()
+        self.assertTrue((self.e.root / 'STOP').exists())
+        self.assertEqual(self.final_state()['last_decision'], 'finite_ab_experiment_complete_not_adopted')
+
+    def test_diagnostic_context_restores_stop_on_error(self):
+        with self.assertRaises(ValueError):
+            with AB.arm_active(self.e.cfg):
+                self.assertFalse((self.e.root / 'STOP').exists())
+                raise ValueError('diagnostic job failed')
+        self.assertEqual((self.e.root / 'STOP').read_text(), 'now')
+
+    def test_diagnostic_context_clears_a_finished_jobs_pid(self):
+        done = subprocess.run([sys.executable, '-c', 'import os; print(os.getpid())'], capture_output=True, text=True)
+        finished = int(done.stdout)
+        write(self.e.root / 'state.json', dict(status='stopped', child_pid=finished))
+        with AB.arm_active(self.e.cfg):
+            pass
+        self.assertIsNone(self.final_state()['child_pid'])
+        self.assertEqual((self.e.root / 'STOP').read_text(), 'now')
+
+    def test_closing_an_arm_terminates_a_job_left_running(self):
+        job = subprocess.Popen([sys.executable, '-c', 'import time; time.sleep(60)', str(self.e.root / 'cycles/x/train.py')])
+        try:
+            terminated = AB.close_arm(self.e.cfg, dict(status='running'), 'failed', RuntimeError('x'))
+            self.assertIn(job.pid, terminated)
+            self.assertIsNotNone(job.wait(timeout=10))
+            self.assertEqual(self.final_state()['leftover_jobs_terminated'], terminated)
+        finally:
+            job.kill()
+
+    def test_production_root_is_never_an_arm(self):
+        with patch.object(AB, 'production_root', return_value=self.e.root):
+            with self.assertRaises(RuntimeError):
+                AB.close_arm(self.e.cfg, {}, 'failed')
+
+
+class SignalTest(unittest.TestCase):
+    def test_sigterm_runs_finally_blocks(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            marker = Path(tmp) / 'finally-ran'
+            script = textwrap.dedent(f'''
+                import os, signal, sys
+                sys.path.insert(0, {str(P / 'scripts')!r})
+                import opening_rehearsal_ab as AB
+                AB.raise_on_termination_signal()
+                try:
+                    os.kill(os.getpid(), signal.SIGTERM)
+                    import time; time.sleep(5)
+                finally:
+                    open({str(marker)!r}, 'w').write('yes')
+            ''')
+            done = subprocess.run([sys.executable, '-B', '-c', script], capture_output=True, text=True, timeout=120)
+            self.assertNotEqual(done.returncode, 0)
+            self.assertEqual(marker.read_text(), 'yes')
+
+
+if __name__ == '__main__':
+    unittest.main(verbosity=2)

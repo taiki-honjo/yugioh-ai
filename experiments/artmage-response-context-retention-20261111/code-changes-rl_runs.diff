@@ -1,0 +1,11 @@
+--- response-learning code/rl_runs.py (4bf8be54)	2026-11-11 11:30:56.844944166 +0900
++++ code/rl_runs.py	2026-11-11 11:30:56.847285078 +0900
+@@ -17,7 +17,7 @@
+ import sys
+ import traceback
+ 
+-ROOT = Path('/home/hatk8/projects/yugioh-ai/experiments/artmage-response-learning-20261111')
++ROOT = Path('/home/hatk8/projects/yugioh-ai/experiments/artmage-response-context-retention-20261111')
+ CODE = ROOT / 'code'
+ sys.path.insert(0, str(CODE))
+ import artmage_teacher  # noqa: E402,F401  (cached from THIS root before the frozen modules insert their own roots)

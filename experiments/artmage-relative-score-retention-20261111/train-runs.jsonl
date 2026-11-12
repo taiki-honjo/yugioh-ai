@@ -1,0 +1,2 @@
+{"event": "start", "run": 1, "time_jst": "2026-11-11T18:34:05+09:00", "command": ["systemd-run", "--user", "--scope", "--quiet", "-p", "MemoryMax=5G", "-p", "MemorySwapMax=0", "-p", "CPUQuota=300%", "nice", "-n", "10", "timeout", "1800", "/opt/ygo-ai/.venv/bin/python", "-B", "-u", "/home/hatk8/projects/yugioh-ai/experiments/artmage-relative-score-retention-20261111/code/rs_train.py", "train"]}
+{"event": "finish", "run": 1, "time_jst": "2026-11-11T18:42:16+09:00", "exit_code": 0}

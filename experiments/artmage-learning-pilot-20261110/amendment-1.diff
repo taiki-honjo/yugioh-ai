@@ -1,0 +1,322 @@
+--- registered/pilot_train.py
++++ amended/pilot_train.py
+@@ -57,10 +57,50 @@
+         handle.write(json.dumps(row, ensure_ascii=False, default=float) + '\n')
+ 
+ 
+-def privacy_ok(obs):
++MAX_VISIBLE = 15  # more opponent hand/deck identities than this at once is treated as a clear exposure
++
++
++def visibility_events(obs):
++    """Opponent hand/deck rows whose identity is present in this observation (audit only; nothing here reaches the model).
++
++    origin 'selection_prompt': the same card id is one of the current legal actions (the env shows selection
++    candidates). Otherwise 'unverified': a game confirmation (MSG_CONFIRM_CARDS / MSG_CONFIRM_DECKTOP) may explain
++    it, but the Python API cannot match it, so it stays unverified."""
+     cards = np.asarray(obs['cards_'])[0]
++    actions = np.asarray(obs['actions_'])[0]
++    action_ids = {int(x[1]) * 256 + int(x[2]) for x in actions[actions[:, 3] != 0]}
+     hidden = (cards[:, 4] == 1) & np.isin(cards[:, 2], [DECK, HAND])
+-    return bool(np.all(cards[hidden, :2] == 0))
++    out = []
++    for i in np.where(hidden & ((cards[:, 0] > 0) | (cards[:, 1] > 0)))[0]:
++        cid = int(cards[i, 0]) * 256 + int(cards[i, 1])
++        out.append(dict(row=int(i), location='deck' if int(cards[i, 2]) == DECK else 'hand', card_id=cid, code=E._IDS.get(cid, 0),
++                        origin='selection_prompt' if cid in action_ids else 'unverified'))
++    return out
++
++
++def privacy_ok(obs):
++    """True when no opponent hand/deck identity is visible (used by tests; not a stop condition)."""
++    return not visibility_events(obs)
++
++
++def clear_exposure(shown, actions_so_far):
++    if shown and actions_so_far == 0:
++        return 'opponent hand/deck identity visible before any action of the episode'
++    if len(shown) > MAX_VISIBLE:
++        return f'{len(shown)} opponent hand/deck identities visible at once'
++    return None
++
++
++def amendment():
++    amendments = sorted(ROOT.glob('amendment-*.json'))
++    return json.loads(amendments[-1].read_text()) if amendments else {}
++
++
++def registered_code():
++    """Code hashes from the latest registration amendment, else the registration."""
++    amendments = sorted(ROOT.glob('amendment-*.json'))
++    source = json.loads((amendments[-1] if amendments else ROOT / 'registration.json').read_text())
++    return source['code']
+ 
+ 
+ def own_hand(obs):
+@@ -158,14 +198,26 @@
+         hands, first_turn = {}, {}
+         learner_first = True
+         ep_learner_steps = []
++        ep_actions, prev_action = 0, None
+         ep = dict(episode=e, env_seed=seeds[e], learner_seat=seat, start_total=total)
+         ended = False
+         try:
+             while True:
+                 tp = int(info['to_play'][0])
+-                if not privacy_ok(obs):
+-                    raise RuntimeError('opponent private card identity visible in the observation')
+                 g = np.asarray(obs['global_'])[0]
++                shown = visibility_events(obs)
++                if shown:
++                    reason = clear_exposure(shown, ep_actions)
++                    counts['visibility_events'] += 1
++                    counts['visible_cards'] += len(shown)
++                    counts['visible_unverified'] += sum(c['origin'] == 'unverified' for c in shown)
++                    counts['visible_selection_prompt'] += sum(c['origin'] == 'selection_prompt' for c in shown)
++                    append(out / 'visibility-events.jsonl', dict(
++                        episode=e, env_seed=seeds[e], total=total, viewer_seat=tp, role='learner' if tp == seat else 'frozen',
++                        turn=int(g[4]), phase=int(g[5]), message_type=int(np.asarray(obs['actions_'])[0, 0, 3]),
++                        public_chain=np.asarray(features(info))[0].tolist(), previous_action=prev_action, cards=shown, stopped=reason))
++                    if reason:
++                        raise RuntimeError('clear exposure: ' + reason)
+                 if tp not in hands:
+                     hands[tp], first_turn[tp] = own_hand(obs), int(g[4])
+                 chain = jnp.asarray(features(info))
+@@ -196,8 +248,12 @@
+                     counts['learner_adapter_changed'] += int(final != raw)
+                 else:
+                     counts['frozen'] += 1
++                row_done = np.asarray(obs['actions_'])[0, final]
++                prev_action = dict(seat=tp, role='learner' if tp == seat else 'frozen', index=final, message_type=int(row_done[3]),
++                                   card_code=E._IDS.get(int(row_done[1]) * 256 + int(row_done[2]), 0))
+                 obs, reward, term, trunc, info = env.step(np.array([final], np.int32))
+                 total += 1
++                ep_actions += 1
+                 ended = bool(term[0] or trunc[0])
+                 if ended:
+                     r = float(np.asarray(reward).reshape(-1)[0])
+@@ -256,7 +312,10 @@
+               'updates', window_index, f'{time.time() - t_start:.0f}s', flush=True)
+     return params, original_base, dict(total=total, learner=counts['learner'], frozen=counts['frozen'],
+                                        learner_adapter_controlled=counts['learner_adapter_controlled'],
+-                                       learner_adapter_changed=counts['learner_adapter_changed'], episodes=e + 1, windows=window_index,
++                                       learner_adapter_changed=counts['learner_adapter_changed'],
++                                       visibility=dict(events=counts['visibility_events'], cards=counts['visible_cards'],
++                                                       unverified=counts['visible_unverified'], selection_prompt=counts['visible_selection_prompt']),
++                                       episodes=e + 1, windows=window_index,
+                                        minibatches=minibatch_index, rehearsal_counts=schedule.counts(), aborted=aborted,
+                                        seconds=time.time() - t_start, data=data_stats), frozen
+ 
+@@ -337,11 +396,17 @@
+ 
+ def main():
+     reg = json.loads((ROOT / 'registration.json').read_text())
+-    for name, digest in reg['code'].items():
++    for name, digest in registered_code().items():
+         if sha(ROOT / 'code' / name) != digest:
+             raise RuntimeError(f'registered code changed: {name}')
+     E.verify_pins()
+-    out = ROOT / 'train'
++    amend = amendment()
++    out = ROOT / 'train' / amend['attempt_dir'] if amend else ROOT / 'train'
++    if amend:
++        used = sum(json.loads(l).get('decisions', 0) for l in (ROOT / 'train' / amend['failed_attempt_dir'] / 'episodes.jsonl').read_text().splitlines())
++        if used != amend['failed_attempt_decisions'] or used + CAP > amend['cumulative_decision_cap']:
++            raise RuntimeError('cumulative training decision cap would be exceeded')
++    out.mkdir(parents=True, exist_ok=True)
+     if (out / 'result.json').exists():
+         raise SystemExit('training result exists; one candidate only')
+     print('DEVICES', jax.devices(), flush=True)
+--- registered/pilot_eval.py
++++ amended/pilot_eval.py
+@@ -89,6 +89,43 @@
+         return next((candidates[c] for c in self.filler_priority if c in candidates), None)
+ 
+ 
++def check_observation(v, A, obs, info, s, audit, step, previous):
++    """article_witness.check_observation, except that opponent hand/deck identities the env exposes are recorded
++    (audit; origin 'selection_prompt' when the card is a current legal action, else 'unverified') instead of
++    aborting. Action identities and the public chain stay strict; a clear exposure (identities visible before any
++    action, or more than 15 at once) aborts the run."""
++    import numpy as np
++    actions = np.asarray(obs['actions_'])[0]
++    for action in s['actions']:
++        row = actions[action['index']]
++        assert v.ID_CODES.get(int(row[1]) * 256 + int(row[2]), 0) == action['code'], ('Action identity mismatch', s['message'], action)
++    assert int(info['public_chain_length'][0]) == len(s['public_chain'])
++    cards = np.asarray(obs['cards_'])[0]
++    action_ids = {int(x[1]) * 256 + int(x[2]) for x in actions[actions[:, 3] != 0]}
++    hidden = (cards[:, 4] == 1) & np.isin(cards[:, 2], [1, 2])
++    idx = np.where(hidden & ((cards[:, 0] > 0) | (cards[:, 1] > 0)))[0]
++    if len(idx):
++        shown = [dict(row=int(i), location='deck' if int(cards[i, 2]) == 1 else 'hand', card_id=int(cards[i, 0]) * 256 + int(cards[i, 1]),
++                      code=v.ID_CODES.get(int(cards[i, 0]) * 256 + int(cards[i, 1]), 0),
++                      origin='selection_prompt' if int(cards[i, 0]) * 256 + int(cards[i, 1]) in action_ids else 'unverified') for i in idx]
++        reason = 'visible before any action' if step == 0 else f'{len(shown)} visible at once' if len(shown) > 15 else None
++        audit.append(dict(step=step, turn=s['turn_count'], phase=s['phase'], to_play=s['to_play'], message=s['message'],
++                          public_chain=s['public_chain'], previous_action=previous, cards=shown, stopped=reason))
++        if reason:
++            raise RuntimeError('clear exposure: ' + reason)
++
++
++def candidate_dir():
++    amendments = sorted(ROOT.glob('amendment-*.json'))
++    attempt = json.loads(amendments[-1].read_text()).get('attempt_dir') if amendments else None
++    return ROOT / 'train' / attempt if attempt else ROOT / 'train'
++
++
++def registered_code():
++    amendments = sorted(ROOT.glob('amendment-*.json'))
++    return json.loads((amendments[-1] if amendments else ROOT / 'registration.json').read_text())['code']
++
++
+ def board(s):
+     own = lambda c, loc: sorted(x['code'] for x in s['cards'] if x['controller'] == c and x['location'] == loc)
+     up = lambda c, loc: sorted(x['code'] for x in s['cards'] if x['controller'] == c and x['location'] == loc and x['position'] & 5)
+@@ -110,10 +147,11 @@
+         pair = (ROOT / 'models/initial/base.flax_model', ROOT / 'models/initial/chain-head.flax_model')
+         want = ('12500c7724b2d723983a2963a960d75172a6df51fb55ea4f3acf102eeb34132e', '0bc7534cab102cd87586e5d22bd4ad0cd3b55d52d08e284146976506ae6193fc')
+     else:
+-        result = json.loads((ROOT / 'train/result.json').read_text())
++        directory = candidate_dir()
++        result = json.loads((directory / 'result.json').read_text())
+         if result.get('status') != 'complete':
+             raise RuntimeError('no complete candidate')
+-        pair = (ROOT / 'train/candidate/base.flax_model', ROOT / 'train/candidate/chain-head.flax_model')
++        pair = (directory / 'candidate/base.flax_model', directory / 'candidate/chain-head.flax_model')
+         want = (result['saved']['candidate_base_sha256'], result['saved']['candidate_head_sha256'])
+     return pair, want
+ 
+@@ -144,7 +182,7 @@
+     case = dict(case_id=name, hand=spec['hand'], seed=spec['seed'])
+     env, obs, info = E.env_for(case)
+     rows, observed, failure, blocking, game_over, checkpoints, reason = [], [], None, None, None, {}, 'step_cap'
+-    previous = 0
++    previous, audit = 0, []
+     try:
+         for step in range(700):
+             s = v.native.benchmark_snapshot()
+@@ -155,7 +193,7 @@
+                 checkpoints['next_own_turn_start'] = board(s)
+                 reason = 'reached_turn3'
+                 break
+-            v.check_observation(obs, info, s)
++            check_observation(v, A, obs, info, s, audit, step, rows[-1]['selected'] if rows else None)
+             if s['to_play'] == 0:
+                 try:
+                     idx = teacher(s)
+@@ -185,7 +223,7 @@
+     out = dict(condition=name, hand=spec['hand'], seed=spec['seed'], cost_card=spec['cost_card'], base_plan=spec['base'],
+                script_completed=failure is None and not t.remaining_required(), failure=failure, blocking=blocking, reason=reason,
+                game_over=game_over, lua_errors=lua, remaining_required=t.remaining_required(), skipped_optional=t.skipped_optional,
+-               marks=t.marks, checkpoints=checkpoints, final=final, trace=rows, position_events=teacher.positions.events)
++               marks=t.marks, checkpoints=checkpoints, final=final, trace=rows, position_events=teacher.positions.events, disclosed=audit)
+     if observed:
+         save_observations(ROOT / 'eval/variants' / f'{name}-observations.npz', observed)
+     write(ROOT / 'eval/variants' / f'{name}.json', out)
+@@ -202,7 +240,7 @@
+     policy = E.create_policy(pair[0], pair[1], positions=True, expected=want)
+     env, obs, info = E.env_for(case)
+     policy.reset()
+-    trace, reason = [], 'decision_limit'
++    trace, reason, audit = [], 'decision_limit', []
+     try:
+         for step in range(RT1_CAP):
+             s = v.native.benchmark_snapshot()
+@@ -214,7 +252,7 @@
+             if s['turn_count'] > 2:
+                 reason = 'two_turns_passed'; break
+             assert int(info['raw_num_options'][0]) <= 128
+-            v.check_observation(obs, info, s)
++            check_observation(v, A, obs, info, s, audit, step, trace[-1]['selected'] if trace else None)
+             idx = policy.act(obs, info) if s['to_play'] == 0 else v.passive(s)
+             trace.append(dict(step=step, snapshot=v.compact(s), selected=s['actions'][idx]))
+             obs, _, term, trunc, info = env.step(np.array([idx], np.int32))
+@@ -227,7 +265,7 @@
+     row = dict(model=which, model_sha256=list(want), case_id=cid, split_origin=split, seed=case['seed'], hand=case['hand'],
+                passed=bool(final) and all(goal.values()) and final['turn_player'] == 1, goal=goal, reason=reason,
+                final=final, board=board(final) if final else None, trace=trace, events=copy.deepcopy(policy.positions.events),
+-               lua_errors=v.native.get_lua_error_count())
++               lua_errors=v.native.get_lua_error_count(), disclosed=audit)
+     write(ROOT / 'eval/rt1' / which / f'{cid}.json', row)
+     print('RT1', json.dumps({k: row[k] for k in ['model', 'case_id', 'passed', 'reason', 'goal']}, ensure_ascii=False), flush=True)
+     return row
+@@ -241,7 +279,7 @@
+     case = dict(case_id=cond, hand=spec['hand'], seed=spec['seed'])
+     env, obs, info = E.env_for(case)
+     policy.reset()
+-    rows, observed, checkpoints, fallbacks = [], [], {}, 0
++    rows, observed, checkpoints, fallbacks, audit = [], [], {}, 0, []
+     reason, game_over, failure = 'step_cap', None, None
+     try:
+         for step in range(NT1_CAP):
+@@ -253,7 +291,7 @@
+                 reason = 'own_turn3_end'
+                 break
+             assert int(info['raw_num_options'][0]) <= 128
+-            v.check_observation(obs, info, s)
++            check_observation(v, A, obs, info, s, audit, step, rows[-1]['selected'] if rows else None)
+             if s['to_play'] == 0:
+                 idx = int(policy.act(obs, info))
+                 observed.append(dict(obs=observation(obs, info), label=idx, step=step, turn=s['turn_count']))
+@@ -280,7 +318,7 @@
+     out = dict(model=which, model_sha256=list(want), condition=cond, hand=spec['hand'], seed=spec['seed'], reason=reason, failure=failure,
+                game_over=game_over, checkpoints=checkpoints, final=final, opponent_fallbacks=fallbacks, lua_errors=lua,
+                legacy_goal_at_own_turn1_end=None, trace=rows, position_events=copy.deepcopy(policy.positions.events),
+-               decisions=len(rows), model_decisions=len(observed), draws='none (fixture duel: draw count 0)')
++               decisions=len(rows), model_decisions=len(observed), draws='none (fixture duel: draw count 0)', disclosed=audit)
+     t1 = [r for r in rows if r['snapshot']['turn_count'] == 1]
+     if t1:
+         out['legacy_goal_at_own_turn1_end'] = v.check_goal('Artmage', rows[len(t1)]['snapshot']) if len(rows) > len(t1) else None
+@@ -295,7 +333,7 @@
+ 
+ def job(command, args):
+     reg = json.loads((ROOT / 'registration.json').read_text())
+-    for name, digest in reg['code'].items():
++    for name, digest in registered_code().items():
+         if sha(ROOT / 'code' / name) != digest:
+             raise RuntimeError(f'registered code changed: {name}')
+     A = analysis()
+--- registered/pilot_launch.py
++++ amended/pilot_launch.py
+@@ -43,13 +43,20 @@
+     if stop.read_text().strip() != 'now':
+         raise SystemExit('STOP is not "now"; another job may be running')
+     env = dict(os.environ, **BASE_ENV)
++    run_number = None
+     if kind == 'train':
+         busy = gpu_busy()
+         if busy:
+             raise SystemExit(f'GPU has compute processes: {busy}')
+         ledger = ROOT / 'train-runs.jsonl'
+-        if ledger.exists() and ledger.read_text().strip():
+-            raise SystemExit('a training run was already started; one candidate only')
++        started = [json.loads(l) for l in ledger.read_text().splitlines() if '"start"' in l] if ledger.exists() else []
++        allowed = max([json.loads(p.read_text()).get('training_runs_allowed', 1) for p in ROOT.glob('amendment-*.json')] or [1])
++        if len(started) >= allowed:
++            raise SystemExit(f'training runs started {len(started)} >= allowed {allowed}; one candidate only')
++        attempts = [json.loads(p.read_text()).get('attempt_dir') for p in sorted(ROOT.glob('amendment-*.json'))]
++        if (ROOT / 'train' / (attempts[-1] if attempts else '') / 'result.json').exists():
++            raise SystemExit('a training result exists')
++        run_number = len(started) + 1
+         script, args, log = ROOT / 'code/pilot_train.py', [], ROOT / 'logs/train.log'
+         env.pop('JAX_PLATFORMS', None)
+     else:
+@@ -61,7 +68,7 @@
+     log.parent.mkdir(exist_ok=True)
+     if kind == 'train':
+         with (ROOT / 'train-runs.jsonl').open('a') as h:
+-            h.write(json.dumps(dict(event='start', run=1, time_jst=now(), command=cmd)) + '\n')
++            h.write(json.dumps(dict(event='start', run=run_number, time_jst=now(), command=cmd)) + '\n')
+     stop.write_text(f'lifted for {kind} {" ".join(argv[1:])} at {now()}\n')
+     code = None
+     try:
+@@ -73,7 +80,7 @@
+         stop.write_text('now\n')
+         if kind == 'train':
+             with (ROOT / 'train-runs.jsonl').open('a') as h:
+-                h.write(json.dumps(dict(event='finish', run=1, time_jst=now(), exit_code=code)) + '\n')
++                h.write(json.dumps(dict(event='finish', run=run_number, time_jst=now(), exit_code=code)) + '\n')
+     keep = ('VARIANT', 'RT1', 'NT1', 'LEDGER', 'EPISODE', 'RESULT', 'ABORTED', 'DEVICES', 'NATIVE_LUA', 'Traceback', 'Error', 'RuntimeError', 'AssertionError')
+     lines = [l for l in log.read_text().splitlines() if l.startswith(keep)]
+     print('\n'.join(lines[-60:]))

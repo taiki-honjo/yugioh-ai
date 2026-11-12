@@ -1,0 +1,1461 @@
+{
+  "name": "elfnotes-kewltune-fixed-test-20261109",
+  "status": "frozen",
+  "frozen_jst": "2026-11-09T15:23:42+09:00",
+  "spec_file": "spec.json",
+  "spec_sha256": "d4f8d2b08cf59d5ebb35e0b02a3a0867669cd83c4eee4a5e1cbc6ffd07493c21",
+  "cases_file": "cases.json",
+  "cases_sha256": "f8bc47336b9922eb3adf4d8b0cd6f4d44a8aef5f8f38bdd18ceb91cd35713d3f",
+  "total": 88,
+  "families": {
+    "elf-dina": 4,
+    "elf-par-fire-cost": 4,
+    "elf-par-light-cost": 4,
+    "elf-regina-par": 4,
+    "elf-rukina-regina": 4,
+    "jj-cue-mix": 4,
+    "jj-cue-reco": 4,
+    "jj-cue-rotary": 4,
+    "mixed-cue-spirit": 4,
+    "mixed-reco-spirit-ash": 4,
+    "mixed-rukina-cue": 4,
+    "rukina-ash_parallelism": 4,
+    "rukina-ash_rukina": 4,
+    "rukina-ash_spirit": 4,
+    "rukina-pass": 4,
+    "rukina-veiler_rukina": 4,
+    "rukina-veiler_strelitzia": 4,
+    "tune-cue": 4,
+    "tune-juke-veiler": 4,
+    "tune-reco": 4,
+    "tune-stone-sweeper": 4,
+    "tune-sync": 4
+  },
+  "shortfall": {},
+  "excluded_hand_multisets": 532,
+  "json_files_contributing_hands": 41,
+  "overlap_with_existing_hands": 0,
+  "teacher_attempts": 88,
+  "teacher_rejected": 0,
+  "attempts": [
+    {
+      "family": "rukina-pass",
+      "attempt": 0,
+      "hand": [
+        97268402,
+        97268402,
+        23434538,
+        94145021,
+        13597785
+      ],
+      "seed": 261109000,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": null,
+      "decisions": 93
+    },
+    {
+      "family": "rukina-pass",
+      "attempt": 1,
+      "hand": [
+        70088809,
+        13597785,
+        94145021,
+        70088809,
+        97268402
+      ],
+      "seed": 261109001,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": null,
+      "decisions": 79
+    },
+    {
+      "family": "rukina-pass",
+      "attempt": 2,
+      "hand": [
+        70088809,
+        13597785,
+        97268402,
+        94145021,
+        97268402
+      ],
+      "seed": 261109002,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": null,
+      "decisions": 79
+    },
+    {
+      "family": "rukina-pass",
+      "attempt": 3,
+      "hand": [
+        97268402,
+        59438930,
+        14558127,
+        52038441,
+        13597785
+      ],
+      "seed": 261109003,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": null,
+      "decisions": 83
+    },
+    {
+      "family": "rukina-ash_rukina",
+      "attempt": 0,
+      "hand": [
+        23434538,
+        97268402,
+        94145021,
+        97268402,
+        13597785
+      ],
+      "seed": 261110000,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": null,
+      "decisions": 33
+    },
+    {
+      "family": "rukina-ash_rukina",
+      "attempt": 1,
+      "hand": [
+        94145021,
+        70088809,
+        97268402,
+        70088809,
+        13597785
+      ],
+      "seed": 261110001,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": null,
+      "decisions": 23
+    },
+    {
+      "family": "rukina-ash_rukina",
+      "attempt": 2,
+      "hand": [
+        97268402,
+        70088809,
+        94145021,
+        13597785,
+        97268402
+      ],
+      "seed": 261110002,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": null,
+      "decisions": 23
+    },
+    {
+      "family": "rukina-ash_rukina",
+      "attempt": 3,
+      "hand": [
+        13597785,
+        14558127,
+        52038441,
+        59438930,
+        97268402
+      ],
+      "seed": 261110003,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": null,
+      "decisions": 24
+    },
+    {
+      "family": "rukina-veiler_rukina",
+      "attempt": 0,
+      "hand": [
+        23434538,
+        94145021,
+        97268402,
+        97268402,
+        13597785
+      ],
+      "seed": 261111000,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": null,
+      "decisions": 33
+    },
+    {
+      "family": "rukina-veiler_rukina",
+      "attempt": 1,
+      "hand": [
+        94145021,
+        70088809,
+        70088809,
+        13597785,
+        97268402
+      ],
+      "seed": 261111001,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": null,
+      "decisions": 23
+    },
+    {
+      "family": "rukina-veiler_rukina",
+      "attempt": 2,
+      "hand": [
+        94145021,
+        70088809,
+        97268402,
+        13597785,
+        97268402
+      ],
+      "seed": 261111002,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": null,
+      "decisions": 23
+    },
+    {
+      "family": "rukina-veiler_rukina",
+      "attempt": 3,
+      "hand": [
+        59438930,
+        13597785,
+        97268402,
+        14558127,
+        52038441
+      ],
+      "seed": 261111003,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": null,
+      "decisions": 24
+    },
+    {
+      "family": "rukina-ash_spirit",
+      "attempt": 0,
+      "hand": [
+        97268402,
+        94145021,
+        23434538,
+        13597785,
+        97268402
+      ],
+      "seed": 261112000,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": null,
+      "decisions": 43
+    },
+    {
+      "family": "rukina-ash_spirit",
+      "attempt": 1,
+      "hand": [
+        94145021,
+        97268402,
+        70088809,
+        13597785,
+        70088809
+      ],
+      "seed": 261112001,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": null,
+      "decisions": 33
+    },
+    {
+      "family": "rukina-ash_spirit",
+      "attempt": 2,
+      "hand": [
+        13597785,
+        94145021,
+        70088809,
+        97268402,
+        97268402
+      ],
+      "seed": 261112002,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": null,
+      "decisions": 33
+    },
+    {
+      "family": "rukina-ash_spirit",
+      "attempt": 3,
+      "hand": [
+        52038441,
+        97268402,
+        14558127,
+        59438930,
+        13597785
+      ],
+      "seed": 261112003,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": null,
+      "decisions": 35
+    },
+    {
+      "family": "rukina-ash_parallelism",
+      "attempt": 0,
+      "hand": [
+        97268402,
+        94145021,
+        23434538,
+        97268402,
+        13597785
+      ],
+      "seed": 261113000,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": null,
+      "decisions": 95
+    },
+    {
+      "family": "rukina-ash_parallelism",
+      "attempt": 1,
+      "hand": [
+        13597785,
+        70088809,
+        97268402,
+        94145021,
+        70088809
+      ],
+      "seed": 261113001,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": null,
+      "decisions": 78
+    },
+    {
+      "family": "rukina-ash_parallelism",
+      "attempt": 2,
+      "hand": [
+        13597785,
+        94145021,
+        97268402,
+        97268402,
+        70088809
+      ],
+      "seed": 261113002,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": null,
+      "decisions": 78
+    },
+    {
+      "family": "rukina-ash_parallelism",
+      "attempt": 3,
+      "hand": [
+        14558127,
+        97268402,
+        59438930,
+        52038441,
+        13597785
+      ],
+      "seed": 261113003,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": null,
+      "decisions": 85
+    },
+    {
+      "family": "rukina-veiler_strelitzia",
+      "attempt": 0,
+      "hand": [
+        97268402,
+        13597785,
+        97268402,
+        23434538,
+        94145021
+      ],
+      "seed": 261114000,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": null,
+      "decisions": 85
+    },
+    {
+      "family": "rukina-veiler_strelitzia",
+      "attempt": 1,
+      "hand": [
+        94145021,
+        70088809,
+        70088809,
+        97268402,
+        13597785
+      ],
+      "seed": 261114001,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": null,
+      "decisions": 68
+    },
+    {
+      "family": "rukina-veiler_strelitzia",
+      "attempt": 2,
+      "hand": [
+        94145021,
+        13597785,
+        70088809,
+        97268402,
+        97268402
+      ],
+      "seed": 261114002,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": null,
+      "decisions": 68
+    },
+    {
+      "family": "rukina-veiler_strelitzia",
+      "attempt": 3,
+      "hand": [
+        52038441,
+        14558127,
+        13597785,
+        97268402,
+        59438930
+      ],
+      "seed": 261114003,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": null,
+      "decisions": 75
+    },
+    {
+      "family": "elf-rukina-regina",
+      "attempt": 0,
+      "hand": [
+        52038441,
+        23434538,
+        13597785,
+        70088809,
+        52038441
+      ],
+      "seed": 261115000,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "two_bosses",
+      "decisions": 92
+    },
+    {
+      "family": "elf-rukina-regina",
+      "attempt": 1,
+      "hand": [
+        70088809,
+        13597785,
+        70088809,
+        14558127,
+        59438930
+      ],
+      "seed": 261115001,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "two_bosses",
+      "decisions": 80
+    },
+    {
+      "family": "elf-rukina-regina",
+      "attempt": 2,
+      "hand": [
+        59438930,
+        14558127,
+        94145021,
+        14558127,
+        13597785
+      ],
+      "seed": 261115002,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "two_bosses",
+      "decisions": 80
+    },
+    {
+      "family": "elf-rukina-regina",
+      "attempt": 3,
+      "hand": [
+        23434538,
+        52038441,
+        94145021,
+        52038441,
+        13597785
+      ],
+      "seed": 261115003,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "two_bosses",
+      "decisions": 92
+    },
+    {
+      "family": "elf-dina",
+      "attempt": 0,
+      "hand": [
+        23434538,
+        59581480,
+        70088809,
+        52038441,
+        70088809
+      ],
+      "seed": 261116000,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "two_bosses",
+      "decisions": 93
+    },
+    {
+      "family": "elf-dina",
+      "attempt": 1,
+      "hand": [
+        94145021,
+        23434538,
+        59438930,
+        70088809,
+        59581480
+      ],
+      "seed": 261116001,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "two_bosses",
+      "decisions": 93
+    },
+    {
+      "family": "elf-dina",
+      "attempt": 2,
+      "hand": [
+        59438930,
+        14558127,
+        94145021,
+        59581480,
+        14558127
+      ],
+      "seed": 261116002,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "two_bosses",
+      "decisions": 81
+    },
+    {
+      "family": "elf-dina",
+      "attempt": 3,
+      "hand": [
+        94145021,
+        94145021,
+        14558127,
+        59581480,
+        14558127
+      ],
+      "seed": 261116003,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "two_bosses",
+      "decisions": 78
+    },
+    {
+      "family": "elf-par-light-cost",
+      "attempt": 0,
+      "hand": [
+        14558127,
+        97268402,
+        14558127,
+        23434538,
+        64491754
+      ],
+      "seed": 261117000,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "two_bosses",
+      "decisions": 88
+    },
+    {
+      "family": "elf-par-light-cost",
+      "attempt": 1,
+      "hand": [
+        59438930,
+        94145021,
+        52038441,
+        97268402,
+        64491754
+      ],
+      "seed": 261117001,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "two_bosses",
+      "decisions": 76
+    },
+    {
+      "family": "elf-par-light-cost",
+      "attempt": 2,
+      "hand": [
+        97268402,
+        64491754,
+        97268402,
+        14558127,
+        14558127
+      ],
+      "seed": 261117002,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "two_bosses",
+      "decisions": 74
+    },
+    {
+      "family": "elf-par-light-cost",
+      "attempt": 3,
+      "hand": [
+        14558127,
+        97268402,
+        97268402,
+        52038441,
+        64491754
+      ],
+      "seed": 261117003,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "two_bosses",
+      "decisions": 74
+    },
+    {
+      "family": "elf-par-fire-cost",
+      "attempt": 0,
+      "hand": [
+        97268402,
+        64491754,
+        14558127,
+        14558127,
+        94145021
+      ],
+      "seed": 261118000,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "two_bosses",
+      "decisions": 68
+    },
+    {
+      "family": "elf-par-fire-cost",
+      "attempt": 1,
+      "hand": [
+        64491754,
+        52038441,
+        52038441,
+        97268402,
+        14558127
+      ],
+      "seed": 261118001,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "two_bosses",
+      "decisions": 66
+    },
+    {
+      "family": "elf-par-fire-cost",
+      "attempt": 2,
+      "hand": [
+        59438930,
+        14558127,
+        64491754,
+        70088809,
+        94145021
+      ],
+      "seed": 261118002,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "two_bosses",
+      "decisions": 69
+    },
+    {
+      "family": "elf-par-fire-cost",
+      "attempt": 3,
+      "hand": [
+        59438930,
+        14558127,
+        59438930,
+        64491754,
+        14558127
+      ],
+      "seed": 261118003,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "two_bosses",
+      "decisions": 69
+    },
+    {
+      "family": "elf-regina-par",
+      "attempt": 0,
+      "hand": [
+        59438930,
+        56651978,
+        70088809,
+        64491754,
+        59438930
+      ],
+      "seed": 261119000,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "two_bosses",
+      "decisions": 74
+    },
+    {
+      "family": "elf-regina-par",
+      "attempt": 1,
+      "hand": [
+        97268402,
+        70088809,
+        64491754,
+        94145021,
+        56651978
+      ],
+      "seed": 261119001,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "two_bosses",
+      "decisions": 70
+    },
+    {
+      "family": "elf-regina-par",
+      "attempt": 2,
+      "hand": [
+        70088809,
+        64491754,
+        70088809,
+        70088809,
+        56651978
+      ],
+      "seed": 261119002,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "two_bosses",
+      "decisions": 70
+    },
+    {
+      "family": "elf-regina-par",
+      "attempt": 3,
+      "hand": [
+        56651978,
+        70088809,
+        59438930,
+        14558127,
+        64491754
+      ],
+      "seed": 261119003,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "two_bosses",
+      "decisions": 74
+    },
+    {
+      "family": "tune-cue",
+      "attempt": 0,
+      "hand": [
+        14558127,
+        16387555,
+        59438930,
+        14558127,
+        94145021
+      ],
+      "seed": 261120000,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "tune-cue",
+      "decisions": 62
+    },
+    {
+      "family": "tune-cue",
+      "attempt": 1,
+      "hand": [
+        52038441,
+        16387555,
+        70088809,
+        23434538,
+        52038441
+      ],
+      "seed": 261120001,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "tune-cue",
+      "decisions": 67
+    },
+    {
+      "family": "tune-cue",
+      "attempt": 2,
+      "hand": [
+        59438930,
+        59438930,
+        94145021,
+        16387555,
+        52038441
+      ],
+      "seed": 261120002,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "tune-cue",
+      "decisions": 62
+    },
+    {
+      "family": "tune-cue",
+      "attempt": 3,
+      "hand": [
+        16387555,
+        23434538,
+        97268402,
+        97268402,
+        70088809
+      ],
+      "seed": 261120003,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "tune-cue",
+      "decisions": 67
+    },
+    {
+      "family": "tune-reco",
+      "attempt": 0,
+      "hand": [
+        59438930,
+        89392810,
+        59438930,
+        23434538,
+        52038441
+      ],
+      "seed": 261121000,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "tune-reco",
+      "decisions": 72
+    },
+    {
+      "family": "tune-reco",
+      "attempt": 1,
+      "hand": [
+        89392810,
+        59438930,
+        59438930,
+        14558127,
+        70088809
+      ],
+      "seed": 261121001,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "tune-reco",
+      "decisions": 67
+    },
+    {
+      "family": "tune-reco",
+      "attempt": 2,
+      "hand": [
+        97268402,
+        23434538,
+        89392810,
+        14558127,
+        14558127
+      ],
+      "seed": 261121002,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "tune-reco",
+      "decisions": 73
+    },
+    {
+      "family": "tune-reco",
+      "attempt": 3,
+      "hand": [
+        52038441,
+        89392810,
+        70088809,
+        59438930,
+        52038441
+      ],
+      "seed": 261121003,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "tune-reco",
+      "decisions": 67
+    },
+    {
+      "family": "tune-sync",
+      "attempt": 0,
+      "hand": [
+        78058681,
+        97268402,
+        14558127,
+        14558127,
+        14558127
+      ],
+      "seed": 261122000,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "tune-sync",
+      "decisions": 71
+    },
+    {
+      "family": "tune-sync",
+      "attempt": 1,
+      "hand": [
+        59438930,
+        59438930,
+        52038441,
+        78058681,
+        52038441
+      ],
+      "seed": 261122001,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "tune-sync",
+      "decisions": 69
+    },
+    {
+      "family": "tune-sync",
+      "attempt": 2,
+      "hand": [
+        14558127,
+        59438930,
+        94145021,
+        78058681,
+        14558127
+      ],
+      "seed": 261122002,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "tune-sync",
+      "decisions": 70
+    },
+    {
+      "family": "tune-sync",
+      "attempt": 3,
+      "hand": [
+        59438930,
+        23434538,
+        94145021,
+        94145021,
+        78058681
+      ],
+      "seed": 261122003,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "tune-sync",
+      "decisions": 74
+    },
+    {
+      "family": "tune-stone-sweeper",
+      "attempt": 0,
+      "hand": [
+        59438930,
+        97268402,
+        59438930,
+        97268402,
+        72323266
+      ],
+      "seed": 261123000,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "tune-stone-sweeper",
+      "decisions": 72
+    },
+    {
+      "family": "tune-stone-sweeper",
+      "attempt": 1,
+      "hand": [
+        59438930,
+        72323266,
+        52038441,
+        97268402,
+        97268402
+      ],
+      "seed": 261123001,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "tune-stone-sweeper",
+      "decisions": 72
+    },
+    {
+      "family": "tune-stone-sweeper",
+      "attempt": 2,
+      "hand": [
+        59438930,
+        52038441,
+        52038441,
+        59438930,
+        72323266
+      ],
+      "seed": 261123002,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "tune-stone-sweeper",
+      "decisions": 71
+    },
+    {
+      "family": "tune-stone-sweeper",
+      "attempt": 3,
+      "hand": [
+        70088809,
+        72323266,
+        59438930,
+        59438930,
+        52038441
+      ],
+      "seed": 261123003,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "tune-stone-sweeper",
+      "decisions": 71
+    },
+    {
+      "family": "tune-juke-veiler",
+      "attempt": 0,
+      "hand": [
+        14558127,
+        94145021,
+        14558127,
+        97268402,
+        14442329
+      ],
+      "seed": 261124000,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "tune-juke-veiler",
+      "decisions": 54
+    },
+    {
+      "family": "tune-juke-veiler",
+      "attempt": 1,
+      "hand": [
+        97268402,
+        94145021,
+        52038441,
+        14442329,
+        14558127
+      ],
+      "seed": 261124001,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "tune-juke-veiler",
+      "decisions": 54
+    },
+    {
+      "family": "tune-juke-veiler",
+      "attempt": 2,
+      "hand": [
+        70088809,
+        14442329,
+        97268402,
+        70088809,
+        94145021
+      ],
+      "seed": 261124002,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "tune-juke-veiler",
+      "decisions": 49
+    },
+    {
+      "family": "tune-juke-veiler",
+      "attempt": 3,
+      "hand": [
+        14558127,
+        14442329,
+        97268402,
+        14558127,
+        23434538
+      ],
+      "seed": 261124003,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "tune-juke-veiler",
+      "decisions": 62
+    },
+    {
+      "family": "mixed-rukina-cue",
+      "attempt": 0,
+      "hand": [
+        13597785,
+        94145021,
+        23434538,
+        70088809,
+        16387555
+      ],
+      "seed": 261125000,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "mixed-rukina-cue",
+      "decisions": 150
+    },
+    {
+      "family": "mixed-rukina-cue",
+      "attempt": 1,
+      "hand": [
+        97268402,
+        13597785,
+        16387555,
+        70088809,
+        70088809
+      ],
+      "seed": 261125001,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "mixed-rukina-cue",
+      "decisions": 132
+    },
+    {
+      "family": "mixed-rukina-cue",
+      "attempt": 2,
+      "hand": [
+        16387555,
+        14558127,
+        14558127,
+        70088809,
+        13597785
+      ],
+      "seed": 261125002,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "mixed-rukina-cue",
+      "decisions": 135
+    },
+    {
+      "family": "mixed-rukina-cue",
+      "attempt": 3,
+      "hand": [
+        70088809,
+        13597785,
+        70088809,
+        70088809,
+        16387555
+      ],
+      "seed": 261125003,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "mixed-rukina-cue",
+      "decisions": 131
+    },
+    {
+      "family": "mixed-reco-spirit-ash",
+      "attempt": 0,
+      "hand": [
+        70088809,
+        12375297,
+        94145021,
+        89392810,
+        97268402
+      ],
+      "seed": 261126000,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "crystal-wing",
+      "decisions": 144
+    },
+    {
+      "family": "mixed-reco-spirit-ash",
+      "attempt": 1,
+      "hand": [
+        23434538,
+        12375297,
+        52038441,
+        52038441,
+        89392810
+      ],
+      "seed": 261126001,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "crystal-wing",
+      "decisions": 163
+    },
+    {
+      "family": "mixed-reco-spirit-ash",
+      "attempt": 2,
+      "hand": [
+        23434538,
+        52038441,
+        12375297,
+        89392810,
+        97268402
+      ],
+      "seed": 261126002,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "crystal-wing",
+      "decisions": 164
+    },
+    {
+      "family": "mixed-reco-spirit-ash",
+      "attempt": 3,
+      "hand": [
+        97268402,
+        89392810,
+        12375297,
+        97268402,
+        97268402
+      ],
+      "seed": 261126003,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "crystal-wing",
+      "decisions": 144
+    },
+    {
+      "family": "mixed-cue-spirit",
+      "attempt": 0,
+      "hand": [
+        14558127,
+        16387555,
+        14558127,
+        12375297,
+        94145021
+      ],
+      "seed": 261127000,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "crystal-wing",
+      "decisions": 122
+    },
+    {
+      "family": "mixed-cue-spirit",
+      "attempt": 1,
+      "hand": [
+        12375297,
+        16387555,
+        14558127,
+        97268402,
+        14558127
+      ],
+      "seed": 261127001,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "crystal-wing",
+      "decisions": 124
+    },
+    {
+      "family": "mixed-cue-spirit",
+      "attempt": 2,
+      "hand": [
+        12375297,
+        70088809,
+        16387555,
+        59438930,
+        59438930
+      ],
+      "seed": 261127002,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "crystal-wing",
+      "decisions": 126
+    },
+    {
+      "family": "mixed-cue-spirit",
+      "attempt": 3,
+      "hand": [
+        16387555,
+        12375297,
+        52038441,
+        14558127,
+        14558127
+      ],
+      "seed": 261127003,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "crystal-wing",
+      "decisions": 122
+    },
+    {
+      "family": "jj-cue-reco",
+      "attempt": 0,
+      "hand": [
+        70088809,
+        23434538,
+        52038441,
+        89392810,
+        16387555
+      ],
+      "seed": 261128000,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "cue-reco-jj-zaren",
+      "decisions": 104
+    },
+    {
+      "family": "jj-cue-reco",
+      "attempt": 1,
+      "hand": [
+        97268402,
+        23434538,
+        89392810,
+        16387555,
+        52038441
+      ],
+      "seed": 261128001,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "cue-reco-jj-zaren",
+      "decisions": 105
+    },
+    {
+      "family": "jj-cue-reco",
+      "attempt": 2,
+      "hand": [
+        94145021,
+        16387555,
+        52038441,
+        89392810,
+        94145021
+      ],
+      "seed": 261128002,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "cue-reco-jj-zaren",
+      "decisions": 96
+    },
+    {
+      "family": "jj-cue-reco",
+      "attempt": 3,
+      "hand": [
+        97268402,
+        23434538,
+        16387555,
+        70088809,
+        89392810
+      ],
+      "seed": 261128003,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "cue-reco-jj-zaren",
+      "decisions": 104
+    },
+    {
+      "family": "jj-cue-mix",
+      "attempt": 0,
+      "hand": [
+        52038441,
+        16387555,
+        97268402,
+        16509007,
+        97268402
+      ],
+      "seed": 261129000,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "cue-mix-jj-track",
+      "decisions": 91
+    },
+    {
+      "family": "jj-cue-mix",
+      "attempt": 1,
+      "hand": [
+        97268402,
+        16387555,
+        97268402,
+        97268402,
+        16509007
+      ],
+      "seed": 261129001,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "cue-mix-jj-track",
+      "decisions": 90
+    },
+    {
+      "family": "jj-cue-mix",
+      "attempt": 2,
+      "hand": [
+        97268402,
+        94145021,
+        16387555,
+        59438930,
+        16509007
+      ],
+      "seed": 261129002,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "cue-mix-jj-track",
+      "decisions": 94
+    },
+    {
+      "family": "jj-cue-mix",
+      "attempt": 3,
+      "hand": [
+        52038441,
+        94145021,
+        16509007,
+        16387555,
+        52038441
+      ],
+      "seed": 261129003,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "cue-mix-jj-track",
+      "decisions": 90
+    },
+    {
+      "family": "jj-cue-rotary",
+      "attempt": 0,
+      "hand": [
+        70088809,
+        70088809,
+        17209452,
+        70088809,
+        16387555
+      ],
+      "seed": 261130000,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "cue-rotary-jj-zaren",
+      "decisions": 93
+    },
+    {
+      "family": "jj-cue-rotary",
+      "attempt": 1,
+      "hand": [
+        94145021,
+        16387555,
+        70088809,
+        17209452,
+        70088809
+      ],
+      "seed": 261130001,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "cue-rotary-jj-zaren",
+      "decisions": 93
+    },
+    {
+      "family": "jj-cue-rotary",
+      "attempt": 2,
+      "hand": [
+        70088809,
+        16387555,
+        17209452,
+        97268402,
+        23434538
+      ],
+      "seed": 261130002,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "cue-rotary-jj-zaren",
+      "decisions": 102
+    },
+    {
+      "family": "jj-cue-rotary",
+      "attempt": 3,
+      "hand": [
+        17209452,
+        16387555,
+        94145021,
+        97268402,
+        59438930
+      ],
+      "seed": 261130003,
+      "teacher_passed": true,
+      "failure": null,
+      "chosen_variant": "cue-rotary-jj-zaren",
+      "decisions": 97
+    }
+  ],
+  "lua_errors": 0,
+  "model_evaluated": false,
+  "frozen_before_any_model_evaluation": true,
+  "code": {
+    "production_root": "/home/hatk8/projects/yugioh-ai/experiments/continuous-elfnotes-openings-v2-20261109",
+    "snapshot_hashes_sha256": "53598351b611ffb961c6a45ee00bb2e1cf610ae1094a36f200f8509e719cf0c9",
+    "all_opening_witness": "54ea7dc1dad12a1981d9daefe3372b8852e6cbb2a0b6f275e78f968c445c0ea4",
+    "all_opening_cases": "5cbe208d9bc27a9822f3f25b3c068eaa5667f618f1338cec9ae2f5fe804221de",
+    "center_placement": "3e96241095487fb48426099d774b7813cee348fc282dacbde0ced9af2d7abbba",
+    "builder_sha256": "c069bddac64753cf80ab6763a0a30a65ad0980402f67eb998663d6d312352e88"
+  }
+}

@@ -1,0 +1,15 @@
+{
+ "name": "A-IM-N",
+ "engine_run": 7,
+ "replayed_engine_run": 2,
+ "mismatch": null,
+ "failure": null,
+ "reproduced_steps": 173,
+ "of": 173,
+ "reason": "first turn-3 decision",
+ "final_equal": true,
+ "checkpoints_equal": true,
+ "game_over_equal": true,
+ "observations_match": true,
+ "lua_errors": 0
+}

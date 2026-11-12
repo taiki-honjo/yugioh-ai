@@ -1,0 +1,295 @@
+{
+ "status": "fixed_before_model_results",
+ "existing": {
+  "manifest": "/home/hatk8/projects/yugioh-ai/experiments/artmage-basic-openings-batch-20261110/data/manifest.json",
+  "sha256": "0a97de6dd19f8161e5381874fc4caf0cc9b4847c5df3b508d73b9183f969b7d8"
+ },
+ "pairs": [
+  {
+   "pair": "A1",
+   "group": "A",
+   "seed": 1112001,
+   "hands": [
+    {
+     "name": "A1-A-nocost",
+     "variant": "A-nocost",
+     "hand": [
+      1122030,
+      14558127,
+      14558127,
+      23434538,
+      49036338
+     ],
+     "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/demos/A1-A-nocost/observations.npz",
+     "sha256": "4596875f7a02b2eafb9f19069ac9d1f49efae17756ec9ca56bf055639e39ec00",
+     "record_sha256": "f7fd1896e682224de09652e1c1317e09296852d53fa2cc65cc0020172fda4157"
+    },
+    {
+     "name": "A1-A-cost",
+     "variant": "A-cost",
+     "hand": [
+      1122030,
+      14558127,
+      14558127,
+      23434538,
+      97045737
+     ],
+     "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/demos/A1-A-cost/observations.npz",
+     "sha256": "f1b80e57f50952ae29c6b64432aabbd40f02a5b2f509f616612542bad2fc02ad",
+     "record_sha256": "e3b14690f155dec1da21f81bc14cc76693e1435404599226f3e663b175d62ef7"
+    }
+   ]
+  },
+  {
+   "pair": "A2",
+   "group": "A",
+   "seed": 1112002,
+   "hands": [
+    {
+     "name": "A2-A-nocost",
+     "variant": "A-nocost",
+     "hand": [
+      1122030,
+      73642296,
+      38814750,
+      59438930,
+      14558127
+     ],
+     "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/demos/A2-A-nocost/observations.npz",
+     "sha256": "69d1455cec71fb13c12fc55d2f72f019b440f19bae6cfdd19a3d5a1bc1d365d5",
+     "record_sha256": "3808120f64f804d7eb8a7ec897255c11b7b057ea5ed0491378f5b28f3749b194"
+    },
+    {
+     "name": "A2-A-cost",
+     "variant": "A-cost",
+     "hand": [
+      1122030,
+      73642296,
+      38814750,
+      59438930,
+      25311006
+     ],
+     "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/demos/A2-A-cost/observations.npz",
+     "sha256": "3f744c2f2145ed71e25fb1d9be69e956c9b8c13e94213c249e482ec190f3c713",
+     "record_sha256": "bd8990fef8e1ac50c80b74d963f0a0df44480e46034b5b757ac6f2714a24c249"
+    }
+   ]
+  },
+  {
+   "pair": "A3",
+   "group": "A",
+   "seed": 1112003,
+   "hands": [
+    {
+     "name": "A3-A-nocost",
+     "variant": "A-nocost",
+     "hand": [
+      1122030,
+      14558127,
+      73642296,
+      49036338,
+      38814750
+     ],
+     "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/demos/A3-A-nocost/observations.npz",
+     "sha256": "ac3145117f0498a119c1542adbc9b174523f6e3e331fe3851d670da77055ee92",
+     "record_sha256": "5394b6580a12a3070a1ad9912de150a683cfa45b15ac2686468c5a517312a433"
+    },
+    {
+     "name": "A3-A-cost",
+     "variant": "A-cost",
+     "hand": [
+      1122030,
+      14558127,
+      73642296,
+      49036338,
+      10045474
+     ],
+     "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/demos/A3-A-cost/observations.npz",
+     "sha256": "ed91971fd8c91b4a818c9108e2e425a6700e3adf87178c74044d4dd0748b8de0",
+     "record_sha256": "f761d4761339198ff31a6cb902383ff2b8e328e320b5d86c2c88aff13b79c1b6"
+    }
+   ]
+  },
+  {
+   "pair": "A4",
+   "group": "A",
+   "seed": 1112004,
+   "hands": [
+    {
+     "name": "A4-A-nocost",
+     "variant": "A-nocost",
+     "hand": [
+      1122030,
+      14558127,
+      23434538,
+      59438930,
+      73642296
+     ],
+     "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/demos/A4-A-nocost/observations.npz",
+     "sha256": "85d091f3d2a56ed9f1a2220e98fb27db0c95c22d76fe028fe0bce3ff5fea28b1",
+     "record_sha256": "339bf65514e366a9f9ff2fedd2d75aefde42cf1b783cf9e316b2cefe03d8197c"
+    },
+    {
+     "name": "A4-A-cost",
+     "variant": "A-cost",
+     "hand": [
+      1122030,
+      14558127,
+      23434538,
+      59438930,
+      10045474
+     ],
+     "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/demos/A4-A-cost/observations.npz",
+     "sha256": "6babcc51d6806f9c3492d76089a223d0d147deaff2364e8f73314547ffc2948f",
+     "record_sha256": "11514c726265291c214078c5c1896fb16bd7da3ab9d8a22f2cee6faee5b36bf7"
+    }
+   ]
+  },
+  {
+   "pair": "B1",
+   "group": "B",
+   "seed": 1112005,
+   "hands": [
+    {
+     "name": "B1-B-1cost",
+     "variant": "B-1cost",
+     "hand": [
+      74733322,
+      10045474,
+      23434538,
+      49036338,
+      59438930
+     ],
+     "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/demos/B1-B-1cost/observations.npz",
+     "sha256": "8d849ef72db0cdda1c58989c0187ad7d0b2b689d8a9ee819dd3ddb36a516379a",
+     "record_sha256": "12463e0a605f6d02c60bf6dc3c336b1d5635d6d15286506a04a04e4d0b265d17"
+    },
+    {
+     "name": "B1-B-2cost",
+     "variant": "B-2cost",
+     "hand": [
+      74733322,
+      10045474,
+      23434538,
+      49036338,
+      25311006
+     ],
+     "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/demos/B1-B-2cost/observations.npz",
+     "sha256": "e3e43b3a9c89873ffac184ea324cecfd78fef6a1ef5c9b665dae1ce10adaad45",
+     "record_sha256": "d0321ea2192661a1c84b2385bdb64f88a9ae96ec676db951bc71c94d9b158b6a"
+    }
+   ]
+  },
+  {
+   "pair": "B2",
+   "group": "B",
+   "seed": 1112006,
+   "hands": [
+    {
+     "name": "B2-B-1cost",
+     "variant": "B-1cost",
+     "hand": [
+      74733322,
+      97045737,
+      14558127,
+      38814750,
+      73642296
+     ],
+     "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/demos/B2-B-1cost/observations.npz",
+     "sha256": "fe7acacbbfce8cc8b936f8d236a8a1129b2366e9a2787e23b380f6096a411e8e",
+     "record_sha256": "4b34d744bda1c6fc41c60f5fbcd9c7efd378e137968b2989f33f6804f1ba1fc0"
+    },
+    {
+     "name": "B2-B-2cost",
+     "variant": "B-2cost",
+     "hand": [
+      74733322,
+      97045737,
+      14558127,
+      38814750,
+      97045737
+     ],
+     "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/demos/B2-B-2cost/observations.npz",
+     "sha256": "f6ed1d27798849790f0dc8bbbc03cd5afdba71b39429ac176f5f02c0c984019e",
+     "record_sha256": "f056f703042a7dfda8b5c08dd39983478746b677930c650b05dc80285a8c311f"
+    }
+   ]
+  },
+  {
+   "pair": "B3",
+   "group": "B",
+   "seed": 1112007,
+   "hands": [
+    {
+     "name": "B3-B-1cost",
+     "variant": "B-1cost",
+     "hand": [
+      74733322,
+      25311006,
+      73642296,
+      59438930,
+      14558127
+     ],
+     "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/demos/B3-B-1cost/observations.npz",
+     "sha256": "6f0355dda3211b69f842dbc8b03e7aac92c0f9d1c41a7381dee669648b40060b",
+     "record_sha256": "950551fdcd39d049947f234cdbcecff8807ec030ca814698e58b10842118706e"
+    },
+    {
+     "name": "B3-B-2cost",
+     "variant": "B-2cost",
+     "hand": [
+      74733322,
+      25311006,
+      73642296,
+      59438930,
+      10045474
+     ],
+     "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/demos/B3-B-2cost/observations.npz",
+     "sha256": "3bfb23a373b7de8e0c644b2cf6d6c0b9e2108d0eb22f4c6b0ae7244f79627cc3",
+     "record_sha256": "f01d21345ddf72b65ed956078e767556319fe402aa2661f664682a84d66dcedd"
+    }
+   ]
+  },
+  {
+   "pair": "B4",
+   "group": "B",
+   "seed": 1112008,
+   "hands": [
+    {
+     "name": "B4-B-1cost",
+     "variant": "B-1cost",
+     "hand": [
+      74733322,
+      10045474,
+      14558127,
+      14558127,
+      38814750
+     ],
+     "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/demos/B4-B-1cost/observations.npz",
+     "sha256": "54f1a687207a1fd6388952126e41428a6adb00f5eff7401c4226d08a1ec0c1ba",
+     "record_sha256": "68e40d624960e2ef726d1540c5b1255b2a20fa6c9f51a0bbe6bd5f1e7e7c40a4"
+    },
+    {
+     "name": "B4-B-2cost",
+     "variant": "B-2cost",
+     "hand": [
+      74733322,
+      10045474,
+      14558127,
+      14558127,
+      10045474
+     ],
+     "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/demos/B4-B-2cost/observations.npz",
+     "sha256": "17d4bbc3bfcc7dbf2ab6d94561b571d40a2a2806e43f4514c71db4f62e89ed2b",
+     "record_sha256": "700bb79b0ed6e97dfac339fe30a2ca56b602c9a2df9bddf09cfd84c424a766b9"
+    }
+   ]
+  }
+ ],
+ "excluded": [],
+ "groups_with_pairs": [
+  "A",
+  "B"
+ ],
+ "note": "Validation pairs are not listed and have no observation arrays."
+}

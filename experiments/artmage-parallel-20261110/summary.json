@@ -1,0 +1,864 @@
+{
+ "registration_sha256": "9b41492f21fc26da5a357aff8bb15760c161137eabfe9bbda4523bd88f0f6a30",
+ "engine_runs": {
+  "used": 8,
+  "cap": 8,
+  "statuses": [
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok",
+   "ok"
+  ]
+ },
+ "regression": {
+  "results": [
+   {
+    "case_id": "Artmage-g08-p0",
+    "passed": true,
+    "original_passed": true,
+    "reason": "goal_reached",
+    "original_reason": "goal_reached",
+    "goal_equal": true,
+    "steps": 97,
+    "original_steps": 97,
+    "first_differing_step": null,
+    "differing_keys": [],
+    "final_equal": true,
+    "events_equal": true,
+    "identical": true
+   },
+   {
+    "case_id": "Artmage-g09-p0",
+    "passed": true,
+    "original_passed": true,
+    "reason": "goal_reached",
+    "original_reason": "goal_reached",
+    "goal_equal": true,
+    "steps": 136,
+    "original_steps": 136,
+    "first_differing_step": null,
+    "differing_keys": [],
+    "final_equal": true,
+    "events_equal": true,
+    "identical": true
+   },
+   {
+    "case_id": "Artmage-g10-p0",
+    "passed": true,
+    "original_passed": true,
+    "reason": "goal_reached",
+    "original_reason": "goal_reached",
+    "goal_equal": true,
+    "steps": 97,
+    "original_steps": 97,
+    "first_differing_step": null,
+    "differing_keys": [],
+    "final_equal": true,
+    "events_equal": true,
+    "identical": true
+   },
+   {
+    "case_id": "Artmage-g11-p0",
+    "passed": true,
+    "original_passed": true,
+    "reason": "goal_reached",
+    "original_reason": "goal_reached",
+    "goal_equal": true,
+    "steps": 136,
+    "original_steps": 136,
+    "first_differing_step": null,
+    "differing_keys": [],
+    "final_equal": true,
+    "events_equal": true,
+    "identical": true
+   }
+  ],
+  "lua_errors": 0,
+  "all_identical": true,
+  "passed": 4
+ },
+ "demos": {
+  "C1": {
+   "condition": "C1",
+   "label": "wsMMwXxE: 襲撃 → メディウス、魔法罠コスト1枚（無限泡影）、ファインメルトのドローをメディウス②で戻す",
+   "reference": "https://duel-simulator.miyauchidp.dev/replay/wsMMwXxE",
+   "hand": [
+    1122030,
+    10045474,
+    14558127,
+    23434538,
+    73642296
+   ],
+   "seed": 1110001,
+   "engine_run": 5,
+   "script_completed": true,
+   "failure": null,
+   "reason": "reached_turn3",
+   "lua_errors": 0,
+   "own_turn_end": {
+    "turn": 2,
+    "phase": 1,
+    "monsters": [
+     27184601,
+     31822037,
+     34541940,
+     74631897,
+     97434754,
+     97556336
+    ],
+    "monsters_face_up": [
+     27184601,
+     31822037,
+     34541940,
+     74631897,
+     97434754,
+     97556336
+    ],
+    "spell_trap": [
+     1122030,
+     23599634,
+     74733322
+    ],
+    "spell_trap_face_up": [
+     1122030,
+     74733322
+    ],
+    "hand": [
+     14558127,
+     23434538,
+     70488851
+    ],
+    "graveyard": [
+     1122030,
+     10045474,
+     23829452,
+     60946049,
+     74011784
+    ],
+    "banished": [
+     36709484
+    ],
+    "extra_face_up": [
+     17473466
+    ],
+    "deck_count": 0,
+    "lp": null,
+    "opponent_hand_count": 5
+   },
+   "next_own_turn_start": {
+    "turn": 3,
+    "phase": 1,
+    "monsters": [
+     4993187,
+     27184601,
+     34541940,
+     74631897,
+     97434754
+    ],
+    "monsters_face_up": [
+     4993187,
+     27184601,
+     34541940,
+     74631897,
+     97434754
+    ],
+    "spell_trap": [
+     1122030,
+     23599634,
+     74733322
+    ],
+    "spell_trap_face_up": [
+     1122030,
+     74733322
+    ],
+    "hand": [
+     14558127,
+     23434538,
+     70488851
+    ],
+    "graveyard": [
+     1122030,
+     10045474,
+     23829452,
+     31822037,
+     60946049,
+     74011784
+    ],
+    "banished": [
+     36709484,
+     97556336
+    ],
+    "extra_face_up": [
+     17473466
+    ],
+    "deck_count": 0,
+    "lp": null,
+    "opponent_hand_count": 5
+   },
+   "reference_check": {
+    "monsters": {
+     "expected": [
+      74631897,
+      27184601,
+      97434754,
+      34541940,
+      97556336,
+      31822037
+     ],
+     "present": true,
+     "missing": []
+    },
+    "field": true,
+    "set_spell_trap": {
+     "expected": [
+      23599634
+     ],
+     "present": true,
+     "missing": []
+    },
+    "face_up_spell_trap": {
+     "expected": [
+      1122030
+     ],
+     "present": true,
+     "missing": []
+    },
+    "opponent_turn_reference": "獄神使② → W:Pファンシーボール（獄神使＋メディウス）"
+   },
+   "fainmelt_draw": [
+    70488851
+   ],
+   "medius_cost": [
+    "屋敷わらし"
+   ],
+   "opponent_turn": {
+    "scripted_steps": [
+     138,
+     141,
+     142,
+     143,
+     144,
+     145
+    ],
+    "offered_activations": [
+     {
+      "code": 4993187,
+      "name": "Ｗ：Ｐファンシーボール",
+      "effect_index": 1,
+      "windows": 3
+     },
+     {
+      "code": 23434538,
+      "name": "増殖するＧ",
+      "effect_index": 0,
+      "windows": 11
+     },
+     {
+      "code": 23599634,
+      "name": "アルトメギア・メセナ－覚醒－",
+      "effect_index": 0,
+      "windows": 7
+     },
+     {
+      "code": 31822037,
+      "name": "無垢なる祈りの獄神使",
+      "effect_index": 1,
+      "windows": 1
+     },
+     {
+      "code": 74631897,
+      "name": "神芸なる知恵の乙女",
+      "effect_index": 1,
+      "windows": 11
+     },
+     {
+      "code": 97434754,
+      "name": "神芸学徒 リテラ",
+      "effect_index": 1,
+      "windows": 3
+     }
+    ]
+   },
+   "quirks": {
+    "skipped_optional": [
+     [
+      "None",
+      36709484
+     ],
+     [
+      "None",
+      34541940
+     ]
+    ],
+    "optional_entries_matched_position_prompt": [
+     40,
+     98
+    ],
+    "adapter_changed_positions": [
+     [
+      105,
+      "神芸学徒 リテラ",
+      4
+     ],
+     [
+      122,
+      "無垢なる者 メディウス",
+      4
+     ]
+    ]
+   },
+   "decisions": {
+    "total": 113,
+    "own_turn": 97,
+    "opponent_turn": 16,
+    "own_turn_position_prompts": 9,
+    "kinds_own_turn": {
+     "default-pass": 35,
+     "plan": 38,
+     "default-place": 12,
+     "default-position": 7,
+     "group": 2,
+     "group-pick": 2,
+     "rule": 1
+    },
+    "kinds_opponent_turn": {
+     "default-pass": 10,
+     "plan": 4,
+     "default-finish": 1,
+     "default-place": 1
+    },
+    "proposed_loss_indices": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     16,
+     17,
+     18,
+     20,
+     21,
+     22,
+     23,
+     24,
+     25,
+     27,
+     28,
+     29,
+     30,
+     32,
+     33,
+     34,
+     35,
+     36,
+     37,
+     38,
+     39,
+     40,
+     41,
+     42,
+     43,
+     44,
+     45,
+     47,
+     48,
+     49,
+     50,
+     51,
+     52,
+     53,
+     54,
+     55,
+     56,
+     57,
+     58,
+     59,
+     60,
+     61,
+     62,
+     63,
+     64,
+     65,
+     66,
+     67,
+     68,
+     69,
+     70,
+     71,
+     73,
+     74,
+     75,
+     76,
+     78,
+     79,
+     80,
+     81,
+     82,
+     83,
+     85,
+     86,
+     87,
+     88,
+     89,
+     91,
+     92,
+     93,
+     94,
+     95,
+     96,
+     99,
+     101,
+     102,
+     103,
+     104,
+     105
+    ],
+    "proposed_loss_count": 94
+   },
+   "observations": {
+    "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-parallel-20261110/demos/C1/observations.npz",
+    "sha256": "8425bd1cf43608f417c0fca9bdf2f00fa7fe3cd95463e31460ab622307cd935d",
+    "decisions": 113,
+    "decisions_with_choice": 113,
+    "own_turn": 97,
+    "opponent_turn": 16
+   },
+   "replay": {
+    "engine_run": 6,
+    "reproduced": "160/160",
+    "mismatch": null,
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "observations_match": true,
+    "lua_errors": 0
+   },
+   "files": {
+    "demos/C1/observations.npz": "8425bd1cf43608f417c0fca9bdf2f00fa7fe3cd95463e31460ab622307cd935d",
+    "demos/C1/record.json": "41fe4c4fc1c0e956ac983202676afeb23b5cdef4413c54c0d699d41b63776d84",
+    "demos/C1/replay.json": "4f8a870b7e55bcc61dd54eec728422bd2677f3d7452dac527986dc93af22fae0"
+   }
+  },
+  "C2": {
+   "condition": "C2",
+   "label": "XUS4azXa: 学都＋魔法罠コスト1枚（無限泡影）",
+   "reference": "https://duel-simulator.miyauchidp.dev/replay/XUS4azXa",
+   "hand": [
+    74733322,
+    10045474,
+    14558127,
+    23434538,
+    73642296
+   ],
+   "seed": 1110002,
+   "engine_run": 7,
+   "script_completed": true,
+   "failure": null,
+   "reason": "reached_turn3",
+   "lua_errors": 0,
+   "own_turn_end": {
+    "turn": 2,
+    "phase": 1,
+    "monsters": [
+     31822037,
+     34541940,
+     74631897,
+     97434754,
+     97556336
+    ],
+    "monsters_face_up": [
+     31822037,
+     34541940,
+     74631897,
+     97434754,
+     97556336
+    ],
+    "spell_trap": [
+     1122030,
+     23599634,
+     74733322
+    ],
+    "spell_trap_face_up": [
+     1122030,
+     74733322
+    ],
+    "hand": [
+     14558127,
+     23434538,
+     44654994,
+     73642296
+    ],
+    "graveyard": [
+     10045474,
+     23829452,
+     36709484,
+     60946049,
+     74011784
+    ],
+    "banished": [],
+    "extra_face_up": [
+     17473466
+    ],
+    "deck_count": 0,
+    "lp": null,
+    "opponent_hand_count": 5
+   },
+   "next_own_turn_start": {
+    "turn": 3,
+    "phase": 1,
+    "monsters": [
+     31822037,
+     34541940,
+     74631897,
+     97434754,
+     97556336
+    ],
+    "monsters_face_up": [
+     31822037,
+     34541940,
+     74631897,
+     97434754,
+     97556336
+    ],
+    "spell_trap": [
+     1122030,
+     23599634,
+     74733322
+    ],
+    "spell_trap_face_up": [
+     1122030,
+     74733322
+    ],
+    "hand": [
+     14558127,
+     23434538,
+     44654994,
+     73642296
+    ],
+    "graveyard": [
+     10045474,
+     23829452,
+     36709484,
+     60946049,
+     74011784
+    ],
+    "banished": [],
+    "extra_face_up": [
+     17473466
+    ],
+    "deck_count": 0,
+    "lp": null,
+    "opponent_hand_count": 5
+   },
+   "reference_check": {
+    "monsters": {
+     "expected": [
+      74631897,
+      97434754,
+      97556336,
+      34541940,
+      31822037
+     ],
+     "present": true,
+     "missing": []
+    },
+    "field": true,
+    "set_spell_trap": {
+     "expected": [
+      23599634
+     ],
+     "present": true,
+     "missing": []
+    },
+    "face_up_spell_trap": {
+     "expected": [
+      1122030
+     ],
+     "present": true,
+     "missing": []
+    },
+    "opponent_turn_reference": "リプレイに相手ターンの操作なし"
+   },
+   "fainmelt_draw": [
+    44654994
+   ],
+   "medius_cost": [],
+   "opponent_turn": {
+    "scripted_steps": [],
+    "offered_activations": [
+     {
+      "code": 23434538,
+      "name": "増殖するＧ",
+      "effect_index": 0,
+      "windows": 8
+     },
+     {
+      "code": 23599634,
+      "name": "アルトメギア・メセナ－覚醒－",
+      "effect_index": 0,
+      "windows": 8
+     },
+     {
+      "code": 31822037,
+      "name": "無垢なる祈りの獄神使",
+      "effect_index": 1,
+      "windows": 2
+     },
+     {
+      "code": 74631897,
+      "name": "神芸なる知恵の乙女",
+      "effect_index": 1,
+      "windows": 8
+     },
+     {
+      "code": 97434754,
+      "name": "神芸学徒 リテラ",
+      "effect_index": 1,
+      "windows": 2
+     }
+    ]
+   },
+   "quirks": {
+    "skipped_optional": [
+     [
+      "None",
+      74011784
+     ],
+     [
+      "None",
+      23829452
+     ],
+     [
+      "None",
+      36709484
+     ],
+     [
+      "None",
+      34541940
+     ]
+    ],
+    "optional_entries_matched_position_prompt": [],
+    "adapter_changed_positions": [
+     [
+      35,
+      "神芸学徒 リテラ",
+      4
+     ],
+     [
+      103,
+      "無垢なる者 メディウス",
+      4
+     ]
+    ]
+   },
+   "decisions": {
+    "total": 100,
+    "own_turn": 92,
+    "opponent_turn": 8,
+    "own_turn_position_prompts": 7,
+    "kinds_own_turn": {
+     "default-pass": 31,
+     "plan": 34,
+     "default-place": 13,
+     "default-position": 7,
+     "group": 4,
+     "group-pick": 3
+    },
+    "kinds_opponent_turn": {
+     "default-pass": 8
+    },
+    "proposed_loss_indices": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21,
+     22,
+     23,
+     25,
+     26,
+     27,
+     28,
+     29,
+     30,
+     31,
+     32,
+     33,
+     34,
+     35,
+     36,
+     37,
+     38,
+     39,
+     41,
+     42,
+     43,
+     44,
+     45,
+     46,
+     47,
+     48,
+     49,
+     50,
+     51,
+     52,
+     53,
+     54,
+     55,
+     56,
+     57,
+     58,
+     59,
+     60,
+     62,
+     63,
+     64,
+     65,
+     66,
+     67,
+     68,
+     69,
+     70,
+     71,
+     73,
+     74,
+     75,
+     76,
+     77,
+     79,
+     80,
+     81,
+     82,
+     83,
+     84,
+     85,
+     86,
+     88,
+     89,
+     90,
+     91
+    ],
+    "proposed_loss_count": 85
+   },
+   "observations": {
+    "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-parallel-20261110/demos/C2/observations.npz",
+    "sha256": "41be0b84d1d45803b3afe66d1c279c6f5764fed6feb6a96c0837ddc9e2dceff4",
+    "decisions": 100,
+    "decisions_with_choice": 100,
+    "own_turn": 92,
+    "opponent_turn": 8
+   },
+   "replay": {
+    "engine_run": 8,
+    "reproduced": "140/140",
+    "mismatch": null,
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "observations_match": true,
+    "lua_errors": 0
+   },
+   "files": {
+    "demos/C2/observations.npz": "41be0b84d1d45803b3afe66d1c279c6f5764fed6feb6a96c0837ddc9e2dceff4",
+    "demos/C2/record.json": "7b6b5e633fef3662e1077390e6340eeb6cb97405de6e65307101158e87bdee0d",
+    "demos/C2/replay.json": "e2556f7e10e7d27a04056ae1ef185cde885c78fc0161dc7f4df974faa8eef64c"
+   }
+  }
+ },
+ "split_check": true,
+ "md_check": {
+  "source": "https://game8.jp/yugioh-masterduel/423063",
+  "saved_copy": "/home/hatk8/projects/yugioh-ai/experiments/artmage-parallel-20261110/snapshot/md-check/game8-423063.html",
+  "saved_sha256": "ccc2610b52c2289da39b91378ada0c0f209615e6167d85344919f263176aa4a2",
+  "source_last_updated": "2026.11.10  11:57",
+  "list_sizes": {
+   "forbidden": 123,
+   "limited": 91,
+   "semi_limited": 39
+  },
+  "recipe_cards": 36,
+  "listed": [
+   {
+    "code": 23434538,
+    "name": "増殖するＧ",
+    "copies": 1,
+    "listed_as": [
+     "limited"
+    ],
+    "allowed": 1,
+    "ok": true
+   },
+   {
+    "code": 38814750,
+    "name": "ＰＳＹフレームギア・γ",
+    "copies": 1,
+    "listed_as": [
+     "limited"
+    ],
+    "allowed": 1,
+    "ok": true
+   }
+  ],
+  "over_limit": [],
+  "latest_change_2026_11_05": [
+   "GO－DDD神零王ゼロゴッド・レイジ",
+   "キラーチューン・ミクス",
+   "キラーチューン・レコ",
+   "マジック・キャンセラー",
+   "早すぎた埋葬",
+   "星辰響手プリクル",
+   "燿ける聖詩の獄神精",
+   "神殿を守る者",
+   "耀聖の波詩ディーナ"
+  ],
+  "latest_change_in_recipe": [],
+  "latest_change_missing_from_full_lists": [
+   "GO－DDD神零王ゼロゴッド・レイジ",
+   "マジック・キャンセラー",
+   "星辰響手プリクル",
+   "燿ける聖詩の獄神精",
+   "神殿を守る者",
+   "耀聖の波詩ディーナ"
+  ],
+  "passed_against_this_source": true,
+  "scope": "Secondary web source (game8), not the in-game official list. Card-pool existence in MD is not checked by this list."
+ },
+ "code": {
+  "artmage_entry.py": "ca47f56d29431b48d60337de6dcc6ce23d524fba31cbbbdce31e6d7399b78e0f",
+  "artmage_pins.py": "10c4e053d05f44498cff77c45301a3fb5222c7598a658decc52f4539fd96bde8",
+  "artmage_runs.py": "3e92492fd13e2b778752385b311ef5752b2fc6757cfd634bde7fe4e3c32388bc",
+  "artmage_teacher.py": "a126284eff7a2d7ef3c602ade0aa5f196f7ddea77333213c27a197ade21b78f3",
+  "md_check.py": "f459d622973b9048e2950cb2ccf6e3108ec540541cbb06b3df4a99986e92a3bf",
+  "reference_decode.py": "ea48d77ec52234684f182d8d07ddcafaf2704dfacf312437655e4457f47f88b9",
+  "split_check.py": "9c8997d87ba9b84b78964704765d6d1ce8d68e1b43ff2146cc5df39f9a31ed66",
+  "summarize.py": "2514c14b4e5fde1064ea1b808a8fc970a2084e95ed4a9d6e07de88bc341e73d4"
+ }
+}

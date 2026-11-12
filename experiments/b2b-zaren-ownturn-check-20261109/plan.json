@@ -1,0 +1,20 @@
+{
+  "date": "2026-11-09",
+  "engine_run_limit": 2,
+  "operations": [
+    "record",
+    "replay"
+  ],
+  "wrapper_sha256": "b1ef470fe079e7bcc18914c14bf149ba75252e09c02f7c6dfbdea9c6f2e87520",
+  "base_driver": "/home/hatk8/projects/yugioh-ai/experiments/b2b-ownturn-check-20261109/code/check_b2b_ownturn_20261109.py",
+  "base_driver_sha256": "730810b09a2dc88aa030654a3f75bacbefc108cadfa44c01c204d1a56e845ed2",
+  "case_id": "cue-reco-jj-zaren-g00-p0",
+  "seed": 151080,
+  "split": "train",
+  "route": "Trackmaker 4 + recruited Ash 3 -> Zaren 7; Zaren 7 + Cue 3 -> B2B 10; set Synchro",
+  "model_used": false,
+  "training": false,
+  "production_writes": false,
+  "master_duel_client_used": false,
+  "graveyard_hate_injected": false
+}

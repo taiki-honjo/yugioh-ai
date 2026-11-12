@@ -1,0 +1,203 @@
+{
+ "status": "registered_before_prepare_training_and_engine_runs",
+ "registered_jst": "2026-11-11T12:25:18+09:00",
+ "spec": {
+  "copy": "spec/artmage-scoped-response-adapter-plan-2026-11-11.md",
+  "sha256": "b53aa05f3e1546a83c10d12e0770ff47c02298907ab7bc5dafec77ea9666a4d3"
+ },
+ "scope_audit": {
+  "copy": "spec/artmage-response-scope-audit-2026-11-11.json",
+  "sha256": "62bad1de8570b577711aa724f82673bd4f6647825c4a564d1ceda46ddbc5eca0",
+  "reproduced": "audit_artmage_response_scope.py re-run to a new output: byte-identical (13 retention trajectories: 0 gated own decisions; S1/S2 targets gated)"
+ },
+ "frozen": {
+  "base.flax_model": {
+   "copy": "/home/hatk8/projects/yugioh-ai/experiments/artmage-scoped-response-adapter-20261111/models/frozen/base.flax_model",
+   "sha256": "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+   "source": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/train/candidate/base.flax_model",
+   "byte_identical_to_source": true
+  },
+  "chain-head.flax_model": {
+   "copy": "/home/hatk8/projects/yugioh-ai/experiments/artmage-scoped-response-adapter-20261111/models/frozen/chain-head.flax_model",
+   "sha256": "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2",
+   "source": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/train/candidate/chain-head.flax_model",
+   "byte_identical_to_source": true
+  }
+ },
+ "frozen_note": "never in the optimizer; batch_stats untouched; never re-serialised (candidate base/head are byte copies)",
+ "policy": {
+  "type": "artmage-scoped-response-adapter",
+  "version": 1,
+  "files": [
+   "base.flax_model (frozen)",
+   "chain-head.flax_model (frozen)",
+   "response-adapter.flax_model (new)",
+   "manifest.json"
+  ],
+  "factory": "sa_model.create_adapter_policy (refuses a missing file, other type/version, any hash mismatch, a base/head other than the frozen pair)",
+  "inference": "frozen Policy.infer exactly as Policy.act (same object and jit); if gated: logits + adapter(features(info), actions_); else the frozen logits are returned",
+  "gate": "actions_[0, 3] == 2 (select_chain) AND public chain length >= 1 AND features(info) role == 2; role = the latest chain link player (ygopro.h: public_chain_.back()[1]) compared with to_play; no card ids",
+  "adapter": "opponent_article_bc_common.ChainHead, new parameters, init PRNGKey(11111501), zero output layer (delta exactly 0 at start); stateless",
+  "limit": "the adapter corrects the frozen state-dependent logits from the public chain and action features only; it does not read the board",
+  "guarantee": "outside the gate, the same input/history/backend gives the original logits; a different response changes the rest of the duel normally"
+ },
+ "data": {
+  "manifest": "/home/hatk8/projects/yugioh-ai/experiments/artmage-response-learning-20261111/data/manifest.json",
+  "sha256": "2281d191ff481d41185e365539dbd0592916c7c76750de44cd70e003f68d6d7b",
+  "targets": "response-S1 (step 149, ディアクトロス②), response-S2 (step 169, ファインメルト③)",
+  "cache": "cache/targets.npz from the frozen Policy along the saved histories on the CPU (the evaluation backend); fixed in amendment-1 before training"
+ },
+ "training": {
+  "updates": 512,
+  "batch": "S1 + S2 every update",
+  "updated": "the new adapter only",
+  "optimizer": "fresh Adam, lr 1e-3, eps 1e-5",
+  "clip": "global norm 1.0 on the adapter",
+  "seed": 11111501,
+  "loss": "legal-option CE of frozen logits + delta, mean over S1/S2",
+  "not_used": [
+   "PPO",
+   "value",
+   "entropy",
+   "KL",
+   "old 40 sequences (diagnostics only)"
+  ],
+  "device": "CPU",
+  "logged": "per update: loss, per-sequence CE, pre-clip gradient norm, clip flag, update norm, max |delta|; before/after: P(target), P(pass), CE, delta",
+  "no": [
+   "coefficient / lr / update changes after seeing results",
+   "more candidates",
+   "intermediate selection"
+  ]
+ },
+ "prechecks": [
+  "zero adapter vs the original entry on all 42 sequences: RNN states, final logits, post-position-adapter actions identical",
+  "gate from public features == gate from saved snapshots on saved runs",
+  "synthetic non-zero adapter: ignored off-target, used on-target",
+  "factory refusals (hash mismatch, version, missing file)",
+  "after training: off-target logits/actions identical; reload equality; finite weights"
+ ],
+ "evaluation": {
+  "same_as": "docs/artmage-response-learning-plan-2026-11-11.md (A 4, B 8, C 13)",
+  "runner": "sa_runs.py (code-changes-sa_runs.diff): the 3-file factory (sa_model.AdapterEntry) is passed explicitly to every runner; each record carries the 3 hashes, type/version and the adapter log",
+  "compared": {
+   "start_model": {
+    "A/B-BV1-1cost-VARNISH-OM": "08a2a100769d0e0bd663b1a95c366e3d807767f4076ae6f068f6d7eb45da5352",
+    "A/B-BV1-2cost-ASSAULT-OM": "f037e719b37e4c4ab776c7d24c8c11f1a57483e72319d8bcc095c30b7768cbcc",
+    "A/B-BV1-1cost-ASSAULT-OM": "a746037f13ce41ac8098c4673eef35908ebe261143d5589cbb96f6ac715aba92",
+    "A/B-BV1-2cost-VARNISH-OM": "49e7dc66d296f2ad65de0a091ebbc699df2d32644600b666170056f77a61f4ea",
+    "C-Artmage-g06-p0": "0f4724dec7d296734be5eefc14042bfb99fed9b41f031d120ae723180f8a847b",
+    "C-Artmage-g07-p0": "28cf055806fc8ea8e9481044d1ff7922dc736be9593e0d4b437eddd6430ec227",
+    "C-Artmage-g08-p0": "743e482045be82bc2fff8da0c26fc80fe4ea58af1d1adc9b9272d72e9dd71b76",
+    "C-Artmage-g09-p0": "085a0381eb04df2cf399eae5b2fbf7f0440ee7e6807a59e24c924513e1fc71a4",
+    "C-Artmage-g10-p0": "d731fa7c83caa64e0a6919091cbbce0642a3e3f9b4c5e946baccd7f52c4c0cca",
+    "C-Artmage-g11-p0": "9fe35e66a76af417608c71e149800ac144e589ff635970719a1c295e84ff8fcb",
+    "C-F0-V": "f40a535cc001e53047058c105a974e6873381e0e7843cf715a50d484ad8dd757",
+    "C-F1-V": "7f1ca8865a112a6c3f329ad7e0943dc0a72cd656d32999dfe5e29039a329acc6",
+    "C-F2-V": "d8853e3e8ba19de0df01ae9409dcae12b78fee7badaf95d9bcf5a7cc3d77f4a9",
+    "C-F3-V": "3cbc51643f26b551be36e8e413b5d260b00169233c58d4499dff5ea24d914b4f",
+    "C-F4-V": "16743aed10318b371425cf7cec09cdda9b37c6dc0edc435a9691396d96fe8006",
+    "C-F5-V": "885f2e30e2ce4d1e410e9abf46ad3df6329853c8d1b75bd2a96909f834c14d76",
+    "C-F6-V": "d5466fb9a12ba696775c74559e512029a078b6fcde4490fe1e9fa1381f45ceb9"
+   },
+   "no_retention_candidate": {
+    "A-S1": "e4f8fe2b682259a71fc9ce67e9c28d6660069de5932b521b0ed9f131350c84cd",
+    "A-S2": "01cc87ecbb8ef28ecdeda200ec65b8491ed29b04fa88890f1eab0b5b1a3bed8b",
+    "B-BV1-1cost-VARNISH-OM": "40247de8d7fed7090eea7af11b04d159d87a987c189239b82da78847c054d287",
+    "B-BV1-2cost-ASSAULT-OM": "7a53f5e3c99ee5dc09efdc45548d80a42ff8d1b68411c30a44fa3e16b27c118f",
+    "B-BV1-1cost-ASSAULT-OM": "22c6408093d295f04fce811df69f72102265e4168780198d4e1415f3f695a497",
+    "B-BV1-2cost-VARNISH-OM": "42e4966ada405229367d878744312801368d7ddf3879b532270b9d12a8cb6166",
+    "C-Artmage-g06-p0": "a77d7962f5c68d11eba5f27aca26ca91c705d82e5de8d108f51795bec28dc7f9",
+    "C-Artmage-g07-p0": "91984c2672817c00841a1e97728336bab945506c6c80dd05446b72696f978e5e",
+    "C-Artmage-g08-p0": "a8019deb60c9a57d7919b1d666b8ef7d223c8a469e306c5c4ef1c5bc7f247001",
+    "C-Artmage-g09-p0": "ce66447031c563c9773a1e4ae50f85c5e80ccfff9373188fc52876e51adad5f8",
+    "C-Artmage-g10-p0": "5a229c93f49c9d034b71d9d81221093e90a2bdcc62d7158c53fd4d116ce6e846",
+    "C-Artmage-g11-p0": "66a4a49d436d9e77c3dfb51af85c540aed71139377cbafe3e7af26d320169ca0",
+    "C-F0-V": "7a1706bfb083ca3ec61c82939caf8301f68e1786463bed3a344d408927572c2d",
+    "C-F1-V": "f6d1f4007b0a5e6e51f421fe7513a40f12a5da62be2e763318dfb8426f3081bb",
+    "C-F2-V": "2a456ccff779d4b4e7c88b78d08bf1d41aa711e5b35946810d0fda5cce9588a4",
+    "C-F3-V": "3bf440cb03fafd6aef3e8097bc6c99cf933c927324acdda9a428cba046d9533e",
+    "C-F4-V": "170e14f9b707a620698826d3944ce276e0e55d4474f6ba9fc239c1f3c08f9c35",
+    "C-F5-V": "ff77752e6be56f9c8e965f5b6fe313ed151e2632b8f80b0a18e8395ebb8d7a4c",
+    "C-F6-V": "66f1f2d17ad952120d43ed44889b4c167a7b538fbb48548f76b0004cfe12cf64"
+   },
+   "retention_candidate": {
+    "A-S1": "2e02b80fe38f8d4aa1d722c703efdd5b06009d7c10f3b520959c7788439ebed4",
+    "A-S2": "f9dab065fd7dcf1312ca392ad7477fb4cd3142b65dc0f159edb7bea2c4a302fe",
+    "B-BV1-1cost-VARNISH-OM": "0ab231ee0589095e5cf7feb0eb7562b751193cd1dc39f4816e4ea5973727dbc9",
+    "B-BV1-2cost-ASSAULT-OM": "5e5eea88c11fb4b8bae49182ea80a955df9323b04755a8c607d2666aba54e62d",
+    "B-BV1-1cost-ASSAULT-OM": "2afd9dccc22c88a4cb0e0b6f90f7f0f5b30b08f6cf13b22bf518ace02a74b259",
+    "B-BV1-2cost-VARNISH-OM": "f35b341f2c2e69c8b389ef9487905309d49c2227d2acea5b63aae020e5d597b7",
+    "C-Artmage-g06-p0": "97a37bb63c0b65da830a81acd9fd0aa92d4f162ef7686c226e2f8a2d6fd242e5",
+    "C-Artmage-g07-p0": "758c870cd33fe497a487b23c0090c0593b5cfaa1be751c21bb5f3940ae47b37a",
+    "C-Artmage-g08-p0": "ce09770baefed3d55070f98d0f5c631a1696f66175dd687634f82650ccd2425b",
+    "C-Artmage-g09-p0": "1c992e6d63bd1c3f81b622e46361fb58de7119ada7612a0abeebe06edf3a3d1a",
+    "C-Artmage-g10-p0": "a22c07d3f5eb00c727f096bc2c602b5df722395199ed712e0ea6b02f1bbafb79",
+    "C-Artmage-g11-p0": "4ad07d9003ea3150f9edaf3b00339b15fb5eb5b492675dd76e0f48a1acad9a19",
+    "C-F0-V": "24a65de8a8d2952cf3be01c1774c487854120f28758ffcf62bc7bbee003e970e",
+    "C-F1-V": "7972050cd75f49a97dec36671cfb086a4662ce63b59f24147d947144fad6521a",
+    "C-F2-V": "a00f823aae1ed60fbf0b020f8580f3a2117c2322cdc96774409bc8bb076277c9",
+    "C-F3-V": "c6e43b1d2f9f4abdbf9bf8b83fef7614c2d6302c67cd10df66a9bb980ddfff44",
+    "C-F4-V": "daa8988869ab1dd1aa51eed0a9bebedf2b2f858351ea3205041fa78024f5756f",
+    "C-F5-V": "e42eb0fb3cab8c404e3c69284b54ed891c338c2f4fed5f12df9f453b8d188e98",
+    "C-F6-V": "96e1c89879c90c969945a5456d150a8048c1093973ec57b1ddba7779564b8745"
+   }
+  },
+  "checks": [
+   "1. A: S1 stopped by the candidate itself, S2 stop kept",
+   "2. B: the pre-intervention development / reshaping stays the start model's, S1 stopped, the two 2-cost stops kept (after a different in-scope response, path differences are normal and separated)",
+   "3. C: the 12 start-model successes kept; any adapter activation investigated against the gate and the old record; F3-V not in the denominator; F2-V / F4-V recovery and new successes shown separately"
+  ],
+  "checks_note": "local observation points, not production acceptance conditions"
+ },
+ "engine": {
+  "cap": 28,
+  "plan": "A 4 + B 8 + C 13 = 25",
+  "spare": "3 only for re-running after a harness fix that keeps the conditions",
+  "failures_count": true,
+  "previous_unused_not_carried": true
+ },
+ "not_done": [
+  "PPO",
+  "normal battles",
+  "adoption",
+  "acceptance changes",
+  "keep-vs-reshape re-test",
+  "B2B",
+  "production / registry changes"
+ ],
+ "limits": {
+  "memory_gib": 5,
+  "swap": 0,
+  "cpu_percent": 300,
+  "job_seconds": 1800,
+  "nice": 10,
+  "jobs": 1
+ },
+ "code": {
+  "artmage_entry.py": "ca47f56d29431b48d60337de6dcc6ce23d524fba31cbbbdce31e6d7399b78e0f",
+  "artmage_pins.py": "10c4e053d05f44498cff77c45301a3fb5222c7598a658decc52f4539fd96bde8",
+  "artmage_teacher.py": "a126284eff7a2d7ef3c602ade0aa5f196f7ddea77333213c27a197ade21b78f3",
+  "batch_data.py": "3f21a0f495111f82678e93c5434d9c2dd65b2467c4f7c3341a0eddab66b3aad7",
+  "batch_model.py": "7ee574aceb809b4b44cdeb0de8eae77b66e70f065463ca65bc310e80aa52e8d3",
+  "batch_plans.py": "68d5945d80d663ba7f85b56ffbd6490a00998aaa1d5cca14663e18e6956f1123",
+  "flc_runs.py": "8af7cbae6ce9d6d8322b043326f6b78d3f819ef8758ceb0e11597488f33e840f",
+  "hb_data.py": "502de35cabab73e9448e5d20e61aa53ce594aa8eb08ad2beebe0740618ebc893",
+  "hb_plans.py": "8fc90ad7f704a2f141669d1075827cf3513f015989a95d472f353aaae6ab40cd",
+  "hb_runs.py": "88e694125079d2a9687490f1120186b536939b8750f731266efae56b167a0c14",
+  "pilot_data.py": "dc749fb5ea77419741d0e7469edd7f423db241eae11ccafe399f76a04c3417e8",
+  "pilot_model.py": "8bec14fb9a1e6c02cbfa715c21146aafeb45b00f060d4cd7afa57b7c84e0ad56",
+  "rl_data.py": "9259488786bd1c3fa250ab474e2e3813f3e19d6012ca9b9afeb355014068374c",
+  "sa_launch.py": "35d391521f881ae321b4fdd3834f63197c7f59a5793b1f7eded7eada2bd8df49",
+  "sa_model.py": "fe9856bd168f33257d09ec41fe38253bf8da2e42a1174a9f27d29786dd1de36c",
+  "sa_register.py": "d9dbb7974dfce1b6a707d1d9a6f1fba2bfa5a1b458f1360fa100d4380a48fdb0",
+  "sa_runs.py": "906af2a70860cc29cc90b1e0e4e5cb817d50d3f151011fb812cf4f0731504cdf",
+  "sa_train.py": "7242af7cf4228cd83cb9daa85e489c182e790a7ddcabb9a64ad1d557d0b3561e"
+ },
+ "code_changes": {
+  "sa_runs": {
+   "file": "code-changes-sa_runs.diff",
+   "sha256": "288c93c411afb3fec656121d5525a15ea2bd4fc7fd5b597604059132d30d1cf7"
+  }
+ }
+}

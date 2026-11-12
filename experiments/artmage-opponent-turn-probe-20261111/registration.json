@@ -1,0 +1,295 @@
+{
+ "status": "registered_before_engine_runs",
+ "registered_jst": "2026-11-11T10:28:26+09:00",
+ "spec": {
+  "copy": "spec/artmage-opponent-turn-probe-plan-2026-11-11.md",
+  "sha256": "df8a8b5e8e5f25445e4b5573e7e2d3059fa7752a3038add47abadd48d6fd22fc"
+ },
+ "model": {
+  "base_sha256": "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+  "head_sha256": "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2",
+  "source": "experiments/artmage-hand-branch-20261110/train/candidate (unadopted), read-only copy"
+ },
+ "pins": {
+  "base": "12500c7724b2d723983a2963a960d75172a6df51fb55ea4f3acf102eeb34132e",
+  "head": "0bc7534cab102cd87586e5d22bd4ad0cd3b55d52d08e284146976506ae6193fc",
+  "deck_copy": "a93c4d30d0945f58f741f1e135fdcbc0b0c438aff575cf6d0d02ce9a82c381d6",
+  "engine_deck": "a93c4d30d0945f58f741f1e135fdcbc0b0c438aff575cf6d0d02ce9a82c381d6",
+  "vocabulary": "aeb5be89d4a5591ccc5cce6af96def74ef47463a55265f75c11b92029e772e7b",
+  "meta_manifest": "ace4f6b8408011a55e9b61d3c4917580942d86960bb3f087afe75ce2774c824a",
+  "meta_latest_run": "32770bc4534c729e66f7addbc76770b78798ee4e618b40fd9baa45e83392e544",
+  "article_latest_run": "39db5d660d4bde37dbd9b6fc0c662781da48b71b0e6c50d8357a7a42f73b0159",
+  "model_code": "f4c3903e3a4841b97f6ffb8840bb4cfa5513b5abfead9ff41fa7c785ceba6cce",
+  "witness_code": "0e4f3a0e92c86aba7a95f96c1e5f93f6a0293eaea7f3ab8a63dee772455ae07a",
+  "adapter": "4fe74c83a460ee3565c3ff276ce2d080b233a6152439ec92147ba90d60d46f90",
+  "adapter_cards": "1baa04349bb31833ff01b05cb365ee0f9416de827ac4fbf52b835011a35f1fde",
+  "native": "19a60f38a3d39b61a2ee082168d5a788a1022b2eb569633816596c8b3de21294",
+  "runtime_json": "ebdfc37ed9c7ebcae73b81281876dd6f22bd8d9afcbdfe8f78905dcc9c220d14"
+ },
+ "card_scripts": {
+  "c34541940.lua": "81dc2e63d5073638b59432641994e85476798166d35b33d9542bcda67f442272",
+  "c27184601.lua": "ae328095bb6b116b1c7d8878f7bd3fac6ef39122a5e7d18ea454d82f8d5e19b3",
+  "c97556336.lua": "ff56291504573fde26ab138e3f4542895ae05f5a1feb72ff7ad18959c86fb4b6",
+  "c10045474.lua": "d64a2fc97f99a05231ea4de0ef507355b702c959e16650ed6f506bd3aa858105"
+ },
+ "cards_cdb_sha256": "103c8455d379a81d7ed35986434096fe8f9eb5cb3a1c3b9c6f1e9f0aa67d0c74",
+ "effect_numbers": {
+  "finemelt_3": {
+   "code": 34541940,
+   "effect": 10011,
+   "script": "e3 QUICK_O CATEGORY_DISABLE, SetDescription(aux.Stringid(id,1))",
+   "cdb_str2": "モンスターの効果は無効化される"
+  },
+  "diaktoros_2": {
+   "code": 27184601,
+   "effect": 10011,
+   "script": "e2 QUICK_O EVENT_CHAINING CATEGORY_NEGATE+DESTROY, SetDescription(aux.Stringid(id,1))",
+   "cdb_str2": "無効にし破壊する"
+  },
+  "medius_1": {
+   "code": 97556336,
+   "chain_description": 1560901376,
+   "script": "e1 TRIGGER_O EVENT_SUMMON_SUCCESS, SetDescription(aux.Stringid(id,0))",
+   "cdb_str1": "「獄神」モンスターをサーチか特殊召喚"
+  }
+ },
+ "sites": {
+  "S1": {
+   "hand": [
+    74733322,
+    97045737,
+    23434538,
+    59438930,
+    49036338
+   ],
+   "seed": 1112103,
+   "hand_name": "BV1-B-1cost",
+   "graphrea_set": "VARNISH",
+   "old_condition": "BV1-1cost-VARNISH-OM"
+  },
+  "S2": {
+   "hand": [
+    74733322,
+    97045737,
+    23434538,
+    59438930,
+    10045474
+   ],
+   "seed": 1112103,
+   "hand_name": "BV1-B-2cost",
+   "graphrea_set": "ASSAULT",
+   "old_condition": "BV1-2cost-ASSAULT-OM"
+  }
+ },
+ "opponent_hand": [
+  97556336,
+  10045474,
+  14558127,
+  59438930,
+  73642296
+ ],
+ "opponent": "same as the comparison O-M: own main phase: normal summon Medius, activate Medius①, choose 獄神獣, special summon (1152); everything else pass; hand traps never used; turn 3 pass; fallback = first legal option only when the pass policy cannot decide (logged)",
+ "turn1": "prefix replay by meaning + Graphrea set target as in the old condition; the rest of turn 1 is the model. Turn-1 rows and model inputs are compared with the old record of the same site after the run (offline)",
+ "rules": {
+  "D1": "turn 2 (opponent), DRAW phase only, own select_chain / select_effectyn / select_yesno: execute the legal Cancel. A prompt without a legal Cancel (or any other message) is left to the model and logged as forced. Standby phase on: model. This suppresses ALL optional draw-phase activations together; it is not a per-effect (乙女② alone / 覚醒① alone) comparison",
+  "R1": "the FIRST own select_chain in turn 2, opponent main phase 1, whose public chain is exactly one link = player 1 Medius① (code 97556336, description 1560901376): activate once ファインメルト③ (34541940, 10011), else ディアクトロス② (27184601, 10011); same card: zone order (spec letter, number, index). Neither legal: recorded \"not established\", the model choice is executed, no other effect is substituted. Every later decision: model",
+  "model": "the model reads every own observation exactly once, also when overridden; its own choice is logged with every override"
+ },
+ "conditions": {
+  "S1-D0R0": {
+   "old_condition": "BV1-1cost-VARNISH-OM",
+   "draw_phase": "model",
+   "first_medius_response": "model",
+   "plan": "reuse the old record (offline decision-sequence identity, reuse.json)",
+   "offline_first_divergence": null
+  },
+  "S1-D0R1": {
+   "old_condition": "BV1-1cost-VARNISH-OM",
+   "draw_phase": "model",
+   "first_medius_response": "R1 substitution",
+   "plan": "new record + replay",
+   "offline_first_divergence": {
+    "step": 149,
+    "rule": "R1",
+    "recorded": {
+     "act": "Cancel",
+     "code": 0,
+     "effect": -1,
+     "spec": "",
+     "index": 4
+    },
+    "rule_executes": {
+     "act": "Activate",
+     "code": 27184601,
+     "effect": 10011,
+     "spec": "m3",
+     "index": 1
+    }
+   }
+  },
+  "S1-D1R0": {
+   "old_condition": "BV1-1cost-VARNISH-OM",
+   "draw_phase": "D1 (decline all optional own activations)",
+   "first_medius_response": "model",
+   "plan": "new record + replay",
+   "offline_first_divergence": {
+    "step": 119,
+    "rule": "D1",
+    "recorded": {
+     "act": "Activate",
+     "code": 74631897,
+     "effect": 10011,
+     "spec": "m1",
+     "index": 2
+    },
+    "rule_executes": {
+     "act": "Cancel",
+     "code": 0,
+     "effect": -1,
+     "spec": "",
+     "index": 3
+    }
+   }
+  },
+  "S1-D1R1": {
+   "old_condition": "BV1-1cost-VARNISH-OM",
+   "draw_phase": "D1 (decline all optional own activations)",
+   "first_medius_response": "R1 substitution",
+   "plan": "new record + replay",
+   "offline_first_divergence": {
+    "step": 119,
+    "rule": "D1",
+    "recorded": {
+     "act": "Activate",
+     "code": 74631897,
+     "effect": 10011,
+     "spec": "m1",
+     "index": 2
+    },
+    "rule_executes": {
+     "act": "Cancel",
+     "code": 0,
+     "effect": -1,
+     "spec": "",
+     "index": 3
+    }
+   }
+  },
+  "S2-D0R0": {
+   "old_condition": "BV1-2cost-ASSAULT-OM",
+   "draw_phase": "model",
+   "first_medius_response": "model",
+   "plan": "reuse the old record (offline decision-sequence identity, reuse.json)",
+   "offline_first_divergence": null
+  },
+  "S2-D0R1": {
+   "old_condition": "BV1-2cost-ASSAULT-OM",
+   "draw_phase": "model",
+   "first_medius_response": "R1 substitution",
+   "plan": "reuse the old record (offline decision-sequence identity, reuse.json)",
+   "offline_first_divergence": null
+  },
+  "S2-D1R0": {
+   "old_condition": "BV1-2cost-ASSAULT-OM",
+   "draw_phase": "D1 (decline all optional own activations)",
+   "first_medius_response": "model",
+   "plan": "new record + replay",
+   "offline_first_divergence": {
+    "step": 133,
+    "rule": "D1",
+    "recorded": {
+     "act": "Activate",
+     "code": 74631897,
+     "effect": 10011,
+     "spec": "m3",
+     "index": 1
+    },
+    "rule_executes": {
+     "act": "Cancel",
+     "code": 0,
+     "effect": -1,
+     "spec": "",
+     "index": 2
+    }
+   }
+  },
+  "S2-D1R1": {
+   "old_condition": "BV1-2cost-ASSAULT-OM",
+   "draw_phase": "D1 (decline all optional own activations)",
+   "first_medius_response": "R1 substitution",
+   "plan": "new record + replay",
+   "offline_first_divergence": {
+    "step": 133,
+    "rule": "D1",
+    "recorded": {
+     "act": "Activate",
+     "code": 74631897,
+     "effect": 10011,
+     "spec": "m3",
+     "index": 1
+    },
+    "rule_executes": {
+     "act": "Cancel",
+     "code": 0,
+     "effect": -1,
+     "spec": "",
+     "index": 2
+    }
+   }
+  }
+ },
+ "reuse": {
+  "file": "reuse.json",
+  "sha256": "8c799b59ee0f3a246862b66559f54fad096f449cab590450fdf5ae60d4505d1c",
+  "summary": "S1-D0R0, S2-D0R0: the old records themselves; S2-D0R1: the rule executes the action the model chose at old step 169 (ファインメルト③) and nothing else, so the decision sequence is identical; these are not counted as new runs"
+ },
+ "checkpoints": [
+  "own_turn1_end",
+  "opp_draw_phase_end (first decision snapshot of turn 2 after the draw phase)",
+  "medius_response_window (first R1-type window, candidates listed; recorded in R0 conditions too)",
+  "after_medius_chain (first snapshot with an empty chain after player 1 Medius was on the chain)",
+  "opp_turn2_end",
+  "own_turn3_end or game over"
+ ],
+ "stop": "first decision of turn 4 (end of own turn 3), game over from env.step returns, or 600 decisions",
+ "engine": {
+  "cap": 12,
+  "plan": "5 new conditions x (record + replay) = 10",
+  "spare": "2 episodes only for redoing a record+replay after a harness fix that does not change the decision rules (fixed by an amendment); not for new hands/seeds/conditions/models",
+  "failures_count": true
+ },
+ "not_done": [
+  "training",
+  "model update",
+  "adoption",
+  "normal battles",
+  "reward / adoption-condition changes",
+  "B2B",
+  "production / registry changes"
+ ],
+ "limits": {
+  "memory_gib": 5,
+  "swap": 0,
+  "cpu_percent": 300,
+  "job_seconds": 1800,
+  "nice": 10,
+  "device": "CPU",
+  "jobs": 1
+ },
+ "play_diff": {
+  "file": "play-vs-comparison.diff",
+  "sha256": "49331d9d22419cf6709d611b35f38612df512caa2255cbf3eefa92b8996b3e7f"
+ },
+ "code": {
+  "artmage_entry.py": "ca47f56d29431b48d60337de6dcc6ce23d524fba31cbbbdce31e6d7399b78e0f",
+  "artmage_pins.py": "10c4e053d05f44498cff77c45301a3fb5222c7598a658decc52f4539fd96bde8",
+  "artmage_teacher.py": "a126284eff7a2d7ef3c602ade0aa5f196f7ddea77333213c27a197ade21b78f3",
+  "batch_plans.py": "68d5945d80d663ba7f85b56ffbd6490a00998aaa1d5cca14663e18e6956f1123",
+  "flc_runs.py": "8af7cbae6ce9d6d8322b043326f6b78d3f819ef8758ceb0e11597488f33e840f",
+  "hb_plans.py": "8fc90ad7f704a2f141669d1075827cf3513f015989a95d472f353aaae6ab40cd",
+  "otp_launch.py": "fe08d0b880dfb70cb5acb605a69a40937ce739c8388eb3f8a3682bb52c74f851",
+  "otp_register.py": "57ed5953b3b50c8f8be95af0af4dc2d0493312d025faffbe356f059a604e7f1a",
+  "otp_reuse.py": "06d09c8000ccd23908fb4dcd54cdbcdcebda12ec87ca0c2192e19a915f6b42c9",
+  "otp_runs.py": "40d2e7bfa9e3cab0f471c76fdc88559a4ed44895497102d5b7e21116e9b2bf02"
+ }
+}

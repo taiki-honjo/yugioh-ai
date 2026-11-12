@@ -1,0 +1,9 @@
+{
+  "source_checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/all-openings-bar-alternative-20261108/run-20261108-194920/training/ElfnotesKewlTune/step-0400",
+  "base_sha256": "15dfc98bdb7135b31d31ab0ac2bc1a13c852d85cd5ebccb34eb39bdcaf2ca6ce",
+  "head_sha256": "f2bf4fcbbb005cfcfa94856ce11dd72c095456ea2e131385e76d0248d0b18361",
+  "adapters_enabled": true,
+  "normal_summon_usage_scored": false,
+  "source_bundle": "/home/hatk8/projects/yugioh-ai/experiments/opening-rehearsal-ab-20261109/a-ppo/cycles/256-seed10000999/source-model",
+  "combined_checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/opening-rehearsal-ab-20261109/a-ppo/cycles/256-seed10000999/checkpoints/1794192660_256steps.flax_model"
+}

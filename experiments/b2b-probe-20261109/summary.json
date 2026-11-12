@@ -1,0 +1,727 @@
+{
+  "created_jst": "2026-11-09T21:28:49+09:00",
+  "position": "P1 teacher route (train cue-reco-jj-zaren-g00-p0), own turn replayed; opponent O1 then ends its turn",
+  "engine_runs": {
+    "used": 12,
+    "limit": 12
+  },
+  "conditions": {
+    "R0": {
+      "engine_run": 1,
+      "failure": null,
+      "mismatch": null,
+      "lua_errors": 0,
+      "own_end_matches_record": true,
+      "replay": {
+        "engine_run": 7,
+        "reproduced": "111/111",
+        "end_matches": true
+      },
+      "route": {
+        "remix_step": 72,
+        "phase": "opponent draw phase",
+        "picks": [
+          "灰流うらら",
+          "キラーチューン・レコ",
+          "キラーチューン・レコ"
+        ],
+        "synchro_yes": true,
+        "field_before": [
+          "キラーチューン・リミックス",
+          "鎖縛竜ザレン"
+        ],
+        "field_after": [
+          "キラーチューン Ｂ２Ｂ"
+        ],
+        "hand_gained": [
+          "キラーチューン・レコ"
+        ],
+        "graveyard_gained": [
+          "キラーチューン・リミックス",
+          "鎖縛竜ザレン"
+        ],
+        "b2b_monster_and_material_prompts": "none shown (one candidate each; resolved by the env)"
+      },
+      "b2b3_legal_at_search_window": true,
+      "opponent_search": {
+        "outcome": "search_resolved",
+        "opponent_hand": {
+          "added": {
+            "12375297": 1
+          },
+          "removed": {}
+        }
+      },
+      "rukina_level_observed": [
+        8
+      ],
+      "our_resources_at_turn3_start": {
+        "field": [
+          "キラーチューン Ｂ２Ｂ"
+        ],
+        "spell_trap": [
+          "キラーチューン・シンクロ",
+          "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+        ],
+        "hand": [
+          "エフェクト・ヴェーラー",
+          "エフェクト・ヴェーラー",
+          "エフェクト・ヴェーラー",
+          "キラーチューン・レコ"
+        ],
+        "graveyard": [
+          "キラーチューン・キュー",
+          "キラーチューン・トラックメイカー",
+          "キラーチューン・ミクス",
+          "キラーチューン・リミックス",
+          "キラーチューン・ロタリー",
+          "灰流うらら",
+          "鎖縛竜ザレン"
+        ],
+        "banished": []
+      }
+    },
+    "R1": {
+      "engine_run": 2,
+      "failure": null,
+      "mismatch": null,
+      "lua_errors": 0,
+      "own_end_matches_record": true,
+      "replay": {
+        "engine_run": 8,
+        "reproduced": "114/114",
+        "end_matches": true
+      },
+      "route": {
+        "remix_step": 72,
+        "phase": "opponent draw phase",
+        "picks": [
+          "灰流うらら",
+          "キラーチューン・レコ",
+          "キラーチューン・レコ"
+        ],
+        "synchro_yes": true,
+        "field_before": [
+          "キラーチューン・リミックス",
+          "鎖縛竜ザレン"
+        ],
+        "field_after": [
+          "キラーチューン Ｂ２Ｂ"
+        ],
+        "hand_gained": [
+          "キラーチューン・レコ"
+        ],
+        "graveyard_gained": [
+          "キラーチューン・リミックス",
+          "鎖縛竜ザレン"
+        ],
+        "b2b_monster_and_material_prompts": "none shown (one candidate each; resolved by the env)"
+      },
+      "b2b3_legal_at_search_window": true,
+      "b2b3": {
+        "step": 94,
+        "chain_link": 2,
+        "targets_offered": [
+          "灰流うらら",
+          "鎖縛竜ザレン",
+          "キラーチューン・リミックス",
+          "キラーチューン・トラックメイカー",
+          "キラーチューン・キュー",
+          "キラーチューン・ミクス",
+          "キラーチューン・ロタリー"
+        ],
+        "target": "キラーチューン・キュー",
+        "options_offered": [
+          1152,
+          1190
+        ],
+        "option": 1190,
+        "synchro": {
+          "prompt_shown": false,
+          "chosen": null
+        },
+        "our_change": {
+          "field": {
+            "gained": [],
+            "lost": []
+          },
+          "hand": {
+            "gained": [
+              "キラーチューン・キュー"
+            ],
+            "lost": []
+          },
+          "graveyard": {
+            "gained": [],
+            "lost": [
+              "キラーチューン・キュー"
+            ]
+          }
+        }
+      },
+      "newly_activatable_after_chain": {
+        "step": 101,
+        "activations": [
+          "エフェクト・ヴェーラー(0)@h4",
+          "エフェクト・ヴェーラー(0)@h2",
+          "エフェクト・ヴェーラー(0)@h5",
+          "キラーチューン・シンクロ(0)@s1"
+        ]
+      },
+      "opponent_search": {
+        "outcome": "search_resolved",
+        "opponent_hand": {
+          "added": {
+            "12375297": 1
+          },
+          "removed": {}
+        }
+      },
+      "rukina_level_observed": [
+        8
+      ],
+      "our_resources_at_turn3_start": {
+        "field": [
+          "キラーチューン Ｂ２Ｂ"
+        ],
+        "spell_trap": [
+          "キラーチューン・シンクロ",
+          "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+        ],
+        "hand": [
+          "エフェクト・ヴェーラー",
+          "エフェクト・ヴェーラー",
+          "エフェクト・ヴェーラー",
+          "キラーチューン・キュー",
+          "キラーチューン・レコ"
+        ],
+        "graveyard": [
+          "キラーチューン・トラックメイカー",
+          "キラーチューン・ミクス",
+          "キラーチューン・リミックス",
+          "キラーチューン・ロタリー",
+          "灰流うらら",
+          "鎖縛竜ザレン"
+        ],
+        "banished": []
+      }
+    },
+    "R2": {
+      "engine_run": 3,
+      "failure": null,
+      "mismatch": null,
+      "lua_errors": 0,
+      "own_end_matches_record": true,
+      "replay": {
+        "engine_run": 9,
+        "reproduced": "117/117",
+        "end_matches": true
+      },
+      "route": {
+        "remix_step": 72,
+        "phase": "opponent draw phase",
+        "picks": [
+          "灰流うらら",
+          "キラーチューン・レコ",
+          "キラーチューン・レコ"
+        ],
+        "synchro_yes": true,
+        "field_before": [
+          "キラーチューン・リミックス",
+          "鎖縛竜ザレン"
+        ],
+        "field_after": [
+          "キラーチューン Ｂ２Ｂ"
+        ],
+        "hand_gained": [
+          "キラーチューン・レコ"
+        ],
+        "graveyard_gained": [
+          "キラーチューン・リミックス",
+          "鎖縛竜ザレン"
+        ],
+        "b2b_monster_and_material_prompts": "none shown (one candidate each; resolved by the env)"
+      },
+      "b2b3_legal_at_search_window": true,
+      "b2b3": {
+        "step": 94,
+        "chain_link": 2,
+        "targets_offered": [
+          "灰流うらら",
+          "鎖縛竜ザレン",
+          "キラーチューン・リミックス",
+          "キラーチューン・トラックメイカー",
+          "キラーチューン・キュー",
+          "キラーチューン・ミクス",
+          "キラーチューン・ロタリー"
+        ],
+        "target": "キラーチューン・キュー",
+        "options_offered": [
+          1152,
+          1190
+        ],
+        "option": 1152,
+        "synchro": {
+          "prompt_shown": true,
+          "chosen": "no"
+        },
+        "our_change": {
+          "field": {
+            "gained": [
+              "キラーチューン・キュー"
+            ],
+            "lost": []
+          },
+          "hand": {
+            "gained": [],
+            "lost": []
+          },
+          "graveyard": {
+            "gained": [],
+            "lost": [
+              "キラーチューン・キュー"
+            ]
+          }
+        }
+      },
+      "newly_activatable_after_chain": {
+        "step": 104,
+        "activations": [
+          "エフェクト・ヴェーラー(0)@h1",
+          "エフェクト・ヴェーラー(0)@h3",
+          "エフェクト・ヴェーラー(0)@h2",
+          "キラーチューン・シンクロ(0)@s1"
+        ]
+      },
+      "opponent_search": {
+        "outcome": "search_resolved",
+        "opponent_hand": {
+          "added": {
+            "12375297": 1
+          },
+          "removed": {}
+        }
+      },
+      "rukina_level_observed": [
+        8
+      ],
+      "our_resources_at_turn3_start": {
+        "field": [
+          "キラーチューン Ｂ２Ｂ",
+          "キラーチューン・キュー"
+        ],
+        "spell_trap": [
+          "キラーチューン・シンクロ",
+          "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+        ],
+        "hand": [
+          "エフェクト・ヴェーラー",
+          "エフェクト・ヴェーラー",
+          "エフェクト・ヴェーラー",
+          "キラーチューン・レコ"
+        ],
+        "graveyard": [
+          "キラーチューン・トラックメイカー",
+          "キラーチューン・ミクス",
+          "キラーチューン・リミックス",
+          "キラーチューン・ロタリー",
+          "灰流うらら",
+          "鎖縛竜ザレン"
+        ],
+        "banished": []
+      }
+    },
+    "R3": {
+      "engine_run": 4,
+      "failure": null,
+      "mismatch": null,
+      "lua_errors": 0,
+      "own_end_matches_record": true,
+      "replay": {
+        "engine_run": 10,
+        "reproduced": "122/122",
+        "end_matches": true
+      },
+      "route": {
+        "remix_step": 72,
+        "phase": "opponent draw phase",
+        "picks": [
+          "灰流うらら",
+          "キラーチューン・レコ",
+          "キラーチューン・レコ"
+        ],
+        "synchro_yes": true,
+        "field_before": [
+          "キラーチューン・リミックス",
+          "鎖縛竜ザレン"
+        ],
+        "field_after": [
+          "キラーチューン Ｂ２Ｂ"
+        ],
+        "hand_gained": [
+          "キラーチューン・レコ"
+        ],
+        "graveyard_gained": [
+          "キラーチューン・リミックス",
+          "鎖縛竜ザレン"
+        ],
+        "b2b_monster_and_material_prompts": "none shown (one candidate each; resolved by the env)"
+      },
+      "b2b3_legal_at_search_window": true,
+      "b2b3": {
+        "step": 94,
+        "chain_link": 2,
+        "targets_offered": [
+          "灰流うらら",
+          "鎖縛竜ザレン",
+          "キラーチューン・リミックス",
+          "キラーチューン・トラックメイカー",
+          "キラーチューン・キュー",
+          "キラーチューン・ミクス",
+          "キラーチューン・ロタリー"
+        ],
+        "target": "キラーチューン・キュー",
+        "options_offered": [
+          1152,
+          1190
+        ],
+        "option": 1152,
+        "synchro": {
+          "prompt_shown": true,
+          "chosen": "yes",
+          "candidates": [
+            "キラーチューン・ラウドネスウォー",
+            "キラーチューン・トラックメイカー"
+          ],
+          "monster": "キラーチューン・トラックメイカー",
+          "material_prompts": [
+            {
+              "offered": [
+                "エフェクト・ヴェーラー@h1",
+                "エフェクト・ヴェーラー@h2",
+                "エフェクト・ヴェーラー@h3"
+              ],
+              "chosen": "エフェクト・ヴェーラー"
+            }
+          ]
+        },
+        "our_change": {
+          "field": {
+            "gained": [
+              "キラーチューン・トラックメイカー"
+            ],
+            "lost": []
+          },
+          "hand": {
+            "gained": [],
+            "lost": [
+              "エフェクト・ヴェーラー"
+            ]
+          },
+          "graveyard": {
+            "gained": [
+              "エフェクト・ヴェーラー"
+            ],
+            "lost": []
+          }
+        }
+      },
+      "newly_activatable_after_chain": {
+        "step": 107,
+        "activations": [
+          "キラーチューン・キュー(1)@g8",
+          "キラーチューン・トラックメイカー(0)@m2"
+        ]
+      },
+      "opponent_search": {
+        "outcome": "search_resolved",
+        "opponent_hand": {
+          "added": {
+            "12375297": 1
+          },
+          "removed": {}
+        }
+      },
+      "rukina_level_observed": [
+        8
+      ],
+      "our_resources_at_turn3_start": {
+        "field": [
+          "キラーチューン Ｂ２Ｂ",
+          "キラーチューン・トラックメイカー"
+        ],
+        "spell_trap": [
+          "キラーチューン・シンクロ",
+          "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+        ],
+        "hand": [
+          "エフェクト・ヴェーラー",
+          "エフェクト・ヴェーラー",
+          "キラーチューン・レコ"
+        ],
+        "graveyard": [
+          "エフェクト・ヴェーラー",
+          "キラーチューン・キュー",
+          "キラーチューン・トラックメイカー",
+          "キラーチューン・ミクス",
+          "キラーチューン・リミックス",
+          "キラーチューン・ロタリー",
+          "灰流うらら",
+          "鎖縛竜ザレン"
+        ],
+        "banished": []
+      }
+    },
+    "A0": {
+      "engine_run": 5,
+      "failure": null,
+      "mismatch": null,
+      "lua_errors": 0,
+      "own_end_matches_record": true,
+      "replay": {
+        "engine_run": 11,
+        "reproduced": "114/114",
+        "end_matches": true
+      },
+      "b2b3_legal_at_search_window": false,
+      "opponent_search": {
+        "outcome": "search_resolved",
+        "opponent_hand": {
+          "added": {
+            "12375297": 1
+          },
+          "removed": {}
+        }
+      },
+      "rukina_level_observed": [
+        6
+      ],
+      "our_resources_at_turn3_start": {
+        "field": [
+          "キラーチューン・リミックス",
+          "鎖縛竜ザレン"
+        ],
+        "spell_trap": [
+          "キラーチューン・シンクロ",
+          "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+        ],
+        "hand": [
+          "エフェクト・ヴェーラー",
+          "エフェクト・ヴェーラー",
+          "エフェクト・ヴェーラー"
+        ],
+        "graveyard": [
+          "キラーチューン・キュー",
+          "キラーチューン・トラックメイカー",
+          "キラーチューン・ミクス",
+          "キラーチューン・レコ",
+          "キラーチューン・ロタリー",
+          "灰流うらら"
+        ],
+        "banished": []
+      },
+      "battle": {
+        "commands": [
+          {
+            "step": 105,
+            "offered": [
+              "Attack:鎖縛竜ザレン"
+            ],
+            "chosen": "Attack:鎖縛竜ザレン",
+            "lp_opponent": 8000,
+            "opponent_field": [
+              "耀聖の花詩ルキナ"
+            ]
+          },
+          {
+            "step": 110,
+            "offered": [],
+            "chosen": "Main2",
+            "lp_opponent": 7700,
+            "opponent_field": []
+          }
+        ],
+        "zaren_attacks_executed": 1,
+        "lp_opponent_end": 7700,
+        "lp_ours_end": 8000,
+        "opponent_field_end": [],
+        "opponent_graveyard_end": [
+          "耀聖の花詩ルキナ"
+        ]
+      }
+    },
+    "A1": {
+      "engine_run": 6,
+      "failure": null,
+      "mismatch": null,
+      "lua_errors": 0,
+      "own_end_matches_record": true,
+      "replay": {
+        "engine_run": 12,
+        "reproduced": "138/138",
+        "end_matches": true
+      },
+      "route": {
+        "remix_step": 72,
+        "phase": "opponent draw phase",
+        "picks": [
+          "灰流うらら",
+          "キラーチューン・レコ",
+          "キラーチューン・レコ"
+        ],
+        "synchro_yes": true,
+        "field_before": [
+          "キラーチューン・リミックス",
+          "鎖縛竜ザレン"
+        ],
+        "field_after": [
+          "キラーチューン Ｂ２Ｂ"
+        ],
+        "hand_gained": [
+          "キラーチューン・レコ"
+        ],
+        "graveyard_gained": [
+          "キラーチューン・リミックス",
+          "鎖縛竜ザレン"
+        ],
+        "b2b_monster_and_material_prompts": "none shown (one candidate each; resolved by the env)"
+      },
+      "b2b3_legal_at_search_window": true,
+      "b2b3": {
+        "step": 94,
+        "chain_link": 2,
+        "targets_offered": [
+          "灰流うらら",
+          "鎖縛竜ザレン",
+          "キラーチューン・リミックス",
+          "キラーチューン・トラックメイカー",
+          "キラーチューン・キュー",
+          "キラーチューン・ミクス",
+          "キラーチューン・ロタリー"
+        ],
+        "target": "鎖縛竜ザレン",
+        "options_offered": [
+          1152,
+          1190
+        ],
+        "option": 1152,
+        "synchro": {
+          "prompt_shown": false,
+          "chosen": null
+        },
+        "our_change": {
+          "field": {
+            "gained": [
+              "鎖縛竜ザレン"
+            ],
+            "lost": []
+          },
+          "hand": {
+            "gained": [],
+            "lost": []
+          },
+          "graveyard": {
+            "gained": [],
+            "lost": [
+              "鎖縛竜ザレン"
+            ]
+          }
+        }
+      },
+      "newly_activatable_after_chain": {
+        "step": 103,
+        "activations": [
+          "エフェクト・ヴェーラー(0)@h1",
+          "エフェクト・ヴェーラー(0)@h3",
+          "エフェクト・ヴェーラー(0)@h2",
+          "キラーチューン・シンクロ(0)@s1"
+        ]
+      },
+      "opponent_search": {
+        "outcome": "search_resolved",
+        "opponent_hand": {
+          "added": {
+            "12375297": 1
+          },
+          "removed": {}
+        }
+      },
+      "rukina_level_observed": [
+        8
+      ],
+      "our_resources_at_turn3_start": {
+        "field": [
+          "キラーチューン Ｂ２Ｂ",
+          "鎖縛竜ザレン"
+        ],
+        "spell_trap": [
+          "キラーチューン・シンクロ",
+          "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+        ],
+        "hand": [
+          "エフェクト・ヴェーラー",
+          "エフェクト・ヴェーラー",
+          "エフェクト・ヴェーラー",
+          "キラーチューン・レコ"
+        ],
+        "graveyard": [
+          "キラーチューン・キュー",
+          "キラーチューン・トラックメイカー",
+          "キラーチューン・ミクス",
+          "キラーチューン・リミックス",
+          "キラーチューン・ロタリー",
+          "灰流うらら"
+        ],
+        "banished": []
+      },
+      "battle": {
+        "commands": [
+          {
+            "step": 124,
+            "offered": [
+              "Attack:キラーチューン Ｂ２Ｂ",
+              "Attack:鎖縛竜ザレン"
+            ],
+            "chosen": "Attack:鎖縛竜ザレン",
+            "lp_opponent": 8000,
+            "opponent_field": [
+              "耀聖の花詩ルキナ"
+            ]
+          },
+          {
+            "step": 129,
+            "offered": [
+              "DirectAttack:キラーチューン Ｂ２Ｂ",
+              "DirectAttack:鎖縛竜ザレン"
+            ],
+            "chosen": "DirectAttack:鎖縛竜ザレン",
+            "lp_opponent": 7700,
+            "opponent_field": []
+          },
+          {
+            "step": 134,
+            "offered": [
+              "DirectAttack:キラーチューン Ｂ２Ｂ"
+            ],
+            "chosen": "Main2",
+            "lp_opponent": 4900,
+            "opponent_field": []
+          }
+        ],
+        "zaren_attacks_executed": 2,
+        "lp_opponent_end": 4900,
+        "lp_ours_end": 8000,
+        "opponent_field_end": [],
+        "opponent_graveyard_end": [
+          "耀聖の花詩ルキナ"
+        ]
+      }
+    }
+  },
+  "not_established": [
+    "B2B (3) second and third use in one turn",
+    "B2B (2) for B2B itself (offered, not executed)",
+    "value of the recovered/summoned cards in later turns, model use of B2B, win/loss",
+    "A0 and A1 boards differ beyond B2B (Remix vs B2B on field, Reco in hand in A1, Rukina level 6 vs 8)"
+  ]
+}

@@ -1,0 +1,23 @@
+--- experiments/initial-reference-fix-20261109/source-before/tests/test_continuous_opening_backend.py	2026-11-09 18:40:06.359203355 +0900
++++ tests/test_continuous_opening_backend.py	2026-11-09 19:53:06.170218745 +0900
+@@ -87,9 +87,17 @@
+         policy=json.loads(Path(cfg['verified_policy_config']).read_text())
+         state=json.loads((root/'state.json').read_text())
+         self.assertEqual((root/'STOP').read_text().strip(),'now');self.assertEqual(state['status'],'stopped')
+-        for key in ['best_checkpoint','latest_checkpoint']:
+-            for name,field in [('base.flax_model','base_sha256'),('chain-head.flax_model','head_sha256')]:
+-                self.assertEqual(C.sha(Path(state[key])/name),policy[field])
++        # The root's initial pair is the adopted model. After cycles have run, best stays there unless the
++        # loop's gates promoted a candidate (opening-best.json evidence), and latest is best or the pending
++        # candidate of the current cycle (e.g. a candidate whose evaluation was interrupted by STOP).
++        initial=root/'models/initial'
++        for name,field in [('base.flax_model','base_sha256'),('chain-head.flax_model','head_sha256')]:
++            self.assertEqual(C.sha(initial/name),policy[field])
++        best,latest,pending=Path(state['best_checkpoint']),Path(state['latest_checkpoint']),state.get('pending')
++        if best!=initial:self.assertTrue((root/'opening-best.json').is_file())
++        self.assertTrue(latest==best or (pending is not None and latest.is_relative_to(Path(pending['directory']))))
++        for checkpoint in [best,latest]:
++            for name in ['base.flax_model','chain-head.flax_model']:self.assertTrue((checkpoint/name).is_file())
+         hashes=json.loads((root/'snapshot/hashes.json').read_text())
+         self.assertEqual(hashes['train.py'],hashlib.sha256(b.expected_trainer_text(cfg).encode()).hexdigest())
+         self.assertFalse([n for n in hashes if n.endswith(('validation.npz','holdout.npz'))])

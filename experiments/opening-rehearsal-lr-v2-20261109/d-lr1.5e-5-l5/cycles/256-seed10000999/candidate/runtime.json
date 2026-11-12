@@ -1,0 +1,13 @@
+{
+  "runtime": "/home/hatk8/projects/yugioh-ai/evaluation/opponent-article-basics-20261108/runtime",
+  "native_binary": "/home/hatk8/projects/yugioh-ai/evaluation/opponent-article-basics-20261108/runtime/agent/ygoenv/ygoenv/ygopro/ygopro_ygoenv.cpython-310-x86_64-linux-gnu.so",
+  "native_sha256": "19a60f38a3d39b61a2ee082168d5a788a1022b2eb569633816596c8b3de21294",
+  "vocabulary": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/code_list.txt",
+  "vocabulary_sha256": "aeb5be89d4a5591ccc5cce6af96def74ef47463a55265f75c11b92029e772e7b",
+  "deck": "/home/hatk8/projects/yugioh-ai/assets/deck/ElfnotesKewlTune.ydk",
+  "deck_sha256": "6e6344d98ee5865e8ea1460c75c361a3f6e054c02cb8a041337c532646d15373",
+  "observation_policy": "masked public/own information plus public-chain features",
+  "normal_summon_usage_scored": false,
+  "model_format": "paired base + chain-head",
+  "max_options": 128
+}

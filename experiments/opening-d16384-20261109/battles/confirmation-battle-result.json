@@ -1,0 +1,116 @@
+{
+  "plan": "/home/hatk8/projects/yugioh-ai/experiments/opening-d16384-20261109/battles/battle-plan-confirmation-20261109.json",
+  "plan_sha256": "0dc703026eff52e6adb3d4157cbadb21cf56994cee87893e928368ebbe12990c",
+  "games_played": 256,
+  "seed": 80016385,
+  "adopted": false,
+  "earlier_records_unchanged": {
+    "battle-plan.json": true,
+    "battle-result.json": true,
+    "battle-plan-requested-20261109.json": true,
+    "requested-battle-result.json": true,
+    "requested-games-128.json": true
+  },
+  "candidate": "/home/hatk8/projects/yugioh-ai/experiments/opening-d16384-20261109/d-lr1.5e-5-l5/cycles/12288-seed10016384/candidate",
+  "base_sha256": "86b4358dcfec696cb4b3cc4c19781c34292b2509bf037b9e4f44d9ed8ec59d1c",
+  "head_sha256": "6ca3221f1828eecc5cea817003c8df5e8802b75fabef0f4aa33105ad0f979fce",
+  "results": {
+    "total_episodes": 256,
+    "verified_episodes": 256,
+    "excluded_suspected_episodes": 0,
+    "excluded_timeout_or_suspected_episodes": 0,
+    "wins": 170,
+    "losses": 86,
+    "draws": 0,
+    "win_rate": 0.6641,
+    "win_rate_includes_truncated_lp": true,
+    "truncation_rate": 0.0,
+    "win_rate_ci95": [
+      0.5752,
+      0.7451
+    ],
+    "win_rate_se_paired": 0.0249,
+    "effective_sample_size": 128.0,
+    "avg_reward": 0.5559,
+    "has_suspected_timeout": false,
+    "requires_rerun_or_exclusion": false,
+    "timeout_suspected_policy": "exclude_engine_timeout_and_suspected_pairs_from_verified_and_natural_results_keep_raw_in_episodes_and_raw_including_suspected_flag_rerun",
+    "natural_only": {
+      "episodes": 256,
+      "wins": 170,
+      "losses": 86,
+      "draws": 0,
+      "win_rate": 0.6641
+    },
+    "raw_including_suspected": {
+      "episodes": 256,
+      "wins": 170,
+      "losses": 86,
+      "draws": 0,
+      "win_rate": 0.6641,
+      "win_rate_ci95": [
+        0.5752,
+        0.7451
+      ]
+    },
+    "first_player": {
+      "episodes": 128,
+      "wins": 113,
+      "losses": 15,
+      "draws": 0,
+      "win_rate": 0.8828,
+      "win_rate_ci95": [
+        0.8156,
+        0.9277
+      ]
+    },
+    "second_player": {
+      "episodes": 128,
+      "wins": 57,
+      "losses": 71,
+      "draws": 0,
+      "win_rate": 0.4453,
+      "win_rate_ci95": [
+        0.3621,
+        0.5318
+      ]
+    },
+    "seed_pairs": {
+      "total_pairs": 128,
+      "verified_pairs": 128,
+      "suspected_or_timeout_pairs": 0,
+      "sweep_2_0_wins": 48,
+      "split_1_1_first_player_won_both": 65,
+      "split_1_1_second_player_won_both": 9,
+      "sweep_0_2_losses": 6,
+      "other_with_draws": 0
+    }
+  },
+  "terminations": {
+    "normal_total": 256,
+    "normal_lp0": 254,
+    "normal_deckout_or_special": 2,
+    "abnormal_total": 0,
+    "truncated": 0,
+    "engine_timeout": 0,
+    "timeout_suspected": 0,
+    "aborted_max_steps": 0,
+    "draws": 0
+  },
+  "clean": true,
+  "existing_battle_criterion_met_by_these_256_games": true,
+  "arm_stop": "now",
+  "arm_status": "stopped",
+  "arm_child_pid": null,
+  "leftover_jobs": [],
+  "production_fingerprint_unchanged": true,
+  "resources": {
+    "name": "confirmation-games",
+    "wall_seconds": 427.2,
+    "max_rss_mib": 2086.0,
+    "gpu_memory_used_before_mib": 1680.0,
+    "gpu_memory_used_peak_mib": 2118.0,
+    "gpu_utilization_peak_percent": 48.0,
+    "gpu_samples": 208
+  }
+}

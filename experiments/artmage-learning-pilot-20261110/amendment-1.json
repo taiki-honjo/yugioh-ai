@@ -1,0 +1,80 @@
+{
+ "amendment": 1,
+ "registered_jst": "2026-11-10T18:57:20+09:00",
+ "spec": "C:/Users/hatk8/Documents/Codex/2026-10-27/new-chat/outputs/artmage-retry-decision-2026-11-10.md",
+ "registration_sha256": "8c708da54ae5a5764b48b46ada34695a93ef52a288937e88d9168d7b906fb4b1",
+ "failure": {
+  "confirmed": [
+   "training attempt 1 stopped with RuntimeError(\"opponent private card identity visible in the observation\") raised by the pilot's own observation check (pilot_train.py, registered version)",
+   "stop at environment decision 2680 in episode 6 (env seed 772775548, learner seat 0); 20 update windows had completed (last ended at 2,617); no candidate was saved",
+   "native ygopro.h builds card observations through knows_card(): the opponent hand/deck identity is shown when a disclosure record (MSG_CONFIRM_CARDS to that viewer, MSG_CONFIRM_DECKTOP to both) or a selection prompt covers it; records are cleared on MSG_MOVE, hand/deck shuffle and MSG_CHAIN_END",
+   "the old check (opponent hand/deck identities always 0) therefore does not hold for legal disclosures"
+  ],
+  "inferred_not_verified": [
+   "that the identity visible at the stop came from a legal disclosure (the learner held 三戦の才, whose script calls Duel.ConfirmCards, but holding it is not evidence that it was used); the stop was not reproduced and no extra engine run was made"
+  ]
+ },
+ "change": {
+  "summary": "opponent hand/deck identities are no longer a stop condition by themselves; each is recorded as a visibility event with origin selection_prompt (same id is a current legal action) or unverified; clear exposure still stops the run",
+  "clear_exposure": [
+   "identity visible before any action of the episode (training) / at step 0 (evaluation)",
+   "more than 15 opponent hand/deck identities visible at once"
+  ],
+  "recorded": [
+   "episode and env seed, environment decision number, viewer seat, learner/frozen role, turn and phase, message type, public chain, previous executed action, each visible card (zone, observation row, id, code, origin)"
+  ],
+  "unchanged": [
+   "observation contents fed to the model",
+   "action identity and public chain checks in evaluation",
+   "weights/code/deck hash checks",
+   "all training settings"
+  ],
+  "model_inputs": "audit values are computed from the observation copy and written to logs only; they never enter the policy, RNN, PPO or rehearsal inputs",
+  "diff": {
+   "path": "amendment-1.diff",
+   "sha256": "802702cefb10e5960dc3d913e5bca88959c7cc93f8ea2101130507b7f36b0fae"
+  },
+  "old_code": {
+   "pilot_train.py": "fa036d2c74d915b8e47e2cdec1f6758fa13b8dabfcb4ac7d34a25aeea0bb3ff3",
+   "pilot_eval.py": "14eab68342a9b6bf5ddaca8f57630909dbf99231e25379089d759d0d36de2ef3",
+   "pilot_launch.py": "8eb52cb1f9b2cf9492308f0f2cdaad3eee92515ae9cf7a2bc2247a421fcf94c3"
+  },
+  "old_code_copies": "train/attempt-1-failed/code/ (hash-identical to the registration)"
+ },
+ "training_runs_allowed": 2,
+ "attempt_dir": "attempt-2",
+ "failed_attempt_dir": "attempt-1-failed",
+ "failed_attempt_decisions": 2680,
+ "attempt_2_cap": 4096,
+ "cumulative_decision_cap": 6776,
+ "attempt_2": {
+  "start": "the registered start model (no weights, optimizer, RNG or RNN state from attempt 1)",
+  "seeds": "training 10111001, rehearsal 30111001, first learner seat 0 (unchanged)",
+  "settings": "unchanged (learning rate, rehearsal ratio and lambda, optimizer, windows, PPO values)"
+ },
+ "evaluation": {
+  "cap": 18,
+  "used": 8,
+  "remaining": 10,
+  "note": "the 8 runs already made used the strict check and had no visible opponent identity (they would have stopped otherwise); their records are not rewritten"
+ },
+ "on_second_failure": "no third attempt, no diagnostic engine runs outside the budget; report",
+ "reporting": "no claim that information leakage is zero; unverified visibility events are reported with counts and limits; if the audit is insufficient the candidate and its evaluations are exploratory only",
+ "not_done": [
+  "adoption",
+  "battles",
+  "production restart",
+  "B2B"
+ ],
+ "code": {
+  "artmage_entry.py": "ca47f56d29431b48d60337de6dcc6ce23d524fba31cbbbdce31e6d7399b78e0f",
+  "artmage_pins.py": "10c4e053d05f44498cff77c45301a3fb5222c7598a658decc52f4539fd96bde8",
+  "artmage_teacher.py": "a126284eff7a2d7ef3c602ade0aa5f196f7ddea77333213c27a197ade21b78f3",
+  "pilot_data.py": "dc749fb5ea77419741d0e7469edd7f423db241eae11ccafe399f76a04c3417e8",
+  "pilot_eval.py": "80cecdf44996f269226f5032bd33f18e66194f2f33b984a7cae7563498fec646",
+  "pilot_launch.py": "0f19ad0806170685879f56a80221c7f43b3f18754103023c1d32d6cf2f106804",
+  "pilot_model.py": "8bec14fb9a1e6c02cbfa715c21146aafeb45b00f060d4cd7afa57b7c84e0ad56",
+  "pilot_register.py": "50fe04ccd45e88d15db6c070c60c210df0da1ae8575de4bde11d185a52bbd93b",
+  "pilot_train.py": "d39754a325f62dfbe2049c9e19fd0f7a03466781597a1297d42381839247484f"
+ }
+}

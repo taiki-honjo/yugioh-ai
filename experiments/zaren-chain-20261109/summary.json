@@ -1,0 +1,246 @@
+{
+  "created_jst": "2026-11-09T21:12:41+09:00",
+  "position": "P1 teacher route (train cue-reco-jj-zaren-g00-p0), own turn replayed; opponent O1; our side passes except the scripted Veiler/Zaren",
+  "engine_runs": {
+    "used": 8,
+    "limit": 8
+  },
+  "conditions": {
+    "chain1": {
+      "engine_run": 1,
+      "harness_sha256": "98e63b566b6b8d07c13223f32d7eab59b98e9e804aa78260fecc7943448d82e5",
+      "own_end_matches_record": true,
+      "constructed": true,
+      "constructed_flag_in_run": true,
+      "veiler_target": null,
+      "zaren_legal_by_chain_length": {
+        "0": {
+          "windows": 3,
+          "zaren_legal_at_steps": []
+        },
+        "1": {
+          "windows": 1,
+          "zaren_legal_at_steps": []
+        }
+      },
+      "zaren_option": null,
+      "chain": [
+        "opp:耀聖の花詩ルキナ"
+      ],
+      "search": "search_resolved",
+      "opponent_hand_change": {
+        "added": {
+          "12375297": 1
+        },
+        "removed": {}
+      },
+      "rukina_after": [
+        "monster zone"
+      ],
+      "our_veiler_after": [
+        "hand",
+        "hand",
+        "hand"
+      ],
+      "our_zaren_after": [
+        "monster zone"
+      ],
+      "replay": {
+        "engine_run": 5,
+        "reproduced": "83/83",
+        "end_matches": true,
+        "mismatch": null
+      },
+      "lua_errors": 0
+    },
+    "veiler": {
+      "engine_run": 2,
+      "harness_sha256": "98e63b566b6b8d07c13223f32d7eab59b98e9e804aa78260fecc7943448d82e5",
+      "own_end_matches_record": true,
+      "constructed": true,
+      "constructed_flag_in_run": false,
+      "veiler_target": "Rukina (only face-up opponent effect monster; the env resolved the one-candidate prompt)",
+      "zaren_legal_by_chain_length": {
+        "0": {
+          "windows": 3,
+          "zaren_legal_at_steps": []
+        },
+        "1": {
+          "windows": 1,
+          "zaren_legal_at_steps": []
+        },
+        "2": {
+          "windows": 1,
+          "zaren_legal_at_steps": [
+            82
+          ]
+        }
+      },
+      "zaren_option": null,
+      "chain": [
+        "opp:耀聖の花詩ルキナ",
+        "own:エフェクト・ヴェーラー"
+      ],
+      "search": "search_not_applied",
+      "opponent_hand_change": {
+        "added": {},
+        "removed": {}
+      },
+      "rukina_after": [
+        "monster zone"
+      ],
+      "our_veiler_after": [
+        "hand",
+        "hand",
+        "graveyard"
+      ],
+      "our_zaren_after": [
+        "monster zone"
+      ],
+      "replay": {
+        "engine_run": 6,
+        "reproduced": "83/83",
+        "end_matches": true,
+        "mismatch": null
+      },
+      "lua_errors": 0
+    },
+    "zaren-link1": {
+      "engine_run": 3,
+      "harness_sha256": "f0bdbddfaf8a42a6f7c520dd043ab967ed8dad34be2a7adee93f88ca86daa8b2",
+      "own_end_matches_record": true,
+      "constructed": true,
+      "constructed_flag_in_run": true,
+      "veiler_target": "Rukina (only face-up opponent effect monster; the env resolved the one-candidate prompt)",
+      "zaren_legal_by_chain_length": {
+        "0": {
+          "windows": 3,
+          "zaren_legal_at_steps": []
+        },
+        "1": {
+          "windows": 1,
+          "zaren_legal_at_steps": []
+        },
+        "2": {
+          "windows": 1,
+          "zaren_legal_at_steps": [
+            82
+          ]
+        },
+        "3": {
+          "windows": 1,
+          "zaren_legal_at_steps": []
+        }
+      },
+      "zaren_option": {
+        "step": 83,
+        "offered": [
+          2,
+          3
+        ],
+        "chosen": 3
+      },
+      "chain": [
+        "opp:耀聖の花詩ルキナ",
+        "own:エフェクト・ヴェーラー",
+        "own:鎖縛竜ザレン"
+      ],
+      "search": "search_not_applied",
+      "opponent_hand_change": {
+        "added": {},
+        "removed": {}
+      },
+      "rukina_after": [
+        "graveyard"
+      ],
+      "our_veiler_after": [
+        "hand",
+        "hand",
+        "graveyard"
+      ],
+      "our_zaren_after": [
+        "monster zone"
+      ],
+      "replay": {
+        "engine_run": 7,
+        "reproduced": "86/86",
+        "end_matches": true,
+        "mismatch": null
+      },
+      "lua_errors": 0
+    },
+    "zaren-link2": {
+      "engine_run": 4,
+      "harness_sha256": "f0bdbddfaf8a42a6f7c520dd043ab967ed8dad34be2a7adee93f88ca86daa8b2",
+      "own_end_matches_record": true,
+      "constructed": true,
+      "constructed_flag_in_run": true,
+      "veiler_target": "Rukina (only face-up opponent effect monster; the env resolved the one-candidate prompt)",
+      "zaren_legal_by_chain_length": {
+        "0": {
+          "windows": 3,
+          "zaren_legal_at_steps": []
+        },
+        "1": {
+          "windows": 1,
+          "zaren_legal_at_steps": []
+        },
+        "2": {
+          "windows": 1,
+          "zaren_legal_at_steps": [
+            82
+          ]
+        },
+        "3": {
+          "windows": 1,
+          "zaren_legal_at_steps": []
+        }
+      },
+      "zaren_option": {
+        "step": 83,
+        "offered": [
+          2,
+          3
+        ],
+        "chosen": 2
+      },
+      "chain": [
+        "opp:耀聖の花詩ルキナ",
+        "own:エフェクト・ヴェーラー",
+        "own:鎖縛竜ザレン"
+      ],
+      "search": "search_resolved",
+      "opponent_hand_change": {
+        "added": {
+          "12375297": 1
+        },
+        "removed": {}
+      },
+      "rukina_after": [
+        "monster zone"
+      ],
+      "our_veiler_after": [
+        "hand",
+        "hand",
+        "graveyard"
+      ],
+      "our_zaren_after": [
+        "monster zone"
+      ],
+      "replay": {
+        "engine_run": 8,
+        "reproduced": "87/87",
+        "end_matches": true,
+        "mismatch": null
+      },
+      "lua_errors": 0
+    }
+  },
+  "harness_note": "zaren.py changed after run 2 only in the construction check (one-candidate target prompts are resolved by the env); runs 1-2 store the stricter in-run flag, this summary applies the corrected rule to all four",
+  "zaren_options": "description 2 = negate/destroy the link Zaren responds to (link 2, our Veiler); description 3 = the link it chained to (link 1, Rukina)",
+  "not_established": [
+    "that Zaren alone stops the search in zaren-link1 (Veiler on link 2 also stops it, see veiler)",
+    "whether the destroy part of option 2 does anything when link 2 is our Veiler already in the graveyard (no observable change)",
+    "chains built by the opponent (e.g. the opponent chaining to our effect), other positions, model use of Zaren"
+  ]
+}

@@ -1,0 +1,23 @@
+--- experiments/opening-rehearsal-ab-20261109/source-before/scripts/continuous_opening_backend.py	2026-11-09 01:35:18.513130600 +0900
++++ scripts/continuous_opening_backend.py	2026-11-09 11:18:31.806958892 +0900
+@@ -237,6 +237,11 @@
+     C.atomic_copy(Path(cfg['project']) / 'scripts/evaluate.py', snapshot / 'evaluator.py')
+     C.atomic_copy(Path(__file__), snapshot / 'continuous_opening_backend.py')
+     text = patched_trainer((Path(cfg['runtime']) / 'agent/scripts/cleanba.py').read_text())
++    rehearsal = cfg.get('rehearsal') or {}
++    if rehearsal.get('enabled'):
++        # Optional train-split rehearsal loss; pinned into this NEW snapshot only.
++        import opening_rehearsal
++        text = opening_rehearsal.prepare_snapshot(cfg, snapshot, text, C.atomic_copy)
+     (snapshot / 'train.py').write_text(text)
+     C.atomic_json(snapshot / 'hashes.json', {str(p.relative_to(snapshot)): C.sha(p) for p in snapshot.rglob('*') if p.is_file() and p.name!='hashes.json'})
+     initial = root / 'models/initial'; initial.mkdir(parents=True, exist_ok=True)
+@@ -252,6 +257,8 @@
+                  pid=None,last_error=None,network_or_llm_calls=False,
+                  resume_kind='base and chain-head weights; optimizer/RNG/duel state restart each chunk',
+                  regression_policy='all initially passing validation openings must remain passing; holdout is not used')
++    if rehearsal.get('enabled'):
++        state['opening_rehearsal'] = read(snapshot / 'rehearsal/settings.json')['settings']
+     C.save_state(cfg,state); C.runtime_check(cfg)
+     return state
+ 

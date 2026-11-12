@@ -1,0 +1,85 @@
+{
+  "deck": "ElfnotesKewlTune",
+  "training_result": "\\\\wsl.localhost\\Ubuntu-22.04\\home\\hatk8\\projects\\yugioh-ai\\experiments\\all-openings-bar-alternative-20261108\\run-20261108-194920\\training\\ElfnotesKewlTune\\result.json",
+  "selected_checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/all-openings-bar-alternative-20261108/run-20261108-194920/training/ElfnotesKewlTune/step-0400",
+  "base_sha256": "966cc8b1c3f0c092e824cc52dffcaf9c71f0c9373ece0fd07831d4a9df4f7cd1",
+  "head_sha256": "1aaf569daf53a4453ef2f2e450c924af014aea83b3e4f98fea2644b795b52dc8",
+  "validation_completed": 65,
+  "validation_total": 66,
+  "blind_completed": 86,
+  "blind_total": 88,
+  "report": "\\\\wsl.localhost\\Ubuntu-22.04\\home\\hatk8\\projects\\yugioh-ai\\docs\\all-openings-training-2026-11-08.md",
+  "normal_summon_usage_scored": false,
+  "scope": "Verified opening and fixed targeted interruption/recovery tests; not full-duel strength.",
+  "resource_policy": "\\\\wsl.localhost\\Ubuntu-22.04\\home\\hatk8\\projects\\yugioh-ai\\experiments\\all-openings-bar-alternative-20261108\\run-20261108-194920\\training\\resource-policy.json",
+  "training_finished": true,
+  "placement_adapter": {
+    "enabled": true,
+    "module": "center_placement",
+    "class_name": "PlacementPolicy",
+    "runtime_code_directory": "/home/hatk8/projects/yugioh-ai/evaluation/placement-remix-fix-20261109/code",
+    "report": "/home/hatk8/projects/yugioh-ai/docs/placement-remix-fix-2026-11-09.md",
+    "weights_retrained": false,
+    "new_hand_trials": 44,
+    "new_hand_passed": 44,
+    "version": "v2-remix-tracking-20261109",
+    "previous_runtime_code_directory": "/home/hatk8/projects/yugioh-ai/evaluation/battle-position-20261108/code",
+    "previous_center_placement_sha256": "805e68213710ad411ae4c5a3fc47bd998a8eb7ed2113a3335386eeed7db00b3c",
+    "center_placement_sha256": "3e96241095487fb48426099d774b7813cee348fc282dacbde0ced9af2d7abbba",
+    "change": "Kewl Tune Remix pick tracking only (see center_placement.py docstring); weights and all other adapter rules unchanged.",
+    "note_inherited_fields": "new_hand_trials/new_hand_passed/placement_regression/battle_position_adapter.regression were measured with v1 and are kept as v1 history.",
+    "v2_checks": {
+      "unit_tests": "tests/test_center_placement_remix.py (10)",
+      "equivalence": {
+        "evidence": "/home/hatk8/projects/yugioh-ai/experiments/placement-remix-fix-20261109/equivalence.json",
+        "identical_cases": 176,
+        "total_cases": 176,
+        "suites": {
+          "adopted/validation-66": "65/66 v1 = 65/66 v2",
+          "adopted/placement-fixed-44": "44/44 v1 = 44/44 v2",
+          "a-ppo-256-seed10000777/validation-66": "45/66 v1 = 45/66 v2"
+        },
+        "compared": "pass/fail, failure, full selected-action trace, placement events, position events",
+        "lua_errors": 0
+      },
+      "pinned_root_baseline": {
+        "evidence": "/home/hatk8/projects/yugioh-ai/experiments/placement-remix-fix-20261109/root-v2-check.json",
+        "passed": 65,
+        "total": 66,
+        "same_per_case_results_as_v1": true
+      },
+      "stopped_battle_rerun": {
+        "evidence": "/home/hatk8/projects/yugioh-ai/experiments/placement-remix-fix-20261109/battle-v2/battle.json",
+        "v1": "ValueError after 10 s (evaluation could not finish)",
+        "v2": "32/32 verified, abnormal 0, candidate 12-20-0",
+        "remix_tracking": "/home/hatk8/projects/yugioh-ai/experiments/placement-remix-fix-20261109/battle-v2/remix-tracking.json"
+      }
+    }
+  },
+  "policy_loader": "/home/hatk8/projects/yugioh-ai/scripts/verified_opening_policy.py",
+  "blind_score_applies_to": "Frozen neural policy before this placement adapter; separate 88-hand test.",
+  "placement_regression": {
+    "before": 44,
+    "after": 44,
+    "total": 44,
+    "teacher_passed": 26,
+    "teacher_total": 26,
+    "weights_retrained": false
+  },
+  "battle_position_adapter": {
+    "enabled": true,
+    "module": "battle_position",
+    "class_name": "PositionPolicy",
+    "weights_retrained": false,
+    "report": "/home/hatk8/projects/yugioh-ai/docs/battle-position-2026-11-08.md",
+    "card_data_sha256": "22cc89b8cd09024f0deccc33ea569d27261012f04296e172df89ff261690eae3",
+    "regression": {
+      "before": 44,
+      "after": 44,
+      "total": 44,
+      "track_choices": 30,
+      "track_defense": 30
+    }
+  },
+  "adoption_status": "Adoption is recorded outside this file: config/continuous-elfnotes.json (verified_policy_config) and docs/placement-v2-adoption-2026-11-09.md. Only the placement adapter version changes; the neural base + chain-head weights are the same adopted pair."
+}

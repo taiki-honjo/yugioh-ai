@@ -1,0 +1,31 @@
+--- a/scripts/cleanba.py
++++ b/scripts/cleanba.py
+@@ -443,6 +443,7 @@
+         if update == 10:
+             start_time = time.time()
+             warmup_step = global_step
++            other_time = 0
+ 
+         update_time_start = time.time()
+         inference_time = 0
+@@ -1187,8 +1188,7 @@
+             writer.add_scalar("losses/loss", loss, tb_global_step)
+ 
+         if args.local_rank == 0 and learner_policy_version % args.save_interval == 0 and not args.debug:
+-            M_steps = tb_global_step // 2**20
+-            ckpt_name = f"{timestamp}_{M_steps}M.flax_model"
++            ckpt_name = f"{timestamp}_{tb_global_step}steps.flax_model"
+             ckpt_maneger.save(unreplicated_params, ckpt_name)
+ 
+         if learner_policy_version >= args.num_updates:
+--- a/ygoai/rl/ckpt.py
++++ b/ygoai/rl/ckpt.py
+@@ -36,6 +36,8 @@
+         self._check_dir()
+         path = self._dirname / name
+         self._save_fn(obj, str(path))
++        if path in self._saved:
++            self._saved.remove(path)
+         self._saved.append(path)
+         print(f"Saved model to {path}")
+ 

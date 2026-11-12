@@ -1,0 +1,58 @@
+{
+  "deck": "ClownTroupe",
+  "policy": "after",
+  "passed": 4,
+  "total": 4,
+  "cases": [
+    {
+      "case_id": "ClownTroupe-g08-p0",
+      "passed": true,
+      "goal": {
+        "monsters": true,
+        "opening_active": true,
+        "phantasm_set": true,
+        "hand_limit_respected": true
+      },
+      "reason": "goal_reached",
+      "steps": 68
+    },
+    {
+      "case_id": "ClownTroupe-g09-p0",
+      "passed": true,
+      "goal": {
+        "monsters": true,
+        "opening_active": true,
+        "phantasm_set": true,
+        "hand_limit_respected": true
+      },
+      "reason": "goal_reached",
+      "steps": 88
+    },
+    {
+      "case_id": "ClownTroupe-g10-p0",
+      "passed": true,
+      "goal": {
+        "monsters": true,
+        "opening_active": true,
+        "phantasm_set": true,
+        "hand_limit_respected": true
+      },
+      "reason": "goal_reached",
+      "steps": 69
+    },
+    {
+      "case_id": "ClownTroupe-g11-p0",
+      "passed": true,
+      "goal": {
+        "monsters": true,
+        "opening_active": true,
+        "phantasm_set": true,
+        "hand_limit_respected": true
+      },
+      "reason": "goal_reached",
+      "steps": 91
+    }
+  ],
+  "lua_errors": 0,
+  "scope": "Four unseen initial hand multisets for the single trained opening; not all possible hands, disruption lines or win rate."
+}

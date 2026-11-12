@@ -1,0 +1,226 @@
+[
+  {
+    "code": 97268402,
+    "name": "エフェクト・ヴェーラー",
+    "compatible": true,
+    "extra_choices": [
+      {
+        "code": 24915933,
+        "name": "赫焉竜グランギニョル"
+      }
+    ]
+  },
+  {
+    "code": 94145021,
+    "name": "ドロール＆ロックバード",
+    "compatible": true,
+    "extra_choices": [
+      {
+        "code": 24915933,
+        "name": "赫焉竜グランギニョル"
+      }
+    ]
+  },
+  {
+    "code": 23434538,
+    "name": "増殖するＧ",
+    "compatible": false,
+    "extra_choices": []
+  },
+  {
+    "code": 14558127,
+    "name": "灰流うらら",
+    "compatible": false,
+    "extra_choices": []
+  },
+  {
+    "code": 7375867,
+    "name": "星辰竜ムルル",
+    "compatible": true,
+    "extra_choices": [
+      {
+        "code": 41373230,
+        "name": "灰燼竜バスタード"
+      },
+      {
+        "code": 87746184,
+        "name": "烙印竜アルビオン"
+      },
+      {
+        "code": 3410461,
+        "name": "深淵竜アルバ・レナトゥス"
+      },
+      {
+        "code": 72578374,
+        "name": "空隙の原星竜"
+      },
+      {
+        "code": 33760966,
+        "name": "星辰爪竜アルザリオン"
+      }
+    ]
+  },
+  {
+    "code": 68468459,
+    "name": "アルバスの落胤",
+    "compatible": true,
+    "extra_choices": [
+      {
+        "code": 41373230,
+        "name": "灰燼竜バスタード"
+      },
+      {
+        "code": 87746184,
+        "name": "烙印竜アルビオン"
+      },
+      {
+        "code": 3410461,
+        "name": "深淵竜アルバ・レナトゥス"
+      },
+      {
+        "code": 72578374,
+        "name": "空隙の原星竜"
+      },
+      {
+        "code": 33760966,
+        "name": "星辰爪竜アルザリオン"
+      }
+    ]
+  },
+  {
+    "code": 55273560,
+    "name": "白の聖女エクレシア",
+    "compatible": true,
+    "extra_choices": [
+      {
+        "code": 24915933,
+        "name": "赫焉竜グランギニョル"
+      }
+    ]
+  },
+  {
+    "code": 95515789,
+    "name": "赫の聖女カルテシア",
+    "compatible": true,
+    "extra_choices": [
+      {
+        "code": 24915933,
+        "name": "赫焉竜グランギニョル"
+      }
+    ]
+  },
+  {
+    "code": 42141493,
+    "name": "マルチャミー・フワロス",
+    "compatible": true,
+    "extra_choices": [
+      {
+        "code": 51409648,
+        "name": "撃鉄竜リンドブルム"
+      }
+    ]
+  },
+  {
+    "code": 75003700,
+    "name": "星辰槍手ルキアス",
+    "compatible": true,
+    "extra_choices": [
+      {
+        "code": 24915933,
+        "name": "赫焉竜グランギニョル"
+      }
+    ]
+  },
+  {
+    "code": 73819701,
+    "name": "白き竜の落胤",
+    "compatible": true,
+    "extra_choices": [
+      {
+        "code": 41373230,
+        "name": "灰燼竜バスタード"
+      },
+      {
+        "code": 87746184,
+        "name": "烙印竜アルビオン"
+      },
+      {
+        "code": 3410461,
+        "name": "深淵竜アルバ・レナトゥス"
+      },
+      {
+        "code": 72578374,
+        "name": "空隙の原星竜"
+      },
+      {
+        "code": 33760966,
+        "name": "星辰爪竜アルザリオン"
+      }
+    ]
+  },
+  {
+    "code": 1498449,
+    "name": "星辰砲手ファイメナ",
+    "compatible": true,
+    "extra_choices": [
+      {
+        "code": 24915933,
+        "name": "赫焉竜グランギニョル"
+      }
+    ]
+  },
+  {
+    "code": 70871153,
+    "name": "星辰竜ウルグラ",
+    "compatible": true,
+    "extra_choices": [
+      {
+        "code": 41373230,
+        "name": "灰燼竜バスタード"
+      },
+      {
+        "code": 87746184,
+        "name": "烙印竜アルビオン"
+      },
+      {
+        "code": 3410461,
+        "name": "深淵竜アルバ・レナトゥス"
+      },
+      {
+        "code": 72578374,
+        "name": "空隙の原星竜"
+      },
+      {
+        "code": 33760966,
+        "name": "星辰爪竜アルザリオン"
+      }
+    ]
+  },
+  {
+    "code": 44482554,
+    "name": "星辰竜パーン",
+    "compatible": true,
+    "extra_choices": [
+      {
+        "code": 41373230,
+        "name": "灰燼竜バスタード"
+      },
+      {
+        "code": 87746184,
+        "name": "烙印竜アルビオン"
+      },
+      {
+        "code": 3410461,
+        "name": "深淵竜アルバ・レナトゥス"
+      },
+      {
+        "code": 72578374,
+        "name": "空隙の原星竜"
+      },
+      {
+        "code": 33760966,
+        "name": "星辰爪竜アルザリオン"
+      }
+    ]
+  }
+]

@@ -1,0 +1,22 @@
+{
+  "format": 2,
+  "arm": "a-lr3e-5",
+  "steps": 256,
+  "training_seed": 10000555,
+  "battle_episodes": 32,
+  "battle_seed": 90000555,
+  "battle_opponent": "models/initial",
+  "learning_rate": 3e-05,
+  "arm_config_sha256": "65b19bf88b228bb840f52cac075a546e9276c5bed0e4a7f6a697ebdfeec64668",
+  "initial_base_sha256": "966cc8b1c3f0c092e824cc52dffcaf9c71f0c9373ece0fd07831d4a9df4f7cd1",
+  "initial_head_sha256": "1aaf569daf53a4453ef2f2e450c924af014aea83b3e4f98fea2644b795b52dc8",
+  "rehearsal": null,
+  "snapshot_hashes_sha256": "a17d49849c1539dea3f1bf8d04ec7a859ecdbc200735a99e8d3cd6e9aa677d0a",
+  "evaluation_version": "opening-eval-v1: validation 66 free-run openings; every baseline-passing case_id must stay passing",
+  "code": {
+    "scripts/continuous_learning.py": "27ebfb29049bf8f9b146fbb823dc3a599fea59c46a758efc2ea07f2dc9d6da2a",
+    "scripts/continuous_opening_backend.py": "b6b6fa9811d44cafafa90779d022eb5db961df92b902d6ee66798de41081cdad",
+    "scripts/opening_rehearsal.py": "6aba1a3da68bfe5921e8e5bfc8146b6ba0273467a4dacd07209d579e7d760f56",
+    "runner_result_functions": "f94ca30dd8b7a84818a4602f57de84c6130e7a88c847ce40788323593d7e39ea"
+  }
+}

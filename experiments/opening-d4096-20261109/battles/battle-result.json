@@ -1,0 +1,108 @@
+{
+  "plan": "/home/hatk8/projects/yugioh-ai/experiments/opening-d4096-20261109/battles/battle-plan.json",
+  "plan_sha256": "aa27b26311fec6c1d135f0c5d9a03d6de2f921b2370030e7433a99111af91eed",
+  "games_played": 128,
+  "adopted": false,
+  "scout": {
+    "results": {
+      "total_episodes": 128,
+      "verified_episodes": 128,
+      "excluded_suspected_episodes": 0,
+      "excluded_timeout_or_suspected_episodes": 0,
+      "wins": 66,
+      "losses": 62,
+      "draws": 0,
+      "win_rate": 0.5156,
+      "win_rate_includes_truncated_lp": true,
+      "truncation_rate": 0.0,
+      "win_rate_ci95": [
+        0.3873,
+        0.6425
+      ],
+      "win_rate_se_paired": 0.0369,
+      "effective_sample_size": 64.0,
+      "avg_reward": -0.1406,
+      "has_suspected_timeout": false,
+      "requires_rerun_or_exclusion": false,
+      "timeout_suspected_policy": "exclude_engine_timeout_and_suspected_pairs_from_verified_and_natural_results_keep_raw_in_episodes_and_raw_including_suspected_flag_rerun",
+      "natural_only": {
+        "episodes": 128,
+        "wins": 66,
+        "losses": 62,
+        "draws": 0,
+        "win_rate": 0.5156
+      },
+      "raw_including_suspected": {
+        "episodes": 128,
+        "wins": 66,
+        "losses": 62,
+        "draws": 0,
+        "win_rate": 0.5156,
+        "win_rate_ci95": [
+          0.3873,
+          0.6425
+        ]
+      },
+      "first_player": {
+        "episodes": 64,
+        "wins": 47,
+        "losses": 17,
+        "draws": 0,
+        "win_rate": 0.7344,
+        "win_rate_ci95": [
+          0.6152,
+          0.827
+        ]
+      },
+      "second_player": {
+        "episodes": 64,
+        "wins": 19,
+        "losses": 45,
+        "draws": 0,
+        "win_rate": 0.2969,
+        "win_rate_ci95": [
+          0.1991,
+          0.4177
+        ]
+      },
+      "seed_pairs": {
+        "total_pairs": 64,
+        "verified_pairs": 64,
+        "suspected_or_timeout_pairs": 0,
+        "sweep_2_0_wins": 12,
+        "split_1_1_first_player_won_both": 35,
+        "split_1_1_second_player_won_both": 7,
+        "sweep_0_2_losses": 10,
+        "other_with_draws": 0
+      }
+    },
+    "terminations": {
+      "normal_total": 128,
+      "normal_lp0": 127,
+      "normal_deckout_or_special": 1,
+      "abnormal_total": 0,
+      "truncated": 0,
+      "engine_timeout": 0,
+      "timeout_suspected": 0,
+      "aborted_max_steps": 0,
+      "draws": 0
+    },
+    "clean": true,
+    "promotion_ok": false
+  },
+  "confirmation": null,
+  "confirmation_skipped_reason": "scout did not satisfy promotion_ok (existing criterion)",
+  "existing_promotion_rule_satisfied": false,
+  "production_fingerprint_unchanged": true,
+  "resources": {
+    "scout-resources": {
+      "name": "scout",
+      "wall_seconds": 220.7,
+      "max_rss_mib": 1214.1,
+      "gpu_memory_used_before_mib": 2935.0,
+      "gpu_memory_used_peak_mib": 3958.0,
+      "gpu_utilization_peak_percent": 47.0,
+      "gpu_samples": 107
+    }
+  }
+}

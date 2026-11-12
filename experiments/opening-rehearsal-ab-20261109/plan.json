@@ -1,0 +1,41 @@
+{
+  "experiment_root": "/home/hatk8/projects/yugioh-ai/experiments/opening-rehearsal-ab-20261109",
+  "base_config": "/home/hatk8/projects/yugioh-ai/config/continuous-elfnotes.json",
+  "purpose": "Stage A only: current PPO vs PPO + train-split acceptable-action rehearsal. Evaluation rules unchanged (validation 66 openings, case_id retention, paired battles). No adoption, no resident operation.",
+  "steps": 256,
+  "seeds": [
+    10000555,
+    10000777,
+    10000999
+  ],
+  "battle_episodes": 32,
+  "battle_seed": 90000555,
+  "arms": {
+    "a-ppo": {
+      "rehearsal": null
+    },
+    "b-rehearsal-l1": {
+      "rehearsal": {
+        "enabled": true,
+        "split": "train",
+        "lambda_bc": 1.0,
+        "lambda_kl": 0.0,
+        "sequences_per_minibatch": 2,
+        "seed": 20261109,
+        "sha256": "0ef4700c92ddb6f26c3e3f5dc04d4893d2cb02c096304af0bbdc546f8070e4da"
+      }
+    },
+    "b-rehearsal-l5": {
+      "rehearsal": {
+        "enabled": true,
+        "split": "train",
+        "lambda_bc": 5.0,
+        "lambda_kl": 0.0,
+        "sequences_per_minibatch": 2,
+        "seed": 20261109,
+        "sha256": "0ef4700c92ddb6f26c3e3f5dc04d4893d2cb02c096304af0bbdc546f8070e4da"
+      }
+    }
+  },
+  "lambda_selection_note": "lambda candidates fixed to {1,5} on 2026-11-09 after the first B(lambda=1) training update logs only (train-split rehearsal grad norm ~2-3 vs PPO grad norm ~13-15 before the global clip at 1.0), before any opening/battle result of that run was read."
+}

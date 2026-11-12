@@ -1,0 +1,12 @@
+{"event": "start", "run": 1, "purpose": "record (teacher route through run())", "case_id": "cue-reco-jj-zaren-g00-p0", "time_jst": "2026-11-09T20:36:46+09:00"}
+{"event": "finish", "run": 1, "status": "ok", "time_jst": "2026-11-09T20:36:46+09:00", "legacy_passed": true, "failure": null}
+{"event": "start", "run": 2, "purpose": "replay check (whole record)", "case_id": "cue-reco-jj-zaren-g00-p0", "time_jst": "2026-11-09T20:37:00+09:00"}
+{"event": "finish", "run": 2, "status": "ok", "time_jst": "2026-11-09T20:37:01+09:00", "mismatch": null, "failure": null}
+{"event": "start", "run": 3, "purpose": "record (teacher route through run())", "case_id": "elf-rukina-regina-g00-p0", "time_jst": "2026-11-09T20:37:07+09:00"}
+{"event": "finish", "run": 3, "status": "ok", "time_jst": "2026-11-09T20:37:07+09:00", "legacy_passed": true, "failure": null}
+{"event": "start", "run": 4, "purpose": "replay check (own turn) + O1 probe, our side passes", "case_id": "elf-rukina-regina-g00-p0", "time_jst": "2026-11-09T20:37:22+09:00"}
+{"event": "finish", "run": 4, "status": "ok", "time_jst": "2026-11-09T20:37:22+09:00", "mismatch": null, "failure": null}
+{"event": "start", "run": 5, "purpose": "conditional model-use: teacher-forced own turn, model in the opponent turn", "case_id": "cue-reco-jj-zaren-g00-p0", "time_jst": "2026-11-09T20:37:37+09:00"}
+{"event": "finish", "run": 5, "status": "ok", "time_jst": "2026-11-09T20:37:51+09:00", "mismatch": null, "failure": null}
+{"event": "start", "run": 6, "purpose": "conditional model-use: teacher-forced own turn, model in the opponent turn", "case_id": "elf-rukina-regina-g00-p0", "time_jst": "2026-11-09T20:38:06+09:00"}
+{"event": "finish", "run": 6, "status": "ok", "time_jst": "2026-11-09T20:38:20+09:00", "mismatch": null, "failure": null}

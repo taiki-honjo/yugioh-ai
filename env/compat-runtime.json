@@ -1,0 +1,13 @@
+{
+  "RepositoryCommit": "5cfbe008ed110e32c2591fd9f4922d37d000b1a9",
+  "ScriptsCommit": "44eff41fa27fb15defb95f9e98d9d5c596ed1433",
+  "DatabaseCommit": "f288cd7d353467eb3816babcbb04620e11f64e8a",
+  "EngineRelease": "v0.1",
+  "EngineAssetUpdated": "2024-07-08T10:02:23Z",
+  "RuntimeRepository": "/opt/ygo-ai/compat/ygo-agent-5cfbe008ed110e32c2591fd9f4922d37d000b1a9",
+  "NativeBinarySHA256": "55ad5f03a65530df6d3e4aa56d928bc7c134070d1e178bc4fa7cc834e5726a57",
+  "ArchivesSHA256": {
+    "compat-repo.zip": "83e999840f316b778bdc6987955169af5e60d1a43e9dc01a919ee2e0d61fe64f",
+    "compat-card-scripts.zip": "6d8a3aeebb65a4eaca6a09157e4151f788f4ef98f01118217408f8e7a06c2f10"
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "plan_sha256": "a6c4e3cb1441fd34c60d2e0487c3e71270a043dc659e08d22d0b1fb040104857",
+  "decision": {
+    "promoted_by_current_rule": false,
+    "clean": true,
+    "adopted": false
+  },
+  "scout": {
+    "file": "/home/hatk8/projects/yugioh-ai/experiments/b2b-battle-20261110/root/cycles/000001-b2b-battle/evaluation-730d164f.json",
+    "sha256": "5c085e99c3e66d7e1a744127c9e3bc3eaca41af65b1088f996fa6c3cf4bbf41c",
+    "requested": 128,
+    "total": 128,
+    "verified": 128,
+    "wins": 69,
+    "losses": 59,
+    "draws": 0,
+    "win_rate": 0.5391,
+    "paired_ci95": [
+      0.4023,
+      0.6718
+    ],
+    "se_paired": 0.0374,
+    "first_player": {
+      "episodes": 64,
+      "wins": 41,
+      "losses": 23,
+      "draws": 0,
+      "win_rate": 0.6406,
+      "win_rate_ci95": [
+        0.5182,
+        0.7471
+      ]
+    },
+    "second_player": {
+      "episodes": 64,
+      "wins": 28,
+      "losses": 36,
+      "draws": 0,
+      "win_rate": 0.4375,
+      "win_rate_ci95": [
+        0.3229,
+        0.5591
+      ]
+    },
+    "pairs": {
+      "split": 41,
+      "both_won": 14,
+      "both_lost": 9
+    },
+    "terminations": {
+      "normal_total": 128,
+      "normal_lp0": 125,
+      "normal_deckout_or_special": 3,
+      "abnormal_total": 0,
+      "truncated": 0,
+      "engine_timeout": 0,
+      "timeout_suspected": 0,
+      "aborted_max_steps": 0,
+      "draws": 0
+    },
+    "reason_labels": {
+      "normal_lp0": 125,
+      "normal_deckout_or_special": 3
+    },
+    "requires_rerun_or_exclusion": false,
+    "clean": true,
+    "promotion_rule": false,
+    "candidate": {
+      "kind": "checkpoint",
+      "strategy": "checkpoint",
+      "label": "base.flax_model",
+      "path": "/home/hatk8/projects/yugioh-ai/experiments/b2b-battle-20261110/models/candidate/base.flax_model",
+      "sha256": "2227eff9d15a2a243d0463a580ddc119d660069e3a5c6ebf8a8176db835bcbb6"
+    },
+    "opponent": {
+      "kind": "checkpoint",
+      "strategy": "checkpoint",
+      "label": "base.flax_model",
+      "path": "/home/hatk8/projects/yugioh-ai/experiments/b2b-battle-20261110/root/models/initial/base.flax_model",
+      "sha256": "86b4358dcfec696cb4b3cc4c19781c34292b2509bf037b9e4f44d9ed8ec59d1c"
+    },
+    "wave_seeds": [
+      4152937,
+      11678615,
+      14640235,
+      22070456,
+      23405770,
+      30972431,
+      43547014,
+      43659389,
+      54902022,
+      60374468,
+      63303145,
+      68288567,
+      75133793,
+      76914953,
+      81711767,
+      89341705
+    ],
+    "wave_seeds_as_registered": true
+  },
+  "reference": {
+    "file": "/home/hatk8/projects/yugioh-ai/experiments/b2b-battle-20261110/root/cycles/000001-b2b-battle/reference-cee4f961.json",
+    "sha256": "68be079694809ab80805630eb34681d98c32b9e7752f2399afb1b4aa0410e48d",
+    "requested": 64,
+    "total": 64,
+    "verified": 64,
+    "wins": 36,
+    "losses": 28,
+    "draws": 0,
+    "win_rate": 0.5625,
+    "paired_ci95": [
+      0.3766,
+      0.7364
+    ],
+    "se_paired": 0.0583,
+    "first_player": {
+      "episodes": 32,
+      "wins": 17,
+      "losses": 15,
+      "draws": 0,
+      "win_rate": 0.5312,
+      "win_rate_ci95": [
+        0.3645,
+        0.6913
+      ]
+    },
+    "second_player": {
+      "episodes": 32,
+      "wins": 19,
+      "losses": 13,
+      "draws": 0,
+      "win_rate": 0.5938,
+      "win_rate_ci95": [
+        0.4226,
+        0.7448
+      ]
+    },
+    "pairs": {
+      "split": 18,
+      "both_won": 9,
+      "both_lost": 5
+    },
+    "terminations": {
+      "normal_total": 64,
+      "normal_lp0": 62,
+      "normal_deckout_or_special": 2,
+      "abnormal_total": 0,
+      "truncated": 0,
+      "engine_timeout": 0,
+      "timeout_suspected": 0,
+      "aborted_max_steps": 0,
+      "draws": 0
+    },
+    "reason_labels": {
+      "normal_lp0": 62,
+      "normal_deckout_or_special": 2
+    },
+    "requires_rerun_or_exclusion": false,
+    "clean": true,
+    "promotion_rule": false,
+    "candidate": {
+      "kind": "checkpoint",
+      "strategy": "checkpoint",
+      "label": "base.flax_model",
+      "path": "/home/hatk8/projects/yugioh-ai/experiments/b2b-battle-20261110/models/candidate/base.flax_model",
+      "sha256": "2227eff9d15a2a243d0463a580ddc119d660069e3a5c6ebf8a8176db835bcbb6"
+    },
+    "opponent": {
+      "kind": "checkpoint",
+      "strategy": "checkpoint",
+      "label": "base.flax_model",
+      "path": "/home/hatk8/projects/yugioh-ai/experiments/b2b-battle-20261110/root/models/initial/base.flax_model",
+      "sha256": "86b4358dcfec696cb4b3cc4c19781c34292b2509bf037b9e4f44d9ed8ec59d1c"
+    },
+    "wave_seeds": [
+      4152937,
+      11678615,
+      22070456,
+      23405770,
+      60374468,
+      63303145,
+      75133793,
+      76914953
+    ],
+    "wave_seeds_as_registered": true
+  },
+  "stage1_pass": false,
+  "episode_ledger": [
+    {
+      "job": "evaluation",
+      "episodes": 128,
+      "seed": 80021112,
+      "opponent": "/home/hatk8/projects/yugioh-ai/experiments/b2b-battle-20261110/root/models/initial",
+      "time_jst": "2026-11-10T12:26:10+09:00"
+    },
+    {
+      "job": "reference",
+      "episodes": 64,
+      "seed": 80021112,
+      "opponent": "/home/hatk8/projects/yugioh-ai/experiments/b2b-battle-20261110/root/models/initial",
+      "time_jst": "2026-11-10T12:29:50+09:00"
+    }
+  ],
+  "episodes_used": 192
+}

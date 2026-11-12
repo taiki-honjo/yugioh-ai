@@ -1,0 +1,4 @@
+{"event": "start", "run": 1, "purpose": "record:via-zaren", "case_id": "cue-reco-jj-zaren-g00-p0", "time_jst": "2026-11-09T21:51:20+09:00"}
+{"event": "finish", "run": 1, "status": "ok", "time_jst": "2026-11-09T21:51:20+09:00", "failure": null, "mismatch": null}
+{"event": "start", "run": 2, "purpose": "replay:via-zaren", "case_id": "cue-reco-jj-zaren-g00-p0", "time_jst": "2026-11-09T21:51:35+09:00"}
+{"event": "finish", "run": 2, "status": "ok", "time_jst": "2026-11-09T21:51:35+09:00", "failure": null, "mismatch": null}

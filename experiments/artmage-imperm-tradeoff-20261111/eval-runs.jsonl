@@ -1,0 +1,20 @@
+{"event": "start", "run": 1, "purpose": "record A-I-P", "case_id": "A-I-P", "time_jst": "2026-11-12T11:54:35+09:00"}
+{"event": "finish", "run": 1, "status": "ok", "time_jst": "2026-11-12T11:54:36+09:00"}
+{"event": "start", "run": 2, "purpose": "record A-IM-N", "case_id": "A-IM-N", "time_jst": "2026-11-12T11:54:36+09:00"}
+{"event": "finish", "run": 2, "status": "ok", "time_jst": "2026-11-12T11:54:36+09:00"}
+{"event": "start", "run": 3, "purpose": "record A-IM-P", "case_id": "A-IM-P", "time_jst": "2026-11-12T11:54:36+09:00"}
+{"event": "finish", "run": 3, "status": "ok", "time_jst": "2026-11-12T11:54:36+09:00"}
+{"event": "start", "run": 4, "purpose": "record B-N", "case_id": "B-N", "time_jst": "2026-11-12T11:54:36+09:00"}
+{"event": "finish", "run": 4, "status": "ok", "time_jst": "2026-11-12T11:54:37+09:00"}
+{"event": "start", "run": 5, "purpose": "record B-P", "case_id": "B-P", "time_jst": "2026-11-12T11:54:37+09:00"}
+{"event": "finish", "run": 5, "status": "ok", "time_jst": "2026-11-12T11:54:37+09:00"}
+{"event": "start", "run": 6, "purpose": "replay A-I-P", "case_id": "A-I-P", "time_jst": "2026-11-12T11:54:51+09:00"}
+{"event": "finish", "run": 6, "status": "ok", "time_jst": "2026-11-12T11:54:52+09:00"}
+{"event": "start", "run": 7, "purpose": "replay A-IM-N", "case_id": "A-IM-N", "time_jst": "2026-11-12T11:54:52+09:00"}
+{"event": "finish", "run": 7, "status": "ok", "time_jst": "2026-11-12T11:54:52+09:00"}
+{"event": "start", "run": 8, "purpose": "replay A-IM-P", "case_id": "A-IM-P", "time_jst": "2026-11-12T11:54:52+09:00"}
+{"event": "finish", "run": 8, "status": "ok", "time_jst": "2026-11-12T11:54:52+09:00"}
+{"event": "start", "run": 9, "purpose": "replay B-N", "case_id": "B-N", "time_jst": "2026-11-12T11:54:52+09:00"}
+{"event": "finish", "run": 9, "status": "ok", "time_jst": "2026-11-12T11:54:52+09:00"}
+{"event": "start", "run": 10, "purpose": "replay B-P", "case_id": "B-P", "time_jst": "2026-11-12T11:54:53+09:00"}
+{"event": "finish", "run": 10, "status": "ok", "time_jst": "2026-11-12T11:54:53+09:00"}

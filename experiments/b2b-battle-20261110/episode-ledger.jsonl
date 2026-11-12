@@ -1,0 +1,2 @@
+{"job": "evaluation", "episodes": 128, "seed": 80021112, "opponent": "/home/hatk8/projects/yugioh-ai/experiments/b2b-battle-20261110/root/models/initial", "time_jst": "2026-11-10T12:26:10+09:00"}
+{"job": "reference", "episodes": 64, "seed": 80021112, "opponent": "/home/hatk8/projects/yugioh-ai/experiments/b2b-battle-20261110/root/models/initial", "time_jst": "2026-11-10T12:29:50+09:00"}

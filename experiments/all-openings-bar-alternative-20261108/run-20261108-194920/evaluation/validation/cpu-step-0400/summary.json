@@ -1,0 +1,1095 @@
+{
+  "policy": "after",
+  "split": "validation",
+  "checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/all-openings-bar-alternative-20261108/run-20261108-194920/training/ElfnotesKewlTune/step-0400",
+  "passed": 65,
+  "total": 66,
+  "families": {
+    "elf-dina": {
+      "passed": 3,
+      "total": 3,
+      "variants": {
+        "two_bosses": 3
+      }
+    },
+    "elf-par-fire-cost": {
+      "passed": 3,
+      "total": 3,
+      "variants": {
+        "two_bosses": 3
+      }
+    },
+    "elf-par-light-cost": {
+      "passed": 3,
+      "total": 3,
+      "variants": {
+        "two_bosses": 3
+      }
+    },
+    "elf-regina-par": {
+      "passed": 3,
+      "total": 3,
+      "variants": {
+        "two_bosses": 3
+      }
+    },
+    "elf-rukina-regina": {
+      "passed": 3,
+      "total": 3,
+      "variants": {
+        "two_bosses": 3
+      }
+    },
+    "jj-cue-mix": {
+      "passed": 3,
+      "total": 3,
+      "variants": {
+        "cue-mix-jj-track": 3
+      }
+    },
+    "jj-cue-reco": {
+      "passed": 2,
+      "total": 3,
+      "variants": {
+        "cue-reco-jj-zaren": 2,
+        "None": 1
+      }
+    },
+    "jj-cue-rotary": {
+      "passed": 3,
+      "total": 3,
+      "variants": {
+        "cue-rotary-jj-zaren": 3
+      }
+    },
+    "mixed-cue-spirit": {
+      "passed": 3,
+      "total": 3,
+      "variants": {
+        "baronne": 3
+      }
+    },
+    "mixed-reco-spirit-ash": {
+      "passed": 3,
+      "total": 3,
+      "variants": {
+        "baronne": 3
+      }
+    },
+    "mixed-rukina-cue": {
+      "passed": 3,
+      "total": 3,
+      "variants": {
+        "mixed-rukina-cue": 3
+      }
+    },
+    "rukina-ash_parallelism": {
+      "passed": 3,
+      "total": 3,
+      "variants": {
+        "None": 3
+      }
+    },
+    "rukina-ash_rukina": {
+      "passed": 3,
+      "total": 3,
+      "variants": {
+        "None": 3
+      }
+    },
+    "rukina-ash_spirit": {
+      "passed": 3,
+      "total": 3,
+      "variants": {
+        "None": 3
+      }
+    },
+    "rukina-pass": {
+      "passed": 3,
+      "total": 3,
+      "variants": {
+        "None": 3
+      }
+    },
+    "rukina-veiler_rukina": {
+      "passed": 3,
+      "total": 3,
+      "variants": {
+        "None": 3
+      }
+    },
+    "rukina-veiler_strelitzia": {
+      "passed": 3,
+      "total": 3,
+      "variants": {
+        "None": 3
+      }
+    },
+    "tune-cue": {
+      "passed": 3,
+      "total": 3,
+      "variants": {
+        "tune-cue": 3
+      }
+    },
+    "tune-juke-veiler": {
+      "passed": 3,
+      "total": 3,
+      "variants": {
+        "tune-juke-veiler": 3
+      }
+    },
+    "tune-reco": {
+      "passed": 3,
+      "total": 3,
+      "variants": {
+        "tune-reco": 3
+      }
+    },
+    "tune-stone-sweeper": {
+      "passed": 3,
+      "total": 3,
+      "variants": {
+        "tune-stone-sweeper": 3
+      }
+    },
+    "tune-sync": {
+      "passed": 3,
+      "total": 3,
+      "variants": {
+        "tune-sync": 3
+      }
+    }
+  },
+  "cases": [
+    {
+      "case_id": "rukina-pass-g08-p0",
+      "family": "rukina-pass",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 93,
+      "chosen_variant": null,
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": null,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "rukina-pass-g09-p0",
+      "family": "rukina-pass",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 83,
+      "chosen_variant": null,
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": null,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "rukina-pass-g10-p0",
+      "family": "rukina-pass",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 81,
+      "chosen_variant": null,
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": null,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "rukina-ash_rukina-g08-p0",
+      "family": "rukina-ash_rukina",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 33,
+      "chosen_variant": null,
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": null,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "rukina-ash_rukina-g09-p0",
+      "family": "rukina-ash_rukina",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 24,
+      "chosen_variant": null,
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": null,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "rukina-ash_rukina-g10-p0",
+      "family": "rukina-ash_rukina",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 23,
+      "chosen_variant": null,
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": null,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "rukina-veiler_rukina-g08-p0",
+      "family": "rukina-veiler_rukina",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 33,
+      "chosen_variant": null,
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": null,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "rukina-veiler_rukina-g09-p0",
+      "family": "rukina-veiler_rukina",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 24,
+      "chosen_variant": null,
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": null,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "rukina-veiler_rukina-g10-p0",
+      "family": "rukina-veiler_rukina",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 23,
+      "chosen_variant": null,
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": null,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "rukina-ash_spirit-g08-p0",
+      "family": "rukina-ash_spirit",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 43,
+      "chosen_variant": null,
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": null,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "rukina-ash_spirit-g09-p0",
+      "family": "rukina-ash_spirit",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 35,
+      "chosen_variant": null,
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": null,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "rukina-ash_spirit-g10-p0",
+      "family": "rukina-ash_spirit",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 34,
+      "chosen_variant": null,
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": null,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "rukina-ash_parallelism-g08-p0",
+      "family": "rukina-ash_parallelism",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 95,
+      "chosen_variant": null,
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": null,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "rukina-ash_parallelism-g09-p0",
+      "family": "rukina-ash_parallelism",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 85,
+      "chosen_variant": null,
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": null,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "rukina-ash_parallelism-g10-p0",
+      "family": "rukina-ash_parallelism",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 80,
+      "chosen_variant": null,
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": null,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "rukina-veiler_strelitzia-g08-p0",
+      "family": "rukina-veiler_strelitzia",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 85,
+      "chosen_variant": null,
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": null,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "rukina-veiler_strelitzia-g09-p0",
+      "family": "rukina-veiler_strelitzia",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 75,
+      "chosen_variant": null,
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": null,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "rukina-veiler_strelitzia-g10-p0",
+      "family": "rukina-veiler_strelitzia",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 71,
+      "chosen_variant": null,
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": null,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "elf-rukina-regina-g08-p0",
+      "family": "elf-rukina-regina",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 93,
+      "chosen_variant": "two_bosses",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "elf-rukina-regina-g09-p0",
+      "family": "elf-rukina-regina",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 81,
+      "chosen_variant": "two_bosses",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "elf-rukina-regina-g10-p0",
+      "family": "elf-rukina-regina",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 83,
+      "chosen_variant": "two_bosses",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "elf-dina-g08-p0",
+      "family": "elf-dina",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 93,
+      "chosen_variant": "two_bosses",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 0,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "elf-dina-g09-p0",
+      "family": "elf-dina",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 75,
+      "chosen_variant": "two_bosses",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 0,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "elf-dina-g10-p0",
+      "family": "elf-dina",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 81,
+      "chosen_variant": "two_bosses",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 0,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "elf-par-light-cost-g08-p0",
+      "family": "elf-par-light-cost",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 76,
+      "chosen_variant": "two_bosses",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 0,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "elf-par-light-cost-g09-p0",
+      "family": "elf-par-light-cost",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 88,
+      "chosen_variant": "two_bosses",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 0,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "elf-par-light-cost-g10-p0",
+      "family": "elf-par-light-cost",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 71,
+      "chosen_variant": "two_bosses",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 0,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "elf-par-fire-cost-g08-p0",
+      "family": "elf-par-fire-cost",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 74,
+      "chosen_variant": "two_bosses",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 0,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "elf-par-fire-cost-g09-p0",
+      "family": "elf-par-fire-cost",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 69,
+      "chosen_variant": "two_bosses",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 0,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "elf-par-fire-cost-g10-p0",
+      "family": "elf-par-fire-cost",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 69,
+      "chosen_variant": "two_bosses",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 0,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "elf-regina-par-g08-p0",
+      "family": "elf-regina-par",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 74,
+      "chosen_variant": "two_bosses",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 0,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "elf-regina-par-g09-p0",
+      "family": "elf-regina-par",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 83,
+      "chosen_variant": "two_bosses",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 0,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "elf-regina-par-g10-p0",
+      "family": "elf-regina-par",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 83,
+      "chosen_variant": "two_bosses",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 0,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "tune-cue-g08-p0",
+      "family": "tune-cue",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 68,
+      "chosen_variant": "tune-cue",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "tune-cue-g09-p0",
+      "family": "tune-cue",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 63,
+      "chosen_variant": "tune-cue",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "tune-cue-g10-p0",
+      "family": "tune-cue",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 63,
+      "chosen_variant": "tune-cue",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "tune-reco-g08-p0",
+      "family": "tune-reco",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 67,
+      "chosen_variant": "tune-reco",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "tune-reco-g09-p0",
+      "family": "tune-reco",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 67,
+      "chosen_variant": "tune-reco",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "tune-reco-g10-p0",
+      "family": "tune-reco",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 68,
+      "chosen_variant": "tune-reco",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "tune-sync-g08-p0",
+      "family": "tune-sync",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 69,
+      "chosen_variant": "tune-sync",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "tune-sync-g09-p0",
+      "family": "tune-sync",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 66,
+      "chosen_variant": "tune-sync",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "tune-sync-g10-p0",
+      "family": "tune-sync",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 69,
+      "chosen_variant": "tune-sync",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "tune-stone-sweeper-g08-p0",
+      "family": "tune-stone-sweeper",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 78,
+      "chosen_variant": "tune-stone-sweeper",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "tune-stone-sweeper-g09-p0",
+      "family": "tune-stone-sweeper",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 73,
+      "chosen_variant": "tune-stone-sweeper",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "tune-stone-sweeper-g10-p0",
+      "family": "tune-stone-sweeper",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 79,
+      "chosen_variant": "tune-stone-sweeper",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "tune-juke-veiler-g08-p0",
+      "family": "tune-juke-veiler",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 52,
+      "chosen_variant": "tune-juke-veiler",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "tune-juke-veiler-g09-p0",
+      "family": "tune-juke-veiler",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 51,
+      "chosen_variant": "tune-juke-veiler",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "tune-juke-veiler-g10-p0",
+      "family": "tune-juke-veiler",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 54,
+      "chosen_variant": "tune-juke-veiler",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "mixed-rukina-cue-g08-p0",
+      "family": "mixed-rukina-cue",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 151,
+      "chosen_variant": "mixed-rukina-cue",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "mixed-rukina-cue-g09-p0",
+      "family": "mixed-rukina-cue",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 151,
+      "chosen_variant": "mixed-rukina-cue",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "mixed-rukina-cue-g10-p0",
+      "family": "mixed-rukina-cue",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 136,
+      "chosen_variant": "mixed-rukina-cue",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "mixed-reco-spirit-ash-g08-p0",
+      "family": "mixed-reco-spirit-ash",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 156,
+      "chosen_variant": "baronne",
+      "recovered_ash_activated": true,
+      "opponent_search_negated": true,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "mixed-reco-spirit-ash-g09-p0",
+      "family": "mixed-reco-spirit-ash",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 156,
+      "chosen_variant": "baronne",
+      "recovered_ash_activated": true,
+      "opponent_search_negated": true,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "mixed-reco-spirit-ash-g10-p0",
+      "family": "mixed-reco-spirit-ash",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 137,
+      "chosen_variant": "baronne",
+      "recovered_ash_activated": true,
+      "opponent_search_negated": true,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "mixed-cue-spirit-g08-p0",
+      "family": "mixed-cue-spirit",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 118,
+      "chosen_variant": "baronne",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "mixed-cue-spirit-g09-p0",
+      "family": "mixed-cue-spirit",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 118,
+      "chosen_variant": "baronne",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "mixed-cue-spirit-g10-p0",
+      "family": "mixed-cue-spirit",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 129,
+      "chosen_variant": "baronne",
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "cue-reco-jj-zaren-g08-p0",
+      "family": "jj-cue-reco",
+      "passed": false,
+      "board": false,
+      "failure": null,
+      "steps": 85,
+      "chosen_variant": null,
+      "recovered_ash_activated": false,
+      "opponent_search_negated": false,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "cue-reco-jj-zaren-g09-p0",
+      "family": "jj-cue-reco",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 98,
+      "chosen_variant": "cue-reco-jj-zaren",
+      "recovered_ash_activated": true,
+      "opponent_search_negated": true,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "cue-reco-jj-zaren-g10-p0",
+      "family": "jj-cue-reco",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 97,
+      "chosen_variant": "cue-reco-jj-zaren",
+      "recovered_ash_activated": true,
+      "opponent_search_negated": true,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "cue-mix-jj-track-g08-p0",
+      "family": "jj-cue-mix",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 100,
+      "chosen_variant": "cue-mix-jj-track",
+      "recovered_ash_activated": true,
+      "opponent_search_negated": true,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "cue-mix-jj-track-g09-p0",
+      "family": "jj-cue-mix",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 90,
+      "chosen_variant": "cue-mix-jj-track",
+      "recovered_ash_activated": true,
+      "opponent_search_negated": true,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "cue-mix-jj-track-g10-p0",
+      "family": "jj-cue-mix",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 93,
+      "chosen_variant": "cue-mix-jj-track",
+      "recovered_ash_activated": true,
+      "opponent_search_negated": true,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "cue-rotary-jj-zaren-g08-p0",
+      "family": "jj-cue-rotary",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 95,
+      "chosen_variant": "cue-rotary-jj-zaren",
+      "recovered_ash_activated": true,
+      "opponent_search_negated": true,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "cue-rotary-jj-zaren-g09-p0",
+      "family": "jj-cue-rotary",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 94,
+      "chosen_variant": "cue-rotary-jj-zaren",
+      "recovered_ash_activated": true,
+      "opponent_search_negated": true,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "cue-rotary-jj-zaren-g10-p0",
+      "family": "jj-cue-rotary",
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "steps": 102,
+      "chosen_variant": "cue-rotary-jj-zaren",
+      "recovered_ash_activated": true,
+      "opponent_search_negated": true,
+      "crystal_first_preference_met": true,
+      "normal_summons_diagnostic": 1,
+      "lua_errors": 0
+    }
+  ],
+  "lua_errors": 0,
+  "model_received_goals_or_plans": false,
+  "normal_summon_usage_scored": false,
+  "hands_per_context": 3,
+  "scope": "3 unseen full-hand compositions per evaluation context. Opponent passes during setup, except the six explicit Rukina interruption arms; recovery tests then face one Rukina search. Not matchup win rate."
+}

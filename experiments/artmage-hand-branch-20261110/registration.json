@@ -1,0 +1,1453 @@
+{
+ "status": "registered_before_engine_runs",
+ "registered_jst": "2026-11-10T20:10:45+09:00",
+ "spec": {
+  "copy": "spec/artmage-hand-branch-plan-2026-11-10.md",
+  "sha256": "568d0bd8853dcd9d6176ae0c4fbab817edb68d424b4ab18a7dd1fec5c86d970c",
+  "report": "a separate *-report.md; the spec copy is read-only"
+ },
+ "start_model": {
+  "base_sha256": "f47cd2b664b6153bec85484a037ecd888244baafd1b503e01655681a6f929186",
+  "head_sha256": "92b452daf1a8e9b30d657963fa48db8ddc46d8dfb552e9802d878540e7a823bd",
+  "source": "experiments/artmage-basic-openings-batch-20261110/train/candidate (unadopted research candidate)"
+ },
+ "substitution": {
+  "names": [
+   "F1-V",
+   "F3-V",
+   "F4-V"
+  ],
+  "meaning": {
+   "F1-V": "Medius①: ネルヴェド instead of 獄神獣",
+   "F3-V": "Graphrea set: 改変 instead of 襲撃",
+   "F4-V": "Graphrea set: 襲撃 instead of 改変"
+  },
+  "model": "start",
+  "rule": "replay the start model on the same fixture; earlier choices must equal the saved free run; at the first choice that differs from the validation script the model still reads the observation, then the script's choice is executed; afterwards the model plays freely to the end of own turn 3. Local comparison only; these hands never move into train."
+ },
+ "pairs": {
+  "A1": {
+   "group": "A",
+   "split": "train",
+   "seed": 1112001,
+   "hands": {
+    "A-nocost": [
+     1122030,
+     14558127,
+     14558127,
+     23434538,
+     49036338
+    ],
+    "A-cost": [
+     1122030,
+     14558127,
+     14558127,
+     23434538,
+     97045737
+    ]
+   },
+   "differing": {
+    "A-nocost": 49036338,
+    "A-cost": 97045737
+   },
+   "routes": {
+    "A-nocost": "旧来の襲撃（獄神獣経由）",
+    "A-cost": "C1（ネルヴェド・乙女）"
+   }
+  },
+  "A2": {
+   "group": "A",
+   "split": "train",
+   "seed": 1112002,
+   "hands": {
+    "A-nocost": [
+     1122030,
+     73642296,
+     38814750,
+     59438930,
+     14558127
+    ],
+    "A-cost": [
+     1122030,
+     73642296,
+     38814750,
+     59438930,
+     25311006
+    ]
+   },
+   "differing": {
+    "A-nocost": 14558127,
+    "A-cost": 25311006
+   },
+   "routes": {
+    "A-nocost": "旧来の襲撃（獄神獣経由）",
+    "A-cost": "C1（ネルヴェド・乙女）"
+   }
+  },
+  "A3": {
+   "group": "A",
+   "split": "train",
+   "seed": 1112003,
+   "hands": {
+    "A-nocost": [
+     1122030,
+     14558127,
+     73642296,
+     49036338,
+     38814750
+    ],
+    "A-cost": [
+     1122030,
+     14558127,
+     73642296,
+     49036338,
+     10045474
+    ]
+   },
+   "differing": {
+    "A-nocost": 38814750,
+    "A-cost": 10045474
+   },
+   "routes": {
+    "A-nocost": "旧来の襲撃（獄神獣経由）",
+    "A-cost": "C1（ネルヴェド・乙女）"
+   }
+  },
+  "A4": {
+   "group": "A",
+   "split": "train",
+   "seed": 1112004,
+   "hands": {
+    "A-nocost": [
+     1122030,
+     14558127,
+     23434538,
+     59438930,
+     73642296
+    ],
+    "A-cost": [
+     1122030,
+     14558127,
+     23434538,
+     59438930,
+     10045474
+    ]
+   },
+   "differing": {
+    "A-nocost": 73642296,
+    "A-cost": 10045474
+   },
+   "routes": {
+    "A-nocost": "旧来の襲撃（獄神獣経由）",
+    "A-cost": "C1（ネルヴェド・乙女）"
+   }
+  },
+  "B1": {
+   "group": "B",
+   "split": "train",
+   "seed": 1112005,
+   "hands": {
+    "B-1cost": [
+     74733322,
+     10045474,
+     23434538,
+     49036338,
+     59438930
+    ],
+    "B-2cost": [
+     74733322,
+     10045474,
+     23434538,
+     49036338,
+     25311006
+    ]
+   },
+   "differing": {
+    "B-1cost": 59438930,
+    "B-2cost": 25311006
+   },
+   "routes": {
+    "B-1cost": "C2（グラフレアで改変）",
+    "B-2cost": "F4（グラフレアで襲撃）"
+   }
+  },
+  "B2": {
+   "group": "B",
+   "split": "train",
+   "seed": 1112006,
+   "hands": {
+    "B-1cost": [
+     74733322,
+     97045737,
+     14558127,
+     38814750,
+     73642296
+    ],
+    "B-2cost": [
+     74733322,
+     97045737,
+     14558127,
+     38814750,
+     97045737
+    ]
+   },
+   "differing": {
+    "B-1cost": 73642296,
+    "B-2cost": 97045737
+   },
+   "routes": {
+    "B-1cost": "C2（グラフレアで改変）",
+    "B-2cost": "F4（グラフレアで襲撃）"
+   }
+  },
+  "B3": {
+   "group": "B",
+   "split": "train",
+   "seed": 1112007,
+   "hands": {
+    "B-1cost": [
+     74733322,
+     25311006,
+     73642296,
+     59438930,
+     14558127
+    ],
+    "B-2cost": [
+     74733322,
+     25311006,
+     73642296,
+     59438930,
+     10045474
+    ]
+   },
+   "differing": {
+    "B-1cost": 14558127,
+    "B-2cost": 10045474
+   },
+   "routes": {
+    "B-1cost": "C2（グラフレアで改変）",
+    "B-2cost": "F4（グラフレアで襲撃）"
+   }
+  },
+  "B4": {
+   "group": "B",
+   "split": "train",
+   "seed": 1112008,
+   "hands": {
+    "B-1cost": [
+     74733322,
+     10045474,
+     14558127,
+     14558127,
+     38814750
+    ],
+    "B-2cost": [
+     74733322,
+     10045474,
+     14558127,
+     14558127,
+     10045474
+    ]
+   },
+   "differing": {
+    "B-1cost": 38814750,
+    "B-2cost": 10045474
+   },
+   "routes": {
+    "B-1cost": "C2（グラフレアで改変）",
+    "B-2cost": "F4（グラフレアで襲撃）"
+   }
+  },
+  "AV1": {
+   "group": "A",
+   "split": "validation",
+   "seed": 1112101,
+   "hands": {
+    "A-nocost": [
+     1122030,
+     14558127,
+     38814750,
+     73642296,
+     23434538
+    ],
+    "A-cost": [
+     1122030,
+     14558127,
+     38814750,
+     73642296,
+     97045737
+    ]
+   },
+   "differing": {
+    "A-nocost": 23434538,
+    "A-cost": 97045737
+   },
+   "routes": {
+    "A-nocost": "旧来の襲撃（獄神獣経由）",
+    "A-cost": "C1（ネルヴェド・乙女）"
+   }
+  },
+  "AV2": {
+   "group": "A",
+   "split": "validation",
+   "seed": 1112102,
+   "hands": {
+    "A-nocost": [
+     1122030,
+     59438930,
+     49036338,
+     14558127,
+     73642296
+    ],
+    "A-cost": [
+     1122030,
+     59438930,
+     49036338,
+     14558127,
+     25311006
+    ]
+   },
+   "differing": {
+    "A-nocost": 73642296,
+    "A-cost": 25311006
+   },
+   "routes": {
+    "A-nocost": "旧来の襲撃（獄神獣経由）",
+    "A-cost": "C1（ネルヴェド・乙女）"
+   }
+  },
+  "BV1": {
+   "group": "B",
+   "split": "validation",
+   "seed": 1112103,
+   "hands": {
+    "B-1cost": [
+     74733322,
+     97045737,
+     23434538,
+     59438930,
+     49036338
+    ],
+    "B-2cost": [
+     74733322,
+     97045737,
+     23434538,
+     59438930,
+     10045474
+    ]
+   },
+   "differing": {
+    "B-1cost": 49036338,
+    "B-2cost": 10045474
+   },
+   "routes": {
+    "B-1cost": "C2（グラフレアで改変）",
+    "B-2cost": "F4（グラフレアで襲撃）"
+   }
+  },
+  "BV2": {
+   "group": "B",
+   "split": "validation",
+   "seed": 1112104,
+   "hands": {
+    "B-1cost": [
+     74733322,
+     10045474,
+     73642296,
+     49036338,
+     23434538
+    ],
+    "B-2cost": [
+     74733322,
+     10045474,
+     73642296,
+     49036338,
+     97045737
+    ]
+   },
+   "differing": {
+    "B-1cost": 23434538,
+    "B-2cost": 97045737
+   },
+   "routes": {
+    "B-1cost": "C2（グラフレアで改変）",
+    "B-2cost": "F4（グラフレアで襲撃）"
+   }
+  }
+ },
+ "split_check": {
+  "rule": "complete-hand multiset vs old train/validation/holdout, pilot C1/C2 and C1v/C2v, basic batch train/validation, and each other",
+  "result": {
+   "A1-A-nocost": {
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "A1-A-cost": {
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "A2-A-nocost": {
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "A2-A-cost": {
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "A3-A-nocost": {
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "A3-A-cost": {
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "A4-A-nocost": {
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "A4-A-cost": {
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "B1-B-1cost": {
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "B1-B-2cost": {
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "B2-B-1cost": {
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "B2-B-2cost": {
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "B3-B-1cost": {
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "B3-B-2cost": {
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "B4-B-1cost": {
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "B4-B-2cost": {
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "AV1-A-nocost": {
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "AV1-A-cost": {
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "AV2-A-nocost": {
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "AV2-A-cost": {
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "BV1-B-1cost": {
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "BV1-B-2cost": {
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "BV2-B-1cost": {
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "BV2-B-2cost": {
+    "overlaps": null,
+    "overlaps_new": null
+   }
+  },
+  "passed": true
+ },
+ "plans": {
+  "A-nocost": [
+   {
+    "act": "Activate",
+    "code": 1122030
+   },
+   {
+    "act": "Activate",
+    "code": 1122030
+   },
+   {
+    "act": "None",
+    "code": 97556336,
+    "_opt": true
+   },
+   {
+    "act": "Summon",
+    "code": 97556336
+   },
+   {
+    "act": "Activate",
+    "code": 97556336
+   },
+   {
+    "act": "None",
+    "code": 23829452
+   },
+   {
+    "act": "Activate",
+    "code": 0,
+    "effect": 1152
+   },
+   {
+    "act": "Activate",
+    "code": 1122030
+   },
+   {
+    "act": "Activate",
+    "code": 23829452,
+    "message": "select_idlecmd"
+   },
+   {
+    "act": "None",
+    "code": 74631897,
+    "_opt": true
+   },
+   {
+    "_group": [
+     {
+      "step": {
+       "act": "Activate",
+       "code": 74631897
+      },
+      "picks": [
+       {
+        "act": "None",
+        "code": 74733322
+       }
+      ]
+     },
+     {
+      "step": {
+       "act": "Activate",
+       "code": 23829452
+      },
+      "picks": [
+       {
+        "act": "None",
+        "code": 23599634
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 60946049,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 60946049
+   },
+   {
+    "act": "Activate",
+    "code": 60946049
+   },
+   {
+    "act": "None",
+    "code": 74011784
+   },
+   {
+    "act": "Activate",
+    "code": 74011784
+   },
+   {
+    "act": "None",
+    "code": 1122030
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 97434754,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 97434754
+   },
+   {
+    "act": "Activate",
+    "code": 97434754
+   },
+   {
+    "act": "None",
+    "code": 1122030
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 34541940,
+    "_opt": true
+   },
+   {
+    "act": "None",
+    "code": 34541940,
+    "_opt": true
+   },
+   {
+    "act": "SpSummon",
+    "code": 50277355
+   },
+   {
+    "act": "None",
+    "code": 60946049
+   },
+   {
+    "act": "None",
+    "code": 97434754
+   },
+   {
+    "act": "Activate",
+    "code": 34541940
+   },
+   {
+    "act": "Activate",
+    "code": 34541940,
+    "_mark": "before_draw"
+   },
+   {
+    "act": "Activate",
+    "code": 50277355
+   },
+   {
+    "act": "None",
+    "code": 97434754,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 97556336
+   },
+   {
+    "_rule": "medius_cost",
+    "_opt": true
+   },
+   {
+    "act": "None",
+    "code": 0,
+    "phase": "End"
+   },
+   {
+    "act": "Activate",
+    "code": 74631897,
+    "_opp": true
+   },
+   {
+    "act": "None",
+    "code": 27184601,
+    "_opt": true,
+    "_opp": true
+   },
+   {
+    "act": "None",
+    "code": 74631897,
+    "_opt": true,
+    "_opp": true
+   },
+   {
+    "act": "Activate",
+    "code": 50277355,
+    "_opp": true
+   },
+   {
+    "act": "None",
+    "code": 23829452,
+    "_opt": true,
+    "_opp": true
+   }
+  ],
+  "A-cost": [
+   {
+    "act": "Activate",
+    "code": 1122030
+   },
+   {
+    "act": "Activate",
+    "code": 1122030
+   },
+   {
+    "act": "None",
+    "code": 97556336,
+    "_opt": true
+   },
+   {
+    "act": "Summon",
+    "code": 97556336
+   },
+   {
+    "act": "Activate",
+    "code": 97556336
+   },
+   {
+    "act": "None",
+    "code": 17473466
+   },
+   {
+    "act": "Activate",
+    "code": 0,
+    "effect": 1152
+   },
+   {
+    "act": "SpSummon",
+    "code": 74631897
+   },
+   {
+    "_group": [
+     {
+      "step": {
+       "act": "Activate",
+       "code": 17473466
+      },
+      "picks": [
+       {
+        "act": "None",
+        "code": 23829452,
+        "_opt": true
+       }
+      ]
+     },
+     {
+      "step": {
+       "act": "Activate",
+       "code": 74631897
+      },
+      "picks": [
+       {
+        "act": "None",
+        "code": 74733322,
+        "_opt": true
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "act": "Activate",
+    "code": 23829452,
+    "message": "select_idlecmd"
+   },
+   {
+    "act": "None",
+    "code": 27184601,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 23829452
+   },
+   {
+    "act": "None",
+    "code": 23599634
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 60946049
+   },
+   {
+    "act": "Activate",
+    "code": 60946049
+   },
+   {
+    "act": "Activate",
+    "code": 60946049
+   },
+   {
+    "act": "None",
+    "code": 74011784
+   },
+   {
+    "act": "Activate",
+    "code": 74011784
+   },
+   {
+    "act": "None",
+    "code": 1122030
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 97434754
+   },
+   {
+    "act": "SpSummon",
+    "code": 31822037
+   },
+   {
+    "act": "None",
+    "code": 60946049
+   },
+   {
+    "act": "None",
+    "code": 27184601
+   },
+   {
+    "act": "Activate",
+    "code": 31822037
+   },
+   {
+    "act": "None",
+    "code": 36709484,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 34541940
+   },
+   {
+    "act": "None",
+    "code": 34541940,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 36709484
+   },
+   {
+    "act": "None",
+    "code": 27184601,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 97434754
+   },
+   {
+    "act": "Activate",
+    "code": 97434754
+   },
+   {
+    "act": "None",
+    "code": 23599634
+   },
+   {
+    "act": "Activate",
+    "code": 34541940
+   },
+   {
+    "act": "Activate",
+    "code": 34541940,
+    "_mark": "before_draw"
+   },
+   {
+    "act": "Activate",
+    "code": 97556336
+   },
+   {
+    "_rule": "medius_cost",
+    "_opt": true
+   },
+   {
+    "act": "Set",
+    "code": 23599634
+   },
+   {
+    "act": "None",
+    "code": 0,
+    "phase": "End"
+   },
+   {
+    "act": "Activate",
+    "code": 31822037,
+    "_opp": true
+   },
+   {
+    "act": "None",
+    "code": 4993187,
+    "_opt": true,
+    "_opp": true
+   },
+   {
+    "act": "None",
+    "code": 31822037,
+    "_opt": true,
+    "_opp": true
+   },
+   {
+    "act": "None",
+    "code": 97556336,
+    "_opp": true
+   }
+  ],
+  "B-1cost": [
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 60946049
+   },
+   {
+    "act": "Activate",
+    "code": 60946049
+   },
+   {
+    "act": "Activate",
+    "code": 60946049
+   },
+   {
+    "act": "None",
+    "code": 74011784
+   },
+   {
+    "act": "Activate",
+    "code": 74011784
+   },
+   {
+    "act": "None",
+    "code": 97434754
+   },
+   {
+    "act": "Activate",
+    "code": 97434754
+   },
+   {
+    "act": "Activate",
+    "code": 97434754
+   },
+   {
+    "act": "None",
+    "code": 74011784,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 23829452
+   },
+   {
+    "act": "None",
+    "code": 23829452,
+    "_opt": true
+   },
+   {
+    "act": "Summon",
+    "code": 23829452
+   },
+   {
+    "act": "Activate",
+    "code": 23829452,
+    "message": "select_idlecmd"
+   },
+   {
+    "act": "None",
+    "code": 74631897,
+    "_opt": true
+   },
+   {
+    "act": "None",
+    "code": 60946049,
+    "_opt": true
+   },
+   {
+    "act": "None",
+    "code": 23829452,
+    "_opt": true
+   },
+   {
+    "_group": [
+     {
+      "step": {
+       "act": "Activate",
+       "code": 74631897
+      },
+      "picks": [
+       {
+        "act": "None",
+        "code": 23599634
+       }
+      ]
+     },
+     {
+      "step": {
+       "act": "Activate",
+       "code": 23829452
+      },
+      "picks": [
+       {
+        "act": "None",
+        "code": 1122030
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "act": "Activate",
+    "code": 1122030
+   },
+   {
+    "act": "Activate",
+    "code": 1122030
+   },
+   {
+    "act": "None",
+    "code": 97556336,
+    "_opt": true
+   },
+   {
+    "act": "Summon",
+    "code": 97556336
+   },
+   {
+    "act": "Activate",
+    "code": 97556336
+   },
+   {
+    "act": "None",
+    "code": 17473466
+   },
+   {
+    "act": "Activate",
+    "code": 0,
+    "effect": 1152
+   },
+   {
+    "act": "SpSummon",
+    "code": 31822037
+   },
+   {
+    "act": "None",
+    "code": 97556336
+   },
+   {
+    "act": "None",
+    "code": 17473466
+   },
+   {
+    "_group": [
+     {
+      "step": {
+       "act": "Activate",
+       "code": 31822037
+      },
+      "picks": [
+       {
+        "act": "None",
+        "code": 36709484,
+        "_opt": true
+       }
+      ]
+     },
+     {
+      "step": {
+       "act": "Activate",
+       "code": 17473466
+      },
+      "picks": [
+       {
+        "act": "None",
+        "code": 34541940
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "act": "Activate",
+    "code": 97556336
+   },
+   {
+    "act": "None",
+    "code": 34541940
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 34541940
+   },
+   {
+    "act": "None",
+    "code": 34541940,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 34541940
+   },
+   {
+    "act": "Activate",
+    "code": 34541940,
+    "_mark": "before_draw"
+   },
+   {
+    "act": "None",
+    "code": 0,
+    "phase": "End"
+   }
+  ],
+  "B-2cost": [
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 10045474,
+    "_opt": true
+   },
+   {
+    "act": "None",
+    "code": 60946049,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 60946049
+   },
+   {
+    "act": "Activate",
+    "code": 60946049
+   },
+   {
+    "act": "None",
+    "code": 1122030
+   },
+   {
+    "act": "Activate",
+    "code": 1122030
+   },
+   {
+    "act": "Activate",
+    "code": 1122030
+   },
+   {
+    "act": "None",
+    "code": 97556336,
+    "_opt": true
+   },
+   {
+    "act": "Summon",
+    "code": 97556336
+   },
+   {
+    "act": "Activate",
+    "code": 97556336
+   },
+   {
+    "act": "None",
+    "code": 17473466
+   },
+   {
+    "act": "Activate",
+    "code": 0,
+    "effect": 1152
+   },
+   {
+    "act": "SpSummon",
+    "code": 74631897
+   },
+   {
+    "_group": [
+     {
+      "step": {
+       "act": "Activate",
+       "code": 74631897
+      },
+      "picks": [
+       {
+        "act": "None",
+        "code": 44654994
+       }
+      ]
+     },
+     {
+      "step": {
+       "act": "Activate",
+       "code": 17473466
+      },
+      "picks": [
+       {
+        "act": "None",
+        "code": 23829452,
+        "_opt": true
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "act": "Activate",
+    "code": 23829452,
+    "message": "select_idlecmd"
+   },
+   {
+    "act": "None",
+    "code": 27184601,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 23829452
+   },
+   {
+    "act": "None",
+    "code": 74011784
+   },
+   {
+    "act": "SpSummon",
+    "code": 31822037
+   },
+   {
+    "act": "None",
+    "code": 27184601
+   },
+   {
+    "act": "None",
+    "code": 60946049
+   },
+   {
+    "act": "Activate",
+    "code": 31822037
+   },
+   {
+    "act": "None",
+    "code": 36709484,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 36709484,
+    "_opt": true
+   },
+   {
+    "act": "None",
+    "code": 97434754,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 74011784
+   },
+   {
+    "act": "None",
+    "code": 23599634
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 34541940,
+    "_opt": true
+   },
+   {
+    "act": "None",
+    "code": 34541940,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 34541940
+   },
+   {
+    "act": "Activate",
+    "code": 34541940,
+    "_mark": "before_draw"
+   },
+   {
+    "act": "Activate",
+    "code": 36709484
+   },
+   {
+    "act": "None",
+    "code": 27184601,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 97556336
+   },
+   {
+    "_rule": "medius_cost",
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 97434754
+   },
+   {
+    "act": "Activate",
+    "code": 97434754
+   },
+   {
+    "act": "None",
+    "code": 23599634
+   },
+   {
+    "act": "Set",
+    "code": 23599634
+   },
+   {
+    "act": "None",
+    "code": 0,
+    "phase": "End"
+   }
+  ]
+ },
+ "teacher": [
+  "BatchTeacher defaults (identical copies; Medius② cost = drawn non-engine monster else FILLER_PRIORITY; 学都 summon method)",
+  "BranchTeacher: a cost-discard selection of only spell/trap costs in hand not covered by the plan follows COST_ORDER (無限泡影, 三戦の才, 聖王の粉砕)",
+  "no count rule or count feature is given to the model"
+ ],
+ "audit_at_branch": "hand, payable costs, used effects and remaining resources at each branch are read later from the saved snapshots (audit only)",
+ "engine": {
+  "cap": 72,
+  "plan": {
+   "substitute": 3,
+   "train_record": 16,
+   "train_replay": 16,
+   "validation_script": 8,
+   "free_start": 8,
+   "free_candidate": 8,
+   "retain": 13
+  },
+  "order": [
+   "substitute F1-V, F3-V, F4-V",
+   "record + replay the 16 train hands",
+   "validate the 8 validation hands",
+   "fix data/manifest.json",
+   "offline diagnostics",
+   "free runs of the start model on the 8 validation hands",
+   "training",
+   "free runs of the candidate on the 8 validation hands",
+   "retention 13 (RT1 g06-g11 + F0-V..F6-V)"
+  ],
+  "failures_count": true,
+  "no_replay_budget_for_free_runs": true,
+  "retention_baseline": "saved records of the start model (basic batch: eval/rt1/candidate and eval/free/candidate), same weights/code/adapter/hands/seeds"
+ },
+ "data_rules": [
+  "a pair is used only if both hands completed their script and both replays matched",
+  "existing 24 sequences reused unchanged",
+  "validation pairs are JSON only and never listed in the manifest"
+ ],
+ "training": {
+  "updates": 1024,
+  "batch_sequences": 2,
+  "learning_rate_base": 1.5e-05,
+  "learning_rate_head": 1.5e-05,
+  "adam_eps": 1e-05,
+  "max_grad_norm": 1.0,
+  "ppo": false,
+  "value_loss": false,
+  "entropy_loss": false,
+  "kl": 0.0,
+  "sampling_seed": 30131001,
+  "seed_label": 10131001,
+  "sampling": "blocks of 4 minibatches: 2 existing (each slot: one of the 7 basic groups uniformly, then a sequence uniformly) + 2 paired (group A/B uniformly, then a complete pair uniformly; the two hands of the pair form the minibatch); slot order shuffled per block",
+  "loss": "mean over the batch sequences of the per-sequence mean CE over loss steps (same as the basic batch)",
+  "padding": "batch length = longest sequence in the data; padding repeats the last step with zero loss",
+  "diagnostics_at": [
+   0,
+   256,
+   512,
+   768,
+   1024
+  ],
+  "selection": "none; only the state after 1,024 updates is evaluated",
+  "stop_on": "non-finite loss, gradient or weights; STOP=now",
+  "device": "GPU, matmul precision highest"
+ },
+ "not_done": [
+  "PPO",
+  "battles",
+  "adoption",
+  "B2B",
+  "common registry / Elfnotes changes",
+  "count-based rules"
+ ],
+ "limits": {
+  "memory_gib": 5,
+  "swap": 0,
+  "cpu_percent": 300,
+  "job_seconds": 1800,
+  "nice": 10,
+  "gpu_jobs": 1
+ },
+ "code": {
+  "artmage_entry.py": "ca47f56d29431b48d60337de6dcc6ce23d524fba31cbbbdce31e6d7399b78e0f",
+  "artmage_pins.py": "10c4e053d05f44498cff77c45301a3fb5222c7598a658decc52f4539fd96bde8",
+  "artmage_teacher.py": "a126284eff7a2d7ef3c602ade0aa5f196f7ddea77333213c27a197ade21b78f3",
+  "batch_data.py": "3f21a0f495111f82678e93c5434d9c2dd65b2467c4f7c3341a0eddab66b3aad7",
+  "batch_model.py": "373c98ef75b4116c8c0ac54abe81a1f16053253f42ffb18635fab20304a4b238",
+  "batch_plans.py": "68d5945d80d663ba7f85b56ffbd6490a00998aaa1d5cca14663e18e6956f1123",
+  "hb_data.py": "502de35cabab73e9448e5d20e61aa53ce594aa8eb08ad2beebe0740618ebc893",
+  "hb_launch.py": "c36286b3a2716379e97d794aaae63185daecf182dc8f9807bcbab4fdd620c216",
+  "hb_plans.py": "6b448f25b946ef753aebf2386099c5a7a6f2cf1f5b53ec1888b60f4a9c3678b3",
+  "hb_register.py": "c0c82da9c2bf577c9681c7022d0c1802aae42f8739a718d702c594f193401822",
+  "hb_runs.py": "88e694125079d2a9687490f1120186b536939b8750f731266efae56b167a0c14",
+  "hb_train.py": "c8b830fa9dafe93b7359c05ce9b79935318230d88f2c695deeb717254965401f",
+  "pilot_data.py": "dc749fb5ea77419741d0e7469edd7f423db241eae11ccafe399f76a04c3417e8",
+  "pilot_model.py": "8bec14fb9a1e6c02cbfa715c21146aafeb45b00f060d4cd7afa57b7c84e0ad56"
+ }
+}

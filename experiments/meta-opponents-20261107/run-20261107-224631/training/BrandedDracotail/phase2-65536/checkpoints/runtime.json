@@ -1,0 +1,153 @@
+{
+  "date_jst": "2026-11-06",
+  "runtime": "/home/hatk8/projects/yugioh-ai/experiments/elfnotes-20261106/runtime",
+  "python": "/opt/ygo-ai/.venv/bin/python",
+  "native_binary": "/home/hatk8/projects/yugioh-ai/experiments/elfnotes-20261106/runtime/agent/ygoenv/ygoenv/ygopro/ygopro_ygoenv.cpython-310-x86_64-linux-gnu.so",
+  "native_sha256": "57aa077f335c5c3e3cee7a91a58b03806ce4b6f439cbbbc7179db650b1867f2c",
+  "vocabulary": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/code_list.txt",
+  "vocabulary_sha256": "aeb5be89d4a5591ccc5cce6af96def74ef47463a55265f75c11b92029e772e7b",
+  "deck": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/decks/BrandedDracotail.ydk",
+  "deck_sha256": "4e6f67f03650a0df56bd463e9d69a648b5b69e2358b1b2a7977dfab10d340ba3",
+  "observation_policy": "oppo_info=False; hide unrevealed deck order and opponent private cards; disclose explicit search/reveal choices only",
+  "max_options": 128,
+  "training_max_steps": 4000,
+  "training_seed": 0,
+  "evaluation_seed": 3026,
+  "sources": {
+    "ProjectIgnis/CardScripts": {
+      "sha": "bd65b8dab63398b1b076167a1c546654349c0fad",
+      "date": "2026-11-04T19:55:05Z",
+      "message": "\"Cubic Dimension/Defense\" fix"
+    },
+    "ProjectIgnis/BabelCDB": {
+      "sha": "cfaf38b01adffd432eb55d1e059fc16d4db1cb36",
+      "date": "2026-11-04T15:47:36Z",
+      "message": "Added new cards"
+    },
+    "edo9300/ygopro-core": {
+      "sha": "c2e0b697e031d3560c077c9cd2cc76474969dedf",
+      "date": "2026-11-02T23:28:50Z",
+      "message": "allow passing a value function filter to CANNOT_TO_XXX effects"
+    },
+    "Fluorohydride/ygopro-core": {
+      "sha": "1f7769cd40dbb13fc6ec33de7ac99757425e1f22",
+      "date": "2026-11-04T09:14:51Z",
+      "message": "Delete CMakeLists.txt (#867)"
+    },
+    "sbl1996/ygo-agent": {
+      "sha": "dbf5142d49aab2e6beb4150788d4fffec39ae3e5",
+      "date": "2024-08-16T09:18:20Z",
+      "message": "Preload all cards and scripts; Support announce_card"
+    },
+    "mycard/ygopro-database": {
+      "sha": "02e589ff78480151867abf5b399ae0689c6cd668",
+      "date": "2026-10-26T15:55:43Z",
+      "message": "Fix desc"
+    },
+    "mycard/ygopro-scripts": {
+      "sha": "b83db1cc3f512d3bec2faafb9ecf199143332be1",
+      "date": "2026-09-23T15:13:34Z",
+      "message": "Merge remote-tracking branch 'upstream/master' into master"
+    },
+    "database/ja-JP/cards.cdb": {
+      "url": "https://raw.githubusercontent.com/mycard/ygopro-database/02e589ff78480151867abf5b399ae0689c6cd668/locales/ja-JP/cards.cdb",
+      "sha256": "103c8455d379a81d7ed35986434096fe8f9eb5cb3a1c3b9c6f1e9f0aa67d0c74",
+      "bytes": 11860992
+    },
+    "database/ja-JP/strings.conf": {
+      "url": "https://raw.githubusercontent.com/mycard/ygopro-database/02e589ff78480151867abf5b399ae0689c6cd668/locales/ja-JP/strings.conf",
+      "sha256": "f701eaa82d8e05db3afa431ff4a02aed710f6aba3444fc74806b5b53a7bb1b8a",
+      "bytes": 49240
+    },
+    "database/en-US/cards.cdb": {
+      "url": "https://raw.githubusercontent.com/mycard/ygopro-database/02e589ff78480151867abf5b399ae0689c6cd668/locales/en-US/cards.cdb",
+      "sha256": "7f57ae28bb1d0b5987c8159c193c18ff820b1119a513949b1bf3cb5aa36234ef",
+      "bytes": 8076288
+    },
+    "database/en-US/strings.conf": {
+      "url": "https://raw.githubusercontent.com/mycard/ygopro-database/02e589ff78480151867abf5b399ae0689c6cd668/locales/en-US/strings.conf",
+      "sha256": "f1282302f54926094044cfb2e2f9a66a74b7fd642b891d8be7f4e79d8cbdc2e5",
+      "bytes": 37759
+    },
+    "database/zh-CN/cards.cdb": {
+      "url": "https://raw.githubusercontent.com/mycard/ygopro-database/02e589ff78480151867abf5b399ae0689c6cd668/locales/zh-CN/cards.cdb",
+      "sha256": "fab5deeb43447f80c11e5dea16b87fedd6d0f9a220c427d3a70ebb8eb0d74cfa",
+      "bytes": 8165376
+    },
+    "database/zh-CN/strings.conf": {
+      "url": "https://raw.githubusercontent.com/mycard/ygopro-database/02e589ff78480151867abf5b399ae0689c6cd668/locales/zh-CN/strings.conf",
+      "sha256": "6992b30aa0cfe27cfbc499980ac92bee536f523738c679efa99be5eea57ef23b",
+      "bytes": 47768
+    }
+  },
+  "archives": {
+    "agent": {
+      "repo": "sbl1996/ygo-agent",
+      "ref": "dbf5142d49aab2e6beb4150788d4fffec39ae3e5",
+      "url": "https://codeload.github.com/sbl1996/ygo-agent/tar.gz/dbf5142d49aab2e6beb4150788d4fffec39ae3e5",
+      "bytes": 372675,
+      "sha256": "3ec2ca5bf6662822fa2746873719c0020abbe23fdb0a1ebcbebbfa779f3cd307"
+    },
+    "fmt": {
+      "repo": "fmtlib/fmt",
+      "ref": "10.2.1",
+      "url": "https://codeload.github.com/fmtlib/fmt/tar.gz/10.2.1",
+      "bytes": 854665,
+      "sha256": "1250e4cc58bf06ee631567523f48848dc4596133e163f02615c97f78bab6c811"
+    },
+    "core": {
+      "repo": "Fluorohydride/ygopro-core",
+      "ref": "1f7769cd40dbb13fc6ec33de7ac99757425e1f22",
+      "url": "https://codeload.github.com/Fluorohydride/ygopro-core/tar.gz/1f7769cd40dbb13fc6ec33de7ac99757425e1f22",
+      "bytes": 195310,
+      "sha256": "8f2126c406f00ff7716dbf61bd15bc0b6fbb14dfee0ba558bdeb0f7d777292c3"
+    },
+    "unordered-dense": {
+      "repo": "martinus/unordered_dense",
+      "ref": "v4.4.0",
+      "url": "https://codeload.github.com/martinus/unordered_dense/tar.gz/v4.4.0",
+      "bytes": 900081,
+      "sha256": "3976399793e8cb4db1409ce15610fbd9e5e406ced4745f262d393a9311efbd88"
+    },
+    "sqlitecpp": {
+      "repo": "SRombauts/SQLiteCpp",
+      "ref": "3.2.1",
+      "url": "https://codeload.github.com/SRombauts/SQLiteCpp/tar.gz/3.2.1",
+      "bytes": 2557246,
+      "sha256": "70c67d5680c47460f82a7abf8e6b0329bf2fb10795a982a6d8abc06adb42d693"
+    },
+    "scripts": {
+      "repo": "mycard/ygopro-scripts",
+      "ref": "b83db1cc3f512d3bec2faafb9ecf199143332be1",
+      "url": "https://codeload.github.com/mycard/ygopro-scripts/tar.gz/b83db1cc3f512d3bec2faafb9ecf199143332be1",
+      "bytes": 5337174,
+      "sha256": "d377e462d7222f941012efd0837f1c1e6060fa4f02604b7d50d1e6da9771217c"
+    }
+  },
+  "rule_scope": "Local YGOPro MR5 simulation of selected Master Duel deck; official client and format-specific banlist enforcement not tested",
+  "limitations": [
+    "Six representative effect-condition checks, not exhaustive card-ruling certification",
+    "Timeout flag classification tested with synthetic states; no deliberate 600-second hang",
+    "Positional disclosures are conservatively forgotten on moves, shuffles and chain end",
+    "Checkpoint resume restores weights only, not optimizer/RNG/full duel state"
+  ],
+  "compatible_checkpoint_native_sha256": [
+    "984eb1525da420d87add8e63597af4bb1d1d22b83d9ff3d3a8e9cc13dfe052c2",
+    "7179421e91496c1610f455888075ff7ee6da9c1384474180420b4662030b2051",
+    "57aa077f335c5c3e3cee7a91a58b03806ce4b6f439cbbbc7179db650b1867f2c"
+  ],
+  "native_resource_fix": {
+    "reason": "Pruned exact select-sum search; same results and ordering",
+    "parity_cases": 3000,
+    "stress_candidates": 40,
+    "stress_results": 780,
+    "record": "/home/hatk8/projects/yugioh-ai/experiments/elfnotes-20261106/expansion-revised-20261106-205114/sum-search-fix.json"
+  },
+  "native_lifecycle_fix": {
+    "reason": "RAII ownership releases final duel when environment is destroyed; join workers first",
+    "before_probe": "/home/hatk8/projects/yugioh-ai/experiments/elfnotes-20261106/expansion-revised-20261106-205114/lifecycle-before.json",
+    "after_probe": "/home/hatk8/projects/yugioh-ai/experiments/elfnotes-20261106/expansion-revised-20261106-205114/lifecycle-after.json"
+  },
+  "training_decisions": 65536,
+  "training_phase": 2
+}

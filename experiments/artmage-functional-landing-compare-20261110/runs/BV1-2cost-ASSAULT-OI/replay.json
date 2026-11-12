@@ -1,0 +1,15 @@
+{
+ "name": "BV1-2cost-ASSAULT-OI",
+ "engine_run": 17,
+ "replayed_engine_run": 9,
+ "mismatch": null,
+ "failure": null,
+ "reproduced_steps": 227,
+ "of": 227,
+ "reason": "own_turn3_end",
+ "final_equal": true,
+ "checkpoints_equal": true,
+ "game_over_equal": true,
+ "observations_match": true,
+ "lua_errors": 0
+}

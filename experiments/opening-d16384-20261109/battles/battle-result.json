@@ -1,0 +1,8 @@
+{
+  "plan": "/home/hatk8/projects/yugioh-ai/experiments/opening-d16384-20261109/battles/battle-plan.json",
+  "plan_sha256": "df87dd41ecfe4e84cce8940a03292435dfe3a074c524384f5cf0c05d440fb691",
+  "games_played": 0,
+  "adopted": false,
+  "retention_on_both": false,
+  "skipped_reason": "retention rule did not hold; no games were played"
+}

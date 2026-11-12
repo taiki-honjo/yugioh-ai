@@ -1,0 +1,212 @@
+{
+ "status": "fixed_before_model_results",
+ "groups": {
+  "F0": [
+   {
+    "name": "old-train",
+    "kind": "old",
+    "path": "/home/hatk8/projects/yugioh-ai/experiments/opponent-article-training-20261108/run-20261108-145203/dataset/Artmage/train.npz",
+    "sha256": "61bc7cb52209c4c15b97e952694dd4a748752f59ea1734f99f4dd5ed197f3a14",
+    "sequences": 12
+   }
+  ],
+  "F1": [
+   {
+    "name": "C1",
+    "kind": "demo-pilot",
+    "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-parallel-20261110/demos/C1/observations.npz",
+    "sha256": "8425bd1cf43608f417c0fca9bdf2f00fa7fe3cd95463e31460ab622307cd935d",
+    "sequences": 1
+   },
+   {
+    "name": "F1-T1",
+    "kind": "demo-batch",
+    "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-basic-openings-batch-20261110/demos/F1-T1/observations.npz",
+    "sha256": "acc514de8bb65993a9f0fe4d8a2d4c2645c87efcf5ba5c1b17bc6ec8971f33d8",
+    "record_sha256": "d77eb4ad0cf0e99604a46bac9494932a829f911d9fc5c81a690baac7c42cd7ba",
+    "sequences": 1,
+    "hand": [
+     1122030,
+     10045474,
+     14558127,
+     59438930,
+     49036338
+    ],
+    "seed": 1111001
+   }
+  ],
+  "F2": [
+   {
+    "name": "F2-T1",
+    "kind": "demo-batch",
+    "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-basic-openings-batch-20261110/demos/F2-T1/observations.npz",
+    "sha256": "c78559e620d4f50afd4552e8417b0be755d1c56687e847de02374ca42b3e44af",
+    "record_sha256": "069e59e57c2d412cfdf89a7d17b247b0366286ec68b53c050c14913ead298873",
+    "sequences": 1,
+    "hand": [
+     97556336,
+     10045474,
+     14558127,
+     23434538,
+     73642296
+    ],
+    "seed": 1111002
+   },
+   {
+    "name": "F2-T2",
+    "kind": "demo-batch",
+    "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-basic-openings-batch-20261110/demos/F2-T2/observations.npz",
+    "sha256": "1c577ebe74e0dcfb1decdcce8fc158cb92e07bc2316473369095e87f2daf85f8",
+    "record_sha256": "2d289a0ada999c4c8f41f78fb6adda4d39440e778a7ebce914b9400a9f4c2181",
+    "sequences": 1,
+    "hand": [
+     97556336,
+     97045737,
+     59438930,
+     38814750,
+     49036338
+    ],
+    "seed": 1111003
+   }
+  ],
+  "F3": [
+   {
+    "name": "C2",
+    "kind": "demo-pilot",
+    "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-parallel-20261110/demos/C2/observations.npz",
+    "sha256": "41be0b84d1d45803b3afe66d1c279c6f5764fed6feb6a96c0837ddc9e2dceff4",
+    "sequences": 1
+   },
+   {
+    "name": "F3-T1",
+    "kind": "demo-batch",
+    "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-basic-openings-batch-20261110/demos/F3-T1/observations.npz",
+    "sha256": "5af2b911a0dd5dc38adf4607b9d2a07dd7b1f4f0e74a5cfa3c88b56f1f4b9260",
+    "record_sha256": "5c4757ff0e10c6e4c27e56ea892ee0258583f25e3a8e1ae59fbc5e54d4c6d2f8",
+    "sequences": 1,
+    "hand": [
+     74733322,
+     97045737,
+     14558127,
+     23434538,
+     73642296
+    ],
+    "seed": 1111004
+   }
+  ],
+  "F4": [
+   {
+    "name": "F4-T1",
+    "kind": "demo-batch",
+    "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-basic-openings-batch-20261110/demos/F4-T1/observations.npz",
+    "sha256": "8c0e92c69dbba30d1861138fd05636453f4af4be73e42ad1f8d48f81d5db8e73",
+    "record_sha256": "472f8a4523dd1fed565e82b652aaf6ffa4240b0bbea780222c85a3f8c22ec6df",
+    "sequences": 1,
+    "hand": [
+     74733322,
+     10045474,
+     10045474,
+     14558127,
+     23434538
+    ],
+    "seed": 1111005
+   },
+   {
+    "name": "F4-T2",
+    "kind": "demo-batch",
+    "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-basic-openings-batch-20261110/demos/F4-T2/observations.npz",
+    "sha256": "4b11b4a87f88f6b1047f100f41c0b21277729f99de958c8902ac771fc42a1380",
+    "record_sha256": "5e1510ab110491698ebd6383665c7e3545219328339a0c2f8ae8552902c6a284",
+    "sequences": 1,
+    "hand": [
+     74733322,
+     10045474,
+     97045737,
+     59438930,
+     73642296
+    ],
+    "seed": 1111006
+   }
+  ],
+  "F5": [
+   {
+    "name": "F5-T1",
+    "kind": "demo-batch",
+    "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-basic-openings-batch-20261110/demos/F5-T1/observations.npz",
+    "sha256": "adf5ef97bc9eeea1f9c1b85891d7bd59aa04fc124a601906fe975403406b7609",
+    "record_sha256": "960db50cc601aed9b4edf54c434321195beda5937f8e52b36373d95035b0406b",
+    "sequences": 1,
+    "hand": [
+     23829452,
+     34541940,
+     14558127,
+     23434538,
+     73642296
+    ],
+    "seed": 1111007
+   },
+   {
+    "name": "F5-T2",
+    "kind": "demo-batch",
+    "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-basic-openings-batch-20261110/demos/F5-T2/observations.npz",
+    "sha256": "bc6a2fb4739f14aa8abb38ef7d8cfcde51ffb9327589e2eb6c67bbb77724321b",
+    "record_sha256": "06e23fe30006798fc154f2989a7a3fb1e0de84836221be1c477ea8a63c41c549",
+    "sequences": 1,
+    "hand": [
+     23829452,
+     34541940,
+     59438930,
+     38814750,
+     49036338
+    ],
+    "seed": 1111008
+   }
+  ],
+  "F6": [
+   {
+    "name": "F6-T1",
+    "kind": "demo-batch",
+    "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-basic-openings-batch-20261110/demos/F6-T1/observations.npz",
+    "sha256": "5422de10558bbf0e6c2fe94cdab6dc3995c9181de842358da33b2dfe7ab66d28",
+    "record_sha256": "ce6e95173b0d54f4ceb5c8a0a437643630d28bc8c58de6cdf38828de7eb5a7d7",
+    "sequences": 1,
+    "hand": [
+     25661743,
+     14558127,
+     23434538,
+     73642296,
+     59438930
+    ],
+    "seed": 1111009
+   },
+   {
+    "name": "F6-T2",
+    "kind": "demo-batch",
+    "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-basic-openings-batch-20261110/demos/F6-T2/observations.npz",
+    "sha256": "d831053e655fca1bde556c4bdc261dfb202fe875d9681103aac057924d4f7f14",
+    "record_sha256": "e9fe5a504f1a8e3b950eec7a7b0d63e3176cd5fff223c46c431ac7e1108bbd87",
+    "sequences": 1,
+    "hand": [
+     25661743,
+     14558127,
+     38814750,
+     49036338,
+     73642296
+    ],
+    "seed": 1111010
+   }
+  ]
+ },
+ "excluded": [],
+ "available_groups": [
+  "F0",
+  "F1",
+  "F2",
+  "F3",
+  "F4",
+  "F5",
+  "F6"
+ ],
+ "missing_groups": [],
+ "note": "Validation hands are not in this manifest and have no observation arrays."
+}

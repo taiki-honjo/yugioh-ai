@@ -1,0 +1,91 @@
+{
+  "date": "2026-11-10",
+  "kind": "stored-data-only",
+  "engine_runs": 0,
+  "training_decisions": 0,
+  "data_stats": {
+    "old": {
+      "sequences": 12,
+      "decisions": 1077,
+      "loss_steps": 969,
+      "context_only_steps": 108,
+      "position_steps_excluded": 108,
+      "messages_in_loss": {
+        "1": 180,
+        "2": 321,
+        "3": 144,
+        "6": 36,
+        "7": 48,
+        "9": 36,
+        "10": 12,
+        "11": 156,
+        "16": 36
+      }
+    },
+    "C1": {
+      "sequences": 1,
+      "decisions": 113,
+      "loss_steps": 94,
+      "context_only_steps": 19,
+      "position_steps_excluded": 9,
+      "messages_in_loss": {
+        "1": 17,
+        "2": 38,
+        "3": 11,
+        "6": 3,
+        "7": 4,
+        "9": 5,
+        "10": 1,
+        "11": 13,
+        "16": 2
+      }
+    },
+    "C2": {
+      "sequences": 1,
+      "decisions": 100,
+      "loss_steps": 85,
+      "context_only_steps": 15,
+      "position_steps_excluded": 7,
+      "messages_in_loss": {
+        "1": 15,
+        "2": 35,
+        "3": 11,
+        "6": 1,
+        "7": 4,
+        "9": 3,
+        "10": 1,
+        "11": 13,
+        "16": 2
+      }
+    }
+  },
+  "demo_hand_overlap": {
+    "C1": {
+      "hand": [
+        1122030,
+        10045474,
+        14558127,
+        23434538,
+        73642296
+      ],
+      "same_complete_hand_in_old_train": false
+    },
+    "C2": {
+      "hand": [
+        10045474,
+        14558127,
+        23434538,
+        73642296,
+        74733322
+      ],
+      "same_complete_hand_in_old_train": false
+    }
+  },
+  "exact_observation_history_conflicts": [],
+  "notes": [
+    "The check uses complete raw input prefixes (cards/global/actions/history/chain), not just the current board.",
+    "No exact raw-prefix conflict does not prove absence of semantic conflicts or explain failed free rollouts.",
+    "This does not prove that any particular alternative route is better or should be the only accepted action.",
+    "The trained model was not run; no new losses or probabilities were measured."
+  ]
+}

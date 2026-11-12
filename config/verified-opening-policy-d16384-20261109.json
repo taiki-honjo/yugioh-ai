@@ -1,0 +1,158 @@
+{
+  "deck": "ElfnotesKewlTune",
+  "selected_checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/adoption-d16384-20261109/model",
+  "base_sha256": "86b4358dcfec696cb4b3cc4c19781c34292b2509bf037b9e4f44d9ed8ec59d1c",
+  "head_sha256": "6ca3221f1828eecc5cea817003c8df5e8802b75fabef0f4aa33105ad0f979fce",
+  "adoption": {
+    "type": "manual",
+    "decided_by": "user (overall judgement after the 128 + 256 game evaluations)",
+    "date_jst": "2026-11-09",
+    "automatic_rule_outcome": "NOT eligible under the pre-registered retention rule (fixed test lost 1 adopted-passing case); kept on record",
+    "retention": {
+      "existing_66": {
+        "passed": 65,
+        "total": 66,
+        "lost": [],
+        "new": [],
+        "gate": "passed"
+      },
+      "fixed_test": {
+        "name": "elfnotes-kewltune-fixed-test-20261109",
+        "passed": 87,
+        "total": 88,
+        "lost_vs_previous_adopted": [
+          "jj-cue-rotary-ft00"
+        ],
+        "new_vs_previous_adopted": [
+          "jj-cue-reco-ft03"
+        ],
+        "pre_registered_retention_on_both": false
+      },
+      "records": [
+        "/home/hatk8/projects/yugioh-ai/experiments/opening-d16384-20261109/fixed-test-comparison.json",
+        "/home/hatk8/projects/yugioh-ai/experiments/opening-d16384-20261109/battles/battle-result.json"
+      ]
+    },
+    "battles": {
+      "scout_128": {
+        "seed": 80016384,
+        "wins": 82,
+        "losses": 46,
+        "draws": 0,
+        "pair_ci95": [
+          0.511,
+          0.7568
+        ],
+        "evidence": "/home/hatk8/projects/yugioh-ai/experiments/opening-d16384-20261109/battles/requested-battle-result.json"
+      },
+      "confirmation_256": {
+        "seed": 80016385,
+        "wins": 170,
+        "losses": 86,
+        "draws": 0,
+        "pair_ci95": [
+          0.5752,
+          0.7451
+        ],
+        "existing_battle_criterion_met": true,
+        "evidence": "/home/hatk8/projects/yugioh-ai/experiments/opening-d16384-20261109/battles/confirmation-battle-result.json"
+      },
+      "opponent": "previous adopted pair 966cc8b1.../1aaf569d...",
+      "adapters": "placement v2 for both players"
+    },
+    "training": {
+      "condition": "D: PPO lr 1.5e-5 + train-split rehearsal lambda 5",
+      "cumulative_decisions": 16384,
+      "stages": [
+        {
+          "decisions": 4096,
+          "seed": 10001109,
+          "experiment": "/home/hatk8/projects/yugioh-ai/experiments/opening-d4096-20261109"
+        },
+        {
+          "decisions": 12288,
+          "seed": 10016384,
+          "experiment": "/home/hatk8/projects/yugioh-ai/experiments/opening-d16384-20261109",
+          "start": "4096-decision candidate 30376998.../6ef16c2e..."
+        }
+      ],
+      "run_result": "/home/hatk8/projects/yugioh-ai/experiments/opening-d16384-20261109/d-lr1.5e-5-l5/cycles/12288-seed10016384/run-result.json",
+      "source_candidate": "/home/hatk8/projects/yugioh-ai/experiments/opening-d16384-20261109/d-lr1.5e-5-l5/cycles/12288-seed10016384/candidate"
+    },
+    "previous": {
+      "policy_config": "/home/hatk8/projects/yugioh-ai/config/verified-opening-policy-placement-remix-fix-20261109.json",
+      "policy_config_sha256": "bda5fb0b059727b0e69b315eeb33757da8bc80efcf7edcc2705f2b0dae2aadde",
+      "selected_checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/all-openings-bar-alternative-20261108/run-20261108-194920/training/ElfnotesKewlTune/step-0400",
+      "base_sha256": "966cc8b1c3f0c092e824cc52dffcaf9c71f0c9373ece0fd07831d4a9df4f7cd1",
+      "head_sha256": "1aaf569daf53a4453ef2f2e450c924af014aea83b3e4f98fea2644b795b52dc8"
+    }
+  },
+  "validation_completed": 65,
+  "validation_total": 66,
+  "validation_note": "evaluation v1, 66 validation openings, measured in the d16384 experiment and re-measured in the new production root",
+  "blind_completed": null,
+  "blind_total": 88,
+  "blind_note": "holdout (88) not measured for this model; never used for selection",
+  "normal_summon_usage_scored": false,
+  "scope": "Paired base + chain-head; placement adapter v2 and the battle position adapter. Opening retention measured on the 66 validation and the 88-case fixed test; battle strength measured against the previous adopted model only.",
+  "placement_adapter": {
+    "enabled": true,
+    "module": "center_placement",
+    "class_name": "PlacementPolicy",
+    "runtime_code_directory": "/home/hatk8/projects/yugioh-ai/evaluation/placement-remix-fix-20261109/code",
+    "report": "/home/hatk8/projects/yugioh-ai/docs/placement-remix-fix-2026-11-09.md",
+    "weights_retrained": false,
+    "new_hand_trials": 44,
+    "new_hand_passed": 44,
+    "version": "v2-remix-tracking-20261109",
+    "previous_runtime_code_directory": "/home/hatk8/projects/yugioh-ai/evaluation/battle-position-20261108/code",
+    "previous_center_placement_sha256": "805e68213710ad411ae4c5a3fc47bd998a8eb7ed2113a3335386eeed7db00b3c",
+    "center_placement_sha256": "3e96241095487fb48426099d774b7813cee348fc282dacbde0ced9af2d7abbba",
+    "change": "Kewl Tune Remix pick tracking only (see center_placement.py docstring); weights and all other adapter rules unchanged.",
+    "note_inherited_fields": "new_hand_trials/new_hand_passed/placement_regression/battle_position_adapter.regression were measured with v1 and are kept as v1 history.",
+    "v2_checks": {
+      "unit_tests": "tests/test_center_placement_remix.py (10)",
+      "equivalence": {
+        "evidence": "/home/hatk8/projects/yugioh-ai/experiments/placement-remix-fix-20261109/equivalence.json",
+        "identical_cases": 176,
+        "total_cases": 176,
+        "suites": {
+          "adopted/validation-66": "65/66 v1 = 65/66 v2",
+          "adopted/placement-fixed-44": "44/44 v1 = 44/44 v2",
+          "a-ppo-256-seed10000777/validation-66": "45/66 v1 = 45/66 v2"
+        },
+        "compared": "pass/fail, failure, full selected-action trace, placement events, position events",
+        "lua_errors": 0
+      },
+      "pinned_root_baseline": {
+        "evidence": "/home/hatk8/projects/yugioh-ai/experiments/placement-remix-fix-20261109/root-v2-check.json",
+        "passed": 65,
+        "total": 66,
+        "same_per_case_results_as_v1": true
+      },
+      "stopped_battle_rerun": {
+        "evidence": "/home/hatk8/projects/yugioh-ai/experiments/placement-remix-fix-20261109/battle-v2/battle.json",
+        "v1": "ValueError after 10 s (evaluation could not finish)",
+        "v2": "32/32 verified, abnormal 0, candidate 12-20-0",
+        "remix_tracking": "/home/hatk8/projects/yugioh-ai/experiments/placement-remix-fix-20261109/battle-v2/remix-tracking.json"
+      }
+    }
+  },
+  "battle_position_adapter": {
+    "enabled": true,
+    "module": "battle_position",
+    "class_name": "PositionPolicy",
+    "weights_retrained": false,
+    "report": "/home/hatk8/projects/yugioh-ai/docs/battle-position-2026-11-08.md",
+    "card_data_sha256": "22cc89b8cd09024f0deccc33ea569d27261012f04296e172df89ff261690eae3",
+    "regression": {
+      "before": 44,
+      "after": 44,
+      "total": 44,
+      "track_choices": 30,
+      "track_defense": 30
+    }
+  },
+  "policy_loader": "/home/hatk8/projects/yugioh-ai/scripts/verified_opening_policy.py",
+  "report": "/home/hatk8/projects/yugioh-ai/docs/adoption-d16384-2026-11-09.md"
+}

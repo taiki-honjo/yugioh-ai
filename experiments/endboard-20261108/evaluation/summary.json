@@ -1,0 +1,107 @@
+{
+  "status": "complete",
+  "results": {
+    "before": {
+      "pass": {
+        "passed": 1,
+        "cases": 18,
+        "turn_completed": 18,
+        "hand_preserved": 13,
+        "normal_preserved": 1,
+        "ash_injected": 0,
+        "families": {
+          "rukina": {
+            "passed": 1,
+            "cases": 6
+          },
+          "dina": {
+            "passed": 0,
+            "cases": 6
+          },
+          "regina": {
+            "passed": 0,
+            "cases": 6
+          }
+        }
+      },
+      "ash_once": {
+        "passed": 7,
+        "cases": 18,
+        "turn_completed": 18,
+        "hand_preserved": 7,
+        "normal_preserved": 7,
+        "ash_injected": 18,
+        "families": {
+          "rukina": {
+            "passed": 2,
+            "cases": 6
+          },
+          "dina": {
+            "passed": 2,
+            "cases": 6
+          },
+          "regina": {
+            "passed": 3,
+            "cases": 6
+          }
+        }
+      }
+    },
+    "after": {
+      "pass": {
+        "passed": 18,
+        "cases": 18,
+        "turn_completed": 18,
+        "hand_preserved": 18,
+        "normal_preserved": 18,
+        "ash_injected": 0,
+        "families": {
+          "rukina": {
+            "passed": 6,
+            "cases": 6
+          },
+          "dina": {
+            "passed": 6,
+            "cases": 6
+          },
+          "regina": {
+            "passed": 6,
+            "cases": 6
+          }
+        }
+      },
+      "ash_once": {
+        "passed": 18,
+        "cases": 18,
+        "turn_completed": 18,
+        "hand_preserved": 18,
+        "normal_preserved": 18,
+        "ash_injected": 18,
+        "families": {
+          "rukina": {
+            "passed": 6,
+            "cases": 6
+          },
+          "dina": {
+            "passed": 6,
+            "cases": 6
+          },
+          "regina": {
+            "passed": 6,
+            "cases": 6
+          }
+        }
+      }
+    }
+  },
+  "holdout_used_for_selection": false,
+  "selected_checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/endboard-20261108/training/step-0200",
+  "goal_scope": "No interruption: central Elfnotes plus off-center Rukina or Dina, active Parallels, protected hand and normal summon preserved, end turn. Ash: explicit observed-negation residual-resource baseline; not recovery-combo success.",
+  "expert_optimality_claimed": false,
+  "elapsed_seconds": 27.850344877999987,
+  "lua_errors": 0,
+  "resources": {
+    "live_duels": 0,
+    "peak_duels": 1
+  }
+}

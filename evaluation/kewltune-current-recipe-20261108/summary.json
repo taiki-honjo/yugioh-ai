@@ -1,0 +1,56 @@
+{
+  "cases": [
+    {
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "remaining_plan": [],
+      "lua_errors": 0,
+      "case_id": "cue"
+    },
+    {
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "remaining_plan": [],
+      "lua_errors": 0,
+      "case_id": "rukina-cue"
+    },
+    {
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "remaining_plan": [],
+      "lua_errors": 0,
+      "case_id": "reco"
+    },
+    {
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "remaining_plan": [],
+      "lua_errors": 0,
+      "case_id": "sync"
+    },
+    {
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "remaining_plan": [],
+      "lua_errors": 0,
+      "case_id": "stone-sweeper"
+    },
+    {
+      "passed": true,
+      "board": true,
+      "failure": null,
+      "remaining_plan": [],
+      "lua_errors": 0,
+      "case_id": "juke-veiler"
+    }
+  ],
+  "passed": 6,
+  "total": 6,
+  "scope": "First own turn only. Opponent-turn B2B continuation not verified.",
+  "trained": false
+}

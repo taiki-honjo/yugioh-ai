@@ -1,0 +1,74 @@
+{
+ "amendment": 1,
+ "registered_jst": "2026-11-11T11:38:18+09:00",
+ "registration_sha256": "0d7534c846bac2bbcebffb3ec80b82c4a362d074e8dea6e798f34bddbf02416a",
+ "before_training": true,
+ "change": "none to code or conditions; fixes the reference arrays computed after registration",
+ "reference": {
+  "file": "/home/hatk8/projects/yugioh-ai/experiments/artmage-response-context-retention-20261111/reference/start-gpu.npz",
+  "sha256": "348251bfe990260ee3b236f99e102dee3b573710f8696ad9c5f9bdd89b509591",
+  "meta_sha256": "e217065476752c3603d87e282bce7100356774aff952e462328a4e763b2c0884",
+  "backend": "cuda:0",
+  "sequences": {
+   "response-S1": {
+    "steps": 113,
+    "preserved": 102,
+    "excluded": {
+     "window": 1,
+     "position": 10,
+     "single_legal": 0
+    },
+    "preserved_steps_where_start_argmax_differs_from_executed": []
+   },
+   "response-S2": {
+    "steps": 128,
+    "preserved": 115,
+    "excluded": {
+     "window": 1,
+     "position": 12,
+     "single_legal": 0
+    },
+    "preserved_steps_where_start_argmax_differs_from_executed": [
+     15
+    ]
+   }
+  }
+ },
+ "cpu_check": {
+  "file": "/home/hatk8/projects/yugioh-ai/experiments/artmage-response-context-retention-20261111/reference/cpu-check.json",
+  "sha256": "2907d12952570abe25fed19f2fa02e01f48e3a1848d7cb0405365cd5be7686ec",
+  "result": {
+   "response-S1": {
+    "preserved": 102,
+    "argmax_disagreements": [],
+    "max_abs_prob_diff_preserved": 2.086162567138672e-06
+   },
+   "response-S2": {
+    "preserved": 115,
+    "argmax_disagreements": [],
+    "max_abs_prob_diff_preserved": 7.420778274536133e-06
+   }
+  }
+ },
+ "code": {
+  "artmage_entry.py": "ca47f56d29431b48d60337de6dcc6ce23d524fba31cbbbdce31e6d7399b78e0f",
+  "artmage_pins.py": "10c4e053d05f44498cff77c45301a3fb5222c7598a658decc52f4539fd96bde8",
+  "artmage_teacher.py": "a126284eff7a2d7ef3c602ade0aa5f196f7ddea77333213c27a197ade21b78f3",
+  "batch_data.py": "3f21a0f495111f82678e93c5434d9c2dd65b2467c4f7c3341a0eddab66b3aad7",
+  "batch_model.py": "7ee574aceb809b4b44cdeb0de8eae77b66e70f065463ca65bc310e80aa52e8d3",
+  "batch_plans.py": "68d5945d80d663ba7f85b56ffbd6490a00998aaa1d5cca14663e18e6956f1123",
+  "cr_data.py": "ade8a016f9cb9698ebcb747b84bc66aa317b601869af54a507d4fab43392f573",
+  "cr_launch.py": "56b7f27504e2d4b65e784d8dff4818e46b2f9dc225099201e033fcefb4b0df53",
+  "cr_model.py": "a02e80fb406b0496cc27af8311eb1cfd2dd48ad790b9e8daeada5733878ac25a",
+  "cr_register.py": "2397e7cafe767de1c5733d096fd608e7cef47e7d20b900a84fb0456d8c19c54c",
+  "cr_train.py": "f943e6dd230396d9a3fc6798f83bf4a078adef0bd39a2a939b865d5ee844883e",
+  "flc_runs.py": "8af7cbae6ce9d6d8322b043326f6b78d3f819ef8758ceb0e11597488f33e840f",
+  "hb_data.py": "502de35cabab73e9448e5d20e61aa53ce594aa8eb08ad2beebe0740618ebc893",
+  "hb_plans.py": "8fc90ad7f704a2f141669d1075827cf3513f015989a95d472f353aaae6ab40cd",
+  "hb_runs.py": "88e694125079d2a9687490f1120186b536939b8750f731266efae56b167a0c14",
+  "pilot_data.py": "dc749fb5ea77419741d0e7469edd7f423db241eae11ccafe399f76a04c3417e8",
+  "pilot_model.py": "8bec14fb9a1e6c02cbfa715c21146aafeb45b00f060d4cd7afa57b7c84e0ad56",
+  "rl_data.py": "9259488786bd1c3fa250ab474e2e3813f3e19d6012ca9b9afeb355014068374c",
+  "rl_runs.py": "15c5a5161e0d4e5d6d8baed176b2c09a87d289cf3f3a6beeb975283644b714d8"
+ }
+}

@@ -1,0 +1,179 @@
+{
+ "status": "registered_before_engine_runs",
+ "registered_jst": "2026-11-12T11:54:28+09:00",
+ "spec": {
+  "copy": "spec/artmage-imperm-tradeoff-plan-2026-11-11.md",
+  "sha256": "a5a530d69b956e0b56987897bb391484b8d9525f2ca318322302cc7e92807b3a"
+ },
+ "pins": {
+  "base": "12500c7724b2d723983a2963a960d75172a6df51fb55ea4f3acf102eeb34132e",
+  "head": "0bc7534cab102cd87586e5d22bd4ad0cd3b55d52d08e284146976506ae6193fc",
+  "deck_copy": "a93c4d30d0945f58f741f1e135fdcbc0b0c438aff575cf6d0d02ce9a82c381d6",
+  "engine_deck": "a93c4d30d0945f58f741f1e135fdcbc0b0c438aff575cf6d0d02ce9a82c381d6",
+  "vocabulary": "aeb5be89d4a5591ccc5cce6af96def74ef47463a55265f75c11b92029e772e7b",
+  "meta_manifest": "ace4f6b8408011a55e9b61d3c4917580942d86960bb3f087afe75ce2774c824a",
+  "meta_latest_run": "32770bc4534c729e66f7addbc76770b78798ee4e618b40fd9baa45e83392e544",
+  "article_latest_run": "39db5d660d4bde37dbd9b6fc0c662781da48b71b0e6c50d8357a7a42f73b0159",
+  "model_code": "f4c3903e3a4841b97f6ffb8840bb4cfa5513b5abfead9ff41fa7c785ceba6cce",
+  "witness_code": "0e4f3a0e92c86aba7a95f96c1e5f93f6a0293eaea7f3ab8a63dee772455ae07a",
+  "adapter": "4fe74c83a460ee3565c3ff276ce2d080b233a6152439ec92147ba90d60d46f90",
+  "adapter_cards": "1baa04349bb31833ff01b05cb365ee0f9416de827ac4fbf52b835011a35f1fde",
+  "native": "19a60f38a3d39b61a2ee082168d5a788a1022b2eb569633816596c8b3de21294",
+  "runtime_json": "ebdfc37ed9c7ebcae73b81281876dd6f22bd8d9afcbdfe8f78905dcc9c220d14"
+ },
+ "model": "none: scripted functional test; no training, no free model decisions (the current adapter c110f964... is untouched)",
+ "target_history": {
+  "step119": {
+   "act": "Activate",
+   "code": 74631897,
+   "effect": 10011,
+   "spec": "m1",
+   "turn": 2
+  },
+  "step148_target": {
+   "code": 74631897,
+   "spec": "om1"
+  },
+  "zone0_maiden_present_119_to_148": true,
+  "maiden_script": {
+   "file": "c74631897.lua",
+   "sha256": "2472509d352401950dd534540d0f495bcebe502dd4e8fe9a996bb96aff68b77f",
+   "reading": "e5 = ② (QUICK_O, EVENT_FREE_CHAIN, Stringid(id,1)) with SetCountLimit(1)"
+  },
+  "codex_audit": {
+   "file": "spec/artmage-imperm-target-history-audit-2026-11-11.json",
+   "sha256": "a9c7c39f39da4e5ced4d89f5562def2e8ded4ae8c546fec53a7ebd24744472c9"
+  }
+ },
+ "scripts": {
+  "c74631897.lua": "2472509d352401950dd534540d0f495bcebe502dd4e8fe9a996bb96aff68b77f",
+  "c27184601.lua": "ae328095bb6b116b1c7d8878f7bd3fac6ef39122a5e7d18ea454d82f8d5e19b3",
+  "c10045474.lua": "d64a2fc97f99a05231ea4de0ef507355b702c959e16650ed6f506bd3aa858105",
+  "c97556336.lua": "ff56291504573fde26ab138e3f4542895ae05f5a1feb72ff7ad18959c86fb4b6",
+  "c34541940.lua": "81dc2e63d5073638b59432641994e85476798166d35b33d9542bcda67f442272",
+  "c97434754.lua": "6ee1c588cd4353154a683fbeb178b950d0dd3398cbb48729c41fc0328b53a14b"
+ },
+ "fixture": {
+  "hands": {
+   "A": {
+    "pair": "BV1",
+    "group": "B",
+    "variant": "B-1cost",
+    "seed": 1112103,
+    "split": "validation",
+    "hand": [
+     74733322,
+     97045737,
+     23434538,
+     59438930,
+     49036338
+    ],
+    "plan": "B-1cost"
+   },
+   "B": {
+    "pair": "BV1",
+    "group": "B",
+    "variant": "B-2cost",
+    "seed": 1112103,
+    "split": "validation",
+    "hand": [
+     74733322,
+     97045737,
+     23434538,
+     59438930,
+     10045474
+    ],
+    "plan": "B-2cost"
+   }
+  },
+  "opponent_hand": [
+   97556336,
+   10045474,
+   14558127,
+   59438930,
+   73642296
+  ],
+  "seed": 1112103,
+  "note": "the functional comparison fixture (no normal draws; effect draws occur)"
+ },
+ "starts": {
+  "A": "record BV1-1cost-VARNISH-OI replayed by meaning with snapshot equality (opponent script re-run and checked) up to OUR first response to 無限泡影 (target: zone-0 Maiden which used its ② at step 119); Diaktoros② unused at that point",
+  "B": "record BV1-2cost-ASSAULT-OI replayed for turn 1; from turn 2 every optional own activation declined in every phase until 無限泡影; target: the turn-1 Maiden (the only Maiden; same priority rule, checked legal)"
+ },
+ "conditions": {
+  "A-I-N": "Diaktoros② on Imperm; opponent then does nothing",
+  "A-I-P": "pass on Imperm; opponent then does nothing",
+  "A-IM-N": "Diaktoros② on Imperm; then opponent normal summons Medius + ① (獄神獣 SS if it resolves); at our Medius① window Diaktoros② if legal else pass",
+  "A-IM-P": "pass on Imperm; then the same Medius sequence and rule",
+  "B-N": "Diaktoros② on Imperm; then the original Maiden② once (EX Maiden; Finemelt + Litera)",
+  "B-P": "pass on Imperm; then the same Maiden② attempt"
+ },
+ "own_rule": "only the named actions; every other optional own activation declined (legal Cancel) for the whole comparison; forced prompts: select_place first, select_position face-up attack else first, select_unselect_card finish when offered, otherwise first option (logged); one-candidate auto prompts not skipped",
+ "opponent_rule": "passes except: main phase 1 of turn 2 with an empty field, 無限泡影 from the hand (target priority 乙女 > ディアクトロス > ファインメルト > 獄神使 > other, lowest zone); IM only: after the Imperm chain resolved, normal summon Medius, activate ①, choose 獄神獣, special summon; no attack",
+ "stop": {
+  "A": "the first decision of turn 3",
+  "B": "the first decision after the Maiden② chain resolved (or turn 3 if ② never offered)",
+  "cap": "600 decisions or game over"
+ },
+ "not_a_label": "whether Medius follows is the opponent's unpublished plan at the Imperm window; the A-I vs A-IM difference measures the opportunity cost, it is not a label for the Imperm window",
+ "reuse": {
+  "rule": "an existing record is reused only if, over the cut range, the fixture, the rules, every executed action and the end point are the same",
+  "A_I_N": {
+   "record": "/home/hatk8/projects/yugioh-ai/experiments/artmage-response-coverage-20261111/runs/B-BV1-1cost-VARNISH-OI",
+   "record_sha256": "68ba7fa383e8b6f36fb988b4be68b84030f56c8b895f29edbe5d28e152f820b5",
+   "replay_ok": true,
+   "window_step": 149,
+   "cut_at_step": 161,
+   "equal": true,
+   "why": "identical to the A-I-N rule up to the first turn-3 decision"
+  }
+ },
+ "to_run": [
+  "A-I-P",
+  "A-IM-N",
+  "A-IM-P",
+  "B-N",
+  "B-P"
+ ],
+ "engine": {
+  "cap": 14,
+  "plan": "6 conditions x (record + replay) = 12, minus reuse; 2 spare for a harness fix only",
+  "failures_count": true
+ },
+ "record_items": [
+  "target Maiden status column (disabled or forbidden) before / after Imperm and whether its ② is offered",
+  "Diaktoros② use and its legality at Medius①",
+  "Medius effect resolution, 獄神獣 arrival (not confused with destruction)",
+  "own / opponent field, hand, GY, banished, LP; consumed once-per-turn uses",
+  "B: ② offered / activated / fusion selection shown / materials moved / new fusion monster (classified separately)"
+ ],
+ "not_done": [
+  "training",
+  "model decisions",
+  "adoption",
+  "battles",
+  "input / structure changes",
+  "B2B",
+  "production / registry changes"
+ ],
+ "limits": {
+  "memory_gib": 5,
+  "swap": 0,
+  "cpu_percent": 300,
+  "job_seconds": 1800,
+  "nice": 10,
+  "jobs": 1
+ },
+ "code": {
+  "artmage_entry.py": "ca47f56d29431b48d60337de6dcc6ce23d524fba31cbbbdce31e6d7399b78e0f",
+  "artmage_pins.py": "10c4e053d05f44498cff77c45301a3fb5222c7598a658decc52f4539fd96bde8",
+  "artmage_teacher.py": "a126284eff7a2d7ef3c602ade0aa5f196f7ddea77333213c27a197ade21b78f3",
+  "batch_plans.py": "68d5945d80d663ba7f85b56ffbd6490a00998aaa1d5cca14663e18e6956f1123",
+  "flc_runs.py": "8af7cbae6ce9d6d8322b043326f6b78d3f819ef8758ceb0e11597488f33e840f",
+  "hb_plans.py": "8fc90ad7f704a2f141669d1075827cf3513f015989a95d472f353aaae6ab40cd",
+  "it_launch.py": "00b8b36ca90820fab858b6e093dbed19696656780ce1bbdf81a5c23298f0a258",
+  "it_register.py": "b506058cc351df1146ccb73728c85d3e123d7a4e7c39ed0d742ef92f40ffe7a1",
+  "it_runs.py": "72b1163ed95ee415bf6f754fb301261358748d302ea658bc453aad7aa0fa550b",
+  "it_summarize.py": "2f023bee02aca8a52df6190b763fe465dfe8218953cf3f645ce99e9978286f66"
+ }
+}

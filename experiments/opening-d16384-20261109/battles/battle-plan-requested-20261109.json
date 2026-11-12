@@ -1,0 +1,20 @@
+{
+  "purpose": "128-game comparison of the FINAL cumulative-16384 candidate vs the adopted model, explicitly requested by the user on 2026-11-09 after the pre-registered retention rule (both tests) had failed. This is a requested diagnostic evaluation, not a promotion step. The original plan (battle-plan.json, df87dd41...) and its skip record (battle-result.json, d9d6aee2...) are kept unchanged; the retention failure stands.",
+  "original_plan": {"file": "battle-plan.json", "sha256": "df87dd41ecfe4e84cce8940a03292435dfe3a074c524384f5cf0c05d440fb691"},
+  "original_skip_record": {"file": "battle-result.json", "sha256": "d9d6aee2c3606789a9ab5aa49ed7d91b422fdc598a2d352d9d96e8f811c23e0e"},
+  "candidate": {"path": "/home/hatk8/projects/yugioh-ai/experiments/opening-d16384-20261109/d-lr1.5e-5-l5/cycles/12288-seed10016384/candidate",
+                "base_sha256": "86b4358dcfec696cb4b3cc4c19781c34292b2509bf037b9e4f44d9ed8ec59d1c",
+                "head_sha256": "6ca3221f1828eecc5cea817003c8df5e8802b75fabef0f4aa33105ad0f979fce",
+                "cumulative_decisions": 16384},
+  "opponent": {"path": "/home/hatk8/projects/yugioh-ai/experiments/opening-d16384-20261109/d-lr1.5e-5-l5/models/initial",
+               "base_sha256": "966cc8b1c3f0c092e824cc52dffcaf9c71f0c9373ece0fd07831d4a9df4f7cd1",
+               "head_sha256": "1aaf569daf53a4453ef2f2e450c924af014aea83b3e4f98fea2644b795b52dc8"},
+  "adapters": "placement v2 and the same position adapter for both players (arm snapshot = production v2 policy code)",
+  "config": "/home/hatk8/projects/yugioh-ai/experiments/opening-d16384-20261109/configs/d-lr1.5e-5-l5.json",
+  "episodes": 128,
+  "seed": 80016384,
+  "max_battles": 128,
+  "confirmation": "none (not requested)",
+  "reported_criterion": "existing promotion_ok reported for information only",
+  "adoption": "none regardless of the outcome"
+}

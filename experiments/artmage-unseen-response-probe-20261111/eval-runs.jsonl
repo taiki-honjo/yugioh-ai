@@ -1,0 +1,40 @@
+{"event": "start", "run": 1, "purpose": "record H1-ASH-BASE", "case_id": "H1-ASH-BASE", "time_jst": "2026-11-11T13:38:55+09:00"}
+{"event": "finish", "run": 1, "status": "ok", "time_jst": "2026-11-11T13:39:01+09:00"}
+{"event": "start", "run": 2, "purpose": "record H1-ASH-CAND", "case_id": "H1-ASH-CAND", "time_jst": "2026-11-11T13:39:01+09:00"}
+{"event": "finish", "run": 2, "status": "ok", "time_jst": "2026-11-11T13:39:03+09:00"}
+{"event": "start", "run": 3, "purpose": "record H1-GAMMA-BASE", "case_id": "H1-GAMMA-BASE", "time_jst": "2026-11-11T13:39:03+09:00"}
+{"event": "finish", "run": 3, "status": "ok", "time_jst": "2026-11-11T13:39:06+09:00"}
+{"event": "start", "run": 4, "purpose": "record H1-GAMMA-CAND", "case_id": "H1-GAMMA-CAND", "time_jst": "2026-11-11T13:39:06+09:00"}
+{"event": "finish", "run": 4, "status": "ok", "time_jst": "2026-11-11T13:39:08+09:00"}
+{"event": "start", "run": 5, "purpose": "record H2-ASH-BASE", "case_id": "H2-ASH-BASE", "time_jst": "2026-11-11T13:39:08+09:00"}
+{"event": "finish", "run": 5, "status": "ok", "time_jst": "2026-11-11T13:39:10+09:00"}
+{"event": "start", "run": 6, "purpose": "record H2-ASH-CAND", "case_id": "H2-ASH-CAND", "time_jst": "2026-11-11T13:39:10+09:00"}
+{"event": "finish", "run": 6, "status": "ok", "time_jst": "2026-11-11T13:39:13+09:00"}
+{"event": "start", "run": 7, "purpose": "record H2-GAMMA-BASE", "case_id": "H2-GAMMA-BASE", "time_jst": "2026-11-11T13:39:13+09:00"}
+{"event": "finish", "run": 7, "status": "ok", "time_jst": "2026-11-11T13:39:15+09:00"}
+{"event": "start", "run": 8, "purpose": "record H2-GAMMA-CAND", "case_id": "H2-GAMMA-CAND", "time_jst": "2026-11-11T13:39:15+09:00"}
+{"event": "finish", "run": 8, "status": "ok", "time_jst": "2026-11-11T13:39:17+09:00"}
+{"event": "start", "run": 9, "purpose": "replay H1-ASH-BASE", "case_id": "H1-ASH-BASE", "time_jst": "2026-11-11T13:39:35+09:00"}
+{"event": "finish", "run": 9, "status": "ok", "time_jst": "2026-11-11T13:39:35+09:00"}
+{"event": "start", "run": 10, "purpose": "replay H1-ASH-CAND", "case_id": "H1-ASH-CAND", "time_jst": "2026-11-11T13:39:35+09:00"}
+{"event": "finish", "run": 10, "status": "ok", "time_jst": "2026-11-11T13:39:35+09:00"}
+{"event": "start", "run": 11, "purpose": "replay H1-GAMMA-BASE", "case_id": "H1-GAMMA-BASE", "time_jst": "2026-11-11T13:39:35+09:00"}
+{"event": "finish", "run": 11, "status": "ok", "time_jst": "2026-11-11T13:39:35+09:00"}
+{"event": "start", "run": 12, "purpose": "replay H1-GAMMA-CAND", "case_id": "H1-GAMMA-CAND", "time_jst": "2026-11-11T13:39:36+09:00"}
+{"event": "finish", "run": 12, "status": "ok", "time_jst": "2026-11-11T13:39:36+09:00"}
+{"event": "start", "run": 13, "purpose": "replay H2-ASH-BASE", "case_id": "H2-ASH-BASE", "time_jst": "2026-11-11T13:39:36+09:00"}
+{"event": "finish", "run": 13, "status": "ok", "time_jst": "2026-11-11T13:39:36+09:00"}
+{"event": "start", "run": 14, "purpose": "replay H2-ASH-CAND", "case_id": "H2-ASH-CAND", "time_jst": "2026-11-11T13:39:36+09:00"}
+{"event": "finish", "run": 14, "status": "ok", "time_jst": "2026-11-11T13:39:36+09:00"}
+{"event": "start", "run": 15, "purpose": "replay H2-GAMMA-BASE", "case_id": "H2-GAMMA-BASE", "time_jst": "2026-11-11T13:39:36+09:00"}
+{"event": "finish", "run": 15, "status": "ok", "time_jst": "2026-11-11T13:39:36+09:00"}
+{"event": "start", "run": 16, "purpose": "replay H2-GAMMA-CAND", "case_id": "H2-GAMMA-CAND", "time_jst": "2026-11-11T13:39:36+09:00"}
+{"event": "finish", "run": 16, "status": "ok", "time_jst": "2026-11-11T13:39:36+09:00"}
+{"event": "start", "run": 17, "purpose": "record H1-ASH-CTRL-G", "case_id": "H1-ASH-CTRL-G", "time_jst": "2026-11-11T13:40:02+09:00"}
+{"event": "finish", "run": 17, "status": "ok", "time_jst": "2026-11-11T13:40:05+09:00"}
+{"event": "start", "run": 18, "purpose": "record H1-GAMMA-CTRL-G", "case_id": "H1-GAMMA-CTRL-G", "time_jst": "2026-11-11T13:40:05+09:00"}
+{"event": "finish", "run": 18, "status": "ok", "time_jst": "2026-11-11T13:40:11+09:00"}
+{"event": "start", "run": 19, "purpose": "replay H1-ASH-CTRL-G", "case_id": "H1-ASH-CTRL-G", "time_jst": "2026-11-11T13:40:13+09:00"}
+{"event": "finish", "run": 19, "status": "ok", "time_jst": "2026-11-11T13:40:13+09:00"}
+{"event": "start", "run": 20, "purpose": "replay H1-GAMMA-CTRL-G", "case_id": "H1-GAMMA-CTRL-G", "time_jst": "2026-11-11T13:40:13+09:00"}
+{"event": "finish", "run": 20, "status": "ok", "time_jst": "2026-11-11T13:40:13+09:00"}

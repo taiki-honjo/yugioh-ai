@@ -1,0 +1,2549 @@
+{
+ "registration_sha256": "2f0d2d24f16d88b7dbf44fd0559267abc5dafecb413a0526b3f4592f09084123",
+ "amendment_sha256": "9ad1852be95c2cff26b5c6d9111a3afe0db84de032acd0df979af5a265fcb470",
+ "candidate_manifest_sha256": "48d6e2c706f820b0f8e79453582aaf45e8021e0cef3e5b21973d4d774e94f169",
+ "engine": {
+  "used": 16,
+  "cap": 18,
+  "statuses": {
+   "ok": 16
+  }
+ },
+ "training": {
+  "screens": {
+   "0": {
+    "S1": {
+     "kind": "ce",
+     "argmax": 4,
+     "target_index": 1,
+     "argmax_is_target": false,
+     "p_target": 1.6709731766928796e-20,
+     "p_frozen": {
+      "0": 7.169927878836338e-20,
+      "1": 1.6709731766928796e-20,
+      "2": 1.4456169594723178e-07,
+      "3": 3.904624138977136e-19,
+      "4": 0.9999998807907104
+     },
+     "p_now": {
+      "0": 7.169927878836338e-20,
+      "1": 1.6709731766928796e-20,
+      "2": 1.4456169594723178e-07,
+      "3": 3.904624138977136e-19,
+      "4": 0.9999999403953552
+     },
+     "delta": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "ce": 45.53829574584961,
+     "kl": null
+    },
+    "S2": {
+     "kind": "ce",
+     "argmax": 3,
+     "target_index": 3,
+     "argmax_is_target": true,
+     "p_target": 0.4139344394207001,
+     "p_frozen": {
+      "0": 2.1313987872417783e-06,
+      "1": 0.2431221604347229,
+      "2": 4.214315563189075e-09,
+      "3": 0.4139344394207001,
+      "4": 5.176238777881981e-12,
+      "5": 0.3429412543773651
+     },
+     "p_now": {
+      "0": 2.1313967408786993e-06,
+      "1": 0.2431221604347229,
+      "2": 4.214315563189075e-09,
+      "3": 0.4139344394207001,
+      "4": 5.176229670583732e-12,
+      "5": 0.3429412543773651
+     },
+     "delta": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0,
+      "5": 0.0
+     },
+     "ce": 0.882047712802887,
+     "kl": null
+    },
+    "M": {
+     "kind": "kl",
+     "argmax": 3,
+     "target_index": 3,
+     "argmax_is_target": true,
+     "p_target": 0.9999129772186279,
+     "p_frozen": {
+      "0": 3.6923991642012766e-11,
+      "1": 8.625323243904859e-05,
+      "2": 5.634088893202716e-07,
+      "3": 0.9999130964279175,
+      "4": 1.042093202840988e-07
+     },
+     "p_now": {
+      "0": 3.6923991642012766e-11,
+      "1": 8.625323243904859e-05,
+      "2": 5.634088893202716e-07,
+      "3": 0.9999129772186279,
+      "4": 1.0420912843756014e-07
+     },
+     "delta": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "ce": null,
+     "kl": 9.435389358714019e-08
+    },
+    "P": {
+     "kind": "kl",
+     "argmax": 2,
+     "target_index": 2,
+     "argmax_is_target": true,
+     "p_target": 1.0,
+     "p_frozen": {
+      "0": 1.0555291085623253e-09,
+      "1": 1.813716974544355e-16,
+      "2": 1.0
+     },
+     "p_now": {
+      "0": 1.0555291085623253e-09,
+      "1": 1.813716974544355e-16,
+      "2": 1.0
+     },
+     "delta": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0
+     },
+     "ce": null,
+     "kl": -1.0555325502537016e-09
+    }
+   },
+   "512": {
+    "S1": {
+     "kind": "ce",
+     "argmax": 1,
+     "target_index": 1,
+     "argmax_is_target": true,
+     "p_target": 0.9959009289741516,
+     "p_frozen": {
+      "0": 7.169927878836338e-20,
+      "1": 1.6709731766928796e-20,
+      "2": 1.4456169594723178e-07,
+      "3": 3.904624138977136e-19,
+      "4": 0.9999998807907104
+     },
+     "p_now": {
+      "0": 3.451130440451644e-13,
+      "1": 0.9959009289741516,
+      "2": 3.308965460746549e-05,
+      "3": 2.2562576806883783e-11,
+      "4": 0.004065988585352898
+     },
+     "delta": {
+      "0": -4.665589809417725,
+      "1": 25.4816951751709,
+      "2": -14.619222640991211,
+      "3": -2.1802642345428467,
+      "4": -25.55759048461914
+     },
+     "ce": 0.004107492044568062,
+     "kl": null
+    },
+    "S2": {
+     "kind": "ce",
+     "argmax": 3,
+     "target_index": 3,
+     "argmax_is_target": true,
+     "p_target": 1.0,
+     "p_frozen": {
+      "0": 2.1313987872417783e-06,
+      "1": 0.2431221604347229,
+      "2": 4.214315563189075e-09,
+      "3": 0.4139344394207001,
+      "4": 5.176238777881981e-12,
+      "5": 0.3429412543773651
+     },
+     "p_now": {
+      "0": 4.751838952228864e-17,
+      "1": 4.010040299817774e-08,
+      "2": 4.7413360581518975e-25,
+      "3": 1.0,
+      "4": 1.3853955527523215e-21,
+      "5": 6.458562003225468e-21
+     },
+     "delta": {
+      "0": -4.665589809417725,
+      "1": 4.243404388427734,
+      "2": -16.86243438720703,
+      "3": 20.743141174316406,
+      "4": -2.1802642345428467,
+      "5": -25.55759048461914
+     },
+     "ce": -0.0,
+     "kl": null
+    },
+    "M": {
+     "kind": "kl",
+     "argmax": 3,
+     "target_index": 3,
+     "argmax_is_target": true,
+     "p_target": 0.999884843826294,
+     "p_frozen": {
+      "0": 3.6923991642012766e-11,
+      "1": 8.625323243904859e-05,
+      "2": 5.634088893202716e-07,
+      "3": 0.9999130964279175,
+      "4": 1.042093202840988e-07
+     },
+     "p_now": {
+      "0": 7.76433523697051e-07,
+      "1": 8.915583021007478e-05,
+      "2": 2.5238929083570838e-05,
+      "3": 0.999884843826294,
+      "4": 1.851063790095364e-12
+     },
+     "delta": {
+      "0": -4.665589809417725,
+      "1": -14.586095809936523,
+      "2": -10.817057609558105,
+      "3": -14.619222640991211,
+      "4": -25.55759048461914
+     },
+     "ce": null,
+     "kl": 2.436498471070081e-05
+    },
+    "P": {
+     "kind": "kl",
+     "argmax": 2,
+     "target_index": 2,
+     "argmax_is_target": true,
+     "p_target": 0.9999955296516418,
+     "p_frozen": {
+      "0": 1.0555291085623253e-09,
+      "1": 1.813716974544355e-16,
+      "2": 1.0
+     },
+     "p_now": {
+      "0": 3.7265929222485283e-06,
+      "1": 8.351486826541077e-07,
+      "2": 0.9999955296516418
+     },
+     "delta": {
+      "0": -17.423309326171875,
+      "1": -3.342190742492676,
+      "2": -25.59252166748047
+     },
+     "ce": null,
+     "kl": 4.5202641558717005e-06
+    }
+   }
+  },
+  "clipped": 369,
+  "post": {
+   "off_target_logit_differences": 0,
+   "rnn_state_differences": 0,
+   "on_target": [
+    {
+     "sequence": "response-S1",
+     "index": 112,
+     "frozen_argmax": 4,
+     "final_argmax": 1,
+     "max_abs_change": 25.55759048461914
+    },
+    {
+     "sequence": "response-S2",
+     "index": 127,
+     "frozen_argmax": 3,
+     "final_argmax": 3,
+     "max_abs_change": 25.55759048461914
+    },
+    {
+     "sequence": "flc:BV1-1cost-VARNISH-OM",
+     "index": 112,
+     "frozen_argmax": 4,
+     "final_argmax": 1,
+     "max_abs_change": 25.55759048461914
+    },
+    {
+     "sequence": "flc:BV1-1cost-VARNISH-OI",
+     "index": 112,
+     "frozen_argmax": 1,
+     "final_argmax": 0,
+     "max_abs_change": 25.59252166748047
+    },
+    {
+     "sequence": "flc:BV1-1cost-ASSAULT-OM",
+     "index": 98,
+     "frozen_argmax": 3,
+     "final_argmax": 3,
+     "max_abs_change": 25.55759048461914
+    },
+    {
+     "sequence": "flc:BV1-1cost-ASSAULT-OI",
+     "index": 98,
+     "frozen_argmax": 0,
+     "final_argmax": 0,
+     "max_abs_change": 25.59252166748047
+    },
+    {
+     "sequence": "flc:BV1-2cost-VARNISH-OM",
+     "index": 76,
+     "frozen_argmax": 1,
+     "final_argmax": 1,
+     "max_abs_change": 25.557588577270508
+    },
+    {
+     "sequence": "flc:BV1-2cost-VARNISH-OI",
+     "index": 76,
+     "frozen_argmax": 2,
+     "final_argmax": 2,
+     "max_abs_change": 25.59252166748047
+    },
+    {
+     "sequence": "flc:BV1-2cost-ASSAULT-OM",
+     "index": 127,
+     "frozen_argmax": 3,
+     "final_argmax": 3,
+     "max_abs_change": 25.55759048461914
+    },
+    {
+     "sequence": "flc:BV1-2cost-ASSAULT-OI",
+     "index": 127,
+     "frozen_argmax": 2,
+     "final_argmax": 2,
+     "max_abs_change": 25.59252166748047
+    }
+   ],
+   "decisions": 5396,
+   "gated": 10
+  },
+  "position_off": 0,
+  "reload": {
+   "S1": {
+    "gated": true,
+    "max_abs_logit_diff": 0.0
+   },
+   "S2": {
+    "gated": true,
+    "max_abs_logit_diff": 0.0
+   },
+   "M": {
+    "gated": true,
+    "max_abs_logit_diff": 0.0
+   },
+   "P": {
+    "gated": true,
+    "max_abs_logit_diff": 0.0
+   }
+  },
+  "ce_first_last": [
+   23.210172653198242,
+   0.0020657365676015615
+  ],
+  "kl_first_last": [
+   4.6649180518443245e-08,
+   1.4548611943610013e-05
+  ],
+  "kl_max": 0.0047476571053266525,
+  "ce_grad_norm": {
+   "mean": 3.994559347673203,
+   "max": 7.695810794830322
+  },
+  "kl_grad_norm": {
+   "mean": 0.018301712876163445,
+   "max": 0.07700879126787186
+  },
+  "update_norm_mean": 0.021560645781619314,
+  "max_abs_delta_last": 25.589584350585938
+ },
+ "prechecks": {
+  "zero_adapter": {
+   "comparison": {
+    "off_target_logit_differences": 0,
+    "rnn_state_differences": 0,
+    "on_target": [
+     {
+      "sequence": "response-S1",
+      "index": 112,
+      "frozen_argmax": 4,
+      "final_argmax": 4,
+      "max_abs_change": 0.0
+     },
+     {
+      "sequence": "response-S2",
+      "index": 127,
+      "frozen_argmax": 3,
+      "final_argmax": 3,
+      "max_abs_change": 0.0
+     },
+     {
+      "sequence": "flc:BV1-1cost-VARNISH-OM",
+      "index": 112,
+      "frozen_argmax": 4,
+      "final_argmax": 4,
+      "max_abs_change": 0.0
+     },
+     {
+      "sequence": "flc:BV1-1cost-VARNISH-OI",
+      "index": 112,
+      "frozen_argmax": 1,
+      "final_argmax": 1,
+      "max_abs_change": 0.0
+     },
+     {
+      "sequence": "flc:BV1-1cost-ASSAULT-OM",
+      "index": 98,
+      "frozen_argmax": 3,
+      "final_argmax": 3,
+      "max_abs_change": 0.0
+     },
+     {
+      "sequence": "flc:BV1-1cost-ASSAULT-OI",
+      "index": 98,
+      "frozen_argmax": 0,
+      "final_argmax": 0,
+      "max_abs_change": 0.0
+     },
+     {
+      "sequence": "flc:BV1-2cost-VARNISH-OM",
+      "index": 76,
+      "frozen_argmax": 1,
+      "final_argmax": 1,
+      "max_abs_change": 0.0
+     },
+     {
+      "sequence": "flc:BV1-2cost-VARNISH-OI",
+      "index": 76,
+      "frozen_argmax": 2,
+      "final_argmax": 2,
+      "max_abs_change": 0.0
+     },
+     {
+      "sequence": "flc:BV1-2cost-ASSAULT-OM",
+      "index": 127,
+      "frozen_argmax": 3,
+      "final_argmax": 3,
+      "max_abs_change": 0.0
+     },
+     {
+      "sequence": "flc:BV1-2cost-ASSAULT-OI",
+      "index": 127,
+      "frozen_argmax": 2,
+      "final_argmax": 2,
+      "max_abs_change": 0.0
+     }
+    ],
+    "decisions": 5396,
+    "gated": 10
+   },
+   "on_target_equal": true,
+   "position_actions_equal": true,
+   "sequences": 50
+  },
+  "gate_vs_snapshot": {
+   "decisions": 1542,
+   "mismatches": []
+  },
+  "gated_npz_indices_in_the_8_runs": {
+   "flc:BV1-1cost-VARNISH-OM": [
+    112
+   ],
+   "flc:BV1-1cost-VARNISH-OI": [
+    112
+   ],
+   "flc:BV1-1cost-ASSAULT-OM": [
+    98
+   ],
+   "flc:BV1-1cost-ASSAULT-OI": [
+    98
+   ],
+   "flc:BV1-2cost-VARNISH-OM": [
+    76
+   ],
+   "flc:BV1-2cost-VARNISH-OI": [
+    76
+   ],
+   "flc:BV1-2cost-ASSAULT-OM": [
+    127
+   ],
+   "flc:BV1-2cost-ASSAULT-OI": [
+    127
+   ]
+  },
+  "screens": {
+   "S1": {
+    "kind": "ce",
+    "note": "improve: ディアクトロス② (R1-executed in the probe; the start model passed)",
+    "step": 149,
+    "npz_index": 112,
+    "who": "probe-R1",
+    "files": {
+     "record.json": "8b5dd7fd917c3dc5dce717debd141ee55035d8f03d0e5e6ee4798ea876c9faef",
+     "observations.npz": "429115c378b6e4fa4e1dd675997b66d5fbb4fd47846c094a2f0a20d17905a49d",
+     "replay.json": "e49727e79be7cda9e4523f8c4db21b4ca7a7fdd6ea4227c5e66fae7bfb632c73"
+    },
+    "chain": [
+     1,
+     2,
+     43,
+     0
+    ],
+    "frozen_first": {
+     "index": 4,
+     "act": "Cancel",
+     "code": 0,
+     "effect": -1
+    },
+    "recorded": {
+     "index": 1,
+     "act": "Activate",
+     "code": 27184601,
+     "effect": 10011
+    },
+    "frozen_probs": {
+     "Activate:59438930:0": 7.169927878836338e-20,
+     "Activate:27184601:10011": 1.6709731766928796e-20,
+     "Activate:23829452:10010": 1.4456169594723178e-07,
+     "Activate:23434538:10010": 3.904624138977136e-19,
+     "Cancel:0:-1": 0.9999998807907104
+    },
+    "gated_steps_in_history": [
+     112
+    ]
+   },
+   "S2": {
+    "kind": "ce",
+    "note": "improve: ファインメルト③ (the start model's own choice)",
+    "step": 169,
+    "npz_index": 127,
+    "who": "model",
+    "files": {
+     "record.json": "f037e719b37e4c4ab776c7d24c8c11f1a57483e72319d8bcc095c30b7768cbcc",
+     "observations.npz": "2184e73c81aea1de5867d6cfcf45cdf3f45d42e223be3eb421976951fa37a58d",
+     "replay.json": "2d87d2c199286fabcac9a7522dfafbf148cb08993a32ef79ab0dbe9b1454fb0b"
+    },
+    "chain": [
+     1,
+     2,
+     43,
+     0
+    ],
+    "frozen_first": {
+     "index": 3,
+     "act": "Activate",
+     "code": 34541940,
+     "effect": 10011
+    },
+    "recorded": {
+     "index": 3,
+     "act": "Activate",
+     "code": 34541940,
+     "effect": 10011
+    },
+    "frozen_probs": {
+     "Activate:59438930:0": 2.1313987872417783e-06,
+     "Activate:44654994:10010": 0.2431221604347229,
+     "Activate:31822037:10011": 4.214315563189075e-09,
+     "Activate:34541940:10011": 0.4139344394207001,
+     "Activate:23434538:10010": 5.176238777881981e-12,
+     "Cancel:0:-1": 0.3429412543773651
+    },
+    "gated_steps_in_history": [
+     127
+    ]
+   },
+   "M": {
+    "kind": "kl",
+    "note": "keep: the start model's distribution (its first choice 獄神獣②)",
+    "step": 139,
+    "npz_index": 98,
+    "who": "model",
+    "files": {
+     "record.json": "a746037f13ce41ac8098c4673eef35908ebe261143d5589cbb96f6ac715aba92",
+     "observations.npz": "0636fcae59161e7c825d195b1f1712fa33ab67231bd57ee595ab97bc17a717a7",
+     "replay.json": "a71c21641972abe588438d53a4f102b8d45512188fe2957f035811b1f3de9e9a"
+    },
+    "chain": [
+     1,
+     2,
+     43,
+     0
+    ],
+    "frozen_first": {
+     "index": 3,
+     "act": "Activate",
+     "code": 23829452,
+     "effect": 10010
+    },
+    "recorded": {
+     "index": 3,
+     "act": "Activate",
+     "code": 23829452,
+     "effect": 10010
+    },
+    "frozen_probs": {
+     "Activate:59438930:0": 3.6923991642012766e-11,
+     "Activate:97434754:10011": 8.625323243904859e-05,
+     "Activate:23599634:10011": 5.634088893202716e-07,
+     "Activate:23829452:10010": 0.9999130964279175,
+     "Cancel:0:-1": 1.042093202840988e-07
+    },
+    "gated_steps_in_history": [
+     98
+    ]
+   },
+   "P": {
+    "kind": "kl",
+    "note": "keep: the start model's distribution (its first choice pass)",
+    "step": 102,
+    "npz_index": 76,
+    "who": "model",
+    "files": {
+     "record.json": "cd8f48a166f2de87b0104d5819967d48e3a0bcf3d707a5d892a8ab644600057b",
+     "observations.npz": "5926cdb16db87953f51b909da3b3b92cace0b3c9ec159fb910fb2c534284f580",
+     "replay.json": "a6039215a3e8e952b56818bd935bc287dc0411bd87d2a45b50a3dccf8b520a9d"
+    },
+    "chain": [
+     1,
+     2,
+     54,
+     0
+    ],
+    "frozen_first": {
+     "index": 2,
+     "act": "Cancel",
+     "code": 0,
+     "effect": -1
+    },
+    "recorded": {
+     "index": 2,
+     "act": "Cancel",
+     "code": 0,
+     "effect": -1
+    },
+    "frozen_probs": {
+     "Activate:31822037:10011": 1.0555291085623253e-09,
+     "Activate:23434538:10010": 1.813716974544355e-16,
+     "Cancel:0:-1": 1.0
+    },
+    "gated_steps_in_history": [
+     76
+    ]
+   }
+  },
+  "all_prechecks_passed": true
+ },
+ "B": {
+  "BV1-1cost-VARNISH-OM": {
+   "role": "S1 (trained, CE)",
+   "identical_to_start": false,
+   "first_divergence": {
+    "step": 149,
+    "turn": 2,
+    "gated": true,
+    "candidate": "ディアクトロス②",
+    "start_model": "Cancel"
+   },
+   "policy_hashes": {
+    "base": "b9c7751f5c1f",
+    "head": "77191d5d9a9a",
+    "adapter": "00977941aab5",
+    "manifest": "48d6e2c706f8"
+   },
+   "candidate": {
+    "window": {
+     "step": 149,
+     "chain": [
+      "無垢なる者 メディウス"
+     ],
+     "candidates": [
+      "幽鬼うさぎ",
+      "ディアクトロス②",
+      "獄神獣②",
+      "増殖するG",
+      "Cancel"
+     ],
+     "executed": "ディアクトロス②",
+     "responses_in_chain": [
+      "ディアクトロス②"
+     ],
+     "beast_arrived": false,
+     "medius_on_field": false,
+     "medius_status": null
+    },
+    "t2_end": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "アルトメギアの獄神獣",
+      "神芸獄徒 ディアクトロス",
+      "無垢なる祈りの獄神使",
+      "神芸なる知恵の乙女",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "無限泡影",
+      "増殖するＧ",
+      "ＰＳＹフレーム・ドライバー",
+      "幽鬼うさぎ"
+     ],
+     "opponent_monsters": [],
+     "opponent_graveyard": [
+      "無垢なる者 メディウス"
+     ]
+    },
+    "t3_end": {
+     "lp": [
+      8000,
+      2900
+     ],
+     "monsters": [
+      "アルトメギアの獄神獣",
+      "神芸学徒 ファインメルト",
+      "創獄神ネルヴァ",
+      "神芸なる知恵の乙女"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "無限泡影",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "幽鬼うさぎ",
+      "屋敷わらし"
+     ],
+     "opponent_monsters": [],
+     "opponent_graveyard": [
+      "無垢なる者 メディウス"
+     ]
+    },
+    "t3_attacks": [
+     "DirectAttack:神芸なる知恵の乙女",
+     "DirectAttack:神芸学徒 ファインメルト",
+     "DirectAttack:アルトメギアの獄神獣"
+    ],
+    "game_over": null,
+    "adapter": [
+     {
+      "call": 112,
+      "changed": true
+     }
+    ],
+    "visible": 0,
+    "lua": 0
+   },
+   "start": {
+    "window": {
+     "step": 149,
+     "chain": [
+      "無垢なる者 メディウス"
+     ],
+     "candidates": [
+      "幽鬼うさぎ",
+      "ディアクトロス②",
+      "獄神獣②",
+      "増殖するG",
+      "Cancel"
+     ],
+     "executed": "Cancel",
+     "responses_in_chain": [],
+     "beast_arrived": true,
+     "medius_on_field": true,
+     "medius_status": {
+      "step": 156,
+      "value": 0
+     }
+    },
+    "t2_end": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "アルトメギアの獄神獣",
+      "神芸獄徒 ディアクトロス",
+      "無垢なる祈りの獄神使",
+      "神芸なる知恵の乙女",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "無限泡影",
+      "増殖するＧ",
+      "ＰＳＹフレーム・ドライバー",
+      "幽鬼うさぎ"
+     ],
+     "opponent_monsters": [
+      "アルトメギアの獄神獣",
+      "無垢なる者 メディウス"
+     ],
+     "opponent_graveyard": []
+    },
+    "t3_end": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "四花繚乱の霊使い",
+      "神芸なる知恵の乙女"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "絶解なる獄神門－テルミナス",
+      "ＰＳＹフレーム・ドライバー"
+     ],
+     "opponent_monsters": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_graveyard": [
+      "アルトメギアの獄神獣"
+     ]
+    },
+    "t3_attacks": [],
+    "game_over": null,
+    "adapter": null,
+    "visible": 0,
+    "lua": 0
+   },
+   "scoped": {
+    "window": {
+     "step": 149,
+     "chain": [
+      "無垢なる者 メディウス"
+     ],
+     "candidates": [
+      "幽鬼うさぎ",
+      "ディアクトロス②",
+      "獄神獣②",
+      "増殖するG",
+      "Cancel"
+     ],
+     "executed": "ディアクトロス②",
+     "responses_in_chain": [
+      "ディアクトロス②"
+     ],
+     "beast_arrived": false,
+     "medius_on_field": false,
+     "medius_status": null
+    },
+    "t2_end": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "アルトメギアの獄神獣",
+      "神芸獄徒 ディアクトロス",
+      "無垢なる祈りの獄神使",
+      "神芸なる知恵の乙女",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "無限泡影",
+      "増殖するＧ",
+      "ＰＳＹフレーム・ドライバー",
+      "幽鬼うさぎ"
+     ],
+     "opponent_monsters": [],
+     "opponent_graveyard": [
+      "無垢なる者 メディウス"
+     ]
+    },
+    "t3_end": {
+     "lp": [
+      8000,
+      2900
+     ],
+     "monsters": [
+      "アルトメギアの獄神獣",
+      "神芸学徒 ファインメルト",
+      "創獄神ネルヴァ",
+      "神芸なる知恵の乙女"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "無限泡影",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "幽鬼うさぎ",
+      "屋敷わらし"
+     ],
+     "opponent_monsters": [],
+     "opponent_graveyard": [
+      "無垢なる者 メディウス"
+     ]
+    },
+    "t3_attacks": [
+     "DirectAttack:神芸なる知恵の乙女",
+     "DirectAttack:神芸学徒 ファインメルト",
+     "DirectAttack:アルトメギアの獄神獣"
+    ],
+    "game_over": null,
+    "adapter": [
+     {
+      "call": 112,
+      "changed": true
+     }
+    ],
+    "visible": 0,
+    "lua": 0
+   },
+   "replay": {
+    "mismatch": null,
+    "failure": null,
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true
+   }
+  },
+  "BV1-1cost-VARNISH-OI": {
+   "role": "not trained (O-I diagnostic)",
+   "identical_to_start": false,
+   "first_divergence": {
+    "step": 149,
+    "turn": 2,
+    "gated": true,
+    "candidate": "ディアクトロス②",
+    "start_model": "獄神獣②"
+   },
+   "policy_hashes": {
+    "base": "b9c7751f5c1f",
+    "head": "77191d5d9a9a",
+    "adapter": "00977941aab5",
+    "manifest": "48d6e2c706f8"
+   },
+   "candidate": {
+    "window": {
+     "step": 149,
+     "chain": [
+      "無限泡影"
+     ],
+     "candidates": [
+      "ディアクトロス②",
+      "獄神獣②",
+      "増殖するG",
+      "Cancel"
+     ],
+     "executed": "ディアクトロス②",
+     "responses_in_chain": [
+      "ディアクトロス②"
+     ],
+     "infinite_target": "神芸なる知恵の乙女",
+     "infinite_in_opponent_gy": true,
+     "target_on_field": true,
+     "target_status": {
+      "step": 152,
+      "value": 0
+     }
+    },
+    "t2_end": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "アルトメギアの獄神獣",
+      "神芸獄徒 ディアクトロス",
+      "無垢なる祈りの獄神使",
+      "神芸なる知恵の乙女",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "無限泡影",
+      "増殖するＧ",
+      "ＰＳＹフレーム・ドライバー",
+      "幽鬼うさぎ"
+     ],
+     "opponent_monsters": [],
+     "opponent_graveyard": [
+      "無限泡影"
+     ]
+    },
+    "t3_end": {
+     "lp": [
+      8000,
+      400
+     ],
+     "monsters": [
+      "神芸獄徒 ディアクトロス",
+      "無垢なる祈りの獄神使",
+      "神芸なる知恵の乙女",
+      "神芸なる知恵の乙女",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "無限泡影",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "増殖するＧ",
+      "幽鬼うさぎ",
+      "混絶獄神ヴィードリウム"
+     ],
+     "opponent_monsters": [],
+     "opponent_graveyard": [
+      "無限泡影"
+     ]
+    },
+    "t3_attacks": [
+     "DirectAttack:アルトメギアの獄神獣",
+     "DirectAttack:無垢なる者 メディウス",
+     "DirectAttack:神芸なる知恵の乙女",
+     "DirectAttack:神芸獄徒 ディアクトロス",
+     "DirectAttack:無垢なる祈りの獄神使"
+    ],
+    "game_over": null,
+    "adapter": [
+     {
+      "call": 112,
+      "changed": true
+     }
+    ],
+    "visible": 0,
+    "lua": 0
+   },
+   "start": {
+    "window": {
+     "step": 149,
+     "chain": [
+      "無限泡影"
+     ],
+     "candidates": [
+      "ディアクトロス②",
+      "獄神獣②",
+      "増殖するG",
+      "Cancel"
+     ],
+     "executed": "獄神獣②",
+     "responses_in_chain": [
+      "獄神獣②"
+     ],
+     "infinite_target": "神芸なる知恵の乙女",
+     "infinite_in_opponent_gy": true,
+     "target_on_field": true,
+     "target_status": {
+      "step": 156,
+      "value": 1
+     }
+    },
+    "t2_end": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "無垢なる祈りの獄神使",
+      "創獄神ネルヴァ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "無限泡影",
+      "増殖するＧ",
+      "ＰＳＹフレーム・ドライバー",
+      "幽鬼うさぎ"
+     ],
+     "opponent_monsters": [],
+     "opponent_graveyard": [
+      "無限泡影"
+     ]
+    },
+    "t3_end": {
+     "lp": [
+      8000,
+      250
+     ],
+     "monsters": [
+      "神芸獄徒 ディアクトロス",
+      "四花繚乱の霊使い",
+      "神芸学徒 ファインメルト",
+      "神芸学徒 リテラ"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "無限泡影",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "ＰＳＹフレーム・ドライバー",
+      "混絶獄神ヴィードリウム"
+     ],
+     "opponent_monsters": [],
+     "opponent_graveyard": [
+      "無限泡影"
+     ]
+    },
+    "t3_attacks": [
+     "DirectAttack:神芸学徒 ファインメルト",
+     "DirectAttack:神芸学徒 リテラ",
+     "DirectAttack:神芸獄徒 ディアクトロス",
+     "DirectAttack:四花繚乱の霊使い"
+    ],
+    "game_over": null,
+    "adapter": null,
+    "visible": 0,
+    "lua": 0
+   },
+   "scoped": "not run in the scoped study",
+   "replay": {
+    "mismatch": null,
+    "failure": null,
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true
+   }
+  },
+  "BV1-1cost-ASSAULT-OM": {
+   "role": "M (trained, keep)",
+   "identical_to_start": true,
+   "first_divergence": null,
+   "policy_hashes": {
+    "base": "b9c7751f5c1f",
+    "head": "77191d5d9a9a",
+    "adapter": "00977941aab5",
+    "manifest": "48d6e2c706f8"
+   },
+   "candidate": {
+    "window": {
+     "step": 139,
+     "chain": [
+      "無垢なる者 メディウス"
+     ],
+     "candidates": [
+      "幽鬼うさぎ",
+      "リテラ③",
+      "覚醒②",
+      "獄神獣②",
+      "Cancel"
+     ],
+     "executed": "獄神獣②",
+     "responses_in_chain": [
+      "獄神獣②",
+      "リテラ③",
+      "覚醒②"
+     ],
+     "beast_arrived": true,
+     "medius_on_field": false,
+     "medius_status": null
+    },
+    "t2_end": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "神芸獄徒 ディアクトロス",
+      "無垢なる祈りの獄神使",
+      "神芸学徒 グラフレア"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "獄神影獣－ネルヴェド",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "アルトメギア・インパスト－奪還－",
+      "ＰＳＹフレーム・ドライバー",
+      "幽鬼うさぎ",
+      "神芸学徒 リテラ"
+     ],
+     "opponent_monsters": [
+      "アルトメギアの獄神獣"
+     ],
+     "opponent_graveyard": [
+      "無垢なる者 メディウス"
+     ]
+    },
+    "t3_end": {
+     "lp": [
+      8000,
+      5750
+     ],
+     "monsters": [
+      "創獄神ネルヴァ",
+      "神芸なる知恵の乙女"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "獄神影獣－ネルヴェド",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "ＰＳＹフレーム・ドライバー",
+      "混絶獄神ヴィードリウム"
+     ],
+     "opponent_monsters": [],
+     "opponent_graveyard": [
+      "アルトメギアの獄神獣",
+      "無垢なる者 メディウス"
+     ]
+    },
+    "t3_attacks": [
+     "Attack:神芸なる知恵の乙女"
+    ],
+    "game_over": null,
+    "adapter": [
+     {
+      "call": 98,
+      "changed": false
+     }
+    ],
+    "visible": 0,
+    "lua": 0
+   },
+   "start": {
+    "window": {
+     "step": 139,
+     "chain": [
+      "無垢なる者 メディウス"
+     ],
+     "candidates": [
+      "幽鬼うさぎ",
+      "リテラ③",
+      "覚醒②",
+      "獄神獣②",
+      "Cancel"
+     ],
+     "executed": "獄神獣②",
+     "responses_in_chain": [
+      "獄神獣②",
+      "リテラ③",
+      "覚醒②"
+     ],
+     "beast_arrived": true,
+     "medius_on_field": false,
+     "medius_status": null
+    },
+    "t2_end": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "神芸獄徒 ディアクトロス",
+      "無垢なる祈りの獄神使",
+      "神芸学徒 グラフレア"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "獄神影獣－ネルヴェド",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "アルトメギア・インパスト－奪還－",
+      "ＰＳＹフレーム・ドライバー",
+      "幽鬼うさぎ",
+      "神芸学徒 リテラ"
+     ],
+     "opponent_monsters": [
+      "アルトメギアの獄神獣"
+     ],
+     "opponent_graveyard": [
+      "無垢なる者 メディウス"
+     ]
+    },
+    "t3_end": {
+     "lp": [
+      8000,
+      5750
+     ],
+     "monsters": [
+      "創獄神ネルヴァ",
+      "神芸なる知恵の乙女"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "獄神影獣－ネルヴェド",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "ＰＳＹフレーム・ドライバー",
+      "混絶獄神ヴィードリウム"
+     ],
+     "opponent_monsters": [],
+     "opponent_graveyard": [
+      "アルトメギアの獄神獣",
+      "無垢なる者 メディウス"
+     ]
+    },
+    "t3_attacks": [
+     "Attack:神芸なる知恵の乙女"
+    ],
+    "game_over": null,
+    "adapter": null,
+    "visible": 0,
+    "lua": 0
+   },
+   "scoped": {
+    "window": {
+     "step": 139,
+     "chain": [
+      "無垢なる者 メディウス"
+     ],
+     "candidates": [
+      "幽鬼うさぎ",
+      "リテラ③",
+      "覚醒②",
+      "獄神獣②",
+      "Cancel"
+     ],
+     "executed": "リテラ③",
+     "responses_in_chain": [
+      "リテラ③"
+     ],
+     "beast_arrived": true,
+     "medius_on_field": true,
+     "medius_status": {
+      "step": 150,
+      "value": 0
+     }
+    },
+    "t2_end": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "アルトメギアの獄神獣",
+      "無垢なる祈りの獄神使",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "獄神影獣－ネルヴェド",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "ＰＳＹフレーム・ドライバー",
+      "幽鬼うさぎ",
+      "神芸学徒 グラフレア",
+      "神芸学徒 リテラ"
+     ],
+     "opponent_monsters": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_graveyard": [
+      "アルトメギアの獄神獣"
+     ]
+    },
+    "t3_end": {
+     "lp": [
+      5400,
+      8000
+     ],
+     "monsters": [
+      "神芸獄徒 ディアクトロス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "獄神影獣－ネルヴェド",
+      "アルトメギア・バーニッシュ－改変－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "ＰＳＹフレーム・ドライバー"
+     ],
+     "opponent_monsters": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_graveyard": [
+      "アルトメギアの獄神獣"
+     ]
+    },
+    "t3_attacks": [
+     "Attack:無垢なる祈りの獄神使",
+     "Attack:クロシープ"
+    ],
+    "game_over": null,
+    "adapter": [
+     {
+      "call": 98,
+      "changed": true
+     }
+    ],
+    "visible": 0,
+    "lua": 0
+   },
+   "replay": {
+    "mismatch": null,
+    "failure": null,
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true
+   }
+  },
+  "BV1-1cost-ASSAULT-OI": {
+   "role": "not trained (O-I diagnostic)",
+   "identical_to_start": true,
+   "first_divergence": null,
+   "policy_hashes": {
+    "base": "b9c7751f5c1f",
+    "head": "77191d5d9a9a",
+    "adapter": "00977941aab5",
+    "manifest": "48d6e2c706f8"
+   },
+   "candidate": {
+    "window": {
+     "step": 139,
+     "chain": [
+      "無限泡影"
+     ],
+     "candidates": [
+      "リテラ③",
+      "覚醒②",
+      "獄神獣②",
+      "Cancel"
+     ],
+     "executed": "リテラ③",
+     "responses_in_chain": [
+      "リテラ③"
+     ],
+     "infinite_target": "無垢なる祈りの獄神使",
+     "infinite_in_opponent_gy": true,
+     "target_on_field": true,
+     "target_status": {
+      "step": 145,
+      "value": 1
+     }
+    },
+    "t2_end": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "アルトメギアの獄神獣",
+      "無垢なる祈りの獄神使",
+      "神芸学徒 グラフレア",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "獄神影獣－ネルヴェド",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "ＰＳＹフレーム・ドライバー",
+      "幽鬼うさぎ",
+      "神芸学徒 リテラ"
+     ],
+     "opponent_monsters": [],
+     "opponent_graveyard": [
+      "無限泡影"
+     ]
+    },
+    "t3_end": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "創獄神ネルヴァ"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "獄神影獣－ネルヴェド",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "幽鬼うさぎ"
+     ],
+     "opponent_monsters": [],
+     "opponent_graveyard": [
+      "無限泡影"
+     ]
+    },
+    "t3_attacks": [],
+    "game_over": null,
+    "adapter": [
+     {
+      "call": 98,
+      "changed": false
+     }
+    ],
+    "visible": 0,
+    "lua": 0
+   },
+   "start": {
+    "window": {
+     "step": 139,
+     "chain": [
+      "無限泡影"
+     ],
+     "candidates": [
+      "リテラ③",
+      "覚醒②",
+      "獄神獣②",
+      "Cancel"
+     ],
+     "executed": "リテラ③",
+     "responses_in_chain": [
+      "リテラ③"
+     ],
+     "infinite_target": "無垢なる祈りの獄神使",
+     "infinite_in_opponent_gy": true,
+     "target_on_field": true,
+     "target_status": {
+      "step": 145,
+      "value": 1
+     }
+    },
+    "t2_end": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "アルトメギアの獄神獣",
+      "無垢なる祈りの獄神使",
+      "神芸学徒 グラフレア",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "獄神影獣－ネルヴェド",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "ＰＳＹフレーム・ドライバー",
+      "幽鬼うさぎ",
+      "神芸学徒 リテラ"
+     ],
+     "opponent_monsters": [],
+     "opponent_graveyard": [
+      "無限泡影"
+     ]
+    },
+    "t3_end": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "創獄神ネルヴァ"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "獄神影獣－ネルヴェド",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "幽鬼うさぎ"
+     ],
+     "opponent_monsters": [],
+     "opponent_graveyard": [
+      "無限泡影"
+     ]
+    },
+    "t3_attacks": [],
+    "game_over": null,
+    "adapter": null,
+    "visible": 0,
+    "lua": 0
+   },
+   "scoped": "not run in the scoped study",
+   "replay": {
+    "mismatch": null,
+    "failure": null,
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true
+   }
+  },
+  "BV1-2cost-VARNISH-OM": {
+   "role": "not trained (O-M)",
+   "identical_to_start": true,
+   "first_divergence": null,
+   "policy_hashes": {
+    "base": "b9c7751f5c1f",
+    "head": "77191d5d9a9a",
+    "adapter": "00977941aab5",
+    "manifest": "48d6e2c706f8"
+   },
+   "candidate": {
+    "window": {
+     "step": 102,
+     "chain": [
+      "無垢なる者 メディウス"
+     ],
+     "candidates": [
+      "幽鬼うさぎ",
+      "ファインメルト③",
+      "獄神使②",
+      "増殖するG",
+      "Cancel"
+     ],
+     "executed": "ファインメルト③",
+     "responses_in_chain": [
+      "ファインメルト③"
+     ],
+     "beast_arrived": false,
+     "medius_on_field": true,
+     "medius_status": {
+      "step": 105,
+      "value": 1
+     }
+    },
+    "t2_end": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "増殖するＧ",
+      "幽鬼うさぎ"
+     ],
+     "opponent_monsters": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_graveyard": []
+    },
+    "t3_end": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "Ｗ：Ｐファンシーボール"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [],
+     "opponent_monsters": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_graveyard": []
+    },
+    "t3_attacks": [],
+    "game_over": null,
+    "adapter": [
+     {
+      "call": 76,
+      "changed": false
+     }
+    ],
+    "visible": 0,
+    "lua": 0
+   },
+   "start": {
+    "window": {
+     "step": 102,
+     "chain": [
+      "無垢なる者 メディウス"
+     ],
+     "candidates": [
+      "幽鬼うさぎ",
+      "ファインメルト③",
+      "獄神使②",
+      "増殖するG",
+      "Cancel"
+     ],
+     "executed": "ファインメルト③",
+     "responses_in_chain": [
+      "ファインメルト③"
+     ],
+     "beast_arrived": false,
+     "medius_on_field": true,
+     "medius_status": {
+      "step": 105,
+      "value": 1
+     }
+    },
+    "t2_end": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "増殖するＧ",
+      "幽鬼うさぎ"
+     ],
+     "opponent_monsters": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_graveyard": []
+    },
+    "t3_end": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "Ｗ：Ｐファンシーボール"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [],
+     "opponent_monsters": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_graveyard": []
+    },
+    "t3_attacks": [],
+    "game_over": null,
+    "adapter": null,
+    "visible": 0,
+    "lua": 0
+   },
+   "scoped": {
+    "window": {
+     "step": 102,
+     "chain": [
+      "無垢なる者 メディウス"
+     ],
+     "candidates": [
+      "幽鬼うさぎ",
+      "ファインメルト③",
+      "獄神使②",
+      "増殖するG",
+      "Cancel"
+     ],
+     "executed": "ファインメルト③",
+     "responses_in_chain": [
+      "ファインメルト③"
+     ],
+     "beast_arrived": false,
+     "medius_on_field": true,
+     "medius_status": {
+      "step": 105,
+      "value": 1
+     }
+    },
+    "t2_end": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "増殖するＧ",
+      "幽鬼うさぎ"
+     ],
+     "opponent_monsters": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_graveyard": []
+    },
+    "t3_end": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "Ｗ：Ｐファンシーボール"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [],
+     "opponent_monsters": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_graveyard": []
+    },
+    "t3_attacks": [],
+    "game_over": null,
+    "adapter": [
+     {
+      "call": 76,
+      "changed": false
+     }
+    ],
+    "visible": 0,
+    "lua": 0
+   },
+   "replay": {
+    "mismatch": null,
+    "failure": null,
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true
+   }
+  },
+  "BV1-2cost-VARNISH-OI": {
+   "role": "P (trained, keep)",
+   "identical_to_start": true,
+   "first_divergence": null,
+   "policy_hashes": {
+    "base": "b9c7751f5c1f",
+    "head": "77191d5d9a9a",
+    "adapter": "00977941aab5",
+    "manifest": "48d6e2c706f8"
+   },
+   "candidate": {
+    "window": {
+     "step": 102,
+     "chain": [
+      "無限泡影"
+     ],
+     "candidates": [
+      "獄神使②",
+      "増殖するG",
+      "Cancel"
+     ],
+     "executed": "Cancel",
+     "responses_in_chain": [],
+     "infinite_target": "神芸学徒 ファインメルト",
+     "infinite_in_opponent_gy": true,
+     "target_on_field": true,
+     "target_status": {
+      "step": 103,
+      "value": 1
+     }
+    },
+    "t2_end": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "増殖するＧ",
+      "幽鬼うさぎ"
+     ],
+     "opponent_monsters": [],
+     "opponent_graveyard": [
+      "無限泡影"
+     ]
+    },
+    "t3_end": {
+     "lp": [
+      8000,
+      5600
+     ],
+     "monsters": [
+      "Ｗ：Ｐファンシーボール"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [],
+     "opponent_monsters": [],
+     "opponent_graveyard": [
+      "無限泡影"
+     ]
+    },
+    "t3_attacks": [
+     "DirectAttack:Ｗ：Ｐファンシーボール"
+    ],
+    "game_over": null,
+    "adapter": [
+     {
+      "call": 76,
+      "changed": false
+     }
+    ],
+    "visible": 0,
+    "lua": 0
+   },
+   "start": {
+    "window": {
+     "step": 102,
+     "chain": [
+      "無限泡影"
+     ],
+     "candidates": [
+      "獄神使②",
+      "増殖するG",
+      "Cancel"
+     ],
+     "executed": "Cancel",
+     "responses_in_chain": [],
+     "infinite_target": "神芸学徒 ファインメルト",
+     "infinite_in_opponent_gy": true,
+     "target_on_field": true,
+     "target_status": {
+      "step": 103,
+      "value": 1
+     }
+    },
+    "t2_end": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "増殖するＧ",
+      "幽鬼うさぎ"
+     ],
+     "opponent_monsters": [],
+     "opponent_graveyard": [
+      "無限泡影"
+     ]
+    },
+    "t3_end": {
+     "lp": [
+      8000,
+      5600
+     ],
+     "monsters": [
+      "Ｗ：Ｐファンシーボール"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [],
+     "opponent_monsters": [],
+     "opponent_graveyard": [
+      "無限泡影"
+     ]
+    },
+    "t3_attacks": [
+     "DirectAttack:Ｗ：Ｐファンシーボール"
+    ],
+    "game_over": null,
+    "adapter": null,
+    "visible": 0,
+    "lua": 0
+   },
+   "scoped": "not run in the scoped study",
+   "replay": {
+    "mismatch": null,
+    "failure": null,
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true
+   }
+  },
+  "BV1-2cost-ASSAULT-OM": {
+   "role": "S2 (trained, CE)",
+   "identical_to_start": true,
+   "first_divergence": null,
+   "policy_hashes": {
+    "base": "b9c7751f5c1f",
+    "head": "77191d5d9a9a",
+    "adapter": "00977941aab5",
+    "manifest": "48d6e2c706f8"
+   },
+   "candidate": {
+    "window": {
+     "step": 169,
+     "chain": [
+      "無垢なる者 メディウス"
+     ],
+     "candidates": [
+      "幽鬼うさぎ",
+      "奪還①",
+      "獄神使②",
+      "ファインメルト③",
+      "増殖するG",
+      "Cancel"
+     ],
+     "executed": "ファインメルト③",
+     "responses_in_chain": [
+      "ファインメルト③"
+     ],
+     "beast_arrived": false,
+     "medius_on_field": true,
+     "medius_status": {
+      "step": 172,
+      "value": 1
+     }
+    },
+    "t2_end": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "創獄神ネルヴァ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "アルトメギア・インパスト－奪還－",
+      "アルトメギア・バーニッシュ－改変－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "増殖するＧ",
+      "幽鬼うさぎ"
+     ],
+     "opponent_monsters": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_graveyard": []
+    },
+    "t3_end": null,
+    "t3_attacks": [
+     "DirectAttack:アルトメギアの獄神獣",
+     "DirectAttack:無垢なる者 メディウス",
+     "DirectAttack:神芸なる知恵の乙女",
+     "DirectAttack:創獄神ネルヴァ",
+     "DirectAttack:無垢なる祈りの獄神使"
+    ],
+    "game_over": {
+     "step": 265,
+     "reward": -8.0,
+     "acting_player": 1,
+     "winner": 0,
+     "turn": 3
+    },
+    "adapter": [
+     {
+      "call": 127,
+      "changed": false
+     }
+    ],
+    "visible": 0,
+    "lua": 0
+   },
+   "start": {
+    "window": {
+     "step": 169,
+     "chain": [
+      "無垢なる者 メディウス"
+     ],
+     "candidates": [
+      "幽鬼うさぎ",
+      "奪還①",
+      "獄神使②",
+      "ファインメルト③",
+      "増殖するG",
+      "Cancel"
+     ],
+     "executed": "ファインメルト③",
+     "responses_in_chain": [
+      "ファインメルト③"
+     ],
+     "beast_arrived": false,
+     "medius_on_field": true,
+     "medius_status": {
+      "step": 172,
+      "value": 1
+     }
+    },
+    "t2_end": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "創獄神ネルヴァ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "アルトメギア・インパスト－奪還－",
+      "アルトメギア・バーニッシュ－改変－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "増殖するＧ",
+      "幽鬼うさぎ"
+     ],
+     "opponent_monsters": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_graveyard": []
+    },
+    "t3_end": null,
+    "t3_attacks": [
+     "DirectAttack:アルトメギアの獄神獣",
+     "DirectAttack:無垢なる者 メディウス",
+     "DirectAttack:神芸なる知恵の乙女",
+     "DirectAttack:創獄神ネルヴァ",
+     "DirectAttack:無垢なる祈りの獄神使"
+    ],
+    "game_over": {
+     "step": 265,
+     "reward": -8.0,
+     "acting_player": 1,
+     "winner": 0,
+     "turn": 3
+    },
+    "adapter": null,
+    "visible": 0,
+    "lua": 0
+   },
+   "scoped": {
+    "window": {
+     "step": 169,
+     "chain": [
+      "無垢なる者 メディウス"
+     ],
+     "candidates": [
+      "幽鬼うさぎ",
+      "奪還①",
+      "獄神使②",
+      "ファインメルト③",
+      "増殖するG",
+      "Cancel"
+     ],
+     "executed": "ファインメルト③",
+     "responses_in_chain": [
+      "ファインメルト③"
+     ],
+     "beast_arrived": false,
+     "medius_on_field": true,
+     "medius_status": {
+      "step": 172,
+      "value": 1
+     }
+    },
+    "t2_end": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "創獄神ネルヴァ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "アルトメギア・インパスト－奪還－",
+      "アルトメギア・バーニッシュ－改変－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "増殖するＧ",
+      "幽鬼うさぎ"
+     ],
+     "opponent_monsters": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_graveyard": []
+    },
+    "t3_end": null,
+    "t3_attacks": [
+     "DirectAttack:アルトメギアの獄神獣",
+     "DirectAttack:無垢なる者 メディウス",
+     "DirectAttack:神芸なる知恵の乙女",
+     "DirectAttack:創獄神ネルヴァ",
+     "DirectAttack:無垢なる祈りの獄神使"
+    ],
+    "game_over": {
+     "step": 265,
+     "reward": -8.0,
+     "acting_player": 1,
+     "winner": 0,
+     "turn": 3
+    },
+    "adapter": [
+     {
+      "call": 127,
+      "changed": false
+     }
+    ],
+    "visible": 0,
+    "lua": 0
+   },
+   "replay": {
+    "mismatch": null,
+    "failure": null,
+    "final_equal": null,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true
+   }
+  },
+  "BV1-2cost-ASSAULT-OI": {
+   "role": "not trained (O-I diagnostic)",
+   "identical_to_start": true,
+   "first_divergence": null,
+   "policy_hashes": {
+    "base": "b9c7751f5c1f",
+    "head": "77191d5d9a9a",
+    "adapter": "00977941aab5",
+    "manifest": "48d6e2c706f8"
+   },
+   "candidate": {
+    "window": {
+     "step": 169,
+     "chain": [
+      "無限泡影"
+     ],
+     "candidates": [
+      "獄神使②",
+      "増殖するG",
+      "Cancel"
+     ],
+     "executed": "Cancel",
+     "responses_in_chain": [],
+     "infinite_target": "神芸学徒 ファインメルト",
+     "infinite_in_opponent_gy": true,
+     "target_on_field": true,
+     "target_status": {
+      "step": 170,
+      "value": 1
+     }
+    },
+    "t2_end": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "創獄神ネルヴァ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "アルトメギア・インパスト－奪還－",
+      "アルトメギア・バーニッシュ－改変－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "増殖するＧ",
+      "幽鬼うさぎ"
+     ],
+     "opponent_monsters": [],
+     "opponent_graveyard": [
+      "無限泡影"
+     ]
+    },
+    "t3_end": {
+     "lp": [
+      8000,
+      4000
+     ],
+     "monsters": [
+      "クロシープ",
+      "創獄神ネルヴァ",
+      "幽鬼うさぎ"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "アルトメギア・インパスト－奪還－",
+      "アルトメギア・バーニッシュ－改変－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "増殖するＧ"
+     ],
+     "opponent_monsters": [],
+     "opponent_graveyard": [
+      "無限泡影"
+     ]
+    },
+    "t3_attacks": [
+     "DirectAttack:クロシープ",
+     "DirectAttack:幽鬼うさぎ",
+     "DirectAttack:創獄神ネルヴァ"
+    ],
+    "game_over": null,
+    "adapter": [
+     {
+      "call": 127,
+      "changed": false
+     }
+    ],
+    "visible": 0,
+    "lua": 0
+   },
+   "start": {
+    "window": {
+     "step": 169,
+     "chain": [
+      "無限泡影"
+     ],
+     "candidates": [
+      "獄神使②",
+      "増殖するG",
+      "Cancel"
+     ],
+     "executed": "Cancel",
+     "responses_in_chain": [],
+     "infinite_target": "神芸学徒 ファインメルト",
+     "infinite_in_opponent_gy": true,
+     "target_on_field": true,
+     "target_status": {
+      "step": 170,
+      "value": 1
+     }
+    },
+    "t2_end": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "創獄神ネルヴァ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "アルトメギア・インパスト－奪還－",
+      "アルトメギア・バーニッシュ－改変－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "増殖するＧ",
+      "幽鬼うさぎ"
+     ],
+     "opponent_monsters": [],
+     "opponent_graveyard": [
+      "無限泡影"
+     ]
+    },
+    "t3_end": {
+     "lp": [
+      8000,
+      4000
+     ],
+     "monsters": [
+      "クロシープ",
+      "創獄神ネルヴァ",
+      "幽鬼うさぎ"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "アルトメギア・インパスト－奪還－",
+      "アルトメギア・バーニッシュ－改変－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "増殖するＧ"
+     ],
+     "opponent_monsters": [],
+     "opponent_graveyard": [
+      "無限泡影"
+     ]
+    },
+    "t3_attacks": [
+     "DirectAttack:クロシープ",
+     "DirectAttack:幽鬼うさぎ",
+     "DirectAttack:創獄神ネルヴァ"
+    ],
+    "game_over": null,
+    "adapter": null,
+    "visible": 0,
+    "lua": 0
+   },
+   "scoped": "not run in the scoped study",
+   "replay": {
+    "mismatch": null,
+    "failure": null,
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true
+   }
+  }
+ },
+ "A_reference": {
+  "S1": {
+   "window_step": 149,
+   "rows_equal_before_window": true,
+   "inputs_equal_to_window": true,
+   "activations_before_window": 0,
+   "referenced": true
+  },
+  "S2": {
+   "window_step": 169,
+   "rows_equal_before_window": true,
+   "inputs_equal_to_window": true,
+   "activations_before_window": 0,
+   "referenced": true
+  }
+ },
+ "C": {
+  "new_runs": 0,
+  "reuse": "the 13 trajectories have no gated screen (scoped study: 0 activations, identical to the start model; Codex audit 62bad1de); the frozen inference and the gate are unchanged and only the never-activated adapter weights differ, so the trajectories are the same; shown offline by the off-target identity checks",
+  "evidence": {
+   "Artmage-g06-p0": {
+    "scoped_record_sha256": "0f4724dec7d296734be5eefc14042bfb99fed9b41f031d120ae723180f8a847b",
+    "start_record_sha256": "0f4724dec7d296734be5eefc14042bfb99fed9b41f031d120ae723180f8a847b",
+    "scoped_adapter_activations": 0,
+    "scoped_identical_to_start": true
+   },
+   "Artmage-g07-p0": {
+    "scoped_record_sha256": "28cf055806fc8ea8e9481044d1ff7922dc736be9593e0d4b437eddd6430ec227",
+    "start_record_sha256": "28cf055806fc8ea8e9481044d1ff7922dc736be9593e0d4b437eddd6430ec227",
+    "scoped_adapter_activations": 0,
+    "scoped_identical_to_start": true
+   },
+   "Artmage-g08-p0": {
+    "scoped_record_sha256": "743e482045be82bc2fff8da0c26fc80fe4ea58af1d1adc9b9272d72e9dd71b76",
+    "start_record_sha256": "743e482045be82bc2fff8da0c26fc80fe4ea58af1d1adc9b9272d72e9dd71b76",
+    "scoped_adapter_activations": 0,
+    "scoped_identical_to_start": true
+   },
+   "Artmage-g09-p0": {
+    "scoped_record_sha256": "085a0381eb04df2cf399eae5b2fbf7f0440ee7e6807a59e24c924513e1fc71a4",
+    "start_record_sha256": "085a0381eb04df2cf399eae5b2fbf7f0440ee7e6807a59e24c924513e1fc71a4",
+    "scoped_adapter_activations": 0,
+    "scoped_identical_to_start": true
+   },
+   "Artmage-g10-p0": {
+    "scoped_record_sha256": "d731fa7c83caa64e0a6919091cbbce0642a3e3f9b4c5e946baccd7f52c4c0cca",
+    "start_record_sha256": "d731fa7c83caa64e0a6919091cbbce0642a3e3f9b4c5e946baccd7f52c4c0cca",
+    "scoped_adapter_activations": 0,
+    "scoped_identical_to_start": true
+   },
+   "Artmage-g11-p0": {
+    "scoped_record_sha256": "9fe35e66a76af417608c71e149800ac144e589ff635970719a1c295e84ff8fcb",
+    "start_record_sha256": "9fe35e66a76af417608c71e149800ac144e589ff635970719a1c295e84ff8fcb",
+    "scoped_adapter_activations": 0,
+    "scoped_identical_to_start": true
+   },
+   "F0-V": {
+    "scoped_record_sha256": "f40a535cc001e53047058c105a974e6873381e0e7843cf715a50d484ad8dd757",
+    "start_record_sha256": "f40a535cc001e53047058c105a974e6873381e0e7843cf715a50d484ad8dd757",
+    "scoped_adapter_activations": 0,
+    "scoped_identical_to_start": true
+   },
+   "F1-V": {
+    "scoped_record_sha256": "7f1ca8865a112a6c3f329ad7e0943dc0a72cd656d32999dfe5e29039a329acc6",
+    "start_record_sha256": "7f1ca8865a112a6c3f329ad7e0943dc0a72cd656d32999dfe5e29039a329acc6",
+    "scoped_adapter_activations": 0,
+    "scoped_identical_to_start": true
+   },
+   "F2-V": {
+    "scoped_record_sha256": "d8853e3e8ba19de0df01ae9409dcae12b78fee7badaf95d9bcf5a7cc3d77f4a9",
+    "start_record_sha256": "d8853e3e8ba19de0df01ae9409dcae12b78fee7badaf95d9bcf5a7cc3d77f4a9",
+    "scoped_adapter_activations": 0,
+    "scoped_identical_to_start": true
+   },
+   "F3-V": {
+    "scoped_record_sha256": "3cbc51643f26b551be36e8e413b5d260b00169233c58d4499dff5ea24d914b4f",
+    "start_record_sha256": "3cbc51643f26b551be36e8e413b5d260b00169233c58d4499dff5ea24d914b4f",
+    "scoped_adapter_activations": 0,
+    "scoped_identical_to_start": true
+   },
+   "F4-V": {
+    "scoped_record_sha256": "16743aed10318b371425cf7cec09cdda9b37c6dc0edc435a9691396d96fe8006",
+    "start_record_sha256": "16743aed10318b371425cf7cec09cdda9b37c6dc0edc435a9691396d96fe8006",
+    "scoped_adapter_activations": 0,
+    "scoped_identical_to_start": true
+   },
+   "F5-V": {
+    "scoped_record_sha256": "885f2e30e2ce4d1e410e9abf46ad3df6329853c8d1b75bd2a96909f834c14d76",
+    "start_record_sha256": "885f2e30e2ce4d1e410e9abf46ad3df6329853c8d1b75bd2a96909f834c14d76",
+    "scoped_adapter_activations": 0,
+    "scoped_identical_to_start": true
+   },
+   "F6-V": {
+    "scoped_record_sha256": "d5466fb9a12ba696775c74559e512029a078b6fcde4490fe1e9fa1381f45ceb9",
+    "start_record_sha256": "d5466fb9a12ba696775c74559e512029a078b6fcde4490fe1e9fa1381f45ceb9",
+    "scoped_adapter_activations": 0,
+    "scoped_identical_to_start": true
+   }
+  }
+ }
+}

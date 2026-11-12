@@ -1,0 +1,513 @@
+{
+ "status": "registered_before_engine_runs",
+ "registered_jst": "2026-11-11T09:27:54+09:00",
+ "spec": {
+  "copy": "spec/artmage-functional-landing-compare-plan-2026-11-10.md",
+  "sha256": "dfdf1f100abb27f22e4d0cd13bcf7b6694ef88aed3143186708a4e3419d77ee5"
+ },
+ "model": {
+  "base_sha256": "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+  "head_sha256": "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2",
+  "source": "experiments/artmage-hand-branch-20261110/train/candidate (unadopted)"
+ },
+ "pins": {
+  "base": "12500c7724b2d723983a2963a960d75172a6df51fb55ea4f3acf102eeb34132e",
+  "head": "0bc7534cab102cd87586e5d22bd4ad0cd3b55d52d08e284146976506ae6193fc",
+  "deck_copy": "a93c4d30d0945f58f741f1e135fdcbc0b0c438aff575cf6d0d02ce9a82c381d6",
+  "engine_deck": "a93c4d30d0945f58f741f1e135fdcbc0b0c438aff575cf6d0d02ce9a82c381d6",
+  "vocabulary": "aeb5be89d4a5591ccc5cce6af96def74ef47463a55265f75c11b92029e772e7b",
+  "meta_manifest": "ace4f6b8408011a55e9b61d3c4917580942d86960bb3f087afe75ce2774c824a",
+  "meta_latest_run": "32770bc4534c729e66f7addbc76770b78798ee4e618b40fd9baa45e83392e544",
+  "article_latest_run": "39db5d660d4bde37dbd9b6fc0c662781da48b71b0e6c50d8357a7a42f73b0159",
+  "model_code": "f4c3903e3a4841b97f6ffb8840bb4cfa5513b5abfead9ff41fa7c785ceba6cce",
+  "witness_code": "0e4f3a0e92c86aba7a95f96c1e5f93f6a0293eaea7f3ab8a63dee772455ae07a",
+  "adapter": "4fe74c83a460ee3565c3ff276ce2d080b233a6152439ec92147ba90d60d46f90",
+  "adapter_cards": "1baa04349bb31833ff01b05cb365ee0f9416de827ac4fbf52b835011a35f1fde",
+  "native": "19a60f38a3d39b61a2ee082168d5a788a1022b2eb569633816596c8b3de21294",
+  "runtime_json": "ebdfc37ed9c7ebcae73b81281876dd6f22bd8d9afcbdfe8f78905dcc9c220d14"
+ },
+ "own_hands": {
+  "BV1-B-1cost": {
+   "hand": [
+    74733322,
+    97045737,
+    23434538,
+    59438930,
+    49036338
+   ],
+   "seed": 1112103
+  },
+  "BV1-B-2cost": {
+   "hand": [
+    74733322,
+    97045737,
+    23434538,
+    59438930,
+    10045474
+   ],
+   "seed": 1112103
+  }
+ },
+ "opponent_hand": [
+  97556336,
+  10045474,
+  14558127,
+  59438930,
+  73642296
+ ],
+ "fixture": "article_witness.fixture order with a separate hand per player; player 0 deck order equals the earlier BV1 runs (same seed, player 0 first)",
+ "conditions": [
+  "BV1-1cost-VARNISH-OM",
+  "BV1-1cost-VARNISH-OI",
+  "BV1-1cost-ASSAULT-OM",
+  "BV1-1cost-ASSAULT-OI",
+  "BV1-2cost-VARNISH-OM",
+  "BV1-2cost-VARNISH-OI",
+  "BV1-2cost-ASSAULT-OM",
+  "BV1-2cost-ASSAULT-OI"
+ ],
+ "branch": {
+  "prompt": "turn-1 select_card while Graphrea is on the public chain, offering 改変 and 襲撃 and no trap",
+  "choices": {
+   "VARNISH": 74011784,
+   "ASSAULT": 1122030
+  },
+  "prefix": "own turn-1 decisions of the candidate free run on the same hand, matched BY MEANING (act, code, effect, zone spec, place, position, phase, finish); the model reads every observation once (its own choice is logged, the recorded one is executed); after the branch the model plays freely",
+  "prefixes": {
+   "BV1-B-1cost": {
+    "source": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/eval/free/candidate/BV1-B-1cost.json",
+    "source_sha256": "980f00b3c5e0598f35caab3481ea7e0a1f54010b86fd553abc4b0d84f2722c57",
+    "branch_step_in_source": 21,
+    "source_choice": 74011784,
+    "own_decisions_before_branch": 14,
+    "decisions": [
+     [
+      "select_chain",
+      [
+       "Cancel",
+       0,
+       -1,
+       "",
+       0,
+       0,
+       "None",
+       false
+      ]
+     ],
+     [
+      "select_chain",
+      [
+       "Cancel",
+       0,
+       -1,
+       "",
+       0,
+       0,
+       "None",
+       false
+      ]
+     ],
+     [
+      "select_idlecmd",
+      [
+       "Activate",
+       74733322,
+       0,
+       "h1",
+       0,
+       0,
+       "None",
+       false
+      ]
+     ],
+     [
+      "select_chain",
+      [
+       "Cancel",
+       0,
+       -1,
+       "",
+       0,
+       0,
+       "None",
+       false
+      ]
+     ],
+     [
+      "select_chain",
+      [
+       "Cancel",
+       0,
+       -1,
+       "",
+       0,
+       0,
+       "None",
+       false
+      ]
+     ],
+     [
+      "select_idlecmd",
+      [
+       "Activate",
+       74733322,
+       0,
+       "s6",
+       0,
+       0,
+       "None",
+       false
+      ]
+     ],
+     [
+      "announce_card",
+      [
+       "None",
+       60946049,
+       -1,
+       "",
+       0,
+       0,
+       "None",
+       false
+      ]
+     ],
+     [
+      "select_chain",
+      [
+       "Cancel",
+       0,
+       -1,
+       "",
+       0,
+       0,
+       "None",
+       false
+      ]
+     ],
+     [
+      "select_chain",
+      [
+       "Cancel",
+       0,
+       -1,
+       "",
+       0,
+       0,
+       "None",
+       false
+      ]
+     ],
+     [
+      "select_idlecmd",
+      [
+       "Activate",
+       60946049,
+       10010,
+       "h1",
+       0,
+       0,
+       "None",
+       false
+      ]
+     ],
+     [
+      "select_chain",
+      [
+       "Cancel",
+       0,
+       -1,
+       "",
+       0,
+       0,
+       "None",
+       false
+      ]
+     ],
+     [
+      "select_place",
+      [
+       "None",
+       0,
+       -1,
+       "",
+       1,
+       0,
+       "None",
+       false
+      ]
+     ],
+     [
+      "select_position",
+      [
+       "None",
+       60946049,
+       -1,
+       "",
+       0,
+       1,
+       "None",
+       false
+      ]
+     ],
+     [
+      "select_yesno",
+      [
+       "Activate",
+       60946049,
+       10012,
+       "",
+       0,
+       0,
+       "None",
+       false
+      ]
+     ]
+    ]
+   },
+   "BV1-B-2cost": {
+    "source": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/eval/free/candidate/BV1-B-2cost.json",
+    "source_sha256": "e140f89db0d8467c16c7da76c17f16e78710a2114026ab9401b40e18a6e0c425",
+    "branch_step_in_source": 22,
+    "source_choice": 74011784,
+    "own_decisions_before_branch": 15,
+    "decisions": [
+     [
+      "select_chain",
+      [
+       "Cancel",
+       0,
+       -1,
+       "",
+       0,
+       0,
+       "None",
+       false
+      ]
+     ],
+     [
+      "select_chain",
+      [
+       "Cancel",
+       0,
+       -1,
+       "",
+       0,
+       0,
+       "None",
+       false
+      ]
+     ],
+     [
+      "select_idlecmd",
+      [
+       "Activate",
+       74733322,
+       0,
+       "h1",
+       0,
+       0,
+       "None",
+       false
+      ]
+     ],
+     [
+      "select_chain",
+      [
+       "Cancel",
+       0,
+       -1,
+       "",
+       0,
+       0,
+       "None",
+       false
+      ]
+     ],
+     [
+      "select_chain",
+      [
+       "Cancel",
+       0,
+       -1,
+       "",
+       0,
+       0,
+       "None",
+       false
+      ]
+     ],
+     [
+      "select_idlecmd",
+      [
+       "Activate",
+       74733322,
+       0,
+       "s6",
+       0,
+       0,
+       "None",
+       false
+      ]
+     ],
+     [
+      "select_card",
+      [
+       "None",
+       10045474,
+       -1,
+       "h4",
+       0,
+       0,
+       "None",
+       false
+      ]
+     ],
+     [
+      "announce_card",
+      [
+       "None",
+       60946049,
+       -1,
+       "",
+       0,
+       0,
+       "None",
+       false
+      ]
+     ],
+     [
+      "select_chain",
+      [
+       "Cancel",
+       0,
+       -1,
+       "",
+       0,
+       0,
+       "None",
+       false
+      ]
+     ],
+     [
+      "select_chain",
+      [
+       "Cancel",
+       0,
+       -1,
+       "",
+       0,
+       0,
+       "None",
+       false
+      ]
+     ],
+     [
+      "select_idlecmd",
+      [
+       "Activate",
+       60946049,
+       10010,
+       "h1",
+       0,
+       0,
+       "None",
+       false
+      ]
+     ],
+     [
+      "select_chain",
+      [
+       "Cancel",
+       0,
+       -1,
+       "",
+       0,
+       0,
+       "None",
+       false
+      ]
+     ],
+     [
+      "select_place",
+      [
+       "None",
+       0,
+       -1,
+       "",
+       1,
+       0,
+       "None",
+       false
+      ]
+     ],
+     [
+      "select_position",
+      [
+       "None",
+       60946049,
+       -1,
+       "",
+       0,
+       1,
+       "None",
+       false
+      ]
+     ],
+     [
+      "select_yesno",
+      [
+       "Activate",
+       60946049,
+       10012,
+       "",
+       0,
+       0,
+       "None",
+       false
+      ]
+     ]
+    ]
+   }
+  }
+ },
+ "opponent": {
+  "OM": "own main phase: normal summon Medius, activate Medius①, choose 獄神獣, special summon (1152); everything else pass",
+  "OI": "own main phase with an empty field: activate 無限泡影 from the hand; target priority 乙女 > ディアクトロス > ファインメルト > 獄神使 > other, same name lowest zone; everything else pass",
+  "hand_traps": "never used",
+  "turn3": "pass",
+  "fallback": "first legal option only when the pass policy cannot decide (logged)"
+ },
+ "stop": "first decision of turn 4 (end of own turn 3), game over from env.step returns, or 600 decisions",
+ "engine": {
+  "cap": 16,
+  "plan": "8 records + 8 replays",
+  "failures_count": true
+ },
+ "not_done": [
+  "training",
+  "adoption",
+  "battles",
+  "RT1 or other re-evaluation",
+  "B2B",
+  "production / registry changes"
+ ],
+ "limits": {
+  "memory_gib": 5,
+  "swap": 0,
+  "cpu_percent": 300,
+  "job_seconds": 1800,
+  "nice": 10,
+  "device": "CPU"
+ },
+ "code": {
+  "artmage_entry.py": "ca47f56d29431b48d60337de6dcc6ce23d524fba31cbbbdce31e6d7399b78e0f",
+  "artmage_pins.py": "10c4e053d05f44498cff77c45301a3fb5222c7598a658decc52f4539fd96bde8",
+  "artmage_teacher.py": "a126284eff7a2d7ef3c602ade0aa5f196f7ddea77333213c27a197ade21b78f3",
+  "batch_plans.py": "68d5945d80d663ba7f85b56ffbd6490a00998aaa1d5cca14663e18e6956f1123",
+  "flc_launch.py": "84c22b762fffce4103d1c978e169e8800ee5c779e571dcc385c7a66fa40869e7",
+  "flc_register.py": "2721cd9de0b2997680517c1b7dd9ec3df99623977ba488bd19e27231261f2ac4",
+  "flc_runs.py": "59f419d131721e8e5fa73ea94b75684b25bda35ac1d229ea36075bd2ce0a9804",
+  "hb_plans.py": "8fc90ad7f704a2f141669d1075827cf3513f015989a95d472f353aaae6ab40cd"
+ }
+}

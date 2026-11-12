@@ -1,0 +1,15 @@
+{
+ "name": "F5-T2",
+ "engine_run": 24,
+ "replayed_engine_run": 18,
+ "mismatch": null,
+ "failure": null,
+ "reproduced_steps": 106,
+ "of": 106,
+ "reason": "reached_turn3",
+ "final_equal": true,
+ "checkpoints_equal": true,
+ "observations_match": true,
+ "lua_errors": 0,
+ "disclosed": []
+}

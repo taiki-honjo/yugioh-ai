@@ -1,0 +1,11 @@
+{"time_jst": "2026-11-09T19:16:12+09:00", "event": "worker_started", "pid": 229483}
+{"time_jst": "2026-11-09T19:16:12+09:00", "event": "training_started", "cycle": 1, "steps": 4096}
+{"time_jst": "2026-11-09T19:18:41+09:00", "event": "cycle_completed", "cycle": 1, "added_steps": 4096, "decision": "opening_regression_rejected"}
+{"time_jst": "2026-11-09T19:19:42+09:00", "event": "training_started", "cycle": 2, "steps": 4096}
+{"time_jst": "2026-11-09T19:22:03+09:00", "event": "cycle_completed", "cycle": 2, "added_steps": 8192, "decision": "opening_regression_rejected"}
+{"time_jst": "2026-11-09T19:23:05+09:00", "event": "training_started", "cycle": 3, "steps": 4096}
+{"time_jst": "2026-11-09T19:25:21+09:00", "event": "cycle_completed", "cycle": 3, "added_steps": 12288, "decision": "opening_regression_rejected"}
+{"time_jst": "2026-11-09T19:26:24+09:00", "event": "training_started", "cycle": 4, "steps": 4096}
+{"time_jst": "2026-11-09T19:28:38+09:00", "event": "cycle_completed", "cycle": 4, "added_steps": 16384, "decision": "opening_regression_rejected"}
+{"time_jst": "2026-11-09T19:29:41+09:00", "event": "training_started", "cycle": 5, "steps": 4096}
+{"time_jst": "2026-11-09T19:33:36+09:00", "event": "worker_stopped", "status": "stopped"}

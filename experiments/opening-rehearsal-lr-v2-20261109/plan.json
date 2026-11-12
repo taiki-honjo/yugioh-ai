@@ -1,0 +1,18 @@
+{
+  "experiment_root": "/home/hatk8/projects/yugioh-ai/experiments/opening-rehearsal-lr-v2-20261109",
+  "base_config": "/home/hatk8/projects/yugioh-ai/config/continuous-elfnotes.json",
+  "purpose": "Finite 2x2: PPO learning rate (3e-5 / 1.5e-5) x train-split rehearsal (none / lambda 5). All arms use placement adapter v2 pinned from the production config; evaluation v1 rules (66 validation openings, case_id retention, paired battles). No adoption, no resident operation, no automatic extension.",
+  "source": "experiments/placement-v2-adoption-20261109/claude_v2_and_next_experiment_2026-11-09.md",
+  "seed_note": "Seeds repeat the previous A/B (10000555, 10000777, 10000999); this is a follow-up after seeing those results, not an independent final confirmation.",
+  "steps": 256,
+  "seeds": [10000555, 10000777, 10000999],
+  "battle_episodes": 32,
+  "battle_seed": 90000555,
+  "limits": {"max_environment_decisions": 3072, "max_battle_episodes": 384, "max_candidates": 12},
+  "arms": {
+    "a-lr3e-5": {"rehearsal": null, "learning_rate": 3e-05},
+    "b-lr3e-5-l5": {"rehearsal": {"enabled": true, "split": "train", "lambda_bc": 5.0, "lambda_kl": 0.0, "sequences_per_minibatch": 2, "seed": 20261109, "sha256": "0ef4700c92ddb6f26c3e3f5dc04d4893d2cb02c096304af0bbdc546f8070e4da"}, "learning_rate": 3e-05},
+    "c-lr1.5e-5": {"rehearsal": null, "learning_rate": 1.5e-05},
+    "d-lr1.5e-5-l5": {"rehearsal": {"enabled": true, "split": "train", "lambda_bc": 5.0, "lambda_kl": 0.0, "sequences_per_minibatch": 2, "seed": 20261109, "sha256": "0ef4700c92ddb6f26c3e3f5dc04d4893d2cb02c096304af0bbdc546f8070e4da"}, "learning_rate": 1.5e-05}
+  }
+}

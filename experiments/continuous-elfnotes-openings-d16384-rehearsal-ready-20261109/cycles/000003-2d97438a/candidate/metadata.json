@@ -1,0 +1,9 @@
+{
+  "source_checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/adoption-d16384-20261109/model",
+  "base_sha256": "063d7189b4dd53d12209a369b57ae25585968022623f28edbb9c0f85cf0cb380",
+  "head_sha256": "084eb7e8f6623d2ccd20beff1cb1c47d1205e5fdee06b70dfdcddf35a761ea70",
+  "adapters_enabled": true,
+  "normal_summon_usage_scored": false,
+  "source_bundle": "/home/hatk8/projects/yugioh-ai/experiments/continuous-elfnotes-openings-d16384-rehearsal-ready-20261109/cycles/000003-2d97438a/source-model",
+  "combined_checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/continuous-elfnotes-openings-d16384-rehearsal-ready-20261109/cycles/000003-2d97438a/checkpoints/1794219789_4096steps.flax_model"
+}

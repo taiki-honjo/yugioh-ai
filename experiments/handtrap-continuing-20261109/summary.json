@@ -1,0 +1,406 @@
+{
+  "created_jst": "2026-11-09T20:58:45+09:00",
+  "case": "elf-rukina-regina-g00-p0 (train), seed 151080",
+  "engine_runs": {
+    "used": 8,
+    "limit": 8
+  },
+  "setting": "player 0 deploys with the fixed teacher route in turn 1; player 1 (standard fixed hand) activates Maxx C / Droll at the first legal window per condition",
+  "conditions": {
+    "none": {
+      "engine_run": 1,
+      "replay": {
+        "engine_run": 5,
+        "reproduced": "92/92",
+        "start_matches": true,
+        "end_matches": true,
+        "mismatch": null
+      },
+      "g_activation_step": null,
+      "droll_activation_step": null,
+      "droll_in_effect_from_step": null,
+      "deploying": {
+        "monster_entries": 10,
+        "entries_after_droll": null,
+        "adds_from_deck": 2,
+        "add_events": [
+          {
+            "step": 11,
+            "cards": [
+              "耀聖の風詩レギナ"
+            ]
+          },
+          {
+            "step": 32,
+            "cards": [
+              "耀聖の波詩ディーナ"
+            ]
+          }
+        ],
+        "adds_after_droll": null,
+        "decisions": 69,
+        "non_pass_actions": 45,
+        "non_pass_identical_to_none": true,
+        "end": {
+          "monsters": [
+            "クリスタルウィング・シンクロ・ドラゴン",
+            "フルール・ド・バロネス"
+          ],
+          "spell_trap": [
+            "エルフェンノーツ～狂奏のラプソディア～",
+            "エルフェンノーツ～廻郷のパラレリズム～"
+          ],
+          "hand_count": 4
+        },
+        "script_blocked": null
+      },
+      "handtrap_side": {
+        "gained_from_deck": 0,
+        "gained_after_droll": null,
+        "gain_events": [],
+        "hand_start": [
+          "耀聖の花詩ルキナ",
+          "灰流うらら",
+          "増殖するＧ",
+          "ドロール＆ロックバード",
+          "エフェクト・ヴェーラー"
+        ],
+        "hand_end": [
+          "耀聖の花詩ルキナ",
+          "灰流うらら",
+          "増殖するＧ",
+          "ドロール＆ロックバード",
+          "エフェクト・ヴェーラー"
+        ],
+        "hand_end_count": 5
+      },
+      "failure": null,
+      "lua_errors": 0
+    },
+    "g": {
+      "engine_run": 2,
+      "replay": {
+        "engine_run": 6,
+        "reproduced": "95/95",
+        "start_matches": true,
+        "end_matches": true,
+        "mismatch": null
+      },
+      "g_activation_step": 1,
+      "droll_activation_step": null,
+      "droll_in_effect_from_step": null,
+      "deploying": {
+        "monster_entries": 10,
+        "entries_after_droll": null,
+        "adds_from_deck": 2,
+        "add_events": [
+          {
+            "step": 14,
+            "cards": [
+              "耀聖の風詩レギナ"
+            ]
+          },
+          {
+            "step": 35,
+            "cards": [
+              "耀聖の波詩ディーナ"
+            ]
+          }
+        ],
+        "adds_after_droll": null,
+        "decisions": 72,
+        "non_pass_actions": 45,
+        "non_pass_identical_to_none": true,
+        "end": {
+          "monsters": [
+            "クリスタルウィング・シンクロ・ドラゴン",
+            "フルール・ド・バロネス"
+          ],
+          "spell_trap": [
+            "エルフェンノーツ～狂奏のラプソディア～",
+            "エルフェンノーツ～廻郷のパラレリズム～"
+          ],
+          "hand_count": 4
+        },
+        "script_blocked": null
+      },
+      "handtrap_side": {
+        "gained_from_deck": 10,
+        "gained_after_droll": null,
+        "gain_events": [
+          {
+            "step": 8,
+            "cards": [
+              "キラーチューン・ロタリー"
+            ]
+          },
+          {
+            "step": 19,
+            "cards": [
+              "耀聖の風詩レギナ"
+            ]
+          },
+          {
+            "step": 25,
+            "cards": [
+              "調和ノ天救竜"
+            ]
+          },
+          {
+            "step": 30,
+            "cards": [
+              "耀聖の風詩レギナ"
+            ]
+          },
+          {
+            "step": 42,
+            "cards": [
+              "地縛囚人 ストーン・スィーパー"
+            ]
+          },
+          {
+            "step": 47,
+            "cards": [
+              "耀聖の月詩フォルトナ"
+            ]
+          },
+          {
+            "step": 51,
+            "cards": [
+              "灰流うらら"
+            ]
+          },
+          {
+            "step": 66,
+            "cards": [
+              "地縛囚人 ストーン・スィーパー"
+            ]
+          },
+          {
+            "step": 79,
+            "cards": [
+              "灰流うらら"
+            ]
+          },
+          {
+            "step": 88,
+            "cards": [
+              "朔夜しぐれ"
+            ]
+          }
+        ],
+        "hand_start": [
+          "耀聖の花詩ルキナ",
+          "灰流うらら",
+          "増殖するＧ",
+          "ドロール＆ロックバード",
+          "エフェクト・ヴェーラー"
+        ],
+        "hand_end": [
+          "耀聖の花詩ルキナ",
+          "灰流うらら",
+          "灰流うらら",
+          "灰流うらら",
+          "キラーチューン・ロタリー",
+          "朔夜しぐれ",
+          "耀聖の風詩レギナ",
+          "耀聖の風詩レギナ",
+          "調和ノ天救竜",
+          "地縛囚人 ストーン・スィーパー",
+          "地縛囚人 ストーン・スィーパー",
+          "耀聖の月詩フォルトナ",
+          "ドロール＆ロックバード",
+          "エフェクト・ヴェーラー"
+        ],
+        "hand_end_count": 14
+      },
+      "failure": null,
+      "lua_errors": 0
+    },
+    "droll": {
+      "engine_run": 3,
+      "replay": {
+        "engine_run": 7,
+        "reproduced": "38/38",
+        "start_matches": true,
+        "end_matches": true,
+        "mismatch": null
+      },
+      "g_activation_step": null,
+      "droll_activation_step": 13,
+      "droll_in_effect_from_step": 18,
+      "deploying": {
+        "monster_entries": 4,
+        "entries_after_droll": 2,
+        "adds_from_deck": 1,
+        "add_events": [
+          {
+            "step": 11,
+            "cards": [
+              "耀聖の風詩レギナ"
+            ]
+          }
+        ],
+        "adds_after_droll": 0,
+        "decisions": 26,
+        "non_pass_actions": 16,
+        "non_pass_identical_to_none": false,
+        "end": {
+          "monsters": [
+            "獄花の大燿聖ストリチア"
+          ],
+          "spell_trap": [],
+          "hand_count": 5
+        },
+        "script_blocked": {
+          "step": 34,
+          "message": "select_idlecmd",
+          "next_plan_step": [
+            {
+              "act": "None",
+              "code": 59581480,
+              "after_location": 2
+            },
+            {
+              "act": "Activate",
+              "code": 42302563
+            }
+          ]
+        },
+        "non_pass_identical_to_both": true
+      },
+      "handtrap_side": {
+        "gained_from_deck": 0,
+        "gained_after_droll": 0,
+        "gain_events": [],
+        "hand_start": [
+          "耀聖の花詩ルキナ",
+          "灰流うらら",
+          "増殖するＧ",
+          "ドロール＆ロックバード",
+          "エフェクト・ヴェーラー"
+        ],
+        "hand_end": [
+          "耀聖の花詩ルキナ",
+          "灰流うらら",
+          "増殖するＧ",
+          "エフェクト・ヴェーラー"
+        ],
+        "hand_end_count": 4
+      },
+      "failure": null,
+      "lua_errors": 0
+    },
+    "both": {
+      "engine_run": 4,
+      "replay": {
+        "engine_run": 8,
+        "reproduced": "39/39",
+        "start_matches": true,
+        "end_matches": true,
+        "mismatch": null
+      },
+      "g_activation_step": 1,
+      "droll_activation_step": 16,
+      "droll_in_effect_from_step": 20,
+      "deploying": {
+        "monster_entries": 4,
+        "entries_after_droll": 2,
+        "adds_from_deck": 1,
+        "add_events": [
+          {
+            "step": 14,
+            "cards": [
+              "耀聖の風詩レギナ"
+            ]
+          }
+        ],
+        "adds_after_droll": 0,
+        "decisions": 29,
+        "non_pass_actions": 16,
+        "non_pass_identical_to_none": false,
+        "end": {
+          "monsters": [
+            "獄花の大燿聖ストリチア"
+          ],
+          "spell_trap": [],
+          "hand_count": 5
+        },
+        "script_blocked": {
+          "step": 36,
+          "message": "select_idlecmd",
+          "next_plan_step": [
+            {
+              "act": "None",
+              "code": 59581480,
+              "after_location": 2
+            },
+            {
+              "act": "Activate",
+              "code": 42302563
+            }
+          ]
+        }
+      },
+      "handtrap_side": {
+        "gained_from_deck": 1,
+        "gained_after_droll": 0,
+        "gain_events": [
+          {
+            "step": 8,
+            "cards": [
+              "キラーチューン・ロタリー"
+            ]
+          }
+        ],
+        "hand_start": [
+          "耀聖の花詩ルキナ",
+          "灰流うらら",
+          "増殖するＧ",
+          "ドロール＆ロックバード",
+          "エフェクト・ヴェーラー"
+        ],
+        "hand_end": [
+          "耀聖の花詩ルキナ",
+          "灰流うらら",
+          "キラーチューン・ロタリー",
+          "エフェクト・ヴェーラー"
+        ],
+        "hand_end_count": 4
+      },
+      "failure": null,
+      "lua_errors": 0
+    }
+  },
+  "droll_direct_restriction": {
+    "description": "first deploying-side window offering activations right after Strelitzia was special summoned: graveyard effects offered",
+    "offered": {
+      "none": {
+        "step": 28,
+        "activations": [
+          "燿ける聖詩の獄神精(g)",
+          "耀聖の風詩レギナ(g)"
+        ]
+      },
+      "droll": {
+        "step": 29,
+        "activations": [
+          "耀聖の風詩レギナ(g)"
+        ]
+      },
+      "both": {
+        "step": 31,
+        "activations": [
+          "耀聖の風詩レギナ(g)"
+        ]
+      }
+    }
+  },
+  "not_established": [
+    "that Droll reduced the final board: after the block the script ends its turn (fallback); Strelitzia (field effect) and a normal summon were still legal",
+    "the value of the cards Maxx C drew (next-turn follow-up not measured)",
+    "any change of opponent decisions caused by Maxx C (fixed script does not react)",
+    "the order Droll -> Maxx C, other activation timings, other hands/seeds/scripts",
+    "effects on win/loss"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+ "name": "F4-T1",
+ "engine_run": 21,
+ "replayed_engine_run": 15,
+ "mismatch": null,
+ "failure": null,
+ "reproduced_steps": 154,
+ "of": 154,
+ "reason": "reached_turn3",
+ "final_equal": true,
+ "checkpoints_equal": true,
+ "observations_match": true,
+ "lua_errors": 0,
+ "disclosed": []
+}

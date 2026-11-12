@@ -1,0 +1,17 @@
+{
+  "purpose": "Pre-registered before training: 128 games of the FINAL (cumulative 16384) candidate vs the adopted model, run only if the retention rule of plan.json holds. No intermediate checkpoint is evaluated or selected; no confirmation run is part of this request; no adoption.",
+  "training_plan": "/home/hatk8/projects/yugioh-ai/experiments/opening-d16384-20261109/plan.json",
+  "candidate": "final candidate of experiments/opening-d16384-20261109/d-lr1.5e-5-l5/cycles/12288-seed10016384 (hashes recorded after training, before any game)",
+  "opponent": {"path": "/home/hatk8/projects/yugioh-ai/experiments/opening-d16384-20261109/d-lr1.5e-5-l5/models/initial",
+               "base_sha256": "966cc8b1c3f0c092e824cc52dffcaf9c71f0c9373ece0fd07831d4a9df4f7cd1",
+               "head_sha256": "1aaf569daf53a4453ef2f2e450c924af014aea83b3e4f98fea2644b795b52dc8"},
+  "adapters": "placement v2 and the same position adapter for both players (arm snapshot = production v2 policy code)",
+  "config": "/home/hatk8/projects/yugioh-ai/experiments/opening-d16384-20261109/configs/d-lr1.5e-5-l5.json",
+  "episodes": 128,
+  "seed": 80016384,
+  "seed_note": "new evaluation seed: not 80001109/80001110/90000555",
+  "run_only_if": "fixed-test-comparison.json comparisons[0].retention_on_both == true",
+  "reported_criterion": "existing promotion_ok (all verified, abnormal 0, no rerun flag, seed-pair CI lower bound > 0.5) is reported for information only",
+  "max_battles": 128,
+  "adoption": "none regardless of the outcome"
+}

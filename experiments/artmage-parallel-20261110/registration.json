@@ -1,0 +1,675 @@
+{
+ "status": "registered_before_engine_runs",
+ "registered_jst": "2026-11-10T17:12:18+09:00",
+ "engine_run_cap": 8,
+ "ledger": "/home/hatk8/projects/yugioh-ai/experiments/artmage-parallel-20261110/engine-runs.jsonl",
+ "counting": "one engine run = one duel from the opening hand; failed runs count; ledger never rolled back",
+ "order": [
+  "regression x4 (g08,g09,g10,g11)",
+  "record C1",
+  "replay C1",
+  "record C2",
+  "replay C2"
+ ],
+ "allocation": {
+  "regression": 4,
+  "C1": {
+   "record": 1,
+   "replay": 1
+  },
+  "C2": {
+   "record": 1,
+   "replay": 1
+  }
+ },
+ "regression": {
+  "cases": [
+   {
+    "case_id": "Artmage-g08-p0",
+    "seed": 119840,
+    "hand": [
+     1122030,
+     14558127,
+     73642296,
+     73642296,
+     59438930
+    ],
+    "original_record": "/home/hatk8/projects/yugioh-ai/evaluation/all-deck-position-20261109/verified/regression/Artmage/after/Artmage-g08-p0.json",
+    "original_sha256": "636469426a991451511eca6e9831e3c7a2dc4493823cc3c2e16486e64d6ad5f7"
+   },
+   {
+    "case_id": "Artmage-g09-p0",
+    "seed": 119845,
+    "hand": [
+     1122030,
+     73642296,
+     23434538,
+     73642296,
+     59438930
+    ],
+    "original_record": "/home/hatk8/projects/yugioh-ai/evaluation/all-deck-position-20261109/verified/regression/Artmage/after/Artmage-g09-p0.json",
+    "original_sha256": "f36b723d07a3452ec378ae4e7ab2b1e96be2f019cb1a09c160318224d085404c"
+   },
+   {
+    "case_id": "Artmage-g10-p0",
+    "seed": 119850,
+    "hand": [
+     14558127,
+     73642296,
+     14558127,
+     59438930,
+     1122030
+    ],
+    "original_record": "/home/hatk8/projects/yugioh-ai/evaluation/all-deck-position-20261109/verified/regression/Artmage/after/Artmage-g10-p0.json",
+    "original_sha256": "f1756115b63b6e85b643a5014ec80df6e4a671caafc761f3b4b4ad4c0f857e16"
+   },
+   {
+    "case_id": "Artmage-g11-p0",
+    "seed": 119855,
+    "hand": [
+     14558127,
+     49036338,
+     1122030,
+     23434538,
+     59438930
+    ],
+    "original_record": "/home/hatk8/projects/yugioh-ai/evaluation/all-deck-position-20261109/verified/regression/Artmage/after/Artmage-g11-p0.json",
+    "original_sha256": "774ce2a1389ee96815d63a88b6e9baf3d52189b4996ffb118e1d124e1b50c495"
+   }
+  ],
+  "policy": "work-area copy of the registered Artmage base+chain-head with the common position adapter (isolated entry)",
+  "loop": "same stop rules and step cap (320) as evaluation/all-deck-position-20261109/code/check_other_positions.py (after mode)",
+  "compare": [
+   "passed",
+   "reason",
+   "goal",
+   "per-step normalized snapshot and selected-action meaning",
+   "final snapshot",
+   "position events"
+  ]
+ },
+ "demos": {
+  "C1": {
+   "hand": [
+    1122030,
+    10045474,
+    14558127,
+    23434538,
+    73642296
+   ],
+   "seed": 1110001,
+   "reference": "https://duel-simulator.miyauchidp.dev/replay/wsMMwXxE",
+   "label": "wsMMwXxE: 襲撃 → メディウス、魔法罠コスト1枚（無限泡影）、ファインメルトのドローをメディウス②で戻す",
+   "plan": [
+    {
+     "act": "Activate",
+     "code": 1122030
+    },
+    {
+     "act": "Activate",
+     "code": 1122030
+    },
+    {
+     "act": "None",
+     "code": 97556336,
+     "_opt": true
+    },
+    {
+     "act": "Summon",
+     "code": 97556336
+    },
+    {
+     "act": "Activate",
+     "code": 97556336
+    },
+    {
+     "act": "None",
+     "code": 17473466
+    },
+    {
+     "act": "Activate",
+     "code": 0,
+     "effect": 1152
+    },
+    {
+     "act": "SpSummon",
+     "code": 74631897
+    },
+    {
+     "_group": [
+      {
+       "step": {
+        "act": "Activate",
+        "code": 17473466
+       },
+       "picks": [
+        {
+         "act": "None",
+         "code": 23829452,
+         "_opt": true
+        }
+       ]
+      },
+      {
+       "step": {
+        "act": "Activate",
+        "code": 74631897
+       },
+       "picks": [
+        {
+         "act": "None",
+         "code": 74733322,
+         "_opt": true
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "act": "Activate",
+     "code": 23829452,
+     "message": "select_idlecmd"
+    },
+    {
+     "act": "None",
+     "code": 27184601,
+     "_opt": true
+    },
+    {
+     "act": "Activate",
+     "code": 23829452
+    },
+    {
+     "act": "None",
+     "code": 23599634
+    },
+    {
+     "act": "Activate",
+     "code": 74733322
+    },
+    {
+     "act": "Activate",
+     "code": 74733322
+    },
+    {
+     "act": "None",
+     "code": 60946049
+    },
+    {
+     "act": "Activate",
+     "code": 60946049
+    },
+    {
+     "act": "Activate",
+     "code": 60946049
+    },
+    {
+     "act": "None",
+     "code": 74011784
+    },
+    {
+     "act": "Activate",
+     "code": 74011784
+    },
+    {
+     "act": "None",
+     "code": 1122030
+    },
+    {
+     "act": "Activate",
+     "code": 74733322
+    },
+    {
+     "act": "None",
+     "code": 97434754
+    },
+    {
+     "act": "SpSummon",
+     "code": 31822037
+    },
+    {
+     "act": "None",
+     "code": 60946049
+    },
+    {
+     "act": "None",
+     "code": 27184601
+    },
+    {
+     "act": "Activate",
+     "code": 31822037
+    },
+    {
+     "act": "None",
+     "code": 36709484,
+     "_opt": true
+    },
+    {
+     "act": "Activate",
+     "code": 74733322
+    },
+    {
+     "act": "None",
+     "code": 34541940
+    },
+    {
+     "act": "None",
+     "code": 34541940,
+     "_opt": true
+    },
+    {
+     "act": "Activate",
+     "code": 36709484
+    },
+    {
+     "act": "None",
+     "code": 27184601,
+     "_opt": true
+    },
+    {
+     "act": "Activate",
+     "code": 97434754
+    },
+    {
+     "act": "Activate",
+     "code": 97434754
+    },
+    {
+     "act": "None",
+     "code": 23599634
+    },
+    {
+     "act": "Activate",
+     "code": 34541940
+    },
+    {
+     "act": "Activate",
+     "code": 34541940,
+     "_mark": "before_draw"
+    },
+    {
+     "act": "Activate",
+     "code": 97556336
+    },
+    {
+     "_rule": "medius_cost",
+     "_opt": true
+    },
+    {
+     "act": "Set",
+     "code": 23599634
+    },
+    {
+     "act": "None",
+     "code": 0,
+     "phase": "End"
+    },
+    {
+     "act": "Activate",
+     "code": 31822037,
+     "_opp": true
+    },
+    {
+     "act": "None",
+     "code": 4993187,
+     "_opt": true,
+     "_opp": true
+    },
+    {
+     "act": "None",
+     "code": 31822037,
+     "_opt": true,
+     "_opp": true
+    },
+    {
+     "act": "None",
+     "code": 97556336,
+     "_opp": true
+    }
+   ]
+  },
+  "C2": {
+   "hand": [
+    74733322,
+    10045474,
+    14558127,
+    23434538,
+    73642296
+   ],
+   "seed": 1110002,
+   "reference": "https://duel-simulator.miyauchidp.dev/replay/XUS4azXa",
+   "label": "XUS4azXa: 学都＋魔法罠コスト1枚（無限泡影）",
+   "plan": [
+    {
+     "act": "Activate",
+     "code": 74733322
+    },
+    {
+     "act": "Activate",
+     "code": 74733322
+    },
+    {
+     "act": "None",
+     "code": 60946049
+    },
+    {
+     "act": "Activate",
+     "code": 60946049
+    },
+    {
+     "act": "Activate",
+     "code": 60946049
+    },
+    {
+     "act": "None",
+     "code": 74011784
+    },
+    {
+     "act": "Activate",
+     "code": 74011784
+    },
+    {
+     "act": "None",
+     "code": 97434754
+    },
+    {
+     "act": "Activate",
+     "code": 97434754
+    },
+    {
+     "act": "Activate",
+     "code": 97434754
+    },
+    {
+     "act": "None",
+     "code": 74011784,
+     "_opt": true
+    },
+    {
+     "act": "Activate",
+     "code": 74733322
+    },
+    {
+     "act": "None",
+     "code": 23829452
+    },
+    {
+     "act": "None",
+     "code": 23829452,
+     "_opt": true
+    },
+    {
+     "act": "Summon",
+     "code": 23829452
+    },
+    {
+     "act": "Activate",
+     "code": 23829452,
+     "message": "select_idlecmd"
+    },
+    {
+     "act": "None",
+     "code": 74631897,
+     "_opt": true
+    },
+    {
+     "act": "None",
+     "code": 60946049,
+     "_opt": true
+    },
+    {
+     "act": "None",
+     "code": 23829452,
+     "_opt": true
+    },
+    {
+     "_group": [
+      {
+       "step": {
+        "act": "Activate",
+        "code": 74631897
+       },
+       "picks": [
+        {
+         "act": "None",
+         "code": 23599634
+        }
+       ]
+      },
+      {
+       "step": {
+        "act": "Activate",
+        "code": 23829452
+       },
+       "picks": [
+        {
+         "act": "None",
+         "code": 1122030
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "act": "Activate",
+     "code": 1122030
+    },
+    {
+     "act": "Activate",
+     "code": 1122030
+    },
+    {
+     "act": "None",
+     "code": 97556336,
+     "_opt": true
+    },
+    {
+     "act": "Summon",
+     "code": 97556336
+    },
+    {
+     "act": "Activate",
+     "code": 97556336
+    },
+    {
+     "act": "None",
+     "code": 17473466
+    },
+    {
+     "act": "Activate",
+     "code": 0,
+     "effect": 1152
+    },
+    {
+     "act": "SpSummon",
+     "code": 31822037
+    },
+    {
+     "act": "None",
+     "code": 97556336
+    },
+    {
+     "act": "None",
+     "code": 17473466
+    },
+    {
+     "_group": [
+      {
+       "step": {
+        "act": "Activate",
+        "code": 31822037
+       },
+       "picks": [
+        {
+         "act": "None",
+         "code": 36709484,
+         "_opt": true
+        }
+       ]
+      },
+      {
+       "step": {
+        "act": "Activate",
+        "code": 17473466
+       },
+       "picks": [
+        {
+         "act": "None",
+         "code": 34541940
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "act": "Activate",
+     "code": 97556336
+    },
+    {
+     "act": "None",
+     "code": 34541940
+    },
+    {
+     "act": "Activate",
+     "code": 74733322
+    },
+    {
+     "act": "None",
+     "code": 34541940
+    },
+    {
+     "act": "None",
+     "code": 34541940,
+     "_opt": true
+    },
+    {
+     "act": "Activate",
+     "code": 34541940
+    },
+    {
+     "act": "Activate",
+     "code": 34541940,
+     "_mark": "before_draw"
+    },
+    {
+     "act": "None",
+     "code": 0,
+     "phase": "End"
+    }
+   ]
+  }
+ },
+ "demo_rules": [
+  "Hands, seeds and plans fixed here before any run; no extra runs to search for other hands or plan fixes.",
+  "Player 1 holds the same hand and always passes (article_witness.passive order).",
+  "Player 0 = scripted Teacher wrapped by the common position adapter (PositionTeacher).",
+  "Stop at the first decision of turn 3 (start of the next own turn), at game over (handled from env.step returns, no snapshot afterwards), or at the step cap.",
+  "If a planned step is not legal, stop that run and save the plan head and the legal options at that prompt.",
+  "Replay = the next run of the same condition: same fixture and seed, recorded action indices, compare every step (normalized snapshot, action meaning) and the saved model-input observations. If the record failed, the replay reproduces the recorded prefix.",
+  "Observations saved at every player-0 decision: cards_, global_, actions_, h_actions_, public-chain features, chosen index."
+ ],
+ "split_check": {
+  "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-parallel-20261110/split-check.json",
+  "sha256": "cb5b7e42e54b7d3f22c21d8c0115e7199969a9e9d1f69c3f4caffbb73f60f6f9"
+ },
+ "code": {
+  "artmage_pins.py": "10c4e053d05f44498cff77c45301a3fb5222c7598a658decc52f4539fd96bde8",
+  "artmage_entry.py": "ca47f56d29431b48d60337de6dcc6ce23d524fba31cbbbdce31e6d7399b78e0f",
+  "artmage_teacher.py": "a126284eff7a2d7ef3c602ade0aa5f196f7ddea77333213c27a197ade21b78f3",
+  "artmage_runs.py": "3e92492fd13e2b778752385b311ef5752b2fc6757cfd634bde7fe4e3c32388bc",
+  "split_check.py": "9c8997d87ba9b84b78964704765d6d1ce8d68e1b43ff2146cc5df39f9a31ed66"
+ },
+ "pins": {
+  "base": {
+   "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-parallel-20261110/models/initial/base.flax_model",
+   "sha256": "12500c7724b2d723983a2963a960d75172a6df51fb55ea4f3acf102eeb34132e"
+  },
+  "head": {
+   "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-parallel-20261110/models/initial/chain-head.flax_model",
+   "sha256": "0bc7534cab102cd87586e5d22bd4ad0cd3b55d52d08e284146976506ae6193fc"
+  },
+  "deck_copy": {
+   "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-parallel-20261110/decks/Artmage.ydk",
+   "sha256": "a93c4d30d0945f58f741f1e135fdcbc0b0c438aff575cf6d0d02ce9a82c381d6"
+  },
+  "engine_deck": {
+   "path": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/decks/Artmage.ydk",
+   "sha256": "a93c4d30d0945f58f741f1e135fdcbc0b0c438aff575cf6d0d02ce9a82c381d6"
+  },
+  "vocabulary": {
+   "path": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/code_list.txt",
+   "sha256": "aeb5be89d4a5591ccc5cce6af96def74ef47463a55265f75c11b92029e772e7b"
+  },
+  "meta_manifest": {
+   "path": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/manifest.json",
+   "sha256": "ace4f6b8408011a55e9b61d3c4917580942d86960bb3f087afe75ce2774c824a"
+  },
+  "meta_latest_run": {
+   "path": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/latest-run.txt",
+   "sha256": "32770bc4534c729e66f7addbc76770b78798ee4e618b40fd9baa45e83392e544"
+  },
+  "article_latest_run": {
+   "path": "/home/hatk8/projects/yugioh-ai/experiments/opponent-article-training-20261108/latest-run.txt",
+   "sha256": "39db5d660d4bde37dbd9b6fc0c662781da48b71b0e6c50d8357a7a42f73b0159"
+  },
+  "model_code": {
+   "path": "/home/hatk8/projects/yugioh-ai/experiments/opponent-article-training-20261108/run-20261108-145203/code/opponent_article_bc_common.py",
+   "sha256": "f4c3903e3a4841b97f6ffb8840bb4cfa5513b5abfead9ff41fa7c785ceba6cce"
+  },
+  "witness_code": {
+   "path": "/home/hatk8/projects/yugioh-ai/experiments/opponent-article-training-20261108/run-20261108-145203/code/article_witness.py",
+   "sha256": "0e4f3a0e92c86aba7a95f96c1e5f93f6a0293eaea7f3ab8a63dee772455ae07a"
+  },
+  "adapter": {
+   "path": "/home/hatk8/projects/yugioh-ai/evaluation/all-deck-position-20261109/code/battle_position.py",
+   "sha256": "4fe74c83a460ee3565c3ff276ce2d080b233a6152439ec92147ba90d60d46f90"
+  },
+  "adapter_cards": {
+   "path": "/home/hatk8/projects/yugioh-ai/evaluation/all-deck-position-20261109/code/position_cards.json",
+   "sha256": "1baa04349bb31833ff01b05cb365ee0f9416de827ac4fbf52b835011a35f1fde"
+  },
+  "native": {
+   "path": "/home/hatk8/projects/yugioh-ai/evaluation/opponent-article-basics-20261108/runtime/agent/ygoenv/ygoenv/ygopro/ygopro_ygoenv.cpython-310-x86_64-linux-gnu.so",
+   "sha256": "19a60f38a3d39b61a2ee082168d5a788a1022b2eb569633816596c8b3de21294"
+  },
+  "runtime_json": {
+   "path": "/home/hatk8/projects/yugioh-ai/evaluation/opponent-article-basics-20261108/runtime.json",
+   "sha256": "ebdfc37ed9c7ebcae73b81281876dd6f22bd8d9afcbdfe8f78905dcc9c220d14"
+  }
+ },
+ "ledger_class": {
+  "path": "/home/hatk8/projects/yugioh-ai/experiments/capability-probe-20261109/code/analysis.py",
+  "sha256": "8c2d1a1268774074ed55bbd8f46b301139733b66b9eba89e9636501a16af8bd2"
+ },
+ "old_manifest": {
+  "path": "/home/hatk8/projects/yugioh-ai/experiments/opponent-article-training-20261108/run-20261108-145203/manifest.json",
+  "sha256": "f3ab489340430b2ab4fde9e2be2895f48c8f5db7eb4c8b8b4b0a2789cf97ead6"
+ },
+ "limits": {
+  "job_memory_gib": 5,
+  "memory_swap_max": 0,
+  "cpu_percent": 300,
+  "job_timeout_seconds": 1800,
+  "nice": 10,
+  "env": {
+   "JAX_PLATFORMS": "cpu",
+   "OMP_NUM_THREADS": "2",
+   "OPENBLAS_NUM_THREADS": "2",
+   "XLA_PYTHON_CLIENT_PREALLOCATE": "false",
+   "MALLOC_ARENA_MAX": "2",
+   "PYTHONDONTWRITEBYTECODE": "1",
+   "WANDB_MODE": "disabled",
+   "HF_HUB_OFFLINE": "1"
+  }
+ },
+ "python": "/opt/ygo-ai/.venv/bin/python",
+ "stop_file": "STOP stays \"now\"; these finite CPU jobs are not connected to it",
+ "not_included": [
+  "training",
+  "battles",
+  "adoption",
+  "server replay posts",
+  "common registry changes",
+  "Elfnotes production changes"
+ ]
+}

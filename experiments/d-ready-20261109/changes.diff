@@ -1,0 +1,349 @@
+--- experiments/d-ready-20261109/source-before/scripts/continuous_opening_backend.py	2026-11-09 15:19:25.401086276 +0900
++++ scripts/continuous_opening_backend.py	2026-11-09 18:31:05.307907915 +0900
+@@ -234,6 +234,23 @@
+     return text
+ 
+ 
++def expected_trainer_text(cfg):
++    """The trainer that initialize() pins for this EFFECTIVE config; writes nothing.
++
++    One definition for every caller: snapshot creation, experiment checks and tests compare a
++    snapshot's train.py with what its own config requires, instead of assuming that production
++    is the plain (no-rehearsal) trainer."""
++    text = patched_trainer((Path(cfg['runtime']) / 'agent/scripts/cleanba.py').read_text())
++    if cfg.get('keep_all_checkpoints'):
++        text = keep_all_checkpoints(text)
++    rehearsal = cfg.get('rehearsal') or {}
++    if rehearsal.get('enabled'):
++        import opening_rehearsal
++        opening_rehearsal.validate_settings(rehearsal)
++        text = opening_rehearsal.patch_trainer(text)
++    return text
++
++
+ def initialize(cfg):
+     C = control; root = Path(cfg['root']); root.mkdir(parents=True, exist_ok=True)
+     if (root / 'state.json').exists():
+@@ -264,6 +281,8 @@
+         # Optional train-split rehearsal loss; pinned into this NEW snapshot only.
+         import opening_rehearsal
+         text = opening_rehearsal.prepare_snapshot(cfg, snapshot, text, C.atomic_copy)
++    if text != expected_trainer_text(cfg):
++        raise RuntimeError('Pinned trainer differs from the trainer required by the effective config')
+     (snapshot / 'train.py').write_text(text)
+     C.atomic_json(snapshot / 'hashes.json', {str(p.relative_to(snapshot)): C.sha(p) for p in snapshot.rglob('*') if p.is_file() and p.name!='hashes.json'})
+     initial = root / 'models/initial'; initial.mkdir(parents=True, exist_ok=True)
+--- experiments/d-ready-20261109/source-before/scripts/opening_rehearsal_ab.py	2026-11-09 16:19:03.332675123 +0900
++++ scripts/opening_rehearsal_ab.py	2026-11-09 18:31:25.900561198 +0900
+@@ -152,6 +152,11 @@
+     unknown = sorted(set(arm) - set(ARM_SETTINGS))
+     if unknown:
+         raise ValueError(f'Arm {name}: unsupported settings {unknown}; allowed: {list(ARM_SETTINGS)}')
++    missing = [key for key in ARM_SETTINGS if key not in arm]
++    if missing:
++        # The production config may itself carry D settings; an arm must never inherit or drop
++        # them silently. A control arm states "rehearsal": null and its own learning rate.
++        raise ValueError(f'Arm {name}: settings must be explicit (use null for no rehearsal): missing {missing}')
+     if arm.get('rehearsal'):
+         R.validate_settings(arm['rehearsal'])
+     if 'learning_rate' in arm:
+@@ -202,19 +207,38 @@
+     path_only = [n for n in shared if ours.get(n) != theirs.get(n) and n not in different]
+     if different:
+         raise RuntimeError(f'Arm snapshot differs from the production snapshot: {different}')
+-    identical_trainer = ours['train.py'] == theirs['train.py']
+-    if bool(arm.get('rehearsal')) == identical_trainer:
+-        raise RuntimeError('Trainer identity does not match the arm definition')
++    # The trainer must be exactly what the arm's EFFECTIVE config requires (learning-rate is a
++    # command argument; rehearsal and checkpoint retention change the trainer text). This holds
++    # whether production itself trains with or without rehearsal.
++    import continuous_opening_backend
++    expected = hashlib.sha256(continuous_opening_backend.expected_trainer_text(cfg).encode()).hexdigest()
++    if ours['train.py'] != expected or C.sha(root / 'snapshot/train.py') != expected:
++        raise RuntimeError('Arm trainer differs from the trainer required by its effective config')
++    trainer = (root / 'snapshot/train.py').read_text()
++    hooked = 'install_rehearsal(globals())' in trainer and 'OPENING_REHEARSAL.combine(' in trainer
++    if hooked != bool(arm.get('rehearsal')) or hooked != bool((cfg.get('rehearsal') or {}).get('enabled')):
++        raise RuntimeError('Trainer rehearsal hooks do not match the arm definition')
++    if trainer.count("~jnp.reshape(obs['adapter_controlled_'], mask.shape)") != 2:
++        raise RuntimeError('Trainer lost the adapter-step mask at a PPO loss site')
++    rehearsal_files = sorted(n for n in ours if n == 'opening_rehearsal.py' or n.startswith('rehearsal/'))
++    if hooked:
++        settings = R.validate_settings(arm['rehearsal'])
++        pinned = C.read_json(root / 'snapshot/rehearsal/settings.json')['settings']
++        if pinned != settings or ours.get('rehearsal/train.npz') != settings['sha256']:
++            raise RuntimeError('Pinned rehearsal settings or data differ from the arm definition')
++    elif rehearsal_files:
++        raise RuntimeError('A no-rehearsal arm has rehearsal files pinned in its snapshot')
+     for name in ['base.flax_model', 'chain-head.flax_model']:
+         if C.sha(root / 'models/initial' / name) != C.sha(production / 'models/initial' / name):
+             raise RuntimeError('Arm initial model differs from the adopted model')
+-    extra = sorted(n for n in ours if n not in theirs)
+     if any(n.endswith(('validation.npz', 'holdout.npz')) for n in ours):
+         raise RuntimeError('A non-train split was pinned into the snapshot')
+     return dict(shared_files_identical=len(shared), files_differing_only_by_root_path=path_only,
+-                trainer_identical_to_production=identical_trainer,
++                trainer_matches_effective_config=True, rehearsal_hooked=hooked,
++                trainer_identical_to_production=ours['train.py'] == theirs['train.py'],
++                production_trainer_rehearsal_hooked='install_rehearsal(globals())' in (production / 'snapshot/train.py').read_text(),
+                 trainer_sha256=ours['train.py'], backend_sha256=ours['continuous_opening_backend.py'],
+-                rehearsal_files=extra, initial_model_identical_to_adopted=True)
++                rehearsal_files=rehearsal_files, initial_model_identical_to_adopted=True)
+ 
+ 
+ def setup_arm(B, plan, name, arm, cfg=None):
+--- experiments/d-ready-20261109/source-before/tests/test_continuous_opening_backend.py	2026-11-09 01:33:15.008202000 +0900
++++ tests/test_continuous_opening_backend.py	2026-11-09 18:40:06.359203355 +0900
+@@ -81,4 +81,40 @@
+             self.assertEqual(state['last_decision'],'opening_regression_rejected')
+             self.assertEqual(state['status'],'stopped')
+ 
++    def test_production_config_snapshot_and_command_agree(self):
++        """Training is never started: the command is captured before any job runs."""
++        cfg=C.load_config(P/'config/continuous-elfnotes.json');root=Path(cfg['root'])
++        policy=json.loads(Path(cfg['verified_policy_config']).read_text())
++        state=json.loads((root/'state.json').read_text())
++        self.assertEqual((root/'STOP').read_text().strip(),'now');self.assertEqual(state['status'],'stopped')
++        for key in ['best_checkpoint','latest_checkpoint']:
++            for name,field in [('base.flax_model','base_sha256'),('chain-head.flax_model','head_sha256')]:
++                self.assertEqual(C.sha(Path(state[key])/name),policy[field])
++        hashes=json.loads((root/'snapshot/hashes.json').read_text())
++        self.assertEqual(hashes['train.py'],hashlib.sha256(b.expected_trainer_text(cfg).encode()).hexdigest())
++        self.assertFalse([n for n in hashes if n.endswith(('validation.npz','holdout.npz'))])
++        rehearsal=cfg.get('rehearsal') or {}
++        if rehearsal.get('enabled'):
++            import opening_rehearsal as R
++            pinned=json.loads((root/'snapshot/rehearsal/settings.json').read_text())
++            self.assertEqual(pinned['settings'],R.validate_settings(rehearsal))
++            manifest=json.loads(Path(cfg['opening_manifest']).read_text())
++            self.assertEqual(hashes['rehearsal/train.npz'],rehearsal['sha256'])
++            self.assertEqual(rehearsal['sha256'],manifest['decks']['ElfnotesKewlTune']['train']['sha256'])
++        B=C.backend();captured=[]
++        def run_job(cfg,state,command,directory,name):
++            captured.append([str(x) for x in command]);raise InterruptedError('captured; no training')
++        B.control.run_job=run_job
++        with tempfile.TemporaryDirectory() as tmp:
++            for i,steps in enumerate([cfg['bootstrap_steps'],cfg['steps_per_cycle']]):
++                d=Path(tmp)/f'{i}-{steps}'
++                d.mkdir()
++                with self.assertRaises(InterruptedError):
++                    B.train_cycle(cfg,{},dict(directory=str(d),source=state['best_checkpoint'],steps=steps,training_seed=1))
++                command=captured[-1];arg=lambda f:command[command.index(f)+1]
++                self.assertEqual(float(arg('--learning-rate')),cfg['learning_rate'])
++                self.assertEqual(int(arg('--total-timesteps')),steps)
++                self.assertEqual(int(arg('--save-interval')),min(int(cfg.get('save_interval_updates',32)),steps//128))
++                self.assertEqual(Path(command[command.index('-u')+1]),root/'snapshot/train.py')
++
+ if __name__=='__main__':unittest.main(verbosity=2)
+--- experiments/d-ready-20261109/source-before/tests/test_opening_rehearsal.py	2026-11-09 14:03:21.626177384 +0900
++++ tests/test_opening_rehearsal.py	2026-11-09 18:40:06.359032844 +0900
+@@ -139,6 +139,11 @@
+     @classmethod
+     def setUpClass(cls):
+         import jax
++        # Parity is algorithmic: pin these computations to the CPU backend. If another test module
++        # imported JAX first, JAX_PLATFORMS above no longer applies and the GPU's TF32 matmuls would
++        # make two identical code paths differ by ~1e-2.
++        cls._cpu = jax.default_device(jax.devices('cpu')[0])
++        cls._cpu.__enter__()
+         cls.common = b.policy_common(CFG)  # production snapshot policy-code, read-only
+         cls.agent = b.CompositeAgent(cls.common.AGENT, cls.common.HEAD)
+         model = PROD / 'models/initial'
+@@ -155,6 +160,10 @@
+         cls.steps = R.batch(cls.prepared, cls.indices, cls.length)
+         cls.logits = np.asarray(jax.jit(lambda v, s: R.unroll_logits(cls.agent, v, s))(cls.variables, cls.steps))
+ 
++    @classmethod
++    def tearDownClass(cls):
++        cls._cpu.__exit__(None, None, None)
++
+     def legal(self, t, k):
+         return self.steps['actions_'][t, k, :, 3] != 0
+ 
+@@ -202,10 +211,15 @@
+ 
+ 
+ class WiringTests(unittest.TestCase):
+-    def test_disabled_path_is_byte_identical_and_enabled_path_is_hooked(self):
+-        text = b.patched_trainer((Path(CFG['runtime']) / 'agent/scripts/cleanba.py').read_text())
+-        self.assertEqual(text, (PROD / 'snapshot/train.py').read_text())
+-        patched = R.patch_trainer(text)
++    def test_no_rehearsal_path_is_unchanged_and_rehearsal_path_is_hooked(self):
++        plain = b.patched_trainer((Path(CFG['runtime']) / 'agent/scripts/cleanba.py').read_text())
++        # The no-rehearsal trainer must still be byte-identical to the one pinned in a preserved
++        # no-rehearsal production snapshot (the v2 root is kept unchanged as a rollback target).
++        self.assertEqual(plain, (P / 'experiments/continuous-elfnotes-openings-v2-20261109/snapshot/train.py').read_text())
++        self.assertEqual(plain, b.expected_trainer_text(dict(CFG, rehearsal=None, keep_all_checkpoints=False)))
++        self.assertNotIn('install_rehearsal', plain)
++        patched = R.patch_trainer(plain)
++        self.assertEqual(patched, b.expected_trainer_text(dict(CFG, rehearsal=SETTINGS, keep_all_checkpoints=False)))
+         self.assertEqual(patched.count("~jnp.reshape(obs['adapter_controlled_'], mask.shape)"), 2)
+         self.assertIn('OPENING_REHEARSAL.combine(', patched)
+         self.assertIn('OPENING_REHEARSAL.next_device_batches(args, learner_devices)', patched)
+@@ -213,6 +227,13 @@
+         with self.assertRaises(RuntimeError):
+             R.patch_trainer(patched)
+ 
++    def test_production_trainer_matches_the_production_config(self):
++        # Whatever production uses (plain PPO or D with rehearsal), its pinned trainer must be
++        # exactly the trainer its own effective config requires.
++        trainer = (PROD / 'snapshot/train.py').read_text()
++        self.assertEqual(trainer, b.expected_trainer_text(CFG))
++        self.assertEqual('install_rehearsal(globals())' in trainer, bool((CFG.get('rehearsal') or {}).get('enabled')))
++
+     def test_initialize_pins_train_only_in_a_new_root(self):
+         before = AB.production_fingerprint()
+         with tempfile.TemporaryDirectory() as tmp:
+--- experiments/d-ready-20261109/source-before/tests/test_opening_rehearsal_runner.py	2026-11-09 16:19:03.332842282 +0900
++++ tests/test_opening_rehearsal_runner.py	2026-11-09 18:32:21.975643312 +0900
+@@ -37,7 +37,7 @@
+         self.root = self.exp / name
+         self.plan = dict(experiment_root=str(self.exp), base_config=str(P / 'config/continuous-elfnotes.json'),
+                          steps=256, seeds=[SEED], battle_episodes=32, battle_seed=90000555,
+-                         arms={name: {'rehearsal': None}}, _file=str(self.exp / 'plan.json'))
++                         arms={name: {'rehearsal': None, 'learning_rate': 3e-5}}, _file=str(self.exp / 'plan.json'))
+         for part, data in [('base.flax_model', b'initial-base'), ('chain-head.flax_model', b'initial-head')]:
+             write(self.root / 'models/initial' / part, data)
+         write(self.root / 'snapshot/hashes.json', {'train.py': '0' * 64})
+@@ -178,7 +178,9 @@
+     def test_unknown_or_invalid_arm_settings_are_refused(self):
+         with tempfile.TemporaryDirectory() as tmp:
+             for arm, message in [({'learning_rate': 1.5e-5, 'lr': 1e-5}, 'unsupported settings'),
+-                                 ({'learning_rate': '1.5e-5'}, 'learning_rate'), ({'learning_rate': 0}, 'learning_rate')]:
++                                 ({'rehearsal': None, 'learning_rate': '1.5e-5'}, 'learning_rate'),
++                                 ({'rehearsal': None, 'learning_rate': 0}, 'learning_rate'),
++                                 ({'rehearsal': None}, 'must be explicit'), ({'learning_rate': 3e-5}, 'must be explicit')]:
+                 plan = self.plan(tmp, {'x': arm})
+                 write(plan['_file'], {k: v for k, v in plan.items() if k != '_file'})
+                 with self.assertRaisesRegex(ValueError, message):
+@@ -188,7 +190,7 @@
+ 
+     def test_plan_limits_are_enforced(self):
+         with tempfile.TemporaryDirectory() as tmp:
+-            plan = self.plan(tmp, dict(FOUR, extra={'learning_rate': 1e-5}))
++            plan = self.plan(tmp, dict(FOUR, extra={'rehearsal': None, 'learning_rate': 1e-5}))
+             write(plan['_file'], {k: v for k, v in plan.items() if k != '_file'})
+             with self.assertRaisesRegex(ValueError, 'limit'):
+                 AB.load_plan(plan['_file'])
+@@ -399,6 +401,74 @@
+                 AB.verified_reference(spec, manifest, tmp / 'new')
+ 
+ 
++class EffectiveTrainerTests(unittest.TestCase):
++    """check_snapshot() compares each arm with the trainer ITS effective config requires, so it works
++    when production itself trains with rehearsal (condition D). No jobs; temporary roots only."""
++
++    SHARED = {'policy-code/center_placement.py': 'v2', 'evaluator.py': 'e', 'opening-manifest.json': 'm', 'opening-policy.json': 'o',
++              'runtime.json': 'r', 'meta-run-manifest.json': 'mm'}
++
++    def setUp(self):
++        self.tmp = tempfile.TemporaryDirectory()
++        tmp = Path(self.tmp.name)
++        base = dict(json.loads((P / 'config/continuous-elfnotes.json').read_text()), learning_rate=1.5e-5, rehearsal=REHEARSAL)
++        write(tmp / 'base-d.json', base)  # a production config that itself runs condition D
++        self.plan = dict(experiment_root=str(tmp / 'exp'), base_config=str(tmp / 'base-d.json'), steps=256, seeds=[1],
++                         battle_episodes=0, battle_seed=0, _file=str(tmp / 'exp/plan.json'),
++                         arms={'d': {'rehearsal': REHEARSAL, 'learning_rate': 1.5e-5}, 'control': {'rehearsal': None, 'learning_rate': 3e-5}})
++        import continuous_opening_backend as backend
++        self.backend = backend
++        self.cfg = {n: AB.build_arm_config(self.plan, n, a) for n, a in self.plan['arms'].items()}
++        self.text = {n: backend.expected_trainer_text(c) for n, c in self.cfg.items()}
++        self.production = tmp / 'production'
++        self.root(self.production, self.text['d'], rehearsal=True)
++        self.patch = patch.object(AB, 'production_root', return_value=self.production)
++        self.patch.start()
++
++    def tearDown(self):
++        self.patch.stop()
++        self.tmp.cleanup()
++
++    def root(self, root, trainer, rehearsal, data_sha=None):
++        write(root / 'snapshot/train.py', trainer)
++        hashes = dict(self.SHARED, **{'train.py': C.sha(root / 'snapshot/train.py'), 'continuous_opening_backend.py': 'b'})
++        if rehearsal:
++            hashes.update({'opening_rehearsal.py': 'R', 'rehearsal/train.npz': data_sha or REHEARSAL['sha256']})
++            write(root / 'snapshot/rehearsal/settings.json', {'settings': AB.R.validate_settings(REHEARSAL)})
++        write(root / 'snapshot/hashes.json', hashes)
++        for part in ['base.flax_model', 'chain-head.flax_model']:
++            write(root / 'models/initial' / part, b'adopted-' + part.encode())
++
++    def check(self, name, trainer, rehearsal, **kw):
++        root = Path(self.cfg[name]['root'])
++        self.root(root, trainer, rehearsal, **kw)
++        return AB.check_snapshot(self.cfg[name], self.plan['arms'][name])
++
++    def test_control_arm_never_inherits_production_rehearsal(self):
++        self.assertNotIn('rehearsal', self.cfg['control'])
++        self.assertEqual(self.cfg['control']['learning_rate'], 3e-5)
++        self.assertEqual((self.cfg['d']['rehearsal'], self.cfg['d']['learning_rate']), (REHEARSAL, 1.5e-5))
++        self.assertNotIn('install_rehearsal', self.text['control'])
++        self.assertIn('install_rehearsal(globals())', self.text['d'])
++
++    def test_both_arms_are_accepted_with_their_own_expected_trainer(self):
++        d = self.check('d', self.text['d'], True)
++        control = self.check('control', self.text['control'], False)
++        self.assertEqual((d['trainer_identical_to_production'], d['rehearsal_hooked'], d['production_trainer_rehearsal_hooked']), (True, True, True))
++        self.assertEqual((control['trainer_identical_to_production'], control['rehearsal_hooked']), (False, False))
++
++    def test_wrong_trainers_and_rehearsal_pins_are_refused(self):
++        for name, trainer, rehearsal, kw, message in [
++                ('control', self.text['d'], False, {}, 'required by its effective config'),   # D trainer in a control arm
++                ('d', self.text['control'], True, {}, 'required by its effective config'),    # plain trainer in a D arm
++                ('d', self.text['d'], True, {'data_sha': '0' * 64}, 'Pinned rehearsal settings or data'),
++                ('control', self.text['control'], True, {}, 'no-rehearsal arm has rehearsal files'),
++                ('d', self.text['d'].replace("~jnp.reshape(obs['adapter_controlled_'], mask.shape)", 'True', 1), True, {},
++                 'required by its effective config')]:
++            with self.assertRaisesRegex(RuntimeError, message):
++                self.check(name, trainer, rehearsal, **kw)
++
++
+ class StopTests(unittest.TestCase):
+     def setUp(self):
+         self.tmp = tempfile.TemporaryDirectory()
+--- experiments/d-ready-20261109/source-before/config/continuous-elfnotes.json	2026-11-09 16:40:05.987708645 +0900
++++ config/continuous-elfnotes.json	2026-11-09 18:35:01.825590047 +0900
+@@ -1,15 +1,15 @@
+ {
+   "project": "/home/hatk8/projects/yugioh-ai",
+-  "root": "/home/hatk8/projects/yugioh-ai/experiments/continuous-elfnotes-openings-d16384-20261109",
++  "root": "/home/hatk8/projects/yugioh-ai/experiments/continuous-elfnotes-openings-d16384-rehearsal-ready-20261109",
+   "runtime": "/home/hatk8/projects/yugioh-ai/evaluation/opponent-article-basics-20261108/runtime",
+   "python": "/opt/ygo-ai/.venv/bin/python",
+   "deck": "/home/hatk8/projects/yugioh-ai/assets/deck/ElfnotesKewlTune.ydk",
+-  "initial_checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/all-openings-bar-alternative-20261108/run-20261108-194920/training/ElfnotesKewlTune/step-0400",
++  "initial_checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/adoption-d16384-20261109/model",
+   "runtime_manifest": "/home/hatk8/projects/yugioh-ai/env/continuous-opening-runtime.json",
+   "initial_training_steps": 69632,
+   "bootstrap_steps": 4096,
+-  "steps_per_cycle": 65536,
+-  "learning_rate": 3e-05,
++  "steps_per_cycle": 4096,
++  "learning_rate": 1.5e-05,
+   "eval_envs": 4,
+   "eval_episodes": 128,
+   "reference_episodes": 64,
+@@ -30,9 +30,21 @@
+   "opening_manifest": "/home/hatk8/projects/yugioh-ai/experiments/all-openings-bar-alternative-20261108/run-20261108-194920/manifest.json",
+   "opening_regression_required": true,
+   "old_continuous_run_preserved": "/home/hatk8/projects/yugioh-ai/experiments/continuous-elfnotes",
+-  "initial_model_note": "69,632 RL-origin decisions plus separately counted verified opening imitation stages",
++  "initial_model_note": "Adopted cumulative-16384 D model (manual adoption 2026-11-09, base 86b4358d.../head 6ca3221f...). Training in this root starts from it; decisions added here are counted from 0.",
+   "placement_adapter_version": "v2-remix-tracking-20261109",
+-  "previous_production_root": "/home/hatk8/projects/yugioh-ai/experiments/continuous-elfnotes-openings-v2-20261109",
++  "previous_production_root": "/home/hatk8/projects/yugioh-ai/experiments/continuous-elfnotes-openings-d16384-20261109",
+   "previous_verified_policy_config": "/home/hatk8/projects/yugioh-ai/config/verified-opening-policy-placement-remix-fix-20261109.json",
+-  "adopted_model_version": "d16384-20261109-manual"
++  "adopted_model_version": "d16384-20261109-manual",
++  "rehearsal": {
++    "enabled": true,
++    "split": "train",
++    "lambda_bc": 5.0,
++    "lambda_kl": 0.0,
++    "sequences_per_minibatch": 2,
++    "seed": 20261109,
++    "sha256": "0ef4700c92ddb6f26c3e3f5dc04d4893d2cb02c096304af0bbdc546f8070e4da"
++  },
++  "initial_training_steps_note": "initial_training_steps=69632 is the historical RL-origin count of the original base, not decisions added in this root and not the 16384 D decisions",
++  "training_condition": "D: PPO learning_rate 1.5e-5 + train-split acceptable-action rehearsal lambda_bc 5 (no KL, not CLEAR)",
++  "previous_production_config_sha256": "b50810a34352f00a3f14f4bb79154f2c41b60e3d918c512aeeb23c8152b07d15"
+ }

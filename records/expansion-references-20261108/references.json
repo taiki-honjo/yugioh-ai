@@ -1,0 +1,2378 @@
+{
+  "schema_version": 2,
+  "status": "all_public_opening_references_registered",
+  "grading_policy": "normal-summon-agnostic-v2",
+  "normal_summon_usage_scored": false,
+  "publish_new_replays": false,
+  "training_from_these_articles_completed": false,
+  "registration_scope": "Accessible public article openings and branches; references, not completed engine witnesses.",
+  "sources": [
+    {
+      "deck": "ClownTroupe",
+      "label": "道化の一座",
+      "article": "https://note.com/fugapoke/n/n444a2760344c",
+      "title": "【MD】道化の一座 展開メモ",
+      "author": "ふがーた",
+      "published": "2026-09-12",
+      "scope": "公開部分の全初動・分岐と32本の既存リプレイ。有料Appendixは対象外。",
+      "goal_notes": "固定の盤面だけでなく、相手ターンに必要なアドバンス召喚ができる状態も確認対象。",
+      "routes": [
+        {
+          "id": "clown-CRWQjPaN",
+          "label": "フレア1枚・ホワイトフェイス残し",
+          "reference_type": "replay",
+          "category": "1枚初動",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/CRWQjPaN",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#299f34f6-921e-40cb-b0df-59bed99ead72",
+          "source_heading_id": "299f34f6-921e-40cb-b0df-59bed99ead72",
+          "starter_codes": [
+            42759961
+          ],
+          "starter_cards": [
+            {
+              "code": 42759961,
+              "name": "道化の一座 フレア",
+              "selected_count": 3,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": true,
+            "local_engine_verified": true,
+            "used_for_training": true
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "selected-recipe opening fine-tuned; other routes not trained",
+          "source_heading": "フレア1枚",
+          "engine_witness": {
+            "local_engine_verified": true,
+            "full_replay_reviewed": true,
+            "scope": "adapted legal witness with actual five-card hand, discard, variable draws and hand-limit cleanup",
+            "verified_runs": 3,
+            "reference_equivalence": "same core board; generic hand cards and display flags normalized to game rules",
+            "used_for_training": true,
+            "training_run": "/home/hatk8/projects/yugioh-ai/experiments/opponent-article-training-20261108/run-20261108-145203",
+            "trained_checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/opponent-article-training-20261108/run-20261108-145203/training/ClownTroupe/step-0500",
+            "additional_bc_updates": 500,
+            "training_run_updates": 600,
+            "training_scope": "This opening only"
+          },
+          "engine_witness_report": "C:/Users/hatk8/Documents/Codex/2026-10-27/new-chat/outputs/opponent-article-basics-2026-11-08/README.md"
+        },
+        {
+          "id": "clown-Qpqm2Dm7",
+          "label": "ハット1枚・基本",
+          "reference_type": "replay",
+          "category": "1枚初動",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/Qpqm2Dm7",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#4dc0dba1-24f2-47c1-b283-993a83d87a13",
+          "source_heading_id": "4dc0dba1-24f2-47c1-b283-993a83d87a13",
+          "starter_codes": [
+            19491080
+          ],
+          "starter_cards": [
+            {
+              "code": 19491080,
+              "name": "道化の一座 ハット",
+              "selected_count": 3,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "source_heading": "ハット1枚"
+        },
+        {
+          "id": "clown-jD6qEYbq",
+          "label": "ハット1枚・フレア用の手札コストなし",
+          "reference_type": "replay",
+          "category": "1枚初動",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/jD6qEYbq",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#4dc0dba1-24f2-47c1-b283-993a83d87a13",
+          "source_heading_id": "4dc0dba1-24f2-47c1-b283-993a83d87a13",
+          "starter_codes": [
+            19491080
+          ],
+          "starter_cards": [
+            {
+              "code": 19491080,
+              "name": "道化の一座 ハット",
+              "selected_count": 3,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "additional_start": "記事にあるコストの種類・枚数を別条件として維持し、動画の開始条件と照合する。",
+          "source_heading": "ハット1枚"
+        },
+        {
+          "id": "clown-jcUpCPpQ",
+          "label": "下稽古＋モンスターコスト",
+          "reference_type": "replay",
+          "category": "2枚初動",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/jcUpCPpQ",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#5b60fba8-195e-45f5-b03c-77718c3c22d1",
+          "source_heading_id": "5b60fba8-195e-45f5-b03c-77718c3c22d1",
+          "starter_codes": [
+            20448151
+          ],
+          "starter_cards": [
+            {
+              "code": 20448151,
+              "name": "道化の一座『下稽古』",
+              "selected_count": 3,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "additional_start": "記事にあるコストの種類・枚数を別条件として維持し、動画の開始条件と照合する。",
+          "source_heading": "下稽古 + モンスターコスト"
+        },
+        {
+          "id": "clown-FDcws6wr",
+          "label": "極芸＋レベル3チューナー",
+          "reference_type": "replay",
+          "category": "2枚初動",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/FDcws6wr",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#d9edf3e7-7c0e-4a20-9d4a-ae017b88558d",
+          "source_heading_id": "d9edf3e7-7c0e-4a20-9d4a-ae017b88558d",
+          "starter_codes": [
+            83232904
+          ],
+          "starter_cards": [
+            {
+              "code": 83232904,
+              "name": "道化の一座『極芸』",
+              "selected_count": 3,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "generic_starter_requirements_from_article": [
+            "レベル3チューナー"
+          ],
+          "source_heading": "極芸 + レベル3チューナー"
+        },
+        {
+          "id": "clown-5JRKg6xw",
+          "label": "極芸＋下級",
+          "reference_type": "replay",
+          "category": "2枚初動",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/5JRKg6xw",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#4d6502f2-1943-4e0c-948b-ade612ae9c5d",
+          "source_heading_id": "4d6502f2-1943-4e0c-948b-ade612ae9c5d",
+          "starter_codes": [
+            83232904
+          ],
+          "starter_cards": [
+            {
+              "code": 83232904,
+              "name": "道化の一座『極芸』",
+              "selected_count": 3,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "generic_starter_requirements_from_article": [
+            "下級"
+          ],
+          "source_heading": "極芸 + 下級"
+        },
+        {
+          "id": "clown-mQWBQNdJ",
+          "label": "極芸＋上級",
+          "reference_type": "replay",
+          "category": "2枚初動",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/mQWBQNdJ",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#0d411b06-05da-4be9-95cb-19b32059401f",
+          "source_heading_id": "0d411b06-05da-4be9-95cb-19b32059401f",
+          "starter_codes": [
+            83232904
+          ],
+          "starter_cards": [
+            {
+              "code": 83232904,
+              "name": "道化の一座『極芸』",
+              "selected_count": 3,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "generic_starter_requirements_from_article": [
+            "上級"
+          ],
+          "source_heading": "極芸 + 上級"
+        },
+        {
+          "id": "clown-wuH3zLrP",
+          "label": "極芸＋最上級",
+          "reference_type": "replay",
+          "category": "2枚初動",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/wuH3zLrP",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#8b2402cc-e01d-498b-a257-f20ab82798c8",
+          "source_heading_id": "8b2402cc-e01d-498b-a257-f20ab82798c8",
+          "starter_codes": [
+            83232904
+          ],
+          "starter_cards": [
+            {
+              "code": 83232904,
+              "name": "道化の一座『極芸』",
+              "selected_count": 3,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "generic_starter_requirements_from_article": [
+            "最上級"
+          ],
+          "source_heading": "極芸 + 最上級"
+        },
+        {
+          "id": "clown-CAaV2Y29",
+          "label": "極芸＋フェンリル・ドロールを意識した形",
+          "reference_type": "replay",
+          "category": "2枚初動",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/CAaV2Y29",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#09458a20-cfde-4a78-b201-eff92ce4f742",
+          "source_heading_id": "09458a20-cfde-4a78-b201-eff92ce4f742",
+          "starter_codes": [
+            83232904,
+            32909498
+          ],
+          "starter_cards": [
+            {
+              "code": 83232904,
+              "name": "道化の一座『極芸』",
+              "selected_count": 3,
+              "present": true
+            },
+            {
+              "code": 32909498,
+              "name": "クシャトリラ・フェンリル",
+              "selected_count": 0,
+              "present": false
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": false,
+          "compatibility": {
+            "missing_named_starters": [
+              {
+                "code": 32909498,
+                "name": "クシャトリラ・フェンリル",
+                "selected_count": 0,
+                "present": false
+              }
+            ],
+            "full_route_requirements_checked": false,
+            "status": "named_starter_missing_in_selected_recipe"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "training_eligible": false,
+          "source_heading": "極芸 + フェンリル"
+        },
+        {
+          "id": "clown-3k9GGRWL",
+          "label": "極芸＋フェンリル・墓地リンクリボーを優先",
+          "reference_type": "replay",
+          "category": "2枚初動",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/3k9GGRWL",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#09458a20-cfde-4a78-b201-eff92ce4f742",
+          "source_heading_id": "09458a20-cfde-4a78-b201-eff92ce4f742",
+          "starter_codes": [
+            83232904,
+            32909498
+          ],
+          "starter_cards": [
+            {
+              "code": 83232904,
+              "name": "道化の一座『極芸』",
+              "selected_count": 3,
+              "present": true
+            },
+            {
+              "code": 32909498,
+              "name": "クシャトリラ・フェンリル",
+              "selected_count": 0,
+              "present": false
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": false,
+          "compatibility": {
+            "missing_named_starters": [
+              {
+                "code": 32909498,
+                "name": "クシャトリラ・フェンリル",
+                "selected_count": 0,
+                "present": false
+              }
+            ],
+            "full_route_requirements_checked": false,
+            "status": "named_starter_missing_in_selected_recipe"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "training_eligible": false,
+          "source_heading": "極芸 + フェンリル",
+          "article_branch_notes": [
+            "ドロールを止める札を持つ条件と墓地のリンクリボーを重視する形。"
+          ]
+        },
+        {
+          "id": "clown-Qh9hpLGk",
+          "label": "極芸＋開演",
+          "reference_type": "replay",
+          "category": "2枚初動",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/Qh9hpLGk",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#3d318413-f1ee-4e82-9618-f178ea8ca08f",
+          "source_heading_id": "3d318413-f1ee-4e82-9618-f178ea8ca08f",
+          "starter_codes": [
+            83232904,
+            57847269
+          ],
+          "starter_cards": [
+            {
+              "code": 83232904,
+              "name": "道化の一座『極芸』",
+              "selected_count": 3,
+              "present": true
+            },
+            {
+              "code": 57847269,
+              "name": "道化の一座『開演』",
+              "selected_count": 1,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "source_heading": "極芸 + 開演"
+        },
+        {
+          "id": "clown-neYwJkTf",
+          "label": "開演＋レベル3チューナー",
+          "reference_type": "replay",
+          "category": "2枚初動",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/neYwJkTf",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#87240159-ba16-4fc4-92e8-98a72fc4ba0b",
+          "source_heading_id": "87240159-ba16-4fc4-92e8-98a72fc4ba0b",
+          "starter_codes": [
+            57847269
+          ],
+          "starter_cards": [
+            {
+              "code": 57847269,
+              "name": "道化の一座『開演』",
+              "selected_count": 1,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "generic_starter_requirements_from_article": [
+            "レベル3チューナー"
+          ],
+          "source_heading": "開演 + レベル3チューナー"
+        },
+        {
+          "id": "clown-YhJYVhES",
+          "label": "開演＋上級・コスト別",
+          "reference_type": "replay",
+          "category": "2枚初動",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/YhJYVhES",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#bde50204-1ee2-45e4-9d6a-6bfcbd4f91bc",
+          "source_heading_id": "bde50204-1ee2-45e4-9d6a-6bfcbd4f91bc",
+          "starter_codes": [
+            57847269
+          ],
+          "starter_cards": [
+            {
+              "code": 57847269,
+              "name": "道化の一座『開演』",
+              "selected_count": 1,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "additional_start": "記事にあるコストの種類・枚数を別条件として維持し、動画の開始条件と照合する。",
+          "generic_starter_requirements_from_article": [
+            "上級"
+          ],
+          "source_heading": "開演 + 上級"
+        },
+        {
+          "id": "clown-xmseE4Kw",
+          "label": "開演＋上級・下稽古のコストなし",
+          "reference_type": "replay",
+          "category": "2枚初動",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/xmseE4Kw",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#bde50204-1ee2-45e4-9d6a-6bfcbd4f91bc",
+          "source_heading_id": "bde50204-1ee2-45e4-9d6a-6bfcbd4f91bc",
+          "starter_codes": [
+            57847269
+          ],
+          "starter_cards": [
+            {
+              "code": 57847269,
+              "name": "道化の一座『開演』",
+              "selected_count": 1,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "additional_start": "記事にあるコストの種類・枚数を別条件として維持し、動画の開始条件と照合する。",
+          "generic_starter_requirements_from_article": [
+            "上級"
+          ],
+          "source_heading": "開演 + 上級"
+        },
+        {
+          "id": "clown-q4KANa5q",
+          "label": "開演＋フェンリル",
+          "reference_type": "replay",
+          "category": "2枚初動",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/q4KANa5q",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#7a6287ee-9539-450c-a062-2319e1df231b",
+          "source_heading_id": "7a6287ee-9539-450c-a062-2319e1df231b",
+          "starter_codes": [
+            57847269,
+            32909498
+          ],
+          "starter_cards": [
+            {
+              "code": 57847269,
+              "name": "道化の一座『開演』",
+              "selected_count": 1,
+              "present": true
+            },
+            {
+              "code": 32909498,
+              "name": "クシャトリラ・フェンリル",
+              "selected_count": 0,
+              "present": false
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": false,
+          "compatibility": {
+            "missing_named_starters": [
+              {
+                "code": 32909498,
+                "name": "クシャトリラ・フェンリル",
+                "selected_count": 0,
+                "present": false
+              }
+            ],
+            "full_route_requirements_checked": false,
+            "status": "named_starter_missing_in_selected_recipe"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "training_eligible": false,
+          "source_heading": "開演 + フェンリル"
+        },
+        {
+          "id": "clown-kbytB4Ps",
+          "label": "フレア＋ハット・うららを意識した分岐",
+          "reference_type": "replay",
+          "category": "誘発ケア展開",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/kbytB4Ps",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#cf524049-fa66-4b17-be8b-d0bfd973f655",
+          "source_heading_id": "cf524049-fa66-4b17-be8b-d0bfd973f655",
+          "starter_codes": [
+            42759961,
+            19491080
+          ],
+          "starter_cards": [
+            {
+              "code": 42759961,
+              "name": "道化の一座 フレア",
+              "selected_count": 3,
+              "present": true
+            },
+            {
+              "code": 19491080,
+              "name": "道化の一座 ハット",
+              "selected_count": 3,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "source_heading": "フレア + ハット",
+          "article_observation_note": "記事の分岐は対戦画面の反応を前提にしている。相手の非公開手札をモデル入力に追加しない。"
+        },
+        {
+          "id": "clown-dWbA4y9a",
+          "label": "フレア＋ハット・下稽古にうららを受けた後",
+          "reference_type": "replay",
+          "category": "誘発ケア展開",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/dWbA4y9a",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#cf524049-fa66-4b17-be8b-d0bfd973f655",
+          "source_heading_id": "cf524049-fa66-4b17-be8b-d0bfd973f655",
+          "starter_codes": [
+            42759961,
+            19491080
+          ],
+          "starter_cards": [
+            {
+              "code": 42759961,
+              "name": "道化の一座 フレア",
+              "selected_count": 3,
+              "present": true
+            },
+            {
+              "code": 19491080,
+              "name": "道化の一座 ハット",
+              "selected_count": 3,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "source_heading": "フレア + ハット"
+        },
+        {
+          "id": "clown-LvB4Tdeq",
+          "label": "フレア＋ハット・ドロールを意識した分岐",
+          "reference_type": "replay",
+          "category": "誘発ケア展開",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/LvB4Tdeq",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#cf524049-fa66-4b17-be8b-d0bfd973f655",
+          "source_heading_id": "cf524049-fa66-4b17-be8b-d0bfd973f655",
+          "starter_codes": [
+            42759961,
+            19491080
+          ],
+          "starter_cards": [
+            {
+              "code": 42759961,
+              "name": "道化の一座 フレア",
+              "selected_count": 3,
+              "present": true
+            },
+            {
+              "code": 19491080,
+              "name": "道化の一座 ハット",
+              "selected_count": 3,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "source_heading": "フレア + ハット",
+          "article_observation_note": "記事の分岐は対戦画面の反応を前提にしている。相手の非公開手札をモデル入力に追加しない。"
+        },
+        {
+          "id": "clown-KrCwwyjK",
+          "label": "フレア＋ハット・ドロールを受けた後",
+          "reference_type": "replay",
+          "category": "誘発ケア展開",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/KrCwwyjK",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#cf524049-fa66-4b17-be8b-d0bfd973f655",
+          "source_heading_id": "cf524049-fa66-4b17-be8b-d0bfd973f655",
+          "starter_codes": [
+            42759961,
+            19491080
+          ],
+          "starter_cards": [
+            {
+              "code": 42759961,
+              "name": "道化の一座 フレア",
+              "selected_count": 3,
+              "present": true
+            },
+            {
+              "code": 19491080,
+              "name": "道化の一座 ハット",
+              "selected_count": 3,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "source_heading": "フレア + ハット"
+        },
+        {
+          "id": "clown-a56juEEA",
+          "label": "フレア＋極芸",
+          "reference_type": "replay",
+          "category": "誘発ケア展開",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/a56juEEA",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#f1d882f0-040f-4e46-9987-947902f0068d",
+          "source_heading_id": "f1d882f0-040f-4e46-9987-947902f0068d",
+          "starter_codes": [
+            42759961,
+            83232904
+          ],
+          "starter_cards": [
+            {
+              "code": 42759961,
+              "name": "道化の一座 フレア",
+              "selected_count": 3,
+              "present": true
+            },
+            {
+              "code": 83232904,
+              "name": "道化の一座『極芸』",
+              "selected_count": 3,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "source_heading": "フレア + 極芸",
+          "article_branch_notes": [
+            "妨害を示す反応がない場合のホワイトフェイス確保。",
+            "反応がある場合のホワイトフェイス通常召喚。",
+            "極芸がうららで止まった場合の下稽古への接続。"
+          ]
+        },
+        {
+          "id": "clown-qLGavj6P",
+          "label": "フレア＋下稽古・別のコストあり",
+          "reference_type": "replay",
+          "category": "誘発ケア展開",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/qLGavj6P",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#85c6a814-cd6d-4651-b58a-526d2ef65f98",
+          "source_heading_id": "85c6a814-cd6d-4651-b58a-526d2ef65f98",
+          "starter_codes": [
+            42759961,
+            20448151
+          ],
+          "starter_cards": [
+            {
+              "code": 42759961,
+              "name": "道化の一座 フレア",
+              "selected_count": 3,
+              "present": true
+            },
+            {
+              "code": 20448151,
+              "name": "道化の一座『下稽古』",
+              "selected_count": 3,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "additional_start": "記事にあるコストの種類・枚数を別条件として維持し、動画の開始条件と照合する。",
+          "source_heading": "フレア + 下稽古",
+          "article_branch_notes": [
+            "フレア以外に下稽古へ払えるコストを持つ場合。"
+          ]
+        },
+        {
+          "id": "clown-LNA98bpm",
+          "label": "フレア＋下稽古・別のコストなし",
+          "reference_type": "replay",
+          "category": "誘発ケア展開",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/LNA98bpm",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#85c6a814-cd6d-4651-b58a-526d2ef65f98",
+          "source_heading_id": "85c6a814-cd6d-4651-b58a-526d2ef65f98",
+          "starter_codes": [
+            42759961,
+            20448151
+          ],
+          "starter_cards": [
+            {
+              "code": 42759961,
+              "name": "道化の一座 フレア",
+              "selected_count": 3,
+              "present": true
+            },
+            {
+              "code": 20448151,
+              "name": "道化の一座『下稽古』",
+              "selected_count": 3,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "additional_start": "記事にあるコストの種類・枚数を別条件として維持し、動画の開始条件と照合する。",
+          "source_heading": "フレア + 下稽古",
+          "article_branch_notes": [
+            "別のコストがない場合と、うららを意識した順序。"
+          ]
+        },
+        {
+          "id": "clown-A8hYg7NE",
+          "label": "フレア＋ホワイトフェイス",
+          "reference_type": "replay",
+          "category": "誘発ケア展開",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/A8hYg7NE",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#0de31487-adae-4525-ac71-95447abef8c5",
+          "source_heading_id": "0de31487-adae-4525-ac71-95447abef8c5",
+          "starter_codes": [
+            42759961,
+            82159583
+          ],
+          "starter_cards": [
+            {
+              "code": 42759961,
+              "name": "道化の一座 フレア",
+              "selected_count": 3,
+              "present": true
+            },
+            {
+              "code": 82159583,
+              "name": "道化の一座 ホワイトフェイス",
+              "selected_count": 2,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "generic_starter_requirements_from_article": [
+            "最上級"
+          ],
+          "source_heading": "フレア + 最上級（ホワイトフェイス）"
+        },
+        {
+          "id": "clown-BqbjaHU9",
+          "label": "ハット＋極芸",
+          "reference_type": "replay",
+          "category": "誘発ケア展開",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/BqbjaHU9",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#9ce9717b-a571-43f7-b594-d99422682262",
+          "source_heading_id": "9ce9717b-a571-43f7-b594-d99422682262",
+          "starter_codes": [
+            19491080,
+            83232904
+          ],
+          "starter_cards": [
+            {
+              "code": 19491080,
+              "name": "道化の一座 ハット",
+              "selected_count": 3,
+              "present": true
+            },
+            {
+              "code": 83232904,
+              "name": "道化の一座『極芸』",
+              "selected_count": 3,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "source_heading": "ハット + 極芸"
+        },
+        {
+          "id": "clown-AMJhX78m",
+          "label": "ハット＋下稽古",
+          "reference_type": "replay",
+          "category": "誘発ケア展開",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/AMJhX78m",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#3ad8b04b-62b9-4f91-91b7-a13a914ae273",
+          "source_heading_id": "3ad8b04b-62b9-4f91-91b7-a13a914ae273",
+          "starter_codes": [
+            19491080,
+            20448151
+          ],
+          "starter_cards": [
+            {
+              "code": 19491080,
+              "name": "道化の一座 ハット",
+              "selected_count": 3,
+              "present": true
+            },
+            {
+              "code": 20448151,
+              "name": "道化の一座『下稽古』",
+              "selected_count": 3,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "source_heading": "ハット + 下稽古"
+        },
+        {
+          "id": "clown-u7GBEa4h",
+          "label": "ハット＋開演",
+          "reference_type": "replay",
+          "category": "誘発ケア展開",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/u7GBEa4h",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#81fac8f4-b814-4508-8f09-08b55c7e90ea",
+          "source_heading_id": "81fac8f4-b814-4508-8f09-08b55c7e90ea",
+          "starter_codes": [
+            19491080,
+            57847269
+          ],
+          "starter_cards": [
+            {
+              "code": 19491080,
+              "name": "道化の一座 ハット",
+              "selected_count": 3,
+              "present": true
+            },
+            {
+              "code": 57847269,
+              "name": "道化の一座『開演』",
+              "selected_count": 1,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "source_heading": "ハット + 開演",
+          "article_branch_notes": [
+            "ハットの効果が止められなかった場合を前提とする。"
+          ]
+        },
+        {
+          "id": "clown-XBJXaFeM",
+          "label": "ハット＋上級",
+          "reference_type": "replay",
+          "category": "誘発ケア展開",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/XBJXaFeM",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#c418a6ed-954f-41ef-8289-6233fb51a8b2",
+          "source_heading_id": "c418a6ed-954f-41ef-8289-6233fb51a8b2",
+          "starter_codes": [
+            19491080
+          ],
+          "starter_cards": [
+            {
+              "code": 19491080,
+              "name": "道化の一座 ハット",
+              "selected_count": 3,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "generic_starter_requirements_from_article": [
+            "上級"
+          ],
+          "source_heading": "ハット + 上級",
+          "article_branch_notes": [
+            "ハットの効果が止められなかった場合を前提とする。"
+          ]
+        },
+        {
+          "id": "clown-aRq7xmEC",
+          "label": "下稽古＋開演・ディアボロを使う分岐",
+          "reference_type": "replay",
+          "category": "誘発ケア展開",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/aRq7xmEC",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#54264f29-0a9f-4670-8ee9-41821bbe67ef",
+          "source_heading_id": "54264f29-0a9f-4670-8ee9-41821bbe67ef",
+          "starter_codes": [
+            20448151,
+            57847269
+          ],
+          "starter_cards": [
+            {
+              "code": 20448151,
+              "name": "道化の一座『下稽古』",
+              "selected_count": 3,
+              "present": true
+            },
+            {
+              "code": 57847269,
+              "name": "道化の一座『開演』",
+              "selected_count": 1,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "source_heading": "下稽古 + 開演",
+          "article_observation_note": "記事の分岐は対戦画面の反応を前提にしている。相手の非公開手札をモデル入力に追加しない。"
+        },
+        {
+          "id": "clown-kLgRsQfa",
+          "label": "下稽古＋開演・ハットを使う分岐",
+          "reference_type": "replay",
+          "category": "誘発ケア展開",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/kLgRsQfa",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#54264f29-0a9f-4670-8ee9-41821bbe67ef",
+          "source_heading_id": "54264f29-0a9f-4670-8ee9-41821bbe67ef",
+          "starter_codes": [
+            20448151,
+            57847269
+          ],
+          "starter_cards": [
+            {
+              "code": 20448151,
+              "name": "道化の一座『下稽古』",
+              "selected_count": 3,
+              "present": true
+            },
+            {
+              "code": 57847269,
+              "name": "道化の一座『開演』",
+              "selected_count": 1,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "source_heading": "下稽古 + 開演",
+          "article_observation_note": "記事の分岐は対戦画面の反応を前提にしている。相手の非公開手札をモデル入力に追加しない。"
+        },
+        {
+          "id": "clown-2Yh4gcjq",
+          "label": "下稽古＋極芸",
+          "reference_type": "replay",
+          "category": "誘発ケア展開",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/2Yh4gcjq",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#3830425c-bbb3-4e61-b4fc-df436a84f7c9",
+          "source_heading_id": "3830425c-bbb3-4e61-b4fc-df436a84f7c9",
+          "starter_codes": [
+            83232904,
+            20448151
+          ],
+          "starter_cards": [
+            {
+              "code": 83232904,
+              "name": "道化の一座『極芸』",
+              "selected_count": 3,
+              "present": true
+            },
+            {
+              "code": 20448151,
+              "name": "道化の一座『下稽古』",
+              "selected_count": 3,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "source_heading": "下稽古 + 極芸"
+        },
+        {
+          "id": "clown-m4J8mjmq",
+          "label": "フレア1枚・ドロー枚数優先",
+          "reference_type": "replay",
+          "category": "その他展開",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/m4J8mjmq",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#05ab4fa6-90b5-4a35-9c6c-71ef46208aee",
+          "source_heading_id": "05ab4fa6-90b5-4a35-9c6c-71ef46208aee",
+          "starter_codes": [
+            42759961
+          ],
+          "starter_cards": [
+            {
+              "code": 42759961,
+              "name": "道化の一座 フレア",
+              "selected_count": 3,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "source_heading": "フレア1枚（ドロー枚数優先）"
+        },
+        {
+          "id": "clown-BSb6759k",
+          "label": "極芸を止められた後の下稽古",
+          "reference_type": "replay",
+          "category": "その他展開",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/BSb6759k",
+          "source_section_url": "https://note.com/fugapoke/n/n444a2760344c#5762b115-c1e8-4ed2-8f4b-eceb018ec7e7",
+          "source_heading_id": "5762b115-c1e8-4ed2-8f4b-eceb018ec7e7",
+          "starter_codes": [
+            83232904,
+            20448151
+          ],
+          "starter_cards": [
+            {
+              "code": 83232904,
+              "name": "道化の一座『極芸』",
+              "selected_count": 3,
+              "present": true
+            },
+            {
+              "code": 20448151,
+              "name": "道化の一座『下稽古』",
+              "selected_count": 3,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "source_heading": "極芸が止められた後の下稽古"
+        }
+      ],
+      "core_codes": [
+        82159583,
+        19491080,
+        42759961,
+        20448151,
+        57847269,
+        83232904,
+        70058649,
+        84031736,
+        31533473,
+        93172951,
+        91237821
+      ],
+      "core_presence": [
+        {
+          "code": 82159583,
+          "name": "道化の一座 ホワイトフェイス",
+          "present": true
+        },
+        {
+          "code": 19491080,
+          "name": "道化の一座 ハット",
+          "present": true
+        },
+        {
+          "code": 42759961,
+          "name": "道化の一座 フレア",
+          "present": true
+        },
+        {
+          "code": 20448151,
+          "name": "道化の一座『下稽古』",
+          "present": true
+        },
+        {
+          "code": 57847269,
+          "name": "道化の一座『開演』",
+          "present": true
+        },
+        {
+          "code": 83232904,
+          "name": "道化の一座『極芸』",
+          "present": true
+        },
+        {
+          "code": 70058649,
+          "name": "道化の一座『怪演』",
+          "present": true
+        },
+        {
+          "code": 84031736,
+          "name": "道化の一座『終演』",
+          "present": true
+        },
+        {
+          "code": 31533473,
+          "name": "道化の一座 ディアボロ",
+          "present": true
+        },
+        {
+          "code": 93172951,
+          "name": "道化の一座 メテオ",
+          "present": true
+        },
+        {
+          "code": 91237821,
+          "name": "道化の一座 デビルズ",
+          "present": true
+        }
+      ],
+      "selected_recipe_source": "C:\\Users\\hatk8\\Downloads\\DK0019036118_262_ja_ﾃﾞｯｷ_202611072232536_.pdf",
+      "selected_recipe_sha256": "7338afb703b2405b954e717f7c03b0f13e6bf1c409c562cffdca4da10b8e2fdd",
+      "recipe_changed": false,
+      "article_build_assumed_identical": false,
+      "coverage": {
+        "all_public_replay_occurrences_registered": true,
+        "observed_replay_occurrences": 32,
+        "observed_unique_replay_urls": 32,
+        "registered_replay_occurrences": 32,
+        "registered_unique_replay_urls": 32,
+        "source_heading_count": 24,
+        "registered_source_heading_count": 24,
+        "category_counts": {
+          "1枚初動": 3,
+          "2枚初動": 12,
+          "誘発ケア展開": 15,
+          "その他展開": 2
+        },
+        "public_openings_and_branches_complete": true,
+        "paid_appendix_accessible": false,
+        "excluded_sections": [
+          {
+            "label": "有料Appendix",
+            "reason": "未購入のため本文未取得。登録済み・確認済みとして扱わない。"
+          }
+        ]
+      }
+    },
+    {
+      "deck": "Artmage",
+      "label": "アルトメギア",
+      "article": "https://note.com/kind_borage903/n/n0b8910935f9a",
+      "title": "アルトメギアデッキ紹介",
+      "author": "鈴木",
+      "published": "2026-10-28",
+      "scope": "公開記事にある基本7条件、誘発対応8条件と補足初動4件。リプレイは12本、掲載箇所は13件。",
+      "goal_notes": "各初動と手札コストを区別し、ドロー結果や相手ターンの動きを固定した万能盤面にまとめない。",
+      "routes": [
+        {
+          "id": "artmage-g2rN57Xb-1",
+          "label": "襲撃",
+          "reference_type": "replay",
+          "category": "基本展開",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/g2rN57Xb",
+          "source_section_url": "https://note.com/kind_borage903/n/n0b8910935f9a#0243b613-1cf3-4e82-9dd1-85c08ad52809",
+          "source_heading_id": "0243b613-1cf3-4e82-9dd1-85c08ad52809",
+          "starter_codes": [
+            1122030
+          ],
+          "starter_cards": [
+            {
+              "code": 1122030,
+              "name": "アルトメギア・ヴァンダリズム－襲撃－",
+              "selected_count": 3,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": true,
+            "local_engine_verified": true,
+            "used_for_training": true
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "selected-recipe opening fine-tuned; other routes not trained",
+          "engine_witness": {
+            "local_engine_verified": true,
+            "full_replay_reviewed": true,
+            "scope": "Assault opening plus available monster for Medius; includes opponent-turn fusion and revival",
+            "verified_runs": 3,
+            "reference_equivalence": "same core board; Ogre substituted for fixed PSY-Frame Driver draw as Medius return cost",
+            "used_for_training": true,
+            "training_run": "/home/hatk8/projects/yugioh-ai/experiments/opponent-article-training-20261108/run-20261108-145203",
+            "trained_checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/opponent-article-training-20261108/run-20261108-145203/training/Artmage/step-0200",
+            "additional_bc_updates": 200,
+            "training_run_updates": 600,
+            "training_scope": "This opening only"
+          },
+          "engine_witness_report": "C:/Users/hatk8/Documents/Codex/2026-10-27/new-chat/outputs/opponent-article-basics-2026-11-08/README.md"
+        },
+        {
+          "id": "artmage-wsMMwXxE-1",
+          "label": "メディウス＋モンスターコスト",
+          "reference_type": "replay",
+          "category": "基本展開",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/wsMMwXxE",
+          "source_section_url": "https://note.com/kind_borage903/n/n0b8910935f9a#eb14d276-bbd1-4b10-b978-45a83b477c8d",
+          "source_heading_id": "eb14d276-bbd1-4b10-b978-45a83b477c8d",
+          "starter_codes": [
+            97556336
+          ],
+          "starter_cards": [
+            {
+              "code": 97556336,
+              "name": "無垢なる者 メディウス",
+              "selected_count": 2,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "additional_start": "記事にあるコストの種類・枚数を別条件として維持し、動画の開始条件と照合する。",
+          "cost_kind": "monster",
+          "starter_alternatives": [
+            [
+              97556336
+            ]
+          ],
+          "draw_result_not_fixed_for_training": true
+        },
+        {
+          "id": "artmage-wsMMwXxE-2",
+          "label": "メディウス／襲撃＋魔法罠コスト",
+          "reference_type": "replay",
+          "category": "基本展開",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/wsMMwXxE",
+          "source_section_url": "https://note.com/kind_borage903/n/n0b8910935f9a#042c7be4-135d-45f2-bc48-4a12c7aa0499",
+          "source_heading_id": "042c7be4-135d-45f2-bc48-4a12c7aa0499",
+          "starter_codes": [
+            97556336
+          ],
+          "starter_cards": [
+            {
+              "code": 97556336,
+              "name": "無垢なる者 メディウス",
+              "selected_count": 2,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "additional_start": "記事にあるコストの種類・枚数を別条件として維持し、動画の開始条件と照合する。",
+          "cost_kind": "spell_or_trap",
+          "starter_alternatives": [
+            [
+              97556336
+            ],
+            [
+              1122030
+            ]
+          ],
+          "draw_result_not_fixed_for_training": true
+        },
+        {
+          "id": "artmage-vxs2HMAV-1",
+          "label": "獄神獣初動",
+          "reference_type": "replay",
+          "category": "基本展開",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/vxs2HMAV",
+          "source_section_url": "https://note.com/kind_borage903/n/n0b8910935f9a#eafda685-f366-49bd-bcdb-59a94feb096f",
+          "source_heading_id": "eafda685-f366-49bd-bcdb-59a94feb096f",
+          "starter_codes": [
+            23829452
+          ],
+          "starter_cards": [
+            {
+              "code": 23829452,
+              "name": "アルトメギアの獄神獣",
+              "selected_count": 2,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending"
+        },
+        {
+          "id": "artmage-XUS4azXa-1",
+          "label": "学都＋魔法罠コスト1枚",
+          "reference_type": "replay",
+          "category": "基本展開",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/XUS4azXa",
+          "source_section_url": "https://note.com/kind_borage903/n/n0b8910935f9a#426adae2-a1f9-406a-a4fa-5b53dac92499",
+          "source_heading_id": "426adae2-a1f9-406a-a4fa-5b53dac92499",
+          "starter_codes": [
+            74733322
+          ],
+          "starter_cards": [
+            {
+              "code": 74733322,
+              "name": "神芸学都アルトメギア",
+              "selected_count": 3,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "additional_start": "記事にあるコストの種類・枚数を別条件として維持し、動画の開始条件と照合する。"
+        },
+        {
+          "id": "artmage-dAvrxdzV-1",
+          "label": "学都＋魔法罠コスト2枚",
+          "reference_type": "replay",
+          "category": "基本展開",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/dAvrxdzV",
+          "source_section_url": "https://note.com/kind_borage903/n/n0b8910935f9a#e476c29e-eeb5-4a74-8999-67a65e2e4c64",
+          "source_heading_id": "e476c29e-eeb5-4a74-8999-67a65e2e4c64",
+          "starter_codes": [
+            74733322
+          ],
+          "starter_cards": [
+            {
+              "code": 74733322,
+              "name": "神芸学都アルトメギア",
+              "selected_count": 3,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "additional_start": "記事にあるコストの種類・枚数を別条件として維持し、動画の開始条件と照合する。",
+          "article_branch_notes": [
+            "無効系を意識した追加の通常召喚を使う分岐も参照する。"
+          ]
+        },
+        {
+          "id": "artmage-xXerEKuW-1",
+          "label": "テルミナス",
+          "reference_type": "replay",
+          "category": "基本展開",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/xXerEKuW",
+          "source_section_url": "https://note.com/kind_borage903/n/n0b8910935f9a#a3d1c80c-039e-430c-a4f0-b638bbf09f8e",
+          "source_heading_id": "a3d1c80c-039e-430c-a4f0-b638bbf09f8e",
+          "starter_codes": [
+            25661743
+          ],
+          "starter_cards": [
+            {
+              "code": 25661743,
+              "name": "絶解なる獄神門－テルミナス",
+              "selected_count": 3,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_reference_only; full local-engine replay pending"
+        },
+        {
+          "id": "artmage-rYcfTsW2-1",
+          "label": "調和ノ天救竜への対応",
+          "reference_type": "replay",
+          "category": "誘発ケア",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/rYcfTsW2",
+          "source_section_url": "https://note.com/kind_borage903/n/n0b8910935f9a#ffb779c2-a614-468e-b4e4-bda5a7df6cc0",
+          "source_heading_id": "ffb779c2-a614-468e-b4e4-bda5a7df6cc0",
+          "starter_codes": [],
+          "starter_cards": [],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": null,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "initial_state_pending_replay_or_witness_review"
+          },
+          "status": "registered_reference_only; full local-engine replay pending"
+        },
+        {
+          "id": "artmage-XG5YrpJk-1",
+          "label": "マルチャミー・フワロスへの対応",
+          "reference_type": "replay",
+          "category": "誘発ケア",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/XG5YrpJk",
+          "source_section_url": "https://note.com/kind_borage903/n/n0b8910935f9a#b6c92f38-cc7d-4c43-b4b7-e0c48cfe25f3",
+          "source_heading_id": "b6c92f38-cc7d-4c43-b4b7-e0c48cfe25f3",
+          "starter_codes": [],
+          "starter_cards": [],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": null,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "initial_state_pending_replay_or_witness_review"
+          },
+          "status": "registered_reference_only; full local-engine replay pending"
+        },
+        {
+          "id": "artmage-QaCTRqBB-1",
+          "label": "増殖するGへの対応",
+          "reference_type": "replay",
+          "category": "誘発ケア",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/QaCTRqBB",
+          "source_section_url": "https://note.com/kind_borage903/n/n0b8910935f9a#29415ab2-12d4-4dd3-aad3-c3d34f944b0d",
+          "source_heading_id": "29415ab2-12d4-4dd3-aad3-c3d34f944b0d",
+          "starter_codes": [],
+          "starter_cards": [],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": null,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "initial_state_pending_replay_or_witness_review"
+          },
+          "status": "registered_reference_only; full local-engine replay pending"
+        },
+        {
+          "id": "artmage-qRShaDNM-1",
+          "label": "ドロールへの対応",
+          "reference_type": "replay",
+          "category": "誘発ケア",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/qRShaDNM",
+          "source_section_url": "https://note.com/kind_borage903/n/n0b8910935f9a#fb999127-4ea0-48c5-9271-5a41050bbb58",
+          "source_heading_id": "fb999127-4ea0-48c5-9271-5a41050bbb58",
+          "starter_codes": [],
+          "starter_cards": [],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": null,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "initial_state_pending_replay_or_witness_review"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "article_branch_notes": [
+            "ネルヴェド2枚を用いる追加の形は、現在の1枚採用と区別して検証する。",
+            "メディウスとコストを持つ場合の別案も本文にある。"
+          ]
+        },
+        {
+          "id": "artmage-dBmNcMDR-1",
+          "label": "レギナを通された場合の対応",
+          "reference_type": "replay",
+          "category": "誘発ケア",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/dBmNcMDR",
+          "source_section_url": "https://note.com/kind_borage903/n/n0b8910935f9a#19b382c8-7554-4027-a0c6-048149ff693e",
+          "source_heading_id": "19b382c8-7554-4027-a0c6-048149ff693e",
+          "starter_codes": [],
+          "starter_cards": [],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": null,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "initial_state_pending_replay_or_witness_review"
+          },
+          "status": "registered_reference_only; full local-engine replay pending"
+        },
+        {
+          "id": "artmage-4FK42xFG-1",
+          "label": "マルチャミー・プルリアへの対応",
+          "reference_type": "replay",
+          "category": "誘発ケア",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/4FK42xFG",
+          "source_section_url": "https://note.com/kind_borage903/n/n0b8910935f9a#66017f3e-53e8-4f7b-8772-8f01362de71a",
+          "source_heading_id": "66017f3e-53e8-4f7b-8772-8f01362de71a",
+          "starter_codes": [],
+          "starter_cards": [],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": null,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "initial_state_pending_replay_or_witness_review"
+          },
+          "status": "registered_reference_only; full local-engine replay pending",
+          "article_branch_notes": [
+            "テルミナス以外に、必要なコストがあるメディウス・学都の始動も本文で言及されている。"
+          ]
+        },
+        {
+          "id": "artmage-text-negation",
+          "label": "無効系への対応",
+          "reference_type": "article_text",
+          "category": "誘発ケア",
+          "url": null,
+          "source_section_url": "https://note.com/kind_borage903/n/n0b8910935f9a#a52b63ba-eccf-4925-9804-19a5dbc7be91",
+          "source_heading_id": "a52b63ba-eccf-4925-9804-19a5dbc7be91",
+          "starter_codes": [],
+          "starter_cards": [],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": null,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "initial_state_pending_replay_or_witness_review"
+          },
+          "status": "registered_text_only_branch; engine witness pending",
+          "article_branch_notes": [
+            "獄神獣を使う回避や、無効になった個体を素材にする案。完成した個別手順ではない。"
+          ]
+        },
+        {
+          "id": "artmage-text-ogre",
+          "label": "幽鬼うさぎへの対応",
+          "reference_type": "article_text",
+          "category": "誘発ケア",
+          "url": null,
+          "source_section_url": "https://note.com/kind_borage903/n/n0b8910935f9a#59d3832a-c6f6-469b-96bc-66224ffdb584",
+          "source_heading_id": "59d3832a-c6f6-469b-96bc-66224ffdb584",
+          "starter_codes": [],
+          "starter_cards": [],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": null,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "initial_state_pending_replay_or_witness_review"
+          },
+          "status": "registered_text_only_branch; engine witness pending",
+          "article_branch_notes": [
+            "学都の効果を使う順番と、改変を併せ持つ場合や奪還・襲撃を使う案を分ける。"
+          ]
+        }
+      ],
+      "core_codes": [
+        74733322,
+        74011784,
+        1122030,
+        25661743,
+        60946049,
+        97434754,
+        34541940,
+        23829452,
+        17473466,
+        70488851,
+        31822037,
+        36709484,
+        74631897,
+        27184601,
+        53589300,
+        87758525,
+        23599634,
+        44654994
+      ],
+      "core_presence": [
+        {
+          "code": 74733322,
+          "name": "神芸学都アルトメギア",
+          "present": true
+        },
+        {
+          "code": 74011784,
+          "name": "アルトメギア・バーニッシュ－改変－",
+          "present": true
+        },
+        {
+          "code": 1122030,
+          "name": "アルトメギア・ヴァンダリズム－襲撃－",
+          "present": true
+        },
+        {
+          "code": 25661743,
+          "name": "絶解なる獄神門－テルミナス",
+          "present": true
+        },
+        {
+          "code": 60946049,
+          "name": "神芸学徒 グラフレア",
+          "present": true
+        },
+        {
+          "code": 97434754,
+          "name": "神芸学徒 リテラ",
+          "present": true
+        },
+        {
+          "code": 34541940,
+          "name": "神芸学徒 ファインメルト",
+          "present": true
+        },
+        {
+          "code": 23829452,
+          "name": "アルトメギアの獄神獣",
+          "present": true
+        },
+        {
+          "code": 17473466,
+          "name": "獄神影獣－ネルヴェド",
+          "present": true
+        },
+        {
+          "code": 70488851,
+          "name": "混絶獄神ヴィードリウム",
+          "present": true
+        },
+        {
+          "code": 31822037,
+          "name": "無垢なる祈りの獄神使",
+          "present": true
+        },
+        {
+          "code": 36709484,
+          "name": "予幻なき日々のまぼろし",
+          "present": true
+        },
+        {
+          "code": 74631897,
+          "name": "神芸なる知恵の乙女",
+          "present": true
+        },
+        {
+          "code": 27184601,
+          "name": "神芸獄徒 ディアクトロス",
+          "present": true
+        },
+        {
+          "code": 53589300,
+          "name": "創獄神ネルヴァ",
+          "present": true
+        },
+        {
+          "code": 87758525,
+          "name": "Ｆ・ＨＥＲＯ シャイニング・フレア・ウィングマン",
+          "present": true
+        },
+        {
+          "code": 23599634,
+          "name": "アルトメギア・メセナ－覚醒－",
+          "present": true
+        },
+        {
+          "code": 44654994,
+          "name": "アルトメギア・インパスト－奪還－",
+          "present": true
+        }
+      ],
+      "selected_recipe_source": "C:\\Users\\hatk8\\Downloads\\DK0019036118_261_ja_ﾃﾞｯｷ_202611072230021_.pdf",
+      "selected_recipe_sha256": "b1a4c53e0fa2fe77aa00a900b10eb67936b8cb1846b189b849dd4f168c2e4ceb",
+      "recipe_changed": false,
+      "article_build_assumed_identical": false,
+      "opening_notes": [
+        {
+          "id": "artmage-note-varnish",
+          "label": "改変からの初動接続",
+          "reference_type": "opening_note",
+          "category": "カード紹介中の補足初動",
+          "url": null,
+          "source_section_url": "https://note.com/kind_borage903/n/n0b8910935f9a#77bf4f0e-b9ba-48fd-b991-043537a943cb",
+          "source_heading_id": "77bf4f0e-b9ba-48fd-b991-043537a943cb",
+          "starter_codes": [
+            74011784
+          ],
+          "starter_cards": [
+            {
+              "code": 74011784,
+              "name": "アルトメギア・バーニッシュ－改変－",
+              "selected_count": 3,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_opening_note; full sequence not provided in article",
+          "article_branch_notes": [
+            "初動にアクセスするカードとしての説明。専用の全手順は未掲載。"
+          ]
+        },
+        {
+          "id": "artmage-note-finemelt",
+          "label": "ファインメルトから知恵の乙女を使う初動",
+          "reference_type": "opening_note",
+          "category": "カード紹介中の補足初動",
+          "url": null,
+          "source_section_url": "https://note.com/kind_borage903/n/n0b8910935f9a#566e36f5-8223-4301-a226-911135128bb6",
+          "source_heading_id": "566e36f5-8223-4301-a226-911135128bb6",
+          "starter_codes": [
+            34541940
+          ],
+          "starter_cards": [
+            {
+              "code": 34541940,
+              "name": "神芸学徒 ファインメルト",
+              "selected_count": 2,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_opening_note; full sequence not provided in article",
+          "article_branch_notes": [
+            "初動として言及あり。必要な追加コストと全手順は今後確認する。"
+          ]
+        },
+        {
+          "id": "artmage-note-nervedo",
+          "label": "ネルヴェドから知恵の乙女を使う初動",
+          "reference_type": "opening_note",
+          "category": "カード紹介中の補足初動",
+          "url": null,
+          "source_section_url": "https://note.com/kind_borage903/n/n0b8910935f9a#566e36f5-8223-4301-a226-911135128bb6",
+          "source_heading_id": "566e36f5-8223-4301-a226-911135128bb6",
+          "starter_codes": [
+            17473466
+          ],
+          "starter_cards": [
+            {
+              "code": 17473466,
+              "name": "獄神影獣－ネルヴェド",
+              "selected_count": 1,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_opening_note; full sequence not provided in article",
+          "article_branch_notes": [
+            "初動として言及あり。必要な追加コストと全手順は今後確認する。"
+          ]
+        },
+        {
+          "id": "artmage-note-beast-finemelt",
+          "label": "獄神獣の通常召喚＋ファインメルト",
+          "reference_type": "opening_note",
+          "category": "カード紹介中の補足初動",
+          "url": null,
+          "source_section_url": "https://note.com/kind_borage903/n/n0b8910935f9a#890b7fb0-e727-4493-98ce-1e9edd0beae2",
+          "source_heading_id": "890b7fb0-e727-4493-98ce-1e9edd0beae2",
+          "starter_codes": [
+            23829452,
+            34541940
+          ],
+          "starter_cards": [
+            {
+              "code": 23829452,
+              "name": "アルトメギアの獄神獣",
+              "selected_count": 2,
+              "present": true
+            },
+            {
+              "code": 34541940,
+              "name": "神芸学徒 ファインメルト",
+              "selected_count": 2,
+              "present": true
+            }
+          ],
+          "registration_status": "registered",
+          "normal_summon_usage_scored": false,
+          "validation": {
+            "article_reference_observed": true,
+            "full_replay_reviewed": false,
+            "local_engine_verified": false,
+            "used_for_training": false
+          },
+          "initial_named_starters_in_selected_recipe": true,
+          "compatibility": {
+            "missing_named_starters": [],
+            "full_route_requirements_checked": false,
+            "status": "named_starters_present_full_route_pending"
+          },
+          "status": "registered_opening_note; full sequence not provided in article",
+          "article_branch_notes": [
+            "カード紹介内の2枚の動き。専用のリプレイはない。"
+          ]
+        }
+      ],
+      "context_notes": [
+        {
+          "label": "将来の採用候補の記述",
+          "source_section_url": "https://note.com/kind_borage903/n/n0b8910935f9a#5929eada-109e-461f-bd40-35c1ccd20c23",
+          "note": "ビフレストに関する記述は将来候補の説明であり、現在の採用済みレシピへ勝手に追加しない。"
+        }
+      ],
+      "coverage": {
+        "all_public_replay_occurrences_registered": true,
+        "observed_replay_occurrences": 13,
+        "observed_unique_replay_urls": 12,
+        "registered_replay_occurrences": 13,
+        "registered_unique_replay_urls": 12,
+        "basic_opening_cases": 7,
+        "interruption_cases": 8,
+        "text_only_branches": 2,
+        "supplementary_opening_notes": 4,
+        "duplicate_replay_url_conditions_preserved": true,
+        "public_openings_and_branches_complete": true,
+        "full_article_accessible": true
+      }
+    }
+  ],
+  "validation_order": [
+    "既存リプレイの全手順とカード対応を確認",
+    "選択済みPDFレシピの枚数・必要カード・コストを照合",
+    "ローカルエンジンで合法な操作として再現",
+    "確認済みの手順だけを学習と別初手評価へ採用"
+  ],
+  "coverage_verification": {
+    "status": "passed",
+    "all_44_public_replay_urls_registered": true,
+    "all_45_public_replay_occurrences_registered": true,
+    "no_previously_registered_url_lost": true,
+    "clown_routes": 32,
+    "artmage_cases": 15,
+    "artmage_supplementary_opening_notes": 4,
+    "total_reference_entries": 51,
+    "text_only_branches": 2,
+    "distinct_replay_urls": 44,
+    "source_link_occurrences": 45,
+    "excluded_scope": "ClownTroupe paid Appendix",
+    "engine_replay_verified": false,
+    "trained_from_references": false,
+    "engine_verified_reference_entries": 2,
+    "trained_reference_entries": 2,
+    "all_reference_entries_trained": false,
+    "all_reference_entries_engine_verified": false,
+    "missing_named_starter_entries": [
+      {
+        "id": "clown-CAaV2Y29",
+        "label": "極芸＋フェンリル・ドロールを意識した形",
+        "missing": [
+          {
+            "code": 32909498,
+            "name": "クシャトリラ・フェンリル",
+            "selected_count": 0,
+            "present": false
+          }
+        ]
+      },
+      {
+        "id": "clown-3k9GGRWL",
+        "label": "極芸＋フェンリル・墓地リンクリボーを優先",
+        "missing": [
+          {
+            "code": 32909498,
+            "name": "クシャトリラ・フェンリル",
+            "selected_count": 0,
+            "present": false
+          }
+        ]
+      },
+      {
+        "id": "clown-q4KANa5q",
+        "label": "開演＋フェンリル",
+        "missing": [
+          {
+            "code": 32909498,
+            "name": "クシャトリラ・フェンリル",
+            "selected_count": 0,
+            "present": false
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,183 @@
+--- coverage code/cv_train.py (d7b86bcb)	2026-11-11 18:22:32.740216214 +0900
++++ code/rs_train.py	2026-11-11 18:23:25.953275710 +0900
+@@ -1,11 +1,11 @@
+-"""Response coverage jobs (CPU; no engine duel). Same scoped adapter structure (sa_model.py, unchanged hash fe9856bd); the
+-only change is the training set: 2 positive screens (CE) + 2 keep screens (KL to the frozen base+head distribution).
+-
+-  cv_train.py prepare   frozen inference along the saved histories: the 4 screens (frozen logits, chain / action features,
+-                        legal mask, label or reference distribution), zero-adapter equivalence on 42 sequences + the 8 comparison
+-                        runs, gate-from-features vs snapshot, record consistency -> cache/screens.npz, cache/prepare.json
+-  cv_train.py train     512 updates of a NEW adapter (same seed / init as the scoped study), loss = mean(CE_S1, CE_S2) +
+-                        1.0 * mean(KL_M, KL_P); save the 3-file candidate; post-training checks
++"""Relative-score retention jobs (CPU; no engine duel). Derived from the coverage study's cv_train.py: same structure
++(sa_model.py unchanged), same 4 screens, same CE / KL; ADDED: relative_retention = mean over screens of mean over the
++protected options of (delta(option) - delta(pass))^2, coefficient 1.0. Protected = legal options except pass and (on S1 / S2)
++every option with the same meaning as the taught one.
++
++  rs_train.py prepare   the 4-screen cache (+ pass index, protected masks), equality with the coverage cache, zero-adapter
++                        equivalence, gate check -> cache/screens.npz, cache/prepare.json (written once)
++  rs_train.py train     512 updates of a new adapter (seed 11111501, zero output), save the 3-file candidate, post checks
+ """
+ import hashlib
+ import json
+@@ -17,7 +17,8 @@
+ import time
+ import traceback
+ 
+-ROOT = Path('/home/hatk8/projects/yugioh-ai/experiments/artmage-response-coverage-20261111')
++ROOT = Path('/home/hatk8/projects/yugioh-ai/experiments/artmage-relative-score-retention-20261111')
++COVERAGE = Path('/home/hatk8/projects/yugioh-ai/experiments/artmage-response-coverage-20261111')
+ P = Path('/home/hatk8/projects/yugioh-ai')
+ sys.path.insert(0, str(ROOT / 'code'))
+ import sa_model as SM  # noqa: E402
+@@ -35,7 +36,9 @@
+ FROZEN = (ROOT / 'models/frozen/base.flax_model', ROOT / 'models/frozen/chain-head.flax_model')
+ SEED = 11111501
+ COEF = 1.0
+-CONFIG = dict(updates=512, learning_rate=1e-3, adam_eps=1e-5, max_grad_norm=1.0, seed=SEED, kl_coefficient=COEF, batch='all 4 screens every update')
++COEF_REL = 1.0
++CONFIG = dict(updates=512, learning_rate=1e-3, adam_eps=1e-5, max_grad_norm=1.0, seed=SEED, kl_coefficient=COEF, relative_coefficient=COEF_REL,
++              batch='all 4 screens every update')
+ CACHE = ROOT / 'cache/screens.npz'
+ FLC = P / 'experiments/artmage-functional-landing-compare-20261110'
+ PROBE = P / 'experiments/artmage-opponent-turn-probe-20261111'
+@@ -228,13 +231,31 @@
+         cache[f'{k}__legal'] = legal
+         cache[f'{k}__label'] = np.int32(executed if sc['kind'] == 'ce' else -1)
+         cache[f'{k}__ref_logp'] = ref
++        # pass = the snapshot's Cancel option (checked against the NPZ legal row); protected = legal minus pass minus the taught meaning
++        passes = [a['index'] for a in acts.values() if a['act'] == 'Cancel']
++        if len(passes) != 1 or not legal[passes[0]] or sorted(acts) != [int(x) for x in np.flatnonzero(legal)]:
++            raise RuntimeError(f'{k}: pass / legal options do not match the snapshot')
++        taught = set()
++        if sc['kind'] == 'ce':
++            want = (acts[executed]['act'], acts[executed]['code'], acts[executed].get('effect'))
++            taught = {ix for ix, a in acts.items() if (a['act'], a['code'], a.get('effect')) == want}
++        protect = legal.copy()
++        protect[passes[0]] = False
++        for ix in taught:
++            protect[ix] = False
++        cache[f'{k}__pass'] = np.int32(passes[0])
++        cache[f'{k}__protect'] = protect
+         p = np.exp(np.where(legal, ref, -np.inf))
+         info[k] = dict(kind=sc['kind'], note=sc['note'], step=sc['step'], npz_index=i, who=screens[k]['who'], files=screens[k]['files'],
+                        chain=h['chain'][i].tolist(), frozen_first=dict(index=fa, act=acts[fa]['act'], code=acts[fa]['code'], effect=acts[fa].get('effect')),
+                        recorded=dict(index=executed, act=acts[executed]['act'], code=acts[executed]['code'], effect=acts[executed].get('effect')),
+                        frozen_probs={f"{acts[ix]['act']}:{acts[ix]['code']}:{acts[ix].get('effect')}": float(p[ix]) for ix in acts},
+-                       gated_steps_in_history=[t for t in range(len(h['labels'])) if SM.gate(h['actions_'][t], h['chain'][t])])
++                       gated_steps_in_history=[t for t in range(len(h['labels'])) if SM.gate(h['actions_'][t], h['chain'][t])],
++                       pass_index=passes[0], taught_indices=sorted(taught), protected=[dict(index=int(ix), act=acts[int(ix)]['act'], code=acts[int(ix)]['code'],
++                                                                                            effect=acts[int(ix)].get('effect')) for ix in np.flatnonzero(protect)])
+     np.savez_compressed(CACHE, **cache)
++    with np.load(COVERAGE / 'cache/screens.npz') as zc:
++        coverage_equal = {key: bool(np.array_equal(zc[key], cache[key])) for key in zc.files}
+     # zero-adapter equivalence on 42 + 8 sequences, and position-adapter actions
+     items, labels = all_sequences()
+     zero = three_file_folder(SM.init_adapter(SEED), 'zero-initialised adapter (precheck only)')
+@@ -261,8 +282,9 @@
+                   screens=info, cache=dict(file=str(CACHE), sha256=sha(CACHE), source='frozen Policy.infer on the CPU along the saved histories (the evaluation backend)'),
+                   zero_adapter=dict(comparison=zero_cmp, on_target_equal=all(e['max_abs_change'] == 0.0 for e in zero_cmp['on_target']), position_actions_equal=acts_orig == acts_zero,
+                                     sequences=len(items)),
+-                  gate_vs_snapshot=dict(decisions=total, mismatches=gv), gated_npz_indices_in_the_8_runs=gated_flc)
+-    ok = (zero_cmp['off_target_logit_differences'] == 0 and zero_cmp['rnn_state_differences'] == 0 and result['zero_adapter']['on_target_equal']
++                  gate_vs_snapshot=dict(decisions=total, mismatches=gv), gated_npz_indices_in_the_8_runs=gated_flc,
++                  coverage_cache=dict(file=str(COVERAGE / 'cache/screens.npz'), sha256=sha(COVERAGE / 'cache/screens.npz'), arrays_equal=coverage_equal))
++    ok = (all(coverage_equal.values()) and zero_cmp['off_target_logit_differences'] == 0 and zero_cmp['rnn_state_differences'] == 0 and result['zero_adapter']['on_target_equal']
+           and acts_orig == acts_zero and not gv)
+     result['all_prechecks_passed'] = ok
+     (ROOT / 'cache/prepare.json').write_text(json.dumps(result, ensure_ascii=False, indent=1, default=float) + '\n')
+@@ -270,7 +292,8 @@
+                                                       gated=zero_cmp['gated'], position_equal=acts_orig == acts_zero),
+                                      gate=dict(decisions=total, mismatches=len(gv)), gated_flc=gated_flc,
+                                      screens={k: dict(index=v['npz_index'], frozen_first=v['frozen_first'], recorded=v['recorded'], who=v['who']) for k, v in info.items()},
+-                                     cache=result['cache']['sha256']), ensure_ascii=False), flush=True)
++                                     protected={k: [(x['code'], x['effect']) for x in v['protected']] for k, v in info.items()},
++                                     coverage_cache_equal=all(coverage_equal.values()), cache=result['cache']['sha256']), ensure_ascii=False), flush=True)
+ 
+ 
+ def load_batch():
+@@ -280,7 +303,9 @@
+                 actions=jnp.asarray(np.stack([c[f'{k}__actions'] for k in ORDER])), legal=jnp.asarray(np.stack([c[f'{k}__legal'] for k in ORDER])),
+                 label=jnp.asarray(np.stack([max(int(c[f'{k}__label']), 0) for k in ORDER]).astype(np.int32)),
+                 ref_logp=jnp.asarray(np.stack([c[f'{k}__ref_logp'] for k in ORDER])),
+-                is_ce=jnp.asarray(np.array([SCREENS[k]['kind'] == 'ce' for k in ORDER])))
++                is_ce=jnp.asarray(np.array([SCREENS[k]['kind'] == 'ce' for k in ORDER])),
++                pass_index=jnp.asarray(np.stack([c[f'{k}__pass'] for k in ORDER]).astype(np.int32)),
++                protect=jnp.asarray(np.stack([c[f'{k}__protect'] for k in ORDER])))
+ 
+ 
+ def log_q(adapter, batch):
+@@ -304,18 +329,31 @@
+     return jnp.sum(kl * w) / jnp.sum(w), dict(kl=kl)
+ 
+ 
+-def make_step(optimizer, batch, coef=COEF):
++def rel_term(adapter, batch):
++    """mean over screens (with protected options) of mean over protected options of (delta(o) - delta(pass))^2. Invariant to a common shift."""
++    delta = SM.ADAPTER.apply(adapter, batch['chain'], batch['actions'])
++    rel = delta - jnp.take_along_axis(delta, batch['pass_index'][:, None], -1)
++    m = batch['protect'].astype(jnp.float32)
++    n = jnp.sum(m, -1)
++    per = jnp.sum(rel ** 2 * m, -1) / jnp.maximum(n, 1.0)
++    valid = (n > 0).astype(jnp.float32)
++    return jnp.sum(per * valid) / jnp.maximum(jnp.sum(valid), 1.0), dict(per_screen_rel=per, max_abs_rel=jnp.max(jnp.abs(rel) * m, -1))
++
++
++def make_step(optimizer, batch, coef=COEF, coef_rel=COEF_REL):
+     @jax.jit
+     def step(p, o):
+         (ce, aux_ce), g_ce = jax.value_and_grad(ce_term, has_aux=True)(p, batch)
+         (kl, aux_kl), g_kl = jax.value_and_grad(kl_term, has_aux=True)(p, batch)
+-        g = jax.tree.map(lambda a, b: a + coef * b, g_ce, g_kl)
++        (rl, aux_rl), g_rl = jax.value_and_grad(rel_term, has_aux=True)(p, batch)
++        g = jax.tree.map(lambda a, b, c: a + coef * b + coef_rel * c, g_ce, g_kl, g_rl)
+         gn = optax.global_norm(g)
+         upd, o = optimizer.update(g, o, p)
+         new = optax.apply_updates(p, upd)
+-        return new, o, dict(loss=ce + coef * kl, ce=ce, kl=kl, per_screen_ce=aux_ce['ce'], per_screen_kl=aux_kl['kl'], ce_grad_norm=optax.global_norm(g_ce),
+-                            kl_grad_norm=optax.global_norm(g_kl), grad_norm=gn, clipped=gn > CONFIG['max_grad_norm'], update_norm=optax.global_norm(upd),
+-                            max_abs_delta=jnp.max(jnp.abs(jnp.where(batch['legal'], aux_ce['delta'], 0.0))))
++        return new, o, dict(loss=ce + coef * kl + coef_rel * rl, ce=ce, kl=kl, rel=rl, per_screen_ce=aux_ce['ce'], per_screen_kl=aux_kl['kl'],
++                            per_screen_rel=aux_rl['per_screen_rel'], max_abs_rel=aux_rl['max_abs_rel'], ce_grad_norm=optax.global_norm(g_ce),
++                            kl_grad_norm=optax.global_norm(g_kl), rel_grad_norm=optax.global_norm(g_rl), grad_norm=gn, clipped=gn > CONFIG['max_grad_norm'],
++                            update_norm=optax.global_norm(upd), max_abs_delta=jnp.max(jnp.abs(jnp.where(batch['legal'], aux_ce['delta'], 0.0))))
+     return step
+ 
+ 
+@@ -333,6 +371,10 @@
+         out[k] = dict(kind=SCREENS[k]['kind'], argmax=int(p.argmax()), target_index=target, argmax_is_target=int(p.argmax()) == target,
+                       p_target=float(p[target]), p_frozen=dict((int(i), float(ref[i])) for i in idx), p_now=dict((int(i), float(p[i])) for i in idx),
+                       delta=dict((int(i), float(delta[j, i])) for i in idx),
++                      pass_index=int(batch['pass_index'][j]),
++                      relative_delta={int(i): float(delta[j, i] - delta[j, int(batch['pass_index'][j])]) for i in idx},
++                      old_margin_vs_pass={int(i): float(batch['frozen'][j, i] - batch['frozen'][j, int(batch['pass_index'][j])]) for i in idx},
++                      max_abs_rel_protected=float(max([abs(delta[j, i] - delta[j, int(batch['pass_index'][j])]) for i in np.flatnonzero(np.asarray(batch['protect'][j]))] or [0.0])),
+                       ce=float(-lq[j, target]) if SCREENS[k]['kind'] == 'ce' else None,
+                       kl=float(np.sum(np.where(legal, ref * (np.asarray(batch['ref_logp'][j]) - lq[j]), 0.0))) if SCREENS[k]['kind'] == 'kl' else None)
+     return out
+@@ -355,7 +397,7 @@
+     assert sorted(x.shape for x in jax.tree.leaves(opt_state) if hasattr(x, 'shape') and x.ndim > 0) == sorted([x.shape for x in jax.tree.leaves(params)] * 2)
+     step = make_step(optimizer, batch)
+     diag = {0: screen_detail(params, batch, prep)}
+-    print('SCREENS 0', json.dumps({k: dict(argmax_is_target=v['argmax_is_target'], p_target=round(v['p_target'], 5), ce=v['ce'], kl=v['kl']) for k, v in diag[0].items()}), flush=True)
++    print('SCREENS 0', json.dumps({k: dict(argmax_is_target=v['argmax_is_target'], p_target=round(v['p_target'], 5), ce=v['ce'], kl=v['kl'], max_rel=v['max_abs_rel_protected']) for k, v in diag[0].items()}), flush=True)
+     t0 = time.time()
+     with (out / 'updates.jsonl').open('w') as h:
+         for u in range(CONFIG['updates']):
+@@ -366,14 +408,14 @@
+             if not np.isfinite(row['loss']):
+                 raise SystemExit(f'non-finite loss at update {u + 1}')
+     diag[CONFIG['updates']] = screen_detail(params, batch, prep)
+-    print('SCREENS 512', json.dumps({k: dict(argmax_is_target=v['argmax_is_target'], p_target=round(v['p_target'], 5), ce=v['ce'], kl=v['kl']) for k, v in diag[512].items()}), flush=True)
++    print('SCREENS 512', json.dumps({k: dict(argmax_is_target=v['argmax_is_target'], p_target=round(v['p_target'], 5), ce=v['ce'], kl=v['kl'], max_rel=v['max_abs_rel_protected']) for k, v in diag[512].items()}), flush=True)
+     cand = out / 'candidate'
+     cand.mkdir()
+     for f in FROZEN:
+         shutil.copyfile(f, cand / f.name)
+     SM.save_adapter(params, cand / 'response-adapter.flax_model')
+     manifest = SM.write_manifest(cand, cand / 'base.flax_model', cand / 'chain-head.flax_model', cand / 'response-adapter.flax_model',
+-                                 dict(seed=SEED, updates=CONFIG['updates'], screens=ORDER, kl_coefficient=COEF, registration_sha256=sha(ROOT / 'registration.json')))
++                                 dict(seed=SEED, updates=CONFIG['updates'], screens=ORDER, kl_coefficient=COEF, relative_coefficient=COEF_REL, registration_sha256=sha(ROOT / 'registration.json')))
+     for f in cand.iterdir():
+         os.chmod(f, 0o444)
+     assert (sha(cand / 'base.flax_model'), sha(cand / 'chain-head.flax_model')) == SM.FROZEN_SHA

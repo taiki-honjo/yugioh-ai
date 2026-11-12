@@ -1,0 +1,30 @@
+{
+  "phase": "learned-model-duels-fixed",
+  "started_utc": "2026-10-27T12:32:04.647054+00:00",
+  "command": [
+    "/opt/ygo-ai/.venv/bin/python",
+    "-u",
+    "eval.py",
+    "--deck",
+    "../assets/deck/BlueEyes.ydk",
+    "--num-episodes",
+    "4",
+    "--num-envs",
+    "2",
+    "--env-threads",
+    "2",
+    "--bot-type",
+    "random",
+    "--seed",
+    "100",
+    "--checkpoint",
+    "/opt/ygo-ai/experiments/blueeyes-persistent/checkpoints/1793104230_4096steps.flax_model"
+  ],
+  "exit_code": 0,
+  "timed_out": false,
+  "wall_seconds": 22.806,
+  "peak_total_gpu_memory_mib": 2507,
+  "gpu_memory_note": "Total device usage includes Windows and other applications.",
+  "child_peak_rss_kib": 1347404,
+  "log_path": "/mnt/c/Users/hatk8/Documents/Codex/2026-10-27/new-chat/work/ygo-trial/logs/learned-model-duels-fixed.log"
+}

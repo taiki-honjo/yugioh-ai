@@ -1,0 +1,338 @@
+{
+  "eval_version": "opening-capability-eval-v1",
+  "status": "specification fixtures; P1 and P2 generated and engine-run on 2026-11-09 (experiments/capability-probe-20261109), others not generated",
+  "rules": [
+    "Positive examples are generated from TRAIN-split hands (or new spec-development hands). Validation, holdout and fixed-test action sequences are never used.",
+    "Expected verdicts below come from card text unless engine_verified is true; none is engine-verified yet.",
+    "An example that cannot be generated stays 'unverified'; it is never counted as passed or as zero."
+  ],
+  "statuses": [
+    "verified",
+    "conditional",
+    "unverified",
+    "absent",
+    "unreproducible"
+  ],
+  "outcome_classes": {
+    "direct_stop": "the scripted opponent action itself did not take effect (judged from the post-resolution state)",
+    "removal_or_board_effect": "opponent card destroyed/bounced/negated; removing the source alone is NOT stopping an activated effect",
+    "continuing_restriction": "later opponent actions restricted (Droll)",
+    "resource_gain": "own resources gained (Maxx C draws, B2B 3)",
+    "opponent_decision_change": "opponent line changed (needs comparison tests before any causal claim)",
+    "enabled": "made another response or line possible (Remix 2, set Kewl Tune Synchro)"
+  },
+  "scripts": {
+    "O1": "opponent: Rukina 1 (special summon to centre) then Rukina 2 (add an Elfnotes monster from deck); existing opponent_steps",
+    "O1x2": "O1, then a second monster-effect activation the fixed opponent hand/deck can legally produce (to be fixed before use)",
+    "O-spell-search": "opponent activates a search spell (Kewl Tune Synchro added to the opponent fixture hand; evaluation-only fixture change; to be fixed before use)"
+  },
+  "examples": [
+    {
+      "id": "P1",
+      "kind": "positive",
+      "requirement": 1,
+      "source": {
+        "split": "train",
+        "case_id": "cue-reco-jj-zaren-g00-p0",
+        "hand": [
+          "Kewl Tune Cue",
+          "Effect Veiler",
+          "Effect Veiler",
+          "Effect Veiler",
+          "Kewl Tune Reco"
+        ],
+        "seed": 151080,
+        "route": "teacher plan of the case"
+      },
+      "expected_end_of_own_turn": {
+        "monsters": [
+          "Zaren",
+          "Remix"
+        ],
+        "spell_trap": [
+          "Jukejoint face-up",
+          "Kewl Tune Synchro set"
+        ]
+      },
+      "expected": {
+        "O1": {
+          "status": "verified",
+          "stopped": 1,
+          "path": [
+            "Remix 2 (release, Ash to hand)",
+            "Ash Blossom negates Rukina 2"
+          ],
+          "outcome": "search_negated"
+        },
+        "skills": {
+          "jj_ash_release": "done",
+          "remix_recovery": "done"
+        },
+        "also_report": {
+          "Effect Veiler on Rukina": "unverified",
+          "Zaren 2": "conditional (needs an effect activated in chain to another)"
+        }
+      },
+      "engine_verified": true,
+      "generated": true,
+      "basis": "same mechanism the current JJ recovery check verifies for teacher routes (opponent_search_negated); this specific train hand not yet run",
+      "engine_result": {
+        "record_run": 1,
+        "replay_run": 2,
+        "model_use_run": 5,
+        "preparation": "draw phase: Remix 2 (chain link 1), Ash to hand, Reco special summoned; resolved before the search",
+        "response": "Ash Blossom as chain link 2 to Rukina 2",
+        "outcome": "search_not_applied (opponent hand unchanged through the chain)",
+        "other_legal_candidates_at_search": [
+          "Effect Veiler x3 (unverified)",
+          "Kewl Tune Synchro (unverified)"
+        ],
+        "zaren_2": "legal once the chain was Rukina 2 -> Ash (resolution unverified)",
+        "scope": "this teacher-built position and this path only"
+      }
+    },
+    {
+      "id": "P2",
+      "kind": "positive",
+      "requirement": 1,
+      "source": {
+        "split": "train",
+        "case_id": "elf-rukina-regina-g00-p0",
+        "route": "teacher plan of the case (arm pass)"
+      },
+      "expected_end_of_own_turn": {
+        "monsters": [
+          "Crystal Wing Synchro Dragon",
+          "Baronne de Fleur"
+        ],
+        "spell_trap": [
+          "Parallelism face-up",
+          "Rhapsodia face-up"
+        ]
+      },
+      "expected": {
+        "O1": {
+          "legal_candidates_seen": [
+            "Crystal Wing 1",
+            "Baronne 2",
+            "Rhapsodia (description 0)",
+            "Ghost Ogre",
+            "調和ノ天救竜",
+            "Maxx C"
+          ],
+          "status": "legal candidates; stopping unverified"
+        },
+        "O1x2": {
+          "stopped_at_least": 2,
+          "status": "unverified"
+        }
+      },
+      "engine_verified": "candidates only",
+      "generated": true,
+      "basis": "card text only; whether each can respond in the opponent turn must be shown by legal actions",
+      "engine_result": {
+        "record_run": 3,
+        "probe_run": 4,
+        "model_use_run": 6,
+        "pass_control": "search_resolved when we pass",
+        "model_use": "Rhapsodia activated in the draw phase (Baronne to graveyard); passed at the search window; search resolved"
+      }
+    },
+    {
+      "id": "P3",
+      "kind": "positive",
+      "requirement": 2,
+      "source": null,
+      "expected": {
+        "definition": "an unregistered end board, legally reached from a train hand, that stops O1 and keeps a legal next-turn start"
+      },
+      "status": "unverified",
+      "engine_verified": false,
+      "generated": false,
+      "basis": "no such route has been observed; do not register until legality, O1 stop and follow-up are engine-verified"
+    },
+    {
+      "id": "N1",
+      "kind": "negative",
+      "requirement": 3,
+      "source": {
+        "derived_from": "P2",
+        "difference": "Baronne 2 already used during our own turn (trace contains its activation)"
+      },
+      "expected": {
+        "Baronne 2": "absent (once while face-up)",
+        "name_only_evaluator_would_count_it": true
+      },
+      "status": "unverified",
+      "engine_verified": false,
+      "generated": false,
+      "basis": "card text; how to reach this state from a train hand is not decided"
+    },
+    {
+      "id": "N2",
+      "kind": "negative",
+      "requirement": 3,
+      "source": {
+        "derived_from": "P1",
+        "difference": "fewer than two non-Synchro tuners in our graveyard"
+      },
+      "expected": {
+        "Remix 2": "absent (cost/condition not met)",
+        "O1": {
+          "stopped": 0,
+          "unless": "another legal stopper exists"
+        }
+      },
+      "status": "unverified",
+      "engine_verified": false,
+      "generated": false,
+      "basis": "card text (Remix 2 selects two non-Synchro tuners from the graveyard); graveyard contents and card types are observable, legality must be confirmed by probe"
+    },
+    {
+      "id": "N3",
+      "kind": "negative",
+      "requirement": 4,
+      "source": {
+        "constructed": "two Ash Blossom in hand",
+        "script": "O1x2"
+      },
+      "expected": {
+        "Ash Blossom": {
+          "stopped_max": 1,
+          "reason": "once per turn by card name"
+        }
+      },
+      "status": "unverified",
+      "engine_verified": false,
+      "generated": false,
+      "basis": "card text"
+    },
+    {
+      "id": "N4",
+      "kind": "negative",
+      "requirement": 3,
+      "source": {
+        "constructed": "Crystal Wing as the only possible responder",
+        "script": "O-spell-search"
+      },
+      "expected": {
+        "Crystal Wing 1": "absent (responds to monster effects only)"
+      },
+      "status": "unverified",
+      "engine_verified": false,
+      "generated": false,
+      "basis": "card text"
+    },
+    {
+      "id": "N5",
+      "kind": "classification",
+      "requirement": 4,
+      "source": {
+        "constructed": "hand Effect Veiler, Droll & Lock Bird, Maxx C",
+        "script": "O1"
+      },
+      "expected": {
+        "O1_direct_stop": {
+          "Droll": 0,
+          "Maxx C": 0
+        },
+        "Effect Veiler": "conditional/unverified",
+        "count_of_handtraps_is_not_interruptions": true,
+        "value_is_not_zero": true,
+        "measured_elsewhere": {
+          "Droll": "restriction of later adds (multi-action script)",
+          "Maxx C": "actual draws, opponent decisions, battles"
+        },
+        "interaction": "while Droll applies, Maxx C cannot draw either; do not add their maxima"
+      },
+      "status": "unverified",
+      "engine_verified": false,
+      "generated": false,
+      "basis": "card text"
+    },
+    {
+      "id": "N6",
+      "kind": "negative",
+      "requirement": "2,3",
+      "source": {
+        "constructed": "end of turn with several hand traps only vs one retained starter"
+      },
+      "expected": {
+        "raw_hand_count_decides": false,
+        "follow_up_probe_decides": true
+      },
+      "status": "unverified",
+      "engine_verified": false,
+      "generated": false,
+      "basis": "spec rule; outcome needs the follow-up probe"
+    },
+    {
+      "id": "N7",
+      "kind": "negative",
+      "requirement": 6,
+      "source": {
+        "constructed": "a monster negated by Effect Veiler, or same-name duplicates whose identity matters"
+      },
+      "expected": {
+        "status": "unverified until probed",
+        "must_not_report": [
+          "zero",
+          "pass"
+        ]
+      },
+      "status": "unverified",
+      "engine_verified": false,
+      "generated": false,
+      "basis": "benchmark_snapshot has no disabled flag and no per-card instance id"
+    },
+    {
+      "id": "N8",
+      "kind": "separation",
+      "requirement": 5,
+      "source": {
+        "constructed": "JJ hand where the recruited Ash is not released to Jukejoint but O1 is still stopped by another legal response"
+      },
+      "expected": {
+        "skills": {
+          "jj_ash_release": "not_done"
+        },
+        "O1": {
+          "stopped": 1
+        },
+        "report_both": true
+      },
+      "status": "unverified",
+      "engine_verified": false,
+      "generated": false,
+      "basis": "no such run observed"
+    },
+    {
+      "id": "N9",
+      "kind": "negative",
+      "requirement": 3,
+      "source": {
+        "derived_from": "P2"
+      },
+      "expected": {
+        "Baronne 1": "never offered in the opponent turn (ignition effect); offered in the own turn as control"
+      },
+      "status": "verified",
+      "engine_verified": true,
+      "generated": true,
+      "engine_result": {
+        "runs": [
+          3,
+          4,
+          6
+        ],
+        "own_turn_control_step": 88,
+        "opponent_turn_windows": {
+          "probe": 4,
+          "model_use": 11
+        },
+        "baronne_1_in_opponent_turn": []
+      },
+      "basis": "pinned c84815190.lua: e1 EFFECT_TYPE_IGNITION (description 0), e2 EFFECT_TYPE_QUICK_O (description 1)"
+    }
+  ]
+}

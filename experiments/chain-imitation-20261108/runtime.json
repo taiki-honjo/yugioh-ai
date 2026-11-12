@@ -1,0 +1,14 @@
+{
+  "runtime": "/home/hatk8/projects/yugioh-ai/experiments/chain-imitation-20261108/runtime",
+  "native": "/home/hatk8/projects/yugioh-ai/experiments/chain-imitation-20261108/runtime/agent/ygoenv/ygoenv/ygopro/ygopro_ygoenv.cpython-310-x86_64-linux-gnu.so",
+  "sha256": "c6518039c615aa49a1569c9db995a937d56f2e8ba319d47a11b1028a0b911828",
+  "baseline_runtime": "/home/hatk8/projects/yugioh-ai/experiments/combo-benchmark-20261107/runtime",
+  "public_chain_source": "public MSG_CHAINING packets; clear at reset and MSG_CHAIN_END",
+  "observation_shape_unchanged": true,
+  "extra_info_fields": [
+    "public_chain_length",
+    "public_chain_player",
+    "public_chain_card_id",
+    "public_chain_effect"
+  ]
+}

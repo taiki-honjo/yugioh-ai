@@ -1,0 +1,151 @@
+{
+  "registered_jst": "2026-11-10T12:26:03+09:00",
+  "spec": "docs/b2b-battle-decision-2026-11-10.md",
+  "candidate": {
+    "path": "/home/hatk8/projects/yugioh-ai/experiments/b2b-battle-20261110/models/candidate",
+    "source": "/home/hatk8/projects/yugioh-ai/experiments/b2b-train-20261109/root/cycles/000001-b2b-trial/candidate",
+    "base_sha256": "2227eff9d15a2a243d0463a580ddc119d660069e3a5c6ebf8a8176db835bcbb6",
+    "head_sha256": "52b3df744a7b0aead7e161abaf3a4b59ad539cc70c54a6d5d264772186819c98",
+    "training_seed": 10021110,
+    "decisions": 4096
+  },
+  "opponent": {
+    "path": "/home/hatk8/projects/yugioh-ai/experiments/b2b-battle-20261110/root/models/initial",
+    "fixed_copy": "/home/hatk8/projects/yugioh-ai/experiments/b2b-battle-20261110/models/adopted",
+    "base_sha256": "86b4358dcfec696cb4b3cc4c19781c34292b2509bf037b9e4f44d9ed8ec59d1c",
+    "head_sha256": "6ca3221f1828eecc5cea817003c8df5e8802b75fabef0f4aa33105ad0f979fce",
+    "note": "adopted d16384 pair; in this root best == initial == this pair, so scout and reference face the same weights"
+  },
+  "setting": "Elfnotes + Kewl Tune mirror; same deck, native, vocabulary, evaluator, placement v2 and position adapters for both; seat-swapped same-seed pairs; both models decide freely from turn 1 (no scripted landing, no demonstration data at inference)",
+  "versions": {
+    "config_sha256": "176311ef3afd0d3192682547fe0de4726c9a439124f8216e5433a20a6bc0dfbc",
+    "snapshot_hashes_sha256": "9e27f5faa5524857892a565f8cf9f5db084792e0c23352b477d82c5f82f7d589",
+    "snapshot_files_differing_from_production": [
+      "opening_rehearsal.py",
+      "policy-code/verify_opponent_article_basics.py",
+      "rehearsal/settings.json",
+      "rehearsal/train-witnesses.json",
+      "rehearsal/train.npz",
+      "train.py"
+    ],
+    "continuous_learning_sha256": "d9f6b3035d4a3c6f6244d87a9b96a6e62de39809bf6fd33ba046bdffb62da27a",
+    "backend_sha256": "338bd464a3e56774bd4d8bdf6e4a0a6a15f961a808ef3e400cafcfa0b8b70d10",
+    "battle_driver_sha256": "77627daa2c94c2492a477319bc6d5ef1a6b0b5f1a8e36cc40e326017d1182da1"
+  },
+  "games": {
+    "scout": {
+      "episodes": 128,
+      "pairs": 64,
+      "base_seed": 80021112,
+      "wave_seeds": [
+        60374468,
+        76914953,
+        63303145,
+        23405770,
+        22070456,
+        4152937,
+        75133793,
+        11678615,
+        68288567,
+        14640235,
+        30972431,
+        54902022,
+        43547014,
+        81711767,
+        89341705,
+        43659389
+      ]
+    },
+    "reference": {
+      "episodes": 64,
+      "pairs": 32,
+      "base_seed": 80021112,
+      "wave_seeds": [
+        60374468,
+        76914953,
+        63303145,
+        23405770,
+        22070456,
+        4152937,
+        75133793,
+        11678615
+      ],
+      "note": "same base seed as the scout (current code): its 8 waves are the scout's first 8; reported separately, not independent evidence"
+    },
+    "confirmation": {
+      "episodes": 256,
+      "pairs": 128,
+      "base_seed": 80021113,
+      "wave_seeds": [
+        6199531,
+        30830657,
+        55822802,
+        7240875,
+        427736,
+        7995887,
+        51444985,
+        39538475,
+        3926426,
+        51816988,
+        83966528,
+        2407986,
+        69104388,
+        83918923,
+        73906363,
+        39565021,
+        55843448,
+        35224244,
+        79291078,
+        70818658,
+        37194337,
+        70376093,
+        40023585,
+        43858386,
+        67512372,
+        49389339,
+        59335608,
+        87205883,
+        68942736,
+        3046235,
+        83196629,
+        54316182
+      ],
+      "only_if": "stage-1 conditions all hold"
+    },
+    "cap": 448
+  },
+  "seed_check": {
+    "rejected": {
+      "base_seed": 80021110,
+      "reason": "wave 11 equals a past wave seed (base 811037, wave 59)"
+    },
+    "past_base_seeds": [
+      3026,
+      6037,
+      9107,
+      11037,
+      41037,
+      811037,
+      80001109,
+      80002991,
+      80004985,
+      80016384,
+      80016385,
+      90000555
+    ],
+    "past_waves_checked": 64,
+    "no_overlap_with_past": true,
+    "scout_confirmation_disjoint": true
+  },
+  "stage1_pass": "scout 128 and reference 64 each fully verified; abnormal 0; no rerun/exclusion requests; scout paired CI95 lower bound > 0.5; reference win rate >= 0.5 (current promotion_ok / evaluation_is_clean / reference rule)",
+  "stage2_pass": "256 games alone: fully verified, abnormal 0, no rerun/exclusion, paired CI95 lower bound > 0.5; never pooled with 128 or 64",
+  "retention": {
+    "reused_record": "/home/hatk8/projects/yugioh-ai/experiments/b2b-train-20261109/retention/retention-summary.json",
+    "sha256": "ff4dfcd5211c4ab5e630387e366f8bbadc67813769ecf2904ffcc697fb80a398",
+    "candidate_passed": 65,
+    "identical_passing_set": true,
+    "note": "not re-run inside this battle budget"
+  },
+  "on_failure": "an incomplete evaluation is recorded as incomplete; no extra games, no seed substitution, no relaxed conditions",
+  "outcome_use": "no adoption and no gate change even if every stage passes; production, cycle-5 candidate, STOP and pending unchanged"
+}

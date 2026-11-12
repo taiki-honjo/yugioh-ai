@@ -1,0 +1,37 @@
+--- registered/flc_runs.py
++++ amended/flc_runs.py
+@@ -1,4 +1,4 @@
+-"""Functional comparison of the two 学都 branches (CPU, engine). Cap: 16 episodes in eval-runs.jsonl.
++"""Functional comparison of the two 学都 branches (CPU, engine). Cap: 17 episodes in eval-runs.jsonl (amendment 1; originally 16).
+ 
+   flc_runs.py record NAME...   one condition: replay own turn-1 choices up to the branch BY MEANING (the model reads
+                                every observation once), execute the registered Graphrea set target, then the model plays
+@@ -28,7 +28,7 @@
+ import hb_plans as HP  # noqa: E402
+ 
+ LEDGER = ROOT / 'eval-runs.jsonl'
+-LIMIT = 16
++LIMIT = 17  # amendment 1 (user decision 2026-11-11): 16 -> 17 after run 1 failed in result assembly
+ STEP_CAP = 600
+ ANALYSIS = P / 'experiments/capability-probe-20261109/code/analysis.py'
+ MODEL = (ROOT / 'models/candidate/base.flax_model', ROOT / 'models/candidate/chain-head.flax_model')
+@@ -309,7 +309,8 @@
+     final = v.compact(v.native.benchmark_snapshot()) if game_over is None else None
+     lua = v.native.get_lua_error_count()
+     E.close(env)
+-    return dict(name=name, **c, hand=spec['hand'], seed=spec['seed'], opponent_hand=OPPONENT_HAND, model_sha256=list(MODEL_SHA),
++    return dict(name=name, hand_name=c['hand_name'], cost=c['cost'], branch_choice=c['branch'], opp=c['opp'], hand=spec['hand'], seed=spec['seed'],
++                opponent_hand=OPPONENT_HAND, model_sha256=list(MODEL_SHA),
+                 prefix_source=source, prefix_length=len(prefix), prefix_replayed=pos, prefix_log=prefix_log, branch=branch_info,
+                 reason=reason, failure=failure, mismatch=mismatch, game_over=game_over, checkpoints=checkpoints, final=final,
+                 opponent_events=opponent.events, position_events=copy.deepcopy(policy.positions.events) if policy else None,
+@@ -337,7 +338,8 @@
+ 
+ 
+ def job(command, names):
+-    reg = json.loads((ROOT / 'registration.json').read_text())
++    amendments = sorted(ROOT.glob('amendment-*.json'))
++    reg = json.loads((amendments[-1] if amendments else ROOT / 'registration.json').read_text())
+     for n, digest in reg['code'].items():
+         if sha(ROOT / 'code' / n) != digest:
+             raise RuntimeError(f'registered code changed: {n}')

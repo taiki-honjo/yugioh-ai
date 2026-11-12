@@ -1,0 +1,34 @@
+{"event": "start", "run": 1, "purpose": "record BV1-1cost-VARNISH-OM", "case_id": "BV1-1cost-VARNISH-OM", "time_jst": "2026-11-11T09:27:56+09:00"}
+{"event": "finish", "run": 1, "status": "error", "time_jst": "2026-11-11T09:28:01+09:00", "error": "TypeError: dict() got multiple values for keyword argument 'branch'"}
+{"event": "start", "run": 2, "purpose": "record BV1-1cost-VARNISH-OM", "case_id": "BV1-1cost-VARNISH-OM", "time_jst": "2026-11-11T09:36:48+09:00"}
+{"event": "finish", "run": 2, "status": "ok", "time_jst": "2026-11-11T09:36:53+09:00"}
+{"event": "start", "run": 3, "purpose": "record BV1-1cost-VARNISH-OI", "case_id": "BV1-1cost-VARNISH-OI", "time_jst": "2026-11-11T09:36:53+09:00"}
+{"event": "finish", "run": 3, "status": "ok", "time_jst": "2026-11-11T09:36:59+09:00"}
+{"event": "start", "run": 4, "purpose": "record BV1-1cost-ASSAULT-OM", "case_id": "BV1-1cost-ASSAULT-OM", "time_jst": "2026-11-11T09:37:00+09:00"}
+{"event": "finish", "run": 4, "status": "ok", "time_jst": "2026-11-11T09:37:03+09:00"}
+{"event": "start", "run": 5, "purpose": "record BV1-1cost-ASSAULT-OI", "case_id": "BV1-1cost-ASSAULT-OI", "time_jst": "2026-11-11T09:37:03+09:00"}
+{"event": "finish", "run": 5, "status": "ok", "time_jst": "2026-11-11T09:37:07+09:00"}
+{"event": "start", "run": 6, "purpose": "record BV1-2cost-VARNISH-OM", "case_id": "BV1-2cost-VARNISH-OM", "time_jst": "2026-11-11T09:37:07+09:00"}
+{"event": "finish", "run": 6, "status": "ok", "time_jst": "2026-11-11T09:37:10+09:00"}
+{"event": "start", "run": 7, "purpose": "record BV1-2cost-VARNISH-OI", "case_id": "BV1-2cost-VARNISH-OI", "time_jst": "2026-11-11T09:37:10+09:00"}
+{"event": "finish", "run": 7, "status": "ok", "time_jst": "2026-11-11T09:37:13+09:00"}
+{"event": "start", "run": 8, "purpose": "record BV1-2cost-ASSAULT-OM", "case_id": "BV1-2cost-ASSAULT-OM", "time_jst": "2026-11-11T09:37:13+09:00"}
+{"event": "finish", "run": 8, "status": "ok", "time_jst": "2026-11-11T09:37:17+09:00"}
+{"event": "start", "run": 9, "purpose": "record BV1-2cost-ASSAULT-OI", "case_id": "BV1-2cost-ASSAULT-OI", "time_jst": "2026-11-11T09:37:17+09:00"}
+{"event": "finish", "run": 9, "status": "ok", "time_jst": "2026-11-11T09:37:20+09:00"}
+{"event": "start", "run": 10, "purpose": "replay BV1-1cost-VARNISH-OM", "case_id": "BV1-1cost-VARNISH-OM", "time_jst": "2026-11-11T09:37:33+09:00"}
+{"event": "finish", "run": 10, "status": "ok", "time_jst": "2026-11-11T09:37:34+09:00"}
+{"event": "start", "run": 11, "purpose": "replay BV1-1cost-VARNISH-OI", "case_id": "BV1-1cost-VARNISH-OI", "time_jst": "2026-11-11T09:37:34+09:00"}
+{"event": "finish", "run": 11, "status": "ok", "time_jst": "2026-11-11T09:37:34+09:00"}
+{"event": "start", "run": 12, "purpose": "replay BV1-1cost-ASSAULT-OM", "case_id": "BV1-1cost-ASSAULT-OM", "time_jst": "2026-11-11T09:37:34+09:00"}
+{"event": "finish", "run": 12, "status": "ok", "time_jst": "2026-11-11T09:37:34+09:00"}
+{"event": "start", "run": 13, "purpose": "replay BV1-1cost-ASSAULT-OI", "case_id": "BV1-1cost-ASSAULT-OI", "time_jst": "2026-11-11T09:37:34+09:00"}
+{"event": "finish", "run": 13, "status": "ok", "time_jst": "2026-11-11T09:37:35+09:00"}
+{"event": "start", "run": 14, "purpose": "replay BV1-2cost-VARNISH-OM", "case_id": "BV1-2cost-VARNISH-OM", "time_jst": "2026-11-11T09:37:35+09:00"}
+{"event": "finish", "run": 14, "status": "ok", "time_jst": "2026-11-11T09:37:35+09:00"}
+{"event": "start", "run": 15, "purpose": "replay BV1-2cost-VARNISH-OI", "case_id": "BV1-2cost-VARNISH-OI", "time_jst": "2026-11-11T09:37:35+09:00"}
+{"event": "finish", "run": 15, "status": "ok", "time_jst": "2026-11-11T09:37:35+09:00"}
+{"event": "start", "run": 16, "purpose": "replay BV1-2cost-ASSAULT-OM", "case_id": "BV1-2cost-ASSAULT-OM", "time_jst": "2026-11-11T09:37:35+09:00"}
+{"event": "finish", "run": 16, "status": "ok", "time_jst": "2026-11-11T09:37:35+09:00"}
+{"event": "start", "run": 17, "purpose": "replay BV1-2cost-ASSAULT-OI", "case_id": "BV1-2cost-ASSAULT-OI", "time_jst": "2026-11-11T09:37:35+09:00"}
+{"event": "finish", "run": 17, "status": "ok", "time_jst": "2026-11-11T09:37:36+09:00"}

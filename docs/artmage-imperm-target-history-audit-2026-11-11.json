@@ -1,0 +1,54 @@
+{
+  "method": "saved trace and pinned Lua only; no model/engine import or execution",
+  "target": {
+    "step": 148,
+    "code": 74631897,
+    "controller": 0,
+    "raw_zone": 0,
+    "selected": {
+      "index": 0,
+      "act": "None",
+      "phase": "None",
+      "spec": "om1",
+      "place": 0,
+      "finish": false,
+      "position": 0,
+      "number": 0,
+      "effect": -1,
+      "response": 0,
+      "code": 74631897,
+      "name": "神芸なる知恵の乙女"
+    }
+  },
+  "prior_activation": {
+    "step": 119,
+    "turn": 2,
+    "action": {
+      "index": 2,
+      "act": "Activate",
+      "phase": "None",
+      "spec": "m1",
+      "place": 0,
+      "finish": false,
+      "position": 0,
+      "number": 0,
+      "effect": 10011,
+      "response": 0,
+      "code": 74631897,
+      "name": "神芸なる知恵の乙女"
+    }
+  },
+  "same_code_controller_zone_at_all_saved_decisions": true,
+  "decisions_checked": 30,
+  "script_description": "Maiden opponent-turn fusion uses Stringid(id,1) and SetCountLimit(1).",
+  "inference": "The public trace supports that the target Maiden had already used its opponent-turn fusion effect in this turn before Imperm targeted it.",
+  "limits": [
+    "No immutable physical-card ID is exposed; continuity is established from code/controller/zone at saved decisions.",
+    "Internal engine count-limit state is not read here.",
+    "This does not by itself prove the best response to Imperm or the value of spending Diaktoros."
+  ],
+  "input_sha256": {
+    "/home/hatk8/projects/yugioh-ai/experiments/artmage-functional-landing-compare-20261110/runs/BV1-1cost-VARNISH-OI/record.json": "0f48c74a4bddf7fd96d923e5b4f50e54fa39495ecc0f67cd296d378df6261c18",
+    "/home/hatk8/projects/yugioh-ai/experiments/elfnotes-20261106/runtime/card-scripts/c74631897.lua": "2472509d352401950dd534540d0f495bcebe502dd4e8fe9a996bb96aff68b77f"
+  }
+}

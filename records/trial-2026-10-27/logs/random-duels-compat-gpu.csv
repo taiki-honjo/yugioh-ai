@@ -1,0 +1,5 @@
+elapsed_seconds,total_gpu_memory_mib,gpu_utilization_percent
+0.088,1712,35
+1.171,1720,26
+2.258,1746,40
+3.348,1743,26

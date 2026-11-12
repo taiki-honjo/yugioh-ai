@@ -1,0 +1,395 @@
+{
+  "status": "complete",
+  "results": {
+    "baseline": {
+      "diagnostic24": {
+        "passed": 3,
+        "total": 24,
+        "families": {
+          "clip_hand_synchro": {
+            "passed": 0,
+            "total": 3
+          },
+          "dina_chain": {
+            "passed": 0,
+            "total": 3
+          },
+          "dina_place": {
+            "passed": 0,
+            "total": 3
+          },
+          "fortuna_place": {
+            "passed": 3,
+            "total": 3
+          },
+          "mix_hand_synchro": {
+            "passed": 0,
+            "total": 3
+          },
+          "regina_recruit": {
+            "passed": 0,
+            "total": 3
+          },
+          "rukina_chain": {
+            "passed": 0,
+            "total": 3
+          },
+          "rukina_search": {
+            "passed": 0,
+            "total": 3
+          }
+        }
+      },
+      "holdout": {
+        "passed": 15,
+        "total": 48,
+        "families": {
+          "clip_hand_synchro": {
+            "passed": 0,
+            "total": 6
+          },
+          "dina_chain": {
+            "passed": 0,
+            "total": 6
+          },
+          "dina_place": {
+            "passed": 0,
+            "total": 6
+          },
+          "fortuna_place": {
+            "passed": 6,
+            "total": 6
+          },
+          "mix_hand_synchro": {
+            "passed": 0,
+            "total": 6
+          },
+          "regina_recruit": {
+            "passed": 5,
+            "total": 6
+          },
+          "rukina_chain": {
+            "passed": 0,
+            "total": 6
+          },
+          "rukina_search": {
+            "passed": 4,
+            "total": 6
+          }
+        }
+      },
+      "chain_holdout": {
+        "passed": 8,
+        "total": 18,
+        "own": {
+          "passed": 0,
+          "total": 10
+        },
+        "opponent": {
+          "passed": 8,
+          "total": 8
+        },
+        "cases": {
+          "opp_mix": {
+            "passed": 2,
+            "total": 2
+          },
+          "opp_regina_offturn": {
+            "passed": 2,
+            "total": 2
+          },
+          "opp_rukina": {
+            "passed": 2,
+            "total": 2
+          },
+          "opp_track": {
+            "passed": 2,
+            "total": 2
+          },
+          "self_mix": {
+            "passed": 0,
+            "total": 2
+          },
+          "self_regina": {
+            "passed": 0,
+            "total": 2
+          },
+          "self_regina_offturn": {
+            "passed": 0,
+            "total": 2
+          },
+          "self_rukina": {
+            "passed": 0,
+            "total": 2
+          },
+          "self_track": {
+            "passed": 0,
+            "total": 2
+          }
+        }
+      }
+    },
+    "bc_with_chain": {
+      "diagnostic24": {
+        "passed": 24,
+        "total": 24,
+        "families": {
+          "clip_hand_synchro": {
+            "passed": 3,
+            "total": 3
+          },
+          "dina_chain": {
+            "passed": 3,
+            "total": 3
+          },
+          "dina_place": {
+            "passed": 3,
+            "total": 3
+          },
+          "fortuna_place": {
+            "passed": 3,
+            "total": 3
+          },
+          "mix_hand_synchro": {
+            "passed": 3,
+            "total": 3
+          },
+          "regina_recruit": {
+            "passed": 3,
+            "total": 3
+          },
+          "rukina_chain": {
+            "passed": 3,
+            "total": 3
+          },
+          "rukina_search": {
+            "passed": 3,
+            "total": 3
+          }
+        }
+      },
+      "holdout": {
+        "passed": 48,
+        "total": 48,
+        "families": {
+          "clip_hand_synchro": {
+            "passed": 6,
+            "total": 6
+          },
+          "dina_chain": {
+            "passed": 6,
+            "total": 6
+          },
+          "dina_place": {
+            "passed": 6,
+            "total": 6
+          },
+          "fortuna_place": {
+            "passed": 6,
+            "total": 6
+          },
+          "mix_hand_synchro": {
+            "passed": 6,
+            "total": 6
+          },
+          "regina_recruit": {
+            "passed": 6,
+            "total": 6
+          },
+          "rukina_chain": {
+            "passed": 6,
+            "total": 6
+          },
+          "rukina_search": {
+            "passed": 6,
+            "total": 6
+          }
+        }
+      },
+      "chain_holdout": {
+        "passed": 18,
+        "total": 18,
+        "own": {
+          "passed": 10,
+          "total": 10
+        },
+        "opponent": {
+          "passed": 8,
+          "total": 8
+        },
+        "cases": {
+          "opp_mix": {
+            "passed": 2,
+            "total": 2
+          },
+          "opp_regina_offturn": {
+            "passed": 2,
+            "total": 2
+          },
+          "opp_rukina": {
+            "passed": 2,
+            "total": 2
+          },
+          "opp_track": {
+            "passed": 2,
+            "total": 2
+          },
+          "self_mix": {
+            "passed": 2,
+            "total": 2
+          },
+          "self_regina": {
+            "passed": 2,
+            "total": 2
+          },
+          "self_regina_offturn": {
+            "passed": 2,
+            "total": 2
+          },
+          "self_rukina": {
+            "passed": 2,
+            "total": 2
+          },
+          "self_track": {
+            "passed": 2,
+            "total": 2
+          }
+        }
+      }
+    },
+    "same_bc_without_head": {
+      "diagnostic24": {
+        "passed": 24,
+        "total": 24,
+        "families": {
+          "clip_hand_synchro": {
+            "passed": 3,
+            "total": 3
+          },
+          "dina_chain": {
+            "passed": 3,
+            "total": 3
+          },
+          "dina_place": {
+            "passed": 3,
+            "total": 3
+          },
+          "fortuna_place": {
+            "passed": 3,
+            "total": 3
+          },
+          "mix_hand_synchro": {
+            "passed": 3,
+            "total": 3
+          },
+          "regina_recruit": {
+            "passed": 3,
+            "total": 3
+          },
+          "rukina_chain": {
+            "passed": 3,
+            "total": 3
+          },
+          "rukina_search": {
+            "passed": 3,
+            "total": 3
+          }
+        }
+      },
+      "holdout": {
+        "passed": 48,
+        "total": 48,
+        "families": {
+          "clip_hand_synchro": {
+            "passed": 6,
+            "total": 6
+          },
+          "dina_chain": {
+            "passed": 6,
+            "total": 6
+          },
+          "dina_place": {
+            "passed": 6,
+            "total": 6
+          },
+          "fortuna_place": {
+            "passed": 6,
+            "total": 6
+          },
+          "mix_hand_synchro": {
+            "passed": 6,
+            "total": 6
+          },
+          "regina_recruit": {
+            "passed": 6,
+            "total": 6
+          },
+          "rukina_chain": {
+            "passed": 6,
+            "total": 6
+          },
+          "rukina_search": {
+            "passed": 6,
+            "total": 6
+          }
+        }
+      },
+      "chain_holdout": {
+        "passed": 18,
+        "total": 18,
+        "own": {
+          "passed": 10,
+          "total": 10
+        },
+        "opponent": {
+          "passed": 8,
+          "total": 8
+        },
+        "cases": {
+          "opp_mix": {
+            "passed": 2,
+            "total": 2
+          },
+          "opp_regina_offturn": {
+            "passed": 2,
+            "total": 2
+          },
+          "opp_rukina": {
+            "passed": 2,
+            "total": 2
+          },
+          "opp_track": {
+            "passed": 2,
+            "total": 2
+          },
+          "self_mix": {
+            "passed": 2,
+            "total": 2
+          },
+          "self_regina": {
+            "passed": 2,
+            "total": 2
+          },
+          "self_regina_offturn": {
+            "passed": 2,
+            "total": 2
+          },
+          "self_rukina": {
+            "passed": 2,
+            "total": 2
+          },
+          "self_track": {
+            "passed": 2,
+            "total": 2
+          }
+        }
+      }
+    }
+  },
+  "elapsed_seconds": 59.434919266000065,
+  "selected_checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/endboard-20261108/training/step-0200",
+  "selected_before_holdout": true,
+  "goal_definition_unchanged": true,
+  "native_lua_errors": 0,
+  "warning": "same_bc_without_head is inference-time removal of the jointly-trained head, not separately trained BC ablation."
+}

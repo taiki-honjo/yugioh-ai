@@ -1,0 +1,20 @@
+{
+  "status": "complete",
+  "arm": "ash_once",
+  "policy": "current",
+  "cases": 24,
+  "turn_completed": 24,
+  "ash_injected": 19,
+  "self_ash_actions": 0,
+  "cases_with_milestone": 2,
+  "elapsed_seconds": 14.536675040999995,
+  "lua_errors": 0,
+  "resources": {
+    "live_duels": 0,
+    "peak_duels": 1
+  },
+  "base_sha256": "04e4decfa762ae7e378c23c245732802ddf926f30343c53e945df0e406997cd6",
+  "head_sha256": "13c19d773cf8d21c3a76fe5f4b9c4e342c92cecbf59b1d5e2756d9fa84faceb6",
+  "case_manifest_sha256": "df95326d6392713d948e41ac044d546f4664f657317d442ab187562e087c2684",
+  "no_quality_labels_assigned": true
+}

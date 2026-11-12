@@ -1,0 +1,15 @@
+{
+ "name": "A-I-P",
+ "engine_run": 6,
+ "replayed_engine_run": 1,
+ "mismatch": null,
+ "failure": null,
+ "reproduced_steps": 159,
+ "of": 159,
+ "reason": "first turn-3 decision",
+ "final_equal": true,
+ "checkpoints_equal": true,
+ "game_over_equal": true,
+ "observations_match": true,
+ "lua_errors": 0
+}

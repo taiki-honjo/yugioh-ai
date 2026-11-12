@@ -1,0 +1,29 @@
+{
+ "type": "artmage-scoped-response-adapter",
+ "version": 1,
+ "base": {
+  "file": "base.flax_model",
+  "sha256": "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66"
+ },
+ "head": {
+  "file": "chain-head.flax_model",
+  "sha256": "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2"
+ },
+ "adapter": {
+  "file": "response-adapter.flax_model",
+  "sha256": "c110f9647c8806f9ed76011f47a4a3a2d3818343d2033917db721d0807c363ec",
+  "module": "opponent_article_bc_common.ChainHead (new parameters)"
+ },
+ "gate": "select_chain AND chain length >= 1 AND relative role == 2",
+ "seed": 11111501,
+ "updates": 512,
+ "screens": [
+  "S1",
+  "S2",
+  "M",
+  "P"
+ ],
+ "kl_coefficient": 1.0,
+ "relative_coefficient": 1.0,
+ "registration_sha256": "b2aca25cd71dc110a654caaeb24c5ce124e45c9c0d8ed575c421bc6f410d96c0"
+}

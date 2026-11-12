@@ -1,0 +1,44 @@
+{
+  "experiment_root": "/home/hatk8/projects/yugioh-ai/experiments/opening-d16384-20261109",
+  "base_config": "/home/hatk8/projects/yugioh-ai/config/continuous-elfnotes.json",
+  "purpose": "Continue the fixed 4096-decision D candidate under condition D (PPO lr 1.5e-5, train-split rehearsal lambda 5) for 12288 more environment decisions (cumulative 16384), keeping checkpoints at cumulative 8192/12288/16384. Only the final point is evaluated. Warm start from weights: optimizer state and RNG restart (as in the production chunked loop). No checkpoint selection, no adoption, no resident operation.",
+  "steps": 12288,
+  "seeds": [10016384],
+  "battle_episodes": 0,
+  "battle_seed": 0,
+  "save_interval_updates": 32,
+  "keep_all_checkpoints": true,
+  "limits": {"max_environment_decisions": 12288, "max_battle_episodes": 0, "max_candidates": 1},
+  "start_checkpoint": {
+    "path": "/home/hatk8/projects/yugioh-ai/experiments/opening-d4096-20261109/d-lr1.5e-5-l5/cycles/4096-seed10001109/candidate",
+    "base_sha256": "3037699856ede9ef9ddd7a267fdc395bd7b3787a53555f54e75c96aa4b00d4f0",
+    "head_sha256": "6ef16c2ee26d4259bc6ffb0ae6435f3cdef62359278312cc86a2db462648c71b",
+    "cumulative_decisions": 4096,
+    "source_experiment": "/home/hatk8/projects/yugioh-ai/experiments/opening-d4096-20261109"
+  },
+  "fixed_test": {
+    "manifest": "/home/hatk8/projects/yugioh-ai/experiments/opening-fixed-test-20261109/manifest.json",
+    "manifest_sha256": "9f920395f1318ddffcefa29f31c3ea03ee80482ac9311c41b3414e3f56ea1b71",
+    "cases_sha256": "f8bc47336b9922eb3adf4d8b0cd6f4d44a8aef5f8f38bdd18ceb91cd35713d3f",
+    "evaluated_only_after_training": true,
+    "references": {
+      "adopted": {"result": "/home/hatk8/projects/yugioh-ai/experiments/opening-d4096-20261109/d-lr1.5e-5-l5/cycles/4096-seed10001109/fixed-test-before.json",
+                  "base_sha256": "966cc8b1c3f0c092e824cc52dffcaf9c71f0c9373ece0fd07831d4a9df4f7cd1",
+                  "head_sha256": "1aaf569daf53a4453ef2f2e450c924af014aea83b3e4f98fea2644b795b52dc8",
+                  "arm_root": "/home/hatk8/projects/yugioh-ai/experiments/opening-d4096-20261109/d-lr1.5e-5-l5"},
+      "start-4096": {"result": "/home/hatk8/projects/yugioh-ai/experiments/opening-d4096-20261109/d-lr1.5e-5-l5/cycles/4096-seed10001109/fixed-test-after.json",
+                     "base_sha256": "3037699856ede9ef9ddd7a267fdc395bd7b3787a53555f54e75c96aa4b00d4f0",
+                     "head_sha256": "6ef16c2ee26d4259bc6ffb0ae6435f3cdef62359278312cc86a2db462648c71b",
+                     "arm_root": "/home/hatk8/projects/yugioh-ai/experiments/opening-d4096-20261109/d-lr1.5e-5-l5"}
+    }
+  },
+  "existing_66_references": {
+    "start-4096": {"result": "/home/hatk8/projects/yugioh-ai/experiments/opening-d4096-20261109/d-lr1.5e-5-l5/cycles/4096-seed10001109/opening-regression.json",
+                   "base_sha256": "3037699856ede9ef9ddd7a267fdc395bd7b3787a53555f54e75c96aa4b00d4f0",
+                   "head_sha256": "6ef16c2ee26d4259bc6ffb0ae6435f3cdef62359278312cc86a2db462648c71b"}
+  },
+  "retention_rule": "BOTH (a) the existing gate on the 66 validation openings relative to the adopted model's baseline and (b) every fixed-test case passed by the adopted model (87/88 reference) still passes.",
+  "arms": {
+    "d-lr1.5e-5-l5": {"rehearsal": {"enabled": true, "split": "train", "lambda_bc": 5.0, "lambda_kl": 0.0, "sequences_per_minibatch": 2, "seed": 20261109, "sha256": "0ef4700c92ddb6f26c3e3f5dc04d4893d2cb02c096304af0bbdc546f8070e4da"}, "learning_rate": 1.5e-05}
+  }
+}

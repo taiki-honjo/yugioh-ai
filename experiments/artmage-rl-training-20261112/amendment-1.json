@@ -1,0 +1,72 @@
+{
+ "amendment": 1,
+ "registered_jst": "2026-11-12T13:03:10+09:00",
+ "registration_sha256": "06026513c0cdb6294b9a24490dde9f81179eb385a8053aa23f3b2e39ffe37a34",
+ "when": "after the training job, before any evaluation run (eval-runs.jsonl does not exist)",
+ "facts": {
+  "confirmed": [
+   "training used the full budget: 32,768 environment decisions (learner 15,877 / frozen 16,891), 81 episodes (80 natural ends, the 81st cut by the decision cap), 249 windows, 996 updates",
+   "the last window (248) closed at decision 32,768 with an exact bootstrap (learner to move next); its 4 minibatches (992-995) are in minibatches.jsonl",
+   "afterwards, in the episode clean-up, RealHooks.close_env asserted live_duels == 0 while collect() still referenced the cut episode env (del env came after the check); for a duel cut mid-game the native duel is freed only when the env object is released",
+   "after collect() dropped the reference and ran gc, live_duels = 0 (result.json); native Lua errors 0; params finite; 0 non-finite updates; visibility: 4 events, 14 cards, all selection_prompt, 0 unverified, no clear exposure",
+   "because error != None, the registered rule saved the state to train/stopped-state (7f4ee702.../4f099640...) with status not_established; result.json is kept as written"
+  ],
+  "inferred": "the assertion is a harness check-order bug (not an engine or environment failure); finished episodes passed the same check 80 times because their duels had ended"
+ },
+ "decision": {
+  "summary": "no retraining and no second candidate: the saved final state (= state after the last update; nothing ran after it except the clean-up) is verified from files and, if the checks pass, promoted to train/candidate; evaluation then follows the registration unchanged",
+  "deviation": "the registration listed \"environment/engine error\" as not established; this error came from the harness resource check after the budget was used, so it is treated as a recording defect; the report states this deviation and that the in-memory-vs-file comparison could not be made",
+  "file_checks": "rlt_promote.py: record checks; hashes = result.json stopped_state; weights finite; both parts changed; on the 40 rehearsal histories the rlt_model.load_pair logits equal the isolated entry Policy exactly, argmax and position-adapter final actions equal; rehearsal fit",
+  "if_checks_fail": "not promoted; trial reported as not established; no evaluation"
+ },
+ "code_changes": {
+  "diff": {
+   "path": "amendment-1.diff",
+   "sha256": "b80bcf9d1d783c0bdeb3ad84092eda0759e2bf4f7ff0b7b0c372150da6bfe351"
+  },
+  "old_copies": "amendment-1-old/ (hash-identical to the registration)",
+  "files": {
+   "rlt_promote.py": "new (verification + promotion)",
+   "rlt_eval.py": "candidate() accepts the promoted pair (hashes = promotion record = result.json stopped_state); bind() answers the frozen hb_runs candidate lookup with that pair",
+   "rlt_summarize.py": "includes train/promotion.json"
+  },
+  "unchanged": "rlt_train.py (the bug stays documented; the job is not rerun), rlt_model.py, rlt_stats.py, hb_runs.py, data, seeds, budgets, evaluation design"
+ },
+ "old_code": {
+  "artmage_entry.py": "ca47f56d29431b48d60337de6dcc6ce23d524fba31cbbbdce31e6d7399b78e0f",
+  "artmage_pins.py": "10c4e053d05f44498cff77c45301a3fb5222c7598a658decc52f4539fd96bde8",
+  "artmage_teacher.py": "a126284eff7a2d7ef3c602ade0aa5f196f7ddea77333213c27a197ade21b78f3",
+  "batch_data.py": "3f21a0f495111f82678e93c5434d9c2dd65b2467c4f7c3341a0eddab66b3aad7",
+  "batch_plans.py": "68d5945d80d663ba7f85b56ffbd6490a00998aaa1d5cca14663e18e6956f1123",
+  "hb_data.py": "502de35cabab73e9448e5d20e61aa53ce594aa8eb08ad2beebe0740618ebc893",
+  "hb_plans.py": "8fc90ad7f704a2f141669d1075827cf3513f015989a95d472f353aaae6ab40cd",
+  "hb_runs.py": "88e694125079d2a9687490f1120186b536939b8750f731266efae56b167a0c14",
+  "pilot_data.py": "dc749fb5ea77419741d0e7469edd7f423db241eae11ccafe399f76a04c3417e8",
+  "rlt_eval.py": "d1b9f350578ab90c19b253f152c8adc8b13c074ef257fb1a1d5de143095f9976",
+  "rlt_launch.py": "b9658f5be7e69b611adbfb1970690a69d0db74d436cafbcbdbb9f25b7cd23163",
+  "rlt_model.py": "7b3e77e69a80ae4297b917670521cc3e4fde4eec0e7d45dd06e19906fdb0208d",
+  "rlt_register.py": "6465146144c60529e82664b2cafd718ffc8e04102f856edee13ec8beb07660ae",
+  "rlt_stats.py": "74d09387f69bf9ed42257e48e99bec96af69c9be466c0d0e4820f1b8c7a0ec6d",
+  "rlt_summarize.py": "b87eab33e47112b4085fd8916261a537ff86646c0ff40c131625a0998cfa1db8",
+  "rlt_train.py": "05088b05dc4118421a5c886ec1df92449ee9c4e061e2b57d32841ac89d0fe6f1"
+ },
+ "code": {
+  "artmage_entry.py": "ca47f56d29431b48d60337de6dcc6ce23d524fba31cbbbdce31e6d7399b78e0f",
+  "artmage_pins.py": "10c4e053d05f44498cff77c45301a3fb5222c7598a658decc52f4539fd96bde8",
+  "artmage_teacher.py": "a126284eff7a2d7ef3c602ade0aa5f196f7ddea77333213c27a197ade21b78f3",
+  "batch_data.py": "3f21a0f495111f82678e93c5434d9c2dd65b2467c4f7c3341a0eddab66b3aad7",
+  "batch_plans.py": "68d5945d80d663ba7f85b56ffbd6490a00998aaa1d5cca14663e18e6956f1123",
+  "hb_data.py": "502de35cabab73e9448e5d20e61aa53ce594aa8eb08ad2beebe0740618ebc893",
+  "hb_plans.py": "8fc90ad7f704a2f141669d1075827cf3513f015989a95d472f353aaae6ab40cd",
+  "hb_runs.py": "88e694125079d2a9687490f1120186b536939b8750f731266efae56b167a0c14",
+  "pilot_data.py": "dc749fb5ea77419741d0e7469edd7f423db241eae11ccafe399f76a04c3417e8",
+  "rlt_eval.py": "6d0fa5e9ac4bd7bf0264206c68bc043d88ab18c7c7aa0029bec2d52fc971ac7b",
+  "rlt_launch.py": "b9658f5be7e69b611adbfb1970690a69d0db74d436cafbcbdbb9f25b7cd23163",
+  "rlt_model.py": "7b3e77e69a80ae4297b917670521cc3e4fde4eec0e7d45dd06e19906fdb0208d",
+  "rlt_promote.py": "a7efc7409f462b7d770ce1ddeffca5f85c05b525d1df395bd1af728753ae5fa1",
+  "rlt_register.py": "6465146144c60529e82664b2cafd718ffc8e04102f856edee13ec8beb07660ae",
+  "rlt_stats.py": "74d09387f69bf9ed42257e48e99bec96af69c9be466c0d0e4820f1b8c7a0ec6d",
+  "rlt_summarize.py": "bd2043a5bedb95568a0f1111938bfe6b1fc8fa7143ea512bae5e5c5f11616e2f",
+  "rlt_train.py": "05088b05dc4118421a5c886ec1df92449ee9c4e061e2b57d32841ac89d0fe6f1"
+ }
+}

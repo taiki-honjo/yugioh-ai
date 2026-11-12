@@ -1,0 +1,17 @@
+{
+  "purpose": "Battle evaluation of the fixed 4096-decision D candidate against the adopted model. Pre-registered before any game. No intermediate checkpoint is evaluated or selected; no adoption, no training, no resident operation.",
+  "candidate": {"path": "/home/hatk8/projects/yugioh-ai/experiments/opening-d4096-20261109/d-lr1.5e-5-l5/cycles/4096-seed10001109/candidate",
+                "base_sha256": "3037699856ede9ef9ddd7a267fdc395bd7b3787a53555f54e75c96aa4b00d4f0",
+                "head_sha256": "6ef16c2ee26d4259bc6ffb0ae6435f3cdef62359278312cc86a2db462648c71b"},
+  "opponent": {"path": "/home/hatk8/projects/yugioh-ai/experiments/opening-d4096-20261109/d-lr1.5e-5-l5/models/initial",
+               "note": "byte-identical copy of the adopted pair in the production v2 root",
+               "base_sha256": "966cc8b1c3f0c092e824cc52dffcaf9c71f0c9373ece0fd07831d4a9df4f7cd1",
+               "head_sha256": "1aaf569daf53a4453ef2f2e450c924af014aea83b3e4f98fea2644b795b52dc8"},
+  "adapters": "placement v2 (3e962410...) and the same position adapter for BOTH players, from the arm snapshot whose policy code is identical to the production v2 snapshot",
+  "config": "/home/hatk8/projects/yugioh-ai/experiments/opening-d4096-20261109/configs/d-lr1.5e-5-l5.json",
+  "scout": {"episodes": 128, "seed": 80001109, "pairs": "same seed, seats swapped"},
+  "confirmation": {"episodes": 256, "seed": 80001110, "run_only_if": "continuous_learning.promotion_ok(scout, 128)"},
+  "criterion": "existing promotion_ok: all requested games verified, abnormal_total 0, no rerun/exclusion flag, and the seed-pair (conservative Clopper-Pearson) 95% CI lower bound > 0.5. Operational gate; not a guarantee over repeated comparisons.",
+  "max_battles": 384,
+  "adoption": "none regardless of the outcome"
+}

@@ -1,0 +1,14 @@
+{
+  "cases": [
+    {
+      "case_id": "cue-before-nontuner",
+      "expected_rejection_verified": true,
+      "lua_errors": 0
+    },
+    {
+      "case_id": "parallelism-fire-to-fire",
+      "expected_rejection_verified": true,
+      "lua_errors": 0
+    }
+  ]
+}

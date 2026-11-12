@@ -1,0 +1,22 @@
+{
+  "status": "complete",
+  "results": {
+    "pass": {
+      "cases": 24,
+      "turn_completed": 24,
+      "ash_injected": 0,
+      "facedown_handtrap_endboard_cases": 7,
+      "self_ash_actions": 0,
+      "caveat": "Reused diagnostic starting states, not independent holdout."
+    },
+    "ash_once": {
+      "cases": 24,
+      "turn_completed": 24,
+      "ash_injected": 19,
+      "facedown_handtrap_endboard_cases": 7,
+      "self_ash_actions": 0,
+      "caveat": "Reused diagnostic starting states, not independent holdout."
+    }
+  },
+  "lua_errors": 0
+}

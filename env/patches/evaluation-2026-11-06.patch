@@ -1,0 +1,429 @@
+--- a/scripts/evaluate.py
++++ b/scripts/evaluate.py
+@@ -54,54 +54,20 @@
+     return low, high
+ 
+ 
+-def paired_wilson_ci95(
+-    pair_scores: List[float],
+-    wins: int,
+-    total: int,
+-) -> Tuple[float, float, float, float]:
++def paired_bootstrap_ci95(pair_scores: List[float]) -> Tuple[float, float, float, int]:
++    """Resample complete seat-swapped seed pairs, never individual games.
++
++    Percentile intervals describe empirical variability and can be degenerate
++    for homogeneous small samples; they do not prove equal strength.
+     """
+-    同一シード先後ペアの相関を反映した勝率の95%信頼区間を計算する。
+-
+-    各シードペア i (i=1..K) の平均勝率 P_i = (W_{i,first} + W_{i,second}) / 2 を
+-    独立なクラスタ標本として扱い、ペア間標本分散
+-      s_P^2 = (1 / (K - 1)) * sum((P_i - p_hat)^2)
+-            = (1 / 4) * (Var(W_first) + Var(W_second) + 2 * Cov(W_first, W_second))
+-    から標準誤差 SE = sqrt(s_P^2 / K) と有効サンプルサイズ n_eff = p_hat * (1 - p_hat) / (s_P^2 / K)
+-    を算出し、Wilson score interval に適用する。
+-
+-    Returns:
+-        (ci_low, ci_high, pair_se, n_eff)
+-    """
+-    k = len(pair_scores)
+-    if total <= 0 or k <= 0:
+-        return 0.0, 0.0, 0.0, 0.0
+-    if k <= 1:
+-        low, high = wilson_ci95(wins, total)
+-        p = wins / total
+-        se = math.sqrt(p * (1.0 - p) / total)
+-        return low, high, se, float(total)
+-
+-    z = 1.959963984540054  # 95% CI
+-    p = float(sum(pair_scores)) / k
+-    s2 = sum((x - p) ** 2 for x in pair_scores) / (k - 1)
+-    v_pair = s2 / k
+-    pair_se = math.sqrt(v_pair)
+-
+-    if p <= 0.0 or p >= 1.0:
+-        # 全勝または全敗時は独立なシードペア数 K を有効サンプルサイズとする
+-        n_eff = float(k)
+-    else:
+-        # 全ペアが 1勝1敗 (P_i = 0.5) 等で標本分散が 0 になる場合の連続性下限
+-        min_v_pair = ((0.5 / k) ** 2) / k
+-        v_eff = max(v_pair, min_v_pair)
+-        n_eff = (p * (1.0 - p)) / v_eff
+-
+-    denom = 1.0 + (z * z) / n_eff
+-    center = (p + (z * z) / (2.0 * n_eff)) / denom
+-    half = (z * math.sqrt((p * (1.0 - p) + (z * z) / (4.0 * n_eff)) / n_eff)) / denom
+-    low = max(0.0, center - half)
+-    high = min(1.0, center + half)
+-    return low, high, pair_se, n_eff
++    n = len(pair_scores)
++    if n < 2:
++        return 0.0, 1.0, 0.0, n
++    values = np.asarray(pair_scores, dtype=np.float64)
++    rng = np.random.default_rng(710321)
++    means = values[rng.integers(0, n, size=(20000, n))].mean(axis=1)
++    low, high = np.quantile(means, [0.025, 0.975])
++    return float(low), float(high), float(values.std(ddof=1) / np.sqrt(n)), n
+ 
+ 
+ def resolve_agent_spec(spec: str, proj_dir: Path) -> Dict[str, Any]:
+@@ -189,8 +155,9 @@
+ 
+         # YGOProエンジンはカレントディレクトリの ./script 等を参照するため移動
+         os.chdir(self.runtime_scripts_dir)
+-        if str(self.runtime_scripts_dir) not in sys.path:
+-            sys.path.insert(0, str(self.runtime_scripts_dir))
++        for package_root in (self.runtime_scripts_dir, self.runtime_scripts_dir.parent,
++                             self.runtime_scripts_dir.parent / "ygoenv"):
++            sys.path.insert(0, str(package_root))
+ 
+         import ygoenv
+         import jax
+@@ -409,6 +376,7 @@
+         cand_decision_steps_total = 0
+         opp_decision_steps_total = 0
+         env_steps_total = 0
++        cand_model_calls = opp_model_calls = env_step_calls = 0
+ 
+         wave_t0 = time.perf_counter()
+         step_count = 0
+@@ -475,9 +443,8 @@
+                     cand_acts = np.asarray(cand_acts_jax)
+                     dt = time.perf_counter() - t0
+                     cand_model_batch_wall_sec += dt
+-                    # 固定バッチ(num_envs)推論のうち、有効な判断対象(n_cand_active)に対応する推論時間のみを計上し、
+-                    # 推論時間と判断数の集計対象を一致させる
+-                    cand_model_sec += dt * (n_cand_active / float(num_envs))
++                    cand_model_calls += 1
++                    cand_model_sec += dt
+                     cand_decision_steps_total += n_cand_active
+                     actions = np.where(cand_active_mask, cand_acts, actions)
+                 else:
+@@ -503,7 +470,8 @@
+                     opp_acts = np.asarray(opp_acts_jax)
+                     dt = time.perf_counter() - t0
+                     opp_model_batch_wall_sec += dt
+-                    opp_model_sec += dt * (n_opp_active / float(num_envs))
++                    opp_model_calls += 1
++                    opp_model_sec += dt
+                     opp_decision_steps_total += n_opp_active
+                     actions = np.where(opp_active_mask, opp_acts, actions)
+                 else:
+@@ -517,13 +485,14 @@
+ 
+             # 3. 環境のステップ実行
+             t0 = time.perf_counter()
++            env_step_calls += 1
+             try:
+                 obs, rewards, terminated, truncated, infos = envs.step(actions)
+             except RuntimeError as exc:
+                 if "timeout" in str(exc).lower():
+                     step_wall_sec = time.perf_counter() - t0
+                     env_step_batch_wall_sec += step_wall_sec
+-                    env_step_sec += step_wall_sec * (n_env_active / float(num_envs))
++                    env_step_sec += step_wall_sec
+                     ep_max_step_wall_ms = np.where(
+                         active_uncollected,
+                         np.maximum(ep_max_step_wall_ms, step_wall_sec * 1000.0),
+@@ -538,7 +507,7 @@
+             step_wall_ms = step_wall_sec * 1000.0
+             per_env_step_ms = step_wall_ms / float(num_envs)
+             env_step_batch_wall_sec += step_wall_sec
+-            env_step_sec += step_wall_sec * (n_env_active / float(num_envs))
++            env_step_sec += step_wall_sec
+             next_to_play = infos["to_play"]
+ 
+             dones = np.logical_or(terminated, truncated)
+@@ -558,28 +527,10 @@
+             env_steps_total += n_env_active
+             step_count += 1
+ 
+-            # C++ 側の YGOProEnv::Step は pool.wait_for(seconds(timeout_)) がタイムアウトすると
+-            # handle_timeout() を呼び、info:step_time を 0 のまま done=True, reward=1.0,
+-            # to_play=1, is_selfplay=1, win_reason=1, num_options=1 を書き込む。
+-            # そのため、ステップ実測時間が timeout に達したかでタイムアウト発生を検出する。
+-            step_wall_timed_out = (self.timeout > 0) and (step_wall_sec >= self.timeout * 0.95)
++            native_reasons = infos.get("termination_reason")
+             newly_done_indices = [
+                 i for i in range(num_envs) if (not collected[i]) and bool(dones[i])
+             ]
+-            timeout_signature_indices = set()
+-            if step_wall_timed_out and newly_done_indices:
+-                for i in newly_done_indices:
+-                    sig_match = (
+-                        float(step_rewards[i]) == 1.0
+-                        and int(infos["to_play"][i]) == 1
+-                        and int(infos.get("win_reason", np.ones(num_envs, dtype=np.int32))[i]) == 1
+-                        and int(infos.get("num_options", np.ones(num_envs, dtype=np.int32))[i]) == 1
+-                        and int(infos.get("is_selfplay", np.ones(num_envs, dtype=np.int32))[i]) == 1
+-                    )
+-                    if sig_match:
+-                        timeout_signature_indices.add(i)
+-                if not timeout_signature_indices:
+-                    timeout_signature_indices.update(newly_done_indices)
+ 
+             for idx in newly_done_indices:
+                 collected[idx] = True
+@@ -598,25 +549,19 @@
+                     reported_opp_ms if reported_opp_ms > 0.0 else float(ep_opp_step_ms[idx])
+                 )
+ 
+-                reported_timeout = (self.timeout > 0) and (
+-                    reported_cand_ms >= self.timeout * 1000.0
+-                    or reported_opp_ms >= self.timeout * 1000.0
+-                )
+-                engine_timeout = reported_timeout or (idx in timeout_signature_indices)
+-
+-                # YGOProEnvImpl::step は step_count_ >= max_steps で _duel_end(winner, 0x01) を呼ぶ。
+-                # max_episode_steps=self.max_steps の設定に加えて、env_steps >= self.max_steps でも
+-                # 確実にステップ上限打ち切り (truncated) として判定し、通常決着(normal_lp0)と区別する。
+-                step_limit_reached = (not engine_timeout) and (
+-                    bool(truncated[idx]) or int(ep_env_steps[idx]) >= self.max_steps
++                native_reason = int(native_reasons[idx]) if native_reasons is not None else None
++                engine_timeout = native_reason == 2
++                suspected_timeout = native_reason is None and self.timeout > 0 and step_wall_sec >= self.timeout
++                step_limit_reached = native_reason == 1 or bool(truncated[idx]) or (
++                    native_reason is None and int(ep_env_steps[idx]) >= self.max_steps
+                 )
+                 is_trunc = step_limit_reached
+-                is_term = bool(terminated[idx]) and (not is_trunc) and (not engine_timeout)
+-
+-                if engine_timeout:
+-                    # handle_timeout() が書き込むダミー報酬(reward=1.0, win_reason=1)を無効化
++                is_term = bool(terminated[idx]) and not (is_trunc or engine_timeout or suspected_timeout)
++
++                if engine_timeout or suspected_timeout or is_trunc:
++                    # Artificial LP adjudication and timeout rewards are never scored.
+                     cand_reward = 0.0
+-                    outcome = "draw"
++                    outcome = "excluded"
+                     win_reason = 0
+                 else:
+                     raw_ret = float(ep_returns[idx])
+@@ -640,10 +585,12 @@
+ 
+                     win_reason = int(infos["win_reason"][idx]) if "win_reason" in infos else 0
+ 
+-                is_abnormal = is_trunc or (outcome == "draw") or engine_timeout or (not is_term)
++                is_abnormal = is_trunc or engine_timeout or suspected_timeout or not is_term
+ 
+                 if engine_timeout:
+                     reason_label = "engine_timeout"
++                elif suspected_timeout:
++                    reason_label = "suspected_timeout_unverified"
+                 elif is_trunc:
+                     reason_label = "truncated"
+                 elif outcome == "draw":
+@@ -674,6 +621,7 @@
+                     "terminated": is_term,
+                     "truncated": is_trunc,
+                     "engine_timeout": engine_timeout,
++                    "timeout_detection_supported": native_reasons is not None,
+                     "abnormal": is_abnormal,
+                     "reason_label": reason_label,
+                     "cand_engine_step_ms": round(cand_engine_ms, 3),
+@@ -695,10 +643,10 @@
+                     "wave_seed": wave_seed,
+                     "candidate_seat": candidate_seat,
+                     "candidate_seat_label": "first" if candidate_seat == 0 else "second",
+-                    "outcome": "draw",
++                    "outcome": "excluded",
+                     "win": 0,
+                     "loss": 0,
+-                    "draw": 1,
++                    "draw": 0,
+                     "candidate_reward": 0.0,
+                     "env_steps": int(ep_env_steps[idx]),
+                     "candidate_decisions": int(ep_cand_decisions[idx]),
+@@ -706,7 +654,8 @@
+                     "win_reason_code": 0,
+                     "terminated": False,
+                     "truncated": not is_timeout_abort,
+-                    "engine_timeout": is_timeout_abort,
++                    "engine_timeout": wave_timeout_abort,
++                    "timeout_detection_supported": wave_timeout_abort,
+                     "abnormal": True,
+                     "reason_label": "engine_timeout" if is_timeout_abort else "aborted_max_steps",
+                     "cand_engine_step_ms": round(float(ep_cand_step_ms[idx]), 3),
+@@ -728,6 +677,12 @@
+             "cand_decision_steps_total": float(cand_decision_steps_total),
+             "opp_decision_steps_total": float(opp_decision_steps_total),
+             "env_steps_total": float(env_steps_total),
++            "cand_model_calls": cand_model_calls,
++            "opp_model_calls": opp_model_calls,
++            "env_step_calls": env_step_calls,
++            "cand_model_rows": cand_model_calls * num_envs,
++            "opp_model_rows": opp_model_calls * num_envs,
++            "env_slot_steps_submitted": env_step_calls * num_envs,
+         }
+         return [ep for ep in episodes if ep is not None], timing
+ 
+@@ -774,6 +729,8 @@
+         total_cand_decisions_timed = 0.0
+         total_opp_decisions_timed = 0.0
+         total_env_steps_timed = 0.0
++        batch_counts = {k: 0 for k in ("cand_model_calls", "opp_model_calls", "env_step_calls",
++                       "cand_model_rows", "opp_model_rows", "env_slot_steps_submitted")}
+         wave_seeds_used: List[int] = []
+ 
+         matchup_t0 = time.perf_counter()
+@@ -808,6 +765,8 @@
+             all_episodes.extend(eps_second)
+ 
+             for t in (t_first, t_second):
++                for key in batch_counts:
++                    batch_counts[key] += t[key]
+                 total_wall_sec += t["wave_wall_sec"]
+                 total_cand_model_sec += t["cand_model_sec"]
+                 total_opp_model_sec += t["opp_model_sec"]
+@@ -823,13 +782,22 @@
+ 
+         # --- 1. 勝敗の集計（全体・先攻・後攻・先後ペア） ---
+         total_eps = len(all_episodes)
+-        first_eps = [e for e in all_episodes if e["candidate_seat"] == 0]
+-        second_eps = [e for e in all_episodes if e["candidate_seat"] == 1]
+-
+-        wins = sum(e["win"] for e in all_episodes)
+-        losses = sum(e["loss"] for e in all_episodes)
+-        draws = sum(e["draw"] for e in all_episodes)
+-        win_rate = wins / total_eps if total_eps > 0 else 0.0
++        score_groups = {}
++        for episode in all_episodes:
++            score_groups.setdefault(episode["pair_id"], []).append(episode)
++        scored_episodes = [episode for pair in score_groups.values()
++                           if len(pair) == 2 and not any(e["abnormal"] for e in pair)
++                           for episode in pair]
++        scored_ids = {id(e) for e in scored_episodes}
++        for episode in all_episodes:
++            episode["included_in_paired_score"] = id(episode) in scored_ids
++        first_eps = [e for e in scored_episodes if e["candidate_seat"] == 0]
++        second_eps = [e for e in scored_episodes if e["candidate_seat"] == 1]
++
++        wins = sum(e["win"] for e in scored_episodes)
++        losses = sum(e["loss"] for e in scored_episodes)
++        draws = sum(e["draw"] for e in scored_episodes)
++        win_rate = wins / len(scored_episodes) if scored_episodes else 0.0
+ 
+         first_wins = sum(e["win"] for e in first_eps)
+         first_losses = sum(e["loss"] for e in first_eps)
+@@ -859,7 +827,7 @@
+         for pid, seat_map in sorted(pairs_by_id.items()):
+             e0 = seat_map.get(0)
+             e1 = seat_map.get(1)
+-            if not e0 or not e1:
++            if not e0 or not e1 or e0["abnormal"] or e1["abnormal"]:
+                 continue
+             pair_scores.append(0.5 * (float(e0["win"]) + float(e1["win"])))
+             if e0["win"] == 1 and e1["win"] == 1:
+@@ -873,8 +841,8 @@
+             else:
+                 pair_other_draws += 1
+ 
+-        # 総合勝率の95%信頼区間は、同一シード先後ペアの相関を反映したペア単位クラスタ分散から算出
+-        ci_low, ci_high, pair_se, n_eff = paired_wilson_ci95(pair_scores, wins, total_eps)
++        # 総合区間は、正常決着した完全なシードペアを単位に再標本化して算出
++        ci_low, ci_high, pair_se, n_pairs = paired_bootstrap_ci95(pair_scores)
+ 
+         # --- 2. 決着理由・異常終了の集計 ---
+         normal_lp0_count = sum(1 for e in all_episodes if e["reason_label"] == "normal_lp0")
+@@ -934,14 +902,18 @@
+             },
+             "results": {
+                 "total_episodes": total_eps,
++                "scored_episodes": len(scored_episodes),
++                "excluded_from_paired_score": total_eps - len(scored_episodes),
+                 "wins": wins,
+                 "losses": losses,
+                 "draws": draws,
+                 "win_rate": round(win_rate, 4),
+                 "win_rate_ci95": [round(ci_low, 4), round(ci_high, 4)],
+                 "win_rate_se_paired": round(pair_se, 4),
+-                "effective_sample_size": round(n_eff, 2),
+-                "avg_reward": round(float(np.mean([e["candidate_reward"] for e in all_episodes])), 4),
++                "independent_seed_pairs": n_pairs,
++                "ci_method": "seed-pair percentile bootstrap, 20000 resamples",
++                "ci_homogeneous_sample": len(set(pair_scores)) <= 1,
++                "avg_reward": round(float(np.mean([e["candidate_reward"] for e in scored_episodes])), 4) if scored_episodes else 0.0,
+                 "first_player": {
+                     "episodes": len(first_eps),
+                     "wins": first_wins,
+@@ -960,6 +932,7 @@
+                 },
+                 "seed_pairs": {
+                     "total_pairs": len(pairs_by_id),
++                    "scored_pairs": len(pair_scores),
+                     "sweep_2_0_wins": pair_sweep_wins,
+                     "split_1_1_first_player_won_both": pair_split_first,
+                     "split_1_1_second_player_won_both": pair_split_second,
+@@ -973,7 +946,9 @@
+                 "normal_deckout_or_special": normal_deckout_count,
+                 "abnormal_total": abnormal_total,
+                 "truncated": truncated_count,
+-                "engine_timeout": engine_timeout_count,
++                "engine_timeout": engine_timeout_count if all(e.get("timeout_detection_supported") for e in all_episodes) else None,
++                "confirmed_engine_timeout": engine_timeout_count,
++                "timeout_detection_supported": all(e.get("timeout_detection_supported") for e in all_episodes),
+                 "aborted_max_steps": aborted_max_steps_count,
+                 "draws": draws,
+             },
+@@ -987,6 +962,12 @@
+                 "candidate_model_batch_wall_seconds": round(total_cand_model_batch_wall_sec, 4),
+                 "opponent_model_batch_wall_seconds": round(total_opp_model_batch_wall_sec, 4),
+                 "env_step_batch_wall_seconds": round(total_env_step_batch_wall_sec, 4),
++                "batch_counts": batch_counts,
++                "candidate_mean_batch_ms": 1000*total_cand_model_sec/batch_counts["cand_model_calls"] if batch_counts["cand_model_calls"] else 0.0,
++                "candidate_ms_per_computed_row": 1000*total_cand_model_sec/batch_counts["cand_model_rows"] if batch_counts["cand_model_rows"] else 0.0,
++                "opponent_ms_per_computed_row": 1000*total_opp_model_sec/batch_counts["opp_model_rows"] if batch_counts["opp_model_rows"] else 0.0,
++                "env_ms_per_submitted_slot_step": 1000*total_env_step_sec/batch_counts["env_slot_steps_submitted"] if batch_counts["env_slot_steps_submitted"] else 0.0,
++                "timing_definition": "full batch wall cost amortized over useful decisions; not individual decision latency",
+                 "candidate_ms_per_decision": round(cand_ms_per_decision, 4),
+                 "opponent_ms_per_decision": round(opp_ms_per_decision, 4),
+                 "env_ms_per_step": round(env_ms_per_step, 4),
+@@ -1018,7 +999,7 @@
+     summaries: List[Dict[str, Any]],
+ ) -> str:
+     lines: List[str] = []
+-    lines.append("# 青眼（Blue-Eyes）モデル評価レポート")
++    lines.append("# デッキ別モデル評価レポート")
+     lines.append("")
+     lines.append(f"- **実行日時（JST）**: {run_meta['timestamp_jst']}")
+     lines.append(f"- **乱数シード（base_seed）**: `{run_meta['base_seed']}` （学習時 `seed=0`・初回確認 `seed=100` と重複しない未使用シード）")
+@@ -1068,7 +1049,7 @@
+     lines.append("")
+     lines.append("## 3. 判断時間・処理速度の内訳")
+     lines.append("")
+-    lines.append("| 候補 vs 対戦相手 | 候補推論 (ms/判断) | 相手推論 (ms/判断) | エンジン処理 (ms/step) | 候補の平均判断数/戦 (最小–最大) | 実測時間 (秒) | SPS |")
++    lines.append("| 候補 vs 対戦相手 | 候補推論コスト (ms/有効判断) | 相手推論コスト (ms/有効判断) | エンジン処理 (ms/step) | 候補の平均判断数/戦 (最小–最大) | 実測時間 (秒) | SPS |")
+     lines.append("| --- | ---: | ---: | ---: | ---: | ---: | ---: |")
+ 
+     for s in summaries:
+@@ -1087,9 +1068,9 @@
+     lines.append("## 4. 評価結果の解釈上の注意点")
+     lines.append("")
+     lines.append("- **先後ペア比較**: 同じ乱数シードで候補モデルが先攻（Player 0）と後攻（Player 1）の両方をプレイしています。「2連勝」は初手運や先攻・後攻の有利不利に関わらず候補モデルが両方勝ったペア数、「1勝1敗」は片方の席でのみ勝ったペア数です。")
+-    lines.append("- **95%信頼区間（ペア相関考慮）**: 各シードペアの平均勝率 $P_i \\in \\{0, 0.5, 1\\}$ を独立なクラスタ標本としてペア間標本分散から標準誤差・有効サンプルサイズを算出し、先後ペア内の正負の相関を反映した Wilson 信頼区間を表示しています。信頼区間が重なっている場合は「統計的に明確な強さの差はまだ断定できない」ことを示します。")
+-    lines.append("- **ステップ上限打ち切り（Truncated）**: 1戦の環境ステップ数が `max_steps`（デフォルト `1000`）に達した場合、C++エンジンはLP比較で勝敗を付与して終了しますが、本評価では通常決着（`normal_lp0`）とは区別し、`truncated=True`（異常終了・打ち切り）として計上しています。")
+-    lines.append("- **判断時間**: 初回XLAコンパイル時間（ウォームアップ）を除外し、未収集の有効エピソードで実際に行われた判断（`active_uncollected` かつ該当プレイヤー手番）に対応する推論時間と判断数の対象を一致させた定常状態の1判断あたりミリ秒（ms/判断）です。")
++    lines.append("- **区間の算出**: 正常決着した先後2戦が揃うシードペアを単位に、20,000回のブートストラップで95%パーセンタイル区間を算出。少数・同一結果の標本では区間が退化し得るため、強さの同一性や改善の証明にはしません。別モデルとの差は同じペアの差分で評価する必要があります。")
++    lines.append("- **打ち切りとタイムアウト**: 人工的なLP判定報酬は無効化し、その対戦を含むペアは勝率から除外します。新エンジンの専用フラグで理由を判別。旧エンジンは上限境界を保守的に除外し、タイムアウト件数を取得不能(None)と表示します。")
++    lines.append("- **実行コスト**: 推論バッチ全体の実測時間を有効な評価判断数で割った償却コストです。個々の判断の応答時間ではありません。JSONにはバッチ呼び出し数・実際の推論行数・計算行あたりのコストを別記しています。")
+     lines.append("")
+     return "\n".join(lines)
+ 
+@@ -1105,6 +1086,7 @@
+     )
+     parser.add_argument("--num-episodes", type=int, default=32, help="1対戦カードあたりの総対戦数（num_envs*2 の倍数、デフォルト: 32）")
+     parser.add_argument("--num-envs", type=int, default=8, help="並列環境数（デフォルト: 8）")
++    parser.add_argument("--max-options", type=int, default=24, help="最大行動選択肢数（エルフーンは128）")
+     parser.add_argument("--env-threads", type=int, default=4, help="環境スレッド数（デフォルト: 4）")
+     parser.add_argument("--max-steps", type=int, default=1000, help="1戦あたりの最大環境ステップ数（デフォルト: 1000）")
+     parser.add_argument("--timeout", type=int, default=600, help="エンジン1ステップのタイムアウト秒数（デフォルト: 600）")
+@@ -1179,6 +1161,7 @@
+     ctx = EvalContext(
+         runtime_scripts_dir=runtime_scripts_dir,
+         deck_path=deck_path,
++        max_options=args.max_options,
+         num_envs=args.num_envs,
+         env_threads=args.env_threads,
+         max_steps=args.max_steps,

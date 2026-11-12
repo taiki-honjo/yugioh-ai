@@ -1,0 +1,642 @@
+{
+  "arm": "b-rehearsal-l1",
+  "seed": 10000555,
+  "steps": 256,
+  "ppo_updates": 2,
+  "rehearsal_settings": {
+    "enabled": true,
+    "split": "train",
+    "lambda_bc": 1.0,
+    "lambda_kl": 0.0,
+    "sequences_per_minibatch": 2,
+    "seed": 20261109,
+    "sha256": "0ef4700c92ddb6f26c3e3f5dc04d4893d2cb02c096304af0bbdc546f8070e4da"
+  },
+  "candidate": "/home/hatk8/projects/yugioh-ai/experiments/opening-rehearsal-ab-20261109/b-rehearsal-l1/cycles/256-seed10000555/candidate",
+  "base_sha256": "195c025ccc0c830ecac04d7f195188d335f847c4d458b65c4c517481de24c152",
+  "head_sha256": "caba63f2cf5f1c1ab58c5ab61fefa3769b2aa16af11e7f1d3e21c46aebccf655",
+  "changed_values": 3281485,
+  "all_finite": true,
+  "regression_passed": false,
+  "adoption_eligible_by_openings": false,
+  "adopted": false,
+  "opening_passed": 57,
+  "opening_total": 66,
+  "opening_lua_errors": 0,
+  "lost_case_ids": [
+    "cue-mix-jj-track-g08-p0",
+    "cue-reco-jj-zaren-g09-p0",
+    "mixed-rukina-cue-g08-p0",
+    "mixed-rukina-cue-g09-p0",
+    "mixed-rukina-cue-g10-p0",
+    "tune-juke-veiler-g08-p0",
+    "tune-juke-veiler-g09-p0",
+    "tune-stone-sweeper-g09-p0"
+  ],
+  "new_case_ids": [],
+  "cases": {
+    "rukina-pass-g08-p0": true,
+    "rukina-pass-g09-p0": true,
+    "rukina-pass-g10-p0": true,
+    "rukina-ash_rukina-g08-p0": true,
+    "rukina-ash_rukina-g09-p0": true,
+    "rukina-ash_rukina-g10-p0": true,
+    "rukina-veiler_rukina-g08-p0": true,
+    "rukina-veiler_rukina-g09-p0": true,
+    "rukina-veiler_rukina-g10-p0": true,
+    "rukina-ash_spirit-g08-p0": true,
+    "rukina-ash_spirit-g09-p0": true,
+    "rukina-ash_spirit-g10-p0": true,
+    "rukina-ash_parallelism-g08-p0": true,
+    "rukina-ash_parallelism-g09-p0": true,
+    "rukina-ash_parallelism-g10-p0": true,
+    "rukina-veiler_strelitzia-g08-p0": true,
+    "rukina-veiler_strelitzia-g09-p0": true,
+    "rukina-veiler_strelitzia-g10-p0": true,
+    "elf-rukina-regina-g08-p0": true,
+    "elf-rukina-regina-g09-p0": true,
+    "elf-rukina-regina-g10-p0": true,
+    "elf-dina-g08-p0": true,
+    "elf-dina-g09-p0": true,
+    "elf-dina-g10-p0": true,
+    "elf-par-light-cost-g08-p0": true,
+    "elf-par-light-cost-g09-p0": true,
+    "elf-par-light-cost-g10-p0": true,
+    "elf-par-fire-cost-g08-p0": true,
+    "elf-par-fire-cost-g09-p0": true,
+    "elf-par-fire-cost-g10-p0": true,
+    "elf-regina-par-g08-p0": true,
+    "elf-regina-par-g09-p0": true,
+    "elf-regina-par-g10-p0": true,
+    "tune-cue-g08-p0": true,
+    "tune-cue-g09-p0": true,
+    "tune-cue-g10-p0": true,
+    "tune-reco-g08-p0": true,
+    "tune-reco-g09-p0": true,
+    "tune-reco-g10-p0": true,
+    "tune-sync-g08-p0": true,
+    "tune-sync-g09-p0": true,
+    "tune-sync-g10-p0": true,
+    "tune-stone-sweeper-g08-p0": true,
+    "tune-stone-sweeper-g09-p0": false,
+    "tune-stone-sweeper-g10-p0": true,
+    "tune-juke-veiler-g08-p0": false,
+    "tune-juke-veiler-g09-p0": false,
+    "tune-juke-veiler-g10-p0": true,
+    "mixed-rukina-cue-g08-p0": false,
+    "mixed-rukina-cue-g09-p0": false,
+    "mixed-rukina-cue-g10-p0": false,
+    "mixed-reco-spirit-ash-g08-p0": true,
+    "mixed-reco-spirit-ash-g09-p0": true,
+    "mixed-reco-spirit-ash-g10-p0": true,
+    "mixed-cue-spirit-g08-p0": true,
+    "mixed-cue-spirit-g09-p0": true,
+    "mixed-cue-spirit-g10-p0": true,
+    "cue-reco-jj-zaren-g08-p0": false,
+    "cue-reco-jj-zaren-g09-p0": false,
+    "cue-reco-jj-zaren-g10-p0": true,
+    "cue-mix-jj-track-g08-p0": false,
+    "cue-mix-jj-track-g09-p0": true,
+    "cue-mix-jj-track-g10-p0": true,
+    "cue-rotary-jj-zaren-g08-p0": true,
+    "cue-rotary-jj-zaren-g09-p0": true,
+    "cue-rotary-jj-zaren-g10-p0": true
+  },
+  "families": {
+    "elf-dina": {
+      "passed": 3,
+      "total": 3
+    },
+    "elf-par-fire-cost": {
+      "passed": 3,
+      "total": 3
+    },
+    "elf-par-light-cost": {
+      "passed": 3,
+      "total": 3
+    },
+    "elf-regina-par": {
+      "passed": 3,
+      "total": 3
+    },
+    "elf-rukina-regina": {
+      "passed": 3,
+      "total": 3
+    },
+    "jj-cue-mix": {
+      "passed": 2,
+      "total": 3
+    },
+    "jj-cue-reco": {
+      "passed": 1,
+      "total": 3
+    },
+    "jj-cue-rotary": {
+      "passed": 3,
+      "total": 3
+    },
+    "mixed-cue-spirit": {
+      "passed": 3,
+      "total": 3
+    },
+    "mixed-reco-spirit-ash": {
+      "passed": 3,
+      "total": 3
+    },
+    "mixed-rukina-cue": {
+      "passed": 0,
+      "total": 3
+    },
+    "rukina-ash_parallelism": {
+      "passed": 3,
+      "total": 3
+    },
+    "rukina-ash_rukina": {
+      "passed": 3,
+      "total": 3
+    },
+    "rukina-ash_spirit": {
+      "passed": 3,
+      "total": 3
+    },
+    "rukina-pass": {
+      "passed": 3,
+      "total": 3
+    },
+    "rukina-veiler_rukina": {
+      "passed": 3,
+      "total": 3
+    },
+    "rukina-veiler_strelitzia": {
+      "passed": 3,
+      "total": 3
+    },
+    "tune-cue": {
+      "passed": 3,
+      "total": 3
+    },
+    "tune-juke-veiler": {
+      "passed": 1,
+      "total": 3
+    },
+    "tune-reco": {
+      "passed": 3,
+      "total": 3
+    },
+    "tune-stone-sweeper": {
+      "passed": 2,
+      "total": 3
+    },
+    "tune-sync": {
+      "passed": 3,
+      "total": 3
+    }
+  },
+  "teacher_forced": {
+    "checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/opening-rehearsal-ab-20261109/b-rehearsal-l1/cycles/256-seed10000555/candidate",
+    "base_sha256": "195c025ccc0c830ecac04d7f195188d335f847c4d458b65c4c517481de24c152",
+    "head_sha256": "caba63f2cf5f1c1ab58c5ab61fefa3769b2aa16af11e7f1d3e21c46aebccf655",
+    "used_for_training": false,
+    "holdout_used": false,
+    "adapter_steps_excluded": true,
+    "train": {
+      "sequences": 416,
+      "loss_steps": 19178,
+      "ce": 0.05980731171576855,
+      "accuracy": 0.9942642611325477,
+      "families": {
+        "cue-mix-jj-track": {
+          "ce": 0.06704952643554543,
+          "accuracy": 0.9905437352245863,
+          "loss_steps": 846
+        },
+        "cue-reco-jj-track": {
+          "ce": 0.08322992665427072,
+          "accuracy": 0.9833333333333333,
+          "loss_steps": 840
+        },
+        "cue-reco-jj-zaren": {
+          "ce": 0.09832368116269166,
+          "accuracy": 0.9770114942528736,
+          "loss_steps": 870
+        },
+        "cue-rotary-jj-track": {
+          "ce": 0.05824391142680095,
+          "accuracy": 0.9975961538461539,
+          "loss_steps": 832
+        },
+        "cue-rotary-jj-zaren": {
+          "ce": 0.05792700858920056,
+          "accuracy": 0.9976905311778291,
+          "loss_steps": 866
+        },
+        "elf-dina": {
+          "ce": 0.08995973193456257,
+          "accuracy": 0.9920634920634921,
+          "loss_steps": 630
+        },
+        "elf-par-fire-cost": {
+          "ce": 0.05243550162566336,
+          "accuracy": 0.9947368421052631,
+          "loss_steps": 570
+        },
+        "elf-par-light-cost": {
+          "ce": 0.08504829422270437,
+          "accuracy": 0.996742671009772,
+          "loss_steps": 614
+        },
+        "elf-regina-par": {
+          "ce": 0.00042659752860160197,
+          "accuracy": 1.0,
+          "loss_steps": 590
+        },
+        "elf-rukina-regina": {
+          "ce": 0.19678839167799475,
+          "accuracy": 0.9712990936555891,
+          "loss_steps": 662
+        },
+        "mixed-cue-spirit": {
+          "ce": 0.05034752161606498,
+          "accuracy": 0.9982608695652174,
+          "loss_steps": 1150
+        },
+        "mixed-cue-spirit-baronne": {
+          "ce": 0.052196277798833075,
+          "accuracy": 0.9981981981981982,
+          "loss_steps": 1110
+        },
+        "mixed-reco-spirit-ash": {
+          "ce": 0.05931645793397651,
+          "accuracy": 0.9984051036682615,
+          "loss_steps": 1254
+        },
+        "mixed-reco-spirit-ash-baronne": {
+          "ce": 0.06092673017958964,
+          "accuracy": 0.9983471074380166,
+          "loss_steps": 1210
+        },
+        "mixed-rukina-cue": {
+          "ce": 0.06164711834204317,
+          "accuracy": 0.9890572390572391,
+          "loss_steps": 1188
+        },
+        "rukina-ash_parallelism": {
+          "ce": 0.03826047828856935,
+          "accuracy": 1.0,
+          "loss_steps": 752
+        },
+        "rukina-ash_rukina": {
+          "ce": 2.7825334773692504e-05,
+          "accuracy": 1.0,
+          "loss_steps": 184
+        },
+        "rukina-ash_spirit": {
+          "ce": 0.00028474269978081185,
+          "accuracy": 1.0,
+          "loss_steps": 288
+        },
+        "rukina-pass": {
+          "ce": 0.03920633540205334,
+          "accuracy": 1.0,
+          "loss_steps": 736
+        },
+        "rukina-veiler_rukina": {
+          "ce": 2.7837031626879014e-05,
+          "accuracy": 1.0,
+          "loss_steps": 184
+        },
+        "rukina-veiler_strelitzia": {
+          "ce": 0.04300689466652416,
+          "accuracy": 1.0,
+          "loss_steps": 672
+        },
+        "tune-cue": {
+          "ce": 0.052799691722661565,
+          "accuracy": 0.9965870307167235,
+          "loss_steps": 586
+        },
+        "tune-juke-veiler": {
+          "ce": 0.05183823827568811,
+          "accuracy": 0.9961832061068703,
+          "loss_steps": 524
+        },
+        "tune-reco": {
+          "ce": 0.04986867669281686,
+          "accuracy": 0.9968152866242038,
+          "loss_steps": 628
+        },
+        "tune-stone-sweeper": {
+          "ce": 0.04843121882620941,
+          "accuracy": 0.9916897506925207,
+          "loss_steps": 722
+        },
+        "tune-sync": {
+          "ce": 0.02789001073410262,
+          "accuracy": 0.9970149253731343,
+          "loss_steps": 670
+        }
+      }
+    },
+    "validation": {
+      "sequences": 78,
+      "loss_steps": 3606,
+      "ce": 0.06590295007023446,
+      "accuracy": 0.9916805324459235,
+      "families": {
+        "cue-mix-jj-track": {
+          "ce": 0.06426872760057449,
+          "accuracy": 0.9875,
+          "loss_steps": 160
+        },
+        "cue-reco-jj-track": {
+          "ce": 0.07530599949406643,
+          "accuracy": 0.9869281045751634,
+          "loss_steps": 153
+        },
+        "cue-reco-jj-zaren": {
+          "ce": 0.11917638476890853,
+          "accuracy": 0.9746835443037974,
+          "loss_steps": 158
+        },
+        "cue-rotary-jj-track": {
+          "ce": 0.056039813257032826,
+          "accuracy": 1.0,
+          "loss_steps": 155
+        },
+        "cue-rotary-jj-zaren": {
+          "ce": 0.05242832943245217,
+          "accuracy": 1.0,
+          "loss_steps": 162
+        },
+        "elf-dina": {
+          "ce": 0.08637926830508845,
+          "accuracy": 0.991869918699187,
+          "loss_steps": 123
+        },
+        "elf-par-fire-cost": {
+          "ce": 0.11493982449926511,
+          "accuracy": 0.9696969696969697,
+          "loss_steps": 99
+        },
+        "elf-par-light-cost": {
+          "ce": 0.11826989782138134,
+          "accuracy": 0.984251968503937,
+          "loss_steps": 127
+        },
+        "elf-regina-par": {
+          "ce": 0.0003592484002190877,
+          "accuracy": 1.0,
+          "loss_steps": 123
+        },
+        "elf-rukina-regina": {
+          "ce": 0.18176018422649753,
+          "accuracy": 0.9758064516129032,
+          "loss_steps": 124
+        },
+        "mixed-cue-spirit": {
+          "ce": 0.04684023043555671,
+          "accuracy": 1.0,
+          "loss_steps": 211
+        },
+        "mixed-cue-spirit-baronne": {
+          "ce": 0.04917199153618272,
+          "accuracy": 1.0,
+          "loss_steps": 203
+        },
+        "mixed-reco-spirit-ash": {
+          "ce": 0.08020547009253687,
+          "accuracy": 0.9922480620155039,
+          "loss_steps": 258
+        },
+        "mixed-reco-spirit-ash-baronne": {
+          "ce": 0.0751557103191239,
+          "accuracy": 0.9960159362549801,
+          "loss_steps": 251
+        },
+        "mixed-rukina-cue": {
+          "ce": 0.07611619456996763,
+          "accuracy": 0.975609756097561,
+          "loss_steps": 246
+        },
+        "rukina-ash_parallelism": {
+          "ce": 0.04116246354488926,
+          "accuracy": 1.0,
+          "loss_steps": 131
+        },
+        "rukina-ash_rukina": {
+          "ce": 0.00015125944979633364,
+          "accuracy": 1.0,
+          "loss_steps": 29
+        },
+        "rukina-ash_spirit": {
+          "ce": 0.00027806350809274886,
+          "accuracy": 1.0,
+          "loss_steps": 49
+        },
+        "rukina-pass": {
+          "ce": 0.04126463591597462,
+          "accuracy": 1.0,
+          "loss_steps": 131
+        },
+        "rukina-veiler_rukina": {
+          "ce": 0.00014527923987520025,
+          "accuracy": 1.0,
+          "loss_steps": 29
+        },
+        "rukina-veiler_strelitzia": {
+          "ce": 0.04623378036368606,
+          "accuracy": 1.0,
+          "loss_steps": 117
+        },
+        "tune-cue": {
+          "ce": 0.03950511792610432,
+          "accuracy": 1.0,
+          "loss_steps": 116
+        },
+        "tune-juke-veiler": {
+          "ce": 0.09596830751837754,
+          "accuracy": 0.975609756097561,
+          "loss_steps": 82
+        },
+        "tune-reco": {
+          "ce": 0.04420547278031059,
+          "accuracy": 1.0,
+          "loss_steps": 115
+        },
+        "tune-stone-sweeper": {
+          "ce": 0.044008610892469865,
+          "accuracy": 0.9854014598540146,
+          "loss_steps": 137
+        },
+        "tune-sync": {
+          "ce": 0.019522752007867537,
+          "accuracy": 1.0,
+          "loss_steps": 117
+        }
+      }
+    }
+  },
+  "rehearsal": {
+    "updates": 2,
+    "minibatch_updates": 8,
+    "sequences_sampled": 16,
+    "first": {
+      "ce": 0.04689149558544159,
+      "accuracy": 0.996874988079071,
+      "loss_steps": 79.25,
+      "ppo_grad_norm": 13.490610122680664,
+      "rehearsal_grad_norm": 2.0682482719421387,
+      "combined_grad_norm": 13.93626594543457,
+      "rehearsal_base_grad_norm": 2.0682482719421387,
+      "rehearsal_head_grad_norm": 0.0007266367902047932,
+      "ppo_head_grad_norm": 0.04201894253492355
+    },
+    "last": {
+      "ce": 0.06378284096717834,
+      "accuracy": 0.9967532157897949,
+      "loss_steps": 97.75,
+      "ppo_grad_norm": 15.015859603881836,
+      "rehearsal_grad_norm": 3.0949485301971436,
+      "combined_grad_norm": 15.3375825881958,
+      "rehearsal_base_grad_norm": 3.0949418544769287,
+      "rehearsal_head_grad_norm": 0.005918140057474375,
+      "ppo_head_grad_norm": 0.04961876571178436
+    },
+    "mean": {
+      "ce": 0.05533716827630997,
+      "accuracy": 0.996814101934433,
+      "loss_steps": 88.5,
+      "ppo_grad_norm": 14.25323486328125,
+      "rehearsal_grad_norm": 2.581598401069641,
+      "combined_grad_norm": 14.636924266815186,
+      "rehearsal_base_grad_norm": 2.5815950632095337,
+      "rehearsal_head_grad_norm": 0.003322388423839584,
+      "ppo_head_grad_norm": 0.04581885412335396
+    },
+    "learner_seconds_mean": 61.24985
+  },
+  "battle": {
+    "results": {
+      "total_episodes": 32,
+      "verified_episodes": 32,
+      "excluded_suspected_episodes": 0,
+      "excluded_timeout_or_suspected_episodes": 0,
+      "wins": 9,
+      "losses": 23,
+      "draws": 0,
+      "win_rate": 0.2812,
+      "win_rate_includes_truncated_lp": true,
+      "truncation_rate": 0.0,
+      "win_rate_ci95": [
+        0.0727,
+        0.5866
+      ],
+      "win_rate_se_paired": 0.0786,
+      "effective_sample_size": 16.0,
+      "avg_reward": -0.6016,
+      "has_suspected_timeout": false,
+      "requires_rerun_or_exclusion": false,
+      "timeout_suspected_policy": "exclude_engine_timeout_and_suspected_pairs_from_verified_and_natural_results_keep_raw_in_episodes_and_raw_including_suspected_flag_rerun",
+      "natural_only": {
+        "episodes": 32,
+        "wins": 9,
+        "losses": 23,
+        "draws": 0,
+        "win_rate": 0.2812
+      },
+      "raw_including_suspected": {
+        "episodes": 32,
+        "wins": 9,
+        "losses": 23,
+        "draws": 0,
+        "win_rate": 0.2812,
+        "win_rate_ci95": [
+          0.0727,
+          0.5866
+        ]
+      },
+      "first_player": {
+        "episodes": 16,
+        "wins": 8,
+        "losses": 8,
+        "draws": 0,
+        "win_rate": 0.5,
+        "win_rate_ci95": [
+          0.28,
+          0.72
+        ]
+      },
+      "second_player": {
+        "episodes": 16,
+        "wins": 1,
+        "losses": 15,
+        "draws": 0,
+        "win_rate": 0.0625,
+        "win_rate_ci95": [
+          0.0111,
+          0.2833
+        ]
+      },
+      "seed_pairs": {
+        "total_pairs": 16,
+        "verified_pairs": 16,
+        "suspected_or_timeout_pairs": 0,
+        "sweep_2_0_wins": 1,
+        "split_1_1_first_player_won_both": 7,
+        "split_1_1_second_player_won_both": 0,
+        "sweep_0_2_losses": 8,
+        "other_with_draws": 0
+      }
+    },
+    "terminations": {
+      "normal_total": 32,
+      "normal_lp0": 32,
+      "normal_deckout_or_special": 0,
+      "abnormal_total": 0,
+      "truncated": 0,
+      "engine_timeout": 0,
+      "timeout_suspected": 0,
+      "aborted_max_steps": 0,
+      "draws": 0
+    }
+  },
+  "resources": {
+    "train": {
+      "name": "train",
+      "wall_seconds": 152.5,
+      "max_rss_mib": 2678.4,
+      "gpu_memory_used_before_mib": 1408.0,
+      "gpu_memory_used_peak_mib": 2409.0,
+      "gpu_utilization_peak_percent": 100.0,
+      "gpu_samples": 74
+    },
+    "opening-regression": {
+      "name": "opening-regression",
+      "wall_seconds": 42.2,
+      "max_rss_mib": 991.4,
+      "gpu_memory_used_before_mib": 1372.0,
+      "gpu_memory_used_peak_mib": 1786.0,
+      "gpu_utilization_peak_percent": 42.0,
+      "gpu_samples": 20
+    },
+    "battle": {
+      "name": "battle",
+      "wall_seconds": 68.3,
+      "max_rss_mib": 1308.6,
+      "gpu_memory_used_before_mib": 1372.0,
+      "gpu_memory_used_peak_mib": 1641.0,
+      "gpu_utilization_peak_percent": 41.0,
+      "gpu_samples": 33
+    },
+    "teacher-forced": {
+      "name": "teacher-forced",
+      "wall_seconds": 30.1,
+      "max_rss_mib": 1329.9,
+      "gpu_memory_used_before_mib": 1372.0,
+      "gpu_memory_used_peak_mib": 1772.0,
+      "gpu_utilization_peak_percent": 92.0,
+      "gpu_samples": 14
+    }
+  },
+  "native_lua_errors_in_training": 0
+}

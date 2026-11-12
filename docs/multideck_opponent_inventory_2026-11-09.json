@@ -1,0 +1,106 @@
+{
+  "date_jst": "2026-11-09",
+  "source_manifest": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/manifest.json",
+  "source_manifest_sha256": "ace4f6b8408011a55e9b61d3c4917580942d86960bb3f087afe75ce2774c824a",
+  "current_runtime": {
+    "runtime": "/home/hatk8/projects/yugioh-ai/evaluation/opponent-article-basics-20261108/runtime",
+    "native_binary": "/home/hatk8/projects/yugioh-ai/evaluation/opponent-article-basics-20261108/runtime/agent/ygoenv/ygoenv/ygopro/ygopro_ygoenv.cpython-310-x86_64-linux-gnu.so",
+    "native_sha256": "19a60f38a3d39b61a2ee082168d5a788a1022b2eb569633816596c8b3de21294",
+    "vocabulary": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/code_list.txt",
+    "vocabulary_sha256": "aeb5be89d4a5591ccc5cce6af96def74ef47463a55265f75c11b92029e772e7b",
+    "deck": "/home/hatk8/projects/yugioh-ai/assets/deck/ElfnotesKewlTune.ydk",
+    "deck_sha256": "6e6344d98ee5865e8ea1460c75c361a3f6e054c02cb8a041337c532646d15373",
+    "observation_policy": "masked public/own information plus public-chain features",
+    "normal_summon_usage_scored": false,
+    "model_format": "paired base + chain-head",
+    "max_options": 128
+  },
+  "opponents": [
+    {
+      "id": "Artmage",
+      "label": "アルトメギア",
+      "deck_path": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/decks/Artmage.ydk",
+      "deck_sha256": "a93c4d30d0945f58f741f1e135fdcbc0b0c438aff575cf6d0d02ce9a82c381d6",
+      "deck_counts": {
+        "main": 40,
+        "extra": 15,
+        "side": 0
+      },
+      "policy_format": "legacy_single_flax",
+      "checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/training/Artmage/phase2-65536/checkpoints/1794059543_65536steps.flax_model",
+      "checkpoint_sha256": "1940dac58ac5474c41c0060336a24c244cb26c679d4fe42060ec944fad6b90d5",
+      "checkpoint_exists": true,
+      "training_result": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/training/Artmage/phase2-65536/result.json",
+      "source_native_sha256": "57aa077f335c5c3e3cee7a91a58b03806ce4b6f439cbbbc7179db650b1867f2c",
+      "vocabulary": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/code_list.txt",
+      "vocabulary_sha256": "aeb5be89d4a5591ccc5cce6af96def74ef47463a55265f75c11b92029e772e7b",
+      "trained_environment_decisions": 69632,
+      "compatibility_with_current_runtime": "not tested in this task"
+    },
+    {
+      "id": "ClownTroupe",
+      "label": "道化の一座",
+      "deck_path": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/decks/ClownTroupe.ydk",
+      "deck_sha256": "a841b56d10da76ad26c573070c6c1628a30c4d688ba89ef06cf593d677010c66",
+      "deck_counts": {
+        "main": 40,
+        "extra": 15,
+        "side": 0
+      },
+      "policy_format": "legacy_single_flax",
+      "checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/training/ClownTroupe/phase2-65536/checkpoints/1794059757_65536steps.flax_model",
+      "checkpoint_sha256": "c30f39ae804dba20dca7433a5ae9c459ce2dbd792ab6b4f4965619a9e88eef26",
+      "checkpoint_exists": true,
+      "training_result": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/training/ClownTroupe/phase2-65536/result.json",
+      "source_native_sha256": "57aa077f335c5c3e3cee7a91a58b03806ce4b6f439cbbbc7179db650b1867f2c",
+      "vocabulary": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/code_list.txt",
+      "vocabulary_sha256": "aeb5be89d4a5591ccc5cce6af96def74ef47463a55265f75c11b92029e772e7b",
+      "trained_environment_decisions": 69632,
+      "compatibility_with_current_runtime": "not tested in this task"
+    },
+    {
+      "id": "BrandedDracotail",
+      "label": "烙印ドラゴンテイル",
+      "deck_path": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/decks/BrandedDracotail.ydk",
+      "deck_sha256": "4e6f67f03650a0df56bd463e9d69a648b5b69e2358b1b2a7977dfab10d340ba3",
+      "deck_counts": {
+        "main": 40,
+        "extra": 15,
+        "side": 0
+      },
+      "policy_format": "legacy_single_flax",
+      "checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/training/BrandedDracotail/phase2-65536/checkpoints/1794059971_65536steps.flax_model",
+      "checkpoint_sha256": "91dc39d7b0bd9f055b65f74397688d82d1d61cd9a0b6694e3282292706767df3",
+      "checkpoint_exists": true,
+      "training_result": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/training/BrandedDracotail/phase2-65536/result.json",
+      "source_native_sha256": "57aa077f335c5c3e3cee7a91a58b03806ce4b6f439cbbbc7179db650b1867f2c",
+      "vocabulary": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/code_list.txt",
+      "vocabulary_sha256": "aeb5be89d4a5591ccc5cce6af96def74ef47463a55265f75c11b92029e772e7b",
+      "trained_environment_decisions": 69632,
+      "compatibility_with_current_runtime": "not tested in this task"
+    },
+    {
+      "id": "SkyStriker",
+      "label": "閃刀姫",
+      "deck_path": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/decks/SkyStriker.ydk",
+      "deck_sha256": "8e425bb77616fbf946ee5ca5e540992916b12430c5180cdab9b27539f4a94c77",
+      "deck_counts": {
+        "main": 51,
+        "extra": 15,
+        "side": 0
+      },
+      "policy_format": "legacy_single_flax",
+      "checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/training/SkyStriker/phase2-65536/checkpoints/1794060213_65536steps.flax_model",
+      "checkpoint_sha256": "430090a99437cea5f1e128f33324e25b95903f8309e5b483bdce8dbb5bae846b",
+      "checkpoint_exists": true,
+      "training_result": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/training/SkyStriker/phase2-65536/result.json",
+      "source_native_sha256": "57aa077f335c5c3e3cee7a91a58b03806ce4b6f439cbbbc7179db650b1867f2c",
+      "vocabulary": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/code_list.txt",
+      "vocabulary_sha256": "aeb5be89d4a5591ccc5cce6af96def74ef47463a55265f75c11b92029e772e7b",
+      "trained_environment_decisions": 69632,
+      "compatibility_with_current_runtime": "not tested in this task"
+    }
+  ],
+  "production_changed": false,
+  "training_or_games_started": false
+}

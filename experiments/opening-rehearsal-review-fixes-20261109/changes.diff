@@ -1,0 +1,719 @@
+--- experiments/opening-rehearsal-review-fixes-20261109/source-before/scripts/opening_rehearsal_ab.py	2026-11-09 12:07:49.880896500 +0900
++++ scripts/opening_rehearsal_ab.py	2026-11-09 13:25:58.724924420 +0900
+@@ -10,14 +10,23 @@
+ Usage:
+   python -B scripts/opening_rehearsal_ab.py run --plan PLAN.json [--arms a,b] [--seeds 1,2]
+   python -B scripts/opening_rehearsal_ab.py summarize --plan PLAN.json
++  python -B scripts/opening_rehearsal_ab.py diagnose --plan PLAN.json --arms ARM --seeds S1,S2
++
++A run directory is reused only when its recorded conditions (run-conditions.json) and the
++job commands/files it actually used match the current plan exactly; otherwise the runner
++refuses. Every arm the runner touched is left with STOP and a final state, also on failure.
+ """
+ from __future__ import annotations
+ 
+ import argparse
+ import collections
++import hashlib
++import inspect
+ import json
++import os
+ import re
+ import shutil
++import signal
+ import subprocess
+ import sys
+ import threading
+@@ -32,6 +41,9 @@
+ 
+ PROJECT = HERE.parent
+ PRODUCTION_CONFIG = PROJECT / 'config/continuous-elfnotes.json'
++EVALUATION_VERSION = 'opening-eval-v1: validation 66 free-run openings; every baseline-passing case_id must stay passing'
++CONDITION_FORMAT = 1
++RESULT_FUNCTIONS = ('job_teacher_forced', 'load_split_for_diagnostics', 'family_counts')
+ SHARED_SNAPSHOT_FILES = ['evaluator.py', 'opening-manifest.json', 'opening-policy.json', 'runtime.json', 'meta-run-manifest.json']
+ 
+ 
+@@ -174,8 +186,8 @@
+                 rehearsal_files=extra, initial_model_identical_to_adopted=True)
+ 
+ 
+-def setup_arm(B, plan, name, arm):
+-    cfg = arm_config(plan, name, arm)
++def setup_arm(B, plan, name, arm, cfg=None):
++    cfg = cfg or arm_config(plan, name, arm)
+     root = Path(cfg['root'])
+     if (root / 'arm-setup.json').exists() and (root / 'STOP').exists():
+         (root / 'STOP').unlink()  # this runner's own completion marker for an experiment arm; never production
+@@ -205,22 +217,110 @@
+     return C.read_json(result)
+ 
+ 
++# ---------------------------------------------------------------- run conditions
++
++def result_code_fingerprint():
++    """Code that determines a run's recorded numbers (the pinned snapshot is fingerprinted separately)."""
++    source = ''.join(inspect.getsource(globals()[name]) for name in RESULT_FUNCTIONS)
++    return {'scripts/continuous_learning.py': C.sha(HERE / 'continuous_learning.py'),
++            'scripts/continuous_opening_backend.py': C.sha(HERE / 'continuous_opening_backend.py'),
++            'scripts/opening_rehearsal.py': C.sha(HERE / 'opening_rehearsal.py'),
++            'runner_result_functions': hashlib.sha256(source.encode()).hexdigest()}
++
++
++def requested_conditions(plan, name, arm, cfg, seed):
++    root = Path(cfg['root'])
++    return dict(format=CONDITION_FORMAT, arm=name, steps=int(plan['steps']), training_seed=int(seed),
++                battle_episodes=int(plan['battle_episodes']), battle_seed=int(plan['battle_seed']),
++                battle_opponent='models/initial',
++                initial_base_sha256=C.sha(root / 'models/initial/base.flax_model'),
++                initial_head_sha256=C.sha(root / 'models/initial/chain-head.flax_model'),
++                rehearsal=R.validate_settings(arm['rehearsal']) if arm.get('rehearsal') else None,
++                snapshot_hashes_sha256=C.sha(root / 'snapshot/hashes.json'),
++                evaluation_version=EVALUATION_VERSION, code=result_code_fingerprint())
++
++
++def condition_differences(stored, wanted):
++    return sorted(k for k in set(stored) | set(wanted) if stored.get(k) != wanted.get(k))
++
++
++def recorded_flag(path, flag):
++    command = [str(x) for x in C.read_json(path)['command']]
++    return command[command.index(flag) + 1]
++
++
++def evidence_problems(directory, root, wanted):
++    """Compare what the recorded job commands and files actually used with the requested conditions."""
++    problems = []
++    if (directory / 'train-command.json').exists():
++        flag = lambda f: recorded_flag(directory / 'train-command.json', f)
++        if int(flag('--total-timesteps')) != wanted['steps']:
++            problems.append('training steps in train-command.json')
++        if int(flag('--seed')) != wanted['training_seed']:
++            problems.append('training seed in train-command.json')
++        if Path(flag('--checkpoint')).resolve().parent != directory.resolve():
++            problems.append('training checkpoint outside the run directory')
++        for name, key in [('base.flax_model', 'initial_base_sha256'), ('chain-head.flax_model', 'initial_head_sha256')]:
++            if C.sha(directory / 'source-model' / name) != wanted[key]:
++                problems.append(f'starting {name}')
++    if (directory / 'battle-command.json').exists():
++        flag = lambda f: recorded_flag(directory / 'battle-command.json', f)
++        if int(flag('--episodes')) != wanted['battle_episodes']:
++            problems.append('battle episodes in battle-command.json')
++        if int(flag('--seed')) != wanted['battle_seed']:
++            problems.append('battle seed in battle-command.json')
++        if Path(flag('--opponent')).resolve() != (root / 'models/initial').resolve():
++            problems.append('battle opponent')
++        if Path(flag('--candidate')).resolve() != (directory / 'candidate').resolve():
++            problems.append('battle candidate')
++    if (directory / 'run-result.json').exists():
++        result = C.read_json(directory / 'run-result.json')
++        if (result['steps'], result['seed']) != (wanted['steps'], wanted['training_seed']):
++            problems.append('steps/seed in run-result.json')
++        for name, key in [('base.flax_model', 'base_sha256'), ('chain-head.flax_model', 'head_sha256')]:
++            if C.sha(directory / 'candidate' / name) != result[key]:
++                problems.append(f'candidate {name} hash')
++        found = (result.get('battle') or {}).get('results')
++        if found and found.get('total_episodes') != wanted['battle_episodes']:
++            problems.append('battle episodes in run-result.json')
++    return problems
++
++
++def verified_reuse(directory, root, wanted):
++    """Refuse, never guess: a run directory is reusable only under identical recorded conditions."""
++    path = directory / 'run-conditions.json'
++    if not path.exists():
++        raise RuntimeError(f'{directory}: no recorded run conditions (earlier runner version); refusing to reuse it. '
++                           'Use a new experiment_root.')
++    different = condition_differences(C.read_json(path), wanted)
++    if different:
++        raise RuntimeError(f'{directory}: recorded run conditions differ from the current plan {different}; '
++                           'refusing to reuse it. Use a new experiment_root.')
++    problems = evidence_problems(directory, root, wanted)
++    if problems:
++        raise RuntimeError(f'{directory}: recorded evidence does not match the requested conditions {problems}')
++
++
+ # ---------------------------------------------------------------- one training run
+ 
+ def run_one(B, plan, name, arm, cfg, state, seed):
+     root = Path(cfg['root'])
+     directory = root / 'cycles' / f"{plan['steps']}-seed{seed}"
+     done = directory / 'run-result.json'
+-    if done.exists():
+-        return C.read_json(done)
++    wanted = requested_conditions(plan, name, arm, cfg, seed)
+     trained = (directory / 'training-result.json').exists() and (directory / 'candidate/chain-head.flax_model').exists()
+-    if directory.exists() and not trained:
++    if done.exists() or trained:
++        verified_reuse(directory, root, wanted)
++        if done.exists():
++            return C.read_json(done)
++    elif directory.exists():
+         directory.rename(directory.with_name(directory.name + '-incomplete-' + uuid.uuid4().hex[:6]))
+     if trained:  # resume after a later stage failed; the validated candidate is reused, not retrained
+         pending = C.read_json(directory / 'pending.json')
+         candidate = directory / 'candidate'
+     else:
+         directory.mkdir(parents=True)
++        C.atomic_json(directory / 'run-conditions.json', wanted)
+         source = directory / 'source-model'
+         source.mkdir()
+         for item in (root / 'models/initial').iterdir():
+@@ -278,6 +378,7 @@
+     resources = {p.stem.replace('-resources', ''): C.read_json(p) for p in directory.glob('*-resources.json')}
+     result = dict(
+         arm=name, seed=seed, steps=plan['steps'], ppo_updates=updates, rehearsal_settings=arm.get('rehearsal'),
++        conditions=wanted,
+         candidate=str(candidate), base_sha256=training['base_sha256'], head_sha256=training['head_sha256'],
+         changed_values=training['changed_values'], all_finite=training['all_finite'],
+         regression_passed=regression['passed'], adoption_eligible_by_openings=regression['passed'], adopted=False,
+@@ -388,6 +489,69 @@
+     return plan
+ 
+ 
++def leftover_jobs(root):
++    marker = str(Path(root).resolve()) + '/'
++    out = subprocess.run(['ps', '-eo', 'pid=,args='], capture_output=True, text=True).stdout
++    own = {os.getpid(), os.getppid()}
++    return [int(line.split(None, 1)[0]) for line in out.splitlines()
++            if marker in line and int(line.split(None, 1)[0]) not in own]
++
++
++LEFTOVER_WAIT_SECONDS = 10
++
++
++def terminate_leftover_jobs(root, wait=None):
++    """run_job() kills its job on every exit path; confirm that nothing referencing this arm survives."""
++    wait = LEFTOVER_WAIT_SECONDS if wait is None else wait
++    found, deadline = leftover_jobs(root), time.monotonic() + wait
++    while found and time.monotonic() < deadline:
++        time.sleep(0.5)
++        found = leftover_jobs(root)
++    terminated = []
++    for sig in (signal.SIGTERM, signal.SIGKILL):
++        if not found:
++            break
++        for pid in found:
++            try:
++                os.kill(pid, sig)
++                terminated.append(pid)
++            except ProcessLookupError:
++                pass
++        time.sleep(2)
++        found = leftover_jobs(root)
++    if found:
++        raise RuntimeError(f'Job processes for {root} are still running: {found}')
++    return sorted(set(terminated))
++
++
++def close_arm(cfg, state, outcome, error=None):
++    """Leave an experiment arm stopped on every exit path: no live job, STOP present, final state saved."""
++    root = assert_isolated(cfg['root'])
++    if not root.exists():
++        return None
++    try:
++        terminated = terminate_leftover_jobs(root)
++    finally:
++        (root / 'STOP').write_text('now')
++    if state is None and (root / 'state.json').exists():
++        state = C.read_json(root / 'state.json')
++    if state is not None:
++        C.save_state(cfg, state, status='stopped', phase='idle', pid=None, child_pid=None,
++                     last_decision=('finite_ab_experiment_complete_not_adopted' if outcome == 'complete'
++                                    else 'finite_ab_experiment_failed_not_adopted'),
++                     last_error=None if error is None else f'{type(error).__name__}: {error}',
++                     leftover_jobs_terminated=terminated)
++    return terminated
++
++
++def raise_on_termination_signal():
++    """SIGTERM/SIGHUP become exceptions so that every finally-block (job kill, STOP) runs."""
++    def handler(signum, frame):
++        raise SystemExit(f'terminated by signal {signum}')
++    for sig in (signal.SIGTERM, signal.SIGHUP):
++        signal.signal(sig, handler)
++
++
+ def run(args):
+     plan = load_plan(args.plan)
+     root = Path(plan['experiment_root'])
+@@ -398,42 +562,73 @@
+         C.atomic_json(root / 'production-fingerprint-before.json', before)
+     arms = [a for a in plan['arms'] if not args.arms or a in args.arms.split(',')]
+     seeds = [s for s in plan['seeds'] if not args.seeds or str(s) in args.seeds.split(',')]
+-    B = backend()
+-    setups = {}
+-    for name in arms:
+-        cfg, state, info = setup_arm(B, plan, name, plan['arms'][name])
+-        setups[name] = (cfg, state)
+-        C.atomic_json(Path(cfg['root']) / 'arm-setup.json', info)
+-        print('ARM_READY', name, json.dumps(info), flush=True)
+-    for seed in seeds:
+-        for name in arms:  # interleave arms per seed
+-            cfg, state = setups[name]
+-            started = time.monotonic()
+-            result = run_one(B, plan, name, plan['arms'][name], cfg, state, seed)
+-            print('RUN_DONE', name, seed, f'{time.monotonic() - started:.0f}s',
+-                  json.dumps(dict(openings=f"{result['opening_passed']}/{result['opening_total']}",
+-                                  regression_passed=result['regression_passed'], lost=result['lost_case_ids'],
+-                                  new=result['new_case_ids'],
+-                                  battle=(result['battle']['results'] or {}).get('win_rate', result['battle'].get('status')))), flush=True)
+-    for name in arms:
+-        cfg, state = setups[name]
+-        (Path(cfg['root']) / 'STOP').write_text('now')
+-        C.save_state(cfg, state, status='stopped', phase='idle', pid=None, child_pid=None,
+-                     last_decision='finite_ab_experiment_complete_not_adopted')
+-    after = production_fingerprint()
+-    if after != before:
+-        raise RuntimeError('Production fingerprint changed during the experiment')
++    raise_on_termination_signal()
++    touched, outcome, error = {}, 'failed', None
++    try:
++        B = backend()
++        for name in arms:
++            cfg = arm_config(plan, name, plan['arms'][name])
++            touched[name] = [cfg, None]  # registered before setup_arm() lifts this arm's STOP
++            cfg, state, info = setup_arm(B, plan, name, plan['arms'][name], cfg)
++            touched[name][1] = state
++            C.atomic_json(Path(cfg['root']) / 'arm-setup.json', info)
++            print('ARM_READY', name, json.dumps(info), flush=True)
++        for seed in seeds:
++            for name in arms:  # interleave arms per seed
++                cfg, state = touched[name]
++                started = time.monotonic()
++                result = run_one(B, plan, name, plan['arms'][name], cfg, state, seed)
++                print('RUN_DONE', name, seed, f'{time.monotonic() - started:.0f}s',
++                      json.dumps(dict(openings=f"{result['opening_passed']}/{result['opening_total']}",
++                                      regression_passed=result['regression_passed'], lost=result['lost_case_ids'],
++                                      new=result['new_case_ids'],
++                                      battle=(result['battle']['results'] or {}).get('win_rate', result['battle'].get('status')))), flush=True)
++        outcome = 'complete'
++    except BaseException as exc:
++        error = exc
++        raise
++    finally:
++        failures = []
++        for name, (cfg, state) in touched.items():
++            try:
++                close_arm(cfg, state, outcome, error)
++            except Exception as exc:  # keep closing the other arms
++                failures.append(f'{name}: {exc}')
++        after = production_fingerprint()
++        if after != before:
++            raise RuntimeError('Production fingerprint changed during the experiment')
++        if failures:
++            raise RuntimeError(f'Could not close experiment arms cleanly: {failures}')
+     C.atomic_json(root / 'production-fingerprint-after.json', after)
+     summarize(args)
+ 
+ 
+ def summarize(args):
++    """Summarize ONLY runs whose recorded conditions and evidence match the current plan; refuse otherwise."""
+     plan = load_plan(args.plan)
+     root = Path(plan['experiment_root'])
+-    runs = []
+-    for name in plan['arms']:
+-        for path in sorted((root / name / 'cycles').glob('*/run-result.json')):
+-            runs.append(C.read_json(path))
++    runs, mismatches, missing = [], [], []
++    for name, arm in plan['arms'].items():
++        config = root / 'configs' / f'{name}.json'
++        cfg = C.load_config(config) if config.exists() else None
++        cycles = root / name / 'cycles'
++        seen = set()
++        for path in sorted(cycles.glob('*/run-result.json')) if cycles.exists() else []:
++            directory, result = path.parent, C.read_json(path)
++            if cfg is None:
++                mismatches.append(f'{directory}: arm config is missing')
++            elif result['seed'] not in plan['seeds']:
++                mismatches.append(f"{directory}: seed {result['seed']} is not in the plan")
++            else:
++                try:
++                    verified_reuse(directory, Path(cfg['root']), requested_conditions(plan, name, arm, cfg, result['seed']))
++                    runs.append(result)
++                    seen.add(result['seed'])
++                except RuntimeError as exc:
++                    mismatches.append(str(exc))
++        missing.extend(f'{name}/{seed}' for seed in plan['seeds'] if seed not in seen)
++    if mismatches:
++        raise RuntimeError('Refusing to summarize runs that do not match the current plan:\n' + '\n'.join(mismatches))
+     arms = {}
+     for name in plan['arms']:
+         rs = [r for r in runs if r['arm'] == name]
+@@ -455,7 +650,8 @@
+             train_max_rss_mib=[r['resources'].get('train', {}).get('max_rss_mib') for r in rs],
+             train_gpu_peak_mib=[r['resources'].get('train', {}).get('gpu_memory_used_peak_mib') for r in rs])
+     summary = dict(plan=plan, runs=runs, arms=arms, generated_jst=C.now(), adopted_any=False,
+-                   production_started=False, network_or_llm_calls=False)
++                   production_started=False, network_or_llm_calls=False, conditions_verified=True,
++                   missing_runs=missing, complete=not missing)
+     C.atomic_json(root / 'summary.json', summary)
+     print(json.dumps(arms, indent=2, ensure_ascii=False))
+ 
+@@ -472,7 +668,10 @@
+         (self.root / 'STOP').unlink(missing_ok=True)
+ 
+     def __exit__(self, *exc):
+-        (self.root / 'STOP').write_text('now')
++        try:
++            terminate_leftover_jobs(self.root)
++        finally:
++            (self.root / 'STOP').write_text('now')
+ 
+ 
+ def diagnose(args):
+@@ -481,6 +680,7 @@
+     root = Path(plan['experiment_root'])
+     if production_fingerprint() != C.read_json(root / 'production-fingerprint-before.json'):
+         raise RuntimeError('Production fingerprint changed')
++    raise_on_termination_signal()
+     B = backend()
+     for name in plan['arms']:
+         cfg = C.load_config(root / 'configs' / f'{name}.json')
+@@ -533,7 +733,7 @@
+ 
+ 
+ def perturbation(args):
+-    """Diagnostic only (no training, no adoption): is the loss tied to the PPO update
++    """Called from diagnose() inside arm_active(). Diagnostic only (no training, no adoption): is the loss tied to the PPO update
+     direction or to any change of that size? Evaluates theta0 + alpha*delta and
+     theta0 + |delta|*random_sign on the unchanged 66 validation openings."""
+     import numpy as np
+@@ -582,7 +782,7 @@
+ 
+ def main():
+     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
+-    parser.add_argument('action', choices=['run', 'summarize', 'job-teacher-forced', 'perturbation', 'job-opening-failures', 'diagnose'])
++    parser.add_argument('action', choices=['run', 'summarize', 'job-teacher-forced', 'job-opening-failures', 'diagnose'])
+     parser.add_argument('--plan')
+     parser.add_argument('--arms')
+     parser.add_argument('--seeds')
+@@ -595,8 +795,6 @@
+         job_teacher_forced(args)
+     elif args.action == 'run':
+         run(args)
+-    elif args.action == 'perturbation':
+-        perturbation(args)
+     elif args.action == 'job-opening-failures':
+         job_opening_failures(args)
+     elif args.action == 'diagnose':
+--- experiments/opening-rehearsal-review-fixes-20261109/source-before/docs/opening-rehearsal-ab-2026-11-09.md	2026-11-09 12:17:48.672990830 +0900
++++ docs/opening-rehearsal-ab-2026-11-09.md	2026-11-09 13:36:56.608889022 +0900
+@@ -6,7 +6,7 @@
+ 
+ ## 1. 結論
+ 
+-| 腕（各256判断×3 seed） | 66初手の成功数（基準65） | 保持条件の合格 | 3 seed合計の喪失 | 対戦（候補対採用モデル、確認済み） |
++| 腕（各256判断×3 seed） | 66初手の成功数（基準65） | 保持条件の合格 | 延べ喪失（3 seed、同じcase_idも別seedなら別件） | 対戦（候補対採用モデル、確認済み） |
+ | --- | --- | --- | --- | --- |
+ | A 現行PPO | 57 / 45 / 60 | 0/3 | 33件 | 25勝39敗（64戦）＋評価不能1回 |
+ | B 復習 λ=1 | 57 / 56 / 64 | 0/3 | 18件 | 40勝56敗（96戦） |
+@@ -15,7 +15,7 @@
+ - 復習は喪失を**減らした**が、**どの候補も既知の展開を維持できなかった**（全9候補が採用前検査で不合格）。λ=5の喪失件数は、3 seedすべてでAより少なかった（5<8、3<20、2<5）。ただし3 seedの小規模比較で、有意性は主張しない。
+ - 新しく解けたcase_idは全候補で0件。
+ - 対戦成績の差は、各候補の95%区間がすべて0.5をまたいでおり、結論できない。
+-- 診断（4節）：同じ大きさでランダム符号の摂動では**喪失0件**、PPO更新の半分では1〜2件の喪失。**退行の主因は自己対戦PPOの勾配の向き**であり、雑音への脆さや、推論経路と学習経路の不一致ではない（経路の一致はテストで確認済み）。
++- 診断（4.5節）：今回調べたAの2候補では、PPO学習後の更新方向に沿った変化が展開の退行と関連した（同じ向きで半分の変化では1〜2件の喪失）。符号をランダムにした対照では退行しなかった（喪失0件）。**原因の確定や、未検査の実行経路の不一致の除外まではできていない**（4.5節の注記を参照）。
+ - 引き継ぎ資料の方針（維持できなければ長時間運転へ進まない）に従い、4,096判断の比較や常駐運転には進んでいない。
+ 
+ ## 2. 変更内容
+@@ -155,7 +155,9 @@
+ | B5-777 | 17-15-0 | 0.531 | [0.247, 0.803] | 0.531 | 0 | 0 |
+ | B5-999 | 17-15-0 | 0.531 | [0.247, 0.803] | 0.531 | 0 | 0 |
+ 
+-全候補で確認済み32/32、タイムアウト疑いによる除外は0件。**A-777は、採用中の配置補助 `center_placement.py` の `PlacementMemory.observe()` が例外で止まり、対戦評価を完了できなかった**（`ValueError: list.remove(x): x not in list`。Remix発動後に記録した2枚以外のカードを選んだときに発生）。この結果は除外ではなく「評価不能」として記録し、再試行や補助の修正はしていない。候補の打ち方が変わったことで、元からあった補助の不具合が表に出たもの。
++全候補で確認済み32/32、タイムアウト疑いによる除外は0件。**A-777は、採用中の配置補助 `center_placement.py` の `PlacementMemory.observe()` が例外で止まり、対戦評価を完了できなかった**（`ValueError: list.remove(x): x not in list`。Remix発動後に記録した2枚以外のカードを選んだときに発生）。この結果は除外ではなく「評価不能」として記録した。候補の打ち方が変わったことで、元からあった補助の不具合が表に出たもの。
++
++原因は、リミックス解決後の「S召喚を行うか」の確認を、新しい発動と誤認していたことだった。この不具合は別の変更（配置補助v2、`docs/placement-remix-fix-2026-11-09.md`）で修正した。ただし、**このA/B比較の記録はv1で測定したものとして残し、「評価不能」のまま扱う**。v2で再実行した同じ対戦（12勝20敗、異常終了0）は別の版での測定のため、上の表には混ぜない。
+ 
+ ### 4.4 勾配・時間・メモリ
+ 
+@@ -181,7 +183,13 @@
+ | A-555（57/66） | 63/66（喪失2件） | **65/66（喪失0件）** |
+ | A-777（45/66） | 64/66（喪失1件） | **65/66（喪失0件）** |
+ 
+-この大きさの変化そのものに脆いわけではない。PPOの勾配の向きへ進むほど展開が失われる。自己対戦の報酬が求める方向と、先攻展開の手順が衝突している可能性が高い。推論経路と学習経路の一致は、テストで別途確認した（復習unrollが、評価時の `Policy.infer` の逐次推論とも、PPOの多ステップ経路とも数値一致）。
++今回調べた候補では、PPO学習後の更新方向に沿った変化が展開の退行と関連した。符号をランダムにした対照では退行しなかった。ただし、次の理由で**原因の確定や、未検査の実行経路の不一致の除外まではできていない**。
++
++- Δは、Adamによる複数回の更新（勾配クリップ、モーメント等を含む）を経た最終的な重みの差であり、生のPPO勾配そのものではない。
++- ランダム符号の対照は、各候補につき1通りの抽出だけである。調べた候補もAの2つだけ。
++- 経路一致のテストは、特定の短い学習系列で、復習unroll・評価時の逐次推論・PPOの多ステップ経路の数値が一致することを確かめたもの。自己対戦rolloutの全条件や、補助の介入を含む全経路を網羅してはいない。
++
++このため、「PPOと展開能力が本質的に衝突する」「先攻部分の凍結が必要」とは結論しない。
+ 
+ ## 5. ハッシュ
+ 
+@@ -215,8 +223,26 @@
+ cd /home/hatk8/projects/yugioh-ai
+ /opt/ygo-ai/.venv/bin/python -B -m unittest discover -s tests -p 'test_continuous*.py' -v   # 既存11項目：合格
+ /opt/ygo-ai/.venv/bin/python -B -m unittest tests.test_opening_rehearsal -v                  # 新規10項目：合格（約75秒、CPU）
++/opt/ygo-ai/.venv/bin/python -B -m unittest tests.test_opening_rehearsal_runner -v           # レビュー対応15項目：合格
++/opt/ygo-ai/.venv/bin/python -B -m unittest tests.test_center_placement_remix -v             # 配置補助v2の10項目：合格
+ ```
+ 
++レビュー対応で追加したランナーのテスト（`tests/test_opening_rehearsal_runner.py`）：
++
++- 記録済みの条件と同一なら、ジョブを実行せずに再利用する。
++- 対戦数・対戦seed、復習設定、開始モデルが変わった場合は、再利用を拒否する。
++- 条件の記録がない旧形式の実行は、再利用を拒否する。
++- 実行コマンドや候補の重みが、記録した条件と食い違う場合は拒否する。
++- 現在の計画と合わない実行が同じrootに残っていれば、集計を拒否する（`summary.json` も書かない）。不足している実行は明示する。
++- ジョブの失敗、準備途中の失敗、中断（KeyboardInterrupt）のどの場合でも、実験armの `STOP` を戻し、失敗状態を保存する。
++- 正常終了時は、`STOP` と完了状態を保存する。
++- 診断の一時解除（`arm_active`）も、例外時に `STOP` を戻す。
++- 終了時、そのarmを参照するジョブが残っていれば停止する。
++- SIGTERMを受けても後始末が実行される。
++- 本番rootはarmとして扱わない。
++
++このうち8項目（条件照合5、STOP復元3）は、修正前のランナーで失敗することを確認した。
++
+ 新規テストで確認した内容：
+ 
+ - 複数の許容操作を集合として扱う。padding・補助担当の操作・違法な正解は損失に入らず、logitsを変えても損失が変わらない。
+@@ -237,13 +263,13 @@
+ 
+ ## 8. 残る課題と次の候補（未実施・要判断）
+ 
+-1. **保持は未達成。** 小さな復習損失を足すだけでは、自己対戦PPOの勾配の向きに勝てない。次に検討する候補（いずれも有限・独立rootで、1つずつ比較する）：
+-   - λをさらに大きくする（例：20）。PPOの学習成分がほぼ消える可能性が高く、「PPOを弱めただけ」と区別できる対照が要る。
+-   - PPOの学習率を下げる、または1区間の更新回数を減らす（摂動診断で、同じ向きでも半分なら喪失が1〜2件に減った）。
++1. **保持は未達成。** 今回のλ∈{1, 5}・256判断では、復習を足しても既知の展開を維持できなかった。次の有限実験では、評価v1を固定したまま「PPOの更新を弱めただけの対照」と復習を並べ、更新量を下げた効果と復習の効果を切り分けるのが先。候補（いずれも有限・独立rootで、1つずつ比較する）：
++   - PPOの学習率を下げる、または1区間の更新回数を減らす（摂動診断で、同じ向きでも半分なら喪失は1〜2件だった）。これ単独を対照にする。
++   - λをさらに大きくする（例：20）。PPOの学習成分がほぼ消える可能性が高いため、上の対照との比較が必須。
+    - 自由実行で決定的な判断（分岐点）の復習を重くする、展開系列を多めに抽出する。
+    - 任意のKL（固定した採用モデルを参照、`lambda_kl`）を別段階で追加する。
+-   - 先攻展開の部分を凍結し、対戦で学習する部分を分ける構成。
+-2. **採用中の配置補助の不具合**（`center_placement.py` の `PlacementMemory.observe`、Remix対象の記憶）。学習候補が補助を例外へ追い込むことがある。本番の評価で起きればジョブ失敗になる。補助の修正は別変更として扱い、配置の回帰試験44/44などで確認する必要がある。今回は修正していない。
++   - 先攻展開の部分を凍結する構成は、原因が確定していないため、現時点で必要とは判断しない。
++2. **採用中の配置補助の不具合**（`center_placement.py` の `PlacementMemory.observe`、Remixの記憶）。別の変更として、新しい版のフォルダで修正済み（v2、`docs/placement-remix-fix-2026-11-09.md`）。v1とv2は176件の固定ケースで完全一致し、停止した対戦はv2で完了した。**本番の設定はv1のまま（未採用）**。反映は別の判断とする。次の比較実験でv2を使う場合は、v2を固定した新しいrootで、AとBを同じ版で測り直すこと。
+ 3. 3 seed・256判断の小規模比較のため、λ=5がAより良いという向きにも統計的な保証はない。対戦の差も結論できない。
+ 4. Aの勾配ノルムはtrainerを変えないため記録していない（Aをバイト一致させることを優先した）。
+ 5. 評価の変更B（妨害後の複数の着地点）は設計のみ：`docs/interruption-landing-evaluation-design-2026-11-09.md`。今回の比較はすべて評価v1で行っており、採点の変更と同時には比較していない。
+@@ -258,4 +284,16 @@
+ /opt/ygo-ai/.venv/bin/python -B -u scripts/opening_rehearsal_ab.py summarize --plan experiments/opening-rehearsal-ab-20261109/plan.json
+ ```
+ 
+-完了済みの段階はファイルから再利用する。新しい実行は新しい実験root（新しい `experiment_root`）で行うこと。
++完了済みの段階を再利用するのは、各実行の `run-conditions.json`（学習判断数・学習seed・対戦数・対戦seed・開始モデル2つ・復習設定・snapshotの版・結果を決めるコードの版）と、実際の実行コマンド・ファイルが、現在の計画と一致する場合だけ。一致しなければ拒否する。
++
++**この実験root（`opening-rehearsal-ab-20261109`）の9件は、条件記録を導入する前の実行なので、修正後のランナーは再利用も再集計もしない**（`summary.json` は記録時のまま残る）。条件の混在がないことは、読み取り専用で確認した。各実行の学習・対戦コマンド、開始モデル、候補の重みが計画と一致した：`experiments/opening-rehearsal-review-fixes-20261109/legacy-evidence-check.json`。新しい実行は、新しい実験root（新しい `experiment_root`）で行う。
++
++## 10. 修正履歴
++
++- 2026-11-09 レビュー（`experiments/opening-rehearsal-review-fixes-20261109/opening_rehearsal_review_2026-11-09.md`）への対応：
++  - 原因分析の断定を弱めた（1節・4.5節・8節）。
++  - 延べ喪失の数え方を明記した。
++  - ランナーの再実行時の結果混在を修正した（条件の記録・照合、集計時の拒否）。
++  - 例外時の `STOP` 復元を修正した（`try/finally`、残存ジョブの確認、失敗状態の保存、SIGTERM時の後始末）。
++  - 配置補助の例外を別の変更（v2）で修正した。
++  - 変更前の控え：`experiments/opening-rehearsal-review-fixes-20261109/source-before/`。
+--- evaluation/battle-position-20261108/code/center_placement.py	2026-11-08 21:27:43.027921400 +0900
++++ evaluation/placement-remix-fix-20261109/code/center_placement.py	2026-11-09 13:28:55.337434312 +0900
+@@ -2,30 +2,54 @@
+ 
+ This is an external placement adapter, not newly trained neural-network weights.
+ No goals, teacher plans, hidden deck contents, or benchmark snapshots are inputs.
++
++v2 (2026-11-09, placement-remix-fix-20261109): Kewl Tune Remix tracking only.
++v1 started collecting Remix picks on ANY Activate-labelled choice of Remix, including
++the yes/no prompt for the optional Synchro Summon after Remix resolves. The Synchro
++monster and its materials were then recorded as Remix picks and the third pick raised
++ValueError (list.remove). v2 collects picks only after a real activation choice
++(idle/chain/battle command), stops on confirmation prompts, when the public chain has
++ended, and when a pick is not one of the two recorded cards; such a pick then follows
++the unchanged generic rule and the reason is kept in `diagnostics`. All other
++behavior is identical to v1.
+ """
+ import numpy as np
+-REG=56651978;STREL=42302563;PAR=64491754;RHAP=24092792
++REG=56651978;STREL=42302563;PAR=64491754;RHAP=24092792;REMIX=88170262
+ ELF={13597785,59581480,85976588,REG}
++ACTIVATION_MESSAGES=(1,2,8)  # select_idlecmd, select_chain, select_battlecmd: a real activation choice
+ ACT={'None':0,'Set':1,'Repo':2,'SpSummon':3,'Summon':4,'MSet':5,'Attack':6,'DirectAttack':7,'Activate':8,'Cancel':9}
+ MSG={'select_idlecmd':1,'select_chain':2,'select_card':3,'select_tribute':4,'select_position':5,'select_effectyn':6,
+      'select_yesno':7,'select_battlecmd':8,'select_unselect_card':9,'select_option':10,'select_place':11,'select_sum':12,'select_disfield':13}
+ 
+ class PlacementMemory:
+     def __init__(self):self.reset()
+-    def reset(self):self.incoming=0;self.locked=False;self.events=[];self.remix_targets=None
+-    def observe(self,msg,act,code,hand=False):
++    def reset(self):self.incoming=0;self.locked=False;self.events=[];self.remix_targets=None;self.diagnostics=[]
++    def end_remix(self,reason,code=0):
++        if self.remix_targets is not None:
++            self.diagnostics.append(dict(event='remix-tracking-ended',reason=reason,code=code,picks=list(self.remix_targets)))
++        self.remix_targets=None
++    def observe(self,msg,act,code,hand=False,chain_length=None):
++        """chain_length: public chain size at this choice; None when unknown (teacher demonstrations)."""
+         if msg==11:self.incoming=0;self.locked=False;self.remix_targets=None;return
++        remix_activation=act==8 and code==REMIX and msg in ACTIVATION_MESSAGES
++        if chain_length==0 and not remix_activation:
++            # The chain that held Remix is over (resolved or negated) without both picks.
++            self.end_remix('chain-ended',code)
+         if act in [3,4,5]:self.incoming=code;self.locked=True
+         elif act==8 and code:
+             self.incoming=REG if code==REG and hand else 0
+             self.locked=bool(self.incoming)
+-            self.remix_targets=[] if code==88170262 else None
++            if remix_activation:self.remix_targets=[]
++            else:self.end_remix('remix-confirmation-prompt' if code==REMIX else 'other-activation',code)
+         elif msg in [3,9] and code and not self.locked:
+             if self.remix_targets is not None:
+                 if len(self.remix_targets)<2:self.remix_targets.append(code);self.incoming=0
+-                else:
++                elif code in self.remix_targets:
+                     remaining=list(self.remix_targets);remaining.remove(code)
+                     self.incoming=remaining[0];self.locked=True
++                else:
++                    self.end_remix('pick-outside-remix-picks',code)
++                    self.incoming=code
+             else:self.incoming=code
+         elif msg==1 and act==9:self.incoming=0;self.locked=False
+     def choose(self,places,raw,scores=None,strel_material=False,public_protection=False,level_target=False):
+@@ -66,7 +90,7 @@
+             idx=self.memory.choose(actions[:n,10].astype(int).tolist(),raw,scores,public_protection=meaningful_protection,level_target=level_target)
+         row=actions[idx];code=self.id_codes.get(int(row[1])*256+int(row[2]),0);spec=int(row[0])
+         hand=bool(spec and spec<=len(cards) and int(cards[spec-1,2])==2 and int(cards[spec-1,4])==0)
+-        self.memory.observe(msg,int(row[4]),code,hand)
++        self.memory.observe(msg,int(row[4]),code,hand,int(np.asarray(info['public_chain_length'])[0]))
+         return idx
+ 
+ class PlacementTeacher:
+--- config/latest-verified-opening-policy.json	2026-11-08 21:58:07.373049174 +0900
++++ config/verified-opening-policy-placement-remix-fix-20261109.json	2026-11-09 13:35:56.763207708 +0900
+@@ -1,51 +1,85 @@
+-{
+-  "deck": "ElfnotesKewlTune",
+-  "training_result": "\\\\wsl.localhost\\Ubuntu-22.04\\home\\hatk8\\projects\\yugioh-ai\\experiments\\all-openings-bar-alternative-20261108\\run-20261108-194920\\training\\ElfnotesKewlTune\\result.json",
+-  "selected_checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/all-openings-bar-alternative-20261108/run-20261108-194920/training/ElfnotesKewlTune/step-0400",
+-  "base_sha256": "966cc8b1c3f0c092e824cc52dffcaf9c71f0c9373ece0fd07831d4a9df4f7cd1",
+-  "head_sha256": "1aaf569daf53a4453ef2f2e450c924af014aea83b3e4f98fea2644b795b52dc8",
+-  "validation_completed": 65,
+-  "validation_total": 66,
+-  "blind_completed": 86,
+-  "blind_total": 88,
+-  "report": "\\\\wsl.localhost\\Ubuntu-22.04\\home\\hatk8\\projects\\yugioh-ai\\docs\\all-openings-training-2026-11-08.md",
+-  "normal_summon_usage_scored": false,
+-  "scope": "Verified opening and fixed targeted interruption/recovery tests; not full-duel strength.",
+-  "resource_policy": "\\\\wsl.localhost\\Ubuntu-22.04\\home\\hatk8\\projects\\yugioh-ai\\experiments\\all-openings-bar-alternative-20261108\\run-20261108-194920\\training\\resource-policy.json",
+-  "training_finished": true,
+-  "placement_adapter": {
+-    "enabled": true,
+-    "module": "center_placement",
+-    "class_name": "PlacementPolicy",
+-    "runtime_code_directory": "/home/hatk8/projects/yugioh-ai/evaluation/battle-position-20261108/code",
+-    "report": "/home/hatk8/projects/yugioh-ai/docs/center-placement-2026-11-08.md",
+-    "weights_retrained": false,
+-    "new_hand_trials": 44,
+-    "new_hand_passed": 44
+-  },
+-  "policy_loader": "/home/hatk8/projects/yugioh-ai/scripts/verified_opening_policy.py",
+-  "blind_score_applies_to": "Frozen neural policy before this placement adapter; separate 88-hand test.",
+-  "placement_regression": {
+-    "before": 44,
+-    "after": 44,
+-    "total": 44,
+-    "teacher_passed": 26,
+-    "teacher_total": 26,
+-    "weights_retrained": false
+-  },
+-  "battle_position_adapter": {
+-    "enabled": true,
+-    "module": "battle_position",
+-    "class_name": "PositionPolicy",
+-    "weights_retrained": false,
+-    "report": "/home/hatk8/projects/yugioh-ai/docs/battle-position-2026-11-08.md",
+-    "card_data_sha256": "22cc89b8cd09024f0deccc33ea569d27261012f04296e172df89ff261690eae3",
+-    "regression": {
+-      "before": 44,
+-      "after": 44,
+-      "total": 44,
+-      "track_choices": 30,
+-      "track_defense": 30
+-    }
+-  }
+-}
++{
++  "deck": "ElfnotesKewlTune",
++  "training_result": "\\\\wsl.localhost\\Ubuntu-22.04\\home\\hatk8\\projects\\yugioh-ai\\experiments\\all-openings-bar-alternative-20261108\\run-20261108-194920\\training\\ElfnotesKewlTune\\result.json",
++  "selected_checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/all-openings-bar-alternative-20261108/run-20261108-194920/training/ElfnotesKewlTune/step-0400",
++  "base_sha256": "966cc8b1c3f0c092e824cc52dffcaf9c71f0c9373ece0fd07831d4a9df4f7cd1",
++  "head_sha256": "1aaf569daf53a4453ef2f2e450c924af014aea83b3e4f98fea2644b795b52dc8",
++  "validation_completed": 65,
++  "validation_total": 66,
++  "blind_completed": 86,
++  "blind_total": 88,
++  "report": "\\\\wsl.localhost\\Ubuntu-22.04\\home\\hatk8\\projects\\yugioh-ai\\docs\\all-openings-training-2026-11-08.md",
++  "normal_summon_usage_scored": false,
++  "scope": "Verified opening and fixed targeted interruption/recovery tests; not full-duel strength.",
++  "resource_policy": "\\\\wsl.localhost\\Ubuntu-22.04\\home\\hatk8\\projects\\yugioh-ai\\experiments\\all-openings-bar-alternative-20261108\\run-20261108-194920\\training\\resource-policy.json",
++  "training_finished": true,
++  "placement_adapter": {
++    "enabled": true,
++    "module": "center_placement",
++    "class_name": "PlacementPolicy",
++    "runtime_code_directory": "/home/hatk8/projects/yugioh-ai/evaluation/placement-remix-fix-20261109/code",
++    "report": "/home/hatk8/projects/yugioh-ai/docs/placement-remix-fix-2026-11-09.md",
++    "weights_retrained": false,
++    "new_hand_trials": 44,
++    "new_hand_passed": 44,
++    "version": "v2-remix-tracking-20261109",
++    "previous_runtime_code_directory": "/home/hatk8/projects/yugioh-ai/evaluation/battle-position-20261108/code",
++    "previous_center_placement_sha256": "805e68213710ad411ae4c5a3fc47bd998a8eb7ed2113a3335386eeed7db00b3c",
++    "center_placement_sha256": "3e96241095487fb48426099d774b7813cee348fc282dacbde0ced9af2d7abbba",
++    "change": "Kewl Tune Remix pick tracking only (see center_placement.py docstring); weights and all other adapter rules unchanged.",
++    "note_inherited_fields": "new_hand_trials/new_hand_passed/placement_regression/battle_position_adapter.regression were measured with v1 and are kept as v1 history.",
++    "v2_checks": {
++      "unit_tests": "tests/test_center_placement_remix.py (10)",
++      "equivalence": {
++        "evidence": "/home/hatk8/projects/yugioh-ai/experiments/placement-remix-fix-20261109/equivalence.json",
++        "identical_cases": 176,
++        "total_cases": 176,
++        "suites": {
++          "adopted/validation-66": "65/66 v1 = 65/66 v2",
++          "adopted/placement-fixed-44": "44/44 v1 = 44/44 v2",
++          "a-ppo-256-seed10000777/validation-66": "45/66 v1 = 45/66 v2"
++        },
++        "compared": "pass/fail, failure, full selected-action trace, placement events, position events",
++        "lua_errors": 0
++      },
++      "pinned_root_baseline": {
++        "evidence": "/home/hatk8/projects/yugioh-ai/experiments/placement-remix-fix-20261109/root-v2-check.json",
++        "passed": 65,
++        "total": 66,
++        "same_per_case_results_as_v1": true
++      },
++      "stopped_battle_rerun": {
++        "evidence": "/home/hatk8/projects/yugioh-ai/experiments/placement-remix-fix-20261109/battle-v2/battle.json",
++        "v1": "ValueError after 10 s (evaluation could not finish)",
++        "v2": "32/32 verified, abnormal 0, candidate 12-20-0",
++        "remix_tracking": "/home/hatk8/projects/yugioh-ai/experiments/placement-remix-fix-20261109/battle-v2/remix-tracking.json"
++      }
++    }
++  },
++  "policy_loader": "/home/hatk8/projects/yugioh-ai/scripts/verified_opening_policy.py",
++  "blind_score_applies_to": "Frozen neural policy before this placement adapter; separate 88-hand test.",
++  "placement_regression": {
++    "before": 44,
++    "after": 44,
++    "total": 44,
++    "teacher_passed": 26,
++    "teacher_total": 26,
++    "weights_retrained": false
++  },
++  "battle_position_adapter": {
++    "enabled": true,
++    "module": "battle_position",
++    "class_name": "PositionPolicy",
++    "weights_retrained": false,
++    "report": "/home/hatk8/projects/yugioh-ai/docs/battle-position-2026-11-08.md",
++    "card_data_sha256": "22cc89b8cd09024f0deccc33ea569d27261012f04296e172df89ff261690eae3",
++    "regression": {
++      "before": 44,
++      "after": 44,
++      "total": 44,
++      "track_choices": 30,
++      "track_defense": 30
++    }
++  },
++  "adoption_status": "not adopted: production config/continuous-elfnotes.json still uses config/latest-verified-opening-policy.json (v1 adapter)"
++}

@@ -1,0 +1,69 @@
+{
+ "status": "draft_requires_user_decision_not_registered",
+ "date": "2026-11-10",
+ "note": "Proposal only. Nothing here has been run. Seeds, budgets and thresholds become binding only after a separate registration approved by the user.",
+ "start_model": {
+  "base": "experiments/artmage-parallel-20261110/models/initial/base.flax_model",
+  "base_sha256": "12500c7724b2d723983a2963a960d75172a6df51fb55ea4f3acf102eeb34132e",
+  "head": "experiments/artmage-parallel-20261110/models/initial/chain-head.flax_model",
+  "head_sha256": "0bc7534cab102cd87586e5d22bd4ad0cd3b55d52d08e284146976506ae6193fc"
+ },
+ "retention_test_RT1": {
+  "purpose": "Keep the verified Assault (襲撃) opening of the start model.",
+  "hands": ["Artmage-g06-p0 (old validation)", "Artmage-g07-p0 (old validation)", "Artmage-g08-p0", "Artmage-g09-p0", "Artmage-g10-p0", "Artmage-g11-p0 (g08-g11: known regression, results already seen)"],
+  "procedure": "Isolated entry + common position adapter, free model, passive opponent, stop rules and goal check identical to check_other_positions.py (after mode); record functional items (board, resources, offered abilities) beside the legacy pass/fail.",
+  "start_model_baseline": "g08-g11 from this stage (4/4, identical to the original records); g06, g07 need 2 new runs.",
+  "engine_runs": 8,
+  "report": "candidate vs start per hand; never pooled with battle results"
+ },
+ "new_condition_test_NT1": {
+  "purpose": "Does the free model play the two new openings?",
+  "fit_check": {"hands": ["C1 demo hand", "C2 demo hand"], "note": "these hands are train data after conversion; success here is fit, not generalisation", "models": ["start", "candidate"], "engine_runs": 4},
+  "unseen_variants": {
+   "hands_proposed": {
+    "C1v": "襲撃 + 聖王の粉砕 (trap as the Maiden discard cost) + 幽鬼うさぎ + PSYフレームギア・γ + PSYフレーム・ドライバー",
+    "C2v": "学都 + 三戦の才 (spell as the 学都 cost) + 幽鬼うさぎ + PSYフレームギア・γ + PSYフレーム・ドライバー"
+   },
+   "rule": "fixed before training, split-checked, never used for training; optional scripted feasibility run of each variant before training (2 runs)",
+   "models": ["start", "candidate"], "engine_runs": 4
+  },
+  "measures": [
+   "own-turn end: which of Maiden / Diaktoros / Litera / Fainmelt / Medius / 獄神使 are on the field, set S/T, active 学都 and 襲撃",
+   "resources: hand, graveyard, banished, extra face-up",
+   "opponent turn: abilities offered at player-0 windows (Maiden②, Litera③, 獄神使②, 覚醒, Fancy Ball②, Diaktoros② when its condition holds) and which were used",
+   "start of the next own turn: board and hand",
+   "normal summon usage is not scored; no single exact end board is required"
+  ],
+  "stop": "first decision of turn 3, game over from env.step returns, or step cap"
+ },
+ "training_plan_TP1": {
+  "candidates": 1,
+  "environment_decisions": 4096,
+  "seed": "to be registered (checked against all past seeds)",
+  "learning": "PPO on Artmage self-play mirror (opponent = frozen start model) + rehearsal of demonstrations",
+  "rehearsal_data": {
+   "old_train": "train.npz 12 sequences / 1,077 decisions (unchanged file)",
+   "new_demos": "C1 (113 decisions, 94 proposed loss) and C2 (100 decisions, 85 proposed loss) after conversion",
+   "schedule_proposal": "per 16 sequences: 12 old / 2 C1 / 2 C2 (fixed order, logged per source)",
+   "masks": "context mask = all player-0 decisions; loss mask = own-turn decisions except select_position, plus C1's scripted opponent-turn steps"
+  },
+  "hyperparameters_proposal": {"base_learning_rate": 1.5e-05, "head_learning_rate": 0.00015, "rehearsal_weight": 5, "max_grad_norm": 1.0},
+  "artmage_specific_changes": [
+   "rollout backend for Artmage (deck key, recipe, random opening hands from the pinned deck, position adapter only; no Elfnotes center-placement adapter)",
+   "adapter-owned position prompts excluded from the policy loss, as in the Elfnotes backend",
+   "rehearsal module with DECK = 'Artmage' (the Elfnotes module hard-codes DECK = 'ElfnotesKewlTune' and Elfnotes case/label checks)",
+   "train base and chain head together; save both; reload through artmage_entry.create_policy(expected hashes); check logits equality on the saved C1/C2 observations before and after save/load",
+   "per-game RNN reset and separate player states; model inputs from public/own information only (check_observation on every step)",
+   "GPU jobs one at a time; resource limits 5 GiB / no swap / CPU 300% / 1,800 s"
+  ],
+  "evaluation_after_training": ["RT1 (8 runs)", "NT1 (8 runs, +2 optional feasibility)", "Artmage mirror battles candidate vs start model per the reviewed paired-seat spec (scout 128 + reference 64; confirmation 256 only if stage 1 passes)", "cross-deck battles vs fixed Elfnotes later, reported per opponent"],
+  "adoption": "none without an explicit user decision; no gate defined in this draft"
+ },
+ "unverified_items_carried": [
+  "article heading 'メディウス+モンスターコスト': no separate replay; the linked replay uses a trap cost",
+  "variants with interruptions (G, Droll, Ash, Imperm, Nibiru ...) and the article's care lines",
+  "turn-3 follow-up described in the article (覚醒 from the graveyard, Vidrium revive, Fancy/繚乱)",
+  "Diaktoros② negate and Fainmelt③ / Graphrea③ under the 3-race condition",
+  "MD official in-game limit list and card-pool existence"
+ ]
+}

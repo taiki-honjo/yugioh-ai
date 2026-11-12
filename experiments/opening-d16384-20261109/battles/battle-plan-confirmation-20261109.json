@@ -1,0 +1,24 @@
+{
+  "purpose": "User-requested 256-game confirmation (128 seat-swapped pairs) of the fixed cumulative-16384 candidate vs the adopted model, with an evaluation seed registered before any game. Reported separately from the 128-game run and judged ALONE by the existing battle criterion. Retention failure stays recorded; no adoption regardless of the outcome; no further games or training.",
+  "seed": 80016385,
+  "seed_check": "unused as a base seed in all battle JSONs of the project (9 recorded base seeds); its 32 wave seeds overlap none of the recorded waves (checked up to 64 waves per recorded base seed)",
+  "episodes": 256,
+  "max_battles": 256,
+  "criterion": "continuous_learning.promotion_ok(summary, 256): all 256 games verified, abnormal_total 0, no rerun/exclusion flag, seed-pair conservative Clopper-Pearson 95% CI lower bound > 0.5; judged on these 256 games only",
+  "candidate": {"path": "/home/hatk8/projects/yugioh-ai/experiments/opening-d16384-20261109/d-lr1.5e-5-l5/cycles/12288-seed10016384/candidate",
+                "base_sha256": "86b4358dcfec696cb4b3cc4c19781c34292b2509bf037b9e4f44d9ed8ec59d1c",
+                "head_sha256": "6ca3221f1828eecc5cea817003c8df5e8802b75fabef0f4aa33105ad0f979fce"},
+  "opponent": {"path": "/home/hatk8/projects/yugioh-ai/experiments/opening-d16384-20261109/d-lr1.5e-5-l5/models/initial",
+               "base_sha256": "966cc8b1c3f0c092e824cc52dffcaf9c71f0c9373ece0fd07831d4a9df4f7cd1",
+               "head_sha256": "1aaf569daf53a4453ef2f2e450c924af014aea83b3e4f98fea2644b795b52dc8"},
+  "conditions": "same as the 128-game run: arm config /home/hatk8/projects/yugioh-ai/experiments/opening-d16384-20261109/configs/d-lr1.5e-5-l5.json, eval_envs 4, max_eval_steps 4000, placement adapter v2 and the same position adapter for both players, same evaluator",
+  "config": "/home/hatk8/projects/yugioh-ai/experiments/opening-d16384-20261109/configs/d-lr1.5e-5-l5.json",
+  "kept_unchanged": {
+    "battle-plan.json": "df87dd41ecfe4e84cce8940a03292435dfe3a074c524384f5cf0c05d440fb691",
+    "battle-result.json": "d9d6aee2c3606789a9ab5aa49ed7d91b422fdc598a2d352d9d96e8f811c23e0e",
+    "battle-plan-requested-20261109.json": "f70dc1eb3437e84ca6124d5771298bd09875151125033d88572e6c5bff5428fc",
+    "requested-battle-result.json": "5dd14a85d05f17d03046866514e766133209cad4e90def514db38ea9a9bc12ee",
+    "requested-games-128.json": "68d5cf4ccf1698e5060df7a94cf6b850c4bace80b3368feab1845469f4507bd2"
+  },
+  "adoption": "none regardless of the outcome"
+}

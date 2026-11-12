@@ -1,0 +1,144 @@
+{"event": "start", "run": 1, "purpose": "substitute F1-V", "case_id": "F1-V", "time_jst": "2026-11-10T20:12:31+09:00"}
+{"event": "finish", "run": 1, "status": "ok", "time_jst": "2026-11-10T20:12:34+09:00"}
+{"event": "start", "run": 2, "purpose": "substitute F3-V", "case_id": "F3-V", "time_jst": "2026-11-10T20:12:34+09:00"}
+{"event": "finish", "run": 2, "status": "ok", "time_jst": "2026-11-10T20:12:37+09:00"}
+{"event": "start", "run": 3, "purpose": "substitute F4-V", "case_id": "F4-V", "time_jst": "2026-11-10T20:12:37+09:00"}
+{"event": "finish", "run": 3, "status": "ok", "time_jst": "2026-11-10T20:12:39+09:00"}
+{"event": "start", "run": 4, "purpose": "record A1-A-nocost", "case_id": "A1-A-nocost", "time_jst": "2026-11-10T20:12:50+09:00"}
+{"event": "finish", "run": 4, "status": "ok", "time_jst": "2026-11-10T20:12:51+09:00"}
+{"event": "start", "run": 5, "purpose": "record A1-A-cost", "case_id": "A1-A-cost", "time_jst": "2026-11-10T20:12:51+09:00"}
+{"event": "finish", "run": 5, "status": "ok", "time_jst": "2026-11-10T20:12:51+09:00"}
+{"event": "start", "run": 6, "purpose": "record A2-A-nocost", "case_id": "A2-A-nocost", "time_jst": "2026-11-10T20:12:51+09:00"}
+{"event": "finish", "run": 6, "status": "ok", "time_jst": "2026-11-10T20:12:51+09:00"}
+{"event": "start", "run": 7, "purpose": "record A2-A-cost", "case_id": "A2-A-cost", "time_jst": "2026-11-10T20:12:51+09:00"}
+{"event": "finish", "run": 7, "status": "ok", "time_jst": "2026-11-10T20:12:51+09:00"}
+{"event": "start", "run": 8, "purpose": "record A3-A-nocost", "case_id": "A3-A-nocost", "time_jst": "2026-11-10T20:12:51+09:00"}
+{"event": "finish", "run": 8, "status": "ok", "time_jst": "2026-11-10T20:12:51+09:00"}
+{"event": "start", "run": 9, "purpose": "record A3-A-cost", "case_id": "A3-A-cost", "time_jst": "2026-11-10T20:12:51+09:00"}
+{"event": "finish", "run": 9, "status": "ok", "time_jst": "2026-11-10T20:12:52+09:00"}
+{"event": "start", "run": 10, "purpose": "record A4-A-nocost", "case_id": "A4-A-nocost", "time_jst": "2026-11-10T20:12:52+09:00"}
+{"event": "finish", "run": 10, "status": "ok", "time_jst": "2026-11-10T20:12:52+09:00"}
+{"event": "start", "run": 11, "purpose": "record A4-A-cost", "case_id": "A4-A-cost", "time_jst": "2026-11-10T20:12:52+09:00"}
+{"event": "finish", "run": 11, "status": "ok", "time_jst": "2026-11-10T20:12:52+09:00"}
+{"event": "start", "run": 12, "purpose": "record B1-B-1cost", "case_id": "B1-B-1cost", "time_jst": "2026-11-10T20:12:52+09:00"}
+{"event": "finish", "run": 12, "status": "ok", "time_jst": "2026-11-10T20:12:55+09:00"}
+{"event": "start", "run": 13, "purpose": "record B1-B-2cost", "case_id": "B1-B-2cost", "time_jst": "2026-11-10T20:12:55+09:00"}
+{"event": "finish", "run": 13, "status": "ok", "time_jst": "2026-11-10T20:12:55+09:00"}
+{"event": "start", "run": 14, "purpose": "record B2-B-1cost", "case_id": "B2-B-1cost", "time_jst": "2026-11-10T20:12:56+09:00"}
+{"event": "finish", "run": 14, "status": "ok", "time_jst": "2026-11-10T20:12:56+09:00"}
+{"event": "start", "run": 15, "purpose": "record B2-B-2cost", "case_id": "B2-B-2cost", "time_jst": "2026-11-10T20:12:56+09:00"}
+{"event": "finish", "run": 15, "status": "ok", "time_jst": "2026-11-10T20:12:56+09:00"}
+{"event": "start", "run": 16, "purpose": "record B3-B-1cost", "case_id": "B3-B-1cost", "time_jst": "2026-11-10T20:12:56+09:00"}
+{"event": "finish", "run": 16, "status": "ok", "time_jst": "2026-11-10T20:12:56+09:00"}
+{"event": "start", "run": 17, "purpose": "record B3-B-2cost", "case_id": "B3-B-2cost", "time_jst": "2026-11-10T20:12:56+09:00"}
+{"event": "finish", "run": 17, "status": "ok", "time_jst": "2026-11-10T20:12:56+09:00"}
+{"event": "start", "run": 18, "purpose": "record B4-B-1cost", "case_id": "B4-B-1cost", "time_jst": "2026-11-10T20:12:56+09:00"}
+{"event": "finish", "run": 18, "status": "ok", "time_jst": "2026-11-10T20:12:56+09:00"}
+{"event": "start", "run": 19, "purpose": "record B4-B-2cost", "case_id": "B4-B-2cost", "time_jst": "2026-11-10T20:12:56+09:00"}
+{"event": "finish", "run": 19, "status": "ok", "time_jst": "2026-11-10T20:12:57+09:00"}
+{"event": "start", "run": 20, "purpose": "replay A1-A-nocost", "case_id": "A1-A-nocost", "time_jst": "2026-11-10T20:13:04+09:00"}
+{"event": "finish", "run": 20, "status": "ok", "time_jst": "2026-11-10T20:13:05+09:00"}
+{"event": "start", "run": 21, "purpose": "replay A1-A-cost", "case_id": "A1-A-cost", "time_jst": "2026-11-10T20:13:05+09:00"}
+{"event": "finish", "run": 21, "status": "ok", "time_jst": "2026-11-10T20:13:05+09:00"}
+{"event": "start", "run": 22, "purpose": "replay A2-A-nocost", "case_id": "A2-A-nocost", "time_jst": "2026-11-10T20:13:05+09:00"}
+{"event": "finish", "run": 22, "status": "ok", "time_jst": "2026-11-10T20:13:05+09:00"}
+{"event": "start", "run": 23, "purpose": "replay A2-A-cost", "case_id": "A2-A-cost", "time_jst": "2026-11-10T20:13:05+09:00"}
+{"event": "finish", "run": 23, "status": "ok", "time_jst": "2026-11-10T20:13:05+09:00"}
+{"event": "start", "run": 24, "purpose": "replay A3-A-nocost", "case_id": "A3-A-nocost", "time_jst": "2026-11-10T20:13:05+09:00"}
+{"event": "finish", "run": 24, "status": "ok", "time_jst": "2026-11-10T20:13:05+09:00"}
+{"event": "start", "run": 25, "purpose": "replay A3-A-cost", "case_id": "A3-A-cost", "time_jst": "2026-11-10T20:13:05+09:00"}
+{"event": "finish", "run": 25, "status": "ok", "time_jst": "2026-11-10T20:13:05+09:00"}
+{"event": "start", "run": 26, "purpose": "replay A4-A-nocost", "case_id": "A4-A-nocost", "time_jst": "2026-11-10T20:13:05+09:00"}
+{"event": "finish", "run": 26, "status": "ok", "time_jst": "2026-11-10T20:13:06+09:00"}
+{"event": "start", "run": 27, "purpose": "replay A4-A-cost", "case_id": "A4-A-cost", "time_jst": "2026-11-10T20:13:06+09:00"}
+{"event": "finish", "run": 27, "status": "ok", "time_jst": "2026-11-10T20:13:06+09:00"}
+{"event": "start", "run": 28, "purpose": "replay B1-B-1cost", "case_id": "B1-B-1cost", "time_jst": "2026-11-10T20:13:06+09:00"}
+{"event": "finish", "run": 28, "status": "ok", "time_jst": "2026-11-10T20:13:06+09:00"}
+{"event": "start", "run": 29, "purpose": "replay B1-B-2cost", "case_id": "B1-B-2cost", "time_jst": "2026-11-10T20:13:06+09:00"}
+{"event": "finish", "run": 29, "status": "ok", "time_jst": "2026-11-10T20:13:06+09:00"}
+{"event": "start", "run": 30, "purpose": "replay B2-B-1cost", "case_id": "B2-B-1cost", "time_jst": "2026-11-10T20:13:06+09:00"}
+{"event": "finish", "run": 30, "status": "ok", "time_jst": "2026-11-10T20:13:06+09:00"}
+{"event": "start", "run": 31, "purpose": "replay B2-B-2cost", "case_id": "B2-B-2cost", "time_jst": "2026-11-10T20:13:06+09:00"}
+{"event": "finish", "run": 31, "status": "ok", "time_jst": "2026-11-10T20:13:06+09:00"}
+{"event": "start", "run": 32, "purpose": "replay B3-B-1cost", "case_id": "B3-B-1cost", "time_jst": "2026-11-10T20:13:07+09:00"}
+{"event": "finish", "run": 32, "status": "ok", "time_jst": "2026-11-10T20:13:07+09:00"}
+{"event": "start", "run": 33, "purpose": "replay B3-B-2cost", "case_id": "B3-B-2cost", "time_jst": "2026-11-10T20:13:07+09:00"}
+{"event": "finish", "run": 33, "status": "ok", "time_jst": "2026-11-10T20:13:07+09:00"}
+{"event": "start", "run": 34, "purpose": "replay B4-B-1cost", "case_id": "B4-B-1cost", "time_jst": "2026-11-10T20:13:07+09:00"}
+{"event": "finish", "run": 34, "status": "ok", "time_jst": "2026-11-10T20:13:07+09:00"}
+{"event": "start", "run": 35, "purpose": "replay B4-B-2cost", "case_id": "B4-B-2cost", "time_jst": "2026-11-10T20:13:07+09:00"}
+{"event": "finish", "run": 35, "status": "ok", "time_jst": "2026-11-10T20:13:07+09:00"}
+{"event": "start", "run": 36, "purpose": "validate AV1-A-nocost", "case_id": "AV1-A-nocost", "time_jst": "2026-11-10T20:13:09+09:00"}
+{"event": "finish", "run": 36, "status": "ok", "time_jst": "2026-11-10T20:13:09+09:00"}
+{"event": "start", "run": 37, "purpose": "validate AV1-A-cost", "case_id": "AV1-A-cost", "time_jst": "2026-11-10T20:13:09+09:00"}
+{"event": "finish", "run": 37, "status": "ok", "time_jst": "2026-11-10T20:13:09+09:00"}
+{"event": "start", "run": 38, "purpose": "validate AV2-A-nocost", "case_id": "AV2-A-nocost", "time_jst": "2026-11-10T20:13:09+09:00"}
+{"event": "finish", "run": 38, "status": "ok", "time_jst": "2026-11-10T20:13:09+09:00"}
+{"event": "start", "run": 39, "purpose": "validate AV2-A-cost", "case_id": "AV2-A-cost", "time_jst": "2026-11-10T20:13:09+09:00"}
+{"event": "finish", "run": 39, "status": "ok", "time_jst": "2026-11-10T20:13:09+09:00"}
+{"event": "start", "run": 40, "purpose": "validate BV1-B-1cost", "case_id": "BV1-B-1cost", "time_jst": "2026-11-10T20:13:09+09:00"}
+{"event": "finish", "run": 40, "status": "ok", "time_jst": "2026-11-10T20:13:10+09:00"}
+{"event": "start", "run": 41, "purpose": "validate BV1-B-2cost", "case_id": "BV1-B-2cost", "time_jst": "2026-11-10T20:13:10+09:00"}
+{"event": "finish", "run": 41, "status": "ok", "time_jst": "2026-11-10T20:13:10+09:00"}
+{"event": "start", "run": 42, "purpose": "validate BV2-B-1cost", "case_id": "BV2-B-1cost", "time_jst": "2026-11-10T20:13:10+09:00"}
+{"event": "finish", "run": 42, "status": "ok", "time_jst": "2026-11-10T20:13:10+09:00"}
+{"event": "start", "run": 43, "purpose": "validate BV2-B-2cost", "case_id": "BV2-B-2cost", "time_jst": "2026-11-10T20:13:10+09:00"}
+{"event": "finish", "run": 43, "status": "ok", "time_jst": "2026-11-10T20:13:10+09:00"}
+{"event": "start", "run": 44, "purpose": "free start AV1-A-nocost", "case_id": "AV1-A-nocost", "time_jst": "2026-11-10T20:13:59+09:00"}
+{"event": "finish", "run": 44, "status": "ok", "time_jst": "2026-11-10T20:14:07+09:00"}
+{"event": "start", "run": 45, "purpose": "free start AV1-A-cost", "case_id": "AV1-A-cost", "time_jst": "2026-11-10T20:14:07+09:00"}
+{"event": "finish", "run": 45, "status": "ok", "time_jst": "2026-11-10T20:14:10+09:00"}
+{"event": "start", "run": 46, "purpose": "free start AV2-A-nocost", "case_id": "AV2-A-nocost", "time_jst": "2026-11-10T20:14:10+09:00"}
+{"event": "finish", "run": 46, "status": "ok", "time_jst": "2026-11-10T20:14:13+09:00"}
+{"event": "start", "run": 47, "purpose": "free start AV2-A-cost", "case_id": "AV2-A-cost", "time_jst": "2026-11-10T20:14:13+09:00"}
+{"event": "finish", "run": 47, "status": "ok", "time_jst": "2026-11-10T20:14:15+09:00"}
+{"event": "start", "run": 48, "purpose": "free start BV1-B-1cost", "case_id": "BV1-B-1cost", "time_jst": "2026-11-10T20:14:15+09:00"}
+{"event": "finish", "run": 48, "status": "ok", "time_jst": "2026-11-10T20:14:18+09:00"}
+{"event": "start", "run": 49, "purpose": "free start BV1-B-2cost", "case_id": "BV1-B-2cost", "time_jst": "2026-11-10T20:14:18+09:00"}
+{"event": "finish", "run": 49, "status": "ok", "time_jst": "2026-11-10T20:14:22+09:00"}
+{"event": "start", "run": 50, "purpose": "free start BV2-B-1cost", "case_id": "BV2-B-1cost", "time_jst": "2026-11-10T20:14:22+09:00"}
+{"event": "finish", "run": 50, "status": "ok", "time_jst": "2026-11-10T20:14:24+09:00"}
+{"event": "start", "run": 51, "purpose": "free start BV2-B-2cost", "case_id": "BV2-B-2cost", "time_jst": "2026-11-10T20:14:24+09:00"}
+{"event": "finish", "run": 51, "status": "ok", "time_jst": "2026-11-10T20:14:27+09:00"}
+{"event": "start", "run": 52, "purpose": "free candidate AV1-A-nocost", "case_id": "AV1-A-nocost", "time_jst": "2026-11-10T20:22:16+09:00"}
+{"event": "finish", "run": 52, "status": "ok", "time_jst": "2026-11-10T20:22:23+09:00"}
+{"event": "start", "run": 53, "purpose": "free candidate AV1-A-cost", "case_id": "AV1-A-cost", "time_jst": "2026-11-10T20:22:23+09:00"}
+{"event": "finish", "run": 53, "status": "ok", "time_jst": "2026-11-10T20:22:26+09:00"}
+{"event": "start", "run": 54, "purpose": "free candidate AV2-A-nocost", "case_id": "AV2-A-nocost", "time_jst": "2026-11-10T20:22:26+09:00"}
+{"event": "finish", "run": 54, "status": "ok", "time_jst": "2026-11-10T20:22:29+09:00"}
+{"event": "start", "run": 55, "purpose": "free candidate AV2-A-cost", "case_id": "AV2-A-cost", "time_jst": "2026-11-10T20:22:29+09:00"}
+{"event": "finish", "run": 55, "status": "ok", "time_jst": "2026-11-10T20:22:31+09:00"}
+{"event": "start", "run": 56, "purpose": "free candidate BV1-B-1cost", "case_id": "BV1-B-1cost", "time_jst": "2026-11-10T20:22:31+09:00"}
+{"event": "finish", "run": 56, "status": "ok", "time_jst": "2026-11-10T20:22:35+09:00"}
+{"event": "start", "run": 57, "purpose": "free candidate BV1-B-2cost", "case_id": "BV1-B-2cost", "time_jst": "2026-11-10T20:22:35+09:00"}
+{"event": "finish", "run": 57, "status": "ok", "time_jst": "2026-11-10T20:22:38+09:00"}
+{"event": "start", "run": 58, "purpose": "free candidate BV2-B-1cost", "case_id": "BV2-B-1cost", "time_jst": "2026-11-10T20:22:38+09:00"}
+{"event": "finish", "run": 58, "status": "ok", "time_jst": "2026-11-10T20:22:40+09:00"}
+{"event": "start", "run": 59, "purpose": "free candidate BV2-B-2cost", "case_id": "BV2-B-2cost", "time_jst": "2026-11-10T20:22:40+09:00"}
+{"event": "finish", "run": 59, "status": "ok", "time_jst": "2026-11-10T20:22:43+09:00"}
+{"event": "start", "run": 60, "purpose": "retain Artmage-g06-p0", "case_id": "Artmage-g06-p0", "time_jst": "2026-11-10T20:22:45+09:00"}
+{"event": "finish", "run": 60, "status": "ok", "time_jst": "2026-11-10T20:22:47+09:00"}
+{"event": "start", "run": 61, "purpose": "retain Artmage-g07-p0", "case_id": "Artmage-g07-p0", "time_jst": "2026-11-10T20:22:47+09:00"}
+{"event": "finish", "run": 61, "status": "ok", "time_jst": "2026-11-10T20:22:50+09:00"}
+{"event": "start", "run": 62, "purpose": "retain Artmage-g08-p0", "case_id": "Artmage-g08-p0", "time_jst": "2026-11-10T20:22:50+09:00"}
+{"event": "finish", "run": 62, "status": "ok", "time_jst": "2026-11-10T20:22:52+09:00"}
+{"event": "start", "run": 63, "purpose": "retain Artmage-g09-p0", "case_id": "Artmage-g09-p0", "time_jst": "2026-11-10T20:22:52+09:00"}
+{"event": "finish", "run": 63, "status": "ok", "time_jst": "2026-11-10T20:22:58+09:00"}
+{"event": "start", "run": 64, "purpose": "retain Artmage-g10-p0", "case_id": "Artmage-g10-p0", "time_jst": "2026-11-10T20:22:58+09:00"}
+{"event": "finish", "run": 64, "status": "ok", "time_jst": "2026-11-10T20:23:00+09:00"}
+{"event": "start", "run": 65, "purpose": "retain Artmage-g11-p0", "case_id": "Artmage-g11-p0", "time_jst": "2026-11-10T20:23:00+09:00"}
+{"event": "finish", "run": 65, "status": "ok", "time_jst": "2026-11-10T20:23:03+09:00"}
+{"event": "start", "run": 66, "purpose": "retain F0-V", "case_id": "F0-V", "time_jst": "2026-11-10T20:23:03+09:00"}
+{"event": "finish", "run": 66, "status": "ok", "time_jst": "2026-11-10T20:23:07+09:00"}
+{"event": "start", "run": 67, "purpose": "retain F1-V", "case_id": "F1-V", "time_jst": "2026-11-10T20:23:07+09:00"}
+{"event": "finish", "run": 67, "status": "ok", "time_jst": "2026-11-10T20:23:09+09:00"}
+{"event": "start", "run": 68, "purpose": "retain F2-V", "case_id": "F2-V", "time_jst": "2026-11-10T20:23:09+09:00"}
+{"event": "finish", "run": 68, "status": "ok", "time_jst": "2026-11-10T20:23:12+09:00"}
+{"event": "start", "run": 69, "purpose": "retain F3-V", "case_id": "F3-V", "time_jst": "2026-11-10T20:23:12+09:00"}
+{"event": "finish", "run": 69, "status": "ok", "time_jst": "2026-11-10T20:23:14+09:00"}
+{"event": "start", "run": 70, "purpose": "retain F4-V", "case_id": "F4-V", "time_jst": "2026-11-10T20:23:14+09:00"}
+{"event": "finish", "run": 70, "status": "ok", "time_jst": "2026-11-10T20:23:17+09:00"}
+{"event": "start", "run": 71, "purpose": "retain F5-V", "case_id": "F5-V", "time_jst": "2026-11-10T20:23:17+09:00"}
+{"event": "finish", "run": 71, "status": "ok", "time_jst": "2026-11-10T20:23:20+09:00"}
+{"event": "start", "run": 72, "purpose": "retain F6-V", "case_id": "F6-V", "time_jst": "2026-11-10T20:23:20+09:00"}
+{"event": "finish", "run": 72, "status": "ok", "time_jst": "2026-11-10T20:23:23+09:00"}

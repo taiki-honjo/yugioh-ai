@@ -1,0 +1,67 @@
+{
+  "ProjectIgnis/CardScripts": {
+    "sha": "bd65b8dab63398b1b076167a1c546654349c0fad",
+    "date": "2026-11-04T19:55:05Z",
+    "message": "\"Cubic Dimension/Defense\" fix"
+  },
+  "ProjectIgnis/BabelCDB": {
+    "sha": "cfaf38b01adffd432eb55d1e059fc16d4db1cb36",
+    "date": "2026-11-04T15:47:36Z",
+    "message": "Added new cards"
+  },
+  "edo9300/ygopro-core": {
+    "sha": "c2e0b697e031d3560c077c9cd2cc76474969dedf",
+    "date": "2026-11-02T23:28:50Z",
+    "message": "allow passing a value function filter to CANNOT_TO_XXX effects"
+  },
+  "Fluorohydride/ygopro-core": {
+    "sha": "1f7769cd40dbb13fc6ec33de7ac99757425e1f22",
+    "date": "2026-11-04T09:14:51Z",
+    "message": "Delete CMakeLists.txt (#867)"
+  },
+  "sbl1996/ygo-agent": {
+    "sha": "dbf5142d49aab2e6beb4150788d4fffec39ae3e5",
+    "date": "2024-08-16T09:18:20Z",
+    "message": "Preload all cards and scripts; Support announce_card"
+  },
+  "mycard/ygopro-database": {
+    "sha": "02e589ff78480151867abf5b399ae0689c6cd668",
+    "date": "2026-10-26T15:55:43Z",
+    "message": "Fix desc"
+  },
+  "mycard/ygopro-scripts": {
+    "sha": "b83db1cc3f512d3bec2faafb9ecf199143332be1",
+    "date": "2026-09-23T15:13:34Z",
+    "message": "Merge remote-tracking branch 'upstream/master' into master"
+  },
+  "database/ja-JP/cards.cdb": {
+    "url": "https://raw.githubusercontent.com/mycard/ygopro-database/02e589ff78480151867abf5b399ae0689c6cd668/locales/ja-JP/cards.cdb",
+    "sha256": "103c8455d379a81d7ed35986434096fe8f9eb5cb3a1c3b9c6f1e9f0aa67d0c74",
+    "bytes": 11860992
+  },
+  "database/ja-JP/strings.conf": {
+    "url": "https://raw.githubusercontent.com/mycard/ygopro-database/02e589ff78480151867abf5b399ae0689c6cd668/locales/ja-JP/strings.conf",
+    "sha256": "f701eaa82d8e05db3afa431ff4a02aed710f6aba3444fc74806b5b53a7bb1b8a",
+    "bytes": 49240
+  },
+  "database/en-US/cards.cdb": {
+    "url": "https://raw.githubusercontent.com/mycard/ygopro-database/02e589ff78480151867abf5b399ae0689c6cd668/locales/en-US/cards.cdb",
+    "sha256": "7f57ae28bb1d0b5987c8159c193c18ff820b1119a513949b1bf3cb5aa36234ef",
+    "bytes": 8076288
+  },
+  "database/en-US/strings.conf": {
+    "url": "https://raw.githubusercontent.com/mycard/ygopro-database/02e589ff78480151867abf5b399ae0689c6cd668/locales/en-US/strings.conf",
+    "sha256": "f1282302f54926094044cfb2e2f9a66a74b7fd642b891d8be7f4e79d8cbdc2e5",
+    "bytes": 37759
+  },
+  "database/zh-CN/cards.cdb": {
+    "url": "https://raw.githubusercontent.com/mycard/ygopro-database/02e589ff78480151867abf5b399ae0689c6cd668/locales/zh-CN/cards.cdb",
+    "sha256": "fab5deeb43447f80c11e5dea16b87fedd6d0f9a220c427d3a70ebb8eb0d74cfa",
+    "bytes": 8165376
+  },
+  "database/zh-CN/strings.conf": {
+    "url": "https://raw.githubusercontent.com/mycard/ygopro-database/02e589ff78480151867abf5b399ae0689c6cd668/locales/zh-CN/strings.conf",
+    "sha256": "6992b30aa0cfe27cfbc499980ac92bee536f523738c679efa99be5eea57ef23b",
+    "bytes": 47768
+  }
+}

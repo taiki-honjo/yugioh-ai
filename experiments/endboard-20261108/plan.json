@@ -1,0 +1,34 @@
+{
+  "stage1": "Inspect complete turn with opponent passing; no strategic quality labels.",
+  "stage2": "Replay same initial states with opponent using Ash once at the first legal selected response.",
+  "stage3": "Train only after target endboards and feasible continuation witnesses are specified and verified.",
+  "outer_decision_budget": 512,
+  "native_budget": 2048,
+  "case_count": 24,
+  "canonical": 8,
+  "random": 16,
+  "old_short_goals_are_diagnostic_only": true,
+  "opponent_hand": [
+    13597785,
+    14558127,
+    97268402,
+    94145021,
+    23434538
+  ],
+  "source_training_sha256": "666528b95f0ab9cc807ccd1334aa688d586df864291e38719deda1c0edf8a489",
+  "runtime": {
+    "runtime": "/home/hatk8/projects/yugioh-ai/experiments/chain-imitation-20261108/runtime",
+    "native": "/home/hatk8/projects/yugioh-ai/experiments/chain-imitation-20261108/runtime/agent/ygoenv/ygoenv/ygopro/ygopro_ygoenv.cpython-310-x86_64-linux-gnu.so",
+    "sha256": "c6518039c615aa49a1569c9db995a937d56f2e8ba319d47a11b1028a0b911828",
+    "baseline_runtime": "/home/hatk8/projects/yugioh-ai/experiments/combo-benchmark-20261107/runtime",
+    "public_chain_source": "public MSG_CHAINING packets; clear at reset and MSG_CHAIN_END",
+    "observation_shape_unchanged": true,
+    "extra_info_fields": [
+      "public_chain_length",
+      "public_chain_player",
+      "public_chain_card_id",
+      "public_chain_effect"
+    ]
+  },
+  "cases_sha256": "df95326d6392713d948e41ac044d546f4664f657317d442ab187562e087c2684"
+}

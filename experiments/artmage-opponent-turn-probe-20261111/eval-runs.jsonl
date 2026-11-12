@@ -1,0 +1,20 @@
+{"event": "start", "run": 1, "purpose": "record S1-D1R0", "case_id": "S1-D1R0", "time_jst": "2026-11-11T10:28:36+09:00"}
+{"event": "finish", "run": 1, "status": "ok", "time_jst": "2026-11-11T10:28:40+09:00"}
+{"event": "start", "run": 2, "purpose": "record S1-D0R1", "case_id": "S1-D0R1", "time_jst": "2026-11-11T10:28:40+09:00"}
+{"event": "finish", "run": 2, "status": "ok", "time_jst": "2026-11-11T10:28:44+09:00"}
+{"event": "start", "run": 3, "purpose": "record S1-D1R1", "case_id": "S1-D1R1", "time_jst": "2026-11-11T10:28:44+09:00"}
+{"event": "finish", "run": 3, "status": "ok", "time_jst": "2026-11-11T10:28:47+09:00"}
+{"event": "start", "run": 4, "purpose": "record S2-D1R0", "case_id": "S2-D1R0", "time_jst": "2026-11-11T10:28:47+09:00"}
+{"event": "finish", "run": 4, "status": "ok", "time_jst": "2026-11-11T10:28:51+09:00"}
+{"event": "start", "run": 5, "purpose": "record S2-D1R1", "case_id": "S2-D1R1", "time_jst": "2026-11-11T10:28:51+09:00"}
+{"event": "finish", "run": 5, "status": "ok", "time_jst": "2026-11-11T10:28:54+09:00"}
+{"event": "start", "run": 6, "purpose": "replay S1-D1R0", "case_id": "S1-D1R0", "time_jst": "2026-11-11T10:29:10+09:00"}
+{"event": "finish", "run": 6, "status": "ok", "time_jst": "2026-11-11T10:29:10+09:00"}
+{"event": "start", "run": 7, "purpose": "replay S1-D0R1", "case_id": "S1-D0R1", "time_jst": "2026-11-11T10:29:10+09:00"}
+{"event": "finish", "run": 7, "status": "ok", "time_jst": "2026-11-11T10:29:11+09:00"}
+{"event": "start", "run": 8, "purpose": "replay S1-D1R1", "case_id": "S1-D1R1", "time_jst": "2026-11-11T10:29:11+09:00"}
+{"event": "finish", "run": 8, "status": "ok", "time_jst": "2026-11-11T10:29:11+09:00"}
+{"event": "start", "run": 9, "purpose": "replay S2-D1R0", "case_id": "S2-D1R0", "time_jst": "2026-11-11T10:29:11+09:00"}
+{"event": "finish", "run": 9, "status": "ok", "time_jst": "2026-11-11T10:29:11+09:00"}
+{"event": "start", "run": 10, "purpose": "replay S2-D1R1", "case_id": "S2-D1R1", "time_jst": "2026-11-11T10:29:11+09:00"}
+{"event": "finish", "run": 10, "status": "ok", "time_jst": "2026-11-11T10:29:11+09:00"}

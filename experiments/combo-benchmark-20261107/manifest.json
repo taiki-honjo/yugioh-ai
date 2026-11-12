@@ -1,0 +1,38 @@
+{
+  "status": "complete",
+  "delivery": "/mnt/c/Users/hatk8/Documents/Codex/2026-10-27/new-chat/outputs/combo-benchmark-2026-11-07",
+  "evaluation": "/home/hatk8/projects/yugioh-ai/experiments/combo-benchmark-20261107/evaluation-v1",
+  "verification": {
+    "cases": 24,
+    "families": 8,
+    "hand_orders_per_family": 3,
+    "policies": 3,
+    "total_runs": 72,
+    "reference_witnesses_passed": 24,
+    "grader_controls_passed": 6,
+    "normal_mode_regression_games": 16,
+    "lua_errors": 0,
+    "models_unchanged": true,
+    "original_native_unchanged": true,
+    "human_strategy_review": "pending",
+    "same_goals_for_all_models": true,
+    "model69632_passed": 3,
+    "model4096_passed": 0
+  },
+  "cases_sha256": "47df500ec8ba8bbfb467af64fd1fc172f7513b7d43bf4e7286526380b138086d",
+  "runner_sha256": "74b9baf65b8e46593272e5b9676727fc7fb85d20ea1e24051b4a5f88dea5333e",
+  "original_native_sha256": "57aa077f335c5c3e3cee7a91a58b03806ce4b6f439cbbbc7179db650b1867f2c",
+  "benchmark_native_sha256": "c63b2288c5ff0b4332abf65b2a870cf451d488a29bf62635f38aff5486bd19f3",
+  "models": {
+    "model4096": {
+      "path": "/home/hatk8/projects/yugioh-ai/experiments/elfnotes-20261106/train-20261106-190557-4096/checkpoints/1793959560_4096steps.flax_model",
+      "sha256": "cae0d5e9e29ca5ab1870180201a13f67f0908133779239aae4ac22b17d51c035",
+      "bytes": 17377889
+    },
+    "model69632": {
+      "path": "/home/hatk8/projects/yugioh-ai/experiments/elfnotes-20261106/train-20261107-221428-65536/checkpoints/1794057272_65536steps.flax_model",
+      "sha256": "10be73b736ce4751b118450cfdff3c52b2183d6e84baae3af3c518fa40f843bb",
+      "bytes": 17377889
+    }
+  }
+}

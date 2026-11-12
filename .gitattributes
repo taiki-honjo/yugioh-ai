@@ -1,0 +1,63 @@
+* text=auto eol=lf
+*.ydk text eol=lf
+*.sh text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.patch text eol=lf
+*.flax_model binary
+
+# Preserve original bytes of existing CRLF research files (pinned hashes).
+"config/latest-verified-opening-policy.json" -text
+"docs/all-openings-training-2026-11-08.md" -text
+"docs/battle-position-2026-11-08.md" -text
+"docs/center-placement-2026-11-08.md" -text
+"docs/elfnotes-opening-research-2026-11-08.md" -text
+"docs/elfnotes-recovery-training-2026-11-08.md" -text
+"docs/jj-ash-release-2026-11-08.md" -text
+"docs/spirit-ash-openings-2026-11-08.md" -text
+"env/elfnotes/archives.json" -text
+"env/elfnotes/source-manifest.json" -text
+"evaluation/center-placement-20261108-v3/code/all_openings_common.py" -text
+"evaluation/center-placement-20261108-v4/code/all_openings_common.py" -text
+"experiments/all-openings-bar-alternative-20261108/run-20261108-194920/manifest.json" -text
+"experiments/b2b-battle-20261110/root/snapshot/opening-manifest.json" -text
+"experiments/b2b-train-20261109/root/snapshot/opening-manifest.json" -text
+"experiments/continuous-elfnotes-openings-20261109/snapshot/opening-manifest.json" -text
+"experiments/continuous-elfnotes-openings-d16384-20261109/snapshot/opening-manifest.json" -text
+"experiments/continuous-elfnotes-openings-d16384-rehearsal-ready-20261109/snapshot/opening-manifest.json" -text
+"experiments/continuous-elfnotes-openings-v2-20261109/snapshot/opening-manifest.json" -text
+"experiments/continuous-opening-integration-check-20261109-v2/snapshot/opening-manifest.json" -text
+"experiments/continuous-opening-integration-check-20261109/snapshot/opening-manifest.json" -text
+"experiments/elfnotes-20261106/runtime/sqlitecpp/.travis.yml" -text
+"experiments/elfnotes-20261106/runtime/sqlitecpp/CHANGELOG.md" -text
+"experiments/elfnotes-20261106/runtime/sqlitecpp/LICENSE.txt" -text
+"experiments/elfnotes-20261106/runtime/sqlitecpp/README.md" -text
+"experiments/elfnotes-20261106/runtime/sqlitecpp/appveyor.yml" -text
+"experiments/elfnotes-20261106/runtime/sqlitecpp/build.bat" -text
+"experiments/elfnotes-20261106/runtime/sqlitecpp/cmake/SQLiteCppConfig.cmake.in" -text
+"experiments/elfnotes-20261106/runtime/sqlitecpp/docs/README.md" -text
+"experiments/elfnotes-20261106/runtime/sqlitecpp/examples/example1/README.md" -text
+"experiments/elfnotes-20261106/runtime/sqlitecpp/examples/example2/README.md" -text
+"experiments/elfnotes-20261106/runtime/sqlitecpp/examples/example2/build.bat" -text
+"experiments/elfnotes-20261106/runtime/sqlitecpp/meson.build" -text
+"experiments/elfnotes-20261106/runtime/sqlitecpp/meson_options.txt" -text
+"experiments/elfnotes-20261106/runtime/sqlitecpp/subprojects/.gitignore" -text
+"experiments/opening-d16384-20261109/d-lr1.5e-5-l5/snapshot/opening-manifest.json" -text
+"experiments/opening-d4096-20261109/d-lr1.5e-5-l5/snapshot/opening-manifest.json" -text
+"experiments/opening-rehearsal-ab-20261109/a-ppo/snapshot/opening-manifest.json" -text
+"experiments/opening-rehearsal-ab-20261109/b-rehearsal-l1/snapshot/opening-manifest.json" -text
+"experiments/opening-rehearsal-ab-20261109/b-rehearsal-l5/snapshot/opening-manifest.json" -text
+"experiments/opening-rehearsal-lr-v2-20261109/a-lr3e-5/snapshot/opening-manifest.json" -text
+"experiments/opening-rehearsal-lr-v2-20261109/b-lr3e-5-l5/snapshot/opening-manifest.json" -text
+"experiments/opening-rehearsal-lr-v2-20261109/c-lr1.5e-5/snapshot/opening-manifest.json" -text
+"experiments/opening-rehearsal-lr-v2-20261109/d-lr1.5e-5-l5/snapshot/opening-manifest.json" -text
+"experiments/opening-rehearsal-review-fixes-20261109/changes.diff" -text
+"experiments/placement-remix-fix-20261109/root-v2/snapshot/opening-manifest.json" -text
+"experiments/placement-v2-adoption-20261109/source-before/scripts/verified_opening_policy.py" -text
+"experiments/windows-controller-restore-20261109/source/virtualized-continuous-elfnotes.ps1" -text
+"records/expansion-references-20261108/references.csv" -text
+"records/trial-2026-10-27/logs/learned-model-duels-fixed-gpu.csv" -text
+"records/trial-2026-10-27/logs/random-duels-compat-gpu.csv" -text
+"records/trial-2026-10-27/logs/train-persistent-gpu.csv" -text
+"records/trial-2026-10-27/logs/warmstart-training-gpu.csv" -text

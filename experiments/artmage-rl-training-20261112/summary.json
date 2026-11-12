@@ -1,0 +1,1187 @@
+{
+ "registration_sha256": "06026513c0cdb6294b9a24490dde9f81179eb385a8053aa23f3b2e39ffe37a34",
+ "seeds_sha256": "7cf1f54eabd9429f1e35ef7633c3bdc05b25967a272d815e4009d50a319cd41f",
+ "engine": {
+  "used": 141,
+  "cap": 141,
+  "statuses": {
+   "ok": 141
+  },
+  "by_kind": {
+   "retain": 13,
+   "battle": 128
+  }
+ },
+ "training": {
+  "result": {
+   "status": "not_established",
+   "params_finite": true,
+   "total": 32768,
+   "episodes": 81,
+   "windows": 249,
+   "minibatches": 996,
+   "stop_reason": "error",
+   "error": "close: AssertionError: ",
+   "seconds": 805.3675851821899,
+   "counts": {
+    "frozen_infer_seconds": 45.91631507873535,
+    "frozen": 16891,
+    "frozen_adapter_changed": 108,
+    "learner_infer_seconds": 44.278892040252686,
+    "learner": 15877,
+    "learner_adapter_controlled": 1132,
+    "learner_adapter_changed": 121,
+    "dropped_cut": 0,
+    "ppo_loss_steps": 14745,
+    "rehearsal_sequences": 1992,
+    "rehearsal_loss_steps": 159536,
+    "rehearsal_context_steps": 192455,
+    "end_natural": 80,
+    "natural_loss": 39,
+    "natural_win": 41,
+    "visibility_events": 4,
+    "visible_cards": 14,
+    "visible_unverified": 0,
+    "visible_selection_prompt": 14,
+    "episodes_cut": 1
+   },
+   "rehearsal_counts": {
+    "existing_minibatches": 498,
+    "pair_minibatches": 498,
+    "existing_groups": {
+     "F6": 162,
+     "F4": 157,
+     "F3": 152,
+     "F1": 119,
+     "F5": 142,
+     "F0": 146,
+     "F2": 118
+    },
+    "pairs": {
+     "A:3": 64,
+     "A:1": 69,
+     "B:1": 68,
+     "B:2": 62,
+     "A:0": 57,
+     "B:3": 74,
+     "B:0": 54,
+     "A:2": 50
+    }
+   },
+   "rehearsal_length": 115,
+   "adapter_window_extra": {
+    "notfinite_count": 0,
+    "total_notfinite": 0
+   },
+   "native_lua_errors": 0,
+   "live_duels": 0,
+   "rehearsal_fit": {
+    "start": {
+     "F0": {
+      "loss_steps": 969,
+      "ce": 0.0751559631063065,
+      "top1": 1.0
+     },
+     "F1": {
+      "loss_steps": 168,
+      "ce": 0.07224689620391407,
+      "top1": 1.0
+     },
+     "F2": {
+      "loss_steps": 153,
+      "ce": 0.07557141733476623,
+      "top1": 1.0
+     },
+     "F3": {
+      "loss_steps": 170,
+      "ce": 0.07139847890874704,
+      "top1": 1.0
+     },
+     "F4": {
+      "loss_steps": 164,
+      "ce": 0.06979170307528595,
+      "top1": 1.0
+     },
+     "F5": {
+      "loss_steps": 164,
+      "ce": 0.06206198917689589,
+      "top1": 1.0
+     },
+     "F6": {
+      "loss_steps": 167,
+      "ce": 0.0775466569936354,
+      "top1": 1.0
+     },
+     "pairs-A": {
+      "loss_steps": 655,
+      "ce": 0.07412795165022808,
+      "top1": 1.0
+     },
+     "pairs-B": {
+      "loss_steps": 606,
+      "ce": 0.07783994905364179,
+      "top1": 1.0
+     }
+    }
+   },
+   "stopped_state": {
+    "base_sha256": "7f4ee702c09ee2d2bdf00969c7afe701a7a050b71422662802625de607c28413",
+    "head_sha256": "4f099640b98c3fd6b100889c6d4e127a01853b130b6c961a67c2c1519330599a"
+   },
+   "process_seconds": 814.055725812912
+  },
+  "promotion": {
+   "amendment": 1,
+   "status": "promoted",
+   "record_checks": {
+    "total": true,
+    "minibatches": true,
+    "windows": true,
+    "last_window_at_cap": true,
+    "error_is_close_assertion": true,
+    "live_duels_after": true,
+    "params_finite": true,
+    "no_nonfinite_update": true,
+    "lua_errors": true,
+    "stopped_state_hashes": true
+   },
+   "traceback": [
+    "Traceback (most recent call last):",
+    "  File \"/home/hatk8/projects/yugioh-ai/experiments/artmage-rl-training-20261112/code/rlt_train.py\", line 295, in collect",
+    "    H.close_env(env)",
+    "  File \"/home/hatk8/projects/yugioh-ai/experiments/artmage-rl-training-20261112/code/rlt_train.py\", line 368, in close_env",
+    "    assert self.v.native.get_env_resource_stats()['live_duels'] == 0",
+    "AssertionError",
+    "EPISODE {\"episode\": 80, \"seat\": 0, \"decisions\": 295, \"end\": null, \"reward\": null} total 32768 updates 996 805s"
+   ],
+   "saved": {
+    "candidate_base_sha256": "7f4ee702c09ee2d2bdf00969c7afe701a7a050b71422662802625de607c28413",
+    "candidate_head_sha256": "4f099640b98c3fd6b100889c6d4e127a01853b130b6c961a67c2c1519330599a",
+    "reload_through_isolated_entry": true,
+    "max_abs_logit_diff_load_pair_vs_entry": 0.0,
+    "argmax_equal": true,
+    "adapter_final_actions_equal": true,
+    "saved_weights_finite": {
+     "base": true,
+     "head": true
+    },
+    "sequences_checked": 40,
+    "parameter_change_norm": {
+     "base": 0.6429107189178467,
+     "head": 0.0035278433933854103
+    },
+    "both_parts_changed": true,
+    "not_checked": "memory-vs-file (the in-memory params of the finished job no longer exist)"
+   },
+   "rehearsal_fit": {
+    "start": {
+     "F0": {
+      "loss_steps": 969,
+      "ce": 0.0751559631063065,
+      "top1": 1.0
+     },
+     "F1": {
+      "loss_steps": 168,
+      "ce": 0.07224689620391407,
+      "top1": 1.0
+     },
+     "F2": {
+      "loss_steps": 153,
+      "ce": 0.07557141733476623,
+      "top1": 1.0
+     },
+     "F3": {
+      "loss_steps": 170,
+      "ce": 0.07139847890874704,
+      "top1": 1.0
+     },
+     "F4": {
+      "loss_steps": 164,
+      "ce": 0.06979170307528595,
+      "top1": 1.0
+     },
+     "F5": {
+      "loss_steps": 164,
+      "ce": 0.06206198917689589,
+      "top1": 1.0
+     },
+     "F6": {
+      "loss_steps": 167,
+      "ce": 0.0775466569936354,
+      "top1": 1.0
+     },
+     "pairs-A": {
+      "loss_steps": 655,
+      "ce": 0.07412795165022808,
+      "top1": 1.0
+     },
+     "pairs-B": {
+      "loss_steps": 606,
+      "ce": 0.07783994905364179,
+      "top1": 1.0
+     }
+    },
+    "candidate": {
+     "F0": {
+      "loss_steps": 969,
+      "ce": 0.07517314844264233,
+      "top1": 1.0
+     },
+     "F1": {
+      "loss_steps": 168,
+      "ce": 0.07234584138480321,
+      "top1": 1.0
+     },
+     "F2": {
+      "loss_steps": 153,
+      "ce": 0.07562359907965543,
+      "top1": 1.0
+     },
+     "F3": {
+      "loss_steps": 170,
+      "ce": 0.07143050829607678,
+      "top1": 1.0
+     },
+     "F4": {
+      "loss_steps": 164,
+      "ce": 0.06979252648804105,
+      "top1": 1.0
+     },
+     "F5": {
+      "loss_steps": 164,
+      "ce": 0.06209378357437124,
+      "top1": 1.0
+     },
+     "F6": {
+      "loss_steps": 167,
+      "ce": 0.07757854764691781,
+      "top1": 0.9940119760479041
+     },
+     "pairs-A": {
+      "loss_steps": 655,
+      "ce": 0.07413899011256303,
+      "top1": 1.0
+     },
+     "pairs-B": {
+      "loss_steps": 606,
+      "ce": 0.07785991716423382,
+      "top1": 1.0
+     }
+    }
+   },
+   "source": "train/stopped-state",
+   "seconds": 303.4944336414337,
+   "candidate": {
+    "base": "/home/hatk8/projects/yugioh-ai/experiments/artmage-rl-training-20261112/train/candidate/base.flax_model",
+    "head": "/home/hatk8/projects/yugioh-ai/experiments/artmage-rl-training-20261112/train/candidate/chain-head.flax_model",
+    "base_sha256": "7f4ee702c09ee2d2bdf00969c7afe701a7a050b71422662802625de607c28413",
+    "head_sha256": "4f099640b98c3fd6b100889c6d4e127a01853b130b6c961a67c2c1519330599a"
+   }
+  },
+  "episodes": 81,
+  "ends": {
+   "natural": 80,
+   "cut:decision_cap": 1
+  },
+  "by_learner_seat": {
+   "first": {
+    "natural": 40,
+    "learner_wins": 22,
+    "learner_losses": 18
+   },
+   "second": {
+    "natural": 40,
+    "learner_wins": 19,
+    "learner_losses": 21
+   }
+  },
+  "by_quarter": [
+   {
+    "episodes": "0-20",
+    "natural": 21,
+    "learner_wins": 6
+   },
+   {
+    "episodes": "21-40",
+    "natural": 20,
+    "learner_wins": 14
+   },
+   {
+    "episodes": "41-60",
+    "natural": 20,
+    "learner_wins": 12
+   },
+   {
+    "episodes": "61-80",
+    "natural": 19,
+    "learner_wins": 9
+   }
+  ],
+  "natural_game_decisions": {
+   "mean": 405.9125,
+   "max": 830
+  },
+  "windows": 249,
+  "bootstrap_kinds": {
+   "exact": 242,
+   "terminal": 7
+  },
+  "minibatches": 996,
+  "quarter_means": [
+   {
+    "updates": "0-248",
+    "pg": 0.05997775070013686,
+    "v": 0.02931784239024913,
+    "ent": 0.12595171793045035,
+    "approx_kl": 0.004989440487700814,
+    "clipfrac": 0.01455485950931009,
+    "reh_ce": 0.07564050487306223,
+    "reh_acc": 0.99980081659723,
+    "ppo_grad": 10.198738846153649,
+    "reh_grad_weighted": 15.018064797074201,
+    "combined_grad": 23.33878544972364,
+    "ppo_reh_cosine": -0.004247985517252685,
+    "base_update": 0.004088033697601542,
+    "head_update": 2.3590012811420974e-05
+   },
+   {
+    "updates": "249-497",
+    "pg": -0.0036045433309379905,
+    "v": 0.02214484723967451,
+    "ent": 0.14474404961108298,
+    "approx_kl": 0.003960469079257798,
+    "clipfrac": 0.015384407915982855,
+    "reh_ce": 0.07577343499026146,
+    "reh_acc": 0.9998749810529043,
+    "ppo_grad": 15.536509193315444,
+    "reh_grad_weighted": 14.019469418245027,
+    "combined_grad": 28.186678654398307,
+    "ppo_reh_cosine": 0.0038615385917610072,
+    "base_update": 0.0037958410635859853,
+    "head_update": 1.9840165695784956e-05
+   },
+   {
+    "updates": "498-746",
+    "pg": -0.0033000970831223923,
+    "v": 0.017063473199132897,
+    "ent": 0.1501836407487403,
+    "approx_kl": 0.008968632691651797,
+    "clipfrac": 0.017052788556699294,
+    "reh_ce": 0.07557531598820744,
+    "reh_acc": 0.9998494827124967,
+    "ppo_grad": 14.228379321669838,
+    "reh_grad_weighted": 15.358802039602613,
+    "combined_grad": 28.208596687719048,
+    "ppo_reh_cosine": -0.014224902476222583,
+    "base_update": 0.0036393875157064103,
+    "head_update": 1.91846865288013e-05
+   },
+   {
+    "updates": "747-995",
+    "pg": 0.03681226402867574,
+    "v": 0.029239703263433933,
+    "ent": 0.1515293717422868,
+    "approx_kl": 0.0037109762996388796,
+    "clipfrac": 0.011945425446732456,
+    "reh_ce": 0.07634728128112943,
+    "reh_acc": 0.9996808903763094,
+    "ppo_grad": 14.806113730330603,
+    "reh_grad_weighted": 20.143298583337103,
+    "combined_grad": 33.753975437407995,
+    "ppo_reh_cosine": -0.004175047333474761,
+    "base_update": 0.0043761568802248045,
+    "head_update": 2.026722902328e-05
+   }
+  ],
+  "rehearsal_per_source": {
+   "F0": {
+    "loss_steps": 11671,
+    "ce": 0.07706354129920633,
+    "minibatches": 131,
+    "mean_weighted_grad": 6.521081306882743
+   },
+   "F1": {
+    "loss_steps": 9906,
+    "ce": 0.0729563952322659,
+    "minibatches": 114,
+    "mean_weighted_grad": 1.0825496001185424
+   },
+   "F2": {
+    "loss_steps": 8889,
+    "ce": 0.07788305436432301,
+    "minibatches": 113,
+    "mean_weighted_grad": 10.486313554062715
+   },
+   "F3": {
+    "loss_steps": 12920,
+    "ce": 0.07144418133324698,
+    "minibatches": 139,
+    "mean_weighted_grad": 1.0554204241761254
+   },
+   "F4": {
+    "loss_steps": 12907,
+    "ce": 0.07042413230422871,
+    "minibatches": 149,
+    "mean_weighted_grad": 6.870849903441665
+   },
+   "F5": {
+    "loss_steps": 11684,
+    "ce": 0.06408571151813103,
+    "minibatches": 129,
+    "mean_weighted_grad": 26.711470175115753
+   },
+   "F6": {
+    "loss_steps": 13527,
+    "ce": 0.07976275207445223,
+    "minibatches": 149,
+    "mean_weighted_grad": 28.800148974866573
+   },
+   "pairs-A": {
+    "loss_steps": 39322,
+    "ce": 0.07435097419648998,
+    "minibatches": 240,
+    "mean_weighted_grad": 6.1459177877133095
+   },
+   "pairs-B": {
+    "loss_steps": 38710,
+    "ce": 0.07945999691623244,
+    "minibatches": 258,
+    "mean_weighted_grad": 14.28242031993099
+   }
+  },
+  "visibility": {
+   "events": 4,
+   "cards": 14,
+   "unverified": 0,
+   "stopped": []
+  }
+ },
+ "battles": {
+  "verified_pairs": 64,
+  "verified_games": 128,
+  "wins": 61,
+  "losses": 67,
+  "draws": 0,
+  "win_rate": 0.4765625,
+  "draw_rate": 0.0,
+  "ci95_pairs": [
+   0.34279652893961976,
+   0.6127411917795773
+  ],
+  "pair_se": 0.042301250233643985,
+  "n_eff": 64.0,
+  "score_rate_draw_half": 0.4765625,
+  "pair_kinds": {
+   "first-seat-both": 19,
+   "second-seat-both": 16,
+   "2-0": 13,
+   "0-2": 16
+  },
+  "seats": {
+   "first": {
+    "games": 64,
+    "wins": 32,
+    "losses": 32,
+    "draws": 0,
+    "win_rate": 0.5,
+    "wilson_ci95_reference": [
+     0.3810209474394701,
+     0.6189790525605299
+    ]
+   },
+   "second": {
+    "games": 64,
+    "wins": 29,
+    "losses": 35,
+    "draws": 0,
+    "win_rate": 0.453125,
+    "wilson_ci95_reference": [
+     0.3372944778061167,
+     0.5742640277994588
+    ]
+   }
+  },
+  "excluded_pairs": [],
+  "raw": {
+   "pairs": 64,
+   "games": 128,
+   "wins": 61,
+   "losses": 67,
+   "draws": 0,
+   "ci95_pairs": [
+    0.34279652893961976,
+    0.6127411917795773
+   ]
+  },
+  "interval": "scripts/evaluate.py paired_wilson_ci95 (Clopper-Pearson, floor/ceil of the sum of pair scores wins/2; unit = seed pair)",
+  "reasons": {
+   "normal_lp0": 124,
+   "normal_deckout_or_special": 4
+  },
+  "errors": [],
+  "last_turn": {
+   "mean": 12.71875,
+   "max": 41
+  },
+  "env_steps": {
+   "mean": 394.6640625,
+   "max": 870
+  },
+  "inference_ms_per_decision": {
+   "start": 10.450662243269962,
+   "candidate": 10.640467551591664
+  },
+  "decisions": {
+   "start": 26744.0,
+   "candidate": 23773.0
+  },
+  "visible": 8,
+  "visible_unverified": 0,
+  "lua_errors": 0,
+  "position_changes": {
+   "candidate": 175,
+   "start": 176
+  },
+  "winner_turn_counts": {
+   "13": 1,
+   "12": 3,
+   "11": 3,
+   "34": 1,
+   "10": 5,
+   "7": 5,
+   "5": 2,
+   "8": 7,
+   "22": 2,
+   "9": 6,
+   "24": 2,
+   "6": 4,
+   "3": 3,
+   "15": 2,
+   "19": 4,
+   "4": 2,
+   "21": 1,
+   "23": 1,
+   "16": 2,
+   "40": 1,
+   "36": 1,
+   "2": 1,
+   "31": 1,
+   "17": 1
+  },
+  "loser_turn_counts": {
+   "5": 10,
+   "8": 5,
+   "3": 5,
+   "14": 2,
+   "10": 3,
+   "12": 6,
+   "22": 2,
+   "9": 5,
+   "41": 1,
+   "4": 3,
+   "11": 1,
+   "35": 1,
+   "30": 2,
+   "6": 4,
+   "31": 2,
+   "28": 1,
+   "24": 2,
+   "7": 3,
+   "36": 1,
+   "29": 1,
+   "15": 2,
+   "21": 2,
+   "19": 1,
+   "18": 1,
+   "26": 1
+  }
+ },
+ "retention": {
+  "cases": {
+   "Artmage-g06-p0": {
+    "kind": "RT1",
+    "start": true,
+    "candidate": false,
+    "start_reason": "goal_reached",
+    "candidate_reason": "opponent_main_phase_passed",
+    "candidate_monsters": [
+     "超越召喚獣アイオーン",
+     "クロシープ",
+     "神芸なる知恵の乙女"
+    ],
+    "start_monsters": [
+     "アルトメギアの獄神獣",
+     "神芸獄徒 ディアクトロス",
+     "神芸学徒 ファインメルト",
+     "クロシープ",
+     "神芸学徒 リテラ"
+    ],
+    "first_divergence": {
+     "step": 81,
+     "turn": 1,
+     "message": "select_idlecmd",
+     "same_snapshot": true,
+     "candidate": [
+      "Activate",
+      "混絶獄神ヴィードリウム",
+      1160
+     ],
+     "start": [
+      "None",
+      0,
+      -1
+     ]
+    },
+    "visible": 0,
+    "lua": 0
+   },
+   "Artmage-g07-p0": {
+    "kind": "RT1",
+    "start": true,
+    "candidate": true,
+    "start_reason": "goal_reached",
+    "candidate_reason": "goal_reached",
+    "candidate_monsters": [
+     "アルトメギアの獄神獣",
+     "神芸獄徒 ディアクトロス",
+     "神芸学徒 ファインメルト",
+     "クロシープ",
+     "神芸学徒 リテラ"
+    ],
+    "start_monsters": [
+     "アルトメギアの獄神獣",
+     "神芸獄徒 ディアクトロス",
+     "神芸学徒 ファインメルト",
+     "クロシープ",
+     "神芸学徒 リテラ"
+    ],
+    "first_divergence": null,
+    "visible": 0,
+    "lua": 0
+   },
+   "Artmage-g08-p0": {
+    "kind": "RT1",
+    "start": true,
+    "candidate": true,
+    "start_reason": "goal_reached",
+    "candidate_reason": "goal_reached",
+    "candidate_monsters": [
+     "アルトメギアの獄神獣",
+     "神芸獄徒 ディアクトロス",
+     "神芸学徒 ファインメルト",
+     "クロシープ",
+     "神芸学徒 リテラ"
+    ],
+    "start_monsters": [
+     "アルトメギアの獄神獣",
+     "神芸獄徒 ディアクトロス",
+     "神芸学徒 ファインメルト",
+     "クロシープ",
+     "神芸学徒 リテラ"
+    ],
+    "first_divergence": null,
+    "visible": 0,
+    "lua": 0
+   },
+   "Artmage-g09-p0": {
+    "kind": "RT1",
+    "start": true,
+    "candidate": true,
+    "start_reason": "goal_reached",
+    "candidate_reason": "goal_reached",
+    "candidate_monsters": [
+     "アルトメギアの獄神獣",
+     "神芸獄徒 ディアクトロス",
+     "神芸学徒 ファインメルト",
+     "クロシープ",
+     "神芸学徒 リテラ"
+    ],
+    "start_monsters": [
+     "アルトメギアの獄神獣",
+     "神芸獄徒 ディアクトロス",
+     "神芸学徒 ファインメルト",
+     "クロシープ",
+     "神芸学徒 リテラ"
+    ],
+    "first_divergence": null,
+    "visible": 0,
+    "lua": 0
+   },
+   "Artmage-g10-p0": {
+    "kind": "RT1",
+    "start": true,
+    "candidate": true,
+    "start_reason": "goal_reached",
+    "candidate_reason": "goal_reached",
+    "candidate_monsters": [
+     "アルトメギアの獄神獣",
+     "神芸獄徒 ディアクトロス",
+     "神芸学徒 ファインメルト",
+     "クロシープ",
+     "神芸学徒 リテラ"
+    ],
+    "start_monsters": [
+     "アルトメギアの獄神獣",
+     "神芸獄徒 ディアクトロス",
+     "神芸学徒 ファインメルト",
+     "クロシープ",
+     "神芸学徒 リテラ"
+    ],
+    "first_divergence": {
+     "step": 82,
+     "turn": 1,
+     "message": "select_card",
+     "same_snapshot": true,
+     "candidate": [
+      "None",
+      "幽鬼うさぎ",
+      -1
+     ],
+     "start": [
+      "None",
+      "屋敷わらし",
+      -1
+     ]
+    },
+    "visible": 0,
+    "lua": 0
+   },
+   "Artmage-g11-p0": {
+    "kind": "RT1",
+    "start": true,
+    "candidate": true,
+    "start_reason": "goal_reached",
+    "candidate_reason": "goal_reached",
+    "candidate_monsters": [
+     "アルトメギアの獄神獣",
+     "神芸獄徒 ディアクトロス",
+     "神芸学徒 ファインメルト",
+     "クロシープ",
+     "神芸学徒 リテラ"
+    ],
+    "start_monsters": [
+     "アルトメギアの獄神獣",
+     "神芸獄徒 ディアクトロス",
+     "神芸学徒 ファインメルト",
+     "クロシープ",
+     "神芸学徒 リテラ"
+    ],
+    "first_divergence": null,
+    "visible": 0,
+    "lua": 0
+   },
+   "F0-V": {
+    "kind": "F-V",
+    "start": true,
+    "candidate": true,
+    "start_landing": {
+     "all_present": true,
+     "missing": [],
+     "turn1_monsters": [
+      "神芸学徒 ファインメルト",
+      "クロシープ",
+      "神芸なる知恵の乙女",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ]
+    },
+    "candidate_landing": {
+     "all_present": true,
+     "missing": [],
+     "turn1_monsters": [
+      "神芸学徒 ファインメルト",
+      "クロシープ",
+      "神芸なる知恵の乙女",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ]
+    },
+    "candidate_failure": null,
+    "candidate_reason": "own_turn3_end",
+    "game_over": null,
+    "first_divergence": {
+     "step": 147,
+     "turn": 2,
+     "message": "select_unselect_card",
+     "same_snapshot": true,
+     "candidate": [
+      "None",
+      "神芸獄徒 ディアクトロス",
+      -1
+     ],
+     "start": [
+      "None",
+      "神芸学徒 リテラ",
+      -1
+     ]
+    },
+    "visible": 0,
+    "lua": 0
+   },
+   "F1-V": {
+    "kind": "F-V",
+    "start": true,
+    "candidate": true,
+    "start_landing": {
+     "all_present": true,
+     "missing": [],
+     "turn1_monsters": [
+      "神芸獄徒 ディアクトロス",
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "神芸なる知恵の乙女",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ]
+    },
+    "candidate_landing": {
+     "all_present": true,
+     "missing": [],
+     "turn1_monsters": [
+      "神芸獄徒 ディアクトロス",
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "神芸なる知恵の乙女",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ]
+    },
+    "candidate_failure": null,
+    "candidate_reason": "own_turn3_end",
+    "game_over": null,
+    "first_divergence": {
+     "step": 89,
+     "turn": 2,
+     "message": "select_chain",
+     "same_snapshot": true,
+     "candidate": [
+      "Cancel",
+      0,
+      -1
+     ],
+     "start": [
+      "Activate",
+      "神芸なる知恵の乙女",
+      10011
+     ]
+    },
+    "visible": 0,
+    "lua": 0
+   },
+   "F2-V": {
+    "kind": "F-V",
+    "start": true,
+    "candidate": true,
+    "start_landing": {
+     "all_present": true,
+     "missing": [],
+     "turn1_monsters": [
+      "神芸獄徒 ディアクトロス",
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "神芸なる知恵の乙女",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ]
+    },
+    "candidate_landing": {
+     "all_present": true,
+     "missing": [],
+     "turn1_monsters": [
+      "神芸獄徒 ディアクトロス",
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "神芸なる知恵の乙女",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ]
+    },
+    "candidate_failure": null,
+    "candidate_reason": "game_over",
+    "game_over": {
+     "step": 195,
+     "reward": -8.0,
+     "acting_player": 1,
+     "winner": 0,
+     "turn": 3
+    },
+    "first_divergence": {
+     "step": 107,
+     "turn": 2,
+     "message": "select_card",
+     "same_snapshot": true,
+     "candidate": [
+      "None",
+      "神芸なる知恵の乙女",
+      -1
+     ],
+     "start": [
+      "None",
+      "創獄神ネルヴァ",
+      -1
+     ]
+    },
+    "visible": 0,
+    "lua": 0
+   },
+   "F3-V": {
+    "kind": "F-V",
+    "start": false,
+    "candidate": true,
+    "start_landing": {
+     "all_present": false,
+     "missing": [
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "神芸なる知恵の乙女",
+      "神芸学徒 リテラ"
+     ],
+     "turn1_monsters": [
+      "Ｗ：Ｐファンシーボール",
+      "無垢なる者 メディウス"
+     ]
+    },
+    "candidate_landing": {
+     "all_present": true,
+     "missing": [],
+     "turn1_monsters": [
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "神芸なる知恵の乙女",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ]
+    },
+    "candidate_failure": null,
+    "candidate_reason": "own_turn3_end",
+    "game_over": null,
+    "first_divergence": {
+     "step": 10,
+     "turn": 1,
+     "message": "select_card",
+     "same_snapshot": true,
+     "candidate": [
+      "None",
+      "アルトメギア・バーニッシュ－改変－",
+      -1
+     ],
+     "start": [
+      "None",
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      -1
+     ]
+    },
+    "visible": 0,
+    "lua": 0
+   },
+   "F4-V": {
+    "kind": "F-V",
+    "start": true,
+    "candidate": true,
+    "start_landing": {
+     "all_present": true,
+     "missing": [],
+     "turn1_monsters": [
+      "神芸獄徒 ディアクトロス",
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "神芸なる知恵の乙女",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ]
+    },
+    "candidate_landing": {
+     "all_present": true,
+     "missing": [],
+     "turn1_monsters": [
+      "神芸獄徒 ディアクトロス",
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "神芸なる知恵の乙女",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ]
+    },
+    "candidate_failure": null,
+    "candidate_reason": "own_turn3_end",
+    "game_over": null,
+    "first_divergence": {
+     "step": 93,
+     "turn": 2,
+     "message": "select_card",
+     "same_snapshot": true,
+     "candidate": [
+      "None",
+      "神芸なる知恵の乙女",
+      -1
+     ],
+     "start": [
+      "None",
+      "創獄神ネルヴァ",
+      -1
+     ]
+    },
+    "visible": 0,
+    "lua": 0
+   },
+   "F5-V": {
+    "kind": "F-V",
+    "start": true,
+    "candidate": true,
+    "start_landing": {
+     "all_present": true,
+     "missing": [],
+     "turn1_monsters": [
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "神芸なる知恵の乙女",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ]
+    },
+    "candidate_landing": {
+     "all_present": true,
+     "missing": [],
+     "turn1_monsters": [
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "神芸なる知恵の乙女",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ]
+    },
+    "candidate_failure": null,
+    "candidate_reason": "own_turn3_end",
+    "game_over": null,
+    "first_divergence": {
+     "step": 93,
+     "turn": 3,
+     "message": "select_idlecmd",
+     "same_snapshot": true,
+     "candidate": [
+      "Repo",
+      "無垢なる者 メディウス",
+      -1
+     ],
+     "start": [
+      "Summon",
+      "ＰＳＹフレーム・ドライバー",
+      -1
+     ]
+    },
+    "visible": 0,
+    "lua": 0
+   },
+   "F6-V": {
+    "kind": "F-V",
+    "start": true,
+    "candidate": true,
+    "start_landing": {
+     "all_present": true,
+     "missing": [],
+     "turn1_monsters": [
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "神芸学徒 グラフレア",
+      "神芸なる知恵の乙女",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ]
+    },
+    "candidate_landing": {
+     "all_present": true,
+     "missing": [],
+     "turn1_monsters": [
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "神芸学徒 グラフレア",
+      "神芸なる知恵の乙女",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ]
+    },
+    "candidate_failure": null,
+    "candidate_reason": "own_turn3_end",
+    "game_over": null,
+    "first_divergence": {
+     "step": 38,
+     "turn": 1,
+     "message": "select_card",
+     "same_snapshot": true,
+     "candidate": [
+      "None",
+      "神芸なる知恵の乙女",
+      -1
+     ],
+     "start": [
+      "None",
+      "神芸なる知恵の乙女",
+      -1
+     ]
+    },
+    "visible": 0,
+    "lua": 0
+   }
+  },
+  "evaluated": 13,
+  "start_successes": [
+   "Artmage-g06-p0",
+   "Artmage-g07-p0",
+   "Artmage-g08-p0",
+   "Artmage-g09-p0",
+   "Artmage-g10-p0",
+   "Artmage-g11-p0",
+   "F0-V",
+   "F1-V",
+   "F2-V",
+   "F4-V",
+   "F5-V",
+   "F6-V"
+  ],
+  "candidate_successes": [
+   "Artmage-g07-p0",
+   "Artmage-g08-p0",
+   "Artmage-g09-p0",
+   "Artmage-g10-p0",
+   "Artmage-g11-p0",
+   "F0-V",
+   "F1-V",
+   "F2-V",
+   "F3-V",
+   "F4-V",
+   "F5-V",
+   "F6-V"
+  ],
+  "lost": [
+   "Artmage-g06-p0"
+  ],
+  "gained": [
+   "F3-V"
+  ],
+  "same_path": [
+   "Artmage-g07-p0",
+   "Artmage-g08-p0",
+   "Artmage-g09-p0",
+   "Artmage-g11-p0"
+  ]
+ },
+ "code": {
+  "artmage_entry.py": "ca47f56d29431b48d60337de6dcc6ce23d524fba31cbbbdce31e6d7399b78e0f",
+  "artmage_pins.py": "10c4e053d05f44498cff77c45301a3fb5222c7598a658decc52f4539fd96bde8",
+  "artmage_teacher.py": "a126284eff7a2d7ef3c602ade0aa5f196f7ddea77333213c27a197ade21b78f3",
+  "batch_data.py": "3f21a0f495111f82678e93c5434d9c2dd65b2467c4f7c3341a0eddab66b3aad7",
+  "batch_plans.py": "68d5945d80d663ba7f85b56ffbd6490a00998aaa1d5cca14663e18e6956f1123",
+  "hb_data.py": "502de35cabab73e9448e5d20e61aa53ce594aa8eb08ad2beebe0740618ebc893",
+  "hb_plans.py": "8fc90ad7f704a2f141669d1075827cf3513f015989a95d472f353aaae6ab40cd",
+  "hb_runs.py": "88e694125079d2a9687490f1120186b536939b8750f731266efae56b167a0c14",
+  "pilot_data.py": "dc749fb5ea77419741d0e7469edd7f423db241eae11ccafe399f76a04c3417e8",
+  "rlt_eval.py": "6d0fa5e9ac4bd7bf0264206c68bc043d88ab18c7c7aa0029bec2d52fc971ac7b",
+  "rlt_launch.py": "b9658f5be7e69b611adbfb1970690a69d0db74d436cafbcbdbb9f25b7cd23163",
+  "rlt_model.py": "7b3e77e69a80ae4297b917670521cc3e4fde4eec0e7d45dd06e19906fdb0208d",
+  "rlt_promote.py": "a7efc7409f462b7d770ce1ddeffca5f85c05b525d1df395bd1af728753ae5fa1",
+  "rlt_register.py": "6465146144c60529e82664b2cafd718ffc8e04102f856edee13ec8beb07660ae",
+  "rlt_stats.py": "74d09387f69bf9ed42257e48e99bec96af69c9be466c0d0e4820f1b8c7a0ec6d",
+  "rlt_summarize.py": "bd2043a5bedb95568a0f1111938bfe6b1fc8fa7143ea512bae5e5c5f11616e2f",
+  "rlt_train.py": "05088b05dc4118421a5c886ec1df92449ee9c4e061e2b57d32841ac89d0fe6f1"
+ }
+}

@@ -1,0 +1,15 @@
+{
+ "condition": "C1",
+ "engine_run": 6,
+ "replayed_engine_run": 5,
+ "mismatch": null,
+ "failure": null,
+ "game_over": null,
+ "reproduced_steps": 160,
+ "of": 160,
+ "reason": "reached_turn3",
+ "final_equal": true,
+ "checkpoints_equal": true,
+ "observations_match": true,
+ "lua_errors": 0
+}

@@ -1,0 +1,722 @@
+{
+  "teacher_passed": 26,
+  "teacher_total": 26,
+  "fresh_hands": 44,
+  "before": 44,
+  "after": 44,
+  "placement_changes": 92,
+  "cases": [
+    {
+      "mode": "before",
+      "case": "rukina-pass-center-00",
+      "family": "rukina-pass",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "rukina-pass-center-00",
+      "family": "rukina-pass",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "before",
+      "case": "rukina-pass-center-01",
+      "family": "rukina-pass",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "rukina-pass-center-01",
+      "family": "rukina-pass",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "before",
+      "case": "rukina-ash_rukina-center-00",
+      "family": "rukina-ash_rukina",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "rukina-ash_rukina-center-00",
+      "family": "rukina-ash_rukina",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "before",
+      "case": "rukina-ash_rukina-center-01",
+      "family": "rukina-ash_rukina",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "rukina-ash_rukina-center-01",
+      "family": "rukina-ash_rukina",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "before",
+      "case": "rukina-veiler_rukina-center-00",
+      "family": "rukina-veiler_rukina",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "rukina-veiler_rukina-center-00",
+      "family": "rukina-veiler_rukina",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "before",
+      "case": "rukina-veiler_rukina-center-01",
+      "family": "rukina-veiler_rukina",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "rukina-veiler_rukina-center-01",
+      "family": "rukina-veiler_rukina",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "before",
+      "case": "rukina-ash_spirit-center-00",
+      "family": "rukina-ash_spirit",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "rukina-ash_spirit-center-00",
+      "family": "rukina-ash_spirit",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "before",
+      "case": "rukina-ash_spirit-center-01",
+      "family": "rukina-ash_spirit",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "rukina-ash_spirit-center-01",
+      "family": "rukina-ash_spirit",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "before",
+      "case": "rukina-ash_parallelism-center-00",
+      "family": "rukina-ash_parallelism",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "rukina-ash_parallelism-center-00",
+      "family": "rukina-ash_parallelism",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "before",
+      "case": "rukina-ash_parallelism-center-01",
+      "family": "rukina-ash_parallelism",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "rukina-ash_parallelism-center-01",
+      "family": "rukina-ash_parallelism",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "before",
+      "case": "rukina-veiler_strelitzia-center-00",
+      "family": "rukina-veiler_strelitzia",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "rukina-veiler_strelitzia-center-00",
+      "family": "rukina-veiler_strelitzia",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "before",
+      "case": "rukina-veiler_strelitzia-center-01",
+      "family": "rukina-veiler_strelitzia",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "rukina-veiler_strelitzia-center-01",
+      "family": "rukina-veiler_strelitzia",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "before",
+      "case": "elf-rukina-regina-center-00",
+      "family": "elf-rukina-regina",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "elf-rukina-regina-center-00",
+      "family": "elf-rukina-regina",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "before",
+      "case": "elf-rukina-regina-center-01",
+      "family": "elf-rukina-regina",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "elf-rukina-regina-center-01",
+      "family": "elf-rukina-regina",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "before",
+      "case": "elf-dina-center-00",
+      "family": "elf-dina",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "elf-dina-center-00",
+      "family": "elf-dina",
+      "passed": true,
+      "failure": null,
+      "changed": 1
+    },
+    {
+      "mode": "before",
+      "case": "elf-dina-center-01",
+      "family": "elf-dina",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "elf-dina-center-01",
+      "family": "elf-dina",
+      "passed": true,
+      "failure": null,
+      "changed": 1
+    },
+    {
+      "mode": "before",
+      "case": "elf-par-light-cost-center-00",
+      "family": "elf-par-light-cost",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "elf-par-light-cost-center-00",
+      "family": "elf-par-light-cost",
+      "passed": true,
+      "failure": null,
+      "changed": 1
+    },
+    {
+      "mode": "before",
+      "case": "elf-par-light-cost-center-01",
+      "family": "elf-par-light-cost",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "elf-par-light-cost-center-01",
+      "family": "elf-par-light-cost",
+      "passed": true,
+      "failure": null,
+      "changed": 1
+    },
+    {
+      "mode": "before",
+      "case": "elf-par-fire-cost-center-00",
+      "family": "elf-par-fire-cost",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "elf-par-fire-cost-center-00",
+      "family": "elf-par-fire-cost",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "before",
+      "case": "elf-par-fire-cost-center-01",
+      "family": "elf-par-fire-cost",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "elf-par-fire-cost-center-01",
+      "family": "elf-par-fire-cost",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "before",
+      "case": "elf-regina-par-center-00",
+      "family": "elf-regina-par",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "elf-regina-par-center-00",
+      "family": "elf-regina-par",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "before",
+      "case": "elf-regina-par-center-01",
+      "family": "elf-regina-par",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "elf-regina-par-center-01",
+      "family": "elf-regina-par",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "before",
+      "case": "tune-cue-center-00",
+      "family": "tune-cue",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "tune-cue-center-00",
+      "family": "tune-cue",
+      "passed": true,
+      "failure": null,
+      "changed": 4
+    },
+    {
+      "mode": "before",
+      "case": "tune-cue-center-01",
+      "family": "tune-cue",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "tune-cue-center-01",
+      "family": "tune-cue",
+      "passed": true,
+      "failure": null,
+      "changed": 4
+    },
+    {
+      "mode": "before",
+      "case": "tune-reco-center-00",
+      "family": "tune-reco",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "tune-reco-center-00",
+      "family": "tune-reco",
+      "passed": true,
+      "failure": null,
+      "changed": 6
+    },
+    {
+      "mode": "before",
+      "case": "tune-reco-center-01",
+      "family": "tune-reco",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "tune-reco-center-01",
+      "family": "tune-reco",
+      "passed": true,
+      "failure": null,
+      "changed": 6
+    },
+    {
+      "mode": "before",
+      "case": "tune-sync-center-00",
+      "family": "tune-sync",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "tune-sync-center-00",
+      "family": "tune-sync",
+      "passed": true,
+      "failure": null,
+      "changed": 5
+    },
+    {
+      "mode": "before",
+      "case": "tune-sync-center-01",
+      "family": "tune-sync",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "tune-sync-center-01",
+      "family": "tune-sync",
+      "passed": true,
+      "failure": null,
+      "changed": 5
+    },
+    {
+      "mode": "before",
+      "case": "tune-stone-sweeper-center-00",
+      "family": "tune-stone-sweeper",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "tune-stone-sweeper-center-00",
+      "family": "tune-stone-sweeper",
+      "passed": true,
+      "failure": null,
+      "changed": 6
+    },
+    {
+      "mode": "before",
+      "case": "tune-stone-sweeper-center-01",
+      "family": "tune-stone-sweeper",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "tune-stone-sweeper-center-01",
+      "family": "tune-stone-sweeper",
+      "passed": true,
+      "failure": null,
+      "changed": 6
+    },
+    {
+      "mode": "before",
+      "case": "tune-juke-veiler-center-00",
+      "family": "tune-juke-veiler",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "tune-juke-veiler-center-00",
+      "family": "tune-juke-veiler",
+      "passed": true,
+      "failure": null,
+      "changed": 4
+    },
+    {
+      "mode": "before",
+      "case": "tune-juke-veiler-center-01",
+      "family": "tune-juke-veiler",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "tune-juke-veiler-center-01",
+      "family": "tune-juke-veiler",
+      "passed": true,
+      "failure": null,
+      "changed": 4
+    },
+    {
+      "mode": "before",
+      "case": "mixed-rukina-cue-center-00",
+      "family": "mixed-rukina-cue",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "mixed-rukina-cue-center-00",
+      "family": "mixed-rukina-cue",
+      "passed": true,
+      "failure": null,
+      "changed": 5
+    },
+    {
+      "mode": "before",
+      "case": "mixed-rukina-cue-center-01",
+      "family": "mixed-rukina-cue",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "mixed-rukina-cue-center-01",
+      "family": "mixed-rukina-cue",
+      "passed": true,
+      "failure": null,
+      "changed": 5
+    },
+    {
+      "mode": "before",
+      "case": "mixed-reco-spirit-ash-center-00",
+      "family": "mixed-reco-spirit-ash",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "mixed-reco-spirit-ash-center-00",
+      "family": "mixed-reco-spirit-ash",
+      "passed": true,
+      "failure": null,
+      "changed": 3
+    },
+    {
+      "mode": "before",
+      "case": "mixed-reco-spirit-ash-center-01",
+      "family": "mixed-reco-spirit-ash",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "mixed-reco-spirit-ash-center-01",
+      "family": "mixed-reco-spirit-ash",
+      "passed": true,
+      "failure": null,
+      "changed": 3
+    },
+    {
+      "mode": "before",
+      "case": "mixed-cue-spirit-center-00",
+      "family": "mixed-cue-spirit",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "mixed-cue-spirit-center-00",
+      "family": "mixed-cue-spirit",
+      "passed": true,
+      "failure": null,
+      "changed": 3
+    },
+    {
+      "mode": "before",
+      "case": "mixed-cue-spirit-center-01",
+      "family": "mixed-cue-spirit",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "mixed-cue-spirit-center-01",
+      "family": "mixed-cue-spirit",
+      "passed": true,
+      "failure": null,
+      "changed": 3
+    },
+    {
+      "mode": "before",
+      "case": "jj-cue-reco-center-00",
+      "family": "jj-cue-reco",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "jj-cue-reco-center-00",
+      "family": "jj-cue-reco",
+      "passed": true,
+      "failure": null,
+      "changed": 4
+    },
+    {
+      "mode": "before",
+      "case": "jj-cue-reco-center-01",
+      "family": "jj-cue-reco",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "jj-cue-reco-center-01",
+      "family": "jj-cue-reco",
+      "passed": true,
+      "failure": null,
+      "changed": 4
+    },
+    {
+      "mode": "before",
+      "case": "jj-cue-mix-center-00",
+      "family": "jj-cue-mix",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "jj-cue-mix-center-00",
+      "family": "jj-cue-mix",
+      "passed": true,
+      "failure": null,
+      "changed": 1
+    },
+    {
+      "mode": "before",
+      "case": "jj-cue-mix-center-01",
+      "family": "jj-cue-mix",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "jj-cue-mix-center-01",
+      "family": "jj-cue-mix",
+      "passed": true,
+      "failure": null,
+      "changed": 3
+    },
+    {
+      "mode": "before",
+      "case": "jj-cue-rotary-center-00",
+      "family": "jj-cue-rotary",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "jj-cue-rotary-center-00",
+      "family": "jj-cue-rotary",
+      "passed": true,
+      "failure": null,
+      "changed": 2
+    },
+    {
+      "mode": "before",
+      "case": "jj-cue-rotary-center-01",
+      "family": "jj-cue-rotary",
+      "passed": true,
+      "failure": null,
+      "changed": 0
+    },
+    {
+      "mode": "after",
+      "case": "jj-cue-rotary-center-01",
+      "family": "jj-cue-rotary",
+      "passed": true,
+      "failure": null,
+      "changed": 2
+    }
+  ],
+  "lua_errors": 0,
+  "hands_disjoint_from_prior_training_validation_and_holdout": true,
+  "weights_retrained": false,
+  "base_sha256": "966cc8b1c3f0c092e824cc52dffcaf9c71f0c9373ece0fd07831d4a9df4f7cd1",
+  "head_sha256": "1aaf569daf53a4453ef2f2e450c924af014aea83b3e4f98fea2644b795b52dc8",
+  "source_checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/all-openings-bar-alternative-20261108/run-20261108-194920/training/ElfnotesKewlTune/step-0400",
+  "normal_summon_usage_scored": false,
+  "server_replays_saved": 0
+}

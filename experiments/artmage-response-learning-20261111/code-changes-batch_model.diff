@@ -1,0 +1,13 @@
+--- /tmp/claude-1000/-home-hatk8-projects-yugioh-ai/44d0c5bc-8fa1-48e1-855c-87dffd6f7666/scratchpad/batch_model.orig.py	2026-11-11 11:01:27.778845715 +0900
++++ code/batch_model.py	2026-11-11 11:01:27.793163736 +0900
+@@ -12,8 +12,8 @@
+ import artmage_entry  # noqa: F401  (pinned files checked; sets the model-code path; no engine duel)
+ import pilot_model as PM
+ 
+-CONFIG = dict(learning_rate=1.5e-5, adam_eps=1e-5, max_grad_norm=1.0, updates=1024, batch_sequences=2, kl=0.0, ppo=False,
+-              value_loss=False, entropy_loss=False, diagnostics_at=[0, 256, 512, 768, 1024])
++CONFIG = dict(learning_rate=1.5e-5, adam_eps=1e-5, max_grad_norm=1.0, updates=256, batch_sequences=2, kl=0.0, ppo=False,
++              value_loss=False, entropy_loss=False, diagnostics_at=[0, 256])  # response study: 256 updates, start + final only
+ 
+ 
+ def make_optimizer():

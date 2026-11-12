@@ -1,0 +1,24 @@
+{"event": "start", "run": 1, "purpose": "run condition=R0", "case_id": "cue-reco-jj-zaren-g00-p0", "time_jst": "2026-11-09T21:26:40+09:00"}
+{"event": "finish", "run": 1, "status": "ok", "time_jst": "2026-11-09T21:26:41+09:00", "failure": null, "mismatch": null}
+{"event": "start", "run": 2, "purpose": "run condition=R1", "case_id": "cue-reco-jj-zaren-g00-p0", "time_jst": "2026-11-09T21:27:02+09:00"}
+{"event": "finish", "run": 2, "status": "ok", "time_jst": "2026-11-09T21:27:03+09:00", "failure": null, "mismatch": null}
+{"event": "start", "run": 3, "purpose": "run condition=R2", "case_id": "cue-reco-jj-zaren-g00-p0", "time_jst": "2026-11-09T21:27:05+09:00"}
+{"event": "finish", "run": 3, "status": "ok", "time_jst": "2026-11-09T21:27:05+09:00", "failure": null, "mismatch": null}
+{"event": "start", "run": 4, "purpose": "run condition=R3", "case_id": "cue-reco-jj-zaren-g00-p0", "time_jst": "2026-11-09T21:27:09+09:00"}
+{"event": "finish", "run": 4, "status": "ok", "time_jst": "2026-11-09T21:27:10+09:00", "failure": null, "mismatch": null}
+{"event": "start", "run": 5, "purpose": "run condition=A0", "case_id": "cue-reco-jj-zaren-g00-p0", "time_jst": "2026-11-09T21:27:33+09:00"}
+{"event": "finish", "run": 5, "status": "ok", "time_jst": "2026-11-09T21:27:34+09:00", "failure": null, "mismatch": null}
+{"event": "start", "run": 6, "purpose": "run condition=A1", "case_id": "cue-reco-jj-zaren-g00-p0", "time_jst": "2026-11-09T21:27:36+09:00"}
+{"event": "finish", "run": 6, "status": "ok", "time_jst": "2026-11-09T21:27:36+09:00", "failure": null, "mismatch": null}
+{"event": "start", "run": 7, "purpose": "replay condition=R0", "case_id": "cue-reco-jj-zaren-g00-p0", "time_jst": "2026-11-09T21:27:59+09:00"}
+{"event": "finish", "run": 7, "status": "ok", "time_jst": "2026-11-09T21:27:59+09:00", "failure": null, "mismatch": null}
+{"event": "start", "run": 8, "purpose": "replay condition=R1", "case_id": "cue-reco-jj-zaren-g00-p0", "time_jst": "2026-11-09T21:28:02+09:00"}
+{"event": "finish", "run": 8, "status": "ok", "time_jst": "2026-11-09T21:28:02+09:00", "failure": null, "mismatch": null}
+{"event": "start", "run": 9, "purpose": "replay condition=R2", "case_id": "cue-reco-jj-zaren-g00-p0", "time_jst": "2026-11-09T21:28:04+09:00"}
+{"event": "finish", "run": 9, "status": "ok", "time_jst": "2026-11-09T21:28:04+09:00", "failure": null, "mismatch": null}
+{"event": "start", "run": 10, "purpose": "replay condition=R3", "case_id": "cue-reco-jj-zaren-g00-p0", "time_jst": "2026-11-09T21:28:07+09:00"}
+{"event": "finish", "run": 10, "status": "ok", "time_jst": "2026-11-09T21:28:07+09:00", "failure": null, "mismatch": null}
+{"event": "start", "run": 11, "purpose": "replay condition=A0", "case_id": "cue-reco-jj-zaren-g00-p0", "time_jst": "2026-11-09T21:28:09+09:00"}
+{"event": "finish", "run": 11, "status": "ok", "time_jst": "2026-11-09T21:28:09+09:00", "failure": null, "mismatch": null}
+{"event": "start", "run": 12, "purpose": "replay condition=A1", "case_id": "cue-reco-jj-zaren-g00-p0", "time_jst": "2026-11-09T21:28:11+09:00"}
+{"event": "finish", "run": 12, "status": "ok", "time_jst": "2026-11-09T21:28:12+09:00", "failure": null, "mismatch": null}

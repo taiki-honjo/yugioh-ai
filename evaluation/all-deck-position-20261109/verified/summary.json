@@ -1,0 +1,162 @@
+{
+  "regression": [
+    {
+      "deck": "Artmage",
+      "mode": "before",
+      "case_id": "Artmage-g08-p0",
+      "passed": true,
+      "reason": "goal_reached"
+    },
+    {
+      "deck": "Artmage",
+      "mode": "after",
+      "case_id": "Artmage-g08-p0",
+      "passed": true,
+      "reason": "goal_reached"
+    },
+    {
+      "deck": "Artmage",
+      "mode": "before",
+      "case_id": "Artmage-g09-p0",
+      "passed": true,
+      "reason": "goal_reached"
+    },
+    {
+      "deck": "Artmage",
+      "mode": "after",
+      "case_id": "Artmage-g09-p0",
+      "passed": true,
+      "reason": "goal_reached"
+    },
+    {
+      "deck": "Artmage",
+      "mode": "before",
+      "case_id": "Artmage-g10-p0",
+      "passed": true,
+      "reason": "goal_reached"
+    },
+    {
+      "deck": "Artmage",
+      "mode": "after",
+      "case_id": "Artmage-g10-p0",
+      "passed": true,
+      "reason": "goal_reached"
+    },
+    {
+      "deck": "Artmage",
+      "mode": "before",
+      "case_id": "Artmage-g11-p0",
+      "passed": true,
+      "reason": "goal_reached"
+    },
+    {
+      "deck": "Artmage",
+      "mode": "after",
+      "case_id": "Artmage-g11-p0",
+      "passed": true,
+      "reason": "goal_reached"
+    },
+    {
+      "deck": "ClownTroupe",
+      "mode": "before",
+      "case_id": "ClownTroupe-g08-p0",
+      "passed": true,
+      "reason": "goal_reached"
+    },
+    {
+      "deck": "ClownTroupe",
+      "mode": "after",
+      "case_id": "ClownTroupe-g08-p0",
+      "passed": true,
+      "reason": "goal_reached"
+    },
+    {
+      "deck": "ClownTroupe",
+      "mode": "before",
+      "case_id": "ClownTroupe-g09-p0",
+      "passed": true,
+      "reason": "goal_reached"
+    },
+    {
+      "deck": "ClownTroupe",
+      "mode": "after",
+      "case_id": "ClownTroupe-g09-p0",
+      "passed": true,
+      "reason": "goal_reached"
+    },
+    {
+      "deck": "ClownTroupe",
+      "mode": "before",
+      "case_id": "ClownTroupe-g10-p0",
+      "passed": true,
+      "reason": "goal_reached"
+    },
+    {
+      "deck": "ClownTroupe",
+      "mode": "after",
+      "case_id": "ClownTroupe-g10-p0",
+      "passed": true,
+      "reason": "goal_reached"
+    },
+    {
+      "deck": "ClownTroupe",
+      "mode": "before",
+      "case_id": "ClownTroupe-g11-p0",
+      "passed": true,
+      "reason": "goal_reached"
+    },
+    {
+      "deck": "ClownTroupe",
+      "mode": "after",
+      "case_id": "ClownTroupe-g11-p0",
+      "passed": true,
+      "reason": "goal_reached"
+    }
+  ],
+  "controlled": [
+    {
+      "deck": "BrandedDracotail",
+      "passed": true,
+      "failure": null,
+      "arrival": {
+        "code": 1498449,
+        "controller": 0,
+        "location": 4,
+        "sequence": 1,
+        "position": 4,
+        "level": 5
+      },
+      "link_arrival": false
+    },
+    {
+      "deck": "SkyStriker",
+      "passed": true,
+      "failure": null,
+      "arrival": {
+        "code": 37351133,
+        "controller": 0,
+        "location": 4,
+        "sequence": 1,
+        "position": 4,
+        "level": 4
+      },
+      "link_arrival": {
+        "code": 63288573,
+        "controller": 0,
+        "location": 4,
+        "sequence": 5,
+        "position": 1,
+        "level": 0
+      }
+    }
+  ],
+  "weights_retrained": false,
+  "normal_summon_usage_scored": false,
+  "server_replays_saved": 0,
+  "lua_errors": 0,
+  "resources": {
+    "live_duels": 0,
+    "peak_duels": 1
+  },
+  "scope": "Regression reuses the two previously tested four-hand opening sets; the other two decks use controlled legal summon tests, not opening/win-rate certification."
+}

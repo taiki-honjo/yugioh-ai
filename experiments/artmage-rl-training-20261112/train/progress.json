@@ -1,0 +1,29 @@
+{
+ "total": 32768,
+ "episodes_started": 81,
+ "windows": 249,
+ "updates": 996,
+ "seconds": 804.9646620750427,
+ "process_seconds": 813.5515117645264,
+ "counts": {
+  "frozen_infer_seconds": 45.91631507873535,
+  "frozen": 16891,
+  "frozen_adapter_changed": 108,
+  "learner_infer_seconds": 44.278892040252686,
+  "learner": 15877,
+  "learner_adapter_controlled": 1132,
+  "learner_adapter_changed": 121,
+  "dropped_cut": 0,
+  "ppo_loss_steps": 14745,
+  "rehearsal_sequences": 1992,
+  "rehearsal_loss_steps": 159536,
+  "rehearsal_context_steps": 192455,
+  "end_natural": 80,
+  "natural_loss": 39,
+  "natural_win": 41,
+  "visibility_events": 4,
+  "visible_cards": 14,
+  "visible_unverified": 0,
+  "visible_selection_prompt": 14
+ }
+}

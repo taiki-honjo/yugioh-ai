@@ -1,0 +1,30 @@
+{
+ "amendment": 1,
+ "registered_jst": "2026-11-10T20:12:29+09:00",
+ "registration_sha256": "993dc524f32aa4ac91243696d8b6b95e881ea18fecd7704bd785cbb0b2bfdbc4",
+ "before_any_engine_run": true,
+ "change": "hb_plans.branch_steps (diagnostics only) counts only select_card prompts; a main-phase command list that offered both 改変 and 襲撃 activations was detected as the Graphrea choice in an offline check on the basic-batch demo F4-T1",
+ "effect": "diagnostic labels only; teacher, plans, data, masks, sampling and training unchanged",
+ "note": "the A branch also matches テルミナス sending ネルヴェド with 獄神獣 offered (F6); reported as \"ネルヴェド vs 獄神獣\", not only Medius①",
+ "diff": {
+  "path": "amendment-1.diff",
+  "sha256": "82e0574ee477b4eb14a495aaa4380912c203b13c9b24a8d9de73b108165af23a",
+  "registered_copy": "spec/registered-code/hb_plans.py"
+ },
+ "code": {
+  "artmage_entry.py": "ca47f56d29431b48d60337de6dcc6ce23d524fba31cbbbdce31e6d7399b78e0f",
+  "artmage_pins.py": "10c4e053d05f44498cff77c45301a3fb5222c7598a658decc52f4539fd96bde8",
+  "artmage_teacher.py": "a126284eff7a2d7ef3c602ade0aa5f196f7ddea77333213c27a197ade21b78f3",
+  "batch_data.py": "3f21a0f495111f82678e93c5434d9c2dd65b2467c4f7c3341a0eddab66b3aad7",
+  "batch_model.py": "373c98ef75b4116c8c0ac54abe81a1f16053253f42ffb18635fab20304a4b238",
+  "batch_plans.py": "68d5945d80d663ba7f85b56ffbd6490a00998aaa1d5cca14663e18e6956f1123",
+  "hb_data.py": "502de35cabab73e9448e5d20e61aa53ce594aa8eb08ad2beebe0740618ebc893",
+  "hb_launch.py": "c36286b3a2716379e97d794aaae63185daecf182dc8f9807bcbab4fdd620c216",
+  "hb_plans.py": "8fc90ad7f704a2f141669d1075827cf3513f015989a95d472f353aaae6ab40cd",
+  "hb_register.py": "c0c82da9c2bf577c9681c7022d0c1802aae42f8739a718d702c594f193401822",
+  "hb_runs.py": "88e694125079d2a9687490f1120186b536939b8750f731266efae56b167a0c14",
+  "hb_train.py": "c8b830fa9dafe93b7359c05ce9b79935318230d88f2c695deeb717254965401f",
+  "pilot_data.py": "dc749fb5ea77419741d0e7469edd7f423db241eae11ccafe399f76a04c3417e8",
+  "pilot_model.py": "8bec14fb9a1e6c02cbfa715c21146aafeb45b00f060d4cd7afa57b7c84e0ad56"
+ }
+}

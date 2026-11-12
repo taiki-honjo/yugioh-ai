@@ -1,0 +1,319 @@
+{
+ "status": "registered_before_prepare_training_and_engine_runs",
+ "registered_jst": "2026-11-11T13:03:17+09:00",
+ "spec": {
+  "copy": "spec/artmage-response-coverage-plan-2026-11-11.md",
+  "sha256": "502538dfa025935a9fb4f4c7fda4bd8ef99e1ecc22ee7ee4ddd4fe421f96df82"
+ },
+ "frozen": {
+  "base.flax_model": {
+   "sha256": "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+   "byte_identical_to_source": true
+  },
+  "chain-head.flax_model": {
+   "sha256": "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2",
+   "byte_identical_to_source": true
+  }
+ },
+ "pins": {
+  "base": "12500c7724b2d723983a2963a960d75172a6df51fb55ea4f3acf102eeb34132e",
+  "head": "0bc7534cab102cd87586e5d22bd4ad0cd3b55d52d08e284146976506ae6193fc",
+  "deck_copy": "a93c4d30d0945f58f741f1e135fdcbc0b0c438aff575cf6d0d02ce9a82c381d6",
+  "engine_deck": "a93c4d30d0945f58f741f1e135fdcbc0b0c438aff575cf6d0d02ce9a82c381d6",
+  "vocabulary": "aeb5be89d4a5591ccc5cce6af96def74ef47463a55265f75c11b92029e772e7b",
+  "meta_manifest": "ace4f6b8408011a55e9b61d3c4917580942d86960bb3f087afe75ce2774c824a",
+  "meta_latest_run": "32770bc4534c729e66f7addbc76770b78798ee4e618b40fd9baa45e83392e544",
+  "article_latest_run": "39db5d660d4bde37dbd9b6fc0c662781da48b71b0e6c50d8357a7a42f73b0159",
+  "model_code": "f4c3903e3a4841b97f6ffb8840bb4cfa5513b5abfead9ff41fa7c785ceba6cce",
+  "witness_code": "0e4f3a0e92c86aba7a95f96c1e5f93f6a0293eaea7f3ab8a63dee772455ae07a",
+  "adapter": "4fe74c83a460ee3565c3ff276ce2d080b233a6152439ec92147ba90d60d46f90",
+  "adapter_cards": "1baa04349bb31833ff01b05cb365ee0f9416de827ac4fbf52b835011a35f1fde",
+  "native": "19a60f38a3d39b61a2ee082168d5a788a1022b2eb569633816596c8b3de21294",
+  "runtime_json": "ebdfc37ed9c7ebcae73b81281876dd6f22bd8d9afcbdfe8f78905dcc9c220d14"
+ },
+ "unchanged_from_scoped_study": {
+  "sa_model.py": true,
+  "artmage_entry.py": true,
+  "artmage_pins.py": true,
+  "flc_runs.py": true,
+  "hb_runs.py": true
+ },
+ "policy": {
+  "type": "artmage-scoped-response-adapter",
+  "version": 1,
+  "structure": "unchanged (sa_model.py identical): frozen base + frozen chain head + response adapter, same gate (select_chain, chain length >= 1, role 2), same inputs; no card / hand / deck conditions added"
+ },
+ "screens": {
+  "S1": {
+   "note": "improve: ディアクトロス② (R1-executed in the probe; the start model passed)",
+   "kind": "ce",
+   "source": "/home/hatk8/projects/yugioh-ai/experiments/artmage-opponent-turn-probe-20261111/runs/S1-D0R1",
+   "step": 149,
+   "npz_index": 112,
+   "recorded_action": [
+    "Activate",
+    27184601,
+    10011
+   ],
+   "who": "probe-R1",
+   "files": {
+    "record.json": "8b5dd7fd917c3dc5dce717debd141ee55035d8f03d0e5e6ee4798ea876c9faef",
+    "observations.npz": "429115c378b6e4fa4e1dd675997b66d5fbb4fd47846c094a2f0a20d17905a49d",
+    "replay.json": "e49727e79be7cda9e4523f8c4db21b4ca7a7fdd6ea4227c5e66fae7bfb632c73"
+   }
+  },
+  "S2": {
+   "note": "improve: ファインメルト③ (the start model's own choice)",
+   "kind": "ce",
+   "source": "/home/hatk8/projects/yugioh-ai/experiments/artmage-functional-landing-compare-20261110/runs/BV1-2cost-ASSAULT-OM",
+   "step": 169,
+   "npz_index": 127,
+   "recorded_action": [
+    "Activate",
+    34541940,
+    10011
+   ],
+   "who": "model",
+   "files": {
+    "record.json": "f037e719b37e4c4ab776c7d24c8c11f1a57483e72319d8bcc095c30b7768cbcc",
+    "observations.npz": "2184e73c81aea1de5867d6cfcf45cdf3f45d42e223be3eb421976951fa37a58d",
+    "replay.json": "2d87d2c199286fabcac9a7522dfafbf148cb08993a32ef79ab0dbe9b1454fb0b"
+   }
+  },
+  "M": {
+   "note": "keep: the start model's distribution (its first choice 獄神獣②)",
+   "kind": "kl",
+   "source": "/home/hatk8/projects/yugioh-ai/experiments/artmage-functional-landing-compare-20261110/runs/BV1-1cost-ASSAULT-OM",
+   "step": 139,
+   "npz_index": 98,
+   "recorded_action": [
+    "Activate",
+    23829452,
+    10010
+   ],
+   "who": "model",
+   "files": {
+    "record.json": "a746037f13ce41ac8098c4673eef35908ebe261143d5589cbb96f6ac715aba92",
+    "observations.npz": "0636fcae59161e7c825d195b1f1712fa33ab67231bd57ee595ab97bc17a717a7",
+    "replay.json": "a71c21641972abe588438d53a4f102b8d45512188fe2957f035811b1f3de9e9a"
+   }
+  },
+  "P": {
+   "note": "keep: the start model's distribution (its first choice pass)",
+   "kind": "kl",
+   "source": "/home/hatk8/projects/yugioh-ai/experiments/artmage-functional-landing-compare-20261110/runs/BV1-2cost-VARNISH-OI",
+   "step": 102,
+   "npz_index": 76,
+   "recorded_action": [
+    "Cancel",
+    0,
+    -1
+   ],
+   "who": "model",
+   "files": {
+    "record.json": "cd8f48a166f2de87b0104d5819967d48e3a0bcf3d707a5d892a8ab644600057b",
+    "observations.npz": "5926cdb16db87953f51b909da3b3b92cace0b3c9ec159fb910fb2c534284f580",
+    "replay.json": "a6039215a3e8e952b56818bd935bc287dc0411bd87d2a45b50a3dccf8b520a9d"
+   }
+  }
+ },
+ "keep_screens_note": "M and P keep the frozen base+head distribution; neither is claimed optimal (M did not stop 獄神獣; P is not a proven-correct pass). From this study on M and P are training / repair cases (earlier splits are not rewritten).",
+ "training": {
+  "loss": "mean(CE_S1, CE_S2) + 1.0 * mean(KL_M, KL_P); KL(p_frozen base+head || p_frozen logits + adapter), temperature 1, legal options only, reference stop_gradient; no loss on other screens or the old 42 sequences; no gradient into the context",
+  "updates": 512,
+  "optimizer": "fresh Adam 1e-3, eps 1e-5",
+  "clip": "global norm 1.0 on the adapter",
+  "seed": 11111501,
+  "init": "the scoped study's init (zero output), not 405d2987",
+  "device": "CPU",
+  "coefficient": 1.0,
+  "no": [
+   "coefficient tuning",
+   "more candidates",
+   "intermediate selection",
+   "extension",
+   "other seeds"
+  ],
+  "logged": "per update: CE and KL separately, their pre-clip gradient norms, the combined norm, clip flag, update norm, max |delta|; before / after: each screen's first choice, probabilities, CE / KL, per-option delta"
+ },
+ "prechecks": [
+  "zero adapter == the original entry on the 42 sequences + the 8 comparison NPZ (logits, RNN states, post-position actions)",
+  "after training: the same off-target identity; reload equality on the 4 screens; the 3-file entry uses the adapter",
+  "frozen base/head, sa_model.py, gate, position adapter identical to the scoped study"
+ ],
+ "evaluation": {
+  "new_runs": "the 8 functional-comparison conditions (BV1 1/2-cost x 改変/襲撃 x O-M/O-I) with the new candidate: record + replay = 16; cap 18 (2 spare only for a harness fix that keeps the conditions)",
+  "runner": "cv_runs.py (code-changes-cv_runs.diff), the 3-file entry passed explicitly; every record carries the 3 hashes and the adapter log",
+  "C": {
+   "new_runs": 0,
+   "reuse": "the 13 trajectories have no gated screen (scoped study: 0 activations, identical to the start model; Codex audit 62bad1de); the frozen inference and the gate are unchanged and only the never-activated adapter weights differ, so the trajectories are the same; shown offline by the off-target identity checks",
+   "evidence": {
+    "Artmage-g06-p0": {
+     "scoped_record_sha256": "0f4724dec7d296734be5eefc14042bfb99fed9b41f031d120ae723180f8a847b",
+     "start_record_sha256": "0f4724dec7d296734be5eefc14042bfb99fed9b41f031d120ae723180f8a847b",
+     "scoped_adapter_activations": 0,
+     "scoped_identical_to_start": true
+    },
+    "Artmage-g07-p0": {
+     "scoped_record_sha256": "28cf055806fc8ea8e9481044d1ff7922dc736be9593e0d4b437eddd6430ec227",
+     "start_record_sha256": "28cf055806fc8ea8e9481044d1ff7922dc736be9593e0d4b437eddd6430ec227",
+     "scoped_adapter_activations": 0,
+     "scoped_identical_to_start": true
+    },
+    "Artmage-g08-p0": {
+     "scoped_record_sha256": "743e482045be82bc2fff8da0c26fc80fe4ea58af1d1adc9b9272d72e9dd71b76",
+     "start_record_sha256": "743e482045be82bc2fff8da0c26fc80fe4ea58af1d1adc9b9272d72e9dd71b76",
+     "scoped_adapter_activations": 0,
+     "scoped_identical_to_start": true
+    },
+    "Artmage-g09-p0": {
+     "scoped_record_sha256": "085a0381eb04df2cf399eae5b2fbf7f0440ee7e6807a59e24c924513e1fc71a4",
+     "start_record_sha256": "085a0381eb04df2cf399eae5b2fbf7f0440ee7e6807a59e24c924513e1fc71a4",
+     "scoped_adapter_activations": 0,
+     "scoped_identical_to_start": true
+    },
+    "Artmage-g10-p0": {
+     "scoped_record_sha256": "d731fa7c83caa64e0a6919091cbbce0642a3e3f9b4c5e946baccd7f52c4c0cca",
+     "start_record_sha256": "d731fa7c83caa64e0a6919091cbbce0642a3e3f9b4c5e946baccd7f52c4c0cca",
+     "scoped_adapter_activations": 0,
+     "scoped_identical_to_start": true
+    },
+    "Artmage-g11-p0": {
+     "scoped_record_sha256": "9fe35e66a76af417608c71e149800ac144e589ff635970719a1c295e84ff8fcb",
+     "start_record_sha256": "9fe35e66a76af417608c71e149800ac144e589ff635970719a1c295e84ff8fcb",
+     "scoped_adapter_activations": 0,
+     "scoped_identical_to_start": true
+    },
+    "F0-V": {
+     "scoped_record_sha256": "f40a535cc001e53047058c105a974e6873381e0e7843cf715a50d484ad8dd757",
+     "start_record_sha256": "f40a535cc001e53047058c105a974e6873381e0e7843cf715a50d484ad8dd757",
+     "scoped_adapter_activations": 0,
+     "scoped_identical_to_start": true
+    },
+    "F1-V": {
+     "scoped_record_sha256": "7f1ca8865a112a6c3f329ad7e0943dc0a72cd656d32999dfe5e29039a329acc6",
+     "start_record_sha256": "7f1ca8865a112a6c3f329ad7e0943dc0a72cd656d32999dfe5e29039a329acc6",
+     "scoped_adapter_activations": 0,
+     "scoped_identical_to_start": true
+    },
+    "F2-V": {
+     "scoped_record_sha256": "d8853e3e8ba19de0df01ae9409dcae12b78fee7badaf95d9bcf5a7cc3d77f4a9",
+     "start_record_sha256": "d8853e3e8ba19de0df01ae9409dcae12b78fee7badaf95d9bcf5a7cc3d77f4a9",
+     "scoped_adapter_activations": 0,
+     "scoped_identical_to_start": true
+    },
+    "F3-V": {
+     "scoped_record_sha256": "3cbc51643f26b551be36e8e413b5d260b00169233c58d4499dff5ea24d914b4f",
+     "start_record_sha256": "3cbc51643f26b551be36e8e413b5d260b00169233c58d4499dff5ea24d914b4f",
+     "scoped_adapter_activations": 0,
+     "scoped_identical_to_start": true
+    },
+    "F4-V": {
+     "scoped_record_sha256": "16743aed10318b371425cf7cec09cdda9b37c6dc0edc435a9691396d96fe8006",
+     "start_record_sha256": "16743aed10318b371425cf7cec09cdda9b37c6dc0edc435a9691396d96fe8006",
+     "scoped_adapter_activations": 0,
+     "scoped_identical_to_start": true
+    },
+    "F5-V": {
+     "scoped_record_sha256": "885f2e30e2ce4d1e410e9abf46ad3df6329853c8d1b75bd2a96909f834c14d76",
+     "start_record_sha256": "885f2e30e2ce4d1e410e9abf46ad3df6329853c8d1b75bd2a96909f834c14d76",
+     "scoped_adapter_activations": 0,
+     "scoped_identical_to_start": true
+    },
+    "F6-V": {
+     "scoped_record_sha256": "d5466fb9a12ba696775c74559e512029a078b6fcde4490fe1e9fa1381f45ceb9",
+     "start_record_sha256": "d5466fb9a12ba696775c74559e512029a078b6fcde4490fe1e9fa1381f45ceb9",
+     "scoped_adapter_activations": 0,
+     "scoped_identical_to_start": true
+    }
+   }
+  },
+  "A": {
+   "new_runs": 0,
+   "reference": "A-S1 / A-S2 are referenced from the B runs BV1-1cost-VARNISH-OM / BV1-2cost-ASSAULT-OM only if, up to the first opponent-chain window, the B trace (snapshots, action meanings) and NPZ inputs equal the old start-model record and the adapter acted 0 times before it; not counted as independent runs"
+  },
+  "compared": {
+   "start_model": {
+    "BV1-1cost-VARNISH-OM": "08a2a100769d0e0bd663b1a95c366e3d807767f4076ae6f068f6d7eb45da5352",
+    "BV1-1cost-VARNISH-OI": "0f48c74a4bddf7fd96d923e5b4f50e54fa39495ecc0f67cd296d378df6261c18",
+    "BV1-1cost-ASSAULT-OM": "a746037f13ce41ac8098c4673eef35908ebe261143d5589cbb96f6ac715aba92",
+    "BV1-1cost-ASSAULT-OI": "da16b8b89feff700219512207f9e91e6402edd4ef42014b0fcc52ad454a519c8",
+    "BV1-2cost-VARNISH-OM": "49e7dc66d296f2ad65de0a091ebbc699df2d32644600b666170056f77a61f4ea",
+    "BV1-2cost-VARNISH-OI": "cd8f48a166f2de87b0104d5819967d48e3a0bcf3d707a5d892a8ab644600057b",
+    "BV1-2cost-ASSAULT-OM": "f037e719b37e4c4ab776c7d24c8c11f1a57483e72319d8bcc095c30b7768cbcc",
+    "BV1-2cost-ASSAULT-OI": "7aa6aed72fd9c6e412d06ff18ea2e50e0f59e8f453a995dbebb43939dc5f1ec8"
+   },
+   "scoped_adapter": {
+    "BV1-1cost-VARNISH-OM": "cd22231c736d31e7a84830f8a82f055acf6e3075734e449b24eca4069c92dfb4",
+    "BV1-1cost-ASSAULT-OM": "680a101ab75f258d7239d625a34ab9d895959ea1d8e44c3273ddb5fd86958e4c",
+    "BV1-2cost-VARNISH-OM": "2d2529c4fad05af0ffe8de0f6129efe738630561baff77e28a7b1486fd4f6cc9",
+    "BV1-2cost-ASSAULT-OM": "71fc17025e133459ed262d4c9c5ea40ff372ab5f73a2d0d5718b69a8944c74d2"
+   },
+   "scoped_adapter_not_run": [
+    "BV1-1cost-VARNISH-OI",
+    "BV1-1cost-ASSAULT-OI",
+    "BV1-2cost-VARNISH-OI",
+    "BV1-2cost-ASSAULT-OI"
+   ]
+  },
+  "items": [
+   "1. S1 stop by ディアクトロス② kept; S2 and 2-cost 改変 stops not lost",
+   "2. M (1cost 襲撃 O-M): the original first response and follow-up regained? a different response is recorded as a change from the keep target with its resolution / resources / LP, not called a bad move",
+   "3. P (2cost 改変 O-I): the original pass kept? (not a proof that pass is optimal)",
+   "4. the 3 other O-I response screens (not trained): how the choice and the result change; not fed back into training",
+   "5. the path before the response equals the original; changes after a different response are separated"
+  ],
+  "items_note": "observation points of this experiment, not production acceptance conditions"
+ },
+ "engine": {
+  "cap": 18,
+  "plan": "8 records + 8 replays = 16",
+  "failures_count": true,
+  "previous_unused_not_carried": true
+ },
+ "not_done": [
+  "PPO",
+  "normal battles",
+  "adoption",
+  "acceptance changes",
+  "keep-vs-reshape re-test",
+  "input / gate changes",
+  "B2B",
+  "production / registry changes"
+ ],
+ "limits": {
+  "memory_gib": 5,
+  "swap": 0,
+  "cpu_percent": 300,
+  "job_seconds": 1800,
+  "nice": 10,
+  "jobs": 1
+ },
+ "code": {
+  "artmage_entry.py": "ca47f56d29431b48d60337de6dcc6ce23d524fba31cbbbdce31e6d7399b78e0f",
+  "artmage_pins.py": "10c4e053d05f44498cff77c45301a3fb5222c7598a658decc52f4539fd96bde8",
+  "artmage_teacher.py": "a126284eff7a2d7ef3c602ade0aa5f196f7ddea77333213c27a197ade21b78f3",
+  "batch_data.py": "3f21a0f495111f82678e93c5434d9c2dd65b2467c4f7c3341a0eddab66b3aad7",
+  "batch_model.py": "7ee574aceb809b4b44cdeb0de8eae77b66e70f065463ca65bc310e80aa52e8d3",
+  "batch_plans.py": "68d5945d80d663ba7f85b56ffbd6490a00998aaa1d5cca14663e18e6956f1123",
+  "cv_launch.py": "93eddadb489d3533fb270f5b55b430595d7694cd93e9057729e55a97fef65f4e",
+  "cv_register.py": "be79ece84a47c4f2cd10344d1772f60d2ac28513241fb436ed1b303cd759f947",
+  "cv_runs.py": "acae9b3c4cb805dc1b3e41226ad866973aa2be702926fd8c814081529f536e5f",
+  "cv_train.py": "d7b86bcbddcaf6a79e89b87546409f13c98e0f0e859a39292b8358bed77e24cb",
+  "flc_runs.py": "8af7cbae6ce9d6d8322b043326f6b78d3f819ef8758ceb0e11597488f33e840f",
+  "hb_data.py": "502de35cabab73e9448e5d20e61aa53ce594aa8eb08ad2beebe0740618ebc893",
+  "hb_plans.py": "8fc90ad7f704a2f141669d1075827cf3513f015989a95d472f353aaae6ab40cd",
+  "hb_runs.py": "88e694125079d2a9687490f1120186b536939b8750f731266efae56b167a0c14",
+  "pilot_data.py": "dc749fb5ea77419741d0e7469edd7f423db241eae11ccafe399f76a04c3417e8",
+  "pilot_model.py": "8bec14fb9a1e6c02cbfa715c21146aafeb45b00f060d4cd7afa57b7c84e0ad56",
+  "rl_data.py": "9259488786bd1c3fa250ab474e2e3813f3e19d6012ca9b9afeb355014068374c",
+  "sa_model.py": "fe9856bd168f33257d09ec41fe38253bf8da2e42a1174a9f27d29786dd1de36c"
+ },
+ "code_changes": {
+  "cv_runs": {
+   "file": "code-changes-cv_runs.diff",
+   "sha256": "f9efb5403c3b788eaf112b9ce58d751138fb540d8acc4aae8d04d9fc6b692cb8"
+  },
+  "training": "cv_train.py (new): 4 screens, CE + KL; sa_model.py unchanged"
+ }
+}

@@ -1,0 +1,29 @@
+{
+  "status": "complete",
+  "results": {
+    "reference": {
+      "passed": 24,
+      "cases": 24
+    },
+    "model4096": {
+      "passed": 0,
+      "cases": 24
+    },
+    "model69632": {
+      "passed": 3,
+      "cases": 24
+    }
+  },
+  "elapsed_seconds": 60.268103749,
+  "case_count": 24,
+  "human_strategy_review": "pending",
+  "native_lua_errors": 0,
+  "runtime": {
+    "runtime": "/home/hatk8/projects/yugioh-ai/experiments/combo-benchmark-20261107/runtime",
+    "native_binary": "/home/hatk8/projects/yugioh-ai/experiments/combo-benchmark-20261107/runtime/agent/ygoenv/ygoenv/ygopro/ygopro_ygoenv.cpython-310-x86_64-linux-gnu.so",
+    "sha256": "c63b2288c5ff0b4332abf65b2a870cf451d488a29bf62635f38aff5486bd19f3",
+    "original_unchanged": true,
+    "fixture_design": "Pre-place exact hands/field and remaining deck; zero automatic initial draws; MR5 and pseudo shuffle",
+    "safety": "snapshot oracle only; never supplied to model; call with one environment at a time"
+  }
+}

@@ -1,0 +1,1067 @@
+[
+  {
+    "id": "rukina_search",
+    "label": "ルキナを中央に出し、エルフェンノーツをサーチ",
+    "kind": "opening",
+    "hand": [
+      13597785,
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "protected": [
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "goal": "rukina_search",
+    "plan": [
+      {
+        "act": "SpSummon",
+        "code": 13597785
+      },
+      {
+        "act": "Activate",
+        "code": 13597785
+      },
+      {
+        "act": "None",
+        "code": 56651978,
+        "after_location": 2
+      }
+    ],
+    "case_id": "rukina_search-hand0",
+    "seed": 7100,
+    "review_status": "rule_backed_machine_witness; human_strategy_review_pending"
+  },
+  {
+    "id": "rukina_search",
+    "label": "ルキナを中央に出し、エルフェンノーツをサーチ",
+    "kind": "opening",
+    "hand": [
+      97268402,
+      94145021,
+      23434538,
+      13597785,
+      14558127
+    ],
+    "protected": [
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "goal": "rukina_search",
+    "plan": [
+      {
+        "act": "SpSummon",
+        "code": 13597785
+      },
+      {
+        "act": "Activate",
+        "code": 13597785
+      },
+      {
+        "act": "None",
+        "code": 56651978,
+        "after_location": 2
+      }
+    ],
+    "case_id": "rukina_search-hand1",
+    "seed": 7101,
+    "review_status": "rule_backed_machine_witness; human_strategy_review_pending"
+  },
+  {
+    "id": "rukina_search",
+    "label": "ルキナを中央に出し、エルフェンノーツをサーチ",
+    "kind": "opening",
+    "hand": [
+      23434538,
+      94145021,
+      97268402,
+      14558127,
+      13597785
+    ],
+    "protected": [
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "goal": "rukina_search",
+    "plan": [
+      {
+        "act": "SpSummon",
+        "code": 13597785
+      },
+      {
+        "act": "Activate",
+        "code": 13597785
+      },
+      {
+        "act": "None",
+        "code": 56651978,
+        "after_location": 2
+      }
+    ],
+    "case_id": "rukina_search-hand2",
+    "seed": 7102,
+    "review_status": "rule_backed_machine_witness; human_strategy_review_pending"
+  },
+  {
+    "id": "dina_place",
+    "label": "ディーナからパラレリズムを表側設置",
+    "kind": "opening",
+    "hand": [
+      59581480,
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "protected": [
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "goal": "dina_place",
+    "plan": [
+      {
+        "act": "SpSummon",
+        "code": 59581480
+      },
+      {
+        "act": "Activate",
+        "code": 59581480
+      },
+      {
+        "act": "None",
+        "code": 64491754,
+        "after_location": 8
+      }
+    ],
+    "case_id": "dina_place-hand0",
+    "seed": 7100,
+    "review_status": "rule_backed_machine_witness; human_strategy_review_pending"
+  },
+  {
+    "id": "dina_place",
+    "label": "ディーナからパラレリズムを表側設置",
+    "kind": "opening",
+    "hand": [
+      97268402,
+      94145021,
+      23434538,
+      59581480,
+      14558127
+    ],
+    "protected": [
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "goal": "dina_place",
+    "plan": [
+      {
+        "act": "SpSummon",
+        "code": 59581480
+      },
+      {
+        "act": "Activate",
+        "code": 59581480
+      },
+      {
+        "act": "None",
+        "code": 64491754,
+        "after_location": 8
+      }
+    ],
+    "case_id": "dina_place-hand1",
+    "seed": 7101,
+    "review_status": "rule_backed_machine_witness; human_strategy_review_pending"
+  },
+  {
+    "id": "dina_place",
+    "label": "ディーナからパラレリズムを表側設置",
+    "kind": "opening",
+    "hand": [
+      23434538,
+      94145021,
+      97268402,
+      14558127,
+      59581480
+    ],
+    "protected": [
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "goal": "dina_place",
+    "plan": [
+      {
+        "act": "SpSummon",
+        "code": 59581480
+      },
+      {
+        "act": "Activate",
+        "code": 59581480
+      },
+      {
+        "act": "None",
+        "code": 64491754,
+        "after_location": 8
+      }
+    ],
+    "case_id": "dina_place-hand2",
+    "seed": 7102,
+    "review_status": "rule_backed_machine_witness; human_strategy_review_pending"
+  },
+  {
+    "id": "fortuna_place",
+    "label": "フォルトナからラプソディアを表側設置",
+    "kind": "opening",
+    "hand": [
+      85976588,
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "protected": [
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "goal": "fortuna_place",
+    "plan": [
+      {
+        "act": "SpSummon",
+        "code": 85976588
+      },
+      {
+        "act": "Activate",
+        "code": 85976588
+      },
+      {
+        "act": "None",
+        "code": 24092792,
+        "after_location": 8
+      }
+    ],
+    "case_id": "fortuna_place-hand0",
+    "seed": 7100,
+    "review_status": "rule_backed_machine_witness; human_strategy_review_pending"
+  },
+  {
+    "id": "fortuna_place",
+    "label": "フォルトナからラプソディアを表側設置",
+    "kind": "opening",
+    "hand": [
+      97268402,
+      94145021,
+      23434538,
+      85976588,
+      14558127
+    ],
+    "protected": [
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "goal": "fortuna_place",
+    "plan": [
+      {
+        "act": "SpSummon",
+        "code": 85976588
+      },
+      {
+        "act": "Activate",
+        "code": 85976588
+      },
+      {
+        "act": "None",
+        "code": 24092792,
+        "after_location": 8
+      }
+    ],
+    "case_id": "fortuna_place-hand1",
+    "seed": 7101,
+    "review_status": "rule_backed_machine_witness; human_strategy_review_pending"
+  },
+  {
+    "id": "fortuna_place",
+    "label": "フォルトナからラプソディアを表側設置",
+    "kind": "opening",
+    "hand": [
+      23434538,
+      94145021,
+      97268402,
+      14558127,
+      85976588
+    ],
+    "protected": [
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "goal": "fortuna_place",
+    "plan": [
+      {
+        "act": "SpSummon",
+        "code": 85976588
+      },
+      {
+        "act": "Activate",
+        "code": 85976588
+      },
+      {
+        "act": "None",
+        "code": 24092792,
+        "after_location": 8
+      }
+    ],
+    "case_id": "fortuna_place-hand2",
+    "seed": 7102,
+    "review_status": "rule_backed_machine_witness; human_strategy_review_pending"
+  },
+  {
+    "id": "regina_recruit",
+    "label": "レギナを中央に出し、別のエルフェンノーツをリクルート",
+    "kind": "opening",
+    "hand": [
+      56651978,
+      64491754,
+      14558127,
+      97268402,
+      94145021
+    ],
+    "protected": [
+      14558127,
+      97268402,
+      94145021
+    ],
+    "goal": "regina_recruit",
+    "plan": [
+      {
+        "act": "Activate",
+        "code": 56651978
+      },
+      {
+        "act": "None",
+        "code": 64491754,
+        "after_location": 16
+      },
+      {
+        "act": "None",
+        "code": 59581480,
+        "after_location": 4
+      }
+    ],
+    "case_id": "regina_recruit-hand0",
+    "seed": 7100,
+    "review_status": "rule_backed_machine_witness; human_strategy_review_pending"
+  },
+  {
+    "id": "regina_recruit",
+    "label": "レギナを中央に出し、別のエルフェンノーツをリクルート",
+    "kind": "opening",
+    "hand": [
+      14558127,
+      97268402,
+      94145021,
+      56651978,
+      64491754
+    ],
+    "protected": [
+      14558127,
+      97268402,
+      94145021
+    ],
+    "goal": "regina_recruit",
+    "plan": [
+      {
+        "act": "Activate",
+        "code": 56651978
+      },
+      {
+        "act": "None",
+        "code": 64491754,
+        "after_location": 16
+      },
+      {
+        "act": "None",
+        "code": 59581480,
+        "after_location": 4
+      }
+    ],
+    "case_id": "regina_recruit-hand1",
+    "seed": 7101,
+    "review_status": "rule_backed_machine_witness; human_strategy_review_pending"
+  },
+  {
+    "id": "regina_recruit",
+    "label": "レギナを中央に出し、別のエルフェンノーツをリクルート",
+    "kind": "opening",
+    "hand": [
+      94145021,
+      97268402,
+      14558127,
+      64491754,
+      56651978
+    ],
+    "protected": [
+      14558127,
+      97268402,
+      94145021
+    ],
+    "goal": "regina_recruit",
+    "plan": [
+      {
+        "act": "Activate",
+        "code": 56651978
+      },
+      {
+        "act": "None",
+        "code": 64491754,
+        "after_location": 16
+      },
+      {
+        "act": "None",
+        "code": 59581480,
+        "after_location": 4
+      }
+    ],
+    "case_id": "regina_recruit-hand2",
+    "seed": 7102,
+    "review_status": "rule_backed_machine_witness; human_strategy_review_pending"
+  },
+  {
+    "id": "dina_chain",
+    "label": "ディーナ初動からレギナ＋ルキナ＋永続魔法＋サーチ",
+    "kind": "opening_combo",
+    "hand": [
+      59581480,
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "protected": [
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "goal": "dina_chain",
+    "plan": [
+      {
+        "act": "SpSummon",
+        "code": 59581480
+      },
+      {
+        "act": "Activate",
+        "code": 59581480
+      },
+      {
+        "act": "None",
+        "code": 64491754,
+        "after_location": 8
+      },
+      {
+        "act": "Activate",
+        "code": 64491754
+      },
+      {
+        "act": "None",
+        "code": 59581480,
+        "after_location": 16
+      },
+      {
+        "act": "None",
+        "code": 56651978,
+        "after_location": 4
+      },
+      {
+        "act": "None",
+        "code": 13597785,
+        "after_location": 4
+      },
+      {
+        "act": "Activate",
+        "code": 13597785
+      },
+      {
+        "act": "None",
+        "code": 85976588,
+        "after_location": 2
+      }
+    ],
+    "case_id": "dina_chain-hand0",
+    "seed": 7100,
+    "review_status": "rule_backed_machine_witness; human_strategy_review_pending"
+  },
+  {
+    "id": "dina_chain",
+    "label": "ディーナ初動からレギナ＋ルキナ＋永続魔法＋サーチ",
+    "kind": "opening_combo",
+    "hand": [
+      97268402,
+      94145021,
+      23434538,
+      59581480,
+      14558127
+    ],
+    "protected": [
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "goal": "dina_chain",
+    "plan": [
+      {
+        "act": "SpSummon",
+        "code": 59581480
+      },
+      {
+        "act": "Activate",
+        "code": 59581480
+      },
+      {
+        "act": "None",
+        "code": 64491754,
+        "after_location": 8
+      },
+      {
+        "act": "Activate",
+        "code": 64491754
+      },
+      {
+        "act": "None",
+        "code": 59581480,
+        "after_location": 16
+      },
+      {
+        "act": "None",
+        "code": 56651978,
+        "after_location": 4
+      },
+      {
+        "act": "None",
+        "code": 13597785,
+        "after_location": 4
+      },
+      {
+        "act": "Activate",
+        "code": 13597785
+      },
+      {
+        "act": "None",
+        "code": 85976588,
+        "after_location": 2
+      }
+    ],
+    "case_id": "dina_chain-hand1",
+    "seed": 7101,
+    "review_status": "rule_backed_machine_witness; human_strategy_review_pending"
+  },
+  {
+    "id": "dina_chain",
+    "label": "ディーナ初動からレギナ＋ルキナ＋永続魔法＋サーチ",
+    "kind": "opening_combo",
+    "hand": [
+      23434538,
+      94145021,
+      97268402,
+      14558127,
+      59581480
+    ],
+    "protected": [
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "goal": "dina_chain",
+    "plan": [
+      {
+        "act": "SpSummon",
+        "code": 59581480
+      },
+      {
+        "act": "Activate",
+        "code": 59581480
+      },
+      {
+        "act": "None",
+        "code": 64491754,
+        "after_location": 8
+      },
+      {
+        "act": "Activate",
+        "code": 64491754
+      },
+      {
+        "act": "None",
+        "code": 59581480,
+        "after_location": 16
+      },
+      {
+        "act": "None",
+        "code": 56651978,
+        "after_location": 4
+      },
+      {
+        "act": "None",
+        "code": 13597785,
+        "after_location": 4
+      },
+      {
+        "act": "Activate",
+        "code": 13597785
+      },
+      {
+        "act": "None",
+        "code": 85976588,
+        "after_location": 2
+      }
+    ],
+    "case_id": "dina_chain-hand2",
+    "seed": 7102,
+    "review_status": "rule_backed_machine_witness; human_strategy_review_pending"
+  },
+  {
+    "id": "rukina_chain",
+    "label": "ルキナ初動からレギナ＋ディーナ＋永続魔法",
+    "kind": "opening_combo",
+    "hand": [
+      13597785,
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "protected": [
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "goal": "rukina_chain",
+    "plan": [
+      {
+        "act": "SpSummon",
+        "code": 13597785
+      },
+      {
+        "act": "Activate",
+        "code": 13597785
+      },
+      {
+        "act": "None",
+        "code": 56651978,
+        "after_location": 2
+      },
+      {
+        "act": "Activate",
+        "code": 56651978
+      },
+      {
+        "act": "None",
+        "code": 13597785,
+        "after_location": 16
+      },
+      {
+        "act": "None",
+        "code": 59581480,
+        "after_location": 4
+      },
+      {
+        "act": "Activate",
+        "code": 59581480
+      },
+      {
+        "act": "None",
+        "code": 64491754,
+        "after_location": 8
+      }
+    ],
+    "case_id": "rukina_chain-hand0",
+    "seed": 7100,
+    "review_status": "rule_backed_machine_witness; human_strategy_review_pending"
+  },
+  {
+    "id": "rukina_chain",
+    "label": "ルキナ初動からレギナ＋ディーナ＋永続魔法",
+    "kind": "opening_combo",
+    "hand": [
+      97268402,
+      94145021,
+      23434538,
+      13597785,
+      14558127
+    ],
+    "protected": [
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "goal": "rukina_chain",
+    "plan": [
+      {
+        "act": "SpSummon",
+        "code": 13597785
+      },
+      {
+        "act": "Activate",
+        "code": 13597785
+      },
+      {
+        "act": "None",
+        "code": 56651978,
+        "after_location": 2
+      },
+      {
+        "act": "Activate",
+        "code": 56651978
+      },
+      {
+        "act": "None",
+        "code": 13597785,
+        "after_location": 16
+      },
+      {
+        "act": "None",
+        "code": 59581480,
+        "after_location": 4
+      },
+      {
+        "act": "Activate",
+        "code": 59581480
+      },
+      {
+        "act": "None",
+        "code": 64491754,
+        "after_location": 8
+      }
+    ],
+    "case_id": "rukina_chain-hand1",
+    "seed": 7101,
+    "review_status": "rule_backed_machine_witness; human_strategy_review_pending"
+  },
+  {
+    "id": "rukina_chain",
+    "label": "ルキナ初動からレギナ＋ディーナ＋永続魔法",
+    "kind": "opening_combo",
+    "hand": [
+      23434538,
+      94145021,
+      97268402,
+      14558127,
+      13597785
+    ],
+    "protected": [
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "goal": "rukina_chain",
+    "plan": [
+      {
+        "act": "SpSummon",
+        "code": 13597785
+      },
+      {
+        "act": "Activate",
+        "code": 13597785
+      },
+      {
+        "act": "None",
+        "code": 56651978,
+        "after_location": 2
+      },
+      {
+        "act": "Activate",
+        "code": 56651978
+      },
+      {
+        "act": "None",
+        "code": 13597785,
+        "after_location": 16
+      },
+      {
+        "act": "None",
+        "code": 59581480,
+        "after_location": 4
+      },
+      {
+        "act": "Activate",
+        "code": 59581480
+      },
+      {
+        "act": "None",
+        "code": 64491754,
+        "after_location": 8
+      }
+    ],
+    "case_id": "rukina_chain-hand2",
+    "seed": 7102,
+    "review_status": "rule_backed_machine_witness; human_strategy_review_pending"
+  },
+  {
+    "id": "clip_hand_synchro",
+    "label": "場のクリップ＋手札ミクスでS召喚・サーチ・EX除外",
+    "kind": "synthetic_midturn",
+    "hand": [
+      16509007,
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "field": [
+      {
+        "code": 43904702,
+        "location": 4,
+        "sequence": 0,
+        "position": 1
+      }
+    ],
+    "protected": [
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "goal": "hand_synchro",
+    "plan": [
+      {
+        "act": "SpSummon",
+        "code": 42781164
+      },
+      {
+        "act": "None",
+        "code": 78058681,
+        "after_location": 2
+      }
+    ],
+    "case_id": "clip_hand_synchro-hand0",
+    "seed": 7100,
+    "review_status": "rule_backed_machine_witness; human_strategy_review_pending"
+  },
+  {
+    "id": "clip_hand_synchro",
+    "label": "場のクリップ＋手札ミクスでS召喚・サーチ・EX除外",
+    "kind": "synthetic_midturn",
+    "hand": [
+      97268402,
+      94145021,
+      23434538,
+      16509007,
+      14558127
+    ],
+    "field": [
+      {
+        "code": 43904702,
+        "location": 4,
+        "sequence": 0,
+        "position": 1
+      }
+    ],
+    "protected": [
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "goal": "hand_synchro",
+    "plan": [
+      {
+        "act": "SpSummon",
+        "code": 42781164
+      },
+      {
+        "act": "None",
+        "code": 78058681,
+        "after_location": 2
+      }
+    ],
+    "case_id": "clip_hand_synchro-hand1",
+    "seed": 7101,
+    "review_status": "rule_backed_machine_witness; human_strategy_review_pending"
+  },
+  {
+    "id": "clip_hand_synchro",
+    "label": "場のクリップ＋手札ミクスでS召喚・サーチ・EX除外",
+    "kind": "synthetic_midturn",
+    "hand": [
+      23434538,
+      94145021,
+      97268402,
+      14558127,
+      16509007
+    ],
+    "field": [
+      {
+        "code": 43904702,
+        "location": 4,
+        "sequence": 0,
+        "position": 1
+      }
+    ],
+    "protected": [
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "goal": "hand_synchro",
+    "plan": [
+      {
+        "act": "SpSummon",
+        "code": 42781164
+      },
+      {
+        "act": "None",
+        "code": 78058681,
+        "after_location": 2
+      }
+    ],
+    "case_id": "clip_hand_synchro-hand2",
+    "seed": 7102,
+    "review_status": "rule_backed_machine_witness; human_strategy_review_pending"
+  },
+  {
+    "id": "mix_hand_synchro",
+    "label": "場のミクス＋手札クリップでS召喚・サーチ・EX除外",
+    "kind": "synthetic_midturn",
+    "hand": [
+      43904702,
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "field": [
+      {
+        "code": 16509007,
+        "location": 4,
+        "sequence": 4,
+        "position": 1
+      }
+    ],
+    "protected": [
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "goal": "hand_synchro",
+    "plan": [
+      {
+        "act": "SpSummon",
+        "code": 42781164
+      },
+      {
+        "act": "None",
+        "code": 78058681,
+        "after_location": 2
+      }
+    ],
+    "case_id": "mix_hand_synchro-hand0",
+    "seed": 7100,
+    "review_status": "rule_backed_machine_witness; human_strategy_review_pending"
+  },
+  {
+    "id": "mix_hand_synchro",
+    "label": "場のミクス＋手札クリップでS召喚・サーチ・EX除外",
+    "kind": "synthetic_midturn",
+    "hand": [
+      97268402,
+      94145021,
+      23434538,
+      43904702,
+      14558127
+    ],
+    "field": [
+      {
+        "code": 16509007,
+        "location": 4,
+        "sequence": 4,
+        "position": 1
+      }
+    ],
+    "protected": [
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "goal": "hand_synchro",
+    "plan": [
+      {
+        "act": "SpSummon",
+        "code": 42781164
+      },
+      {
+        "act": "None",
+        "code": 78058681,
+        "after_location": 2
+      }
+    ],
+    "case_id": "mix_hand_synchro-hand1",
+    "seed": 7101,
+    "review_status": "rule_backed_machine_witness; human_strategy_review_pending"
+  },
+  {
+    "id": "mix_hand_synchro",
+    "label": "場のミクス＋手札クリップでS召喚・サーチ・EX除外",
+    "kind": "synthetic_midturn",
+    "hand": [
+      23434538,
+      94145021,
+      97268402,
+      14558127,
+      43904702
+    ],
+    "field": [
+      {
+        "code": 16509007,
+        "location": 4,
+        "sequence": 4,
+        "position": 1
+      }
+    ],
+    "protected": [
+      14558127,
+      97268402,
+      94145021,
+      23434538
+    ],
+    "goal": "hand_synchro",
+    "plan": [
+      {
+        "act": "SpSummon",
+        "code": 42781164
+      },
+      {
+        "act": "None",
+        "code": 78058681,
+        "after_location": 2
+      }
+    ],
+    "case_id": "mix_hand_synchro-hand2",
+    "seed": 7102,
+    "review_status": "rule_backed_machine_witness; human_strategy_review_pending"
+  }
+]

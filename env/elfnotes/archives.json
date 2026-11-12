@@ -1,0 +1,44 @@
+{
+  "agent": {
+    "repo": "sbl1996/ygo-agent",
+    "ref": "dbf5142d49aab2e6beb4150788d4fffec39ae3e5",
+    "url": "https://codeload.github.com/sbl1996/ygo-agent/tar.gz/dbf5142d49aab2e6beb4150788d4fffec39ae3e5",
+    "bytes": 372675,
+    "sha256": "3ec2ca5bf6662822fa2746873719c0020abbe23fdb0a1ebcbebbfa779f3cd307"
+  },
+  "fmt": {
+    "repo": "fmtlib/fmt",
+    "ref": "10.2.1",
+    "url": "https://codeload.github.com/fmtlib/fmt/tar.gz/10.2.1",
+    "bytes": 854665,
+    "sha256": "1250e4cc58bf06ee631567523f48848dc4596133e163f02615c97f78bab6c811"
+  },
+  "core": {
+    "repo": "Fluorohydride/ygopro-core",
+    "ref": "1f7769cd40dbb13fc6ec33de7ac99757425e1f22",
+    "url": "https://codeload.github.com/Fluorohydride/ygopro-core/tar.gz/1f7769cd40dbb13fc6ec33de7ac99757425e1f22",
+    "bytes": 195310,
+    "sha256": "8f2126c406f00ff7716dbf61bd15bc0b6fbb14dfee0ba558bdeb0f7d777292c3"
+  },
+  "unordered-dense": {
+    "repo": "martinus/unordered_dense",
+    "ref": "v4.4.0",
+    "url": "https://codeload.github.com/martinus/unordered_dense/tar.gz/v4.4.0",
+    "bytes": 900081,
+    "sha256": "3976399793e8cb4db1409ce15610fbd9e5e406ced4745f262d393a9311efbd88"
+  },
+  "sqlitecpp": {
+    "repo": "SRombauts/SQLiteCpp",
+    "ref": "3.2.1",
+    "url": "https://codeload.github.com/SRombauts/SQLiteCpp/tar.gz/3.2.1",
+    "bytes": 2557246,
+    "sha256": "70c67d5680c47460f82a7abf8e6b0329bf2fb10795a982a6d8abc06adb42d693"
+  },
+  "scripts": {
+    "repo": "mycard/ygopro-scripts",
+    "ref": "b83db1cc3f512d3bec2faafb9ecf199143332be1",
+    "url": "https://codeload.github.com/mycard/ygopro-scripts/tar.gz/b83db1cc3f512d3bec2faafb9ecf199143332be1",
+    "bytes": 5337174,
+    "sha256": "d377e462d7222f941012efd0837f1c1e6060fa4f02604b7d50d1e6da9771217c"
+  }
+}

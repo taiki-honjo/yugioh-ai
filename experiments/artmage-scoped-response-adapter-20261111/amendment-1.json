@@ -1,0 +1,42 @@
+{
+ "amendment": 1,
+ "registered_jst": "2026-11-11T12:31:46+09:00",
+ "registration_sha256": "b5c9128e9c64c0eb167051ab8aaa5060f5e29ca969734f570a416e03a2a68c52",
+ "before_training": true,
+ "change": "none to code or conditions; fixes the target cache and the precheck results",
+ "cache": {
+  "file": "/home/hatk8/projects/yugioh-ai/experiments/artmage-scoped-response-adapter-20261111/cache/targets.npz",
+  "sha256": "25cf5146470c6a37d00f9e389fcb2207e0c98ce4b99eedcf040d728bc2df7ba9",
+  "source": "frozen Policy.infer on the CPU along the saved histories (default precision, the evaluation backend)",
+  "backend": "TFRT_CPU_0",
+  "frozen": [
+   "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+   "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2"
+  ]
+ },
+ "prechecks": {
+  "file": "/home/hatk8/projects/yugioh-ai/experiments/artmage-scoped-response-adapter-20261111/cache/prepare.json",
+  "sha256": "961b7f0ac0b34a54a91761a47ea5aa2a0a547b0de447a1c1921788b6acbda17b",
+  "passed": true
+ },
+ "code": {
+  "artmage_entry.py": "ca47f56d29431b48d60337de6dcc6ce23d524fba31cbbbdce31e6d7399b78e0f",
+  "artmage_pins.py": "10c4e053d05f44498cff77c45301a3fb5222c7598a658decc52f4539fd96bde8",
+  "artmage_teacher.py": "a126284eff7a2d7ef3c602ade0aa5f196f7ddea77333213c27a197ade21b78f3",
+  "batch_data.py": "3f21a0f495111f82678e93c5434d9c2dd65b2467c4f7c3341a0eddab66b3aad7",
+  "batch_model.py": "7ee574aceb809b4b44cdeb0de8eae77b66e70f065463ca65bc310e80aa52e8d3",
+  "batch_plans.py": "68d5945d80d663ba7f85b56ffbd6490a00998aaa1d5cca14663e18e6956f1123",
+  "flc_runs.py": "8af7cbae6ce9d6d8322b043326f6b78d3f819ef8758ceb0e11597488f33e840f",
+  "hb_data.py": "502de35cabab73e9448e5d20e61aa53ce594aa8eb08ad2beebe0740618ebc893",
+  "hb_plans.py": "8fc90ad7f704a2f141669d1075827cf3513f015989a95d472f353aaae6ab40cd",
+  "hb_runs.py": "88e694125079d2a9687490f1120186b536939b8750f731266efae56b167a0c14",
+  "pilot_data.py": "dc749fb5ea77419741d0e7469edd7f423db241eae11ccafe399f76a04c3417e8",
+  "pilot_model.py": "8bec14fb9a1e6c02cbfa715c21146aafeb45b00f060d4cd7afa57b7c84e0ad56",
+  "rl_data.py": "9259488786bd1c3fa250ab474e2e3813f3e19d6012ca9b9afeb355014068374c",
+  "sa_launch.py": "35d391521f881ae321b4fdd3834f63197c7f59a5793b1f7eded7eada2bd8df49",
+  "sa_model.py": "fe9856bd168f33257d09ec41fe38253bf8da2e42a1174a9f27d29786dd1de36c",
+  "sa_register.py": "d9dbb7974dfce1b6a707d1d9a6f1fba2bfa5a1b458f1360fa100d4380a48fdb0",
+  "sa_runs.py": "906af2a70860cc29cc90b1e0e4e5cb817d50d3f151011fb812cf4f0731504cdf",
+  "sa_train.py": "7242af7cf4228cd83cb9daa85e489c182e790a7ddcabb9a64ad1d557d0b3561e"
+ }
+}

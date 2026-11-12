@@ -1,0 +1,544 @@
+--- a/ygoenv/ygoenv/ygopro/ygopro.h
++++ b/ygoenv/ygoenv/ygopro/ygopro.h
+@@ -36,6 +36,25 @@
+ // clang-format on
+ 
+ namespace ygopro {
++inline std::atomic<int> lua_error_count{0};
++inline std::mutex script_cache_mutex;
++inline uint32_t runtime_message_handler(intptr_t handle, uint32_t type) {
++  if (type == 1) {
++    ++lua_error_count;
++    fmt::print(stderr, "[lua_error] {}\n", reinterpret_cast<duel*>(handle)->strbuffer);
++  }
++  return 0;
++}
++
++using byte = uint8_t;
++using uint8 = uint8_t;
++using uint16 = uint16_t;
++using uint32 = uint32_t;
++using uint64 = uint64_t;
++using int8 = int8_t;
++using int16 = int16_t;
++using int32 = int32_t;
++using int64 = int64_t;
+ 
+ inline std::vector<std::vector<int>> combinations(int n, int r) {
+   std::vector<std::vector<int>> combs;
+@@ -1242,7 +1261,7 @@
+   card.code = code;
+   card.alias = query.getColumn("alias");
+   uint64_t setcode = query.getColumn("setcode").getInt64();
+-  card.set_setcode(setcode);
++  write_setcode(card.setcode, setcode);
+   card.type = query.getColumn("type");
+   uint32_t level_ = query.getColumn("level");
+   card.level = level_ & 0xff;
+@@ -1382,11 +1401,17 @@
+ }
+ 
+ inline byte *script_reader_callback(const char *name, int *lenptr) {
++  std::lock_guard<std::mutex> lock(script_cache_mutex);
+   std::string path(name);
+   auto it = cards_script_.find(path);
+   if (it == cards_script_.end()) {
+-    fmt::println("[script_reader_callback] Script not found: " + path);
+-    throw std::runtime_error("[script_reader_callback] Script not found: " + path);
++    int script_len = 0;
++    byte *buf = read_card_script(path, &script_len);
++    // Optional script lookups must return nullptr; helper scripts are loaded lazily.
++    if (!buf) { *lenptr = 0; return nullptr; }
++    cards_script_[path] = {buf, script_len};
++    *lenptr = script_len;
++    return buf;
+   }
+   *lenptr = it->second.len;
+   return it->second.buf;
+@@ -1456,6 +1481,7 @@
+   }
+   cards_script_["./script/c0.lua"] = {nullptr, 0};
+ 
++  set_message_handler(runtime_message_handler);
+   set_card_reader(card_reader_callback);
+   set_script_reader(script_reader_callback);
+ }
+@@ -1599,6 +1625,8 @@
+         "info:to_play"_.Bind(Spec<int>({}, {0, 1})),
+         "info:is_selfplay"_.Bind(Spec<int>({}, {0, 1})),
+         "info:win_reason"_.Bind(Spec<int>({}, {-1, 1})),
++        "info:termination_reason"_.Bind(Spec<int>({}, {0, 2})),
++        "info:raw_num_options"_.Bind(Spec<int>({})),
+         "info:step_time"_.Bind(Spec<double>({2})),
+         "info:deck"_.Bind(Spec<int>({2}))
+       );
+@@ -1689,6 +1717,7 @@
+ 
+   PlayerId winner_;
+   uint8_t win_reason_;
++  int termination_reason_ = 0; // 0=natural/live, 1=step budget, 2=timeout
+   const bool greedy_reward_;
+ 
+   int lp_[2];
+@@ -1700,6 +1729,16 @@
+ 
+   int msg_;
+   std::vector<LegalAction> legal_actions_;
++  std::map<std::string, CardId> selection_card_ids_;
++  std::map<std::string, uint32_t> selection_card_codes_;
++  using DisclosureKey = std::tuple<int, int, int, int>;
++  std::map<DisclosureKey, uint32_t> disclosures_;
++  bool knows_card(int viewer, int owner, int loc, int seq, int pos, uint32_t code) const {
++    if (viewer == owner && loc != LOCATION_DECK) return true;
++    if (loc != LOCATION_DECK && loc != LOCATION_HAND && !(pos & POS_FACEDOWN)) return true;
++    auto known = disclosures_.find({viewer, owner, loc, seq});
++    return known != disclosures_.end() && known->second == code;
++  }
+   PlayerId to_play_;
+   std::function<void(int)> callback_;
+ 
+@@ -1968,6 +2007,8 @@
+ 
+     done_ = false;
+     step_count_ = 0;
++    termination_reason_ = 0;
++    disclosures_.clear();
+ 
+     // update_time_stat(_start, reset_time_count_, reset_time_2_);
+     // _start = clock();
+@@ -2234,6 +2275,7 @@
+ 
+     step_count_++;
+     if (!done_ && (step_count_ >= spec_.config["max_steps"_])) {
++      termination_reason_ = 1;
+       PlayerId winner = lp_[0] > lp_[1] ? 0 : 1;
+       _duel_end(winner, 0x01);
+       done_ = true;
+@@ -2320,6 +2362,7 @@
+     // if (step_time_count_ % 3000 == 0) {
+     //   fmt::println("Step time: {:.3f}", step_time_ * 1000);
+     // }
++    if (termination_reason_ == 1) reward = 0;
+     ret_reward_ = reward;
+     ret_win_reason_ = reason;
+   }
+@@ -2329,13 +2372,17 @@
+       Dict<typename YGOProEnvSpec::StateKeys,
+            typename SpecToTArray<typename YGOProEnvSpec::StateSpec::Values>::Type>;
+ 
++  bool duel_done() const { return done_; }
++
+   void WriteState(State &state) {
+     float reward = ret_reward_;
+     int win_reason = ret_win_reason_;
+     int n_options = legal_actions_.size();
++    state["info:raw_num_options"_] = n_options;
+     state["reward"_] = reward;
+     state["info:to_play"_] = int(to_play_);
+     state["info:is_selfplay"_] = int(play_mode_ == kSelfPlay);
++    state["info:termination_reason"_] = termination_reason_;
+     state["info:win_reason"_] = win_reason;
+     if (reward != 0.0) {
+       state["info:step_time"_][0] = 0;
+@@ -2387,6 +2434,10 @@
+         if (action.cid_ == 0) {
+           action.cid_ = spec_info.cid;
+         }
++        // Deck-search packets may use temporary sequence numbers. Preserve their
++        // disclosed card ID rather than looking up that number in the real deck.
++        auto selected = selection_card_ids_.find(spec);
++        if (selected != selection_card_ids_.end()) action.cid_ = selected->second;
+       }
+     }
+ 
+@@ -2421,52 +2472,32 @@
+   std::tuple<SpecInfos, std::vector<int>> _set_obs_cards(TArray<uint8_t> &f_cards, PlayerId to_play) {
+     SpecInfos spec_infos;
+     std::vector<int> loc_n_cards;
++    f_cards.Zero();
+     int offset = 0;
+-    for (auto pi = 0; pi < 2; pi++) {
+-      const PlayerId player = (to_play + pi) % 2;
+-      const bool opponent = pi == 1;
+-      std::vector<std::pair<uint8_t, bool>> configs = {
+-          {LOCATION_DECK, true},   {LOCATION_HAND, true},
+-          {LOCATION_MZONE, false}, {LOCATION_SZONE, false},
+-          {LOCATION_GRAVE, false}, {LOCATION_REMOVED, false},
+-          {LOCATION_EXTRA, true},
+-      };
+-      for (auto &[location, hidden_for_opponent] : configs) {
+-        // check this
+-        if (opponent && (revealed_.size() != 0)) {
+-          hidden_for_opponent = false;
+-        }
+-        if (opponent && hidden_for_opponent) {
+-          auto n_cards = YGO_QueryFieldCount(pduel_, player, location);
+-          loc_n_cards.push_back(n_cards);
+-          for (auto i = 0; i < n_cards; i++) {
+-            f_cards(offset, 2) = location_to_id(location);
+-            f_cards(offset, 4) = 1;
+-            offset++;
++    for (int pi = 0; pi < 2; ++pi) {
++      PlayerId owner = (to_play + pi) % 2;
++      for (uint8_t location : {LOCATION_DECK, LOCATION_HAND, LOCATION_MZONE,
++            LOCATION_SZONE, LOCATION_GRAVE, LOCATION_REMOVED, LOCATION_EXTRA}) {
++        auto cards = get_cards_in_location(owner, location);
++        loc_n_cards.push_back(cards.size());
++        for (const auto &physical : cards) {
++          if (offset >= f_cards.Shape()[0]) throw std::runtime_error("Card observation overflow");
++          auto spec = physical.get_spec(pi == 1);
++          Card visible = physical;
++          bool known = knows_card(to_play, owner, location, physical.sequence_, physical.position_, physical.code_);
++          auto selected = selection_card_codes_.find(spec);
++          if (selected != selection_card_codes_.end()) {
++            known = selected->second != 0;
++            if (known) {
++              visible = c_get_card(selected->second);
++              visible.set_location(owner | (uint32_t(location)<<8) |
++                  (uint32_t(physical.sequence_)<<16) | (uint32_t(physical.position_)<<24));
++            }
+           }
+-        } else {
+-          std::vector<Card> cards = get_cards_in_location(player, location);
+-          int n_cards = cards.size();
+-          loc_n_cards.push_back(n_cards);
+-          for (int i = 0; i < n_cards; ++i) {
+-            const auto &c = cards[i];
+-            auto spec = c.get_spec(opponent);
+-            bool hide = false;
+-            if (opponent) {
+-              hide = c.position_ & POS_FACEDOWN;
+-              if (revealed_.find(spec) != revealed_.end()) {
+-                hide = false;
+-              }
+-            }
+-            CardId card_id = 0;
+-            if (!hide) {
+-              card_id = c_get_card_id(c.code_);
+-            }
+-            _set_obs_card_(f_cards, offset, c, hide);
+-            offset++;
+-
+-            spec_infos[spec] = {static_cast<uint16_t>(offset), card_id};
+-          }
++          CardId cid = known ? c_get_card_id(visible.code_) : 0;
++          _set_obs_card_(f_cards, offset, visible, !known, cid);
++          spec_infos[spec] = {static_cast<uint16_t>(offset+1), cid};
++          ++offset;
+         }
+       }
+     }
+@@ -2807,39 +2838,14 @@
+     }
+   }
+ 
+-  CardId spec_to_card_id(const std::string &spec, PlayerId player) {
+-    int offset = 0;
+-    bool opponent = false;
+-    if (spec[0] == 'o') {
+-      player = 1 - player;
+-      opponent = true;
+-      offset++;
+-    }
+-    auto [loc, seq, pos] = spec_to_ls(spec.substr(offset));
+-    if (opponent) {
+-      bool hidden_for_opponent = true;
+-      if (
+-        loc == LOCATION_MZONE || loc == LOCATION_SZONE ||
+-        loc == LOCATION_GRAVE || loc == LOCATION_REMOVED) {
+-        hidden_for_opponent = false;
+-      }
+-      if (revealed_.size() != 0) {
+-        hidden_for_opponent = false;
+-      }
+-      if (hidden_for_opponent) {
+-        return 0;
+-      }
+-      Card c = get_card(player, loc, seq);
+-      bool hide = c.position_ & POS_FACEDOWN;
+-      if (revealed_.find(spec) != revealed_.end()) {
+-        hide = false;
+-      }
+-      CardId card_id = 0;
+-      if (!hide) {
+-        card_id = c_get_card_id(c.code_);
+-      }
+-    }
+-    return c_get_card_id(get_card_code(player, loc, seq));
++  CardId spec_to_card_id(const std::string &spec, PlayerId viewer) {
++    auto selected = selection_card_ids_.find(spec);
++    if (selected != selection_card_ids_.end()) return selected->second;
++    bool opponent = spec[0] == 'o';
++    auto [loc, seq, pos] = spec_to_ls(opponent ? spec.substr(1) : spec);
++    PlayerId owner = opponent ? 1-viewer : viewer;
++    auto c = get_card(owner, loc, seq);
++    return knows_card(viewer, owner, loc, seq, c.position_, c.code_) ? c_get_card_id(c.code_) : 0;
+   }
+ 
+   void _set_obs_actions(TArray<uint8_t> &feat, const std::vector<LegalAction> &actions) {
+@@ -2871,7 +2877,7 @@
+     std::mt19937 rnd(seed);
+     // return create_duel(rnd());
+     duel* pduel = new duel();
+-    pduel->random.reset(rnd());
++    pduel->random.seed(rnd());
+     return (intptr_t)pduel;
+   }
+ 
+@@ -3301,6 +3307,11 @@
+   // 3. update to_play_ and options_ if need action
+   void handle_message() {
+     msg_ = int(data_[dp_++]);
++    selection_card_ids_.clear();
++    selection_card_codes_.clear();
++    // Conservatively invalidate positional knowledge when cards move or shuffle.
++    if (msg_ == MSG_MOVE || msg_ == MSG_SHUFFLE_HAND || msg_ == MSG_SHUFFLE_DECK ||
++        msg_ == MSG_CHAIN_END) disclosures_.clear();
+     legal_actions_ = {};
+ 
+     if (verbose_) {
+@@ -3632,32 +3643,15 @@
+         players_[pl]->notify(name + " targets " + spec + " (" + tcname + ")");
+       }
+     } else if (msg_ == MSG_CONFIRM_DECKTOP) {
+-      if (!verbose_) {
+-        dp_ = dl_;
+-        return;
+-      }
+-      auto player = read_u8();
++      auto owner = read_u8();
+       auto size = read_u8();
+-      std::vector<Card> cards;
+-      for (int i = 0; i < size; ++i) {
+-        read_u32();
+-        auto c = read_u8();
++      for (int i=0; i<size; ++i) {
++        auto code = read_u32();
++        auto controller = read_u8();
+         auto loc = read_u8();
+         auto seq = read_u8();
+-        cards.push_back(get_card(c, loc, seq));
+-      }
+-
+-      for (PlayerId pl = 0; pl < 2; pl++) {
+-        auto& p = players_[pl];
+-        if (pl == player) {
+-          p->notify(fmt::format("You reveal {} cards from your deck:", size));
+-        } else {
+-          p->notify(fmt::format("{} reveals {} cards from their deck:",
+-                                players_[player]->nickname_, size));
+-        }
+-        for (int i = 0; i < size; ++i) {
+-          p->notify(fmt::format("{}: {}", i + 1, cards[i].name_));
+-        }
++        disclosures_[{0, controller, loc, seq}] = code;
++        disclosures_[{1, controller, loc, seq}] = code;
+       }
+     } else if (msg_ == MSG_RANDOM_SELECTED) {
+       if (!verbose_) {
+@@ -3734,17 +3728,18 @@
+       }
+     } else if (msg_ == MSG_CONFIRM_CARDS) {
+       auto player = read_u8();
++      auto skip_panel = read_u8();
+       auto size = read_u8();
+       std::vector<Card> cards;
+       for (int i = 0; i < size; ++i) {
+-        read_u32();
++        auto code = read_u32();
+         auto c = read_u8();
+         auto loc = read_u8();
+         auto seq = read_u8();
+         if (verbose_) {
+           cards.push_back(get_card(c, loc, seq));
+         }
+-        revealed_.insert(ls_to_spec(loc, seq, 0, c == player));
++        disclosures_[{player, c, loc, seq}] = code;
+       }
+       if (!verbose_) {
+         return;
+@@ -4326,39 +4321,22 @@
+ 
+       std::vector<std::string> specs;
+       specs.reserve(size);
+-      if (verbose_) {
+-        std::vector<Card> cards;
+-        for (int i = 0; i < size; ++i) {
+-          auto code = read_u32();
+-          auto loc = read_u32();
+-          Card card = c_get_card(code);
+-          card.set_location(loc);
+-          cards.push_back(card);
+-        }
+-        auto& pl = players_[player];
+-        pl->notify("Select " + std::to_string(min) + " to " +
+-                   std::to_string(max) + " cards separated by spaces:");
+-        for (const auto &card : cards) {
+-          auto spec = card.get_spec(player);
+-          specs.push_back(spec);
+-          int i = specs.size();
+-          if (card.controler_ != player && card.position_ & POS_FACEDOWN) {
+-            pl->notify(
+-              fmt::format("{}: {} card ({})", i, card.get_position(), spec));
+-          } else {
+-            pl->notify(
+-              fmt::format("{}: {} ({})", i, card.name_, spec));
+-          }
+-        }
+-      } else {
+-        for (int i = 0; i < size; ++i) {
+-          dp_ += 4;
+-          auto controller = read_u8();
+-          auto loc = read_u8();
+-          auto seq = read_u8();
+-          auto pos = read_u8();
+-          auto spec = ls_to_spec(loc, seq, pos, controller != player);
+-          specs.push_back(spec);
++      if (verbose_) players_[player]->notify("Select cards:");
++      for (int i = 0; i < size; ++i) {
++        auto code = read_u32();
++        auto controller = read_u8();
++        auto loc = read_u8();
++        auto seq = read_u8();
++        auto pos = read_u8();
++        auto spec = ls_to_spec(loc, seq, pos, controller != player);
++        specs.push_back(spec);
++        // Searching one's own deck discloses these choices, not its draw order.
++        bool hidden = controller != player && !knows_card(player, controller, loc, seq, pos, code);
++        selection_card_ids_[spec] = (!hidden && code) ? c_get_card_id(code) : 0;
++        selection_card_codes_[spec] = (!hidden) ? code : 0;
++        if (verbose_) {
++          auto name = (!hidden && code) ? c_get_card(code).name_ : "hidden card";
++          players_[player]->notify(fmt::format("{}: {} ({})", i+1, name, spec));
+         }
+       }
+ 
+@@ -4608,7 +4586,7 @@
+       auto player = read_u8();
+       auto size = read_u8();
+       auto spe_count = read_u8();
+-      bool forced = read_u8();
++      bool forced = false;
+       dp_ += 8;
+       // auto hint_timing = read_u32();
+       // auto other_timing = read_u32();
+@@ -4618,6 +4596,7 @@
+       std::vector<std::string> specs;
+       for (int i = 0; i < size; ++i) {
+         auto flag = read_u8();
++        forced = (read_u8() != 0) || forced;
+         CardCode code = read_u32();
+         codes.push_back(code);
+         PlayerId c = read_u8();
+@@ -5323,7 +5302,9 @@
+     }
+     done_ = true;
+     State state = Allocate();
+-    state["reward"_] = 1.0;
++    state["reward"_] = 0.0;
++    state["info:termination_reason"_] = 2;
++    state["info:raw_num_options"_] = 0;
+     state["info:to_play"_] = 1;
+     state["info:is_selfplay"_] = 1;
+     state["info:win_reason"_] = 1;
+@@ -5370,7 +5351,7 @@
+       fmt::println("Env {} timeout, new env created", env_id_);
+     } else {
+       auto& env_impl = env_impls_[idx];
+-      done_ = env_impl.ret_reward_ != 0;
++      done_ = env_impl.duel_done();
+       State state = Allocate();
+       env_impl.WriteState(state);
+     }
+--- a/ygoenv/ygoenv/ygopro/ygopro.cpp
++++ b/ygoenv/ygoenv/ygopro/ygopro.cpp
+@@ -4,8 +4,12 @@
+ using YGOProEnvSpec = PyEnvSpec<ygopro::YGOProEnvSpec>;
+ using YGOProEnvPool = PyEnvPool<ygopro::YGOProEnvPool>;
+ 
++#include "effect_checks.h"
++
+ PYBIND11_MODULE(ygopro_ygoenv, m) {
++  m.def("run_effect_checks", &run_effect_checks);
+   REGISTER(m, YGOProEnvSpec, YGOProEnvPool)
+ 
+   m.def("init_module", &ygopro::init_module);
++  m.def("get_lua_error_count", []() { return ygopro::lua_error_count.load(); });
+ }
+--- a/scripts/cleanba.py
++++ b/scripts/cleanba.py
+@@ -215,6 +215,8 @@
+         greedy_reward=args.greedy_reward if not eval else True,
+         play_mode=mode,
+         timeout=args.timeout,
++        max_steps=4000,
++        max_episode_steps=4001,
+         oppo_info=False,
+     )
+     envs.num_envs = num_envs
+@@ -443,6 +445,7 @@
+         if update == 10:
+             start_time = time.time()
+             warmup_step = global_step
++            other_time = 0
+ 
+         update_time_start = time.time()
+         inference_time = 0
+@@ -597,7 +600,7 @@
+         )
+         rollout_queue.put(payload)
+ 
+-        if update % args.log_frequency == 0:
++        if update % args.log_frequency == 0 and len(avg_ep_returns) > 0:
+             avg_episodic_return = np.mean(avg_ep_returns)
+             avg_episodic_length = np.mean(envs.returned_episode_lengths)
+             max_episode_length = np.max(envs.returned_episode_lengths)
+@@ -610,7 +613,7 @@
+                 print(
+                     f"global_step={tb_global_step}, avg_return={avg_episodic_return:.4f}, avg_length={avg_episodic_length:.0f}"
+                 )
+-                time_now = datetime.now(timezone(timedelta(hours=8))).strftime("%H:%M:%S")
++                time_now = datetime.now(timezone(timedelta(hours=9))).strftime("%H:%M:%S")
+                 print(
+                     f"{time_now} SPS: {SPS}, update: {SPS_update}, "
+                     f"rollout_time={rollout_time[-1]:.2f}, params_time={params_queue_get_time[-1]:.2f}"
+@@ -1084,6 +1087,9 @@
+     rollout_queues = []
+ 
+     unreplicated_params = flax.jax_utils.unreplicate(get_variables(agent_state))
++    os.makedirs(args.ckpt_dir, exist_ok=True)
++    save_fn(unreplicated_params, os.path.join(args.ckpt_dir, "initial.flax_model"))
++    print("Saved initial weights for matched before/after comparison")
+     for d_idx, d_id in enumerate(args.actor_device_ids):
+         actor_device = local_devices[d_id]
+         device_params = jax.device_put(unreplicated_params, actor_device)
+@@ -1187,9 +1193,7 @@
+             writer.add_scalar("losses/loss", loss, tb_global_step)
+ 
+         if args.local_rank == 0 and learner_policy_version % args.save_interval == 0 and not args.debug:
+-            ckpt_steps = tb_global_step // 2**20
+-            step_str = "M"
+-            ckpt_name = f"{timestamp}_{ckpt_steps}{step_str}.flax_model"
++            ckpt_name = f"{timestamp}_{tb_global_step}steps.flax_model"
+             ckpt_maneger.save(unreplicated_params, ckpt_name)
+ 
+         if learner_policy_version >= args.num_updates:
+@@ -1203,3 +1207,7 @@
+ 
+ if __name__ == "__main__":
+     main()
++    from ygoenv.ygopro.ygopro_ygoenv import get_lua_error_count
++    print("NATIVE_LUA_ERRORS", get_lua_error_count())
++    if get_lua_error_count():
++        raise RuntimeError("Lua errors occurred during training")
+--- a/ygoai/rl/ckpt.py
++++ b/ygoai/rl/ckpt.py
+@@ -36,6 +36,8 @@
+         self._check_dir()
+         path = self._dirname / name
+         self._save_fn(obj, str(path))
++        if path in self._saved:
++            self._saved.remove(path)
+         self._saved.append(path)
+         print(f"Saved model to {path}")
+ 

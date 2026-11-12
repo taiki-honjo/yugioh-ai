@@ -1,0 +1,15 @@
+{
+ "name": "B4-B-2cost",
+ "engine_run": 35,
+ "replayed_engine_run": 19,
+ "mismatch": null,
+ "failure": null,
+ "reproduced_steps": 128,
+ "of": 128,
+ "reason": "reached_turn3",
+ "final_equal": true,
+ "checkpoints_equal": true,
+ "observations_match": true,
+ "lua_errors": 0,
+ "disclosed": []
+}

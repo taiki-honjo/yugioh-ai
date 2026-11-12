@@ -1,0 +1,67 @@
+{
+ "results": [
+  {
+   "case_id": "Artmage-g08-p0",
+   "passed": true,
+   "original_passed": true,
+   "reason": "goal_reached",
+   "original_reason": "goal_reached",
+   "goal_equal": true,
+   "steps": 97,
+   "original_steps": 97,
+   "first_differing_step": null,
+   "differing_keys": [],
+   "final_equal": true,
+   "events_equal": true,
+   "identical": true
+  },
+  {
+   "case_id": "Artmage-g09-p0",
+   "passed": true,
+   "original_passed": true,
+   "reason": "goal_reached",
+   "original_reason": "goal_reached",
+   "goal_equal": true,
+   "steps": 136,
+   "original_steps": 136,
+   "first_differing_step": null,
+   "differing_keys": [],
+   "final_equal": true,
+   "events_equal": true,
+   "identical": true
+  },
+  {
+   "case_id": "Artmage-g10-p0",
+   "passed": true,
+   "original_passed": true,
+   "reason": "goal_reached",
+   "original_reason": "goal_reached",
+   "goal_equal": true,
+   "steps": 97,
+   "original_steps": 97,
+   "first_differing_step": null,
+   "differing_keys": [],
+   "final_equal": true,
+   "events_equal": true,
+   "identical": true
+  },
+  {
+   "case_id": "Artmage-g11-p0",
+   "passed": true,
+   "original_passed": true,
+   "reason": "goal_reached",
+   "original_reason": "goal_reached",
+   "goal_equal": true,
+   "steps": 136,
+   "original_steps": 136,
+   "first_differing_step": null,
+   "differing_keys": [],
+   "final_equal": true,
+   "events_equal": true,
+   "identical": true
+  }
+ ],
+ "lua_errors": 0,
+ "all_identical": true,
+ "passed": 4
+}

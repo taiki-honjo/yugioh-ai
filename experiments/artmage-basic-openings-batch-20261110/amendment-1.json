@@ -1,0 +1,357 @@
+{
+ "amendment": 1,
+ "registered_jst": "2026-11-10T19:40:17+09:00",
+ "user_decision": "上限を53回にして2本ずつ記録 (2026-11-10)",
+ "registration_sha256": "db9ee5928696fd9fbe11de4e627b5c3ba0355dc2885816a5455d19add1eef55d",
+ "cause": {
+  "F4": "after Summon Medius the engine offered a summon-method option (system 1 通常召喚 / 学都 desc 0 「神芸学都アルトメギア」の効果で召喚する) because the normal summon was unused and 学都 was face-up; the plan expected the Medius① trigger next",
+  "F5_F6": "the second 学都② had a single declarable name (リテラ), so the env resolved the announcement itself; the plan required an announce prompt",
+  "scope": "plan construction errors (mine); the engine did not show that the lines are impossible"
+ },
+ "changes": [
+  "BatchTeacher: at a select_option that offers 学都 desc 0 with no matching plan step, choose it (the replay dAvrxdzV summons Medius with 学都)",
+  "F4/F5/F6 plans: every 学都② announcement step is optional (skipped when the env resolves a single name)",
+  "F1-F3 plans and all recorded demos unchanged; batch_runs cap 48 -> 53"
+ ],
+ "failed_records": {
+  "F4-T1": {
+   "moved_to": "demos/failed-a1/F4-T1",
+   "record_sha256": "5ed67e425be3af80280d3cad8aa995471f89f2b322e89bd0b5ed62de2e9200b7",
+   "engine_run": 5,
+   "failure": "Unresolved: planned step not legal at select_option: {'act': 'Activate', 'code': 97556336}",
+   "blocking_message": "select_option",
+   "plan_head": {
+    "act": "Activate",
+    "code": 97556336
+   },
+   "legal": [
+    [
+     "Activate",
+     0,
+     1
+    ],
+    [
+     "Activate",
+     "神芸学都アルトメギア",
+     10010
+    ]
+   ],
+   "decisions_before_stop": 24
+  },
+  "F4-T2": {
+   "moved_to": "demos/failed-a1/F4-T2",
+   "record_sha256": "3bfbe0b97b97d346e138e386b9b583e195a4ccd5fc12c5799ff410c7213edd91",
+   "engine_run": 6,
+   "failure": "Unresolved: planned step not legal at select_option: {'act': 'Activate', 'code': 97556336}",
+   "blocking_message": "select_option",
+   "plan_head": {
+    "act": "Activate",
+    "code": 97556336
+   },
+   "legal": [
+    [
+     "Activate",
+     0,
+     1
+    ],
+    [
+     "Activate",
+     "神芸学都アルトメギア",
+     10010
+    ]
+   ],
+   "decisions_before_stop": 15
+  },
+  "F5-T1": {
+   "moved_to": "demos/failed-a1/F5-T1",
+   "record_sha256": "07f9a4d73c2c5a927087afbba39d8bc7d5a19cf2a962c201f51db9ead6d779f2",
+   "engine_run": 7,
+   "failure": "Unresolved: planned step not legal at select_idlecmd: {'act': 'None', 'code': 97434754}",
+   "blocking_message": "select_idlecmd",
+   "plan_head": {
+    "act": "None",
+    "code": 97434754
+   },
+   "legal": [
+    [
+     "SpSummon",
+     "創獄神ネルヴァ",
+     -1
+    ],
+    [
+     "SpSummon",
+     "クロシープ",
+     -1
+    ],
+    [
+     "SpSummon",
+     "Ｓ：Ｐリトルナイト",
+     -1
+    ],
+    [
+     "SpSummon",
+     "Ｗ：Ｐファンシーボール",
+     -1
+    ],
+    [
+     "SpSummon",
+     "四花繚乱の霊使い",
+     -1
+    ],
+    [
+     "Activate",
+     "増殖するＧ",
+     10010
+    ],
+    [
+     "Activate",
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     10010
+    ],
+    [
+     "Activate",
+     "無垢なる者 メディウス",
+     10011
+    ],
+    [
+     "Activate",
+     "神芸学徒 リテラ",
+     10010
+    ],
+    [
+     "None",
+     0,
+     -1
+    ]
+   ],
+   "decisions_before_stop": 64
+  },
+  "F5-T2": {
+   "moved_to": "demos/failed-a1/F5-T2",
+   "record_sha256": "b8f98a71ea96b31f26eb57962b6533ffb3d8cf0ac5276ea774489759e9a62479",
+   "engine_run": 8,
+   "failure": "Unresolved: planned step not legal at select_idlecmd: {'act': 'None', 'code': 97434754}",
+   "blocking_message": "select_idlecmd",
+   "plan_head": {
+    "act": "None",
+    "code": 97434754
+   },
+   "legal": [
+    [
+     "SpSummon",
+     "創獄神ネルヴァ",
+     -1
+    ],
+    [
+     "SpSummon",
+     "クロシープ",
+     -1
+    ],
+    [
+     "SpSummon",
+     "Ｓ：Ｐリトルナイト",
+     -1
+    ],
+    [
+     "SpSummon",
+     "Ｗ：Ｐファンシーボール",
+     -1
+    ],
+    [
+     "SpSummon",
+     "四花繚乱の霊使い",
+     -1
+    ],
+    [
+     "Activate",
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     10010
+    ],
+    [
+     "Activate",
+     "無垢なる者 メディウス",
+     10011
+    ],
+    [
+     "Activate",
+     "神芸学徒 リテラ",
+     10010
+    ],
+    [
+     "None",
+     0,
+     -1
+    ]
+   ],
+   "decisions_before_stop": 48
+  },
+  "F6-T1": {
+   "moved_to": "demos/failed-a1/F6-T1",
+   "record_sha256": "97520222a71240bfa0a072c3abdf4716aec9634ecf7820edd9dcda2c9e31833f",
+   "engine_run": 9,
+   "failure": "Unresolved: planned step not legal at select_idlecmd: {'act': 'None', 'code': 97434754}",
+   "blocking_message": "select_idlecmd",
+   "plan_head": {
+    "act": "None",
+    "code": 97434754
+   },
+   "legal": [
+    [
+     "SpSummon",
+     "創獄神ネルヴァ",
+     -1
+    ],
+    [
+     "SpSummon",
+     "クロシープ",
+     -1
+    ],
+    [
+     "SpSummon",
+     "Ｓ：Ｐリトルナイト",
+     -1
+    ],
+    [
+     "SpSummon",
+     "Ｗ：Ｐファンシーボール",
+     -1
+    ],
+    [
+     "SpSummon",
+     "四花繚乱の霊使い",
+     -1
+    ],
+    [
+     "Activate",
+     "増殖するＧ",
+     10010
+    ],
+    [
+     "Activate",
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     10010
+    ],
+    [
+     "Activate",
+     "無垢なる者 メディウス",
+     10011
+    ],
+    [
+     "Activate",
+     "神芸学徒 リテラ",
+     10010
+    ],
+    [
+     "None",
+     0,
+     -1
+    ]
+   ],
+   "decisions_before_stop": 81
+  },
+  "F6-T2": {
+   "moved_to": "demos/failed-a1/F6-T2",
+   "record_sha256": "3c740811d7b87cab47e2af64f4198232cf0de6e1b3d22f98a109745303886ee4",
+   "engine_run": 10,
+   "failure": "Unresolved: planned step not legal at select_idlecmd: {'act': 'None', 'code': 97434754}",
+   "blocking_message": "select_idlecmd",
+   "plan_head": {
+    "act": "None",
+    "code": 97434754
+   },
+   "legal": [
+    [
+     "SpSummon",
+     "創獄神ネルヴァ",
+     -1
+    ],
+    [
+     "SpSummon",
+     "クロシープ",
+     -1
+    ],
+    [
+     "SpSummon",
+     "Ｓ：Ｐリトルナイト",
+     -1
+    ],
+    [
+     "SpSummon",
+     "Ｗ：Ｐファンシーボール",
+     -1
+    ],
+    [
+     "SpSummon",
+     "四花繚乱の霊使い",
+     -1
+    ],
+    [
+     "Activate",
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     10010
+    ],
+    [
+     "Activate",
+     "無垢なる者 メディウス",
+     10011
+    ],
+    [
+     "Activate",
+     "神芸学徒 リテラ",
+     10010
+    ],
+    [
+     "None",
+     0,
+     -1
+    ]
+   ],
+   "decisions_before_stop": 63
+  }
+ },
+ "re_record": [
+  "F4-T1",
+  "F4-T2",
+  "F5-T1",
+  "F5-T2",
+  "F6-T1",
+  "F6-T2"
+ ],
+ "same_hands_and_seeds": true,
+ "engine": {
+  "cap": 53,
+  "used_before_amendment": 14,
+  "plan_after": {
+   "re_record": 6,
+   "re_replay": 6,
+   "validation_script": 7,
+   "free_start": 7,
+   "free_candidate": 7,
+   "rt1_candidate": 6
+  },
+  "total_planned": 53,
+  "reserve": 0,
+  "not_done": [
+   "replays of the 6 failed records (their failure points and legal options are saved)"
+  ]
+ },
+ "code": {
+  "artmage_entry.py": "ca47f56d29431b48d60337de6dcc6ce23d524fba31cbbbdce31e6d7399b78e0f",
+  "artmage_pins.py": "10c4e053d05f44498cff77c45301a3fb5222c7598a658decc52f4539fd96bde8",
+  "artmage_teacher.py": "a126284eff7a2d7ef3c602ade0aa5f196f7ddea77333213c27a197ade21b78f3",
+  "batch_data.py": "3f21a0f495111f82678e93c5434d9c2dd65b2467c4f7c3341a0eddab66b3aad7",
+  "batch_launch.py": "d4bad8c7058473bfe1b4bf5c0d831c5f52eedd038a658b2c243aae32b3ebb814",
+  "batch_model.py": "373c98ef75b4116c8c0ac54abe81a1f16053253f42ffb18635fab20304a4b238",
+  "batch_plans.py": "68d5945d80d663ba7f85b56ffbd6490a00998aaa1d5cca14663e18e6956f1123",
+  "batch_register.py": "5a7c1921c4b548e08e8cd02b086d23eb3700de0d7cb20b6527e573e32a80b14c",
+  "batch_runs.py": "9cbef5e825d72d08cc6fec17e3c3a4beea9086050f6d9e7f8c6b05f2ed74ddba",
+  "batch_train.py": "ce5fa203299f0252372ea971fa9c00a897405f8e129446fa688e19baac95895c",
+  "pilot_data.py": "dc749fb5ea77419741d0e7469edd7f423db241eae11ccafe399f76a04c3417e8",
+  "pilot_model.py": "8bec14fb9a1e6c02cbfa715c21146aafeb45b00f060d4cd7afa57b7c84e0ad56"
+ },
+ "diff": {
+  "path": "amendment-1.diff",
+  "sha256": "af8c9bce32f91c4bb8d577d01fd4d65e0882ff5ba04b0f1559c7f4f9b64f3622",
+  "registered_code_copies": "demos/failed-a1/registered-code/ (hash-identical to registration.json)"
+ }
+}

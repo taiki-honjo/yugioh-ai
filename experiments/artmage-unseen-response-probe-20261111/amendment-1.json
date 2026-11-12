@@ -1,0 +1,92 @@
+{
+ "amendment": 1,
+ "registered_jst": "2026-11-11T13:39:51+09:00",
+ "registration_sha256": "bc89fde13b65af910f1f49d0f580a7982ec9045296e3ff2abef18eb3b42ddf71",
+ "change": "control reuse decided offline (no engine); conditions unchanged",
+ "controls": {
+  "H1-ASH-CTRL-G": {
+   "checks": [
+    {
+     "record": "H1-ASH-BASE",
+     "record_sha256": "b9d09dc5d6000d235ae51682cf8474de2e80f99ad99c6964db8269956ff5dfe2",
+     "equal": false,
+     "why": "first response is Cancel 0"
+    },
+    {
+     "record": "H1-ASH-CAND",
+     "record_sha256": "4803a36b08a9d18819f04a91e6fbdabc4a8c76039a862b4f4090c934f90636ed",
+     "equal": false,
+     "why": "first response is Cancel 0"
+    }
+   ],
+   "reused_record": null
+  },
+  "H1-ASH-CTRL-PASS": {
+   "checks": [
+    {
+     "record": "H1-ASH-BASE",
+     "record_sha256": "b9d09dc5d6000d235ae51682cf8474de2e80f99ad99c6964db8269956ff5dfe2",
+     "equal": true,
+     "why": "identical actions under the control rule; same stop rule"
+    },
+    {
+     "record": "H1-ASH-CAND",
+     "record_sha256": "4803a36b08a9d18819f04a91e6fbdabc4a8c76039a862b4f4090c934f90636ed",
+     "equal": true,
+     "why": "identical actions under the control rule; same stop rule"
+    }
+   ],
+   "reused_record": "H1-ASH-BASE"
+  },
+  "H1-GAMMA-CTRL-G": {
+   "checks": [
+    {
+     "record": "H1-GAMMA-BASE",
+     "record_sha256": "9de9b3cd266e1fade44e2dc376054c10435d36cdaed397ce634e18cfcd74fe66",
+     "equal": false,
+     "why": "first response is Cancel 0"
+    },
+    {
+     "record": "H1-GAMMA-CAND",
+     "record_sha256": "a8667328d5dc606c24c9cb6d2d96310f15d473ba2b6dba25d6a8b174f13d0cb4",
+     "equal": false,
+     "why": "first response is Cancel 0"
+    }
+   ],
+   "reused_record": null
+  },
+  "H1-GAMMA-CTRL-PASS": {
+   "checks": [
+    {
+     "record": "H1-GAMMA-BASE",
+     "record_sha256": "9de9b3cd266e1fade44e2dc376054c10435d36cdaed397ce634e18cfcd74fe66",
+     "equal": true,
+     "why": "identical actions under the control rule; same stop rule"
+    },
+    {
+     "record": "H1-GAMMA-CAND",
+     "record_sha256": "a8667328d5dc606c24c9cb6d2d96310f15d473ba2b6dba25d6a8b174f13d0cb4",
+     "equal": true,
+     "why": "identical actions under the control rule; same stop rule"
+    }
+   ],
+   "reused_record": "H1-GAMMA-BASE"
+  }
+ },
+ "controls_to_run": [
+  "H1-ASH-CTRL-G",
+  "H1-GAMMA-CTRL-G"
+ ],
+ "code": {
+  "artmage_entry.py": "ca47f56d29431b48d60337de6dcc6ce23d524fba31cbbbdce31e6d7399b78e0f",
+  "artmage_pins.py": "10c4e053d05f44498cff77c45301a3fb5222c7598a658decc52f4539fd96bde8",
+  "artmage_teacher.py": "a126284eff7a2d7ef3c602ade0aa5f196f7ddea77333213c27a197ade21b78f3",
+  "batch_plans.py": "68d5945d80d663ba7f85b56ffbd6490a00998aaa1d5cca14663e18e6956f1123",
+  "flc_runs.py": "8af7cbae6ce9d6d8322b043326f6b78d3f819ef8758ceb0e11597488f33e840f",
+  "hb_plans.py": "8fc90ad7f704a2f141669d1075827cf3513f015989a95d472f353aaae6ab40cd",
+  "sa_model.py": "fe9856bd168f33257d09ec41fe38253bf8da2e42a1174a9f27d29786dd1de36c",
+  "up_launch.py": "cfd2d9e58d0cb4b45960e64fba094fe2dfcede0f0f2a30697268b784b1ac6ab3",
+  "up_register.py": "4d7b78cba1795b1908f5ae410f077d8261403750073f7fd739d070e3b470f13e",
+  "up_runs.py": "259e9647131caa1e41716d61c6ae09ea3c5e46984c2ca4ed30504626e148e3c4"
+ }
+}

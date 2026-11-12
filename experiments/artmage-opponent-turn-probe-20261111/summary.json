@@ -1,0 +1,2592 @@
+{
+ "registration_sha256": "5591eefad0c141e0283d6932429b8352bccd9d535682e9c1b52b8b210d4a6e9c",
+ "reuse_sha256": "8c799b59ee0f3a246862b66559f54fad096f449cab590450fdf5ae60d4505d1c",
+ "engine": {
+  "used": 10,
+  "cap": 12,
+  "statuses": {
+   "ok": 10
+  }
+ },
+ "d1_vs_d0_from_medius_window": {
+  "S1-R0": {
+   "window_step": [
+    149,
+    149
+   ],
+   "rows_from_window": [
+    137,
+    137
+   ],
+   "window_snapshot_equal": true,
+   "window_cards_only_in_d1": [],
+   "window_cards_only_in_d0": [],
+   "first_action_difference_ignoring_zone_spec": null,
+   "rows_identical_from_window": true,
+   "model_inputs_equal_from_window": {
+    "cards_": true,
+    "global_": true,
+    "actions_": true,
+    "h_actions_": false,
+    "chain": true,
+    "labels": true
+   },
+   "game_over_equal": true,
+   "turn3_end_equal": true
+  },
+  "S1-R1": {
+   "window_step": [
+    149,
+    149
+   ],
+   "rows_from_window": [
+    131,
+    131
+   ],
+   "window_snapshot_equal": true,
+   "window_cards_only_in_d1": [],
+   "window_cards_only_in_d0": [],
+   "first_action_difference_ignoring_zone_spec": null,
+   "rows_identical_from_window": true,
+   "model_inputs_equal_from_window": {
+    "cards_": true,
+    "global_": true,
+    "actions_": true,
+    "h_actions_": false,
+    "chain": true,
+    "labels": true
+   },
+   "game_over_equal": true,
+   "turn3_end_equal": true
+  },
+  "S2-R0": {
+   "window_step": [
+    169,
+    169
+   ],
+   "rows_from_window": [
+    97,
+    97
+   ],
+   "window_snapshot_equal": false,
+   "window_cards_only_in_d1": [
+    [
+     "神芸学徒 ファインメルト",
+     {
+      "controller": 0,
+      "location": 4,
+      "zone": 2
+     }
+    ]
+   ],
+   "window_cards_only_in_d0": [
+    [
+     "神芸学徒 ファインメルト",
+     {
+      "controller": 0,
+      "location": 4,
+      "zone": 1
+     }
+    ]
+   ],
+   "first_action_difference_ignoring_zone_spec": null,
+   "rows_identical_from_window": false,
+   "model_inputs_equal_from_window": {
+    "cards_": false,
+    "global_": true,
+    "actions_": true,
+    "h_actions_": false,
+    "chain": true,
+    "labels": true
+   },
+   "game_over_equal": true,
+   "turn3_end_equal": true
+  },
+  "S2-R1": {
+   "window_step": [
+    169,
+    169
+   ],
+   "rows_from_window": [
+    97,
+    97
+   ],
+   "window_snapshot_equal": false,
+   "window_cards_only_in_d1": [
+    [
+     "神芸学徒 ファインメルト",
+     {
+      "controller": 0,
+      "location": 4,
+      "zone": 2
+     }
+    ]
+   ],
+   "window_cards_only_in_d0": [
+    [
+     "神芸学徒 ファインメルト",
+     {
+      "controller": 0,
+      "location": 4,
+      "zone": 1
+     }
+    ]
+   ],
+   "first_action_difference_ignoring_zone_spec": null,
+   "rows_identical_from_window": false,
+   "model_inputs_equal_from_window": {
+    "cards_": false,
+    "global_": true,
+    "actions_": true,
+    "h_actions_": false,
+    "chain": true,
+    "labels": true
+   },
+   "game_over_equal": true,
+   "turn3_end_equal": true
+  }
+ },
+ "conditions": {
+  "S1-D0R0": {
+   "source": "reused old record",
+   "record_sha256": "08a2a100769d0e0bd663b1a95c366e3d807767f4076ae6f068f6d7eb45da5352",
+   "observations_sha256": "81560d233ff9a1ec125e54d9fad496cefbde4312b943f48644b21bc67f0fee3a",
+   "replay": {
+    "mismatch": null,
+    "failure": null,
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true,
+    "reproduced_steps": 286,
+    "of": 286
+   },
+   "turn1_vs_old": "is the old record",
+   "interventions": [],
+   "draw_phase_own": [
+    {
+     "step": 119,
+     "phase": 1,
+     "action": "乙女②",
+     "who": "model"
+    },
+    {
+     "step": 128,
+     "phase": 1,
+     "action": "覚醒①",
+     "who": "model"
+    },
+    {
+     "step": 134,
+     "phase": 1,
+     "action": "メディウス①(誘発の確認)",
+     "who": "model"
+    },
+    {
+     "step": 138,
+     "phase": 1,
+     "action": "0:e1152",
+     "who": "model"
+    }
+   ],
+   "standby_phase_own": [],
+   "at_opp_draw_phase_end": {
+    "lp": [
+     8000,
+     8000
+    ],
+    "monsters": [
+     "アルトメギアの獄神獣",
+     "神芸獄徒 ディアクトロス",
+     "無垢なる祈りの獄神使",
+     "神芸なる知恵の乙女",
+     "神芸学徒 リテラ",
+     "無垢なる者 メディウス"
+    ],
+    "spell_trap": [
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "神芸学都アルトメギア"
+    ],
+    "hand": [
+     "無限泡影",
+     "増殖するＧ",
+     "ＰＳＹフレーム・ドライバー",
+     "幽鬼うさぎ"
+    ],
+    "graveyard": [
+     "アルトメギア・メセナ－覚醒－",
+     "アルトメギアの獄神獣",
+     "神芸学徒 ファインメルト",
+     "予幻なき日々のまぼろし",
+     "神芸学徒 グラフレア",
+     "アルトメギア・バーニッシュ－改変－",
+     "聖王の粉砕"
+    ],
+    "banished": [
+     "無垢なる者 メディウス"
+    ],
+    "opponent_monsters": [],
+    "opponent_graveyard": []
+   },
+   "medius_window": {
+    "step": 149,
+    "board": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "アルトメギアの獄神獣",
+      "神芸獄徒 ディアクトロス",
+      "無垢なる祈りの獄神使",
+      "神芸なる知恵の乙女",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "無限泡影",
+      "増殖するＧ",
+      "ＰＳＹフレーム・ドライバー",
+      "幽鬼うさぎ"
+     ],
+     "graveyard": [
+      "アルトメギア・メセナ－覚醒－",
+      "アルトメギアの獄神獣",
+      "神芸学徒 ファインメルト",
+      "予幻なき日々のまぼろし",
+      "神芸学徒 グラフレア",
+      "アルトメギア・バーニッシュ－改変－",
+      "聖王の粉砕"
+     ],
+     "banished": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_monsters": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_graveyard": []
+    },
+    "candidates": [
+     "幽鬼うさぎ",
+     "ディアクトロス②",
+     "獄神獣②",
+     "増殖するG"
+    ],
+    "executed": "Cancel",
+    "who": "model"
+   },
+   "medius_chain_responses": [],
+   "after_medius_chain": {
+    "step": 155,
+    "beast_arrived": true,
+    "medius_on_field": true,
+    "board": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "アルトメギアの獄神獣",
+      "神芸獄徒 ディアクトロス",
+      "無垢なる祈りの獄神使",
+      "神芸なる知恵の乙女",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "無限泡影",
+      "増殖するＧ",
+      "ＰＳＹフレーム・ドライバー",
+      "幽鬼うさぎ"
+     ],
+     "graveyard": [
+      "アルトメギア・メセナ－覚醒－",
+      "アルトメギアの獄神獣",
+      "神芸学徒 ファインメルト",
+      "予幻なき日々のまぼろし",
+      "神芸学徒 グラフレア",
+      "アルトメギア・バーニッシュ－改変－",
+      "聖王の粉砕"
+     ],
+     "banished": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_monsters": [
+      "アルトメギアの獄神獣",
+      "無垢なる者 メディウス"
+     ],
+     "opponent_graveyard": []
+    }
+   },
+   "medius_status_after_chain": {
+    "step": 156,
+    "zone": 0,
+    "status_disabled_or_forbidden": 0
+   },
+   "opp_turn2_end": {
+    "lp": [
+     8000,
+     8000
+    ],
+    "monsters": [
+     "アルトメギアの獄神獣",
+     "神芸獄徒 ディアクトロス",
+     "無垢なる祈りの獄神使",
+     "神芸なる知恵の乙女",
+     "神芸学徒 リテラ",
+     "無垢なる者 メディウス"
+    ],
+    "spell_trap": [
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "神芸学都アルトメギア"
+    ],
+    "hand": [
+     "無限泡影",
+     "増殖するＧ",
+     "ＰＳＹフレーム・ドライバー",
+     "幽鬼うさぎ"
+    ],
+    "graveyard": [
+     "アルトメギア・メセナ－覚醒－",
+     "アルトメギアの獄神獣",
+     "神芸学徒 ファインメルト",
+     "予幻なき日々のまぼろし",
+     "神芸学徒 グラフレア",
+     "アルトメギア・バーニッシュ－改変－",
+     "聖王の粉砕"
+    ],
+    "banished": [
+     "無垢なる者 メディウス"
+    ],
+    "opponent_monsters": [
+     "アルトメギアの獄神獣",
+     "無垢なる者 メディウス"
+    ],
+    "opponent_graveyard": []
+   },
+   "turn3": {
+    "actions": [
+     "覚醒②",
+     "Summon:幽鬼うさぎ",
+     "SpSummon:フルール・ド・バロネス",
+     "無垢なる者 メディウス:e10011",
+     "メディウス①(誘発の確認)",
+     "神芸学都アルトメギア:e0",
+     "ファインメルト①",
+     "神芸学徒 ファインメルト:e10012",
+     "ファインメルト③",
+     "神芸獄徒 ディアクトロス:e10010",
+     "絶解なる獄神門－テルミナス:e10010",
+     "獄神使②",
+     "増殖するG",
+     "SpSummon:創獄神ネルヴァ",
+     "SpSummon:Ｗ：Ｐファンシーボール",
+     "予幻なき日々のまぼろし:e10011",
+     "SpSummon:四花繚乱の霊使い",
+     "アルトメギア・ヴァンダリズム－襲撃－:e10010",
+     "混絶獄神ヴィードリウム:e1160",
+     "混絶獄神ヴィードリウム:e10010",
+     "混絶獄神ヴィードリウム:e10011",
+     "混絶獄神ヴィードリウム:e221",
+     "獄神獣②",
+     "獄神獣③",
+     "乙女①",
+     "アルトメギア・ヴァンダリズム－襲撃－:e0"
+    ],
+    "attacks": []
+   },
+   "own_turn3_end": {
+    "lp": [
+     8000,
+     8000
+    ],
+    "monsters": [
+     "四花繚乱の霊使い",
+     "神芸なる知恵の乙女"
+    ],
+    "spell_trap": [
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "神芸学都アルトメギア"
+    ],
+    "hand": [
+     "絶解なる獄神門－テルミナス",
+     "ＰＳＹフレーム・ドライバー"
+    ],
+    "graveyard": [
+     "Ｗ：Ｐファンシーボール",
+     "無限泡影",
+     "獄神影獣－ネルヴェド",
+     "増殖するＧ",
+     "アルトメギアの獄神獣",
+     "アルトメギアの獄神獣",
+     "絶解なる獄神門－テルミナス",
+     "神芸獄徒 ディアクトロス",
+     "Ｓ：Ｐリトルナイト",
+     "無垢なる祈りの獄神使",
+     "神芸学徒 ファインメルト",
+     "神芸学徒 ファインメルト",
+     "創獄神ネルヴァ",
+     "幽鬼うさぎ",
+     "神芸学徒 グラフレア",
+     "アルトメギア・バーニッシュ－改変－",
+     "神芸なる知恵の乙女",
+     "聖王の粉砕",
+     "神芸学徒 リテラ"
+    ],
+    "banished": [
+     "アルトメギア・メセナ－覚醒－",
+     "予幻なき日々のまぼろし",
+     "無垢なる者 メディウス",
+     "無垢なる者 メディウス"
+    ],
+    "opponent_monsters": [
+     "無垢なる者 メディウス"
+    ],
+    "opponent_graveyard": [
+     "アルトメギアの獄神獣"
+    ]
+   },
+   "game_over": null,
+   "reason": "own_turn3_end",
+   "visible": 0,
+   "lua": 0
+  },
+  "S1-D0R1": {
+   "source": "new",
+   "record_sha256": "8b5dd7fd917c3dc5dce717debd141ee55035d8f03d0e5e6ee4798ea876c9faef",
+   "observations_sha256": "429115c378b6e4fa4e1dd675997b66d5fbb4fd47846c094a2f0a20d17905a49d",
+   "replay": {
+    "mismatch": null,
+    "failure": null,
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true,
+    "reproduced_steps": 280,
+    "of": 280
+   },
+   "turn1_vs_old": {
+    "rows": 118,
+    "old_rows": 118,
+    "rows_identical": true,
+    "own_observations": 92,
+    "observations_identical": true
+   },
+   "interventions": [
+    {
+     "rule": "R1",
+     "step": 149,
+     "message": "select_chain",
+     "model_choice": "Cancel",
+     "established": true,
+     "executed": "ディアクトロス②",
+     "model_agrees": false
+    }
+   ],
+   "draw_phase_own": [
+    {
+     "step": 119,
+     "phase": 1,
+     "action": "乙女②",
+     "who": "model"
+    },
+    {
+     "step": 128,
+     "phase": 1,
+     "action": "覚醒①",
+     "who": "model"
+    },
+    {
+     "step": 134,
+     "phase": 1,
+     "action": "メディウス①(誘発の確認)",
+     "who": "model"
+    },
+    {
+     "step": 138,
+     "phase": 1,
+     "action": "0:e1152",
+     "who": "model"
+    }
+   ],
+   "standby_phase_own": [],
+   "at_opp_draw_phase_end": {
+    "lp": [
+     8000,
+     8000
+    ],
+    "monsters": [
+     "アルトメギアの獄神獣",
+     "神芸獄徒 ディアクトロス",
+     "無垢なる祈りの獄神使",
+     "神芸なる知恵の乙女",
+     "神芸学徒 リテラ",
+     "無垢なる者 メディウス"
+    ],
+    "spell_trap": [
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "神芸学都アルトメギア"
+    ],
+    "hand": [
+     "無限泡影",
+     "増殖するＧ",
+     "ＰＳＹフレーム・ドライバー",
+     "幽鬼うさぎ"
+    ],
+    "graveyard": [
+     "アルトメギア・メセナ－覚醒－",
+     "アルトメギアの獄神獣",
+     "神芸学徒 ファインメルト",
+     "予幻なき日々のまぼろし",
+     "神芸学徒 グラフレア",
+     "アルトメギア・バーニッシュ－改変－",
+     "聖王の粉砕"
+    ],
+    "banished": [
+     "無垢なる者 メディウス"
+    ],
+    "opponent_monsters": [],
+    "opponent_graveyard": []
+   },
+   "medius_window": {
+    "step": 149,
+    "board": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "アルトメギアの獄神獣",
+      "神芸獄徒 ディアクトロス",
+      "無垢なる祈りの獄神使",
+      "神芸なる知恵の乙女",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "無限泡影",
+      "増殖するＧ",
+      "ＰＳＹフレーム・ドライバー",
+      "幽鬼うさぎ"
+     ],
+     "graveyard": [
+      "アルトメギア・メセナ－覚醒－",
+      "アルトメギアの獄神獣",
+      "神芸学徒 ファインメルト",
+      "予幻なき日々のまぼろし",
+      "神芸学徒 グラフレア",
+      "アルトメギア・バーニッシュ－改変－",
+      "聖王の粉砕"
+     ],
+     "banished": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_monsters": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_graveyard": []
+    },
+    "candidates": [
+     "幽鬼うさぎ",
+     "ディアクトロス②",
+     "獄神獣②",
+     "増殖するG"
+    ],
+    "executed": "ディアクトロス②",
+    "who": "probe-R1"
+   },
+   "medius_chain_responses": [
+    {
+     "step": 149,
+     "effect": "ディアクトロス②",
+     "who": "probe-R1"
+    }
+   ],
+   "after_medius_chain": {
+    "step": 152,
+    "beast_arrived": false,
+    "medius_on_field": false,
+    "board": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "アルトメギアの獄神獣",
+      "神芸獄徒 ディアクトロス",
+      "無垢なる祈りの獄神使",
+      "神芸なる知恵の乙女",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "無限泡影",
+      "増殖するＧ",
+      "ＰＳＹフレーム・ドライバー",
+      "幽鬼うさぎ"
+     ],
+     "graveyard": [
+      "アルトメギア・メセナ－覚醒－",
+      "アルトメギアの獄神獣",
+      "神芸学徒 ファインメルト",
+      "予幻なき日々のまぼろし",
+      "神芸学徒 グラフレア",
+      "アルトメギア・バーニッシュ－改変－",
+      "聖王の粉砕"
+     ],
+     "banished": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_monsters": [],
+     "opponent_graveyard": [
+      "無垢なる者 メディウス"
+     ]
+    }
+   },
+   "medius_status_after_chain": null,
+   "opp_turn2_end": {
+    "lp": [
+     8000,
+     8000
+    ],
+    "monsters": [
+     "アルトメギアの獄神獣",
+     "神芸獄徒 ディアクトロス",
+     "無垢なる祈りの獄神使",
+     "神芸なる知恵の乙女",
+     "神芸学徒 リテラ",
+     "無垢なる者 メディウス"
+    ],
+    "spell_trap": [
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "神芸学都アルトメギア"
+    ],
+    "hand": [
+     "無限泡影",
+     "増殖するＧ",
+     "ＰＳＹフレーム・ドライバー",
+     "幽鬼うさぎ"
+    ],
+    "graveyard": [
+     "アルトメギア・メセナ－覚醒－",
+     "アルトメギアの獄神獣",
+     "神芸学徒 ファインメルト",
+     "予幻なき日々のまぼろし",
+     "神芸学徒 グラフレア",
+     "アルトメギア・バーニッシュ－改変－",
+     "聖王の粉砕"
+    ],
+    "banished": [
+     "無垢なる者 メディウス"
+    ],
+    "opponent_monsters": [],
+    "opponent_graveyard": [
+     "無垢なる者 メディウス"
+    ]
+   },
+   "turn3": {
+    "actions": [
+     "Set:無限泡影",
+     "Summon:ＰＳＹフレーム・ドライバー",
+     "無垢なる者 メディウス:e10011",
+     "メディウス①(誘発の確認)",
+     "獄神獣②",
+     "獄神獣③",
+     "乙女①",
+     "アルトメギア・ヴァンダリズム－襲撃－:e0",
+     "神芸学都アルトメギア:e0",
+     "増殖するG",
+     "アルトメギア・ヴァンダリズム－襲撃－:e10010",
+     "獄神使②",
+     "SpSummon:創獄神ネルヴァ",
+     "混絶獄神ヴィードリウム:e1160",
+     "混絶獄神ヴィードリウム:e10010",
+     "混絶獄神ヴィードリウム:e10011",
+     "混絶獄神ヴィードリウム:e221",
+     "神芸学都アルトメギア:e0",
+     "ファインメルト①",
+     "神芸学徒 ファインメルト:e10012"
+    ],
+    "attacks": [
+     "DirectAttack:神芸なる知恵の乙女",
+     "DirectAttack:神芸学徒 ファインメルト",
+     "DirectAttack:アルトメギアの獄神獣"
+    ]
+   },
+   "own_turn3_end": {
+    "lp": [
+     8000,
+     2900
+    ],
+    "monsters": [
+     "アルトメギアの獄神獣",
+     "神芸学徒 ファインメルト",
+     "創獄神ネルヴァ",
+     "神芸なる知恵の乙女"
+    ],
+    "spell_trap": [
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "無限泡影",
+     "神芸学都アルトメギア"
+    ],
+    "hand": [
+     "幽鬼うさぎ",
+     "屋敷わらし"
+    ],
+    "graveyard": [
+     "増殖するＧ",
+     "アルトメギア・メセナ－覚醒－",
+     "アルトメギアの獄神獣",
+     "絶解なる獄神門－テルミナス",
+     "神芸獄徒 ディアクトロス",
+     "Ｓ：Ｐリトルナイト",
+     "無垢なる祈りの獄神使",
+     "神芸学徒 ファインメルト",
+     "予幻なき日々のまぼろし",
+     "神芸学徒 グラフレア",
+     "アルトメギア・バーニッシュ－改変－",
+     "神芸なる知恵の乙女",
+     "神芸学都アルトメギア",
+     "聖王の粉砕",
+     "神芸学徒 リテラ"
+    ],
+    "banished": [
+     "無垢なる者 メディウス",
+     "無垢なる者 メディウス"
+    ],
+    "opponent_monsters": [],
+    "opponent_graveyard": [
+     "無垢なる者 メディウス"
+    ]
+   },
+   "game_over": null,
+   "reason": "own_turn3_end",
+   "visible": 0,
+   "lua": 0
+  },
+  "S1-D1R0": {
+   "source": "new",
+   "record_sha256": "f773199a4aeb2e389190bcae16bb667fc24cfab6270f13217ccd51e6b45b76ea",
+   "observations_sha256": "757349ca001895fe3622fca5baa449a70009207c71d13c1840f5fcbf5d5ed709",
+   "replay": {
+    "mismatch": null,
+    "failure": null,
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true,
+    "reproduced_steps": 286,
+    "of": 286
+   },
+   "turn1_vs_old": {
+    "rows": 118,
+    "old_rows": 118,
+    "rows_identical": true,
+    "own_observations": 92,
+    "observations_identical": true
+   },
+   "interventions": [
+    {
+     "rule": "D1",
+     "step": 119,
+     "message": "select_chain",
+     "model_choice": "乙女②",
+     "executed": "Cancel",
+     "forced": false,
+     "model_agrees": false
+    }
+   ],
+   "draw_phase_own": [],
+   "standby_phase_own": [
+    {
+     "step": 121,
+     "phase": 2,
+     "action": "乙女②",
+     "who": "model"
+    },
+    {
+     "step": 130,
+     "phase": 2,
+     "action": "覚醒①",
+     "who": "model"
+    },
+    {
+     "step": 136,
+     "phase": 2,
+     "action": "メディウス①(誘発の確認)",
+     "who": "model"
+    },
+    {
+     "step": 140,
+     "phase": 2,
+     "action": "0:e1152",
+     "who": "model"
+    }
+   ],
+   "at_opp_draw_phase_end": {
+    "lp": [
+     8000,
+     8000
+    ],
+    "monsters": [
+     "無垢なる祈りの獄神使",
+     "神芸学徒 ファインメルト",
+     "神芸なる知恵の乙女",
+     "神芸学徒 リテラ",
+     "無垢なる者 メディウス"
+    ],
+    "spell_trap": [
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "アルトメギア・メセナ－覚醒－",
+     "神芸学都アルトメギア"
+    ],
+    "hand": [
+     "無限泡影",
+     "増殖するＧ",
+     "ＰＳＹフレーム・ドライバー",
+     "幽鬼うさぎ"
+    ],
+    "graveyard": [
+     "アルトメギアの獄神獣",
+     "予幻なき日々のまぼろし",
+     "神芸学徒 グラフレア",
+     "アルトメギア・バーニッシュ－改変－",
+     "聖王の粉砕"
+    ],
+    "banished": [],
+    "opponent_monsters": [],
+    "opponent_graveyard": []
+   },
+   "medius_window": {
+    "step": 149,
+    "board": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "アルトメギアの獄神獣",
+      "神芸獄徒 ディアクトロス",
+      "無垢なる祈りの獄神使",
+      "神芸なる知恵の乙女",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "無限泡影",
+      "増殖するＧ",
+      "ＰＳＹフレーム・ドライバー",
+      "幽鬼うさぎ"
+     ],
+     "graveyard": [
+      "アルトメギア・メセナ－覚醒－",
+      "アルトメギアの獄神獣",
+      "神芸学徒 ファインメルト",
+      "予幻なき日々のまぼろし",
+      "神芸学徒 グラフレア",
+      "アルトメギア・バーニッシュ－改変－",
+      "聖王の粉砕"
+     ],
+     "banished": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_monsters": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_graveyard": []
+    },
+    "candidates": [
+     "幽鬼うさぎ",
+     "ディアクトロス②",
+     "獄神獣②",
+     "増殖するG"
+    ],
+    "executed": "Cancel",
+    "who": "model"
+   },
+   "medius_chain_responses": [],
+   "after_medius_chain": {
+    "step": 155,
+    "beast_arrived": true,
+    "medius_on_field": true,
+    "board": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "アルトメギアの獄神獣",
+      "神芸獄徒 ディアクトロス",
+      "無垢なる祈りの獄神使",
+      "神芸なる知恵の乙女",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "無限泡影",
+      "増殖するＧ",
+      "ＰＳＹフレーム・ドライバー",
+      "幽鬼うさぎ"
+     ],
+     "graveyard": [
+      "アルトメギア・メセナ－覚醒－",
+      "アルトメギアの獄神獣",
+      "神芸学徒 ファインメルト",
+      "予幻なき日々のまぼろし",
+      "神芸学徒 グラフレア",
+      "アルトメギア・バーニッシュ－改変－",
+      "聖王の粉砕"
+     ],
+     "banished": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_monsters": [
+      "アルトメギアの獄神獣",
+      "無垢なる者 メディウス"
+     ],
+     "opponent_graveyard": []
+    }
+   },
+   "medius_status_after_chain": {
+    "step": 156,
+    "zone": 0,
+    "status_disabled_or_forbidden": 0
+   },
+   "opp_turn2_end": {
+    "lp": [
+     8000,
+     8000
+    ],
+    "monsters": [
+     "アルトメギアの獄神獣",
+     "神芸獄徒 ディアクトロス",
+     "無垢なる祈りの獄神使",
+     "神芸なる知恵の乙女",
+     "神芸学徒 リテラ",
+     "無垢なる者 メディウス"
+    ],
+    "spell_trap": [
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "神芸学都アルトメギア"
+    ],
+    "hand": [
+     "無限泡影",
+     "増殖するＧ",
+     "ＰＳＹフレーム・ドライバー",
+     "幽鬼うさぎ"
+    ],
+    "graveyard": [
+     "アルトメギア・メセナ－覚醒－",
+     "アルトメギアの獄神獣",
+     "神芸学徒 ファインメルト",
+     "予幻なき日々のまぼろし",
+     "神芸学徒 グラフレア",
+     "アルトメギア・バーニッシュ－改変－",
+     "聖王の粉砕"
+    ],
+    "banished": [
+     "無垢なる者 メディウス"
+    ],
+    "opponent_monsters": [
+     "アルトメギアの獄神獣",
+     "無垢なる者 メディウス"
+    ],
+    "opponent_graveyard": []
+   },
+   "turn3": {
+    "actions": [
+     "覚醒②",
+     "Summon:幽鬼うさぎ",
+     "SpSummon:フルール・ド・バロネス",
+     "無垢なる者 メディウス:e10011",
+     "メディウス①(誘発の確認)",
+     "神芸学都アルトメギア:e0",
+     "ファインメルト①",
+     "神芸学徒 ファインメルト:e10012",
+     "ファインメルト③",
+     "神芸獄徒 ディアクトロス:e10010",
+     "絶解なる獄神門－テルミナス:e10010",
+     "獄神使②",
+     "増殖するG",
+     "SpSummon:創獄神ネルヴァ",
+     "SpSummon:Ｗ：Ｐファンシーボール",
+     "予幻なき日々のまぼろし:e10011",
+     "SpSummon:四花繚乱の霊使い",
+     "アルトメギア・ヴァンダリズム－襲撃－:e10010",
+     "混絶獄神ヴィードリウム:e1160",
+     "混絶獄神ヴィードリウム:e10010",
+     "混絶獄神ヴィードリウム:e10011",
+     "混絶獄神ヴィードリウム:e221",
+     "獄神獣②",
+     "獄神獣③",
+     "乙女①",
+     "アルトメギア・ヴァンダリズム－襲撃－:e0"
+    ],
+    "attacks": []
+   },
+   "own_turn3_end": {
+    "lp": [
+     8000,
+     8000
+    ],
+    "monsters": [
+     "四花繚乱の霊使い",
+     "神芸なる知恵の乙女"
+    ],
+    "spell_trap": [
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "神芸学都アルトメギア"
+    ],
+    "hand": [
+     "絶解なる獄神門－テルミナス",
+     "ＰＳＹフレーム・ドライバー"
+    ],
+    "graveyard": [
+     "Ｗ：Ｐファンシーボール",
+     "無限泡影",
+     "獄神影獣－ネルヴェド",
+     "増殖するＧ",
+     "アルトメギアの獄神獣",
+     "アルトメギアの獄神獣",
+     "絶解なる獄神門－テルミナス",
+     "神芸獄徒 ディアクトロス",
+     "Ｓ：Ｐリトルナイト",
+     "無垢なる祈りの獄神使",
+     "神芸学徒 ファインメルト",
+     "神芸学徒 ファインメルト",
+     "創獄神ネルヴァ",
+     "幽鬼うさぎ",
+     "神芸学徒 グラフレア",
+     "アルトメギア・バーニッシュ－改変－",
+     "神芸なる知恵の乙女",
+     "聖王の粉砕",
+     "神芸学徒 リテラ"
+    ],
+    "banished": [
+     "アルトメギア・メセナ－覚醒－",
+     "予幻なき日々のまぼろし",
+     "無垢なる者 メディウス",
+     "無垢なる者 メディウス"
+    ],
+    "opponent_monsters": [
+     "無垢なる者 メディウス"
+    ],
+    "opponent_graveyard": [
+     "アルトメギアの獄神獣"
+    ]
+   },
+   "game_over": null,
+   "reason": "own_turn3_end",
+   "visible": 0,
+   "lua": 0
+  },
+  "S1-D1R1": {
+   "source": "new",
+   "record_sha256": "a085ae48d8244e7d7d857ba1fdbd3adb1a91d87125f43375a6408ccc69ca9ea2",
+   "observations_sha256": "68800fb516b4e59ff34a4eb2b8c6099a725f3ca9d0d7a73f9e22f52bd43fe4ed",
+   "replay": {
+    "mismatch": null,
+    "failure": null,
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true,
+    "reproduced_steps": 280,
+    "of": 280
+   },
+   "turn1_vs_old": {
+    "rows": 118,
+    "old_rows": 118,
+    "rows_identical": true,
+    "own_observations": 92,
+    "observations_identical": true
+   },
+   "interventions": [
+    {
+     "rule": "D1",
+     "step": 119,
+     "message": "select_chain",
+     "model_choice": "乙女②",
+     "executed": "Cancel",
+     "forced": false,
+     "model_agrees": false
+    },
+    {
+     "rule": "R1",
+     "step": 149,
+     "message": "select_chain",
+     "model_choice": "Cancel",
+     "established": true,
+     "executed": "ディアクトロス②",
+     "model_agrees": false
+    }
+   ],
+   "draw_phase_own": [],
+   "standby_phase_own": [
+    {
+     "step": 121,
+     "phase": 2,
+     "action": "乙女②",
+     "who": "model"
+    },
+    {
+     "step": 130,
+     "phase": 2,
+     "action": "覚醒①",
+     "who": "model"
+    },
+    {
+     "step": 136,
+     "phase": 2,
+     "action": "メディウス①(誘発の確認)",
+     "who": "model"
+    },
+    {
+     "step": 140,
+     "phase": 2,
+     "action": "0:e1152",
+     "who": "model"
+    }
+   ],
+   "at_opp_draw_phase_end": {
+    "lp": [
+     8000,
+     8000
+    ],
+    "monsters": [
+     "無垢なる祈りの獄神使",
+     "神芸学徒 ファインメルト",
+     "神芸なる知恵の乙女",
+     "神芸学徒 リテラ",
+     "無垢なる者 メディウス"
+    ],
+    "spell_trap": [
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "アルトメギア・メセナ－覚醒－",
+     "神芸学都アルトメギア"
+    ],
+    "hand": [
+     "無限泡影",
+     "増殖するＧ",
+     "ＰＳＹフレーム・ドライバー",
+     "幽鬼うさぎ"
+    ],
+    "graveyard": [
+     "アルトメギアの獄神獣",
+     "予幻なき日々のまぼろし",
+     "神芸学徒 グラフレア",
+     "アルトメギア・バーニッシュ－改変－",
+     "聖王の粉砕"
+    ],
+    "banished": [],
+    "opponent_monsters": [],
+    "opponent_graveyard": []
+   },
+   "medius_window": {
+    "step": 149,
+    "board": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "アルトメギアの獄神獣",
+      "神芸獄徒 ディアクトロス",
+      "無垢なる祈りの獄神使",
+      "神芸なる知恵の乙女",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "無限泡影",
+      "増殖するＧ",
+      "ＰＳＹフレーム・ドライバー",
+      "幽鬼うさぎ"
+     ],
+     "graveyard": [
+      "アルトメギア・メセナ－覚醒－",
+      "アルトメギアの獄神獣",
+      "神芸学徒 ファインメルト",
+      "予幻なき日々のまぼろし",
+      "神芸学徒 グラフレア",
+      "アルトメギア・バーニッシュ－改変－",
+      "聖王の粉砕"
+     ],
+     "banished": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_monsters": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_graveyard": []
+    },
+    "candidates": [
+     "幽鬼うさぎ",
+     "ディアクトロス②",
+     "獄神獣②",
+     "増殖するG"
+    ],
+    "executed": "ディアクトロス②",
+    "who": "probe-R1"
+   },
+   "medius_chain_responses": [
+    {
+     "step": 149,
+     "effect": "ディアクトロス②",
+     "who": "probe-R1"
+    }
+   ],
+   "after_medius_chain": {
+    "step": 152,
+    "beast_arrived": false,
+    "medius_on_field": false,
+    "board": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "アルトメギアの獄神獣",
+      "神芸獄徒 ディアクトロス",
+      "無垢なる祈りの獄神使",
+      "神芸なる知恵の乙女",
+      "神芸学徒 リテラ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "無限泡影",
+      "増殖するＧ",
+      "ＰＳＹフレーム・ドライバー",
+      "幽鬼うさぎ"
+     ],
+     "graveyard": [
+      "アルトメギア・メセナ－覚醒－",
+      "アルトメギアの獄神獣",
+      "神芸学徒 ファインメルト",
+      "予幻なき日々のまぼろし",
+      "神芸学徒 グラフレア",
+      "アルトメギア・バーニッシュ－改変－",
+      "聖王の粉砕"
+     ],
+     "banished": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_monsters": [],
+     "opponent_graveyard": [
+      "無垢なる者 メディウス"
+     ]
+    }
+   },
+   "medius_status_after_chain": null,
+   "opp_turn2_end": {
+    "lp": [
+     8000,
+     8000
+    ],
+    "monsters": [
+     "アルトメギアの獄神獣",
+     "神芸獄徒 ディアクトロス",
+     "無垢なる祈りの獄神使",
+     "神芸なる知恵の乙女",
+     "神芸学徒 リテラ",
+     "無垢なる者 メディウス"
+    ],
+    "spell_trap": [
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "神芸学都アルトメギア"
+    ],
+    "hand": [
+     "無限泡影",
+     "増殖するＧ",
+     "ＰＳＹフレーム・ドライバー",
+     "幽鬼うさぎ"
+    ],
+    "graveyard": [
+     "アルトメギア・メセナ－覚醒－",
+     "アルトメギアの獄神獣",
+     "神芸学徒 ファインメルト",
+     "予幻なき日々のまぼろし",
+     "神芸学徒 グラフレア",
+     "アルトメギア・バーニッシュ－改変－",
+     "聖王の粉砕"
+    ],
+    "banished": [
+     "無垢なる者 メディウス"
+    ],
+    "opponent_monsters": [],
+    "opponent_graveyard": [
+     "無垢なる者 メディウス"
+    ]
+   },
+   "turn3": {
+    "actions": [
+     "Set:無限泡影",
+     "Summon:ＰＳＹフレーム・ドライバー",
+     "無垢なる者 メディウス:e10011",
+     "メディウス①(誘発の確認)",
+     "獄神獣②",
+     "獄神獣③",
+     "乙女①",
+     "アルトメギア・ヴァンダリズム－襲撃－:e0",
+     "神芸学都アルトメギア:e0",
+     "増殖するG",
+     "アルトメギア・ヴァンダリズム－襲撃－:e10010",
+     "獄神使②",
+     "SpSummon:創獄神ネルヴァ",
+     "混絶獄神ヴィードリウム:e1160",
+     "混絶獄神ヴィードリウム:e10010",
+     "混絶獄神ヴィードリウム:e10011",
+     "混絶獄神ヴィードリウム:e221",
+     "神芸学都アルトメギア:e0",
+     "ファインメルト①",
+     "神芸学徒 ファインメルト:e10012"
+    ],
+    "attacks": [
+     "DirectAttack:神芸なる知恵の乙女",
+     "DirectAttack:神芸学徒 ファインメルト",
+     "DirectAttack:アルトメギアの獄神獣"
+    ]
+   },
+   "own_turn3_end": {
+    "lp": [
+     8000,
+     2900
+    ],
+    "monsters": [
+     "アルトメギアの獄神獣",
+     "神芸学徒 ファインメルト",
+     "創獄神ネルヴァ",
+     "神芸なる知恵の乙女"
+    ],
+    "spell_trap": [
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "無限泡影",
+     "神芸学都アルトメギア"
+    ],
+    "hand": [
+     "幽鬼うさぎ",
+     "屋敷わらし"
+    ],
+    "graveyard": [
+     "増殖するＧ",
+     "アルトメギア・メセナ－覚醒－",
+     "アルトメギアの獄神獣",
+     "絶解なる獄神門－テルミナス",
+     "神芸獄徒 ディアクトロス",
+     "Ｓ：Ｐリトルナイト",
+     "無垢なる祈りの獄神使",
+     "神芸学徒 ファインメルト",
+     "予幻なき日々のまぼろし",
+     "神芸学徒 グラフレア",
+     "アルトメギア・バーニッシュ－改変－",
+     "神芸なる知恵の乙女",
+     "神芸学都アルトメギア",
+     "聖王の粉砕",
+     "神芸学徒 リテラ"
+    ],
+    "banished": [
+     "無垢なる者 メディウス",
+     "無垢なる者 メディウス"
+    ],
+    "opponent_monsters": [],
+    "opponent_graveyard": [
+     "無垢なる者 メディウス"
+    ]
+   },
+   "game_over": null,
+   "reason": "own_turn3_end",
+   "visible": 0,
+   "lua": 0
+  },
+  "S2-D0R0": {
+   "source": "reused old record",
+   "record_sha256": "f037e719b37e4c4ab776c7d24c8c11f1a57483e72319d8bcc095c30b7768cbcc",
+   "observations_sha256": "2184e73c81aea1de5867d6cfcf45cdf3f45d42e223be3eb421976951fa37a58d",
+   "replay": {
+    "mismatch": null,
+    "failure": null,
+    "final_equal": null,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true,
+    "reproduced_steps": 266,
+    "of": 266
+   },
+   "turn1_vs_old": "is the old record",
+   "interventions": [],
+   "draw_phase_own": [
+    {
+     "step": 133,
+     "phase": 1,
+     "action": "乙女②",
+     "who": "model"
+    },
+    {
+     "step": 141,
+     "phase": 1,
+     "action": "神芸なる知恵の乙女:e221",
+     "who": "model"
+    },
+    {
+     "step": 143,
+     "phase": 1,
+     "action": "乙女②",
+     "who": "model"
+    },
+    {
+     "step": 154,
+     "phase": 1,
+     "action": "覚醒①",
+     "who": "model"
+    }
+   ],
+   "standby_phase_own": [],
+   "at_opp_draw_phase_end": {
+    "lp": [
+     8000,
+     8000
+    ],
+    "monsters": [
+     "無垢なる祈りの獄神使",
+     "神芸学徒 ファインメルト",
+     "創獄神ネルヴァ",
+     "無垢なる者 メディウス"
+    ],
+    "spell_trap": [
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "アルトメギア・インパスト－奪還－",
+     "アルトメギア・バーニッシュ－改変－",
+     "神芸学都アルトメギア"
+    ],
+    "hand": [
+     "増殖するＧ",
+     "幽鬼うさぎ"
+    ],
+    "graveyard": [
+     "無限泡影",
+     "アルトメギア・メセナ－覚醒－",
+     "アルトメギアの獄神獣",
+     "神芸獄徒 ディアクトロス",
+     "神芸学徒 ファインメルト",
+     "神芸学徒 グラフレア",
+     "アルトメギア・バーニッシュ－改変－",
+     "神芸なる知恵の乙女",
+     "神芸なる知恵の乙女",
+     "聖王の粉砕",
+     "神芸学徒 リテラ"
+    ],
+    "banished": [
+     "予幻なき日々のまぼろし"
+    ],
+    "opponent_monsters": [],
+    "opponent_graveyard": []
+   },
+   "medius_window": {
+    "step": 169,
+    "board": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "創獄神ネルヴァ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "アルトメギア・インパスト－奪還－",
+      "アルトメギア・バーニッシュ－改変－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "増殖するＧ",
+      "幽鬼うさぎ"
+     ],
+     "graveyard": [
+      "無限泡影",
+      "アルトメギア・メセナ－覚醒－",
+      "アルトメギアの獄神獣",
+      "神芸獄徒 ディアクトロス",
+      "神芸学徒 ファインメルト",
+      "神芸学徒 グラフレア",
+      "アルトメギア・バーニッシュ－改変－",
+      "神芸なる知恵の乙女",
+      "神芸なる知恵の乙女",
+      "聖王の粉砕",
+      "神芸学徒 リテラ"
+     ],
+     "banished": [
+      "予幻なき日々のまぼろし"
+     ],
+     "opponent_monsters": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_graveyard": []
+    },
+    "candidates": [
+     "幽鬼うさぎ",
+     "奪還①",
+     "獄神使②",
+     "ファインメルト③",
+     "増殖するG"
+    ],
+    "executed": "ファインメルト③",
+    "who": "model"
+   },
+   "medius_chain_responses": [
+    {
+     "step": 169,
+     "effect": "ファインメルト③",
+     "who": "model"
+    }
+   ],
+   "after_medius_chain": {
+    "step": 172,
+    "beast_arrived": false,
+    "medius_on_field": true,
+    "board": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "創獄神ネルヴァ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "アルトメギア・インパスト－奪還－",
+      "アルトメギア・バーニッシュ－改変－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "増殖するＧ",
+      "幽鬼うさぎ"
+     ],
+     "graveyard": [
+      "無限泡影",
+      "アルトメギア・メセナ－覚醒－",
+      "アルトメギアの獄神獣",
+      "神芸獄徒 ディアクトロス",
+      "神芸学徒 ファインメルト",
+      "神芸学徒 グラフレア",
+      "アルトメギア・バーニッシュ－改変－",
+      "神芸なる知恵の乙女",
+      "神芸なる知恵の乙女",
+      "聖王の粉砕",
+      "神芸学徒 リテラ"
+     ],
+     "banished": [
+      "予幻なき日々のまぼろし"
+     ],
+     "opponent_monsters": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_graveyard": []
+    }
+   },
+   "medius_status_after_chain": {
+    "step": 172,
+    "zone": 0,
+    "status_disabled_or_forbidden": 1
+   },
+   "opp_turn2_end": {
+    "lp": [
+     8000,
+     8000
+    ],
+    "monsters": [
+     "無垢なる祈りの獄神使",
+     "神芸学徒 ファインメルト",
+     "創獄神ネルヴァ",
+     "無垢なる者 メディウス"
+    ],
+    "spell_trap": [
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "アルトメギア・インパスト－奪還－",
+     "アルトメギア・バーニッシュ－改変－",
+     "神芸学都アルトメギア"
+    ],
+    "hand": [
+     "増殖するＧ",
+     "幽鬼うさぎ"
+    ],
+    "graveyard": [
+     "無限泡影",
+     "アルトメギア・メセナ－覚醒－",
+     "アルトメギアの獄神獣",
+     "神芸獄徒 ディアクトロス",
+     "神芸学徒 ファインメルト",
+     "神芸学徒 グラフレア",
+     "アルトメギア・バーニッシュ－改変－",
+     "神芸なる知恵の乙女",
+     "神芸なる知恵の乙女",
+     "聖王の粉砕",
+     "神芸学徒 リテラ"
+    ],
+    "banished": [
+     "予幻なき日々のまぼろし"
+    ],
+    "opponent_monsters": [
+     "無垢なる者 メディウス"
+    ],
+    "opponent_graveyard": []
+   },
+   "turn3": {
+    "actions": [
+     "覚醒②",
+     "アルトメギア・バーニッシュ－改変－:e10010",
+     "ファインメルト①",
+     "神芸学徒 ファインメルト:e10012",
+     "アルトメギア・ヴァンダリズム－襲撃－:e0",
+     "アルトメギア・ヴァンダリズム－襲撃－:e10011",
+     "Summon:無垢なる者 メディウス",
+     "神芸学都アルトメギア:e10010",
+     "メディウス①(誘発の確認)",
+     "0:e1152",
+     "SpSummon:神芸なる知恵の乙女",
+     "神芸なる知恵の乙女:e221",
+     "アルトメギア・ヴァンダリズム－襲撃－:e10010"
+    ],
+    "attacks": [
+     "DirectAttack:アルトメギアの獄神獣",
+     "DirectAttack:無垢なる者 メディウス",
+     "DirectAttack:神芸なる知恵の乙女",
+     "DirectAttack:創獄神ネルヴァ",
+     "DirectAttack:無垢なる祈りの獄神使"
+    ]
+   },
+   "own_turn3_end": null,
+   "game_over": {
+    "step": 265,
+    "reward": -8.0,
+    "acting_player": 1,
+    "winner": 0,
+    "turn": 3
+   },
+   "reason": "game_over",
+   "visible": 0,
+   "lua": 0
+  },
+  "S2-D0R1": {
+   "source": "reused old record",
+   "record_sha256": "f037e719b37e4c4ab776c7d24c8c11f1a57483e72319d8bcc095c30b7768cbcc",
+   "observations_sha256": "2184e73c81aea1de5867d6cfcf45cdf3f45d42e223be3eb421976951fa37a58d",
+   "replay": {
+    "mismatch": null,
+    "failure": null,
+    "final_equal": null,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true,
+    "reproduced_steps": 266,
+    "of": 266
+   },
+   "turn1_vs_old": "is the old record",
+   "interventions": [
+    {
+     "rule": "R1",
+     "step": 169,
+     "message": "select_chain",
+     "model_choice": "ファインメルト③",
+     "established": true,
+     "executed": "ファインメルト③",
+     "model_agrees": true
+    }
+   ],
+   "draw_phase_own": [
+    {
+     "step": 133,
+     "phase": 1,
+     "action": "乙女②",
+     "who": "model"
+    },
+    {
+     "step": 141,
+     "phase": 1,
+     "action": "神芸なる知恵の乙女:e221",
+     "who": "model"
+    },
+    {
+     "step": 143,
+     "phase": 1,
+     "action": "乙女②",
+     "who": "model"
+    },
+    {
+     "step": 154,
+     "phase": 1,
+     "action": "覚醒①",
+     "who": "model"
+    }
+   ],
+   "standby_phase_own": [],
+   "at_opp_draw_phase_end": {
+    "lp": [
+     8000,
+     8000
+    ],
+    "monsters": [
+     "無垢なる祈りの獄神使",
+     "神芸学徒 ファインメルト",
+     "創獄神ネルヴァ",
+     "無垢なる者 メディウス"
+    ],
+    "spell_trap": [
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "アルトメギア・インパスト－奪還－",
+     "アルトメギア・バーニッシュ－改変－",
+     "神芸学都アルトメギア"
+    ],
+    "hand": [
+     "増殖するＧ",
+     "幽鬼うさぎ"
+    ],
+    "graveyard": [
+     "無限泡影",
+     "アルトメギア・メセナ－覚醒－",
+     "アルトメギアの獄神獣",
+     "神芸獄徒 ディアクトロス",
+     "神芸学徒 ファインメルト",
+     "神芸学徒 グラフレア",
+     "アルトメギア・バーニッシュ－改変－",
+     "神芸なる知恵の乙女",
+     "神芸なる知恵の乙女",
+     "聖王の粉砕",
+     "神芸学徒 リテラ"
+    ],
+    "banished": [
+     "予幻なき日々のまぼろし"
+    ],
+    "opponent_monsters": [],
+    "opponent_graveyard": []
+   },
+   "medius_window": {
+    "step": 169,
+    "board": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "創獄神ネルヴァ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "アルトメギア・インパスト－奪還－",
+      "アルトメギア・バーニッシュ－改変－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "増殖するＧ",
+      "幽鬼うさぎ"
+     ],
+     "graveyard": [
+      "無限泡影",
+      "アルトメギア・メセナ－覚醒－",
+      "アルトメギアの獄神獣",
+      "神芸獄徒 ディアクトロス",
+      "神芸学徒 ファインメルト",
+      "神芸学徒 グラフレア",
+      "アルトメギア・バーニッシュ－改変－",
+      "神芸なる知恵の乙女",
+      "神芸なる知恵の乙女",
+      "聖王の粉砕",
+      "神芸学徒 リテラ"
+     ],
+     "banished": [
+      "予幻なき日々のまぼろし"
+     ],
+     "opponent_monsters": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_graveyard": []
+    },
+    "candidates": [
+     "幽鬼うさぎ",
+     "奪還①",
+     "獄神使②",
+     "ファインメルト③",
+     "増殖するG"
+    ],
+    "executed": "ファインメルト③",
+    "who": "model"
+   },
+   "medius_chain_responses": [
+    {
+     "step": 169,
+     "effect": "ファインメルト③",
+     "who": "model"
+    }
+   ],
+   "after_medius_chain": {
+    "step": 172,
+    "beast_arrived": false,
+    "medius_on_field": true,
+    "board": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "創獄神ネルヴァ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "アルトメギア・インパスト－奪還－",
+      "アルトメギア・バーニッシュ－改変－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "増殖するＧ",
+      "幽鬼うさぎ"
+     ],
+     "graveyard": [
+      "無限泡影",
+      "アルトメギア・メセナ－覚醒－",
+      "アルトメギアの獄神獣",
+      "神芸獄徒 ディアクトロス",
+      "神芸学徒 ファインメルト",
+      "神芸学徒 グラフレア",
+      "アルトメギア・バーニッシュ－改変－",
+      "神芸なる知恵の乙女",
+      "神芸なる知恵の乙女",
+      "聖王の粉砕",
+      "神芸学徒 リテラ"
+     ],
+     "banished": [
+      "予幻なき日々のまぼろし"
+     ],
+     "opponent_monsters": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_graveyard": []
+    }
+   },
+   "medius_status_after_chain": {
+    "step": 172,
+    "zone": 0,
+    "status_disabled_or_forbidden": 1
+   },
+   "opp_turn2_end": {
+    "lp": [
+     8000,
+     8000
+    ],
+    "monsters": [
+     "無垢なる祈りの獄神使",
+     "神芸学徒 ファインメルト",
+     "創獄神ネルヴァ",
+     "無垢なる者 メディウス"
+    ],
+    "spell_trap": [
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "アルトメギア・インパスト－奪還－",
+     "アルトメギア・バーニッシュ－改変－",
+     "神芸学都アルトメギア"
+    ],
+    "hand": [
+     "増殖するＧ",
+     "幽鬼うさぎ"
+    ],
+    "graveyard": [
+     "無限泡影",
+     "アルトメギア・メセナ－覚醒－",
+     "アルトメギアの獄神獣",
+     "神芸獄徒 ディアクトロス",
+     "神芸学徒 ファインメルト",
+     "神芸学徒 グラフレア",
+     "アルトメギア・バーニッシュ－改変－",
+     "神芸なる知恵の乙女",
+     "神芸なる知恵の乙女",
+     "聖王の粉砕",
+     "神芸学徒 リテラ"
+    ],
+    "banished": [
+     "予幻なき日々のまぼろし"
+    ],
+    "opponent_monsters": [
+     "無垢なる者 メディウス"
+    ],
+    "opponent_graveyard": []
+   },
+   "turn3": {
+    "actions": [
+     "覚醒②",
+     "アルトメギア・バーニッシュ－改変－:e10010",
+     "ファインメルト①",
+     "神芸学徒 ファインメルト:e10012",
+     "アルトメギア・ヴァンダリズム－襲撃－:e0",
+     "アルトメギア・ヴァンダリズム－襲撃－:e10011",
+     "Summon:無垢なる者 メディウス",
+     "神芸学都アルトメギア:e10010",
+     "メディウス①(誘発の確認)",
+     "0:e1152",
+     "SpSummon:神芸なる知恵の乙女",
+     "神芸なる知恵の乙女:e221",
+     "アルトメギア・ヴァンダリズム－襲撃－:e10010"
+    ],
+    "attacks": [
+     "DirectAttack:アルトメギアの獄神獣",
+     "DirectAttack:無垢なる者 メディウス",
+     "DirectAttack:神芸なる知恵の乙女",
+     "DirectAttack:創獄神ネルヴァ",
+     "DirectAttack:無垢なる祈りの獄神使"
+    ]
+   },
+   "own_turn3_end": null,
+   "game_over": {
+    "step": 265,
+    "reward": -8.0,
+    "acting_player": 1,
+    "winner": 0,
+    "turn": 3
+   },
+   "reason": "game_over",
+   "visible": 0,
+   "lua": 0
+  },
+  "S2-D1R0": {
+   "source": "new",
+   "record_sha256": "fc4ecb24809de26824eead2ebde5419b4ea55d8e0d5d3ebc1b1b205196a255a6",
+   "observations_sha256": "3b0b06a08beeae7492173107b8e9b2cbfee216b8fa68f2fac6725152caf239a1",
+   "replay": {
+    "mismatch": null,
+    "failure": null,
+    "final_equal": null,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true,
+    "reproduced_steps": 266,
+    "of": 266
+   },
+   "turn1_vs_old": {
+    "rows": 132,
+    "old_rows": 132,
+    "rows_identical": true,
+    "own_observations": 102,
+    "observations_identical": true
+   },
+   "interventions": [
+    {
+     "rule": "D1",
+     "step": 133,
+     "message": "select_chain",
+     "model_choice": "乙女②",
+     "executed": "Cancel",
+     "forced": false,
+     "model_agrees": false
+    }
+   ],
+   "draw_phase_own": [],
+   "standby_phase_own": [
+    {
+     "step": 135,
+     "phase": 2,
+     "action": "乙女②",
+     "who": "model"
+    },
+    {
+     "step": 143,
+     "phase": 2,
+     "action": "神芸なる知恵の乙女:e221",
+     "who": "model"
+    },
+    {
+     "step": 145,
+     "phase": 2,
+     "action": "乙女②",
+     "who": "model"
+    },
+    {
+     "step": 156,
+     "phase": 2,
+     "action": "覚醒①",
+     "who": "model"
+    }
+   ],
+   "at_opp_draw_phase_end": {
+    "lp": [
+     8000,
+     8000
+    ],
+    "monsters": [
+     "神芸獄徒 ディアクトロス",
+     "無垢なる祈りの獄神使",
+     "神芸学徒 ファインメルト",
+     "神芸なる知恵の乙女",
+     "神芸学徒 リテラ",
+     "無垢なる者 メディウス"
+    ],
+    "spell_trap": [
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "アルトメギア・メセナ－覚醒－",
+     "アルトメギア・インパスト－奪還－",
+     "神芸学都アルトメギア"
+    ],
+    "hand": [
+     "増殖するＧ",
+     "幽鬼うさぎ"
+    ],
+    "graveyard": [
+     "無限泡影",
+     "アルトメギアの獄神獣",
+     "神芸学徒 グラフレア",
+     "アルトメギア・バーニッシュ－改変－",
+     "聖王の粉砕"
+    ],
+    "banished": [
+     "予幻なき日々のまぼろし"
+    ],
+    "opponent_monsters": [],
+    "opponent_graveyard": []
+   },
+   "medius_window": {
+    "step": 169,
+    "board": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "創獄神ネルヴァ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "アルトメギア・インパスト－奪還－",
+      "アルトメギア・バーニッシュ－改変－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "増殖するＧ",
+      "幽鬼うさぎ"
+     ],
+     "graveyard": [
+      "無限泡影",
+      "アルトメギア・メセナ－覚醒－",
+      "アルトメギアの獄神獣",
+      "神芸獄徒 ディアクトロス",
+      "神芸学徒 ファインメルト",
+      "神芸学徒 グラフレア",
+      "アルトメギア・バーニッシュ－改変－",
+      "神芸なる知恵の乙女",
+      "神芸なる知恵の乙女",
+      "聖王の粉砕",
+      "神芸学徒 リテラ"
+     ],
+     "banished": [
+      "予幻なき日々のまぼろし"
+     ],
+     "opponent_monsters": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_graveyard": []
+    },
+    "candidates": [
+     "幽鬼うさぎ",
+     "奪還①",
+     "獄神使②",
+     "ファインメルト③",
+     "増殖するG"
+    ],
+    "executed": "ファインメルト③",
+    "who": "model"
+   },
+   "medius_chain_responses": [
+    {
+     "step": 169,
+     "effect": "ファインメルト③",
+     "who": "model"
+    }
+   ],
+   "after_medius_chain": {
+    "step": 172,
+    "beast_arrived": false,
+    "medius_on_field": true,
+    "board": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "創獄神ネルヴァ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "アルトメギア・インパスト－奪還－",
+      "アルトメギア・バーニッシュ－改変－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "増殖するＧ",
+      "幽鬼うさぎ"
+     ],
+     "graveyard": [
+      "無限泡影",
+      "アルトメギア・メセナ－覚醒－",
+      "アルトメギアの獄神獣",
+      "神芸獄徒 ディアクトロス",
+      "神芸学徒 ファインメルト",
+      "神芸学徒 グラフレア",
+      "アルトメギア・バーニッシュ－改変－",
+      "神芸なる知恵の乙女",
+      "神芸なる知恵の乙女",
+      "聖王の粉砕",
+      "神芸学徒 リテラ"
+     ],
+     "banished": [
+      "予幻なき日々のまぼろし"
+     ],
+     "opponent_monsters": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_graveyard": []
+    }
+   },
+   "medius_status_after_chain": {
+    "step": 172,
+    "zone": 0,
+    "status_disabled_or_forbidden": 1
+   },
+   "opp_turn2_end": {
+    "lp": [
+     8000,
+     8000
+    ],
+    "monsters": [
+     "無垢なる祈りの獄神使",
+     "神芸学徒 ファインメルト",
+     "創獄神ネルヴァ",
+     "無垢なる者 メディウス"
+    ],
+    "spell_trap": [
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "アルトメギア・インパスト－奪還－",
+     "アルトメギア・バーニッシュ－改変－",
+     "神芸学都アルトメギア"
+    ],
+    "hand": [
+     "増殖するＧ",
+     "幽鬼うさぎ"
+    ],
+    "graveyard": [
+     "無限泡影",
+     "アルトメギア・メセナ－覚醒－",
+     "アルトメギアの獄神獣",
+     "神芸獄徒 ディアクトロス",
+     "神芸学徒 ファインメルト",
+     "神芸学徒 グラフレア",
+     "アルトメギア・バーニッシュ－改変－",
+     "神芸なる知恵の乙女",
+     "神芸なる知恵の乙女",
+     "聖王の粉砕",
+     "神芸学徒 リテラ"
+    ],
+    "banished": [
+     "予幻なき日々のまぼろし"
+    ],
+    "opponent_monsters": [
+     "無垢なる者 メディウス"
+    ],
+    "opponent_graveyard": []
+   },
+   "turn3": {
+    "actions": [
+     "覚醒②",
+     "アルトメギア・バーニッシュ－改変－:e10010",
+     "ファインメルト①",
+     "神芸学徒 ファインメルト:e10012",
+     "アルトメギア・ヴァンダリズム－襲撃－:e0",
+     "アルトメギア・ヴァンダリズム－襲撃－:e10011",
+     "Summon:無垢なる者 メディウス",
+     "神芸学都アルトメギア:e10010",
+     "メディウス①(誘発の確認)",
+     "0:e1152",
+     "SpSummon:神芸なる知恵の乙女",
+     "神芸なる知恵の乙女:e221",
+     "アルトメギア・ヴァンダリズム－襲撃－:e10010"
+    ],
+    "attacks": [
+     "DirectAttack:アルトメギアの獄神獣",
+     "DirectAttack:無垢なる者 メディウス",
+     "DirectAttack:神芸なる知恵の乙女",
+     "DirectAttack:創獄神ネルヴァ",
+     "DirectAttack:無垢なる祈りの獄神使"
+    ]
+   },
+   "own_turn3_end": null,
+   "game_over": {
+    "step": 265,
+    "reward": -8.0,
+    "acting_player": 1,
+    "winner": 0,
+    "turn": 3
+   },
+   "reason": "game_over",
+   "visible": 0,
+   "lua": 0
+  },
+  "S2-D1R1": {
+   "source": "new",
+   "record_sha256": "6e6093b09541671f228424f988eb5b20201b698f593af050e19a1dd7c1f3a03f",
+   "observations_sha256": "3b0b06a08beeae7492173107b8e9b2cbfee216b8fa68f2fac6725152caf239a1",
+   "replay": {
+    "mismatch": null,
+    "failure": null,
+    "final_equal": null,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true,
+    "reproduced_steps": 266,
+    "of": 266
+   },
+   "turn1_vs_old": {
+    "rows": 132,
+    "old_rows": 132,
+    "rows_identical": true,
+    "own_observations": 102,
+    "observations_identical": true
+   },
+   "interventions": [
+    {
+     "rule": "D1",
+     "step": 133,
+     "message": "select_chain",
+     "model_choice": "乙女②",
+     "executed": "Cancel",
+     "forced": false,
+     "model_agrees": false
+    },
+    {
+     "rule": "R1",
+     "step": 169,
+     "message": "select_chain",
+     "model_choice": "ファインメルト③",
+     "established": true,
+     "executed": "ファインメルト③",
+     "model_agrees": true
+    }
+   ],
+   "draw_phase_own": [],
+   "standby_phase_own": [
+    {
+     "step": 135,
+     "phase": 2,
+     "action": "乙女②",
+     "who": "model"
+    },
+    {
+     "step": 143,
+     "phase": 2,
+     "action": "神芸なる知恵の乙女:e221",
+     "who": "model"
+    },
+    {
+     "step": 145,
+     "phase": 2,
+     "action": "乙女②",
+     "who": "model"
+    },
+    {
+     "step": 156,
+     "phase": 2,
+     "action": "覚醒①",
+     "who": "model"
+    }
+   ],
+   "at_opp_draw_phase_end": {
+    "lp": [
+     8000,
+     8000
+    ],
+    "monsters": [
+     "神芸獄徒 ディアクトロス",
+     "無垢なる祈りの獄神使",
+     "神芸学徒 ファインメルト",
+     "神芸なる知恵の乙女",
+     "神芸学徒 リテラ",
+     "無垢なる者 メディウス"
+    ],
+    "spell_trap": [
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "アルトメギア・メセナ－覚醒－",
+     "アルトメギア・インパスト－奪還－",
+     "神芸学都アルトメギア"
+    ],
+    "hand": [
+     "増殖するＧ",
+     "幽鬼うさぎ"
+    ],
+    "graveyard": [
+     "無限泡影",
+     "アルトメギアの獄神獣",
+     "神芸学徒 グラフレア",
+     "アルトメギア・バーニッシュ－改変－",
+     "聖王の粉砕"
+    ],
+    "banished": [
+     "予幻なき日々のまぼろし"
+    ],
+    "opponent_monsters": [],
+    "opponent_graveyard": []
+   },
+   "medius_window": {
+    "step": 169,
+    "board": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "創獄神ネルヴァ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "アルトメギア・インパスト－奪還－",
+      "アルトメギア・バーニッシュ－改変－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "増殖するＧ",
+      "幽鬼うさぎ"
+     ],
+     "graveyard": [
+      "無限泡影",
+      "アルトメギア・メセナ－覚醒－",
+      "アルトメギアの獄神獣",
+      "神芸獄徒 ディアクトロス",
+      "神芸学徒 ファインメルト",
+      "神芸学徒 グラフレア",
+      "アルトメギア・バーニッシュ－改変－",
+      "神芸なる知恵の乙女",
+      "神芸なる知恵の乙女",
+      "聖王の粉砕",
+      "神芸学徒 リテラ"
+     ],
+     "banished": [
+      "予幻なき日々のまぼろし"
+     ],
+     "opponent_monsters": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_graveyard": []
+    },
+    "candidates": [
+     "幽鬼うさぎ",
+     "奪還①",
+     "獄神使②",
+     "ファインメルト③",
+     "増殖するG"
+    ],
+    "executed": "ファインメルト③",
+    "who": "probe-R1"
+   },
+   "medius_chain_responses": [
+    {
+     "step": 169,
+     "effect": "ファインメルト③",
+     "who": "probe-R1"
+    }
+   ],
+   "after_medius_chain": {
+    "step": 172,
+    "beast_arrived": false,
+    "medius_on_field": true,
+    "board": {
+     "lp": [
+      8000,
+      8000
+     ],
+     "monsters": [
+      "無垢なる祈りの獄神使",
+      "神芸学徒 ファインメルト",
+      "創獄神ネルヴァ",
+      "無垢なる者 メディウス"
+     ],
+     "spell_trap": [
+      "アルトメギア・ヴァンダリズム－襲撃－",
+      "アルトメギア・インパスト－奪還－",
+      "アルトメギア・バーニッシュ－改変－",
+      "神芸学都アルトメギア"
+     ],
+     "hand": [
+      "増殖するＧ",
+      "幽鬼うさぎ"
+     ],
+     "graveyard": [
+      "無限泡影",
+      "アルトメギア・メセナ－覚醒－",
+      "アルトメギアの獄神獣",
+      "神芸獄徒 ディアクトロス",
+      "神芸学徒 ファインメルト",
+      "神芸学徒 グラフレア",
+      "アルトメギア・バーニッシュ－改変－",
+      "神芸なる知恵の乙女",
+      "神芸なる知恵の乙女",
+      "聖王の粉砕",
+      "神芸学徒 リテラ"
+     ],
+     "banished": [
+      "予幻なき日々のまぼろし"
+     ],
+     "opponent_monsters": [
+      "無垢なる者 メディウス"
+     ],
+     "opponent_graveyard": []
+    }
+   },
+   "medius_status_after_chain": {
+    "step": 172,
+    "zone": 0,
+    "status_disabled_or_forbidden": 1
+   },
+   "opp_turn2_end": {
+    "lp": [
+     8000,
+     8000
+    ],
+    "monsters": [
+     "無垢なる祈りの獄神使",
+     "神芸学徒 ファインメルト",
+     "創獄神ネルヴァ",
+     "無垢なる者 メディウス"
+    ],
+    "spell_trap": [
+     "アルトメギア・ヴァンダリズム－襲撃－",
+     "アルトメギア・インパスト－奪還－",
+     "アルトメギア・バーニッシュ－改変－",
+     "神芸学都アルトメギア"
+    ],
+    "hand": [
+     "増殖するＧ",
+     "幽鬼うさぎ"
+    ],
+    "graveyard": [
+     "無限泡影",
+     "アルトメギア・メセナ－覚醒－",
+     "アルトメギアの獄神獣",
+     "神芸獄徒 ディアクトロス",
+     "神芸学徒 ファインメルト",
+     "神芸学徒 グラフレア",
+     "アルトメギア・バーニッシュ－改変－",
+     "神芸なる知恵の乙女",
+     "神芸なる知恵の乙女",
+     "聖王の粉砕",
+     "神芸学徒 リテラ"
+    ],
+    "banished": [
+     "予幻なき日々のまぼろし"
+    ],
+    "opponent_monsters": [
+     "無垢なる者 メディウス"
+    ],
+    "opponent_graveyard": []
+   },
+   "turn3": {
+    "actions": [
+     "覚醒②",
+     "アルトメギア・バーニッシュ－改変－:e10010",
+     "ファインメルト①",
+     "神芸学徒 ファインメルト:e10012",
+     "アルトメギア・ヴァンダリズム－襲撃－:e0",
+     "アルトメギア・ヴァンダリズム－襲撃－:e10011",
+     "Summon:無垢なる者 メディウス",
+     "神芸学都アルトメギア:e10010",
+     "メディウス①(誘発の確認)",
+     "0:e1152",
+     "SpSummon:神芸なる知恵の乙女",
+     "神芸なる知恵の乙女:e221",
+     "アルトメギア・ヴァンダリズム－襲撃－:e10010"
+    ],
+    "attacks": [
+     "DirectAttack:アルトメギアの獄神獣",
+     "DirectAttack:無垢なる者 メディウス",
+     "DirectAttack:神芸なる知恵の乙女",
+     "DirectAttack:創獄神ネルヴァ",
+     "DirectAttack:無垢なる祈りの獄神使"
+    ]
+   },
+   "own_turn3_end": null,
+   "game_over": {
+    "step": 265,
+    "reward": -8.0,
+    "acting_player": 1,
+    "winner": 0,
+    "turn": 3
+   },
+   "reason": "game_over",
+   "visible": 0,
+   "lua": 0
+  }
+ },
+ "code": {
+  "artmage_entry.py": "ca47f56d29431b48d60337de6dcc6ce23d524fba31cbbbdce31e6d7399b78e0f",
+  "artmage_pins.py": "10c4e053d05f44498cff77c45301a3fb5222c7598a658decc52f4539fd96bde8",
+  "artmage_teacher.py": "a126284eff7a2d7ef3c602ade0aa5f196f7ddea77333213c27a197ade21b78f3",
+  "batch_plans.py": "68d5945d80d663ba7f85b56ffbd6490a00998aaa1d5cca14663e18e6956f1123",
+  "flc_runs.py": "8af7cbae6ce9d6d8322b043326f6b78d3f819ef8758ceb0e11597488f33e840f",
+  "hb_plans.py": "8fc90ad7f704a2f141669d1075827cf3513f015989a95d472f353aaae6ab40cd",
+  "otp_launch.py": "fe08d0b880dfb70cb5acb605a69a40937ce739c8388eb3f8a3682bb52c74f851",
+  "otp_register.py": "57ed5953b3b50c8f8be95af0af4dc2d0493312d025faffbe356f059a604e7f1a",
+  "otp_reuse.py": "06d09c8000ccd23908fb4dcd54cdbcdcebda12ec87ca0c2192e19a915f6b42c9",
+  "otp_runs.py": "40d2e7bfa9e3cab0f471c76fdc88559a4ed44895497102d5b7e21116e9b2bf02",
+  "otp_summarize.py": "d035ddcd542f7e4781ab77da87dba3bdd437000edb2cd70c2c488de6f1502007"
+ }
+}

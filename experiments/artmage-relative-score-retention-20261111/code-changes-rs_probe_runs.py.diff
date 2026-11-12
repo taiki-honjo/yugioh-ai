@@ -1,0 +1,55 @@
+--- up_runs.py (259e9647)	2026-11-11 13:37:34.058441068 +0900
++++ code/rs_probe_runs.py	2026-11-11 18:23:53.020601436 +0900
+@@ -1,4 +1,5 @@
+-"""Unseen-response probe (CPU, engine; diagnosis only). Cap: 26 engine episodes in eval-runs.jsonl (failures count).
++"""Relative-score retention: probe runner (derived from the unseen-response probe's up_runs.py; ADDED the USAGI opponent mode, CAND = this
++study's candidate). Cap: 30 engine episodes in eval-runs.jsonl, shared with rs_flc_runs.py (failures count).
+ 
+   up_runs.py record NAME...   up_runs.py replay NAME...
+ NAME = <H1|H2>-<ASH|GAMMA>-<BASE|CAND>  (policy comparison) or H1-<ASH|GAMMA>-CTRL-<G|PASS> (local functional control)
+@@ -20,7 +21,7 @@
+ import sys
+ import traceback
+ 
+-ROOT = Path('/home/hatk8/projects/yugioh-ai/experiments/artmage-unseen-response-probe-20261111')
++ROOT = Path('/home/hatk8/projects/yugioh-ai/experiments/artmage-relative-score-retention-20261111')
+ CODE = ROOT / 'code'
+ sys.path.insert(0, str(CODE))
+ import artmage_teacher  # noqa: E402,F401
+@@ -36,14 +37,14 @@
+     assert Path(_m.__file__).resolve().parent == CODE, _m.__file__
+ 
+ LEDGER = ROOT / 'eval-runs.jsonl'
+-LIMIT = 26
++LIMIT = 30
+ STEP_CAP = 600
+-BASE = (ROOT / 'models/base/base.flax_model', ROOT / 'models/base/chain-head.flax_model')
+-CAND = ROOT / 'models/candidate'
++BASE = (ROOT / 'models/frozen/base.flax_model', ROOT / 'models/frozen/chain-head.flax_model')
++CAND = ROOT / 'train/candidate'
+ MEDIUS, ASH, GAMMA, DRIVER, USAGI, WARASHI, G = 97556336, 14558127, 38814750, 49036338, 59438930, 73642296, 23434538
+ OPPONENT_HAND = [ASH, GAMMA, USAGI, WARASHI, MEDIUS]
+ HANDS = {'H1': F.HP.HANDS['BV1-B-1cost'], 'H2': F.HP.HANDS['BV1-B-2cost']}
+-COMPARISON = [f'{h}-{o}-{p}' for h in ['H1', 'H2'] for o in ['ASH', 'GAMMA'] for p in ['BASE', 'CAND']]
++COMPARISON = [f'{h}-{o}-{p}' for h in ['H1', 'H2'] for o in ['ASH', 'GAMMA'] for p in ['BASE', 'CAND']] + ['H1-USAGI-BASE', 'H1-USAGI-CAND']
+ CONTROLS = [f'H1-{o}-CTRL-{c}' for o in ['ASH', 'GAMMA'] for c in ['G', 'PASS']]
+ PASS_MESSAGES = ('select_chain', 'select_effectyn', 'select_yesno')
+ 
+@@ -67,7 +68,7 @@
+ class Opponent:
+     def __init__(self, mode, v):
+         self.mode, self.v = mode, v
+-        self.code = ASH if mode == 'ASH' else GAMMA
++        self.code = {'ASH': ASH, 'GAMMA': GAMMA, 'USAGI': USAGI}[mode]
+         self.state = dict(seen_medius=False, target=None, activated=False)
+         self.events = []
+ 
+@@ -211,7 +212,7 @@
+     for n, digest in reg['code'].items():
+         if sha(CODE / n) != digest:
+             raise RuntimeError(f'registered code changed: {n}')
+-    allowed = set(COMPARISON) | set(reg.get('controls_to_run', CONTROLS))
++    allowed = set(reg['probe_to_run'])  # fixed in the registration / the latest amendment
+     for n in names:
+         if n not in allowed:
+             raise RuntimeError(f'{n} is not registered to run')

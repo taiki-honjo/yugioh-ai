@@ -1,0 +1,51 @@
+{
+  "deck": "ElfnotesKewlTune",
+  "training_result": "\\\\wsl.localhost\\Ubuntu-22.04\\home\\hatk8\\projects\\yugioh-ai\\experiments\\all-openings-bar-alternative-20261108\\run-20261108-194920\\training\\ElfnotesKewlTune\\result.json",
+  "selected_checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/all-openings-bar-alternative-20261108/run-20261108-194920/training/ElfnotesKewlTune/step-0400",
+  "base_sha256": "966cc8b1c3f0c092e824cc52dffcaf9c71f0c9373ece0fd07831d4a9df4f7cd1",
+  "head_sha256": "1aaf569daf53a4453ef2f2e450c924af014aea83b3e4f98fea2644b795b52dc8",
+  "validation_completed": 65,
+  "validation_total": 66,
+  "blind_completed": 86,
+  "blind_total": 88,
+  "report": "\\\\wsl.localhost\\Ubuntu-22.04\\home\\hatk8\\projects\\yugioh-ai\\docs\\all-openings-training-2026-11-08.md",
+  "normal_summon_usage_scored": false,
+  "scope": "Verified opening and fixed targeted interruption/recovery tests; not full-duel strength.",
+  "resource_policy": "\\\\wsl.localhost\\Ubuntu-22.04\\home\\hatk8\\projects\\yugioh-ai\\experiments\\all-openings-bar-alternative-20261108\\run-20261108-194920\\training\\resource-policy.json",
+  "training_finished": true,
+  "placement_adapter": {
+    "enabled": true,
+    "module": "center_placement",
+    "class_name": "PlacementPolicy",
+    "runtime_code_directory": "/home/hatk8/projects/yugioh-ai/evaluation/battle-position-20261108/code",
+    "report": "/home/hatk8/projects/yugioh-ai/docs/center-placement-2026-11-08.md",
+    "weights_retrained": false,
+    "new_hand_trials": 44,
+    "new_hand_passed": 44
+  },
+  "policy_loader": "/home/hatk8/projects/yugioh-ai/scripts/verified_opening_policy.py",
+  "blind_score_applies_to": "Frozen neural policy before this placement adapter; separate 88-hand test.",
+  "placement_regression": {
+    "before": 44,
+    "after": 44,
+    "total": 44,
+    "teacher_passed": 26,
+    "teacher_total": 26,
+    "weights_retrained": false
+  },
+  "battle_position_adapter": {
+    "enabled": true,
+    "module": "battle_position",
+    "class_name": "PositionPolicy",
+    "weights_retrained": false,
+    "report": "/home/hatk8/projects/yugioh-ai/docs/battle-position-2026-11-08.md",
+    "card_data_sha256": "22cc89b8cd09024f0deccc33ea569d27261012f04296e172df89ff261690eae3",
+    "regression": {
+      "before": 44,
+      "after": 44,
+      "total": 44,
+      "track_choices": 30,
+      "track_defense": 30
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "reference_candidate": "/home/hatk8/projects/yugioh-ai/experiments/opening-rehearsal-ab-20261109/a-ppo/cycles/256-seed10000777/candidate",
+  "initial": "/home/hatk8/projects/yugioh-ai/experiments/opening-rehearsal-ab-20261109/a-ppo/models/initial",
+  "variants": [
+    {
+      "variant": "interpolate-0.5",
+      "passed": 64,
+      "total": 66,
+      "lua_errors": 0,
+      "lost_case_ids": [
+        "mixed-rukina-cue-g10-p0"
+      ],
+      "new_case_ids": [],
+      "base_sha256": "bdf53b92b2af9791da74d18434234dda1c1cda511578774b7d150c3f7c0fa33e",
+      "head_sha256": "8363fbf7746aa34618e1760ad19af3b35da0ead7e4b533d6d33849f3d3627afd"
+    },
+    {
+      "variant": "random-sign-same-magnitude",
+      "passed": 65,
+      "total": 66,
+      "lua_errors": 0,
+      "lost_case_ids": [],
+      "new_case_ids": [],
+      "base_sha256": "6cf732546debc18a111970d146d218f9276d45cbc2296080738475a007b70bf7",
+      "head_sha256": "cdd4b03929c598ecb55f2ddec466f9e6f08876ee2078c97e9c2375905e027e09"
+    }
+  ],
+  "diagnostic_only": true,
+  "adopted": false,
+  "training_performed": false
+}

@@ -1,0 +1,18 @@
+{
+ "candidate": {
+  "base": "/home/hatk8/projects/yugioh-ai/experiments/artmage-rl-training-20261112/train/candidate/base.flax_model",
+  "base_sha256": "7f4ee702c09ee2d2bdf00969c7afe701a7a050b71422662802625de607c28413",
+  "head": "/home/hatk8/projects/yugioh-ai/experiments/artmage-rl-training-20261112/train/candidate/chain-head.flax_model",
+  "head_sha256": "4f099640b98c3fd6b100889c6d4e127a01853b130b6c961a67c2c1519330599a",
+  "positions_enabled": true,
+  "registry_read": false
+ },
+ "start": {
+  "base": "/home/hatk8/projects/yugioh-ai/experiments/artmage-rl-training-20261112/models/start/base.flax_model",
+  "base_sha256": "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+  "head": "/home/hatk8/projects/yugioh-ai/experiments/artmage-rl-training-20261112/models/start/chain-head.flax_model",
+  "head_sha256": "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2",
+  "positions_enabled": true,
+  "registry_read": false
+ }
+}

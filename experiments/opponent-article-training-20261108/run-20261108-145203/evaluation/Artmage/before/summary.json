@@ -1,0 +1,54 @@
+{
+  "deck": "Artmage",
+  "policy": "before",
+  "passed": 0,
+  "total": 4,
+  "cases": [
+    {
+      "case_id": "Artmage-g08-p0",
+      "passed": false,
+      "goal": {
+        "monsters": false,
+        "field_and_assault_active": false,
+        "medius_redirected": false
+      },
+      "reason": "opponent_main_phase_passed",
+      "steps": 8
+    },
+    {
+      "case_id": "Artmage-g09-p0",
+      "passed": false,
+      "goal": {
+        "monsters": false,
+        "field_and_assault_active": false,
+        "medius_redirected": false
+      },
+      "reason": "opponent_main_phase_passed",
+      "steps": 18
+    },
+    {
+      "case_id": "Artmage-g10-p0",
+      "passed": false,
+      "goal": {
+        "monsters": false,
+        "field_and_assault_active": false,
+        "medius_redirected": false
+      },
+      "reason": "opponent_main_phase_passed",
+      "steps": 8
+    },
+    {
+      "case_id": "Artmage-g11-p0",
+      "passed": false,
+      "goal": {
+        "monsters": false,
+        "field_and_assault_active": false,
+        "medius_redirected": false
+      },
+      "reason": "opponent_main_phase_passed",
+      "steps": 20
+    }
+  ],
+  "lua_errors": 0,
+  "scope": "Four unseen initial hand multisets for the single trained opening; not all possible hands, disruption lines or win rate."
+}

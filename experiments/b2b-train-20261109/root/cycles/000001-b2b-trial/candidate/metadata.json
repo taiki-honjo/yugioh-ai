@@ -1,0 +1,9 @@
+{
+  "source_checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/adoption-d16384-20261109/model",
+  "base_sha256": "2227eff9d15a2a243d0463a580ddc119d660069e3a5c6ebf8a8176db835bcbb6",
+  "head_sha256": "52b3df744a7b0aead7e161abaf3a4b59ad539cc70c54a6d5d264772186819c98",
+  "adapters_enabled": true,
+  "normal_summon_usage_scored": false,
+  "source_bundle": "/home/hatk8/projects/yugioh-ai/experiments/b2b-train-20261109/root/models/initial",
+  "combined_checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/b2b-train-20261109/root/cycles/000001-b2b-trial/checkpoints/1794279535_4096steps.flax_model"
+}

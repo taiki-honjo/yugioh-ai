@@ -1,0 +1,33 @@
+--- registered/hb_plans.py
++++ amended/hb_plans.py
+@@ -23,6 +23,7 @@
+ INFINITE, FUNSAI, SANSEN = BP.INFINITE, BP.FUNSAI, BP.SANSEN
+ ASH, G, WARASHI, USAGI, DRIVER, GAMMA = BP.ASH, BP.G, BP.WARASHI, BP.USAGI, BP.DRIVER, BP.GAMMA
+ COST_CARDS = {INFINITE, FUNSAI, SANSEN}
++SELECT_CARD = 3  # message type of select_card in the observation (feature 3 of the action rows)
+ COST_ORDER = [INFINITE, SANSEN, FUNSAI]  # teacher only: which cost to discard first when two different ones are held
+ 
+ OLD_ROUTE = [
+@@ -94,7 +95,7 @@
+ 
+ def branch_steps(seq, ids):
+     """Steps of the two decisions under study, from the raw observation (audit/diagnostics only, never a model input).
+-    A: a selection offering both ネルヴェド and 獄神獣 (the Medius① choice). B: a selection offering 改変 and 襲撃
++    Only select_card prompts (amendment 1). A: a selection offering both ネルヴェド and 獄神獣 (the Medius① choice). B: a selection offering 改変 and 襲撃
+     with no trap among the options (Graphrea sets a spell; 獄神獣③ and Maiden① also offer traps)."""
+     import numpy as np
+     out = []
+@@ -103,9 +104,11 @@
+         valid = np.where(rows[:, 3] != 0)[0]
+         offered = {ids.get(int(rows[i, 1]) * 256 + int(rows[i, 2]), 0) for i in valid}
+         chosen = ids.get(int(rows[int(seq['labels'][t]), 1]) * 256 + int(rows[int(seq['labels'][t]), 2]), 0)
+-        if {NERVED, BEAST} <= offered and chosen in (NERVED, BEAST) and seq['message'][t] != 11:
++        if seq['message'][t] != SELECT_CARD:
++            continue
++        if {NERVED, BEAST} <= offered and chosen in (NERVED, BEAST):
+             out.append(dict(step=t, branch='A: Medius①', label=chosen))
+-        if {VARNISH, ASSAULT} <= offered and not offered & {AWAKENING, BP.IMPASTO} and chosen in (VARNISH, ASSAULT) and seq['message'][t] != 11:
++        if {VARNISH, ASSAULT} <= offered and not offered & {AWAKENING, BP.IMPASTO} and chosen in (VARNISH, ASSAULT):
+             out.append(dict(step=t, branch='B: Graphrea set', label=chosen))
+     return out
+ 

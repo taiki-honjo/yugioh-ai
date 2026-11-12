@@ -1,0 +1,32 @@
+{
+  "format": 2,
+  "arm": "d-lr1.5e-5-l5",
+  "steps": 4096,
+  "training_seed": 10001109,
+  "battle_episodes": 0,
+  "battle_seed": 0,
+  "battle_opponent": "models/initial",
+  "learning_rate": 1.5e-05,
+  "save_interval_updates": 8,
+  "keep_all_checkpoints": true,
+  "arm_config_sha256": "5e8a6d7a7d529b30d81bc25f7401fe8dc026728e57e84d555028029a499a901b",
+  "initial_base_sha256": "966cc8b1c3f0c092e824cc52dffcaf9c71f0c9373ece0fd07831d4a9df4f7cd1",
+  "initial_head_sha256": "1aaf569daf53a4453ef2f2e450c924af014aea83b3e4f98fea2644b795b52dc8",
+  "rehearsal": {
+    "enabled": true,
+    "split": "train",
+    "lambda_bc": 5.0,
+    "lambda_kl": 0.0,
+    "sequences_per_minibatch": 2,
+    "seed": 20261109,
+    "sha256": "0ef4700c92ddb6f26c3e3f5dc04d4893d2cb02c096304af0bbdc546f8070e4da"
+  },
+  "snapshot_hashes_sha256": "8b32dc399f6b1336a657757e75ab7b393a7e6f9608ded3bb95bf87386e0515f5",
+  "evaluation_version": "opening-eval-v1: validation 66 free-run openings; every baseline-passing case_id must stay passing",
+  "code": {
+    "scripts/continuous_learning.py": "27ebfb29049bf8f9b146fbb823dc3a599fea59c46a758efc2ea07f2dc9d6da2a",
+    "scripts/continuous_opening_backend.py": "17715b93f1976f2b7fd424a4a0a80668278f35e7a3fa714401570d915dadf0e3",
+    "scripts/opening_rehearsal.py": "6aba1a3da68bfe5921e8e5bfc8146b6ba0273467a4dacd07209d579e7d760f56",
+    "runner_result_functions": "f94ca30dd8b7a84818a4602f57de84c6130e7a88c847ce40788323593d7e39ea"
+  }
+}

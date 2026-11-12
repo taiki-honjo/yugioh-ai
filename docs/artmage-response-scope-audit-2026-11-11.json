@@ -1,0 +1,122 @@
+{
+  "method": "JSON/NPZ read only; no model/engine import or duel execution",
+  "candidate_gate": "actions_[first_action,3] == 2 (select_chain), chain length > 0, relative chain role == 2 (opponent)",
+  "retention_trace_check": "Public snapshots only: no qualifying own decision in these 13 saved trajectories.",
+  "limits": [
+    "These 13 cases do not test behavior when the proposed adapter is active.",
+    "No inference about unseen opponent effects or broader ability retention follows.",
+    "Identical decisions outside the gate require the same input/history, frozen inference, and backend."
+  ],
+  "retention": [
+    {
+      "case": "Artmage-g06-p0",
+      "own_decisions": 80,
+      "gated_steps": []
+    },
+    {
+      "case": "Artmage-g07-p0",
+      "own_decisions": 79,
+      "gated_steps": []
+    },
+    {
+      "case": "Artmage-g08-p0",
+      "own_decisions": 83,
+      "gated_steps": []
+    },
+    {
+      "case": "Artmage-g09-p0",
+      "own_decisions": 100,
+      "gated_steps": []
+    },
+    {
+      "case": "Artmage-g10-p0",
+      "own_decisions": 83,
+      "gated_steps": []
+    },
+    {
+      "case": "Artmage-g11-p0",
+      "own_decisions": 100,
+      "gated_steps": []
+    },
+    {
+      "case": "F0-V",
+      "own_decisions": 207,
+      "gated_steps": []
+    },
+    {
+      "case": "F1-V",
+      "own_decisions": 123,
+      "gated_steps": []
+    },
+    {
+      "case": "F2-V",
+      "own_decisions": 107,
+      "gated_steps": []
+    },
+    {
+      "case": "F3-V",
+      "own_decisions": 75,
+      "gated_steps": []
+    },
+    {
+      "case": "F4-V",
+      "own_decisions": 115,
+      "gated_steps": []
+    },
+    {
+      "case": "F5-V",
+      "own_decisions": 90,
+      "gated_steps": []
+    },
+    {
+      "case": "F6-V",
+      "own_decisions": 162,
+      "gated_steps": []
+    }
+  ],
+  "response_targets": [
+    {
+      "site": "S1",
+      "step": 149,
+      "message_feature": 2,
+      "chain": [
+        1,
+        2,
+        43,
+        0
+      ],
+      "gate": true
+    },
+    {
+      "site": "S2",
+      "step": 169,
+      "message_feature": 2,
+      "chain": [
+        1,
+        2,
+        43,
+        0
+      ],
+      "gate": true
+    }
+  ],
+  "input_sha256": {
+    "experiments/artmage-hand-branch-20261110/eval/retain/candidate/Artmage-g06-p0.json": "0f4724dec7d296734be5eefc14042bfb99fed9b41f031d120ae723180f8a847b",
+    "experiments/artmage-hand-branch-20261110/eval/retain/candidate/Artmage-g07-p0.json": "28cf055806fc8ea8e9481044d1ff7922dc736be9593e0d4b437eddd6430ec227",
+    "experiments/artmage-hand-branch-20261110/eval/retain/candidate/Artmage-g08-p0.json": "743e482045be82bc2fff8da0c26fc80fe4ea58af1d1adc9b9272d72e9dd71b76",
+    "experiments/artmage-hand-branch-20261110/eval/retain/candidate/Artmage-g09-p0.json": "085a0381eb04df2cf399eae5b2fbf7f0440ee7e6807a59e24c924513e1fc71a4",
+    "experiments/artmage-hand-branch-20261110/eval/retain/candidate/Artmage-g10-p0.json": "d731fa7c83caa64e0a6919091cbbce0642a3e3f9b4c5e946baccd7f52c4c0cca",
+    "experiments/artmage-hand-branch-20261110/eval/retain/candidate/Artmage-g11-p0.json": "9fe35e66a76af417608c71e149800ac144e589ff635970719a1c295e84ff8fcb",
+    "experiments/artmage-hand-branch-20261110/eval/retain/candidate/F0-V.json": "f40a535cc001e53047058c105a974e6873381e0e7843cf715a50d484ad8dd757",
+    "experiments/artmage-hand-branch-20261110/eval/retain/candidate/F1-V.json": "7f1ca8865a112a6c3f329ad7e0943dc0a72cd656d32999dfe5e29039a329acc6",
+    "experiments/artmage-hand-branch-20261110/eval/retain/candidate/F2-V.json": "d8853e3e8ba19de0df01ae9409dcae12b78fee7badaf95d9bcf5a7cc3d77f4a9",
+    "experiments/artmage-hand-branch-20261110/eval/retain/candidate/F3-V.json": "3cbc51643f26b551be36e8e413b5d260b00169233c58d4499dff5ea24d914b4f",
+    "experiments/artmage-hand-branch-20261110/eval/retain/candidate/F4-V.json": "16743aed10318b371425cf7cec09cdda9b37c6dc0edc435a9691396d96fe8006",
+    "experiments/artmage-hand-branch-20261110/eval/retain/candidate/F5-V.json": "885f2e30e2ce4d1e410e9abf46ad3df6329853c8d1b75bd2a96909f834c14d76",
+    "experiments/artmage-hand-branch-20261110/eval/retain/candidate/F6-V.json": "d5466fb9a12ba696775c74559e512029a078b6fcde4490fe1e9fa1381f45ceb9",
+    "experiments/artmage-opponent-turn-probe-20261111/runs/S1-D0R1/record.json": "8b5dd7fd917c3dc5dce717debd141ee55035d8f03d0e5e6ee4798ea876c9faef",
+    "experiments/artmage-opponent-turn-probe-20261111/runs/S1-D0R1/observations.npz": "429115c378b6e4fa4e1dd675997b66d5fbb4fd47846c094a2f0a20d17905a49d",
+    "experiments/artmage-functional-landing-compare-20261110/runs/BV1-2cost-ASSAULT-OM/record.json": "f037e719b37e4c4ab776c7d24c8c11f1a57483e72319d8bcc095c30b7768cbcc",
+    "experiments/artmage-functional-landing-compare-20261110/runs/BV1-2cost-ASSAULT-OM/observations.npz": "2184e73c81aea1de5867d6cfcf45cdf3f45d42e223be3eb421976951fa37a58d"
+  }
+}

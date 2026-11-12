@@ -1,0 +1,35 @@
+{
+  "format": 3,
+  "arm": "d-lr1.5e-5-l5",
+  "steps": 12288,
+  "training_seed": 10016384,
+  "battle_episodes": 0,
+  "battle_seed": 0,
+  "battle_opponent": "models/initial",
+  "learning_rate": 1.5e-05,
+  "save_interval_updates": 32,
+  "keep_all_checkpoints": true,
+  "arm_config_sha256": "df34335d8afeea80e8d502f5bb6e328048344f795274780a8b8d3da208f262b4",
+  "initial_base_sha256": "966cc8b1c3f0c092e824cc52dffcaf9c71f0c9373ece0fd07831d4a9df4f7cd1",
+  "initial_head_sha256": "1aaf569daf53a4453ef2f2e450c924af014aea83b3e4f98fea2644b795b52dc8",
+  "start_base_sha256": "3037699856ede9ef9ddd7a267fdc395bd7b3787a53555f54e75c96aa4b00d4f0",
+  "start_head_sha256": "6ef16c2ee26d4259bc6ffb0ae6435f3cdef62359278312cc86a2db462648c71b",
+  "start_cumulative_decisions": 4096,
+  "rehearsal": {
+    "enabled": true,
+    "split": "train",
+    "lambda_bc": 5.0,
+    "lambda_kl": 0.0,
+    "sequences_per_minibatch": 2,
+    "seed": 20261109,
+    "sha256": "0ef4700c92ddb6f26c3e3f5dc04d4893d2cb02c096304af0bbdc546f8070e4da"
+  },
+  "snapshot_hashes_sha256": "fa9c1838480bec02550088c20f30a7223d965ee1e7a2b7b79279e02a14f822cb",
+  "evaluation_version": "opening-eval-v1: validation 66 free-run openings; every baseline-passing case_id must stay passing",
+  "code": {
+    "scripts/continuous_learning.py": "27ebfb29049bf8f9b146fbb823dc3a599fea59c46a758efc2ea07f2dc9d6da2a",
+    "scripts/continuous_opening_backend.py": "17715b93f1976f2b7fd424a4a0a80668278f35e7a3fa714401570d915dadf0e3",
+    "scripts/opening_rehearsal.py": "6aba1a3da68bfe5921e8e5bfc8146b6ba0273467a4dacd07209d579e7d760f56",
+    "runner_result_functions": "f94ca30dd8b7a84818a4602f57de84c6130e7a88c847ce40788323593d7e39ea"
+  }
+}

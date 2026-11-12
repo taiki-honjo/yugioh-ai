@@ -1,0 +1,15 @@
+{
+ "name": "B-BV1-2cost-VARNISH-OI",
+ "engine_run": 14,
+ "replayed_engine_run": 6,
+ "mismatch": null,
+ "failure": null,
+ "reproduced_steps": 146,
+ "of": 146,
+ "reason": "own_turn3_end",
+ "final_equal": true,
+ "checkpoints_equal": true,
+ "game_over_equal": true,
+ "observations_match": true,
+ "lua_errors": 0
+}

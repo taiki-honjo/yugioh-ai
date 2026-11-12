@@ -1,0 +1,2 @@
+- [Production stopped; protect it](production-stopped-protect.md) — resident learning ordered stopped; experiments only in isolated roots, fingerprint check
+- [Opening rehearsal stage A result](opening-rehearsal-stage-a-result.md) — 2026-11-09 A/B: rehearsal reduced but did not prevent opening loss; PPO direction is the cause; adapter bug

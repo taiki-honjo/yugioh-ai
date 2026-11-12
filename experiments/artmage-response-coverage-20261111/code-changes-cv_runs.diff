@@ -1,0 +1,43 @@
+--- scoped-adapter code/sa_runs.py (906af2a7)	2026-11-11 13:00:24.661703606 +0900
++++ code/cv_runs.py	2026-11-11 13:00:44.645281108 +0900
+@@ -1,4 +1,5 @@
+-"""Engine evaluation of the scoped response adapter candidate (CPU; derived from the response study's rl_runs.py). Cap: 28 engine episodes in eval-runs.jsonl (failures count).
++"""Engine evaluation of the response-coverage candidate (CPU; derived from the scoped study's sa_runs.py). Cap: 18 engine episodes in eval-runs.jsonl (failures count).
++Only b-record / b-replay of the 8 functional-comparison conditions are registered in this study (A is referenced from B, C is reused).
+ 
+   rl_runs.py a-record S1|S2 ...      A: replay the old D0R0 path (functional comparison record) BY MEANING up to the first
+                                       own Medius① window, the candidate reading every observation once; from the window the
+@@ -19,7 +20,7 @@
+ import sys
+ import traceback
+ 
+-ROOT = Path('/home/hatk8/projects/yugioh-ai/experiments/artmage-scoped-response-adapter-20261111')
++ROOT = Path('/home/hatk8/projects/yugioh-ai/experiments/artmage-response-coverage-20261111')
+ CODE = ROOT / 'code'
+ sys.path.insert(0, str(CODE))
+ import artmage_teacher  # noqa: E402,F401  (cached from THIS root before the frozen modules insert their own roots)
+@@ -39,10 +40,11 @@
+ 
+ FLC = Path('/home/hatk8/projects/yugioh-ai/experiments/artmage-functional-landing-compare-20261110')
+ LEDGER = ROOT / 'eval-runs.jsonl'
+-LIMIT = 28
++LIMIT = 18
+ STEP_CAP = F.STEP_CAP
+ A_SITES = {'S1': ('BV1-1cost-VARNISH-OM', 149), 'S2': ('BV1-2cost-ASSAULT-OM', 169)}
+-B_NAMES = ['BV1-1cost-VARNISH-OM', 'BV1-2cost-ASSAULT-OM', 'BV1-1cost-ASSAULT-OM', 'BV1-2cost-VARNISH-OM']
++B_NAMES = ['BV1-1cost-VARNISH-OM', 'BV1-1cost-VARNISH-OI', 'BV1-1cost-ASSAULT-OM', 'BV1-1cost-ASSAULT-OI',
++           'BV1-2cost-VARNISH-OM', 'BV1-2cost-VARNISH-OI', 'BV1-2cost-ASSAULT-OM', 'BV1-2cost-ASSAULT-OI']
+ C_NAMES = [f'Artmage-g{i:02d}-p0' for i in range(6, 12)] + [f'F{i}-V' for i in range(7)]
+ MEDIUS = F.MEDIUS
+ 
+@@ -184,7 +186,9 @@
+     for n, digest in reg['code'].items():
+         if sha(CODE / n) != digest:
+             raise RuntimeError(f'registered code changed: {n}')
+-    allowed = {'a-record': A_SITES, 'a-replay': A_SITES, 'b-record': B_NAMES, 'b-replay': B_NAMES, 'retain': C_NAMES}[command]
++    if command not in ('b-record', 'b-replay'):
++        raise RuntimeError(f'{command} is not registered in this study (A is referenced from B, C is reused without new runs)')
++    allowed = B_NAMES
+     for n in names:
+         if n not in allowed:
+             raise RuntimeError(f'{n} is not registered for {command}')

@@ -1,0 +1,14 @@
+--- experiments/initial-reference-fix-20261109/source-before/scripts/continuous_learning.py	2026-11-09 01:37:19.528025200 +0900
++++ scripts/continuous_learning.py	2026-11-09 19:50:34.623558967 +0900
+@@ -371,7 +371,10 @@
+                     promoted=False, evidence=str(result_path))
+     if regression is not None:decision['opening_regression']=regression
+     reference_path = directory / ('reference-' + uuid.uuid4().hex[:8] + '.json')
+-    command[command.index('--opponent') + 1] = str(Path(cfg['root']) / 'models/initial.flax_model')
++    # Reference = the root's initial model. verified_opening keeps it as a base + chain-head directory
++    # (evaluate_job appends base.flax_model to it); the single-model backend keeps one file.
++    reference_name = 'initial' if cfg.get('backend') == 'verified_opening' else 'initial.flax_model'
++    command[command.index('--opponent') + 1] = str(Path(cfg['root']) / 'models' / reference_name)
+     command[command.index('--episodes') + 1] = str(cfg['reference_episodes'])
+     command[command.index('--result') + 1] = str(reference_path)
+     save_state(cfg, state, phase='reference_evaluation')

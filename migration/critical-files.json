@@ -1,0 +1,93 @@
+{
+  "date_jst": "2026-11-12",
+  "files": {
+    "experiments/adoption-d16384-20261109/model/base.flax_model": {
+      "sha256": "86b4358dcfec696cb4b3cc4c19781c34292b2509bf037b9e4f44d9ed8ec59d1c",
+      "bytes": 17377889
+    },
+    "experiments/adoption-d16384-20261109/model/chain-head.flax_model": {
+      "sha256": "6ca3221f1828eecc5cea817003c8df5e8802b75fabef0f4aa33105ad0f979fce",
+      "bytes": 76500
+    },
+    "experiments/artmage-hand-branch-20261110/train/candidate/base.flax_model": {
+      "sha256": "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+      "bytes": 17377889
+    },
+    "experiments/artmage-hand-branch-20261110/train/candidate/chain-head.flax_model": {
+      "sha256": "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2",
+      "bytes": 76500
+    },
+    "experiments/artmage-parallel-20261110/models/initial/base.flax_model": {
+      "sha256": "12500c7724b2d723983a2963a960d75172a6df51fb55ea4f3acf102eeb34132e",
+      "bytes": 17377889
+    },
+    "experiments/artmage-parallel-20261110/models/initial/chain-head.flax_model": {
+      "sha256": "0bc7534cab102cd87586e5d22bd4ad0cd3b55d52d08e284146976506ae6193fc",
+      "bytes": 76500
+    },
+    "experiments/artmage-rl-training-20261112/models/start/base.flax_model": {
+      "sha256": "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+      "bytes": 17377889
+    },
+    "experiments/artmage-rl-training-20261112/models/start/chain-head.flax_model": {
+      "sha256": "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2",
+      "bytes": 76500
+    },
+    "experiments/artmage-rl-training-20261112/train/candidate/base.flax_model": {
+      "sha256": "7f4ee702c09ee2d2bdf00969c7afe701a7a050b71422662802625de607c28413",
+      "bytes": 17377889
+    },
+    "experiments/artmage-rl-training-20261112/train/candidate/chain-head.flax_model": {
+      "sha256": "4f099640b98c3fd6b100889c6d4e127a01853b130b6c961a67c2c1519330599a",
+      "bytes": 76500
+    },
+    "experiments/artmage-rl-training-20261112/train/stopped-state/base.flax_model": {
+      "sha256": "7f4ee702c09ee2d2bdf00969c7afe701a7a050b71422662802625de607c28413",
+      "bytes": 17377889
+    },
+    "experiments/artmage-rl-training-20261112/train/stopped-state/chain-head.flax_model": {
+      "sha256": "4f099640b98c3fd6b100889c6d4e127a01853b130b6c961a67c2c1519330599a",
+      "bytes": 76500
+    },
+    "experiments/continuous-elfnotes-openings-d16384-rehearsal-ready-20261109/cycles/000005-715e84c3/candidate/base.flax_model": {
+      "sha256": "b6aaa42545ac76688daeaf337e697e8f99d55cf6d4511a1d59ff1321e4285068",
+      "bytes": 17377889
+    },
+    "experiments/continuous-elfnotes-openings-d16384-rehearsal-ready-20261109/cycles/000005-715e84c3/candidate/chain-head.flax_model": {
+      "sha256": "3b11d78924e27f388788c6bdd1cd3c81bf7783b3c119794999e9760e7afaa469",
+      "bytes": 76500
+    },
+    "experiments/continuous-elfnotes-openings-d16384-rehearsal-ready-20261109/models/initial/base.flax_model": {
+      "sha256": "86b4358dcfec696cb4b3cc4c19781c34292b2509bf037b9e4f44d9ed8ec59d1c",
+      "bytes": 17377889
+    },
+    "experiments/continuous-elfnotes-openings-d16384-rehearsal-ready-20261109/models/initial/chain-head.flax_model": {
+      "sha256": "6ca3221f1828eecc5cea817003c8df5e8802b75fabef0f4aa33105ad0f979fce",
+      "bytes": 76500
+    },
+    "evaluation/opponent-article-basics-20261108/runtime/agent/ygoenv/ygoenv/ygopro/ygopro_ygoenv.cpython-310-x86_64-linux-gnu.so": {
+      "sha256": "19a60f38a3d39b61a2ee082168d5a788a1022b2eb569633816596c8b3de21294",
+      "bytes": 2561720
+    },
+    "evaluation/opponent-article-basics-20261108/runtime/agent/assets/locale/en/cards.cdb": {
+      "sha256": "7f57ae28bb1d0b5987c8159c193c18ff820b1119a513949b1bf3cb5aa36234ef",
+      "bytes": 8076288
+    },
+    "evaluation/opponent-article-basics-20261108/runtime/agent/assets/locale/ja/cards.cdb": {
+      "sha256": "103c8455d379a81d7ed35986434096fe8f9eb5cb3a1c3b9c6f1e9f0aa67d0c74",
+      "bytes": 11860992
+    },
+    "experiments/elfnotes-20261106/runtime/agent/ygoenv/ygoenv/ygopro/ygopro_ygoenv.cpython-310-x86_64-linux-gnu.so": {
+      "sha256": "57aa077f335c5c3e3cee7a91a58b03806ce4b6f439cbbbc7179db650b1867f2c",
+      "bytes": 2517824
+    },
+    "experiments/elfnotes-20261106/runtime/agent/assets/locale/en/cards.cdb": {
+      "sha256": "7f57ae28bb1d0b5987c8159c193c18ff820b1119a513949b1bf3cb5aa36234ef",
+      "bytes": 8076288
+    },
+    "experiments/elfnotes-20261106/runtime/agent/assets/locale/ja/cards.cdb": {
+      "sha256": "103c8455d379a81d7ed35986434096fe8f9eb5cb3a1c3b9c6f1e9f0aa67d0c74",
+      "bytes": 11860992
+    }
+  }
+}

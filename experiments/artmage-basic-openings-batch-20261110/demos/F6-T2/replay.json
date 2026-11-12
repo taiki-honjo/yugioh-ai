@@ -1,0 +1,15 @@
+{
+ "name": "F6-T2",
+ "engine_run": 26,
+ "replayed_engine_run": 20,
+ "mismatch": null,
+ "failure": null,
+ "reproduced_steps": 105,
+ "of": 105,
+ "reason": "reached_turn3",
+ "final_equal": true,
+ "checkpoints_equal": true,
+ "observations_match": true,
+ "lua_errors": 0,
+ "disclosed": []
+}

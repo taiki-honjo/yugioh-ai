@@ -1,0 +1,100 @@
+{
+  "articles": {
+    "d-new": {
+      "title": "プリクル禁止後の烙印ドラゴンテイルを考える",
+      "author": "ガラスボー",
+      "date": "2026-11-01",
+      "url": "https://note.com/garasubo/n/n433a118d1d32",
+      "kind": "firsthand proposed routes"
+    },
+    "d-basics": {
+      "title": "烙印ドラゴンテイル 私的メモ",
+      "author": "ゆきわらし",
+      "date": "2026-08-23",
+      "url": "https://note.com/yukiwara8705/n/na7c3aa26103f",
+      "kind": "firsthand opening notes; old recipe needs filtering"
+    },
+    "d-guide": {
+      "title": "MD版 烙印ドラゴンテイル 初心者向け解説",
+      "author": "ヒマワリ",
+      "date": "2026-09-15",
+      "url": "https://note.com/himahitoken/n/n99a9dc9bcf48",
+      "kind": "firsthand guide; includes old Prickle lines"
+    },
+    "s-basic": {
+      "title": "遊戯王初心者、駆け出し、復帰勢向け閃刀姫解説",
+      "author": "taati",
+      "date": "2026-09-27",
+      "url": "https://note.com/gapdgapd0/n/nd00742694c74",
+      "kind": "firsthand MD guide"
+    },
+    "s-routes": {
+      "title": "閃刀姫ゼロ、閃刀亜式レムニスゲート登場後各初動展開",
+      "author": "柳屋おきな",
+      "date": "2025-03-27",
+      "url": "https://note.com/yanagiya_okina/n/ne810e358f690",
+      "kind": "firsthand route catalogue; includes non-selected cards"
+    },
+    "s-kenran": {
+      "title": "最新 閃刀姫 デッキレシピと展開例",
+      "author": "gattya",
+      "date": "2026-05-11",
+      "url": "https://gachi-matome.com/p-yg-topics-sentouki-20260511/",
+      "kind": "author-written Kenran opening example; OCG sideboard is not adopted"
+    }
+  },
+  "official_rules": [
+    {
+      "id": "white",
+      "url": "https://www.db.yugioh-card.com/yugiohdb/faq_search.action?cid=22127&ope=4&request_locale=ja",
+      "rule": "白き竜①の処理以降はEXからレベル8の融合・Sのみ。先に出した別種類のEXモンスターには遡らない。グラメルはレベル7なので①の処理後にEXから出す手順には使えない。通常召喚等で②だけ使う場合と区別。"
+    },
+    {
+      "id": "mururu",
+      "url": "https://www.db.yugioh-card.com/yugiohdb/faq_search.action?cid=21358&ope=4&request_locale=ja",
+      "rule": "ムルル①の処理以降はEXから融合のみ。先に行ったS/L召喚には遡らない。融合素材になった際の②とは制約を混同しない。"
+    },
+    {
+      "id": "rahu",
+      "url": "https://www.db.yugioh-card.com/yugiohdb/card_search.action?cid=21362&ope=2&request_locale=ja",
+      "rule": "羅睺星辰の発動後はEXから融合のみ。アナコンダを作るなら発動前。"
+    },
+    {
+      "id": "branded",
+      "url": "https://www.db.yugioh-card.com/yugiohdb/card_search.action?cid=17066&ope=2&request_locale=ja",
+      "rule": "烙印融合のカードの発動は、そのターン全体でEXから融合のみ。黒エクレシアのS召喚との同ターン併用は不可。"
+    },
+    {
+      "id": "anaconda",
+      "url": "https://www.db.yugioh-card.com/yugiohdb/faq_search.action?fid=23468&ope=5&request_locale=ja",
+      "rule": "アナコンダが烙印融合の発動時処理をコピーする場合はカードの発動条件と別。コピー後は以降の特殊召喚不可なので最後に使う。"
+    },
+    {
+      "id": "nadir",
+      "url": "https://www.db.yugioh-card.com/yugiohdb/card_search.action?cid=15286&ope=2&request_locale=ja",
+      "rule": "天底の発動後はEXから特殊召喚不可。採用レシピには教導の聖女エクレシア・クエムはない。白の聖女エクレシアと取り違えない。"
+    },
+    {
+      "id": "kings",
+      "url": "https://www.db.yugioh-card.com/yugiohdb/card_search.action?cid=16541&ope=2&request_locale=ja",
+      "rule": "気炎は見せるモンスターと同じ種族のレベル8融合でATKかDEF2500が必要。何でもコスト可とは扱わない。"
+    },
+    {
+      "id": "zero",
+      "url": "https://www.db.yugioh-card.com/yugiohdb/card_search.action?cid=21460&ope=2&request_locale=ja",
+      "rule": "ゼロは自身の特殊召喚が1ターン1度、サーチと分離は同ターンいずれか一方。先攻サーチ後の分離は基本的に次の相手ターン。"
+    },
+    {
+      "id": "lemnis",
+      "url": "https://www.db.yugioh-card.com/yugiohdb/card_search.action?cid=21480&ope=2&request_locale=ja",
+      "rule": "墓地の閃刀姫と閃刀魔法を同数ずつ対象。②は事前に墓地に存在する必要がある。相手ターンの召喚後リンクは合法な素材・ゾーンが必要。"
+    },
+    {
+      "id": "shield",
+      "url": "https://www.db.yugioh-card.com/yugiohdb/card_search.action?cid=16411&ope=2&request_locale=ja",
+      "rule": "盾持ち②は自身を除外し獣族・風属性のエルダムへ接続。通常召喚や墓地の光属性は②には不要。"
+    }
+  ],
+  "accessed": "2026-11-09",
+  "notes": "Brief independently worded index only. Public article/replay links are references, not proof that every action was reviewed. OCG limit labels are not imported into MD legality."
+}

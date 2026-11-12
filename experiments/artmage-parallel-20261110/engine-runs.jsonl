@@ -1,0 +1,16 @@
+{"event": "start", "run": 1, "purpose": "regression", "case_id": "Artmage-g08-p0", "time_jst": "2026-11-10T17:12:25+09:00"}
+{"event": "finish", "run": 1, "status": "ok", "time_jst": "2026-11-10T17:12:29+09:00", "passed": true, "identical": true}
+{"event": "start", "run": 2, "purpose": "regression", "case_id": "Artmage-g09-p0", "time_jst": "2026-11-10T17:12:29+09:00"}
+{"event": "finish", "run": 2, "status": "ok", "time_jst": "2026-11-10T17:12:32+09:00", "passed": true, "identical": true}
+{"event": "start", "run": 3, "purpose": "regression", "case_id": "Artmage-g10-p0", "time_jst": "2026-11-10T17:12:32+09:00"}
+{"event": "finish", "run": 3, "status": "ok", "time_jst": "2026-11-10T17:12:37+09:00", "passed": true, "identical": true}
+{"event": "start", "run": 4, "purpose": "regression", "case_id": "Artmage-g11-p0", "time_jst": "2026-11-10T17:12:37+09:00"}
+{"event": "finish", "run": 4, "status": "ok", "time_jst": "2026-11-10T17:12:40+09:00", "passed": true, "identical": true}
+{"event": "start", "run": 5, "purpose": "record C1", "case_id": "C1", "time_jst": "2026-11-10T17:12:48+09:00"}
+{"event": "finish", "run": 5, "status": "ok", "time_jst": "2026-11-10T17:12:48+09:00", "failure": null, "mismatch": null}
+{"event": "start", "run": 6, "purpose": "replay C1", "case_id": "C1", "time_jst": "2026-11-10T17:13:46+09:00"}
+{"event": "finish", "run": 6, "status": "ok", "time_jst": "2026-11-10T17:13:46+09:00", "failure": null, "mismatch": null}
+{"event": "start", "run": 7, "purpose": "record C2", "case_id": "C2", "time_jst": "2026-11-10T17:13:54+09:00"}
+{"event": "finish", "run": 7, "status": "ok", "time_jst": "2026-11-10T17:13:54+09:00", "failure": null, "mismatch": null}
+{"event": "start", "run": 8, "purpose": "replay C2", "case_id": "C2", "time_jst": "2026-11-10T17:14:10+09:00"}
+{"event": "finish", "run": 8, "status": "ok", "time_jst": "2026-11-10T17:14:10+09:00", "failure": null, "mismatch": null}

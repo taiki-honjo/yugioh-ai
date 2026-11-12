@@ -1,0 +1,149 @@
+{
+ "status": "fixed_before_model_results",
+ "old": {
+  "manifest": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/data/manifest.json",
+  "sha256": "25d96e42cbf74c3d9a929bb489e7c441eb1b8fb0e2a2aadc6d203e6f4f4598c5",
+  "basic_manifest": "/home/hatk8/projects/yugioh-ai/experiments/artmage-basic-openings-batch-20261110/data/manifest.json",
+  "basic_sha256": "0a97de6dd19f8161e5381874fc4caf0cc9b4847c5df3b508d73b9183f969b7d8"
+ },
+ "responses": [
+  {
+   "name": "response-S1",
+   "site": "S1",
+   "target_index": 112,
+   "target_step": 149,
+   "context_steps": 113,
+   "label": {
+    "index": 1,
+    "code": 27184601,
+    "effect": 10011,
+    "name": "ディアクトロス②"
+   },
+   "options": [
+    {
+     "index": 0,
+     "act": "Activate",
+     "code": 59438930,
+     "effect": 0,
+     "spec": "h2"
+    },
+    {
+     "index": 1,
+     "act": "Activate",
+     "code": 27184601,
+     "effect": 10011,
+     "spec": "m3"
+    },
+    {
+     "index": 2,
+     "act": "Activate",
+     "code": 23829452,
+     "effect": 10010,
+     "spec": "m5"
+    },
+    {
+     "index": 3,
+     "act": "Activate",
+     "code": 23434538,
+     "effect": 10010,
+     "spec": "h1"
+    },
+    {
+     "index": 4,
+     "act": "Cancel",
+     "code": 0,
+     "effect": -1,
+     "spec": ""
+    }
+   ],
+   "cancel_index": 4,
+   "observed_chain": [
+    1,
+    2,
+    43,
+    0
+   ],
+   "origin": "opponent-turn probe S1-D0R1: BV1-1cost-VARNISH-OM path, the registered R1 rule executed ディアクトロス② (the model chose pass)",
+   "record": "/home/hatk8/projects/yugioh-ai/experiments/artmage-opponent-turn-probe-20261111/runs/S1-D0R1/record.json",
+   "record_sha256": "8b5dd7fd917c3dc5dce717debd141ee55035d8f03d0e5e6ee4798ea876c9faef",
+   "observations": "/home/hatk8/projects/yugioh-ai/experiments/artmage-opponent-turn-probe-20261111/runs/S1-D0R1/observations.npz",
+   "observations_sha256": "429115c378b6e4fa4e1dd675997b66d5fbb4fd47846c094a2f0a20d17905a49d",
+   "replay": "/home/hatk8/projects/yugioh-ai/experiments/artmage-opponent-turn-probe-20261111/runs/S1-D0R1/replay.json",
+   "replay_sha256": "e49727e79be7cda9e4523f8c4db21b4ca7a7fdd6ea4227c5e66fae7bfb632c73"
+  },
+  {
+   "name": "response-S2",
+   "site": "S2",
+   "target_index": 127,
+   "target_step": 169,
+   "context_steps": 128,
+   "label": {
+    "index": 3,
+    "code": 34541940,
+    "effect": 10011,
+    "name": "ファインメルト③"
+   },
+   "options": [
+    {
+     "index": 0,
+     "act": "Activate",
+     "code": 59438930,
+     "effect": 0,
+     "spec": "h1"
+    },
+    {
+     "index": 1,
+     "act": "Activate",
+     "code": 44654994,
+     "effect": 10010,
+     "spec": "s2"
+    },
+    {
+     "index": 2,
+     "act": "Activate",
+     "code": 31822037,
+     "effect": 10011,
+     "spec": "m6"
+    },
+    {
+     "index": 3,
+     "act": "Activate",
+     "code": 34541940,
+     "effect": 10011,
+     "spec": "m2"
+    },
+    {
+     "index": 4,
+     "act": "Activate",
+     "code": 23434538,
+     "effect": 10010,
+     "spec": "h2"
+    },
+    {
+     "index": 5,
+     "act": "Cancel",
+     "code": 0,
+     "effect": -1,
+     "spec": ""
+    }
+   ],
+   "cancel_index": 5,
+   "observed_chain": [
+    1,
+    2,
+    43,
+    0
+   ],
+   "origin": "functional comparison BV1-2cost-ASSAULT-OM: the model itself chose ファインメルト③",
+   "record": "/home/hatk8/projects/yugioh-ai/experiments/artmage-functional-landing-compare-20261110/runs/BV1-2cost-ASSAULT-OM/record.json",
+   "record_sha256": "f037e719b37e4c4ab776c7d24c8c11f1a57483e72319d8bcc095c30b7768cbcc",
+   "observations": "/home/hatk8/projects/yugioh-ai/experiments/artmage-functional-landing-compare-20261110/runs/BV1-2cost-ASSAULT-OM/observations.npz",
+   "observations_sha256": "2184e73c81aea1de5867d6cfcf45cdf3f45d42e223be3eb421976951fa37a58d",
+   "replay": "/home/hatk8/projects/yugioh-ai/experiments/artmage-functional-landing-compare-20261110/runs/BV1-2cost-ASSAULT-OM/replay.json",
+   "replay_sha256": "2d87d2c199286fabcac9a7522dfafbf148cb08993a32ef79ab0dbe9b1454fb0b"
+  }
+ ],
+ "mask": "context = every own observation from the duel start to the window (inclusive); loss = 1 only on the window action",
+ "promotion": "The BV1-B-1cost / BV1-B-2cost hands were validation hands of the hand-branch study. From this study on, the two response histories are TRAINING data and the two hands are known diagnostic cases; success on them is not generalisation to unseen hands. Earlier splits and registrations are not rewritten.",
+ "not_a_rule": "No rule \"always negate\" and no Finemelt-over-Diaktoros order is taught; each label is the action verified in its own position."
+}

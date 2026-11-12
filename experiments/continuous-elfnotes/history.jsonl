@@ -1,0 +1,9 @@
+{"time_jst": "2026-11-08T13:51:21+09:00", "event": "worker_started", "pid": 474}
+{"time_jst": "2026-11-08T13:51:21+09:00", "event": "training_started", "cycle": 1, "steps": 4096}
+{"time_jst": "2026-11-08T13:51:26+09:00", "event": "job_failed", "error": "RuntimeError: train exited 1; see /home/hatk8/projects/yugioh-ai/experiments/continuous-elfnotes/cycles/000001-0299400e/train.log", "failures": 1}
+{"time_jst": "2026-11-08T13:51:56+09:00", "event": "training_started", "cycle": 2, "steps": 4096}
+{"time_jst": "2026-11-08T13:52:01+09:00", "event": "job_failed", "error": "RuntimeError: train exited 1; see /home/hatk8/projects/yugioh-ai/experiments/continuous-elfnotes/cycles/000002-ed7248d1/train.log", "failures": 2}
+{"time_jst": "2026-11-08T13:52:10+09:00", "event": "worker_stopped", "status": "stopped"}
+{"time_jst": "2026-11-08T13:54:20+09:00", "event": "worker_started", "pid": 363}
+{"time_jst": "2026-11-08T13:54:20+09:00", "event": "training_started", "cycle": 3, "steps": 4096}
+{"time_jst": "2026-11-08T13:55:41+09:00", "event": "worker_stopped", "status": "stopped"}

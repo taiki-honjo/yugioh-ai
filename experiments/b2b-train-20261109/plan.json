@@ -1,0 +1,100 @@
+{
+  "registered_jst": "2026-11-10T11:53:59+09:00",
+  "spec": "C:/Users/hatk8/Documents/Codex/2026-10-27/new-chat/outputs/b2b-small-training-decision-2026-11-09.md (copied as docs/b2b-small-training-decision-2026-11-09.md)",
+  "start_model": {
+    "path": "/home/hatk8/projects/yugioh-ai/experiments/adoption-d16384-20261109/model",
+    "base_sha256": "86b4358dcfec696cb4b3cc4c19781c34292b2509bf037b9e4f44d9ed8ec59d1c",
+    "head_sha256": "6ca3221f1828eecc5cea817003c8df5e8802b75fabef0f4aa33105ad0f979fce",
+    "note": "adopted d16384 pair; the stopped cycle-5 candidate is not used"
+  },
+  "training": {
+    "decisions": 4096,
+    "candidates": 1,
+    "training_seed": 10021110,
+    "training_seed_unused_check": "not among 0, 10000001-10000005, 10000555, 10000777, 10000999, 10001109, 10016384 (all train-command.json seeds)",
+    "learning_rate": 1.5e-05,
+    "ppo": "unchanged (continuous_opening_backend.train_cycle command)",
+    "save_interval_updates": "default (final checkpoint only)",
+    "rehearsal": {
+      "lambda_bc": 5.0,
+      "lambda_kl": 0.0,
+      "sequences_per_minibatch": 2,
+      "seed": 20261109,
+      "old_data_sha256": "0ef4700c92ddb6f26c3e3f5dc04d4893d2cb02c096304af0bbdc546f8070e4da",
+      "b2b": {
+        "sha256": "01d2ce9abf038694168ec4d604037e803e7d8eac1f0f1229d4eb8d6eaf90f2b8",
+        "manifest_sha256": "c37fb02fec8a833dccfdae1b3cfad81329f7a04041cdf2948b45369cabc4a892",
+        "block_sequences": 16,
+        "old_per_block": 14,
+        "demos_per_block": {
+          "1": 1,
+          "2": 1
+        },
+        "schedule_seed": 20261110,
+        "sequence_share": {
+          "old": 0.875,
+          "DM_A": 0.0625,
+          "DM_B": 0.0625
+        },
+        "note": "share of sampled sequences, not of loss or gradient; fixed for this first trial"
+      }
+    }
+  },
+  "code": {
+    "b2b_opening_rehearsal_sha256": "5332f16dd21949f57ef429630c03553ddb5a94cb91a013fff22023d16e5db9d8",
+    "b2b_demo_data_sha256": "6281499bcab87e44ed7239e0a60a05bca4ad2abe79c408814f595754d8daedf2",
+    "scripts_opening_rehearsal_sha256": "6aba1a3da68bfe5921e8e5bfc8146b6ba0273467a4dacd07209d579e7d760f56",
+    "tests": [
+      "tests/test_b2b_rehearsal.py"
+    ]
+  },
+  "evaluation": {
+    "positions": [
+      {
+        "name": "g03",
+        "case_id": "cue-reco-jj-zaren-g03-p0",
+        "seed": 151101,
+        "hand": [
+          94145021,
+          97268402,
+          70088809,
+          16387555,
+          89392810
+        ]
+      },
+      {
+        "name": "g05",
+        "case_id": "cue-reco-jj-zaren-g05-p0",
+        "seed": 151115,
+        "hand": [
+          94145021,
+          89392810,
+          23434538,
+          16387555,
+          59438930
+        ]
+      }
+    ],
+    "positions_note": "existing TRAIN cases (known through the old rehearsal data); reported as transfer of the new B2B demonstrations, not as unseen hands",
+    "landing": "own-turn B2B route as in experiments/b2b-zaren-ownturn-check-20261109 (Trackmaker + Ash -> Zaren; Zaren + Cue -> B2B; set Synchro) applied to each case plan",
+    "if_landing_fails": "record it before training and before any comparison result is seen, and revise the plan; no replacement by convenient hands",
+    "comparison": "own turn replayed from the landing record (teacher-forced model history); turn 2 opponent = O1 (Rukina search), common fallback = adopted model; our side = model before (adopted) / after (candidate) from turn 2; stop when turn 4 begins; T1/T2/T3 recorded",
+    "engine_run_cap": {
+      "b2b": 12,
+      "plan": "landing record+replay 2x2=4, before record+replay 2x2=4, after record+replay 2x2=4"
+    },
+    "retention": {
+      "episodes": 66,
+      "jobs": 1,
+      "baseline": "existing adopted-model result (production root opening-baseline.json) if weights, cases, evaluation code and adapters match; otherwise re-register before any extra run"
+    },
+    "total_evaluation_cap": 78
+  },
+  "rules": [
+    "no change during training (ratio, lambda, data)",
+    "no intermediate checkpoint selection",
+    "no extra training, demo generation or ratio change after the result",
+    "no adoption, no normal battles, no production change; STOP/pending/cycle-5 candidate unchanged",
+    "B2B (3) never described as negating the search"
+  ]
+}

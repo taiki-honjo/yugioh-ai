@@ -1,0 +1,10 @@
+{"event": "start", "run": 1, "purpose": "run condition=DM-A", "case_id": "cue-reco-jj-zaren-g00-p0", "time_jst": "2026-11-09T22:56:27+09:00"}
+{"event": "finish", "run": 1, "status": "ok", "time_jst": "2026-11-09T22:56:28+09:00", "failure": null, "mismatch": null}
+{"event": "start", "run": 2, "purpose": "run condition=DM-B", "case_id": "cue-reco-jj-zaren-g00-p0", "time_jst": "2026-11-09T22:56:35+09:00"}
+{"event": "finish", "run": 2, "status": "crashed", "time_jst": "2026-11-09T22:57:20+09:00", "recorded_after_the_fact": true, "error": "process exited -11 (segmentation fault) with no Python traceback; most likely the lethal attack ended the duel and the harness then read benchmark_snapshot() of the finished duel. Harness fixed to stop reading the engine after termination."}
+{"event": "start", "run": 3, "purpose": "run condition=DM-B", "case_id": "cue-reco-jj-zaren-g00-p0", "time_jst": "2026-11-09T22:57:22+09:00"}
+{"event": "finish", "run": 3, "status": "ok", "time_jst": "2026-11-09T22:57:22+09:00", "failure": null, "mismatch": null}
+{"event": "start", "run": 4, "purpose": "replay condition=DM-A", "case_id": "cue-reco-jj-zaren-g00-p0", "time_jst": "2026-11-09T22:57:34+09:00"}
+{"event": "finish", "run": 4, "status": "ok", "time_jst": "2026-11-09T22:57:34+09:00", "failure": null, "mismatch": null}
+{"event": "start", "run": 5, "purpose": "replay condition=DM-B", "case_id": "cue-reco-jj-zaren-g00-p0", "time_jst": "2026-11-09T22:57:36+09:00"}
+{"event": "finish", "run": 5, "status": "ok", "time_jst": "2026-11-09T22:57:36+09:00", "failure": null, "mismatch": null}

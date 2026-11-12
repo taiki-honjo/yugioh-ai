@@ -1,0 +1,58 @@
+{
+  "status": "passed",
+  "all_44_public_replay_urls_registered": true,
+  "all_45_public_replay_occurrences_registered": true,
+  "no_previously_registered_url_lost": true,
+  "clown_routes": 32,
+  "artmage_cases": 15,
+  "artmage_supplementary_opening_notes": 4,
+  "total_reference_entries": 51,
+  "text_only_branches": 2,
+  "distinct_replay_urls": 44,
+  "source_link_occurrences": 45,
+  "excluded_scope": "ClownTroupe paid Appendix",
+  "engine_replay_verified": false,
+  "trained_from_references": false,
+  "engine_verified_reference_entries": 2,
+  "trained_reference_entries": 2,
+  "all_reference_entries_trained": false,
+  "all_reference_entries_engine_verified": false,
+  "missing_named_starter_entries": [
+    {
+      "id": "clown-CAaV2Y29",
+      "label": "極芸＋フェンリル・ドロールを意識した形",
+      "missing": [
+        {
+          "code": 32909498,
+          "name": "クシャトリラ・フェンリル",
+          "selected_count": 0,
+          "present": false
+        }
+      ]
+    },
+    {
+      "id": "clown-3k9GGRWL",
+      "label": "極芸＋フェンリル・墓地リンクリボーを優先",
+      "missing": [
+        {
+          "code": 32909498,
+          "name": "クシャトリラ・フェンリル",
+          "selected_count": 0,
+          "present": false
+        }
+      ]
+    },
+    {
+      "id": "clown-q4KANa5q",
+      "label": "開演＋フェンリル",
+      "missing": [
+        {
+          "code": 32909498,
+          "name": "クシャトリラ・フェンリル",
+          "selected_count": 0,
+          "present": false
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "experiment_root": "/home/hatk8/projects/yugioh-ai/experiments/opening-d4096-20261109",
+  "base_config": "/home/hatk8/projects/yugioh-ai/config/continuous-elfnotes.json",
+  "purpose": "One new candidate from the adopted pair under condition D (PPO lr 1.5e-5, train-split rehearsal lambda 5), finite 4096 environment decisions, every 1024-decision checkpoint kept. Before/after on the existing 66 validation openings and on the fixed test frozen beforehand. No battles, no adoption, no resident operation, no condition changes after seeing fixed-test results.",
+  "steps": 4096,
+  "seeds": [10001109],
+  "battle_episodes": 0,
+  "battle_seed": 0,
+  "save_interval_updates": 8,
+  "keep_all_checkpoints": true,
+  "limits": {"max_environment_decisions": 4096, "max_battle_episodes": 0, "max_candidates": 1},
+  "fixed_test": {
+    "manifest": "/home/hatk8/projects/yugioh-ai/experiments/opening-fixed-test-20261109/manifest.json",
+    "manifest_sha256": "9f920395f1318ddffcefa29f31c3ea03ee80482ac9311c41b3414e3f56ea1b71",
+    "cases_sha256": "f8bc47336b9922eb3adf4d8b0cd6f4d44a8aef5f8f38bdd18ceb91cd35713d3f",
+    "evaluated_only_after_training": true
+  },
+  "arms": {
+    "d-lr1.5e-5-l5": {"rehearsal": {"enabled": true, "split": "train", "lambda_bc": 5.0, "lambda_kl": 0.0, "sequences_per_minibatch": 2, "seed": 20261109, "sha256": "0ef4700c92ddb6f26c3e3f5dc04d4893d2cb02c096304af0bbdc546f8070e4da"}, "learning_rate": 1.5e-05}
+  }
+}

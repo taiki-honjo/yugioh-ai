@@ -1,0 +1,379 @@
+{
+  "eval_version": "opening-capability-eval-v1 (shadow, foundation stage)",
+  "created_jst": "2026-11-09T20:39:21+09:00",
+  "scope": "two TRAIN-split cases, teacher-built positions (spec development); O1 = one Rukina search; not a measure of overall board value",
+  "engine_runs": {
+    "used": 6,
+    "limit": 12,
+    "ledger": "engine-runs.jsonl"
+  },
+  "production_untouched": true,
+  "cases": {
+    "P1": {
+      "case_id": "cue-reco-jj-zaren-g00-p0",
+      "family": "jj-cue-reco",
+      "hand": [
+        "キラーチューン・キュー",
+        "エフェクト・ヴェーラー",
+        "エフェクト・ヴェーラー",
+        "エフェクト・ヴェーラー",
+        "キラーチューン・レコ"
+      ],
+      "seed": 151080,
+      "legacy": {
+        "passed": true,
+        "board": true,
+        "chosen_variant": "cue-reco-jj-zaren",
+        "failure": null,
+        "jj_release_step": 37,
+        "ash_used_as_synchro_material": false,
+        "recovered_ash_activated": true,
+        "opponent_search_negated": true,
+        "opponent_search_resolved": true,
+        "crystal_first_preference_met": true,
+        "boss_field_arrival_order": [],
+        "normal_summons_diagnostic": 1,
+        "lua_errors": 0
+      },
+      "record": {
+        "engine_run": 1,
+        "steps": 96,
+        "visibility_audit": {
+          "checks": 67,
+          "legal_hand_peek_rows": 10,
+          "legal_deck_peek_rows": 2
+        }
+      },
+      "replay": {
+        "engine_run": 2,
+        "reproduced_steps": 96,
+        "of": 96,
+        "final_matches_record": true,
+        "compared": "every step: compact benchmark_snapshot (incl. evaluator-only hidden zones) + meaning of the executed action; not a proof of identical internal engine state"
+      },
+      "o1_capability": {
+        "status": "verified",
+        "scope": "this teacher-built position, this one path",
+        "preparation": [
+          {
+            "step": 72,
+            "phase": "draw",
+            "card": "キラーチューン・リミックス",
+            "effect_index": 0,
+            "chain_at_activation": 0,
+            "picks": [
+              "灰流うらら",
+              "キラーチューン・レコ",
+              "灰流うらら",
+              "キラーチューン・レコ"
+            ],
+            "own_hand_change": {
+              "added": {
+                "14558127": 1
+              },
+              "removed": {}
+            },
+            "own_monster_change": {
+              "added": {
+                "89392810": 1
+              },
+              "removed": {
+                "88170262": 1
+              }
+            },
+            "resolved_before_search": true
+          }
+        ],
+        "search_step": 92,
+        "responses": [
+          {
+            "step": 93,
+            "chain_link": 2,
+            "card": "灰流うらら"
+          }
+        ],
+        "outcome": "search_not_applied",
+        "evidence": {
+          "opponent_hand": {
+            "added": {},
+            "removed": {}
+          },
+          "added_from_hidden_zone": {},
+          "resolved_snapshot_step": "final",
+          "search_source_left_field": false
+        },
+        "other_legal_candidates_at_search": [
+          {
+            "card": "エフェクト・ヴェーラー",
+            "code": 97268402,
+            "effect_index": 0,
+            "status": "legal candidate; what it achieves (stop, restriction, resource gain) is unmeasured"
+          },
+          {
+            "card": "エフェクト・ヴェーラー",
+            "code": 97268402,
+            "effect_index": 0,
+            "status": "legal candidate; what it achieves (stop, restriction, resource gain) is unmeasured"
+          },
+          {
+            "card": "エフェクト・ヴェーラー",
+            "code": 97268402,
+            "effect_index": 0,
+            "status": "legal candidate; what it achieves (stop, restriction, resource gain) is unmeasured"
+          },
+          {
+            "card": "キラーチューン・シンクロ",
+            "code": 78058681,
+            "effect_index": 0,
+            "status": "legal candidate; what it achieves (stop, restriction, resource gain) is unmeasured"
+          }
+        ]
+      },
+      "zaren_2": {
+        "observed_legal_at_step": 95,
+        "chain": [
+          "耀聖の花詩ルキナ",
+          "灰流うらら"
+        ],
+        "status": "legal candidate under a two-link chain (Rukina 2 -> Ash); resolution unverified"
+      },
+      "model_use": {
+        "engine_run": 5,
+        "condition": "teacher-built position, RNN history teacher-forced over the own turn",
+        "model": {
+          "path": "/home/hatk8/projects/yugioh-ai/experiments/adoption-d16384-20261109/model",
+          "base_sha256": "86b4358dcfec696cb4b3cc4c19781c34292b2509bf037b9e4f44d9ed8ec59d1c",
+          "head_sha256": "6ca3221f1828eecc5cea817003c8df5e8802b75fabef0f4aa33105ad0f979fce",
+          "device": "cuda:0",
+          "adapters": "placement v2 + position (production create_policy)"
+        },
+        "preparation": [
+          {
+            "step": 72,
+            "phase": "draw",
+            "card": "キラーチューン・リミックス",
+            "effect_index": 0,
+            "chain_at_activation": 0,
+            "picks": [
+              "灰流うらら",
+              "キラーチューン・レコ",
+              "灰流うらら",
+              "キラーチューン・レコ"
+            ],
+            "own_hand_change": {
+              "added": {
+                "14558127": 1
+              },
+              "removed": {}
+            },
+            "own_monster_change": {
+              "added": {
+                "89392810": 1
+              },
+              "removed": {
+                "88170262": 1
+              }
+            },
+            "resolved_before_search": true
+          }
+        ],
+        "responses": [
+          {
+            "step": 93,
+            "chain_link": 2,
+            "card": "灰流うらら"
+          }
+        ],
+        "outcome": "search_not_applied",
+        "identical_to_teacher_route": true,
+        "classification": "used"
+      }
+    },
+    "P2": {
+      "case_id": "elf-rukina-regina-g00-p0",
+      "family": "elf-rukina-regina",
+      "hand": [
+        "耀聖の花詩ルキナ",
+        "調和ノ天救竜",
+        "朔夜しぐれ",
+        "幽鬼うさぎ",
+        "増殖するＧ"
+      ],
+      "seed": 151080,
+      "legacy": {
+        "passed": true,
+        "board": true,
+        "chosen_variant": "two_bosses",
+        "failure": null,
+        "jj_release_step": null,
+        "ash_used_as_synchro_material": false,
+        "recovered_ash_activated": false,
+        "opponent_search_negated": false,
+        "opponent_search_resolved": false,
+        "crystal_first_preference_met": true,
+        "boss_field_arrival_order": [
+          50954680,
+          84815190
+        ],
+        "normal_summons_diagnostic": 0,
+        "lua_errors": 0
+      },
+      "record": {
+        "engine_run": 3,
+        "steps": 92,
+        "visibility_audit": {
+          "checks": 69,
+          "legal_hand_peek_rows": 0,
+          "legal_deck_peek_rows": 0
+        }
+      },
+      "replay": {
+        "engine_run": 4,
+        "reproduced_steps": 92,
+        "of": 92,
+        "own_end_matches_record": true
+      },
+      "baronne_1": {
+        "status": "absent from every opponent-turn window observed (negative confirmed within these windows)",
+        "own_turn_control_steps": [
+          88
+        ],
+        "opponent_turn_windows": {
+          "probe": 4,
+          "model_use": 11
+        },
+        "baronne_2_seen_at": [
+          101
+        ],
+        "basis": "pinned script c84815190.lua: e1 EFFECT_TYPE_IGNITION (description 0), e2 EFFECT_TYPE_QUICK_O (description 1)"
+      },
+      "o1_probe_pass": {
+        "engine_run": 4,
+        "our_side": "passes at every window",
+        "outcome": "search_resolved",
+        "evidence": {
+          "opponent_hand": {
+            "added": {
+              "12375297": 1
+            },
+            "removed": {}
+          },
+          "added_from_hidden_zone": {
+            "12375297": 1
+          },
+          "resolved_snapshot_step": "final",
+          "search_source_left_field": false
+        },
+        "legal_candidates_at_search": [
+          {
+            "card": "調和ノ天救竜",
+            "code": 70088809,
+            "effect_index": 0,
+            "status": "legal candidate; what it achieves (stop, restriction, resource gain) is unmeasured"
+          },
+          {
+            "card": "幽鬼うさぎ",
+            "code": 59438930,
+            "effect_index": null,
+            "status": "legal candidate; what it achieves (stop, restriction, resource gain) is unmeasured"
+          },
+          {
+            "card": "クリスタルウィング・シンクロ・ドラゴン",
+            "code": 50954680,
+            "effect_index": 0,
+            "status": "legal candidate; what it achieves (stop, restriction, resource gain) is unmeasured"
+          },
+          {
+            "card": "フルール・ド・バロネス",
+            "code": 84815190,
+            "effect_index": 1,
+            "status": "legal candidate; what it achieves (stop, restriction, resource gain) is unmeasured"
+          },
+          {
+            "card": "増殖するＧ",
+            "code": 23434538,
+            "effect_index": 0,
+            "status": "legal candidate; what it achieves (stop, restriction, resource gain) is unmeasured"
+          },
+          {
+            "card": "エルフェンノーツ～狂奏のラプソディア～",
+            "code": 24092792,
+            "effect_index": 0,
+            "status": "legal candidate; what it achieves (stop, restriction, resource gain) is unmeasured"
+          }
+        ]
+      },
+      "model_use": {
+        "engine_run": 6,
+        "condition": "teacher-built position, RNN history teacher-forced over the own turn",
+        "preparation": [
+          {
+            "step": 93,
+            "phase": "draw",
+            "card": "エルフェンノーツ～狂奏のラプソディア～",
+            "effect_index": 0,
+            "chain_at_activation": 0,
+            "picks": [
+              "フルール・ド・バロネス",
+              "燿ける聖詩の獄神精",
+              "燿ける聖詩の獄神精"
+            ],
+            "own_hand_change": {
+              "added": {},
+              "removed": {}
+            },
+            "own_monster_change": {
+              "added": {
+                "12375297": 1
+              },
+              "removed": {
+                "84815190": 1
+              }
+            },
+            "resolved_before_search": true
+          }
+        ],
+        "responses": [],
+        "outcome": "search_resolved",
+        "legal_candidates_at_search": [
+          {
+            "card": "調和ノ天救竜",
+            "code": 70088809,
+            "effect_index": 0,
+            "status": "legal candidate; what it achieves (stop, restriction, resource gain) is unmeasured"
+          },
+          {
+            "card": "幽鬼うさぎ",
+            "code": 59438930,
+            "effect_index": null,
+            "status": "legal candidate; what it achieves (stop, restriction, resource gain) is unmeasured"
+          },
+          {
+            "card": "クリスタルウィング・シンクロ・ドラゴン",
+            "code": 50954680,
+            "effect_index": 0,
+            "status": "legal candidate; what it achieves (stop, restriction, resource gain) is unmeasured"
+          },
+          {
+            "card": "増殖するＧ",
+            "code": 23434538,
+            "effect_index": 0,
+            "status": "legal candidate; what it achieves (stop, restriction, resource gain) is unmeasured"
+          }
+        ],
+        "classification": "available_unused (legal candidates existed at the search window; whether any would have stopped it is unverified)",
+        "note": "in the draw phase the model activated Rhapsodia, sending Baronne to the graveyard (Spirit special summoned), so Baronne 2 was no longer available at the search"
+      }
+    }
+  },
+  "not_measured": [
+    "Droll restriction on later adds (needs multi-action script)",
+    "Maxx C draws and opponent-decision effects",
+    "Zaren 2 resolution",
+    "Kewl Tune B2B",
+    "follow-up next turn",
+    "whether Crystal Wing 1 / Baronne 2 / Rhapsodia / Ghost Ogre / Effect Veiler / 調和ノ天救竜 actually stop O1",
+    "models other than the adopted pair",
+    "validation/holdout/fixed-test cases"
+  ]
+}

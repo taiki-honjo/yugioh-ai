@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-09",
+  "engine_runs": 2,
+  "records": [
+    {
+      "file": "records/via-zaren.json",
+      "sha256": "69a63e2e5cff7d8f7d72a80eb3053bba615c7b19059323cfcbeee477319e9fc6",
+      "variant": "via-zaren",
+      "engine_run": 1,
+      "ok": true,
+      "failure": null,
+      "lua_errors": 0,
+      "steps": 54
+    },
+    {
+      "file": "replays/via-zaren.json",
+      "sha256": "955e8b2a409cb4106dafabe8132d660955395bda48c3cbc0e80bfeba35bb5fb5",
+      "variant": "via-zaren",
+      "engine_run": 2,
+      "ok": true,
+      "failure": null,
+      "lua_errors": 0,
+      "steps": 54
+    }
+  ],
+  "protected_files": 50,
+  "changed_protected_files": [],
+  "production_status": "stopped",
+  "pending_phase": "evaluating",
+  "model_used": false,
+  "training": false,
+  "master_duel_client_used": false,
+  "hashes": {
+    "code/check_b2b_via_zaren_20261109.py": "b1ef470fe079e7bcc18914c14bf149ba75252e09c02f7c6dfbdea9c6f2e87520",
+    "engine-runs.jsonl": "17449af9df4ea7763fd5c05d2f0a879b0d640289da40a2f3def2f6a12ed7f519",
+    "plan.json": "ffbc2fbd4ac1601b0432a2d18d977b8a544df6fcc1641af92509befef3db103e"
+  }
+}

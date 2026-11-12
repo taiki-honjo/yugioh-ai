@@ -1,0 +1,35 @@
+{
+  "status": "building",
+  "runtime": {
+    "runtime": "/home/hatk8/projects/yugioh-ai/evaluation/opponent-article-basics-20261108/runtime",
+    "native": "/home/hatk8/projects/yugioh-ai/evaluation/opponent-article-basics-20261108/runtime/agent/ygoenv/ygoenv/ygopro/ygopro_ygoenv.cpython-310-x86_64-linux-gnu.so",
+    "sha256": "19a60f38a3d39b61a2ee082168d5a788a1022b2eb569633816596c8b3de21294",
+    "source_native": "/home/hatk8/projects/yugioh-ai/experiments/chain-imitation-20261108/runtime/agent/ygoenv/ygoenv/ygopro/ygopro_ygoenv.cpython-310-x86_64-linux-gnu.so",
+    "source_sha256": "c6518039c615aa49a1569c9db995a937d56f2e8ba319d47a11b1028a0b911828",
+    "source_unchanged": true,
+    "engine_rules_unchanged": true,
+    "fixes": [
+      "MSG_SELECT_UNSELECT_CARD disclosed selection identities",
+      "Expose legal hand-limit discard choices instead of random adapter discard"
+    ],
+    "observation_shape_unchanged": true,
+    "opponent_hidden_cards_masked": true
+  },
+  "vocabulary": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/code_list.txt",
+  "vocabulary_sha256": "aeb5be89d4a5591ccc5cce6af96def74ef47463a55265f75c11b92029e772e7b",
+  "grading_policy": "normal-summon-agnostic-v2",
+  "normal_summon_usage_scored": false,
+  "publish_new_replays": false,
+  "split_rule": "Disjoint complete initial hand multisets, all permutations and random draw variants grouped.",
+  "reference_scope": "Two verified basic openings only; not all 51 article references.",
+  "training_plan": {
+    "updates": 600,
+    "batch_size": 2,
+    "base_learning_rate": 3e-05,
+    "head_learning_rate": 0.0003,
+    "kl_weight": 0.01,
+    "seed": 1198,
+    "checkpoint_selection": "minimum held-out-validation teacher-forcing cross entropy; final holdout never used"
+  },
+  "decks": {}
+}

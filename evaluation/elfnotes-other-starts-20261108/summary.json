@@ -1,0 +1,49 @@
+{
+  "cases": [
+    {
+      "passed": true,
+      "failure": null,
+      "normal_summons_diagnostic": 0,
+      "remaining_plan": [],
+      "lua_errors": 0,
+      "case_id": "rukina-regina"
+    },
+    {
+      "passed": true,
+      "failure": null,
+      "normal_summons_diagnostic": 0,
+      "remaining_plan": [],
+      "lua_errors": 0,
+      "case_id": "dina"
+    },
+    {
+      "passed": true,
+      "failure": null,
+      "normal_summons_diagnostic": 0,
+      "remaining_plan": [],
+      "lua_errors": 0,
+      "case_id": "par-light-cost"
+    },
+    {
+      "passed": true,
+      "failure": null,
+      "normal_summons_diagnostic": 0,
+      "remaining_plan": [],
+      "lua_errors": 0,
+      "case_id": "par-fire-cost"
+    },
+    {
+      "passed": true,
+      "failure": null,
+      "normal_summons_diagnostic": 0,
+      "remaining_plan": [],
+      "lua_errors": 0,
+      "case_id": "regina-par"
+    }
+  ],
+  "passed": 5,
+  "total": 5,
+  "trained": false,
+  "normal_summon_usage_scored": false,
+  "scope": "Canonical undisrupted current-recipe witnesses; alternative board spends Regina as Rhapsodia cost."
+}

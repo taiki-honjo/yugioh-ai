@@ -1,0 +1,36 @@
+{"event": "start", "run": 1, "purpose": "variant C1v", "case_id": "C1v", "time_jst": "2026-11-10T18:20:57+09:00"}
+{"event": "finish", "run": 1, "status": "ok", "time_jst": "2026-11-10T18:20:57+09:00"}
+{"event": "start", "run": 2, "purpose": "variant C2v", "case_id": "C2v", "time_jst": "2026-11-10T18:20:57+09:00"}
+{"event": "finish", "run": 2, "status": "ok", "time_jst": "2026-11-10T18:20:57+09:00"}
+{"event": "start", "run": 3, "purpose": "rt1 start Artmage-g06-p0", "case_id": "Artmage-g06-p0", "time_jst": "2026-11-10T18:21:10+09:00"}
+{"event": "finish", "run": 3, "status": "ok", "time_jst": "2026-11-10T18:21:13+09:00"}
+{"event": "start", "run": 4, "purpose": "rt1 start Artmage-g07-p0", "case_id": "Artmage-g07-p0", "time_jst": "2026-11-10T18:21:13+09:00"}
+{"event": "finish", "run": 4, "status": "ok", "time_jst": "2026-11-10T18:21:15+09:00"}
+{"event": "start", "run": 5, "purpose": "nt1 start C1", "case_id": "C1", "time_jst": "2026-11-10T18:21:17+09:00"}
+{"event": "finish", "run": 5, "status": "ok", "time_jst": "2026-11-10T18:21:21+09:00"}
+{"event": "start", "run": 6, "purpose": "nt1 start C2", "case_id": "C2", "time_jst": "2026-11-10T18:21:21+09:00"}
+{"event": "finish", "run": 6, "status": "ok", "time_jst": "2026-11-10T18:21:23+09:00"}
+{"event": "start", "run": 7, "purpose": "nt1 start C1v", "case_id": "C1v", "time_jst": "2026-11-10T18:21:23+09:00"}
+{"event": "finish", "run": 7, "status": "ok", "time_jst": "2026-11-10T18:21:26+09:00"}
+{"event": "start", "run": 8, "purpose": "nt1 start C2v", "case_id": "C2v", "time_jst": "2026-11-10T18:21:26+09:00"}
+{"event": "finish", "run": 8, "status": "ok", "time_jst": "2026-11-10T18:21:28+09:00"}
+{"event": "start", "run": 9, "purpose": "rt1 candidate Artmage-g06-p0", "case_id": "Artmage-g06-p0", "time_jst": "2026-11-10T19:01:12+09:00"}
+{"event": "finish", "run": 9, "status": "ok", "time_jst": "2026-11-10T19:01:15+09:00"}
+{"event": "start", "run": 10, "purpose": "rt1 candidate Artmage-g07-p0", "case_id": "Artmage-g07-p0", "time_jst": "2026-11-10T19:01:15+09:00"}
+{"event": "finish", "run": 10, "status": "ok", "time_jst": "2026-11-10T19:01:20+09:00"}
+{"event": "start", "run": 11, "purpose": "rt1 candidate Artmage-g08-p0", "case_id": "Artmage-g08-p0", "time_jst": "2026-11-10T19:01:20+09:00"}
+{"event": "finish", "run": 11, "status": "ok", "time_jst": "2026-11-10T19:01:23+09:00"}
+{"event": "start", "run": 12, "purpose": "rt1 candidate Artmage-g09-p0", "case_id": "Artmage-g09-p0", "time_jst": "2026-11-10T19:01:23+09:00"}
+{"event": "finish", "run": 12, "status": "ok", "time_jst": "2026-11-10T19:01:26+09:00"}
+{"event": "start", "run": 13, "purpose": "rt1 candidate Artmage-g10-p0", "case_id": "Artmage-g10-p0", "time_jst": "2026-11-10T19:01:26+09:00"}
+{"event": "finish", "run": 13, "status": "ok", "time_jst": "2026-11-10T19:01:29+09:00"}
+{"event": "start", "run": 14, "purpose": "rt1 candidate Artmage-g11-p0", "case_id": "Artmage-g11-p0", "time_jst": "2026-11-10T19:01:29+09:00"}
+{"event": "finish", "run": 14, "status": "ok", "time_jst": "2026-11-10T19:01:32+09:00"}
+{"event": "start", "run": 15, "purpose": "nt1 candidate C1", "case_id": "C1", "time_jst": "2026-11-10T19:01:35+09:00"}
+{"event": "finish", "run": 15, "status": "ok", "time_jst": "2026-11-10T19:01:38+09:00"}
+{"event": "start", "run": 16, "purpose": "nt1 candidate C2", "case_id": "C2", "time_jst": "2026-11-10T19:01:38+09:00"}
+{"event": "finish", "run": 16, "status": "ok", "time_jst": "2026-11-10T19:01:41+09:00"}
+{"event": "start", "run": 17, "purpose": "nt1 candidate C1v", "case_id": "C1v", "time_jst": "2026-11-10T19:01:41+09:00"}
+{"event": "finish", "run": 17, "status": "ok", "time_jst": "2026-11-10T19:01:44+09:00"}
+{"event": "start", "run": 18, "purpose": "nt1 candidate C2v", "case_id": "C2v", "time_jst": "2026-11-10T19:01:44+09:00"}
+{"event": "finish", "run": 18, "status": "ok", "time_jst": "2026-11-10T19:01:46+09:00"}

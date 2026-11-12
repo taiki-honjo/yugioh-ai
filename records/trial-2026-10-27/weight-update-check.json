@@ -1,0 +1,9 @@
+{
+  "parameter_count": 4343242,
+  "parameter_array_count": 128,
+  "changed_arrays_after_512_more_decisions": 128,
+  "changed_parameter_values": 3248221,
+  "parameter_change_l2_norm": 0.29894225137462493,
+  "all_final_parameters_finite": true,
+  "resume_semantics": "Model weights restored; optimizer, RNG and rollout state start fresh"
+}

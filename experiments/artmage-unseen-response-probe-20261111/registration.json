@@ -1,0 +1,186 @@
+{
+ "status": "registered_before_engine_runs",
+ "registered_jst": "2026-11-11T13:38:53+09:00",
+ "spec": {
+  "copy": "spec/artmage-unseen-response-probe-plan-2026-11-11.md",
+  "sha256": "234db9b7f674e53505edd4c16598cfb4ae77e2acc450b26f0095cc7916fc0747"
+ },
+ "diagnosis_only": true,
+ "training_runs": 0,
+ "model_updates": 0,
+ "pins": {
+  "base": "12500c7724b2d723983a2963a960d75172a6df51fb55ea4f3acf102eeb34132e",
+  "head": "0bc7534cab102cd87586e5d22bd4ad0cd3b55d52d08e284146976506ae6193fc",
+  "deck_copy": "a93c4d30d0945f58f741f1e135fdcbc0b0c438aff575cf6d0d02ce9a82c381d6",
+  "engine_deck": "a93c4d30d0945f58f741f1e135fdcbc0b0c438aff575cf6d0d02ce9a82c381d6",
+  "vocabulary": "aeb5be89d4a5591ccc5cce6af96def74ef47463a55265f75c11b92029e772e7b",
+  "meta_manifest": "ace4f6b8408011a55e9b61d3c4917580942d86960bb3f087afe75ce2774c824a",
+  "meta_latest_run": "32770bc4534c729e66f7addbc76770b78798ee4e618b40fd9baa45e83392e544",
+  "article_latest_run": "39db5d660d4bde37dbd9b6fc0c662781da48b71b0e6c50d8357a7a42f73b0159",
+  "model_code": "f4c3903e3a4841b97f6ffb8840bb4cfa5513b5abfead9ff41fa7c785ceba6cce",
+  "witness_code": "0e4f3a0e92c86aba7a95f96c1e5f93f6a0293eaea7f3ab8a63dee772455ae07a",
+  "adapter": "4fe74c83a460ee3565c3ff276ce2d080b233a6152439ec92147ba90d60d46f90",
+  "adapter_cards": "1baa04349bb31833ff01b05cb365ee0f9416de827ac4fbf52b835011a35f1fde",
+  "native": "19a60f38a3d39b61a2ee082168d5a788a1022b2eb569633816596c8b3de21294",
+  "runtime_json": "ebdfc37ed9c7ebcae73b81281876dd6f22bd8d9afcbdfe8f78905dcc9c220d14"
+ },
+ "policies": {
+  "BASE": {
+   "entry": "artmage_entry.create_policy (2-file original entry)",
+   "base": "/home/hatk8/projects/yugioh-ai/experiments/artmage-unseen-response-probe-20261111/models/base/base.flax_model",
+   "base_sha256": "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+   "head": "/home/hatk8/projects/yugioh-ai/experiments/artmage-unseen-response-probe-20261111/models/base/chain-head.flax_model",
+   "head_sha256": "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2"
+  },
+  "CAND": {
+   "entry": "sa_model.create_adapter_policy (3-file entry)",
+   "folder": "/home/hatk8/projects/yugioh-ai/experiments/artmage-unseen-response-probe-20261111/models/candidate",
+   "manifest_sha256": "48d6e2c706f820b0f8e79453582aaf45e8021e0cef3e5b21973d4d774e94f169",
+   "base_sha256": "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+   "head_sha256": "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2",
+   "adapter_sha256": "00977941aab573d624a7e739dfbf3e9b2ba3502e9b22c2e0fbe8537072528b69",
+   "source": "/home/hatk8/projects/yugioh-ai/experiments/artmage-response-coverage-20261111/train/candidate",
+   "byte_copies": true
+  },
+  "frozen_pairs_equal": true,
+  "scope": "unchanged: the adapter acts on select_chain with the latest chain link player = opponent (own turn included); no card-id gate added"
+ },
+ "hands": {
+  "H1": {
+   "pair": "BV1",
+   "group": "B",
+   "variant": "B-1cost",
+   "seed": 1112103,
+   "split": "validation",
+   "hand": [
+    74733322,
+    97045737,
+    23434538,
+    59438930,
+    49036338
+   ],
+   "plan": "B-1cost"
+  },
+  "H2": {
+   "pair": "BV1",
+   "group": "B",
+   "variant": "B-2cost",
+   "seed": 1112103,
+   "split": "validation",
+   "hand": [
+    74733322,
+    97045737,
+    23434538,
+    59438930,
+    10045474
+   ],
+   "plan": "B-2cost"
+  },
+  "note": "the two existing BV1 hands (not a new-hand test)"
+ },
+ "opponent_hand": {
+  "codes": [
+   14558127,
+   38814750,
+   59438930,
+   73642296,
+   97556336
+  ],
+  "names": [
+   "灰流うらら",
+   "ＰＳＹフレームギア・γ",
+   "幽鬼うさぎ",
+   "屋敷わらし",
+   "無垢なる者 メディウス"
+  ],
+  "driver_in_opponent_deck": true,
+  "deck_counts": {
+   "main": 40,
+   "extra": 15,
+   "gamma": 1,
+   "driver": 1,
+   "ash": 3
+  }
+ },
+ "scripts": {
+  "c14558127.lua": "0afff1fadd6be7e6301e4d72d5457eab179c3aa966e4d3a3ac909ef25a4b0667",
+  "c38814750.lua": "383f7e229ce66e54124ebf3922d2f938d3fa19617b51bd32f077a6f8e3f105de",
+  "c23434538.lua": "997212b26aa01d52096a7bbc03757220a43db36a065e8f405d81dcc8c999e651",
+  "c97556336.lua": "ff56291504573fde26ab138e3f4542895ae05f5a1feb72ff7ad18959c86fb4b6",
+  "c49036338.lua": "none (PSY-Frame Driver is a Normal Monster, type 17)"
+ },
+ "cards_cdb_sha256": "103c8455d379a81d7ed35986434096fe8f9eb5cb3a1c3b9c6f1e9f0aa67d0c74",
+ "script_reading": {
+  "gamma": "SpecialSummonStep(Driver) + SpecialSummonStep(Gamma) + one SpecialSummonComplete, then NegateActivation and destroy",
+  "g": "during chain resolution each EVENT_SPSUMMON_SUCCESS registers one flag; at EVENT_CHAIN_SOLVED it draws the flag count; the actual draw count is measured, not assumed",
+  "ash": "negates an effect that searches / special summons / sends from the deck; no special summon"
+ },
+ "own_side": "the compared policy decides from the start of turn 1; nothing forced (no Graphrea branch control)",
+ "target": "the opponent's first chance to respond to OUR first Medius① (code 97556336, description Stringid(id,0)) when that Medius① is chain link 1; identified by card / effect / activating player / public chain, never by a step number; if our first Medius① is not chain link 1, or the specified opponent effect is illegal, the condition is recorded as not established (no other hand is searched)",
+ "opponent": "passes until the target; at the target activates Ash (ASH) or Gamma (GAMMA); for Gamma chooses Driver, face-up attack position (else the first option), the first zone; no other optional effect afterwards; first legal option only if the pass policy cannot decide (logged)",
+ "stop": "the first decision after the target chain fully resolved (chain size 0 after the opponent activation), or game over from env.step, or 600 decisions",
+ "conditions": [
+  "H1-ASH-BASE",
+  "H1-ASH-CAND",
+  "H1-GAMMA-BASE",
+  "H1-GAMMA-CAND",
+  "H2-ASH-BASE",
+  "H2-ASH-CAND",
+  "H2-GAMMA-BASE",
+  "H2-GAMMA-CAND"
+ ],
+ "controls": {
+  "names": [
+   "H1-ASH-CTRL-G",
+   "H1-ASH-CTRL-PASS",
+   "H1-GAMMA-CTRL-G",
+   "H1-GAMMA-CTRL-PASS"
+  ],
+  "rule": "H1 only: base policy before the target; at OUR first response after the opponent activation exactly one substitution (G activation 23434538 / pass); illegal -> not established, the run stops; afterwards every optional own activation is declined (legal Cancel), forced choices are the base policy's; same stop rule",
+  "reuse": "a control is not run if an existing comparison record executes exactly the actions the control rule implies from the start to the stop (pre-target path, the substitution, every later own decision, the same stop); checked offline before any control run; reused controls are not counted as runs"
+ },
+ "record": [
+  "own public board / hand / chain and the opponent card + effect at each gated screen",
+  "legal options, frozen logits, adapter delta, final logits, first choice and pass probability before / after",
+  "relative_delta(action) = delta(action) - delta(pass); new_margin = old_margin + relative_delta (cards with the same meaning separated by card / effect / controller / zone)",
+  "effects used, resolution, G use and measured draws, hand / deck / field, Medius / Gamma / Driver state",
+  "first point where BASE and CAND differ, adapter activations",
+  "NPZ, action list, replay check, the 3 hashes, the opponent script log"
+ ],
+ "engine": {
+  "cap": 26,
+  "plan": "comparison 8 x (record + replay) = 16; controls up to 4 x 2 = 8; total at most 24; 2 spare only for a harness fix",
+  "failures_count": true,
+  "previous_unused_not_carried": true
+ },
+ "not_done": [
+  "training",
+  "model / input / scope changes",
+  "adoption",
+  "normal battles",
+  "acceptance changes",
+  "B2B",
+  "production / registry changes",
+  "the known 8 conditions or the 13 retention cases"
+ ],
+ "limits": {
+  "memory_gib": 5,
+  "swap": 0,
+  "cpu_percent": 300,
+  "job_seconds": 1800,
+  "nice": 10,
+  "jobs": 1
+ },
+ "code": {
+  "artmage_entry.py": "ca47f56d29431b48d60337de6dcc6ce23d524fba31cbbbdce31e6d7399b78e0f",
+  "artmage_pins.py": "10c4e053d05f44498cff77c45301a3fb5222c7598a658decc52f4539fd96bde8",
+  "artmage_teacher.py": "a126284eff7a2d7ef3c602ade0aa5f196f7ddea77333213c27a197ade21b78f3",
+  "batch_plans.py": "68d5945d80d663ba7f85b56ffbd6490a00998aaa1d5cca14663e18e6956f1123",
+  "flc_runs.py": "8af7cbae6ce9d6d8322b043326f6b78d3f819ef8758ceb0e11597488f33e840f",
+  "hb_plans.py": "8fc90ad7f704a2f141669d1075827cf3513f015989a95d472f353aaae6ab40cd",
+  "sa_model.py": "fe9856bd168f33257d09ec41fe38253bf8da2e42a1174a9f27d29786dd1de36c",
+  "up_launch.py": "cfd2d9e58d0cb4b45960e64fba094fe2dfcede0f0f2a30697268b784b1ac6ab3",
+  "up_register.py": "4d7b78cba1795b1908f5ae410f077d8261403750073f7fd739d070e3b470f13e",
+  "up_runs.py": "259e9647131caa1e41716d61c6ae09ea3c5e46984c2ca4ed30504626e148e3c4"
+ }
+}

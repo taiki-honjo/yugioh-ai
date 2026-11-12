@@ -1,0 +1,4 @@
+{"event": "start", "run": 1, "time_jst": "2026-11-10T18:21:40+09:00", "command": ["systemd-run", "--user", "--scope", "--quiet", "-p", "MemoryMax=5G", "-p", "MemorySwapMax=0", "-p", "CPUQuota=300%", "nice", "-n", "10", "timeout", "1800", "/opt/ygo-ai/.venv/bin/python", "-B", "-u", "/home/hatk8/projects/yugioh-ai/experiments/artmage-learning-pilot-20261110/code/pilot_train.py"]}
+{"event": "finish", "run": 1, "time_jst": "2026-11-10T18:23:49+09:00", "exit_code": 1}
+{"event": "start", "run": 2, "time_jst": "2026-11-10T18:57:26+09:00", "command": ["systemd-run", "--user", "--scope", "--quiet", "-p", "MemoryMax=5G", "-p", "MemorySwapMax=0", "-p", "CPUQuota=300%", "nice", "-n", "10", "timeout", "1800", "/opt/ygo-ai/.venv/bin/python", "-B", "-u", "/home/hatk8/projects/yugioh-ai/experiments/artmage-learning-pilot-20261110/code/pilot_train.py"]}
+{"event": "finish", "run": 2, "time_jst": "2026-11-10T19:00:39+09:00", "exit_code": 0}

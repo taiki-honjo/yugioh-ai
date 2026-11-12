@@ -1,0 +1,72 @@
+{
+ "status": "draft_not_converted_not_used_for_training",
+ "date": "2026-11-10",
+ "original": {
+  "note": "Original NPZ files are referenced, never rewritten.",
+  "train": {
+   "path": "/home/hatk8/projects/yugioh-ai/experiments/opponent-article-training-20261108/run-20261108-145203/dataset/Artmage/train.npz",
+   "sha256": "61bc7cb52209c4c15b97e952694dd4a748752f59ea1734f99f4dd5ed197f3a14",
+   "sequences": 12,
+   "decisions": 1077,
+   "use": "train"
+  },
+  "validation": {
+   "path": "/home/hatk8/projects/yugioh-ai/experiments/opponent-article-training-20261108/run-20261108-145203/dataset/Artmage/validation.npz",
+   "sha256": "1022ba94b41d0d7cbe6d5d993eeb3a8edabb5d00b2e03ac2ae4b5ae47ddd04e2",
+   "use": "not for training"
+  },
+  "holdout": {
+   "path": "/home/hatk8/projects/yugioh-ai/experiments/opponent-article-training-20261108/run-20261108-145203/dataset/Artmage/holdout.npz",
+   "sha256": "00c320a8f611df5f35dcbfe1f423bb3eadf7302a5cef3b738b98cd1128e1e504",
+   "use": "not for training; known regression set (results seen), not an untouched final test"
+  }
+ },
+ "new_train_demos": {
+  "C1": {
+   "observations": "/home/hatk8/projects/yugioh-ai/experiments/artmage-parallel-20261110/demos/C1/observations.npz",
+   "sha256": "8425bd1cf43608f417c0fca9bdf2f00fa7fe3cd95463e31460ab622307cd935d",
+   "record": "/home/hatk8/projects/yugioh-ai/experiments/artmage-parallel-20261110/demos/C1/record.json",
+   "sequence_length": 113,
+   "own_turn": 97,
+   "opponent_turn": 16,
+   "proposed_loss_decisions": 94,
+   "proposed_context_decisions": 113,
+   "hand": [
+    1122030,
+    10045474,
+    14558127,
+    23434538,
+    73642296
+   ],
+   "split": "train",
+   "split_check": "no shared complete-hand group with old train/validation/holdout"
+  },
+  "C2": {
+   "observations": "/home/hatk8/projects/yugioh-ai/experiments/artmage-parallel-20261110/demos/C2/observations.npz",
+   "sha256": "41be0b84d1d45803b3afe66d1c279c6f5764fed6feb6a96c0837ddc9e2dceff4",
+   "record": "/home/hatk8/projects/yugioh-ai/experiments/artmage-parallel-20261110/demos/C2/record.json",
+   "sequence_length": 100,
+   "own_turn": 92,
+   "opponent_turn": 8,
+   "proposed_loss_decisions": 85,
+   "proposed_context_decisions": 100,
+   "hand": [
+    74733322,
+    10045474,
+    14558127,
+    23434538,
+    73642296
+   ],
+   "split": "train",
+   "split_check": "no shared complete-hand group with old train/validation/holdout"
+  }
+ },
+ "conversion_needed": [
+  "one padded sequence per demo (length > old max 100 for C1: 113)",
+  "separate context mask (all player-0 decisions) and loss mask (proposal below)",
+  "chain features already saved per decision (public chain length/role/card/effect)",
+  "labels = executed action index"
+ ],
+ "proposed_loss_mask": "own-turn decisions except select_position (position adapter owns those), plus the scripted opponent-turn steps of C1 (獄神使② → W:P Fancy Ball); unscripted opponent-turn passes stay context only",
+ "caveat": "Old train decisions all have weight 1 (includes position prompts chosen by the old teacher without the adapter); decide before training whether to mask them the same way."
+}

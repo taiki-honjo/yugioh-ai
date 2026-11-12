@@ -1,0 +1,15 @@
+{
+ "name": "B3-B-1cost",
+ "engine_run": 32,
+ "replayed_engine_run": 16,
+ "mismatch": null,
+ "failure": null,
+ "reproduced_steps": 99,
+ "of": 99,
+ "reason": "reached_turn3",
+ "final_equal": true,
+ "checkpoints_equal": true,
+ "observations_match": true,
+ "lua_errors": 0,
+ "disclosed": []
+}

@@ -1,0 +1,6332 @@
+{
+  "status": "complete",
+  "runtime": {
+    "runtime": "/home/hatk8/projects/yugioh-ai/evaluation/opponent-article-basics-20261108/runtime",
+    "native": "/home/hatk8/projects/yugioh-ai/evaluation/opponent-article-basics-20261108/runtime/agent/ygoenv/ygoenv/ygopro/ygopro_ygoenv.cpython-310-x86_64-linux-gnu.so",
+    "sha256": "19a60f38a3d39b61a2ee082168d5a788a1022b2eb569633816596c8b3de21294",
+    "source_native": "/home/hatk8/projects/yugioh-ai/experiments/chain-imitation-20261108/runtime/agent/ygoenv/ygoenv/ygopro/ygopro_ygoenv.cpython-310-x86_64-linux-gnu.so",
+    "source_sha256": "c6518039c615aa49a1569c9db995a937d56f2e8ba319d47a11b1028a0b911828",
+    "source_unchanged": true,
+    "engine_rules_unchanged": true,
+    "fixes": [
+      "MSG_SELECT_UNSELECT_CARD disclosed selection identities",
+      "Expose legal hand-limit discard choices instead of random adapter discard"
+    ],
+    "observation_shape_unchanged": true,
+    "opponent_hidden_cards_masked": true
+  },
+  "vocabulary": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/code_list.txt",
+  "vocabulary_sha256": "aeb5be89d4a5591ccc5cce6af96def74ef47463a55265f75c11b92029e772e7b",
+  "grading_policy": "normal-summon-agnostic-v2",
+  "normal_summon_usage_scored": false,
+  "publish_new_replays": false,
+  "split_rule": "Disjoint complete initial hand multisets, all permutations and random draw variants grouped.",
+  "reference_scope": "Two verified basic openings only; not all 51 article references.",
+  "training_plan": {
+    "updates": 600,
+    "batch_size": 2,
+    "base_learning_rate": 3e-05,
+    "head_learning_rate": 0.0003,
+    "kl_weight": 0.01,
+    "seed": 1198,
+    "checkpoint_selection": "minimum held-out-validation teacher-forcing cross entropy; final holdout never used"
+  },
+  "decks": {
+    "ClownTroupe": {
+      "source_model": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/training/ClownTroupe/phase2-65536/checkpoints/1794059757_65536steps.flax_model",
+      "source_model_sha256": "c30f39ae804dba20dca7433a5ae9c459ce2dbd792ab6b4f4965619a9e88eef26",
+      "deck": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/decks/ClownTroupe.ydk",
+      "deck_sha256": "a841b56d10da76ad26c573070c6c1628a30c4d688ba89ef06cf593d677010c66",
+      "cases": {
+        "train": [
+          {
+            "id": "clown-CRWQjPaN",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/CRWQjPaN",
+            "hand": [
+              97268402,
+              97268402,
+              14558127,
+              42759961,
+              59438930
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 97268402
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 82159583
+              },
+              {
+                "act": "None",
+                "code": 83232904
+              },
+              {
+                "act": "Activate",
+                "code": 83232904
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Summon",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 93172951
+              },
+              {
+                "act": "Activate",
+                "code": 93172951,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 91237821,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 31533473,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 70058649
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              }
+            ],
+            "case_id": "ClownTroupe-g00-p0",
+            "seed": 119800,
+            "split": "train",
+            "group_id": 0
+          },
+          {
+            "id": "clown-CRWQjPaN",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/CRWQjPaN",
+            "hand": [
+              42759961,
+              59438930,
+              97268402,
+              97268402,
+              14558127
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 97268402
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 82159583
+              },
+              {
+                "act": "None",
+                "code": 83232904
+              },
+              {
+                "act": "Activate",
+                "code": 83232904
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Summon",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 93172951
+              },
+              {
+                "act": "Activate",
+                "code": 93172951,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 91237821,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 31533473,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 70058649
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              }
+            ],
+            "case_id": "ClownTroupe-g00-p1",
+            "seed": 119801,
+            "split": "train",
+            "group_id": 0
+          },
+          {
+            "id": "clown-CRWQjPaN",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/CRWQjPaN",
+            "hand": [
+              27204311,
+              27204311,
+              14558127,
+              97268402,
+              42759961
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 97268402
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 82159583
+              },
+              {
+                "act": "None",
+                "code": 83232904
+              },
+              {
+                "act": "Activate",
+                "code": 83232904
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Summon",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 93172951
+              },
+              {
+                "act": "Activate",
+                "code": 93172951,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 91237821,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 31533473,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 70058649
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              }
+            ],
+            "case_id": "ClownTroupe-g01-p0",
+            "seed": 119805,
+            "split": "train",
+            "group_id": 1
+          },
+          {
+            "id": "clown-CRWQjPaN",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/CRWQjPaN",
+            "hand": [
+              97268402,
+              27204311,
+              27204311,
+              14558127,
+              42759961
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 97268402
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 82159583
+              },
+              {
+                "act": "None",
+                "code": 83232904
+              },
+              {
+                "act": "Activate",
+                "code": 83232904
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Summon",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 93172951
+              },
+              {
+                "act": "Activate",
+                "code": 93172951,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 91237821,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 31533473,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 70058649
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              }
+            ],
+            "case_id": "ClownTroupe-g01-p1",
+            "seed": 119806,
+            "split": "train",
+            "group_id": 1
+          },
+          {
+            "id": "clown-CRWQjPaN",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/CRWQjPaN",
+            "hand": [
+              97268402,
+              42759961,
+              97268402,
+              14558127,
+              97268402
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 97268402
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 82159583
+              },
+              {
+                "act": "None",
+                "code": 83232904
+              },
+              {
+                "act": "Activate",
+                "code": 83232904
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Summon",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 93172951
+              },
+              {
+                "act": "Activate",
+                "code": 93172951,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 91237821,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 31533473,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 70058649
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              }
+            ],
+            "case_id": "ClownTroupe-g02-p0",
+            "seed": 119810,
+            "split": "train",
+            "group_id": 2
+          },
+          {
+            "id": "clown-CRWQjPaN",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/CRWQjPaN",
+            "hand": [
+              14558127,
+              97268402,
+              97268402,
+              97268402,
+              42759961
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 97268402
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 82159583
+              },
+              {
+                "act": "None",
+                "code": 83232904
+              },
+              {
+                "act": "Activate",
+                "code": 83232904
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Summon",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 93172951
+              },
+              {
+                "act": "Activate",
+                "code": 93172951,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 91237821,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 31533473,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 70058649
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              }
+            ],
+            "case_id": "ClownTroupe-g02-p1",
+            "seed": 119811,
+            "split": "train",
+            "group_id": 2
+          },
+          {
+            "id": "clown-CRWQjPaN",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/CRWQjPaN",
+            "hand": [
+              97268402,
+              27204311,
+              42759961,
+              27204311,
+              97268402
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 97268402
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 82159583
+              },
+              {
+                "act": "None",
+                "code": 83232904
+              },
+              {
+                "act": "Activate",
+                "code": 83232904
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Summon",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 93172951
+              },
+              {
+                "act": "Activate",
+                "code": 93172951,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 91237821,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 31533473,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 70058649
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              }
+            ],
+            "case_id": "ClownTroupe-g03-p0",
+            "seed": 119815,
+            "split": "train",
+            "group_id": 3
+          },
+          {
+            "id": "clown-CRWQjPaN",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/CRWQjPaN",
+            "hand": [
+              27204311,
+              97268402,
+              97268402,
+              42759961,
+              27204311
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 97268402
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 82159583
+              },
+              {
+                "act": "None",
+                "code": 83232904
+              },
+              {
+                "act": "Activate",
+                "code": 83232904
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Summon",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 93172951
+              },
+              {
+                "act": "Activate",
+                "code": 93172951,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 91237821,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 31533473,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 70058649
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              }
+            ],
+            "case_id": "ClownTroupe-g03-p1",
+            "seed": 119816,
+            "split": "train",
+            "group_id": 3
+          },
+          {
+            "id": "clown-CRWQjPaN",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/CRWQjPaN",
+            "hand": [
+              59438930,
+              94145021,
+              94145021,
+              97268402,
+              42759961
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 97268402
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 82159583
+              },
+              {
+                "act": "None",
+                "code": 83232904
+              },
+              {
+                "act": "Activate",
+                "code": 83232904
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Summon",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 93172951
+              },
+              {
+                "act": "Activate",
+                "code": 93172951,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 91237821,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 31533473,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 70058649
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              }
+            ],
+            "case_id": "ClownTroupe-g04-p0",
+            "seed": 119820,
+            "split": "train",
+            "group_id": 4
+          },
+          {
+            "id": "clown-CRWQjPaN",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/CRWQjPaN",
+            "hand": [
+              59438930,
+              94145021,
+              42759961,
+              94145021,
+              97268402
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 97268402
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 82159583
+              },
+              {
+                "act": "None",
+                "code": 83232904
+              },
+              {
+                "act": "Activate",
+                "code": 83232904
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Summon",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 93172951
+              },
+              {
+                "act": "Activate",
+                "code": 93172951,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 91237821,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 31533473,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 70058649
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              }
+            ],
+            "case_id": "ClownTroupe-g04-p1",
+            "seed": 119821,
+            "split": "train",
+            "group_id": 4
+          },
+          {
+            "id": "clown-CRWQjPaN",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/CRWQjPaN",
+            "hand": [
+              59438930,
+              27204311,
+              23434538,
+              97268402,
+              42759961
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 97268402
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 82159583
+              },
+              {
+                "act": "None",
+                "code": 83232904
+              },
+              {
+                "act": "Activate",
+                "code": 83232904
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Summon",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 93172951
+              },
+              {
+                "act": "Activate",
+                "code": 93172951,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 91237821,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 31533473,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 70058649
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              }
+            ],
+            "case_id": "ClownTroupe-g05-p0",
+            "seed": 119825,
+            "split": "train",
+            "group_id": 5
+          },
+          {
+            "id": "clown-CRWQjPaN",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/CRWQjPaN",
+            "hand": [
+              97268402,
+              23434538,
+              27204311,
+              59438930,
+              42759961
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 97268402
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 82159583
+              },
+              {
+                "act": "None",
+                "code": 83232904
+              },
+              {
+                "act": "Activate",
+                "code": 83232904
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Summon",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 93172951
+              },
+              {
+                "act": "Activate",
+                "code": 93172951,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 91237821,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 31533473,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 70058649
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              }
+            ],
+            "case_id": "ClownTroupe-g05-p1",
+            "seed": 119826,
+            "split": "train",
+            "group_id": 5
+          }
+        ],
+        "validation": [
+          {
+            "id": "clown-CRWQjPaN",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/CRWQjPaN",
+            "hand": [
+              97268402,
+              42759961,
+              14558127,
+              94145021,
+              97268402
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 97268402
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 82159583
+              },
+              {
+                "act": "None",
+                "code": 83232904
+              },
+              {
+                "act": "Activate",
+                "code": 83232904
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Summon",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 93172951
+              },
+              {
+                "act": "Activate",
+                "code": 93172951,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 91237821,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 31533473,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 70058649
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              }
+            ],
+            "case_id": "ClownTroupe-g06-p0",
+            "seed": 119830,
+            "split": "validation",
+            "group_id": 6
+          },
+          {
+            "id": "clown-CRWQjPaN",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/CRWQjPaN",
+            "hand": [
+              94145021,
+              42759961,
+              27204311,
+              97268402,
+              14558127
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 97268402
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 82159583
+              },
+              {
+                "act": "None",
+                "code": 83232904
+              },
+              {
+                "act": "Activate",
+                "code": 83232904
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Summon",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 93172951
+              },
+              {
+                "act": "Activate",
+                "code": 93172951,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 91237821,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 31533473,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 70058649
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              }
+            ],
+            "case_id": "ClownTroupe-g07-p0",
+            "seed": 119835,
+            "split": "validation",
+            "group_id": 7
+          }
+        ],
+        "holdout": [
+          {
+            "id": "clown-CRWQjPaN",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/CRWQjPaN",
+            "hand": [
+              42759961,
+              97268402,
+              94145021,
+              59438930,
+              97268402
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 97268402
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 82159583
+              },
+              {
+                "act": "None",
+                "code": 83232904
+              },
+              {
+                "act": "Activate",
+                "code": 83232904
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Summon",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 93172951
+              },
+              {
+                "act": "Activate",
+                "code": 93172951,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 91237821,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 31533473,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 70058649
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              }
+            ],
+            "case_id": "ClownTroupe-g08-p0",
+            "seed": 119840,
+            "split": "holdout",
+            "group_id": 8
+          },
+          {
+            "id": "clown-CRWQjPaN",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/CRWQjPaN",
+            "hand": [
+              42759961,
+              23434538,
+              97268402,
+              14558127,
+              97268402
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 97268402
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 82159583
+              },
+              {
+                "act": "None",
+                "code": 83232904
+              },
+              {
+                "act": "Activate",
+                "code": 83232904
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Summon",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 93172951
+              },
+              {
+                "act": "Activate",
+                "code": 93172951,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 91237821,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 31533473,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 70058649
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              }
+            ],
+            "case_id": "ClownTroupe-g09-p0",
+            "seed": 119845,
+            "split": "holdout",
+            "group_id": 9
+          },
+          {
+            "id": "clown-CRWQjPaN",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/CRWQjPaN",
+            "hand": [
+              14558127,
+              27204311,
+              14558127,
+              97268402,
+              42759961
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 97268402
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 82159583
+              },
+              {
+                "act": "None",
+                "code": 83232904
+              },
+              {
+                "act": "Activate",
+                "code": 83232904
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Summon",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 93172951
+              },
+              {
+                "act": "Activate",
+                "code": 93172951,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 91237821,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 31533473,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 70058649
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              }
+            ],
+            "case_id": "ClownTroupe-g10-p0",
+            "seed": 119850,
+            "split": "holdout",
+            "group_id": 10
+          },
+          {
+            "id": "clown-CRWQjPaN",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/CRWQjPaN",
+            "hand": [
+              97268402,
+              59438930,
+              42759961,
+              23434538,
+              97268402
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 97268402
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "None",
+                "code": 82159583
+              },
+              {
+                "act": "None",
+                "code": 83232904
+              },
+              {
+                "act": "Activate",
+                "code": 83232904
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Summon",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1
+              },
+              {
+                "act": "None",
+                "code": 93172951
+              },
+              {
+                "act": "None",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 82159583
+              },
+              {
+                "act": "Activate",
+                "code": 93172951
+              },
+              {
+                "act": "Activate",
+                "code": 93172951,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 91237821
+              },
+              {
+                "act": "Activate",
+                "code": 91237821,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 20448151
+              },
+              {
+                "act": "None",
+                "code": 31533473
+              },
+              {
+                "act": "None",
+                "code": 42759961
+              },
+              {
+                "act": "Activate",
+                "code": 31533473
+              },
+              {
+                "act": "Activate",
+                "code": 31533473,
+                "effect": 10012
+              },
+              {
+                "act": "None",
+                "code": 70058649
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 57847269
+              }
+            ],
+            "case_id": "ClownTroupe-g11-p0",
+            "seed": 119855,
+            "split": "holdout",
+            "group_id": 11
+          }
+        ]
+      },
+      "original_pilot_excluded_from_splits": true,
+      "train": {
+        "trajectories": 12,
+        "decisions": 666,
+        "max_length": 68,
+        "sha256": "4e78409d1f7b2cc88adfbf69cdc5f10daadbbb54c4ffa3d9037859dfc9dccc61"
+      },
+      "validation": {
+        "trajectories": 2,
+        "decisions": 108,
+        "max_length": 54,
+        "sha256": "d5c29b9273c14f599fc039661e82699cc06aca85eca253b09b57af52e7899767"
+      },
+      "holdout": {
+        "trajectories": 4,
+        "decisions": 237,
+        "max_length": 68,
+        "sha256": "abda3f771dd8722fe70dd2d56a1904ccfe0061026037841f67427f9e2b2b1295"
+      }
+    },
+    "Artmage": {
+      "source_model": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/training/Artmage/phase2-65536/checkpoints/1794059543_65536steps.flax_model",
+      "source_model_sha256": "1940dac58ac5474c41c0060336a24c244cb26c679d4fe42060ec944fad6b90d5",
+      "deck": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/decks/Artmage.ydk",
+      "deck_sha256": "a93c4d30d0945f58f741f1e135fdcbc0b0c438aff575cf6d0d02ce9a82c381d6",
+      "cases": {
+        "train": [
+          {
+            "id": "artmage-g2rN57Xb-1",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/g2rN57Xb",
+            "hand": [
+              59438930,
+              23434538,
+              38814750,
+              1122030,
+              49036338
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "None",
+                "code": 97556336
+              },
+              {
+                "act": "Summon",
+                "code": 97556336
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 23829452
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1152
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 23829452,
+                "message": "select_idlecmd"
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 23829452
+              },
+              {
+                "act": "None",
+                "code": 23599634
+              },
+              {
+                "act": "None",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 74011784
+              },
+              {
+                "act": "Activate",
+                "code": 74011784
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "SpSummon",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 59438930
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "None",
+                "code": 27184601
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              }
+            ],
+            "case_id": "Artmage-g00-p0",
+            "seed": 119800,
+            "split": "train",
+            "group_id": 0
+          },
+          {
+            "id": "artmage-g2rN57Xb-1",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/g2rN57Xb",
+            "hand": [
+              1122030,
+              49036338,
+              59438930,
+              23434538,
+              38814750
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "None",
+                "code": 97556336
+              },
+              {
+                "act": "Summon",
+                "code": 97556336
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 23829452
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1152
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 23829452,
+                "message": "select_idlecmd"
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 23829452
+              },
+              {
+                "act": "None",
+                "code": 23599634
+              },
+              {
+                "act": "None",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 74011784
+              },
+              {
+                "act": "Activate",
+                "code": 74011784
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "SpSummon",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 59438930
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "None",
+                "code": 27184601
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              }
+            ],
+            "case_id": "Artmage-g00-p1",
+            "seed": 119801,
+            "split": "train",
+            "group_id": 0
+          },
+          {
+            "id": "artmage-g2rN57Xb-1",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/g2rN57Xb",
+            "hand": [
+              23434538,
+              14558127,
+              14558127,
+              59438930,
+              1122030
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "None",
+                "code": 97556336
+              },
+              {
+                "act": "Summon",
+                "code": 97556336
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 23829452
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1152
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 23829452,
+                "message": "select_idlecmd"
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 23829452
+              },
+              {
+                "act": "None",
+                "code": 23599634
+              },
+              {
+                "act": "None",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 74011784
+              },
+              {
+                "act": "Activate",
+                "code": 74011784
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "SpSummon",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 59438930
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "None",
+                "code": 27184601
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              }
+            ],
+            "case_id": "Artmage-g01-p0",
+            "seed": 119805,
+            "split": "train",
+            "group_id": 1
+          },
+          {
+            "id": "artmage-g2rN57Xb-1",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/g2rN57Xb",
+            "hand": [
+              59438930,
+              23434538,
+              14558127,
+              14558127,
+              1122030
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "None",
+                "code": 97556336
+              },
+              {
+                "act": "Summon",
+                "code": 97556336
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 23829452
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1152
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 23829452,
+                "message": "select_idlecmd"
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 23829452
+              },
+              {
+                "act": "None",
+                "code": 23599634
+              },
+              {
+                "act": "None",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 74011784
+              },
+              {
+                "act": "Activate",
+                "code": 74011784
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "SpSummon",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 59438930
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "None",
+                "code": 27184601
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              }
+            ],
+            "case_id": "Artmage-g01-p1",
+            "seed": 119806,
+            "split": "train",
+            "group_id": 1
+          },
+          {
+            "id": "artmage-g2rN57Xb-1",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/g2rN57Xb",
+            "hand": [
+              14558127,
+              1122030,
+              59438930,
+              49036338,
+              14558127
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "None",
+                "code": 97556336
+              },
+              {
+                "act": "Summon",
+                "code": 97556336
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 23829452
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1152
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 23829452,
+                "message": "select_idlecmd"
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 23829452
+              },
+              {
+                "act": "None",
+                "code": 23599634
+              },
+              {
+                "act": "None",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 74011784
+              },
+              {
+                "act": "Activate",
+                "code": 74011784
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "SpSummon",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 59438930
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "None",
+                "code": 27184601
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              }
+            ],
+            "case_id": "Artmage-g02-p0",
+            "seed": 119810,
+            "split": "train",
+            "group_id": 2
+          },
+          {
+            "id": "artmage-g2rN57Xb-1",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/g2rN57Xb",
+            "hand": [
+              49036338,
+              14558127,
+              59438930,
+              14558127,
+              1122030
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "None",
+                "code": 97556336
+              },
+              {
+                "act": "Summon",
+                "code": 97556336
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 23829452
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1152
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 23829452,
+                "message": "select_idlecmd"
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 23829452
+              },
+              {
+                "act": "None",
+                "code": 23599634
+              },
+              {
+                "act": "None",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 74011784
+              },
+              {
+                "act": "Activate",
+                "code": 74011784
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "SpSummon",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 59438930
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "None",
+                "code": 27184601
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              }
+            ],
+            "case_id": "Artmage-g02-p1",
+            "seed": 119811,
+            "split": "train",
+            "group_id": 2
+          },
+          {
+            "id": "artmage-g2rN57Xb-1",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/g2rN57Xb",
+            "hand": [
+              14558127,
+              14558127,
+              1122030,
+              38814750,
+              59438930
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "None",
+                "code": 97556336
+              },
+              {
+                "act": "Summon",
+                "code": 97556336
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 23829452
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1152
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 23829452,
+                "message": "select_idlecmd"
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 23829452
+              },
+              {
+                "act": "None",
+                "code": 23599634
+              },
+              {
+                "act": "None",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 74011784
+              },
+              {
+                "act": "Activate",
+                "code": 74011784
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "SpSummon",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 59438930
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "None",
+                "code": 27184601
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              }
+            ],
+            "case_id": "Artmage-g03-p0",
+            "seed": 119815,
+            "split": "train",
+            "group_id": 3
+          },
+          {
+            "id": "artmage-g2rN57Xb-1",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/g2rN57Xb",
+            "hand": [
+              14558127,
+              59438930,
+              14558127,
+              1122030,
+              38814750
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "None",
+                "code": 97556336
+              },
+              {
+                "act": "Summon",
+                "code": 97556336
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 23829452
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1152
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 23829452,
+                "message": "select_idlecmd"
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 23829452
+              },
+              {
+                "act": "None",
+                "code": 23599634
+              },
+              {
+                "act": "None",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 74011784
+              },
+              {
+                "act": "Activate",
+                "code": 74011784
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "SpSummon",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 59438930
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "None",
+                "code": 27184601
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              }
+            ],
+            "case_id": "Artmage-g03-p1",
+            "seed": 119816,
+            "split": "train",
+            "group_id": 3
+          },
+          {
+            "id": "artmage-g2rN57Xb-1",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/g2rN57Xb",
+            "hand": [
+              49036338,
+              73642296,
+              38814750,
+              59438930,
+              1122030
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "None",
+                "code": 97556336
+              },
+              {
+                "act": "Summon",
+                "code": 97556336
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 23829452
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1152
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 23829452,
+                "message": "select_idlecmd"
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 23829452
+              },
+              {
+                "act": "None",
+                "code": 23599634
+              },
+              {
+                "act": "None",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 74011784
+              },
+              {
+                "act": "Activate",
+                "code": 74011784
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "SpSummon",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 59438930
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "None",
+                "code": 27184601
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              }
+            ],
+            "case_id": "Artmage-g04-p0",
+            "seed": 119820,
+            "split": "train",
+            "group_id": 4
+          },
+          {
+            "id": "artmage-g2rN57Xb-1",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/g2rN57Xb",
+            "hand": [
+              49036338,
+              73642296,
+              1122030,
+              38814750,
+              59438930
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "None",
+                "code": 97556336
+              },
+              {
+                "act": "Summon",
+                "code": 97556336
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 23829452
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1152
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 23829452,
+                "message": "select_idlecmd"
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 23829452
+              },
+              {
+                "act": "None",
+                "code": 23599634
+              },
+              {
+                "act": "None",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 74011784
+              },
+              {
+                "act": "Activate",
+                "code": 74011784
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "SpSummon",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 59438930
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "None",
+                "code": 27184601
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              }
+            ],
+            "case_id": "Artmage-g04-p1",
+            "seed": 119821,
+            "split": "train",
+            "group_id": 4
+          },
+          {
+            "id": "artmage-g2rN57Xb-1",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/g2rN57Xb",
+            "hand": [
+              73642296,
+              49036338,
+              23434538,
+              59438930,
+              1122030
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "None",
+                "code": 97556336
+              },
+              {
+                "act": "Summon",
+                "code": 97556336
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 23829452
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1152
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 23829452,
+                "message": "select_idlecmd"
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 23829452
+              },
+              {
+                "act": "None",
+                "code": 23599634
+              },
+              {
+                "act": "None",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 74011784
+              },
+              {
+                "act": "Activate",
+                "code": 74011784
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "SpSummon",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 59438930
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "None",
+                "code": 27184601
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              }
+            ],
+            "case_id": "Artmage-g05-p0",
+            "seed": 119825,
+            "split": "train",
+            "group_id": 5
+          },
+          {
+            "id": "artmage-g2rN57Xb-1",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/g2rN57Xb",
+            "hand": [
+              59438930,
+              23434538,
+              49036338,
+              73642296,
+              1122030
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "None",
+                "code": 97556336
+              },
+              {
+                "act": "Summon",
+                "code": 97556336
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 23829452
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1152
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 23829452,
+                "message": "select_idlecmd"
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 23829452
+              },
+              {
+                "act": "None",
+                "code": 23599634
+              },
+              {
+                "act": "None",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 74011784
+              },
+              {
+                "act": "Activate",
+                "code": 74011784
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "SpSummon",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 59438930
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "None",
+                "code": 27184601
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              }
+            ],
+            "case_id": "Artmage-g05-p1",
+            "seed": 119826,
+            "split": "train",
+            "group_id": 5
+          }
+        ],
+        "validation": [
+          {
+            "id": "artmage-g2rN57Xb-1",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/g2rN57Xb",
+            "hand": [
+              59438930,
+              1122030,
+              14558127,
+              14558127,
+              14558127
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "None",
+                "code": 97556336
+              },
+              {
+                "act": "Summon",
+                "code": 97556336
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 23829452
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1152
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 23829452,
+                "message": "select_idlecmd"
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 23829452
+              },
+              {
+                "act": "None",
+                "code": 23599634
+              },
+              {
+                "act": "None",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 74011784
+              },
+              {
+                "act": "Activate",
+                "code": 74011784
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "SpSummon",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 59438930
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "None",
+                "code": 27184601
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              }
+            ],
+            "case_id": "Artmage-g06-p0",
+            "seed": 119830,
+            "split": "validation",
+            "group_id": 6
+          },
+          {
+            "id": "artmage-g2rN57Xb-1",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/g2rN57Xb",
+            "hand": [
+              73642296,
+              1122030,
+              38814750,
+              59438930,
+              73642296
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "None",
+                "code": 97556336
+              },
+              {
+                "act": "Summon",
+                "code": 97556336
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 23829452
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1152
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 23829452,
+                "message": "select_idlecmd"
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 23829452
+              },
+              {
+                "act": "None",
+                "code": 23599634
+              },
+              {
+                "act": "None",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 74011784
+              },
+              {
+                "act": "Activate",
+                "code": 74011784
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "SpSummon",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 59438930
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "None",
+                "code": 27184601
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              }
+            ],
+            "case_id": "Artmage-g07-p0",
+            "seed": 119835,
+            "split": "validation",
+            "group_id": 7
+          }
+        ],
+        "holdout": [
+          {
+            "id": "artmage-g2rN57Xb-1",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/g2rN57Xb",
+            "hand": [
+              1122030,
+              14558127,
+              73642296,
+              73642296,
+              59438930
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "None",
+                "code": 97556336
+              },
+              {
+                "act": "Summon",
+                "code": 97556336
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 23829452
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1152
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 23829452,
+                "message": "select_idlecmd"
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 23829452
+              },
+              {
+                "act": "None",
+                "code": 23599634
+              },
+              {
+                "act": "None",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 74011784
+              },
+              {
+                "act": "Activate",
+                "code": 74011784
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "SpSummon",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 59438930
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "None",
+                "code": 27184601
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              }
+            ],
+            "case_id": "Artmage-g08-p0",
+            "seed": 119840,
+            "split": "holdout",
+            "group_id": 8
+          },
+          {
+            "id": "artmage-g2rN57Xb-1",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/g2rN57Xb",
+            "hand": [
+              1122030,
+              73642296,
+              23434538,
+              73642296,
+              59438930
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "None",
+                "code": 97556336
+              },
+              {
+                "act": "Summon",
+                "code": 97556336
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 23829452
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1152
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 23829452,
+                "message": "select_idlecmd"
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 23829452
+              },
+              {
+                "act": "None",
+                "code": 23599634
+              },
+              {
+                "act": "None",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 74011784
+              },
+              {
+                "act": "Activate",
+                "code": 74011784
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "SpSummon",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 59438930
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "None",
+                "code": 27184601
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              }
+            ],
+            "case_id": "Artmage-g09-p0",
+            "seed": 119845,
+            "split": "holdout",
+            "group_id": 9
+          },
+          {
+            "id": "artmage-g2rN57Xb-1",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/g2rN57Xb",
+            "hand": [
+              14558127,
+              73642296,
+              14558127,
+              59438930,
+              1122030
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "None",
+                "code": 97556336
+              },
+              {
+                "act": "Summon",
+                "code": 97556336
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 23829452
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1152
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 23829452,
+                "message": "select_idlecmd"
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 23829452
+              },
+              {
+                "act": "None",
+                "code": 23599634
+              },
+              {
+                "act": "None",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 74011784
+              },
+              {
+                "act": "Activate",
+                "code": 74011784
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "SpSummon",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 59438930
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "None",
+                "code": 27184601
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              }
+            ],
+            "case_id": "Artmage-g10-p0",
+            "seed": 119850,
+            "split": "holdout",
+            "group_id": 10
+          },
+          {
+            "id": "artmage-g2rN57Xb-1",
+            "source": "https://duel-simulator.miyauchidp.dev/replay/g2rN57Xb",
+            "hand": [
+              14558127,
+              49036338,
+              1122030,
+              23434538,
+              59438930
+            ],
+            "plan": [
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "None",
+                "code": 97556336
+              },
+              {
+                "act": "Summon",
+                "code": 97556336
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 23829452
+              },
+              {
+                "act": "Activate",
+                "code": 0,
+                "effect": 1152
+              },
+              {
+                "act": "Activate",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 23829452,
+                "message": "select_idlecmd"
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 23829452
+              },
+              {
+                "act": "None",
+                "code": 23599634
+              },
+              {
+                "act": "None",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "Activate",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 74011784
+              },
+              {
+                "act": "Activate",
+                "code": 74011784
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97434754
+              },
+              {
+                "act": "None",
+                "code": 1122030
+              },
+              {
+                "act": "Activate",
+                "code": 74733322
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "None",
+                "code": 34541940
+              },
+              {
+                "act": "SpSummon",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 60946049
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 34541940
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              },
+              {
+                "act": "None",
+                "code": 97434754
+              },
+              {
+                "act": "Activate",
+                "code": 97556336
+              },
+              {
+                "act": "None",
+                "code": 59438930
+              },
+              {
+                "act": "None",
+                "code": 0,
+                "phase": "End"
+              },
+              {
+                "act": "Activate",
+                "code": 74631897
+              },
+              {
+                "act": "None",
+                "code": 27184601
+              },
+              {
+                "act": "None",
+                "code": 74631897
+              },
+              {
+                "act": "Activate",
+                "code": 50277355
+              }
+            ],
+            "case_id": "Artmage-g11-p0",
+            "seed": 119855,
+            "split": "holdout",
+            "group_id": 11
+          }
+        ]
+      },
+      "original_pilot_excluded_from_splits": true,
+      "train": {
+        "trajectories": 12,
+        "decisions": 1077,
+        "max_length": 100,
+        "sha256": "61bc7cb52209c4c15b97e952694dd4a748752f59ea1734f99f4dd5ed197f3a14"
+      },
+      "validation": {
+        "trajectories": 2,
+        "decisions": 158,
+        "max_length": 80,
+        "sha256": "1022ba94b41d0d7cbe6d5d993eeb3a8edabb5d00b2e03ac2ae4b5ae47ddd04e2"
+      },
+      "holdout": {
+        "trajectories": 4,
+        "decisions": 364,
+        "max_length": 100,
+        "sha256": "00c320a8f611df5f35dcbfe1f423bb3eadf7302a5cef3b738b98cd1128e1e504"
+      }
+    }
+  },
+  "lua_errors": 0,
+  "private_information_checks_passed": true
+}

@@ -1,0 +1,175 @@
+{
+  "method": "saved JSON/NPZ and pinned source only; no game/model import or execution",
+  "source_semantics": "cards_ column 11 (zero based): STATUS_DISABLED OR STATUS_FORBIDDEN",
+  "source_query": "get_cards_in_location requests QUERY_STATUS and reads c.status_",
+  "inference": "All four targets acquire the combined status immediately after the Imperm chain. The saved Imperm script installs EFFECT_DISABLE and EFFECT_DISABLE_EFFECT. These observations support successful disabling in these four cases.",
+  "limits": [
+    "The observation merges disabled and forbidden; it does not retain separate raw status bits.",
+    "No immutable physical-card ID is exposed. Continuity is checked at all saved decisions using controller, zone and code.",
+    "This does not establish general model strength, rule compliance, or absence of information leakage.",
+    "No claim is made that the target could not activate or resolve every possible effect."
+  ],
+  "results": [
+    {
+      "condition": "BV1-1cost-ASSAULT-OI",
+      "target_code": 31822037,
+      "target_name": "無垢なる祈りの獄神使",
+      "controller": 0,
+      "raw_zone": 6,
+      "target_selected_step": 138,
+      "resolved_chain_first_step": 145,
+      "before_resolution": {
+        "step": 139,
+        "turn": 2,
+        "phase": 4,
+        "chain_size": 1,
+        "card_row": 29,
+        "vocabulary_id": 67,
+        "status_disabled_or_forbidden": 0
+      },
+      "after_resolution": {
+        "step": 145,
+        "turn": 2,
+        "phase": 4,
+        "chain_size": 0,
+        "card_row": 30,
+        "vocabulary_id": 67,
+        "status_disabled_or_forbidden": 1
+      },
+      "same_code_same_zone_at_all_saved_decisions": true,
+      "same_named_copies_at_resolution": [
+        {
+          "sequence": 6,
+          "code": 31822037
+        }
+      ],
+      "replay_observations_equal": true
+    },
+    {
+      "condition": "BV1-1cost-VARNISH-OI",
+      "target_code": 74631897,
+      "target_name": "神芸なる知恵の乙女",
+      "controller": 0,
+      "raw_zone": 0,
+      "target_selected_step": 148,
+      "resolved_chain_first_step": 156,
+      "before_resolution": {
+        "step": 149,
+        "turn": 2,
+        "phase": 4,
+        "chain_size": 1,
+        "card_row": 26,
+        "vocabulary_id": 58,
+        "status_disabled_or_forbidden": 0
+      },
+      "after_resolution": {
+        "step": 156,
+        "turn": 2,
+        "phase": 4,
+        "chain_size": 0,
+        "card_row": 26,
+        "vocabulary_id": 58,
+        "status_disabled_or_forbidden": 1
+      },
+      "same_code_same_zone_at_all_saved_decisions": true,
+      "same_named_copies_at_resolution": [
+        {
+          "sequence": 0,
+          "code": 74631897
+        },
+        {
+          "sequence": 1,
+          "code": 74631897
+        }
+      ],
+      "replay_observations_equal": true
+    },
+    {
+      "condition": "BV1-2cost-ASSAULT-OI",
+      "target_code": 34541940,
+      "target_name": "神芸学徒 ファインメルト",
+      "controller": 0,
+      "raw_zone": 1,
+      "target_selected_step": 168,
+      "resolved_chain_first_step": 170,
+      "before_resolution": {
+        "step": 169,
+        "turn": 2,
+        "phase": 4,
+        "chain_size": 1,
+        "card_row": 25,
+        "vocabulary_id": 45,
+        "status_disabled_or_forbidden": 0
+      },
+      "after_resolution": {
+        "step": 170,
+        "turn": 2,
+        "phase": 4,
+        "chain_size": 0,
+        "card_row": 25,
+        "vocabulary_id": 45,
+        "status_disabled_or_forbidden": 1
+      },
+      "same_code_same_zone_at_all_saved_decisions": true,
+      "same_named_copies_at_resolution": [
+        {
+          "sequence": 1,
+          "code": 34541940
+        }
+      ],
+      "replay_observations_equal": true
+    },
+    {
+      "condition": "BV1-2cost-VARNISH-OI",
+      "target_code": 34541940,
+      "target_name": "神芸学徒 ファインメルト",
+      "controller": 0,
+      "raw_zone": 3,
+      "target_selected_step": 101,
+      "resolved_chain_first_step": 103,
+      "before_resolution": {
+        "step": 102,
+        "turn": 2,
+        "phase": 4,
+        "chain_size": 1,
+        "card_row": 32,
+        "vocabulary_id": 45,
+        "status_disabled_or_forbidden": 0
+      },
+      "after_resolution": {
+        "step": 103,
+        "turn": 2,
+        "phase": 4,
+        "chain_size": 0,
+        "card_row": 32,
+        "vocabulary_id": 45,
+        "status_disabled_or_forbidden": 1
+      },
+      "same_code_same_zone_at_all_saved_decisions": true,
+      "same_named_copies_at_resolution": [
+        {
+          "sequence": 3,
+          "code": 34541940
+        }
+      ],
+      "replay_observations_equal": true
+    }
+  ],
+  "input_sha256": {
+    "evaluation/opponent-article-basics-20261108/runtime/agent/ygoenv/ygoenv/ygopro/ygopro.h": "ec1afef6ea3a1f725de5dab9563639ce3927d26605eaf377f852f5054521b667",
+    "experiments/meta-opponents-20261107/run-20261107-224631/code_list.txt": "aeb5be89d4a5591ccc5cce6af96def74ef47463a55265f75c11b92029e772e7b",
+    "experiments/elfnotes-20261106/runtime/card-scripts/c10045474.lua": "d64a2fc97f99a05231ea4de0ef507355b702c959e16650ed6f506bd3aa858105",
+    "experiments/artmage-functional-landing-compare-20261110/runs/BV1-1cost-ASSAULT-OI/record.json": "da16b8b89feff700219512207f9e91e6402edd4ef42014b0fcc52ad454a519c8",
+    "experiments/artmage-functional-landing-compare-20261110/runs/BV1-1cost-ASSAULT-OI/observations.npz": "a04c3e55cc334e1b8edbfc829ad30ac25ba69b2fd8a37d5db78e72cee9d518a8",
+    "experiments/artmage-functional-landing-compare-20261110/runs/BV1-1cost-ASSAULT-OI/replay.json": "46dd9d22ea260c3dfbac5916abe1c6fead763ad692d1e702c91740b63a23b424",
+    "experiments/artmage-functional-landing-compare-20261110/runs/BV1-1cost-VARNISH-OI/record.json": "0f48c74a4bddf7fd96d923e5b4f50e54fa39495ecc0f67cd296d378df6261c18",
+    "experiments/artmage-functional-landing-compare-20261110/runs/BV1-1cost-VARNISH-OI/observations.npz": "f7c4c9b2d10048b5bd049815a3e2cfcd1c75a16ddf87796b00c3e2192e1db5b1",
+    "experiments/artmage-functional-landing-compare-20261110/runs/BV1-1cost-VARNISH-OI/replay.json": "91e204ca976fa23dae028fa9d6e0327b65109bf961d1339b021a720a6ef7fe93",
+    "experiments/artmage-functional-landing-compare-20261110/runs/BV1-2cost-ASSAULT-OI/record.json": "7aa6aed72fd9c6e412d06ff18ea2e50e0f59e8f453a995dbebb43939dc5f1ec8",
+    "experiments/artmage-functional-landing-compare-20261110/runs/BV1-2cost-ASSAULT-OI/observations.npz": "a3d55022800bd614bb32269f80ccf7307fe368a4eae828d0fe7d7ad9c2eb3a2d",
+    "experiments/artmage-functional-landing-compare-20261110/runs/BV1-2cost-ASSAULT-OI/replay.json": "e5705d08fce1ff5547bcf908513d21d2865a768a946d3eaeba95faba3fd55aba",
+    "experiments/artmage-functional-landing-compare-20261110/runs/BV1-2cost-VARNISH-OI/record.json": "cd8f48a166f2de87b0104d5819967d48e3a0bcf3d707a5d892a8ab644600057b",
+    "experiments/artmage-functional-landing-compare-20261110/runs/BV1-2cost-VARNISH-OI/observations.npz": "5926cdb16db87953f51b909da3b3b92cace0b3c9ec159fb910fb2c534284f580",
+    "experiments/artmage-functional-landing-compare-20261110/runs/BV1-2cost-VARNISH-OI/replay.json": "a6039215a3e8e952b56818bd935bc287dc0411bd87d2a45b50a3dccf8b520a9d"
+  }
+}

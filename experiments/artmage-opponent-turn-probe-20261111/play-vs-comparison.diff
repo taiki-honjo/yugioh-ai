@@ -1,0 +1,103 @@
+--- flc_runs.py:play (frozen, 8af7cbae)
++++ otp_runs.py:play
+@@ -1,16 +1,19 @@
+ def play(E, A, name, record=None):
++    """flc_runs.play with the two registered interventions and the extra checkpoints (marked PROBE)."""
+     v, np = E.v, E.np
+-    c = parse(name)
+-    spec = HP.HANDS[c['hand_name']]
++    pc = parse(name)
++    c = F.parse(pc['old'])
++    spec = F.HP.HANDS[c['hand_name']]
+     deck = v.deck_cards('Artmage')
+-    rows_fx = fixture(deck, spec['hand'], OPPONENT_HAND, spec['seed'])
++    rows_fx = F.fixture(deck, spec['hand'], F.OPPONENT_HAND, spec['seed'])
+     case = dict(case_id=name, hand=spec['hand'], seed=spec['seed'])
+     env, obs, info = E.env_for(case, rows=rows_fx)
+     policy = None if record else E.create_policy(MODEL[0], MODEL[1], positions=True, expected=MODEL_SHA)
+     if policy:
+         policy.reset()
+-    opponent = Opponent(c['opp'], v)
+-    prefix, source = prefix_of(c['hand_name'])
++    opponent = F.Opponent(c['opp'], v)
++    prefix, source = F.prefix_of(c['hand_name'])
++    intervene, probe = Intervener(pc['d1'], pc['r1']), Probe()  # PROBE
+     pos, branched, branch_info = 0, False, None
+     rows, observed, audit, checkpoints, prefix_log = [], [], [], {}, []
+     reason, game_over, failure, mismatch = 'step_cap', None, None, None
+@@ -20,13 +23,14 @@
+             s['_step'] = step
+             for t, label in [(2, 'own_turn1_end'), (3, 'opp_turn2_end'), (4, 'own_turn3_end')]:
+                 if s['turn_count'] >= t and label not in checkpoints:
+-                    checkpoints[label] = board(s)
++                    checkpoints[label] = F.board(s)
++            probe(s)  # PROBE
+             if s['turn_count'] >= 4:
+                 reason = 'own_turn3_end'; break
+             if record and step >= len(record['trace']):
+                 reason = 'end_of_record'; break
+             assert int(info['raw_num_options'][0]) <= 128
+-            check_observation(v, obs, info, s, audit, step, rows[-1]['selected'] if rows else None)
++            F.check_observation(v, obs, info, s, audit, step, rows[-1]['selected'] if rows else None)
+             snap = v.compact({k: x for k, x in s.items() if k != '_step'})
+             if record:
+                 rec = record['trace'][step]
+@@ -41,27 +45,31 @@
+                     want = prefix[pos]
+                     if s['message'] != want['message']:
+                         raise RuntimeError(f"prefix message differs at own decision {pos}: {s['message']} != {want['message']}")
+-                    idx = next((a['index'] for a in s['actions'] if meaning_key(a) == tuple(want['meaning'])), None)
++                    idx = next((a['index'] for a in s['actions'] if F.meaning_key(a) == tuple(want['meaning'])), None)
+                     if idx is None:
+                         raise RuntimeError(f'prefix action not legal at own decision {pos}: {want}')
+                     prefix_log.append(dict(step=step, model_agrees=model_idx == idx))
+                     pos += 1
+                     who = 'prefix-replay'
+                 elif not branched:
+-                    if not is_branch_prompt(s):
++                    if not F.is_branch_prompt(s):
+                         raise RuntimeError(f"expected the Graphrea set prompt at step {step}, got {s['message']}")
+-                    idx = next(a['index'] for a in s['actions'] if a['code'] == BRANCH[c['branch']])
+-                    branch_info = dict(step=step, executed=v.names.get(BRANCH[c['branch']]), model_choice=v.names.get(s['actions'][model_idx]['code']),
++                    idx = next(a['index'] for a in s['actions'] if a['code'] == F.BRANCH[c['branch']])
++                    branch_info = dict(step=step, executed=v.names.get(F.BRANCH[c['branch']]), model_choice=v.names.get(s['actions'][model_idx]['code']),
+                                        offered=[v.names.get(a['code'], a['code']) for a in s['actions']])
+                     branched = True
+                     who = 'branch-control'
+                 else:
+-                    idx, who = model_idx, 'model'
++                    forced = intervene(s, step, model_idx)  # PROBE
++                    if forced is None:
++                        idx, who = model_idx, 'model'
++                    else:
++                        idx, who = forced, 'probe-' + intervene.log[-1]['rule']
+             else:
+                 idx, who = opponent(s)
+                 who = 'opponent-' + who
+             if s['to_play'] == 0:
+-                observed.append(dict(obs=observation(obs, info), label=idx, step=step, turn=s['turn_count']))
++                observed.append(dict(obs=F.observation(obs, info), label=idx, step=step, turn=s['turn_count']))
+             rows.append(dict(step=step, snapshot=snap, selected=dict(s['actions'][idx], name=v.names.get(s['actions'][idx]['code'], '')), who=who))
+             obs, reward, term, trunc, info = env.step(np.array([idx], np.int32))
+             if term[0] or trunc[0]:
+@@ -74,11 +82,17 @@
+     final = v.compact(v.native.benchmark_snapshot()) if game_over is None else None
+     lua = v.native.get_lua_error_count()
+     E.close(env)
+-    return dict(name=name, hand_name=c['hand_name'], cost=c['cost'], branch_choice=c['branch'], opp=c['opp'], hand=spec['hand'], seed=spec['seed'],
+-                opponent_hand=OPPONENT_HAND, model_sha256=list(MODEL_SHA),
++    checkpoints.update(probe.cp)  # PROBE
++    r1_log = [x for x in intervene.log if x['rule'] == 'R1']
++    return dict(name=name, site=pc['site'], old_condition=pc['old'], d1=pc['d1'], r1=pc['r1'],
++                hand_name=c['hand_name'], cost=c['cost'], branch_choice=c['branch'], opp=c['opp'], hand=spec['hand'], seed=spec['seed'],
++                opponent_hand=F.OPPONENT_HAND, model_sha256=list(MODEL_SHA),
+                 prefix_source=source, prefix_length=len(prefix), prefix_replayed=pos, prefix_log=prefix_log, branch=branch_info,
++                interventions=intervene.log,
++                r1_status=None if not pc['r1'] or record else ('not reached' if not r1_log else 'established' if r1_log[0]['established'] else 'not established'),
+                 reason=reason, failure=failure, mismatch=mismatch, game_over=game_over, checkpoints=checkpoints, final=final,
+                 opponent_events=opponent.events, position_events=copy.deepcopy(policy.positions.events) if policy else None,
+-                lua_errors=lua, disclosed=audit, trace=rows, draws='none (fixture duel: draw count 0)'), observed
++                lua_errors=lua, disclosed=audit, trace=rows,
++                draws='no normal draws (fixture duel: draw count 0); effect draws occur'), observed
+ 
+ 

@@ -1,0 +1,1263 @@
+{
+  "created_jst": "2026-11-09T22:45:00+09:00",
+  "engine_runs": {
+    "used": 8,
+    "limit": 8
+  },
+  "conditions": {
+    "P1-search": {
+      "engine_run": 1,
+      "replay": {
+        "engine_run": 5,
+        "reproduced": "140/140",
+        "end_matches": true
+      },
+      "failure": null,
+      "lua_errors": 0,
+      "visibility": {
+        "checks": 91,
+        "failures": 0
+      },
+      "T1": {
+        "lp": {
+          "ours": 8000,
+          "opponent": 8000
+        },
+        "ours": {
+          "monsters": [
+            "鎖縛竜ザレン(L7)",
+            "キラーチューン・リミックス(L5)"
+          ],
+          "spell_trap": [
+            "キラーチューン・シンクロ",
+            "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+          ],
+          "hand": [
+            "エフェクト・ヴェーラー",
+            "エフェクト・ヴェーラー",
+            "エフェクト・ヴェーラー"
+          ],
+          "graveyard": [
+            "キラーチューン・キュー",
+            "キラーチューン・トラックメイカー",
+            "キラーチューン・ミクス",
+            "キラーチューン・レコ",
+            "キラーチューン・ロタリー",
+            "灰流うらら"
+          ],
+          "banished": [],
+          "extra_count": 12
+        },
+        "opponent": {
+          "monsters": [],
+          "hand_count": 5,
+          "graveyard": [],
+          "banished": [
+            "キラーチューン・ロタリー"
+          ]
+        }
+      },
+      "T2": {
+        "lp": {
+          "ours": 8000,
+          "opponent": 8000
+        },
+        "ours": {
+          "monsters": [
+            "鎖縛竜ザレン(L7)",
+            "キラーチューン・レコ(L3)"
+          ],
+          "spell_trap": [
+            "キラーチューン・シンクロ",
+            "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+          ],
+          "hand": [
+            "エフェクト・ヴェーラー",
+            "エフェクト・ヴェーラー",
+            "エフェクト・ヴェーラー"
+          ],
+          "graveyard": [
+            "キラーチューン・キュー",
+            "キラーチューン・トラックメイカー",
+            "キラーチューン・ミクス",
+            "キラーチューン・リミックス",
+            "キラーチューン・ロタリー",
+            "灰流うらら"
+          ],
+          "banished": [],
+          "extra_count": 12
+        },
+        "opponent": {
+          "monsters": [
+            "耀聖の花詩ルキナ(L6,face-up)"
+          ],
+          "hand_count": 4,
+          "graveyard": [],
+          "banished": [
+            "キラーチューン・ロタリー"
+          ]
+        }
+      },
+      "T3": {
+        "lp": {
+          "ours": 8000,
+          "opponent": 7700
+        },
+        "ours": {
+          "monsters": [
+            "フルール・ド・バロネス(L10)"
+          ],
+          "spell_trap": [
+            "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+          ],
+          "hand": [
+            "エフェクト・ヴェーラー",
+            "エフェクト・ヴェーラー",
+            "エフェクト・ヴェーラー",
+            "キラーチューン・プレイリスト"
+          ],
+          "graveyard": [
+            "キラーチューン・キュー",
+            "キラーチューン・シンクロ",
+            "キラーチューン・トラックメイカー",
+            "キラーチューン・ミクス",
+            "キラーチューン・リミックス",
+            "キラーチューン・レコ",
+            "キラーチューン・ロタリー",
+            "灰流うらら",
+            "鎖縛竜ザレン"
+          ],
+          "banished": [],
+          "extra_count": 11
+        },
+        "opponent": {
+          "monsters": [],
+          "hand_count": 4,
+          "graveyard": [
+            "耀聖の花詩ルキナ"
+          ],
+          "banished": [
+            "キラーチューン・ロタリー"
+          ]
+        }
+      },
+      "turn2": {
+        "our_activation_options_seen": [
+          "エフェクト・ヴェーラー#0",
+          "キラーチューン・シンクロ#0",
+          "キラーチューン・リミックス#0",
+          "キラーチューン・リミックス#1",
+          "キラーチューン・レコ#None",
+          "灰流うらら#None",
+          "鎖縛竜ザレン#1"
+        ],
+        "our_activations": [
+          {
+            "step": 72,
+            "card": "キラーチューン・リミックス",
+            "chain": []
+          },
+          {
+            "step": 93,
+            "card": "灰流うらら",
+            "chain": [
+              "耀聖の花詩ルキナ"
+            ]
+          }
+        ],
+        "our_options_at_search_window": [
+          "エフェクト・ヴェーラー#0",
+          "エフェクト・ヴェーラー#0",
+          "エフェクト・ヴェーラー#0",
+          "灰流うらら#None",
+          "キラーチューン・シンクロ#0"
+        ],
+        "our_choice_at_search_window": "Activate:灰流うらら",
+        "first_search": {
+          "outcome": "search_not_applied",
+          "opponent_hand": {
+            "added": {},
+            "removed": {}
+          }
+        },
+        "opponent_script": {
+          "mode": "script",
+          "blocked": null
+        },
+        "opponent_actions": [
+          {
+            "step": 88,
+            "source": "script",
+            "action": "SpSummon:耀聖の花詩ルキナ",
+            "chain": []
+          },
+          {
+            "step": 92,
+            "source": "script",
+            "action": "Activate:耀聖の花詩ルキナ#0",
+            "chain": []
+          },
+          {
+            "step": 98,
+            "source": "script-pass",
+            "action": "choose(select_idlecmd):Battle",
+            "chain": []
+          },
+          {
+            "step": 102,
+            "source": "script-pass",
+            "action": "choose(select_battlecmd):Main2",
+            "chain": []
+          },
+          {
+            "step": 106,
+            "source": "script-pass",
+            "action": "choose(select_idlecmd):End",
+            "chain": []
+          }
+        ]
+      },
+      "turn3": {
+        "our_actions": [
+          {
+            "step": 114,
+            "source": "model",
+            "action": "choose(select_idlecmd):Battle",
+            "chain": []
+          },
+          {
+            "step": 118,
+            "source": "model",
+            "action": "Attack:鎖縛竜ザレン",
+            "chain": []
+          },
+          {
+            "step": 123,
+            "source": "model",
+            "action": "choose(select_battlecmd):Main2",
+            "chain": []
+          },
+          {
+            "step": 127,
+            "source": "model",
+            "action": "SpSummon:フルール・ド・バロネス",
+            "chain": []
+          },
+          {
+            "step": 132,
+            "source": "model",
+            "action": "Activate:キラーチューン・シンクロ#0",
+            "chain": []
+          },
+          {
+            "step": 135,
+            "source": "model",
+            "action": "choose(select_card):キラーチューン・プレイリスト",
+            "chain": [
+              "キラーチューン・シンクロ"
+            ]
+          },
+          {
+            "step": 137,
+            "source": "model",
+            "action": "choose(select_idlecmd):End",
+            "chain": []
+          }
+        ]
+      }
+    },
+    "B2B-search": {
+      "engine_run": 2,
+      "replay": {
+        "engine_run": 6,
+        "reproduced": "148/148",
+        "end_matches": true
+      },
+      "failure": null,
+      "lua_errors": 0,
+      "visibility": {
+        "checks": 98,
+        "failures": 0
+      },
+      "T1": {
+        "lp": {
+          "ours": 8000,
+          "opponent": 8000
+        },
+        "ours": {
+          "monsters": [
+            "キラーチューン Ｂ２Ｂ(L10)"
+          ],
+          "spell_trap": [
+            "キラーチューン・シンクロ",
+            "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+          ],
+          "hand": [
+            "エフェクト・ヴェーラー",
+            "エフェクト・ヴェーラー",
+            "エフェクト・ヴェーラー"
+          ],
+          "graveyard": [
+            "キラーチューン・キュー",
+            "キラーチューン・トラックメイカー",
+            "キラーチューン・レコ",
+            "キラーチューン・ロタリー",
+            "灰流うらら",
+            "鎖縛竜ザレン"
+          ],
+          "banished": [],
+          "extra_count": 12
+        },
+        "opponent": {
+          "monsters": [],
+          "hand_count": 5,
+          "graveyard": [],
+          "banished": []
+        }
+      },
+      "T2": {
+        "lp": {
+          "ours": 8000,
+          "opponent": 8000
+        },
+        "ours": {
+          "monsters": [
+            "キラーチューン Ｂ２Ｂ(L10)"
+          ],
+          "spell_trap": [
+            "キラーチューン・シンクロ",
+            "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+          ],
+          "hand": [
+            "エフェクト・ヴェーラー",
+            "エフェクト・ヴェーラー",
+            "エフェクト・ヴェーラー"
+          ],
+          "graveyard": [
+            "キラーチューン・キュー",
+            "キラーチューン・トラックメイカー",
+            "キラーチューン・レコ",
+            "キラーチューン・ロタリー",
+            "灰流うらら",
+            "鎖縛竜ザレン"
+          ],
+          "banished": [],
+          "extra_count": 12
+        },
+        "opponent": {
+          "monsters": [
+            "耀聖の花詩ルキナ(L8,face-up)"
+          ],
+          "hand_count": 5,
+          "graveyard": [],
+          "banished": []
+        }
+      },
+      "T3": {
+        "lp": {
+          "ours": 8000,
+          "opponent": 8000
+        },
+        "ours": {
+          "monsters": [
+            "キラーチューン・リミックス(L5)",
+            "キラーチューン・トラックメイカー(L4)"
+          ],
+          "spell_trap": [
+            "キラーチューン・シンクロ",
+            "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+          ],
+          "hand": [
+            "エフェクト・ヴェーラー",
+            "エフェクト・ヴェーラー",
+            "キラーチューン・プレイリスト"
+          ],
+          "graveyard": [
+            "エフェクト・ヴェーラー",
+            "キラーチューン Ｂ２Ｂ",
+            "キラーチューン・キュー",
+            "キラーチューン・シンクロ",
+            "キラーチューン・トラックメイカー",
+            "キラーチューン・ミクス",
+            "キラーチューン・レコ",
+            "キラーチューン・ロタリー",
+            "灰流うらら",
+            "鎖縛竜ザレン"
+          ],
+          "banished": [],
+          "extra_count": 10
+        },
+        "opponent": {
+          "monsters": [],
+          "hand_count": 5,
+          "graveyard": [
+            "耀聖の花詩ルキナ"
+          ],
+          "banished": [
+            "キラーチューン・ロタリー"
+          ]
+        }
+      },
+      "turn2": {
+        "our_activation_options_seen": [
+          "エフェクト・ヴェーラー#0",
+          "キラーチューン Ｂ２Ｂ#0",
+          "キラーチューン・シンクロ#0"
+        ],
+        "our_activations": [],
+        "our_options_at_search_window": [
+          "エフェクト・ヴェーラー#0",
+          "エフェクト・ヴェーラー#0",
+          "エフェクト・ヴェーラー#0",
+          "キラーチューン Ｂ２Ｂ#0",
+          "キラーチューン・シンクロ#0"
+        ],
+        "our_choice_at_search_window": "Cancel:None",
+        "first_search": {
+          "outcome": "search_resolved",
+          "opponent_hand": {
+            "added": {
+              "12375297": 1
+            },
+            "removed": {}
+          }
+        },
+        "opponent_script": {
+          "mode": "script",
+          "blocked": null
+        },
+        "opponent_actions": [
+          {
+            "step": 58,
+            "source": "script",
+            "action": "SpSummon:耀聖の花詩ルキナ",
+            "chain": []
+          },
+          {
+            "step": 62,
+            "source": "script",
+            "action": "Activate:耀聖の花詩ルキナ#0",
+            "chain": []
+          },
+          {
+            "step": 65,
+            "source": "script",
+            "action": "choose(select_card):燿ける聖詩の獄神精",
+            "chain": [
+              "耀聖の花詩ルキナ"
+            ]
+          },
+          {
+            "step": 68,
+            "source": "script-pass",
+            "action": "choose(select_idlecmd):Battle",
+            "chain": []
+          },
+          {
+            "step": 72,
+            "source": "script-pass",
+            "action": "choose(select_battlecmd):Main2",
+            "chain": []
+          },
+          {
+            "step": 76,
+            "source": "script-pass",
+            "action": "choose(select_idlecmd):End",
+            "chain": []
+          }
+        ]
+      },
+      "turn3": {
+        "our_actions": [
+          {
+            "step": 84,
+            "source": "model",
+            "action": "choose(select_idlecmd):Battle",
+            "chain": []
+          },
+          {
+            "step": 88,
+            "source": "model",
+            "action": "choose(select_battlecmd):Main2",
+            "chain": []
+          },
+          {
+            "step": 92,
+            "source": "model",
+            "action": "Activate:ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”#1",
+            "chain": []
+          },
+          {
+            "step": 95,
+            "source": "model",
+            "action": "choose(select_card):キラーチューン・ミクス",
+            "chain": [
+              "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+            ]
+          },
+          {
+            "step": 96,
+            "source": "model",
+            "action": "Activate:None",
+            "chain": [
+              "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+            ]
+          },
+          {
+            "step": 99,
+            "source": "model",
+            "action": "Activate:キラーチューン・ミクス",
+            "chain": []
+          },
+          {
+            "step": 102,
+            "source": "model",
+            "action": "choose(select_card):キラーチューン・キュー",
+            "chain": [
+              "キラーチューン・ミクス"
+            ]
+          },
+          {
+            "step": 105,
+            "source": "model",
+            "action": "Summon:キラーチューン・キュー",
+            "chain": []
+          },
+          {
+            "step": 106,
+            "source": "model",
+            "action": "Activate:None",
+            "chain": []
+          },
+          {
+            "step": 108,
+            "source": "model",
+            "action": "Activate:キラーチューン・キュー",
+            "chain": []
+          },
+          {
+            "step": 111,
+            "source": "model",
+            "action": "choose(select_card):灰流うらら",
+            "chain": [
+              "キラーチューン・キュー"
+            ]
+          },
+          {
+            "step": 116,
+            "source": "model",
+            "action": "SpSummon:キラーチューン・トラックメイカー",
+            "chain": []
+          },
+          {
+            "step": 117,
+            "source": "model",
+            "action": "choose(select_unselect_card):エフェクト・ヴェーラー",
+            "chain": []
+          },
+          {
+            "step": 120,
+            "source": "model",
+            "action": "Activate:キラーチューン・キュー#1",
+            "chain": []
+          },
+          {
+            "step": 121,
+            "source": "model",
+            "action": "Activate:キラーチューン・トラックメイカー#0",
+            "chain": [
+              "キラーチューン・キュー"
+            ]
+          },
+          {
+            "step": 124,
+            "source": "model",
+            "action": "choose(select_card):キラーチューン・シンクロ",
+            "chain": [
+              "キラーチューン・キュー",
+              "キラーチューン・トラックメイカー"
+            ]
+          },
+          {
+            "step": 125,
+            "source": "model",
+            "action": "choose(select_card):キラーチューン・ロタリー",
+            "chain": [
+              "キラーチューン・キュー",
+              "キラーチューン・トラックメイカー"
+            ]
+          },
+          {
+            "step": 126,
+            "source": "model",
+            "action": "Activate:キラーチューン・キュー#2",
+            "chain": [
+              "キラーチューン・キュー",
+              "キラーチューン・トラックメイカー"
+            ]
+          },
+          {
+            "step": 129,
+            "source": "model",
+            "action": "SpSummon:キラーチューン・リミックス",
+            "chain": []
+          },
+          {
+            "step": 132,
+            "source": "model",
+            "action": "Activate:キラーチューン・ミクス",
+            "chain": []
+          },
+          {
+            "step": 137,
+            "source": "model",
+            "action": "Set:キラーチューン・シンクロ",
+            "chain": []
+          },
+          {
+            "step": 141,
+            "source": "model",
+            "action": "Activate:キラーチューン・シンクロ#0",
+            "chain": []
+          },
+          {
+            "step": 143,
+            "source": "model",
+            "action": "choose(select_card):キラーチューン・プレイリスト",
+            "chain": [
+              "キラーチューン・シンクロ"
+            ]
+          },
+          {
+            "step": 145,
+            "source": "model",
+            "action": "choose(select_idlecmd):End",
+            "chain": []
+          }
+        ]
+      }
+    },
+    "P1-synchro": {
+      "engine_run": 3,
+      "replay": {
+        "engine_run": 7,
+        "reproduced": "150/150",
+        "end_matches": true
+      },
+      "failure": null,
+      "lua_errors": 0,
+      "visibility": {
+        "checks": 94,
+        "failures": 0
+      },
+      "T1": {
+        "lp": {
+          "ours": 8000,
+          "opponent": 8000
+        },
+        "ours": {
+          "monsters": [
+            "鎖縛竜ザレン(L7)",
+            "キラーチューン・リミックス(L5)"
+          ],
+          "spell_trap": [
+            "キラーチューン・シンクロ",
+            "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+          ],
+          "hand": [
+            "エフェクト・ヴェーラー",
+            "エフェクト・ヴェーラー",
+            "エフェクト・ヴェーラー"
+          ],
+          "graveyard": [
+            "キラーチューン・キュー",
+            "キラーチューン・トラックメイカー",
+            "キラーチューン・ミクス",
+            "キラーチューン・レコ",
+            "キラーチューン・ロタリー",
+            "灰流うらら"
+          ],
+          "banished": [],
+          "extra_count": 12
+        },
+        "opponent": {
+          "monsters": [],
+          "hand_count": 5,
+          "graveyard": [],
+          "banished": [
+            "キラーチューン・ロタリー"
+          ]
+        }
+      },
+      "T2": {
+        "lp": {
+          "ours": 8000,
+          "opponent": 7700
+        },
+        "ours": {
+          "monsters": [
+            "鎖縛竜ザレン(L7)",
+            "キラーチューン・レコ(L3)"
+          ],
+          "spell_trap": [
+            "キラーチューン・シンクロ",
+            "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+          ],
+          "hand": [
+            "エフェクト・ヴェーラー",
+            "エフェクト・ヴェーラー",
+            "エフェクト・ヴェーラー"
+          ],
+          "graveyard": [
+            "キラーチューン・キュー",
+            "キラーチューン・トラックメイカー",
+            "キラーチューン・ミクス",
+            "キラーチューン・リミックス",
+            "キラーチューン・ロタリー",
+            "灰流うらら"
+          ],
+          "banished": [],
+          "extra_count": 12
+        },
+        "opponent": {
+          "monsters": [
+            "エフェクト・ヴェーラー(L1,face-down)"
+          ],
+          "hand_count": 3,
+          "graveyard": [
+            "耀聖の花詩ルキナ"
+          ],
+          "banished": [
+            "キラーチューン・ロタリー"
+          ]
+        }
+      },
+      "T3": {
+        "lp": {
+          "ours": 8000,
+          "opponent": 7700
+        },
+        "ours": {
+          "monsters": [
+            "フルール・ド・バロネス(L10)"
+          ],
+          "spell_trap": [
+            "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+          ],
+          "hand": [
+            "エフェクト・ヴェーラー",
+            "エフェクト・ヴェーラー",
+            "エフェクト・ヴェーラー",
+            "キラーチューン・プレイリスト"
+          ],
+          "graveyard": [
+            "キラーチューン・キュー",
+            "キラーチューン・シンクロ",
+            "キラーチューン・トラックメイカー",
+            "キラーチューン・ミクス",
+            "キラーチューン・リミックス",
+            "キラーチューン・レコ",
+            "キラーチューン・ロタリー",
+            "灰流うらら",
+            "鎖縛竜ザレン"
+          ],
+          "banished": [],
+          "extra_count": 11
+        },
+        "opponent": {
+          "monsters": [],
+          "hand_count": 3,
+          "graveyard": [
+            "エフェクト・ヴェーラー",
+            "耀聖の花詩ルキナ"
+          ],
+          "banished": [
+            "キラーチューン・ロタリー"
+          ]
+        }
+      },
+      "turn2": {
+        "our_activation_options_seen": [
+          "エフェクト・ヴェーラー#0",
+          "キラーチューン・シンクロ#0",
+          "キラーチューン・リミックス#0",
+          "キラーチューン・リミックス#1",
+          "キラーチューン・レコ#None",
+          "灰流うらら#None",
+          "鎖縛竜ザレン#1"
+        ],
+        "our_activations": [
+          {
+            "step": 72,
+            "card": "キラーチューン・リミックス",
+            "chain": []
+          },
+          {
+            "step": 93,
+            "card": "灰流うらら",
+            "chain": [
+              "耀聖の花詩ルキナ"
+            ]
+          }
+        ],
+        "our_options_at_search_window": [
+          "エフェクト・ヴェーラー#0",
+          "エフェクト・ヴェーラー#0",
+          "エフェクト・ヴェーラー#0",
+          "灰流うらら#None",
+          "キラーチューン・シンクロ#0"
+        ],
+        "our_choice_at_search_window": "Activate:灰流うらら",
+        "first_search": {
+          "outcome": "search_not_applied",
+          "opponent_hand": {
+            "added": {},
+            "removed": {}
+          }
+        },
+        "opponent_script": {
+          "mode": "fallback",
+          "blocked": {
+            "step": 98,
+            "next_plan_steps": [
+              "None:耀聖の風詩レギナ",
+              "Activate:耀聖の風詩レギナ",
+              "None:耀聖の花詩ルキナ",
+              "None:燿ける聖詩の獄神精"
+            ],
+            "legal": [
+              "Summon:灰流うらら",
+              "Summon:増殖するＧ",
+              "Summon:ドロール＆ロックバード",
+              "Summon:エフェクト・ヴェーラー",
+              "MSet:灰流うらら",
+              "MSet:増殖するＧ",
+              "MSet:ドロール＆ロックバード",
+              "MSet:エフェクト・ヴェーラー",
+              "Activate:増殖するＧ"
+            ]
+          }
+        },
+        "opponent_actions": [
+          {
+            "step": 88,
+            "source": "script",
+            "action": "SpSummon:耀聖の花詩ルキナ",
+            "chain": []
+          },
+          {
+            "step": 92,
+            "source": "script",
+            "action": "Activate:耀聖の花詩ルキナ#0",
+            "chain": []
+          },
+          {
+            "step": 98,
+            "source": "fallback-model",
+            "action": "MSet:エフェクト・ヴェーラー",
+            "chain": []
+          },
+          {
+            "step": 102,
+            "source": "fallback-model",
+            "action": "choose(select_idlecmd):Battle",
+            "chain": []
+          },
+          {
+            "step": 106,
+            "source": "fallback-model",
+            "action": "Attack:耀聖の花詩ルキナ",
+            "chain": []
+          },
+          {
+            "step": 107,
+            "source": "fallback-model",
+            "action": "choose(select_card):鎖縛竜ザレン",
+            "chain": []
+          },
+          {
+            "step": 112,
+            "source": "fallback-model",
+            "action": "choose(select_battlecmd):Main2",
+            "chain": []
+          },
+          {
+            "step": 116,
+            "source": "fallback-model",
+            "action": "choose(select_idlecmd):End",
+            "chain": []
+          }
+        ]
+      },
+      "turn3": {
+        "our_actions": [
+          {
+            "step": 124,
+            "source": "model",
+            "action": "choose(select_idlecmd):Battle",
+            "chain": []
+          },
+          {
+            "step": 128,
+            "source": "model",
+            "action": "Attack:鎖縛竜ザレン",
+            "chain": []
+          },
+          {
+            "step": 133,
+            "source": "model",
+            "action": "choose(select_battlecmd):Main2",
+            "chain": []
+          },
+          {
+            "step": 137,
+            "source": "model",
+            "action": "SpSummon:フルール・ド・バロネス",
+            "chain": []
+          },
+          {
+            "step": 142,
+            "source": "model",
+            "action": "Activate:キラーチューン・シンクロ#0",
+            "chain": []
+          },
+          {
+            "step": 145,
+            "source": "model",
+            "action": "choose(select_card):キラーチューン・プレイリスト",
+            "chain": [
+              "キラーチューン・シンクロ"
+            ]
+          },
+          {
+            "step": 147,
+            "source": "model",
+            "action": "choose(select_idlecmd):End",
+            "chain": []
+          }
+        ]
+      }
+    },
+    "B2B-synchro": {
+      "engine_run": 4,
+      "replay": {
+        "engine_run": 8,
+        "reproduced": "134/134",
+        "end_matches": true
+      },
+      "failure": null,
+      "lua_errors": 0,
+      "visibility": {
+        "checks": 74,
+        "failures": 0
+      },
+      "T1": {
+        "lp": {
+          "ours": 8000,
+          "opponent": 8000
+        },
+        "ours": {
+          "monsters": [
+            "キラーチューン Ｂ２Ｂ(L10)"
+          ],
+          "spell_trap": [
+            "キラーチューン・シンクロ",
+            "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+          ],
+          "hand": [
+            "エフェクト・ヴェーラー",
+            "エフェクト・ヴェーラー",
+            "エフェクト・ヴェーラー"
+          ],
+          "graveyard": [
+            "キラーチューン・キュー",
+            "キラーチューン・トラックメイカー",
+            "キラーチューン・レコ",
+            "キラーチューン・ロタリー",
+            "灰流うらら",
+            "鎖縛竜ザレン"
+          ],
+          "banished": [],
+          "extra_count": 12
+        },
+        "opponent": {
+          "monsters": [],
+          "hand_count": 5,
+          "graveyard": [],
+          "banished": []
+        }
+      },
+      "T2": {
+        "lp": {
+          "ours": 8000,
+          "opponent": 3900
+        },
+        "ours": {
+          "monsters": [
+            "キラーチューン Ｂ２Ｂ(L10)"
+          ],
+          "spell_trap": [
+            "キラーチューン・シンクロ",
+            "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+          ],
+          "hand": [
+            "エフェクト・ヴェーラー",
+            "エフェクト・ヴェーラー",
+            "エフェクト・ヴェーラー"
+          ],
+          "graveyard": [
+            "キラーチューン・キュー",
+            "キラーチューン・トラックメイカー",
+            "キラーチューン・レコ",
+            "キラーチューン・ロタリー",
+            "灰流うらら",
+            "鎖縛竜ザレン"
+          ],
+          "banished": [],
+          "extra_count": 12
+        },
+        "opponent": {
+          "monsters": [
+            "エフェクト・ヴェーラー(L1,face-down)"
+          ],
+          "hand_count": 3,
+          "graveyard": [
+            "燿ける聖詩の獄神精",
+            "耀聖の花詩ルキナ",
+            "耀聖の風詩レギナ"
+          ],
+          "banished": []
+        }
+      },
+      "T3": {
+        "lp": {
+          "ours": 8000,
+          "opponent": 3900
+        },
+        "ours": {
+          "monsters": [
+            "キラーチューン・ミクス(L2)"
+          ],
+          "spell_trap": [
+            "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+          ],
+          "hand": [
+            "エフェクト・ヴェーラー",
+            "エフェクト・ヴェーラー",
+            "エフェクト・ヴェーラー",
+            "キラーチューン・プレイリスト"
+          ],
+          "graveyard": [
+            "キラーチューン Ｂ２Ｂ",
+            "キラーチューン・キュー",
+            "キラーチューン・シンクロ",
+            "キラーチューン・トラックメイカー",
+            "キラーチューン・レコ",
+            "キラーチューン・ロタリー",
+            "灰流うらら",
+            "鎖縛竜ザレン"
+          ],
+          "banished": [],
+          "extra_count": 12
+        },
+        "opponent": {
+          "monsters": [
+            "エフェクト・ヴェーラー(L1,face-down)"
+          ],
+          "hand_count": 3,
+          "graveyard": [
+            "燿ける聖詩の獄神精",
+            "耀聖の花詩ルキナ",
+            "耀聖の風詩レギナ"
+          ],
+          "banished": []
+        }
+      },
+      "turn2": {
+        "our_activation_options_seen": [
+          "エフェクト・ヴェーラー#0",
+          "キラーチューン Ｂ２Ｂ#0",
+          "キラーチューン・シンクロ#0"
+        ],
+        "our_activations": [],
+        "our_options_at_search_window": [
+          "エフェクト・ヴェーラー#0",
+          "エフェクト・ヴェーラー#0",
+          "エフェクト・ヴェーラー#0",
+          "キラーチューン Ｂ２Ｂ#0",
+          "キラーチューン・シンクロ#0"
+        ],
+        "our_choice_at_search_window": "Cancel:None",
+        "first_search": {
+          "outcome": "search_resolved",
+          "opponent_hand": {
+            "added": {
+              "56651978": 1
+            },
+            "removed": {}
+          }
+        },
+        "opponent_script": {
+          "mode": "fallback",
+          "blocked": {
+            "step": 79,
+            "next_plan_steps": [
+              "SpSummon:獄花の大燿聖ストリチア",
+              "None:耀聖の波詩ディーナ",
+              "Activate:獄花の大燿聖ストリチア",
+              "None:燿ける聖詩の獄神精"
+            ],
+            "legal": [
+              "Summon:エフェクト・ヴェーラー",
+              "Summon:ドロール＆ロックバード",
+              "Summon:増殖するＧ",
+              "Summon:灰流うらら",
+              "MSet:エフェクト・ヴェーラー",
+              "MSet:ドロール＆ロックバード",
+              "MSet:増殖するＧ",
+              "MSet:灰流うらら",
+              "Activate:増殖するＧ",
+              "Activate:燿ける聖詩の獄神精"
+            ]
+          }
+        },
+        "opponent_actions": [
+          {
+            "step": 58,
+            "source": "script",
+            "action": "SpSummon:耀聖の花詩ルキナ",
+            "chain": []
+          },
+          {
+            "step": 62,
+            "source": "script",
+            "action": "Activate:耀聖の花詩ルキナ#0",
+            "chain": []
+          },
+          {
+            "step": 65,
+            "source": "script",
+            "action": "choose(select_card):耀聖の風詩レギナ",
+            "chain": [
+              "耀聖の花詩ルキナ"
+            ]
+          },
+          {
+            "step": 66,
+            "source": "script",
+            "action": "Activate:耀聖の風詩レギナ#0",
+            "chain": []
+          },
+          {
+            "step": 71,
+            "source": "script",
+            "action": "Activate:耀聖の風詩レギナ",
+            "chain": []
+          },
+          {
+            "step": 74,
+            "source": "script",
+            "action": "choose(select_card):燿ける聖詩の獄神精",
+            "chain": [
+              "耀聖の風詩レギナ"
+            ]
+          },
+          {
+            "step": 79,
+            "source": "fallback-model",
+            "action": "MSet:エフェクト・ヴェーラー",
+            "chain": []
+          },
+          {
+            "step": 83,
+            "source": "fallback-model",
+            "action": "choose(select_idlecmd):Battle",
+            "chain": []
+          },
+          {
+            "step": 87,
+            "source": "fallback-model",
+            "action": "Attack:耀聖の風詩レギナ",
+            "chain": []
+          },
+          {
+            "step": 92,
+            "source": "fallback-model",
+            "action": "Attack:燿ける聖詩の獄神精",
+            "chain": []
+          },
+          {
+            "step": 97,
+            "source": "fallback-model",
+            "action": "choose(select_battlecmd):Main2",
+            "chain": []
+          },
+          {
+            "step": 101,
+            "source": "fallback-model",
+            "action": "choose(select_idlecmd):End",
+            "chain": []
+          }
+        ]
+      },
+      "turn3": {
+        "our_actions": [
+          {
+            "step": 109,
+            "source": "model",
+            "action": "choose(select_idlecmd):Battle",
+            "chain": []
+          },
+          {
+            "step": 113,
+            "source": "model",
+            "action": "choose(select_battlecmd):Main2",
+            "chain": []
+          },
+          {
+            "step": 117,
+            "source": "model",
+            "action": "Activate:ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”#1",
+            "chain": []
+          },
+          {
+            "step": 120,
+            "source": "model",
+            "action": "choose(select_card):キラーチューン・ミクス",
+            "chain": [
+              "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+            ]
+          },
+          {
+            "step": 121,
+            "source": "model",
+            "action": "Activate:None",
+            "chain": [
+              "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+            ]
+          },
+          {
+            "step": 127,
+            "source": "model",
+            "action": "Activate:キラーチューン・シンクロ#0",
+            "chain": []
+          },
+          {
+            "step": 129,
+            "source": "model",
+            "action": "choose(select_card):キラーチューン・プレイリスト",
+            "chain": [
+              "キラーチューン・シンクロ"
+            ]
+          },
+          {
+            "step": 131,
+            "source": "model",
+            "action": "choose(select_idlecmd):End",
+            "chain": []
+          }
+        ]
+      }
+    }
+  }
+}

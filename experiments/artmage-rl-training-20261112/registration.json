@@ -1,0 +1,421 @@
+{
+ "registered_jst": "2026-11-12T12:47:00+09:00",
+ "spec": {
+  "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-rl-training-20261112/spec/artmage-rl-training-plan-2026-11-12.md",
+  "sha256": "c044e72a83e9ef0ab61cd8fabd92d15f48819a843f3e35231b9c6111b41e5039",
+  "source": "C:/Users/hatk8/Documents/Codex/2026-10-27/new-chat/outputs/artmage-rl-training-plan-2026-11-12.md"
+ },
+ "purpose": "Artmage mirror, natural dealing and draws: learn base + chain-head from win/loss (PPO) against the frozen start model, with rehearsal of the 40 old sequences; then 128 battles + 13 retention cases.",
+ "start": {
+  "base": "/home/hatk8/projects/yugioh-ai/experiments/artmage-rl-training-20261112/models/start/base.flax_model",
+  "head": "/home/hatk8/projects/yugioh-ai/experiments/artmage-rl-training-20261112/models/start/chain-head.flax_model",
+  "sha256": [
+   "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+   "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2"
+  ],
+  "origin": "experiments/artmage-hand-branch-20261110/train/candidate (research candidate: basic openings + hand branch); copied read-only",
+  "opponent": "the same two files, never updated (separate in-memory copy of the start params)",
+  "not_used": "3-file response adapters (c110f964 etc.) are kept unchanged and not mixed in"
+ },
+ "code": {
+  "artmage_entry.py": "ca47f56d29431b48d60337de6dcc6ce23d524fba31cbbbdce31e6d7399b78e0f",
+  "artmage_pins.py": "10c4e053d05f44498cff77c45301a3fb5222c7598a658decc52f4539fd96bde8",
+  "artmage_teacher.py": "a126284eff7a2d7ef3c602ade0aa5f196f7ddea77333213c27a197ade21b78f3",
+  "batch_data.py": "3f21a0f495111f82678e93c5434d9c2dd65b2467c4f7c3341a0eddab66b3aad7",
+  "batch_plans.py": "68d5945d80d663ba7f85b56ffbd6490a00998aaa1d5cca14663e18e6956f1123",
+  "hb_data.py": "502de35cabab73e9448e5d20e61aa53ce594aa8eb08ad2beebe0740618ebc893",
+  "hb_plans.py": "8fc90ad7f704a2f141669d1075827cf3513f015989a95d472f353aaae6ab40cd",
+  "hb_runs.py": "88e694125079d2a9687490f1120186b536939b8750f731266efae56b167a0c14",
+  "pilot_data.py": "dc749fb5ea77419741d0e7469edd7f423db241eae11ccafe399f76a04c3417e8",
+  "rlt_eval.py": "d1b9f350578ab90c19b253f152c8adc8b13c074ef257fb1a1d5de143095f9976",
+  "rlt_launch.py": "b9658f5be7e69b611adbfb1970690a69d0db74d436cafbcbdbb9f25b7cd23163",
+  "rlt_model.py": "7b3e77e69a80ae4297b917670521cc3e4fde4eec0e7d45dd06e19906fdb0208d",
+  "rlt_register.py": "6465146144c60529e82664b2cafd718ffc8e04102f856edee13ec8beb07660ae",
+  "rlt_stats.py": "74d09387f69bf9ed42257e48e99bec96af69c9be466c0d0e4820f1b8c7a0ec6d",
+  "rlt_summarize.py": "b87eab33e47112b4085fd8916261a537ff86646c0ff40c131625a0998cfa1db8",
+  "rlt_train.py": "05088b05dc4118421a5c886ec1df92449ee9c4e061e2b57d32841ac89d0fe6f1"
+ },
+ "copied_from": {
+  "unchanged": {
+   "artmage_entry.py": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/code/artmage_entry.py",
+   "artmage_pins.py": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/code/artmage_pins.py",
+   "artmage_teacher.py": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/code/artmage_teacher.py",
+   "pilot_data.py": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/code/pilot_data.py",
+   "batch_data.py": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/code/batch_data.py",
+   "batch_plans.py": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/code/batch_plans.py",
+   "hb_data.py": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/code/hb_data.py",
+   "hb_plans.py": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/code/hb_plans.py",
+   "hb_runs.py": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/code/hb_runs.py"
+  },
+  "modified": {
+   "rlt_model.py": {
+    "source": "/home/hatk8/projects/yugioh-ai/experiments/artmage-learning-pilot-20261110/code/pilot_model.py",
+    "source_sha256": "8bec14fb9a1e6c02cbfa715c21146aafeb45b00f060d4cd7afa57b7c84e0ad56"
+   },
+   "rlt_train.py": {
+    "source": "/home/hatk8/projects/yugioh-ai/experiments/artmage-learning-pilot-20261110/code/pilot_train.py",
+    "source_sha256": "d39754a325f62dfbe2049c9e19fd0f7a03466781597a1297d42381839247484f",
+    "note": "pilot version after its amendment-1 (visibility audit by origin)"
+   }
+  }
+ },
+ "changes_from_pilot": [
+  "value loss 0.5*(V-target)^2 without the min(., vloss_clip=1.0) cap (zero value gradient for |error| > sqrt(2)); PPO ratio clip unchanged",
+  "start/opponent = the hand-branch candidate b9c7751f/77191d5d (pilot: the registered initial pair)",
+  "caps: 32,768 environment decisions (learner + frozen) or 256 episodes; per game 4,000 decisions (native max_steps) and native timeout 30 s (pilot 2,048 / 10 s)",
+  "rehearsal: the 40 old sequences via hb_data.BlockSampler (2 existing-group batches + 2 pair batches per block of 4, 2 sequences each, padded to 115) instead of the pilot 14/1/1 old/C1/C2 schedule; per-source logging for 9 sources",
+  "episode ends classified by termination_reason: natural (+1/-1/0 from the actor view), step_limit (0, separate count), timeout (open-window steps of that episode dropped, no outcome)",
+  "decision cap reached while the frozen side moves: the unfinished episode steps of the last window are dropped from the update (pilot: neutral bootstrap = last value); learner next: exact bootstrap",
+  "the last allowed episode flushes a short window; graceful wall-time stop at window boundaries",
+  "progress.json / jsonl appends are fsync-ed; inference time and per-role decisions logged",
+  "adapter-owned learner decisions excluded from the loss (unchanged rule) and tested"
+ ],
+ "pins": {
+  "base": "12500c7724b2d723983a2963a960d75172a6df51fb55ea4f3acf102eeb34132e",
+  "head": "0bc7534cab102cd87586e5d22bd4ad0cd3b55d52d08e284146976506ae6193fc",
+  "deck_copy": "a93c4d30d0945f58f741f1e135fdcbc0b0c438aff575cf6d0d02ce9a82c381d6",
+  "engine_deck": "a93c4d30d0945f58f741f1e135fdcbc0b0c438aff575cf6d0d02ce9a82c381d6",
+  "vocabulary": "aeb5be89d4a5591ccc5cce6af96def74ef47463a55265f75c11b92029e772e7b",
+  "meta_manifest": "ace4f6b8408011a55e9b61d3c4917580942d86960bb3f087afe75ce2774c824a",
+  "meta_latest_run": "32770bc4534c729e66f7addbc76770b78798ee4e618b40fd9baa45e83392e544",
+  "article_latest_run": "39db5d660d4bde37dbd9b6fc0c662781da48b71b0e6c50d8357a7a42f73b0159",
+  "model_code": "f4c3903e3a4841b97f6ffb8840bb4cfa5513b5abfead9ff41fa7c785ceba6cce",
+  "witness_code": "0e4f3a0e92c86aba7a95f96c1e5f93f6a0293eaea7f3ab8a63dee772455ae07a",
+  "adapter": "4fe74c83a460ee3565c3ff276ce2d080b233a6152439ec92147ba90d60d46f90",
+  "adapter_cards": "1baa04349bb31833ff01b05cb365ee0f9416de827ac4fbf52b835011a35f1fde",
+  "native": "19a60f38a3d39b61a2ee082168d5a788a1022b2eb569633816596c8b3de21294",
+  "runtime_json": "ebdfc37ed9c7ebcae73b81281876dd6f22bd8d9afcbdfe8f78905dcc9c220d14"
+ },
+ "data": {
+  "manifest": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/data/manifest.json",
+  "manifest_sha256": "25d96e42cbf74c3d9a929bb489e7c441eb1b8fb0e2a2aadc6d203e6f4f4598c5",
+  "existing_manifest": "/home/hatk8/projects/yugioh-ai/experiments/artmage-basic-openings-batch-20261110/data/manifest.json",
+  "existing_manifest_sha256": "0a97de6dd19f8161e5381874fc4caf0cc9b4847c5df3b508d73b9183f969b7d8",
+  "sequences": 40,
+  "existing": 24,
+  "pairs": 16,
+  "sources": [
+   "F0",
+   "F1",
+   "F2",
+   "F3",
+   "F4",
+   "F5",
+   "F6",
+   "pairs-A",
+   "pairs-B"
+  ],
+  "rehearsal_length": 115,
+  "masks": "unchanged: loss = own-turn non-position decisions + scripted opponent-turn non-pass non-position; context = every player-0 decision",
+  "excluded": "validation hands, opponent future scripts, response sequences: not read"
+ },
+ "seeds": {
+  "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-rl-training-20261112/data/seeds.json",
+  "sha256": "7cf1f54eabd9429f1e35ef7633c3bdc05b25967a272d815e4009d50a319cd41f",
+  "training_seed": 10111201,
+  "rehearsal_seed": 30111201,
+  "evaluation_seed": 80111201,
+  "overlap": 0
+ },
+ "training": {
+  "seed": 10111201,
+  "rehearsal_seed": 30111201,
+  "first_learner_seat": 0,
+  "config": {
+   "learning_rate": 1.5e-05,
+   "adam_eps": 1e-05,
+   "max_grad_norm": 1.0,
+   "clip_coef": 0.25,
+   "dual_clip_coef": 3.0,
+   "ent_coef": 0.01,
+   "vf_coef": 1.0,
+   "gamma": 1.0,
+   "gae_lambda": 0.95,
+   "rehearsal_lambda": 5.0,
+   "rehearsal_kl": 0.0,
+   "norm_adv": false,
+   "upgo": false,
+   "update_epochs": 1,
+   "minibatches_per_window": 4,
+   "chunk_length": 32
+  },
+  "window_min_decisions": 128,
+  "cap_decisions": 32768,
+  "cap_episodes": 256,
+  "max_game_decisions": 4000,
+  "native_timeout_seconds": 30,
+  "sampling": "both sides sample from their own final logits (one PRNG key from the training seed)",
+  "device": "GPU (one job; refuses if another compute process is on the GPU). If the GPU is unavailable before start: CPU with the same settings, decided before start, never switched mid-run",
+  "wall": {
+   "graceful_stop_after_seconds": 3300,
+   "job_timeout_seconds": 3600,
+   "note": "spec: 60 min on GPU (120 min on CPU)"
+  },
+  "candidate": "final state after the last window; no checkpoint selection",
+  "counts_logged": [
+   "environment decisions (learner/frozen)",
+   "PPO loss steps",
+   "rehearsal sequences and loss/context steps",
+   "updates",
+   "windows",
+   "episode ends by kind",
+   "dropped steps (timeout / cut)",
+   "adapter-controlled learner steps",
+   "visibility events"
+  ],
+  "on_error": "no restart, no second candidate: the state is saved as train/stopped-state and the trial is reported as not established",
+  "not_established_if": [
+   "clear exposure",
+   "environment/engine error",
+   "non-finite weights",
+   "saved files do not reproduce the in-memory logits/argmax/adapter actions"
+  ]
+ },
+ "evaluation": {
+  "battles": {
+   "games": 128,
+   "pairs": 64,
+   "seeds": "data/seeds.json evaluation (pair i: candidate seat 0 then 1)",
+   "opponent": "start model b9c7751f/77191d5d",
+   "policies": "artmage_entry.create_policy with explicit base/head hashes, positions=True (common adapter) for both; argmax; own RNN per seat, reset every game",
+   "env": "rlt_train.make_env: Artmage vs Artmage, fixture empty (normal dealing/draws), max_steps 4,000, timeout 30 s",
+   "classification": "scripts/evaluate.py rules (67db15ff): engine_timeout = termination_reason 2; step limit = termination_reason 1 or truncated; natural otherwise (win/loss by the actor-view reward, win_reason 1 LP / -1 deck-out or special)",
+   "verified": "seed pairs containing a timeout, a suspected timeout, a step-limit truncation or an error are excluded from the verified win rate and interval (raw kept)",
+   "win_rate": "wins / verified games; draws reported separately; interval: evaluate.paired_wilson_ci95 over verified pair scores (wins/2 per pair); seat Wilson intervals are references only; score rate with draws = 0.5 reported without an interval",
+   "no_more": "no confirmation games, no other opponents, no retries; a retention loss does not stop the battles",
+   "wall": "battle job stops starting games after 6,600 s (job timeout 7,000 s); retention job timeout 1,800 s; evaluation total <= 120 min",
+   "records": "per game: result, end kind, decisions/inference time per side, every decision (actor, message, action meaning, public chain), public board at every turn start (LP, hand/deck/extra counts, face-up field/graveyard/face-up banished codes; face-down cards without identity), visibility audit; the native snapshot is used for logs only"
+  },
+  "retention": {
+   "cases": [
+    "Artmage-g06-p0",
+    "Artmage-g07-p0",
+    "Artmage-g08-p0",
+    "Artmage-g09-p0",
+    "Artmage-g10-p0",
+    "Artmage-g11-p0",
+    "F0-V",
+    "F1-V",
+    "F2-V",
+    "F3-V",
+    "F4-V",
+    "F5-V",
+    "F6-V"
+   ],
+   "runner": "hb_runs.py 88e69412 (frozen copy) rt1 / free_run, output root rebound to this study",
+   "baseline": {
+    "records": {
+     "Artmage-g06-p0": {
+      "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/eval/retain/candidate/Artmage-g06-p0.json",
+      "sha256": "0f4724dec7d296734be5eefc14042bfb99fed9b41f031d120ae723180f8a847b",
+      "model_sha256": [
+       "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+       "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2"
+      ],
+      "model_ok": true,
+      "case_ok": true,
+      "run": 60,
+      "run_status": "ok",
+      "run_time": "2026-11-10T20:22:45+09:00"
+     },
+     "Artmage-g07-p0": {
+      "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/eval/retain/candidate/Artmage-g07-p0.json",
+      "sha256": "28cf055806fc8ea8e9481044d1ff7922dc736be9593e0d4b437eddd6430ec227",
+      "model_sha256": [
+       "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+       "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2"
+      ],
+      "model_ok": true,
+      "case_ok": true,
+      "run": 61,
+      "run_status": "ok",
+      "run_time": "2026-11-10T20:22:47+09:00"
+     },
+     "Artmage-g08-p0": {
+      "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/eval/retain/candidate/Artmage-g08-p0.json",
+      "sha256": "743e482045be82bc2fff8da0c26fc80fe4ea58af1d1adc9b9272d72e9dd71b76",
+      "model_sha256": [
+       "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+       "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2"
+      ],
+      "model_ok": true,
+      "case_ok": true,
+      "run": 62,
+      "run_status": "ok",
+      "run_time": "2026-11-10T20:22:50+09:00"
+     },
+     "Artmage-g09-p0": {
+      "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/eval/retain/candidate/Artmage-g09-p0.json",
+      "sha256": "085a0381eb04df2cf399eae5b2fbf7f0440ee7e6807a59e24c924513e1fc71a4",
+      "model_sha256": [
+       "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+       "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2"
+      ],
+      "model_ok": true,
+      "case_ok": true,
+      "run": 63,
+      "run_status": "ok",
+      "run_time": "2026-11-10T20:22:52+09:00"
+     },
+     "Artmage-g10-p0": {
+      "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/eval/retain/candidate/Artmage-g10-p0.json",
+      "sha256": "d731fa7c83caa64e0a6919091cbbce0642a3e3f9b4c5e946baccd7f52c4c0cca",
+      "model_sha256": [
+       "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+       "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2"
+      ],
+      "model_ok": true,
+      "case_ok": true,
+      "run": 64,
+      "run_status": "ok",
+      "run_time": "2026-11-10T20:22:58+09:00"
+     },
+     "Artmage-g11-p0": {
+      "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/eval/retain/candidate/Artmage-g11-p0.json",
+      "sha256": "9fe35e66a76af417608c71e149800ac144e589ff635970719a1c295e84ff8fcb",
+      "model_sha256": [
+       "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+       "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2"
+      ],
+      "model_ok": true,
+      "case_ok": true,
+      "run": 65,
+      "run_status": "ok",
+      "run_time": "2026-11-10T20:23:00+09:00"
+     },
+     "F0-V": {
+      "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/eval/retain/candidate/F0-V.json",
+      "sha256": "f40a535cc001e53047058c105a974e6873381e0e7843cf715a50d484ad8dd757",
+      "model_sha256": [
+       "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+       "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2"
+      ],
+      "model_ok": true,
+      "case_ok": true,
+      "run": 66,
+      "run_status": "ok",
+      "run_time": "2026-11-10T20:23:03+09:00"
+     },
+     "F1-V": {
+      "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/eval/retain/candidate/F1-V.json",
+      "sha256": "7f1ca8865a112a6c3f329ad7e0943dc0a72cd656d32999dfe5e29039a329acc6",
+      "model_sha256": [
+       "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+       "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2"
+      ],
+      "model_ok": true,
+      "case_ok": true,
+      "run": 67,
+      "run_status": "ok",
+      "run_time": "2026-11-10T20:23:07+09:00"
+     },
+     "F2-V": {
+      "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/eval/retain/candidate/F2-V.json",
+      "sha256": "d8853e3e8ba19de0df01ae9409dcae12b78fee7badaf95d9bcf5a7cc3d77f4a9",
+      "model_sha256": [
+       "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+       "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2"
+      ],
+      "model_ok": true,
+      "case_ok": true,
+      "run": 68,
+      "run_status": "ok",
+      "run_time": "2026-11-10T20:23:09+09:00"
+     },
+     "F3-V": {
+      "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/eval/retain/candidate/F3-V.json",
+      "sha256": "3cbc51643f26b551be36e8e413b5d260b00169233c58d4499dff5ea24d914b4f",
+      "model_sha256": [
+       "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+       "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2"
+      ],
+      "model_ok": true,
+      "case_ok": true,
+      "run": 69,
+      "run_status": "ok",
+      "run_time": "2026-11-10T20:23:12+09:00"
+     },
+     "F4-V": {
+      "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/eval/retain/candidate/F4-V.json",
+      "sha256": "16743aed10318b371425cf7cec09cdda9b37c6dc0edc435a9691396d96fe8006",
+      "model_sha256": [
+       "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+       "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2"
+      ],
+      "model_ok": true,
+      "case_ok": true,
+      "run": 70,
+      "run_status": "ok",
+      "run_time": "2026-11-10T20:23:14+09:00"
+     },
+     "F5-V": {
+      "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/eval/retain/candidate/F5-V.json",
+      "sha256": "885f2e30e2ce4d1e410e9abf46ad3df6329853c8d1b75bd2a96909f834c14d76",
+      "model_sha256": [
+       "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+       "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2"
+      ],
+      "model_ok": true,
+      "case_ok": true,
+      "run": 71,
+      "run_status": "ok",
+      "run_time": "2026-11-10T20:23:17+09:00"
+     },
+     "F6-V": {
+      "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-hand-branch-20261110/eval/retain/candidate/F6-V.json",
+      "sha256": "d5466fb9a12ba696775c74559e512029a078b6fcde4490fe1e9fa1381f45ceb9",
+      "model_sha256": [
+       "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+       "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2"
+      ],
+      "model_ok": true,
+      "case_ok": true,
+      "run": 72,
+      "run_status": "ok",
+      "run_time": "2026-11-10T20:23:20+09:00"
+     }
+    },
+    "all_models_ok": true,
+    "all_cases_ok": true,
+    "code_equal_to_hand_branch_amendment_1": true,
+    "hand_branch_amendment_1_registered": "2026-11-10T20:12:29+09:00",
+    "conditions": {
+     "RT1_CAP": 320,
+     "FREE_CAP": 600,
+     "same_file": "hb_runs.py 88e69412 (constants in the file)"
+    },
+    "runs_after_amendment": true
+   },
+   "start_successes_expected": 12,
+   "landing": "RT1: goal check of the old manifest; F*-V: every validation-script turn-1 monster present at the end of own turn 1 (same rule as the response study)",
+   "fixture": "fixture duels: no normal draws (draw count 0); effect draws occur"
+  },
+  "engine_cap": {
+   "total": 141,
+   "battles": 128,
+   "retention": 13,
+   "retries": 0
+  }
+ },
+ "limits": {
+  "memory_gib": 5,
+  "swap": 0,
+  "cpu_percent": 300,
+  "nice": 10,
+  "jobs": 1,
+  "gpu_jobs": 1
+ },
+ "known_limits": [
+  "native ygopro.h: a natural draw with no winner returns reward -1 to the acting player (reward = winner == player ? 1 : -1); the API exposes no winner, so such a draw cannot be told from a loss (both in training and in scripts/evaluate.py)",
+  "no claim that information leakage is zero; visibility events are recorded with origin (selection_prompt / unverified)"
+ ],
+ "not_done": [
+  "adoption",
+  "production restart",
+  "normal operation",
+  "B2B",
+  "confirmation games",
+  "other candidates/seeds",
+  "LLM/API calls"
+ ]
+}

@@ -1,0 +1,78 @@
+--- registered/batch_plans.py
++++ amended/batch_plans.py
+@@ -37,7 +37,7 @@
+ F2_PLAN = C1_PLAN[3:]
+ 
+ F4_PLAN = [
+-    a('Activate', FIELD), a('Activate', FIELD), opt(a('None', INFINITE)), a('None', GRAPH),
++    a('Activate', FIELD), a('Activate', FIELD), opt(a('None', INFINITE)), opt(a('None', GRAPH)),
+     a('Activate', GRAPH), a('Activate', GRAPH), a('None', ASSAULT),
+     a('Activate', ASSAULT), a('Activate', ASSAULT), opt(a('None', MEDIUS)),
+     a('Summon', MEDIUS), a('Activate', MEDIUS), a('None', NERVED), a('Activate', 0, effect=T.SPECIAL_SUMMON_OPTION),
+@@ -47,9 +47,9 @@
+     a('Activate', BEAST), a('None', VARNISH),
+     a('SpSummon', SHI), a('None', DIAKTOROS), a('None', GRAPH),
+     a('Activate', SHI), opt(a('None', MABOROSHI)),
+-    a('Activate', FIELD), opt(a('None', MABOROSHI)), a('None', LITERA),
++    a('Activate', FIELD), opt(a('None', MABOROSHI)), opt(a('None', LITERA)),
+     a('Activate', VARNISH), a('None', AWAKENING),
+-    a('Activate', FIELD), a('None', FINEMELT), opt(a('None', FINEMELT)),
++    a('Activate', FIELD), opt(a('None', FINEMELT)), opt(a('None', FINEMELT)),
+     a('Activate', FINEMELT), mark(a('Activate', FINEMELT), 'before_draw'),
+     a('Activate', MABOROSHI), opt(a('None', DIAKTOROS)),
+     a('Activate', MEDIUS), rule('medius_cost', optional=True),
+@@ -67,10 +67,10 @@
+     a('Summon', MEDIUS), a('Activate', MEDIUS), a('None', NERVED), a('Activate', 0, effect=T.SPECIAL_SUMMON_OPTION),
+     a('SpSummon', SHI), a('None', MEDIUS), a('None', NERVED),
+     group((a('Activate', SHI), [opt(a('None', MABOROSHI))]), (a('Activate', NERVED), [a('None', FINEMELT)])),
+-    a('Activate', FIELD), opt(a('None', MABOROSHI)), a('None', GRAPH),
++    a('Activate', FIELD), opt(a('None', MABOROSHI)), opt(a('None', GRAPH)),
+     a('Activate', GRAPH), a('Activate', GRAPH), a('None', VARNISH),
+     a('Activate', VARNISH), a('None', AWAKENING),
+-    a('Activate', FIELD), a('None', LITERA),
++    a('Activate', FIELD), opt(a('None', LITERA)),
+     a('Activate', LITERA), a('Activate', LITERA), a('None', AWAKENING),
+     a('Activate', MEDIUS), a('None', GRAPH),
+     a('Set', AWAKENING),
+@@ -94,10 +94,10 @@
+     a('Summon', MEDIUS), a('Activate', MEDIUS), opt(a('None', BEAST)), a('Activate', 0, effect=ADD_TO_HAND_OPTION),
+     a('SpSummon', SHI), a('None', MEDIUS), a('None', FINEMELT),
+     a('Activate', SHI), opt(a('None', MABOROSHI)),
+-    a('Activate', FIELD), opt(a('None', MABOROSHI)), a('None', GRAPH),
++    a('Activate', FIELD), opt(a('None', MABOROSHI)), opt(a('None', GRAPH)),
+     a('Activate', GRAPH), a('Activate', GRAPH), a('None', VARNISH),
+     a('Activate', VARNISH), a('None', AWAKENING),
+-    a('Activate', FIELD), a('None', LITERA),
++    a('Activate', FIELD), opt(a('None', LITERA)),
+     a('Activate', LITERA), a('Activate', LITERA), a('None', FINEMELT),
+     a('Activate', FINEMELT), mark(a('Activate', FINEMELT), 'before_draw'),
+     a('Activate', MEDIUS), a('None', BEAST),
+@@ -187,6 +187,11 @@
+                 return options[0]['index'], dict(kind='identical-copies')
+             if any(x['finish'] for x in acts):
+                 return next(x['index'] for x in acts if x['finish']), dict(kind='default-finish')
++        if msg == 'select_option':
++            # amendment 1: summon method — 「神芸学都アルトメギア」の効果で召喚する (as in replay dAvrxdzV) over 通常召喚
++            field = next((x['index'] for x in acts if x['code'] == FIELD and x.get('effect') == 10010), None)
++            if field is not None:
++                return field, dict(kind='summon-method-field')
+         if head is None and msg == 'select_idlecmd':
+             return T.passive(s), dict(kind='default-pass')
+         if s['turn_player'] != 0 or s['phase'] != 4:
+--- registered/batch_runs.py
++++ amended/batch_runs.py
+@@ -1,4 +1,4 @@
+-"""Engine runs for the Artmage basic-opening batch. Cap: 48 episodes in eval-runs.jsonl (planned 47 + 1 reserve).
++"""Engine runs for the Artmage basic-opening batch. Cap: 53 episodes in eval-runs.jsonl (amendment 1; originally 48).
+ 
+   record NAME...         new train demonstration (scripted teacher, passive opponent, stop at the first turn-3 decision)
+   replay NAME...         same fixture/seed, recorded indices; every step, the end state and the saved observations compared
+@@ -28,7 +28,7 @@
+ import artmage_teacher as T  # noqa: E402
+ 
+ LEDGER = ROOT / 'eval-runs.jsonl'
+-LIMIT = 48
++LIMIT = 53  # amendment 1 (user decision 2026-11-10): 48 -> 53, planned 53, no reserve
+ STEP_CAP = 700
+ FREE_CAP = 600
+ RT1_CAP = 320

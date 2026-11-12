@@ -1,0 +1,148 @@
+{
+ "amendment": 1,
+ "status": "promoted",
+ "record_checks": {
+  "total": true,
+  "minibatches": true,
+  "windows": true,
+  "last_window_at_cap": true,
+  "error_is_close_assertion": true,
+  "live_duels_after": true,
+  "params_finite": true,
+  "no_nonfinite_update": true,
+  "lua_errors": true,
+  "stopped_state_hashes": true
+ },
+ "traceback": [
+  "Traceback (most recent call last):",
+  "  File \"/home/hatk8/projects/yugioh-ai/experiments/artmage-rl-training-20261112/code/rlt_train.py\", line 295, in collect",
+  "    H.close_env(env)",
+  "  File \"/home/hatk8/projects/yugioh-ai/experiments/artmage-rl-training-20261112/code/rlt_train.py\", line 368, in close_env",
+  "    assert self.v.native.get_env_resource_stats()['live_duels'] == 0",
+  "AssertionError",
+  "EPISODE {\"episode\": 80, \"seat\": 0, \"decisions\": 295, \"end\": null, \"reward\": null} total 32768 updates 996 805s"
+ ],
+ "saved": {
+  "candidate_base_sha256": "7f4ee702c09ee2d2bdf00969c7afe701a7a050b71422662802625de607c28413",
+  "candidate_head_sha256": "4f099640b98c3fd6b100889c6d4e127a01853b130b6c961a67c2c1519330599a",
+  "reload_through_isolated_entry": true,
+  "max_abs_logit_diff_load_pair_vs_entry": 0.0,
+  "argmax_equal": true,
+  "adapter_final_actions_equal": true,
+  "saved_weights_finite": {
+   "base": true,
+   "head": true
+  },
+  "sequences_checked": 40,
+  "parameter_change_norm": {
+   "base": 0.6429107189178467,
+   "head": 0.0035278433933854103
+  },
+  "both_parts_changed": true,
+  "not_checked": "memory-vs-file (the in-memory params of the finished job no longer exist)"
+ },
+ "rehearsal_fit": {
+  "start": {
+   "F0": {
+    "loss_steps": 969,
+    "ce": 0.0751559631063065,
+    "top1": 1.0
+   },
+   "F1": {
+    "loss_steps": 168,
+    "ce": 0.07224689620391407,
+    "top1": 1.0
+   },
+   "F2": {
+    "loss_steps": 153,
+    "ce": 0.07557141733476623,
+    "top1": 1.0
+   },
+   "F3": {
+    "loss_steps": 170,
+    "ce": 0.07139847890874704,
+    "top1": 1.0
+   },
+   "F4": {
+    "loss_steps": 164,
+    "ce": 0.06979170307528595,
+    "top1": 1.0
+   },
+   "F5": {
+    "loss_steps": 164,
+    "ce": 0.06206198917689589,
+    "top1": 1.0
+   },
+   "F6": {
+    "loss_steps": 167,
+    "ce": 0.0775466569936354,
+    "top1": 1.0
+   },
+   "pairs-A": {
+    "loss_steps": 655,
+    "ce": 0.07412795165022808,
+    "top1": 1.0
+   },
+   "pairs-B": {
+    "loss_steps": 606,
+    "ce": 0.07783994905364179,
+    "top1": 1.0
+   }
+  },
+  "candidate": {
+   "F0": {
+    "loss_steps": 969,
+    "ce": 0.07517314844264233,
+    "top1": 1.0
+   },
+   "F1": {
+    "loss_steps": 168,
+    "ce": 0.07234584138480321,
+    "top1": 1.0
+   },
+   "F2": {
+    "loss_steps": 153,
+    "ce": 0.07562359907965543,
+    "top1": 1.0
+   },
+   "F3": {
+    "loss_steps": 170,
+    "ce": 0.07143050829607678,
+    "top1": 1.0
+   },
+   "F4": {
+    "loss_steps": 164,
+    "ce": 0.06979252648804105,
+    "top1": 1.0
+   },
+   "F5": {
+    "loss_steps": 164,
+    "ce": 0.06209378357437124,
+    "top1": 1.0
+   },
+   "F6": {
+    "loss_steps": 167,
+    "ce": 0.07757854764691781,
+    "top1": 0.9940119760479041
+   },
+   "pairs-A": {
+    "loss_steps": 655,
+    "ce": 0.07413899011256303,
+    "top1": 1.0
+   },
+   "pairs-B": {
+    "loss_steps": 606,
+    "ce": 0.07785991716423382,
+    "top1": 1.0
+   }
+  }
+ },
+ "source": "train/stopped-state",
+ "seconds": 303.4944336414337,
+ "candidate": {
+  "base": "/home/hatk8/projects/yugioh-ai/experiments/artmage-rl-training-20261112/train/candidate/base.flax_model",
+  "head": "/home/hatk8/projects/yugioh-ai/experiments/artmage-rl-training-20261112/train/candidate/chain-head.flax_model",
+  "base_sha256": "7f4ee702c09ee2d2bdf00969c7afe701a7a050b71422662802625de607c28413",
+  "head_sha256": "4f099640b98c3fd6b100889c6d4e127a01853b130b6c961a67c2c1519330599a"
+ }
+}

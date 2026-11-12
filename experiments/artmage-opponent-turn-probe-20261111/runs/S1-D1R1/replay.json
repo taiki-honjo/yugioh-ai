@@ -1,0 +1,15 @@
+{
+ "name": "S1-D1R1",
+ "engine_run": 8,
+ "replayed_engine_run": 3,
+ "mismatch": null,
+ "failure": null,
+ "reproduced_steps": 280,
+ "of": 280,
+ "reason": "own_turn3_end",
+ "final_equal": true,
+ "checkpoints_equal": true,
+ "game_over_equal": true,
+ "observations_match": true,
+ "lua_errors": 0
+}

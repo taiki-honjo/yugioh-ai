@@ -1,0 +1,1380 @@
+{
+ "registration_sha256": "bc89fde13b65af910f1f49d0f580a7982ec9045296e3ff2abef18eb3b42ddf71",
+ "amendment_sha256": "365590fa0181163b282437345e583d81a96135368ea022c24b3336f3c98799db",
+ "engine": {
+  "used": 20,
+  "cap": 26,
+  "statuses": {
+   "ok": 20
+  }
+ },
+ "reused_controls": {
+  "H1-ASH-CTRL-G": null,
+  "H1-ASH-CTRL-PASS": "H1-ASH-BASE",
+  "H1-GAMMA-CTRL-G": null,
+  "H1-GAMMA-CTRL-PASS": "H1-GAMMA-BASE"
+ },
+ "runs": {
+  "H1-ASH-BASE": {
+   "target": "established",
+   "reason": "target_chain_resolved",
+   "opponent": [
+    "target: ASH activated"
+   ],
+   "opponent_activation_step": 65,
+   "policy": {
+    "type": "2-file original entry",
+    "base_sha256": "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+    "head_sha256": "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2",
+    "adapter_sha256": null,
+    "manifest_sha256": null,
+    "decisions": null
+   },
+   "adapter_active": null,
+   "control_log": [],
+   "screens": [
+    {
+     "step": 66,
+     "npz_index": 57,
+     "chain": [
+      [
+       0,
+       97556336
+      ],
+      [
+       1,
+       14558127
+      ]
+     ],
+     "latest": 14558127,
+     "hand": [
+      23434538,
+      49036338,
+      59438930
+     ],
+     "field": [
+      74631897,
+      97434754,
+      97556336
+     ],
+     "options": [
+      {
+       "index": 0,
+       "option": "G",
+       "controller": 0,
+       "spec": "h1",
+       "frozen_logit": -7.953522682189941,
+       "delta": -3.111846685409546,
+       "final_logit": -11.065369606018066,
+       "relative_delta_vs_pass": 22.437000274658203,
+       "old_margin_vs_pass": -35.467159271240234,
+       "new_margin_vs_pass": -13.030158996582031,
+       "p_frozen": 3.951922742061176e-16,
+       "p_final": 2.1931709852651693e-06
+      },
+      {
+       "index": 1,
+       "option": "pass",
+       "controller": 0,
+       "spec": "",
+       "frozen_logit": 27.51363754272461,
+       "delta": -25.548847198486328,
+       "final_logit": 1.9647903442382812,
+       "relative_delta_vs_pass": 0.0,
+       "old_margin_vs_pass": 0.0,
+       "new_margin_vs_pass": 0.0,
+       "p_frozen": 1.0,
+       "p_final": 0.9999978542327881
+      }
+     ],
+     "frozen_choice": "pass",
+     "final_choice": "pass",
+     "executed": "pass",
+     "who": "model",
+     "p_pass_frozen": 1.0,
+     "p_pass_final": 0.9999978542327881
+    }
+   ],
+   "outcome": {
+    "own_hand_before": [
+     23434538,
+     49036338,
+     59438930
+    ],
+    "own_hand_after": [
+     23434538,
+     49036338,
+     59438930
+    ],
+    "g_used": false,
+    "cards_added_to_hand": [],
+    "own_monsters_before": [
+     74631897,
+     97434754,
+     97556336
+    ],
+    "own_monsters_after": [
+     74631897,
+     97434754,
+     97556336
+    ],
+    "medius_on_own_field_after": true,
+    "medius_in_own_gy_after": false,
+    "opponent_monsters_after": [],
+    "opponent_gy_after": [
+     14558127
+    ],
+    "gamma_on_field": false,
+    "driver_on_field": false
+   },
+   "replay": {
+    "mismatch": null,
+    "failure": null,
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true
+   },
+   "visible": 0,
+   "lua": 0
+  },
+  "H1-ASH-CAND": {
+   "target": "established",
+   "reason": "target_chain_resolved",
+   "opponent": [
+    "target: ASH activated"
+   ],
+   "opponent_activation_step": 65,
+   "policy": {
+    "type": "artmage-scoped-response-adapter",
+    "base_sha256": "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+    "head_sha256": "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2",
+    "adapter_sha256": "00977941aab573d624a7e739dfbf3e9b2ba3502e9b22c2e0fbe8537072528b69",
+    "manifest_sha256": "48d6e2c706f820b0f8e79453582aaf45e8021e0cef3e5b21973d4d774e94f169",
+    "decisions": 58
+   },
+   "adapter_active": [
+    {
+     "call": 57,
+     "chain": [
+      2,
+      2,
+      9,
+      0
+     ],
+     "legal": 2,
+     "frozen_argmax": 1,
+     "final_argmax": 1,
+     "max_abs_delta_legal": 25.548847198486328,
+     "delta_frozen_choice": -25.548847198486328,
+     "delta_final_choice": -25.548847198486328
+    }
+   ],
+   "control_log": [],
+   "screens": [
+    {
+     "step": 66,
+     "npz_index": 57,
+     "chain": [
+      [
+       0,
+       97556336
+      ],
+      [
+       1,
+       14558127
+      ]
+     ],
+     "latest": 14558127,
+     "hand": [
+      23434538,
+      49036338,
+      59438930
+     ],
+     "field": [
+      74631897,
+      97434754,
+      97556336
+     ],
+     "options": [
+      {
+       "index": 0,
+       "option": "G",
+       "controller": 0,
+       "spec": "h1",
+       "frozen_logit": -7.953522682189941,
+       "delta": -3.111846685409546,
+       "final_logit": -11.065369606018066,
+       "relative_delta_vs_pass": 22.437000274658203,
+       "old_margin_vs_pass": -35.467159271240234,
+       "new_margin_vs_pass": -13.030158996582031,
+       "p_frozen": 3.951922742061176e-16,
+       "p_final": 2.1931709852651693e-06
+      },
+      {
+       "index": 1,
+       "option": "pass",
+       "controller": 0,
+       "spec": "",
+       "frozen_logit": 27.51363754272461,
+       "delta": -25.548847198486328,
+       "final_logit": 1.9647903442382812,
+       "relative_delta_vs_pass": 0.0,
+       "old_margin_vs_pass": 0.0,
+       "new_margin_vs_pass": 0.0,
+       "p_frozen": 1.0,
+       "p_final": 0.9999978542327881
+      }
+     ],
+     "frozen_choice": "pass",
+     "final_choice": "pass",
+     "executed": "pass",
+     "who": "model",
+     "p_pass_frozen": 1.0,
+     "p_pass_final": 0.9999978542327881
+    }
+   ],
+   "outcome": {
+    "own_hand_before": [
+     23434538,
+     49036338,
+     59438930
+    ],
+    "own_hand_after": [
+     23434538,
+     49036338,
+     59438930
+    ],
+    "g_used": false,
+    "cards_added_to_hand": [],
+    "own_monsters_before": [
+     74631897,
+     97434754,
+     97556336
+    ],
+    "own_monsters_after": [
+     74631897,
+     97434754,
+     97556336
+    ],
+    "medius_on_own_field_after": true,
+    "medius_in_own_gy_after": false,
+    "opponent_monsters_after": [],
+    "opponent_gy_after": [
+     14558127
+    ],
+    "gamma_on_field": false,
+    "driver_on_field": false
+   },
+   "replay": {
+    "mismatch": null,
+    "failure": null,
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true
+   },
+   "visible": 0,
+   "lua": 0
+  },
+  "H1-GAMMA-BASE": {
+   "target": "established",
+   "reason": "target_chain_resolved",
+   "opponent": [
+    "target: GAMMA activated"
+   ],
+   "opponent_activation_step": 65,
+   "policy": {
+    "type": "2-file original entry",
+    "base_sha256": "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+    "head_sha256": "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2",
+    "adapter_sha256": null,
+    "manifest_sha256": null,
+    "decisions": null
+   },
+   "adapter_active": null,
+   "control_log": [],
+   "screens": [
+    {
+     "step": 66,
+     "npz_index": 57,
+     "chain": [
+      [
+       0,
+       97556336
+      ],
+      [
+       1,
+       38814750
+      ]
+     ],
+     "latest": 38814750,
+     "hand": [
+      23434538,
+      49036338,
+      59438930
+     ],
+     "field": [
+      74631897,
+      97434754,
+      97556336
+     ],
+     "options": [
+      {
+       "index": 0,
+       "option": "G",
+       "controller": 0,
+       "spec": "h1",
+       "frozen_logit": -7.921224594116211,
+       "delta": -3.1487841606140137,
+       "final_logit": -11.070009231567383,
+       "relative_delta_vs_pass": 22.40898895263672,
+       "old_margin_vs_pass": -35.340599060058594,
+       "new_margin_vs_pass": -12.931610107421875,
+       "p_frozen": 4.485107218347301e-16,
+       "p_final": 2.4203204702644143e-06
+      },
+      {
+       "index": 1,
+       "option": "pass",
+       "controller": 0,
+       "spec": "",
+       "frozen_logit": 27.41937255859375,
+       "delta": -25.55777359008789,
+       "final_logit": 1.8615989685058594,
+       "relative_delta_vs_pass": 0.0,
+       "old_margin_vs_pass": 0.0,
+       "new_margin_vs_pass": 0.0,
+       "p_frozen": 1.0,
+       "p_final": 0.999997615814209
+      }
+     ],
+     "frozen_choice": "pass",
+     "final_choice": "pass",
+     "executed": "pass",
+     "who": "model",
+     "p_pass_frozen": 1.0,
+     "p_pass_final": 0.999997615814209
+    }
+   ],
+   "outcome": {
+    "own_hand_before": [
+     23434538,
+     49036338,
+     59438930
+    ],
+    "own_hand_after": [
+     23434538,
+     49036338,
+     59438930
+    ],
+    "g_used": false,
+    "cards_added_to_hand": [],
+    "own_monsters_before": [
+     74631897,
+     97434754,
+     97556336
+    ],
+    "own_monsters_after": [
+     74631897,
+     97434754
+    ],
+    "medius_on_own_field_after": false,
+    "medius_in_own_gy_after": true,
+    "opponent_monsters_after": [
+     38814750,
+     49036338
+    ],
+    "opponent_gy_after": [],
+    "gamma_on_field": true,
+    "driver_on_field": true
+   },
+   "replay": {
+    "mismatch": null,
+    "failure": null,
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true
+   },
+   "visible": 0,
+   "lua": 0
+  },
+  "H1-GAMMA-CAND": {
+   "target": "established",
+   "reason": "target_chain_resolved",
+   "opponent": [
+    "target: GAMMA activated"
+   ],
+   "opponent_activation_step": 65,
+   "policy": {
+    "type": "artmage-scoped-response-adapter",
+    "base_sha256": "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+    "head_sha256": "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2",
+    "adapter_sha256": "00977941aab573d624a7e739dfbf3e9b2ba3502e9b22c2e0fbe8537072528b69",
+    "manifest_sha256": "48d6e2c706f820b0f8e79453582aaf45e8021e0cef3e5b21973d4d774e94f169",
+    "decisions": 58
+   },
+   "adapter_active": [
+    {
+     "call": 57,
+     "chain": [
+      2,
+      2,
+      40,
+      0
+     ],
+     "legal": 2,
+     "frozen_argmax": 1,
+     "final_argmax": 1,
+     "max_abs_delta_legal": 25.55777359008789,
+     "delta_frozen_choice": -25.55777359008789,
+     "delta_final_choice": -25.55777359008789
+    }
+   ],
+   "control_log": [],
+   "screens": [
+    {
+     "step": 66,
+     "npz_index": 57,
+     "chain": [
+      [
+       0,
+       97556336
+      ],
+      [
+       1,
+       38814750
+      ]
+     ],
+     "latest": 38814750,
+     "hand": [
+      23434538,
+      49036338,
+      59438930
+     ],
+     "field": [
+      74631897,
+      97434754,
+      97556336
+     ],
+     "options": [
+      {
+       "index": 0,
+       "option": "G",
+       "controller": 0,
+       "spec": "h1",
+       "frozen_logit": -7.921224594116211,
+       "delta": -3.1487841606140137,
+       "final_logit": -11.070009231567383,
+       "relative_delta_vs_pass": 22.40898895263672,
+       "old_margin_vs_pass": -35.340599060058594,
+       "new_margin_vs_pass": -12.931610107421875,
+       "p_frozen": 4.485107218347301e-16,
+       "p_final": 2.4203204702644143e-06
+      },
+      {
+       "index": 1,
+       "option": "pass",
+       "controller": 0,
+       "spec": "",
+       "frozen_logit": 27.41937255859375,
+       "delta": -25.55777359008789,
+       "final_logit": 1.8615989685058594,
+       "relative_delta_vs_pass": 0.0,
+       "old_margin_vs_pass": 0.0,
+       "new_margin_vs_pass": 0.0,
+       "p_frozen": 1.0,
+       "p_final": 0.999997615814209
+      }
+     ],
+     "frozen_choice": "pass",
+     "final_choice": "pass",
+     "executed": "pass",
+     "who": "model",
+     "p_pass_frozen": 1.0,
+     "p_pass_final": 0.999997615814209
+    }
+   ],
+   "outcome": {
+    "own_hand_before": [
+     23434538,
+     49036338,
+     59438930
+    ],
+    "own_hand_after": [
+     23434538,
+     49036338,
+     59438930
+    ],
+    "g_used": false,
+    "cards_added_to_hand": [],
+    "own_monsters_before": [
+     74631897,
+     97434754,
+     97556336
+    ],
+    "own_monsters_after": [
+     74631897,
+     97434754
+    ],
+    "medius_on_own_field_after": false,
+    "medius_in_own_gy_after": true,
+    "opponent_monsters_after": [
+     38814750,
+     49036338
+    ],
+    "opponent_gy_after": [],
+    "gamma_on_field": true,
+    "driver_on_field": true
+   },
+   "replay": {
+    "mismatch": null,
+    "failure": null,
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true
+   },
+   "visible": 0,
+   "lua": 0
+  },
+  "H2-ASH-BASE": {
+   "target": "established",
+   "reason": "target_chain_resolved",
+   "opponent": [
+    "target: ASH activated"
+   ],
+   "opponent_activation_step": 48,
+   "policy": {
+    "type": "2-file original entry",
+    "base_sha256": "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+    "head_sha256": "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2",
+    "adapter_sha256": null,
+    "manifest_sha256": null,
+    "decisions": null
+   },
+   "adapter_active": null,
+   "control_log": [],
+   "screens": [
+    {
+     "step": 49,
+     "npz_index": 42,
+     "chain": [
+      [
+       0,
+       97556336
+      ],
+      [
+       1,
+       14558127
+      ]
+     ],
+     "latest": 14558127,
+     "hand": [
+      23434538,
+      59438930,
+      74011784
+     ],
+     "field": [
+      60946049,
+      97434754,
+      97556336
+     ],
+     "options": [
+      {
+       "index": 0,
+       "option": "G",
+       "controller": 0,
+       "spec": "h2",
+       "frozen_logit": -6.20790958404541,
+       "delta": -3.111846685409546,
+       "final_logit": -9.319756507873535,
+       "relative_delta_vs_pass": 22.437000274658203,
+       "old_margin_vs_pass": -32.876678466796875,
+       "new_margin_vs_pass": -10.439678192138672,
+       "p_frozen": 5.2703563118794514e-15,
+       "p_final": 2.9247792554087937e-05
+      },
+      {
+       "index": 1,
+       "option": "pass",
+       "controller": 0,
+       "spec": "",
+       "frozen_logit": 26.66876792907715,
+       "delta": -25.548847198486328,
+       "final_logit": 1.1199207305908203,
+       "relative_delta_vs_pass": 0.0,
+       "old_margin_vs_pass": 0.0,
+       "new_margin_vs_pass": 0.0,
+       "p_frozen": 1.0,
+       "p_final": 0.9999707937240601
+      }
+     ],
+     "frozen_choice": "pass",
+     "final_choice": "pass",
+     "executed": "pass",
+     "who": "model",
+     "p_pass_frozen": 1.0,
+     "p_pass_final": 0.9999707937240601
+    }
+   ],
+   "outcome": {
+    "own_hand_before": [
+     23434538,
+     59438930,
+     74011784
+    ],
+    "own_hand_after": [
+     23434538,
+     59438930,
+     74011784
+    ],
+    "g_used": false,
+    "cards_added_to_hand": [],
+    "own_monsters_before": [
+     60946049,
+     97434754,
+     97556336
+    ],
+    "own_monsters_after": [
+     60946049,
+     97434754,
+     97556336
+    ],
+    "medius_on_own_field_after": true,
+    "medius_in_own_gy_after": false,
+    "opponent_monsters_after": [],
+    "opponent_gy_after": [
+     14558127
+    ],
+    "gamma_on_field": false,
+    "driver_on_field": false
+   },
+   "replay": {
+    "mismatch": null,
+    "failure": null,
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true
+   },
+   "visible": 0,
+   "lua": 0
+  },
+  "H2-ASH-CAND": {
+   "target": "established",
+   "reason": "target_chain_resolved",
+   "opponent": [
+    "target: ASH activated"
+   ],
+   "opponent_activation_step": 48,
+   "policy": {
+    "type": "artmage-scoped-response-adapter",
+    "base_sha256": "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+    "head_sha256": "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2",
+    "adapter_sha256": "00977941aab573d624a7e739dfbf3e9b2ba3502e9b22c2e0fbe8537072528b69",
+    "manifest_sha256": "48d6e2c706f820b0f8e79453582aaf45e8021e0cef3e5b21973d4d774e94f169",
+    "decisions": 43
+   },
+   "adapter_active": [
+    {
+     "call": 42,
+     "chain": [
+      2,
+      2,
+      9,
+      0
+     ],
+     "legal": 2,
+     "frozen_argmax": 1,
+     "final_argmax": 1,
+     "max_abs_delta_legal": 25.548847198486328,
+     "delta_frozen_choice": -25.548847198486328,
+     "delta_final_choice": -25.548847198486328
+    }
+   ],
+   "control_log": [],
+   "screens": [
+    {
+     "step": 49,
+     "npz_index": 42,
+     "chain": [
+      [
+       0,
+       97556336
+      ],
+      [
+       1,
+       14558127
+      ]
+     ],
+     "latest": 14558127,
+     "hand": [
+      23434538,
+      59438930,
+      74011784
+     ],
+     "field": [
+      60946049,
+      97434754,
+      97556336
+     ],
+     "options": [
+      {
+       "index": 0,
+       "option": "G",
+       "controller": 0,
+       "spec": "h2",
+       "frozen_logit": -6.20790958404541,
+       "delta": -3.111846685409546,
+       "final_logit": -9.319756507873535,
+       "relative_delta_vs_pass": 22.437000274658203,
+       "old_margin_vs_pass": -32.876678466796875,
+       "new_margin_vs_pass": -10.439678192138672,
+       "p_frozen": 5.2703563118794514e-15,
+       "p_final": 2.9247792554087937e-05
+      },
+      {
+       "index": 1,
+       "option": "pass",
+       "controller": 0,
+       "spec": "",
+       "frozen_logit": 26.66876792907715,
+       "delta": -25.548847198486328,
+       "final_logit": 1.1199207305908203,
+       "relative_delta_vs_pass": 0.0,
+       "old_margin_vs_pass": 0.0,
+       "new_margin_vs_pass": 0.0,
+       "p_frozen": 1.0,
+       "p_final": 0.9999707937240601
+      }
+     ],
+     "frozen_choice": "pass",
+     "final_choice": "pass",
+     "executed": "pass",
+     "who": "model",
+     "p_pass_frozen": 1.0,
+     "p_pass_final": 0.9999707937240601
+    }
+   ],
+   "outcome": {
+    "own_hand_before": [
+     23434538,
+     59438930,
+     74011784
+    ],
+    "own_hand_after": [
+     23434538,
+     59438930,
+     74011784
+    ],
+    "g_used": false,
+    "cards_added_to_hand": [],
+    "own_monsters_before": [
+     60946049,
+     97434754,
+     97556336
+    ],
+    "own_monsters_after": [
+     60946049,
+     97434754,
+     97556336
+    ],
+    "medius_on_own_field_after": true,
+    "medius_in_own_gy_after": false,
+    "opponent_monsters_after": [],
+    "opponent_gy_after": [
+     14558127
+    ],
+    "gamma_on_field": false,
+    "driver_on_field": false
+   },
+   "replay": {
+    "mismatch": null,
+    "failure": null,
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true
+   },
+   "visible": 0,
+   "lua": 0
+  },
+  "H2-GAMMA-BASE": {
+   "target": "established",
+   "reason": "target_chain_resolved",
+   "opponent": [
+    "target: GAMMA activated"
+   ],
+   "opponent_activation_step": 48,
+   "policy": {
+    "type": "2-file original entry",
+    "base_sha256": "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+    "head_sha256": "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2",
+    "adapter_sha256": null,
+    "manifest_sha256": null,
+    "decisions": null
+   },
+   "adapter_active": null,
+   "control_log": [],
+   "screens": [
+    {
+     "step": 49,
+     "npz_index": 42,
+     "chain": [
+      [
+       0,
+       97556336
+      ],
+      [
+       1,
+       38814750
+      ]
+     ],
+     "latest": 38814750,
+     "hand": [
+      23434538,
+      59438930,
+      74011784
+     ],
+     "field": [
+      60946049,
+      97434754,
+      97556336
+     ],
+     "options": [
+      {
+       "index": 0,
+       "option": "G",
+       "controller": 0,
+       "spec": "h2",
+       "frozen_logit": -6.306747913360596,
+       "delta": -3.1487841606140137,
+       "final_logit": -9.45553207397461,
+       "relative_delta_vs_pass": 22.40898895263672,
+       "old_margin_vs_pass": -32.9764518737793,
+       "new_margin_vs_pass": -10.567462921142578,
+       "p_frozen": 4.769896212356668e-15,
+       "p_final": 2.573937308625318e-05
+      },
+      {
+       "index": 1,
+       "option": "pass",
+       "controller": 0,
+       "spec": "",
+       "frozen_logit": 26.66970443725586,
+       "delta": -25.55777359008789,
+       "final_logit": 1.1119308471679688,
+       "relative_delta_vs_pass": 0.0,
+       "old_margin_vs_pass": 0.0,
+       "new_margin_vs_pass": 0.0,
+       "p_frozen": 1.0,
+       "p_final": 0.999974250793457
+      }
+     ],
+     "frozen_choice": "pass",
+     "final_choice": "pass",
+     "executed": "pass",
+     "who": "model",
+     "p_pass_frozen": 1.0,
+     "p_pass_final": 0.999974250793457
+    }
+   ],
+   "outcome": {
+    "own_hand_before": [
+     23434538,
+     59438930,
+     74011784
+    ],
+    "own_hand_after": [
+     23434538,
+     59438930,
+     74011784
+    ],
+    "g_used": false,
+    "cards_added_to_hand": [],
+    "own_monsters_before": [
+     60946049,
+     97434754,
+     97556336
+    ],
+    "own_monsters_after": [
+     60946049,
+     97434754
+    ],
+    "medius_on_own_field_after": false,
+    "medius_in_own_gy_after": true,
+    "opponent_monsters_after": [
+     38814750,
+     49036338
+    ],
+    "opponent_gy_after": [],
+    "gamma_on_field": true,
+    "driver_on_field": true
+   },
+   "replay": {
+    "mismatch": null,
+    "failure": null,
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true
+   },
+   "visible": 0,
+   "lua": 0
+  },
+  "H2-GAMMA-CAND": {
+   "target": "established",
+   "reason": "target_chain_resolved",
+   "opponent": [
+    "target: GAMMA activated"
+   ],
+   "opponent_activation_step": 48,
+   "policy": {
+    "type": "artmage-scoped-response-adapter",
+    "base_sha256": "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+    "head_sha256": "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2",
+    "adapter_sha256": "00977941aab573d624a7e739dfbf3e9b2ba3502e9b22c2e0fbe8537072528b69",
+    "manifest_sha256": "48d6e2c706f820b0f8e79453582aaf45e8021e0cef3e5b21973d4d774e94f169",
+    "decisions": 43
+   },
+   "adapter_active": [
+    {
+     "call": 42,
+     "chain": [
+      2,
+      2,
+      40,
+      0
+     ],
+     "legal": 2,
+     "frozen_argmax": 1,
+     "final_argmax": 1,
+     "max_abs_delta_legal": 25.55777359008789,
+     "delta_frozen_choice": -25.55777359008789,
+     "delta_final_choice": -25.55777359008789
+    }
+   ],
+   "control_log": [],
+   "screens": [
+    {
+     "step": 49,
+     "npz_index": 42,
+     "chain": [
+      [
+       0,
+       97556336
+      ],
+      [
+       1,
+       38814750
+      ]
+     ],
+     "latest": 38814750,
+     "hand": [
+      23434538,
+      59438930,
+      74011784
+     ],
+     "field": [
+      60946049,
+      97434754,
+      97556336
+     ],
+     "options": [
+      {
+       "index": 0,
+       "option": "G",
+       "controller": 0,
+       "spec": "h2",
+       "frozen_logit": -6.306747913360596,
+       "delta": -3.1487841606140137,
+       "final_logit": -9.45553207397461,
+       "relative_delta_vs_pass": 22.40898895263672,
+       "old_margin_vs_pass": -32.9764518737793,
+       "new_margin_vs_pass": -10.567462921142578,
+       "p_frozen": 4.769896212356668e-15,
+       "p_final": 2.573937308625318e-05
+      },
+      {
+       "index": 1,
+       "option": "pass",
+       "controller": 0,
+       "spec": "",
+       "frozen_logit": 26.66970443725586,
+       "delta": -25.55777359008789,
+       "final_logit": 1.1119308471679688,
+       "relative_delta_vs_pass": 0.0,
+       "old_margin_vs_pass": 0.0,
+       "new_margin_vs_pass": 0.0,
+       "p_frozen": 1.0,
+       "p_final": 0.999974250793457
+      }
+     ],
+     "frozen_choice": "pass",
+     "final_choice": "pass",
+     "executed": "pass",
+     "who": "model",
+     "p_pass_frozen": 1.0,
+     "p_pass_final": 0.999974250793457
+    }
+   ],
+   "outcome": {
+    "own_hand_before": [
+     23434538,
+     59438930,
+     74011784
+    ],
+    "own_hand_after": [
+     23434538,
+     59438930,
+     74011784
+    ],
+    "g_used": false,
+    "cards_added_to_hand": [],
+    "own_monsters_before": [
+     60946049,
+     97434754,
+     97556336
+    ],
+    "own_monsters_after": [
+     60946049,
+     97434754
+    ],
+    "medius_on_own_field_after": false,
+    "medius_in_own_gy_after": true,
+    "opponent_monsters_after": [
+     38814750,
+     49036338
+    ],
+    "opponent_gy_after": [],
+    "gamma_on_field": true,
+    "driver_on_field": true
+   },
+   "replay": {
+    "mismatch": null,
+    "failure": null,
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true
+   },
+   "visible": 0,
+   "lua": 0
+  },
+  "H1-ASH-CTRL-G": {
+   "target": "established",
+   "reason": "target_chain_resolved",
+   "opponent": [
+    "target: ASH activated"
+   ],
+   "opponent_activation_step": 65,
+   "policy": {
+    "type": "2-file original entry",
+    "base_sha256": "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+    "head_sha256": "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2",
+    "adapter_sha256": null,
+    "manifest_sha256": null,
+    "decisions": null
+   },
+   "adapter_active": null,
+   "control_log": [
+    {
+     "step": 66,
+     "rule": "first response -> G",
+     "message": "select_chain",
+     "model_choice": {
+      "act": "Cancel",
+      "code": 0,
+      "effect": -1
+     },
+     "established": true
+    }
+   ],
+   "screens": [
+    {
+     "step": 66,
+     "npz_index": 57,
+     "chain": [
+      [
+       0,
+       97556336
+      ],
+      [
+       1,
+       14558127
+      ]
+     ],
+     "latest": 14558127,
+     "hand": [
+      23434538,
+      49036338,
+      59438930
+     ],
+     "field": [
+      74631897,
+      97434754,
+      97556336
+     ],
+     "options": [
+      {
+       "index": 0,
+       "option": "G",
+       "controller": 0,
+       "spec": "h1",
+       "frozen_logit": -7.953522682189941,
+       "delta": -3.111846685409546,
+       "final_logit": -11.065369606018066,
+       "relative_delta_vs_pass": 22.437000274658203,
+       "old_margin_vs_pass": -35.467159271240234,
+       "new_margin_vs_pass": -13.030158996582031,
+       "p_frozen": 3.951922742061176e-16,
+       "p_final": 2.1931709852651693e-06
+      },
+      {
+       "index": 1,
+       "option": "pass",
+       "controller": 0,
+       "spec": "",
+       "frozen_logit": 27.51363754272461,
+       "delta": -25.548847198486328,
+       "final_logit": 1.9647903442382812,
+       "relative_delta_vs_pass": 0.0,
+       "old_margin_vs_pass": 0.0,
+       "new_margin_vs_pass": 0.0,
+       "p_frozen": 1.0,
+       "p_final": 0.9999978542327881
+      }
+     ],
+     "frozen_choice": "pass",
+     "final_choice": "pass",
+     "executed": "G",
+     "who": "control-G",
+     "p_pass_frozen": 1.0,
+     "p_pass_final": 0.9999978542327881
+    }
+   ],
+   "outcome": {
+    "own_hand_before": [
+     23434538,
+     49036338,
+     59438930
+    ],
+    "own_hand_after": [
+     49036338,
+     59438930
+    ],
+    "g_used": true,
+    "cards_added_to_hand": [],
+    "own_monsters_before": [
+     74631897,
+     97434754,
+     97556336
+    ],
+    "own_monsters_after": [
+     74631897,
+     97434754,
+     97556336
+    ],
+    "medius_on_own_field_after": true,
+    "medius_in_own_gy_after": false,
+    "opponent_monsters_after": [],
+    "opponent_gy_after": [
+     14558127
+    ],
+    "gamma_on_field": false,
+    "driver_on_field": false
+   },
+   "replay": {
+    "mismatch": null,
+    "failure": null,
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true
+   },
+   "visible": 0,
+   "lua": 0
+  },
+  "H1-GAMMA-CTRL-G": {
+   "target": "established",
+   "reason": "target_chain_resolved",
+   "opponent": [
+    "target: GAMMA activated"
+   ],
+   "opponent_activation_step": 65,
+   "policy": {
+    "type": "2-file original entry",
+    "base_sha256": "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+    "head_sha256": "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2",
+    "adapter_sha256": null,
+    "manifest_sha256": null,
+    "decisions": null
+   },
+   "adapter_active": null,
+   "control_log": [
+    {
+     "step": 66,
+     "rule": "first response -> G",
+     "message": "select_chain",
+     "model_choice": {
+      "act": "Cancel",
+      "code": 0,
+      "effect": -1
+     },
+     "established": true
+    }
+   ],
+   "screens": [
+    {
+     "step": 66,
+     "npz_index": 57,
+     "chain": [
+      [
+       0,
+       97556336
+      ],
+      [
+       1,
+       38814750
+      ]
+     ],
+     "latest": 38814750,
+     "hand": [
+      23434538,
+      49036338,
+      59438930
+     ],
+     "field": [
+      74631897,
+      97434754,
+      97556336
+     ],
+     "options": [
+      {
+       "index": 0,
+       "option": "G",
+       "controller": 0,
+       "spec": "h1",
+       "frozen_logit": -7.921224594116211,
+       "delta": -3.1487841606140137,
+       "final_logit": -11.070009231567383,
+       "relative_delta_vs_pass": 22.40898895263672,
+       "old_margin_vs_pass": -35.340599060058594,
+       "new_margin_vs_pass": -12.931610107421875,
+       "p_frozen": 4.485107218347301e-16,
+       "p_final": 2.4203204702644143e-06
+      },
+      {
+       "index": 1,
+       "option": "pass",
+       "controller": 0,
+       "spec": "",
+       "frozen_logit": 27.41937255859375,
+       "delta": -25.55777359008789,
+       "final_logit": 1.8615989685058594,
+       "relative_delta_vs_pass": 0.0,
+       "old_margin_vs_pass": 0.0,
+       "new_margin_vs_pass": 0.0,
+       "p_frozen": 1.0,
+       "p_final": 0.999997615814209
+      }
+     ],
+     "frozen_choice": "pass",
+     "final_choice": "pass",
+     "executed": "G",
+     "who": "control-G",
+     "p_pass_frozen": 1.0,
+     "p_pass_final": 0.999997615814209
+    }
+   ],
+   "outcome": {
+    "own_hand_before": [
+     23434538,
+     49036338,
+     59438930
+    ],
+    "own_hand_after": [
+     10045474,
+     49036338,
+     59438930
+    ],
+    "g_used": true,
+    "cards_added_to_hand": [
+     10045474
+    ],
+    "own_monsters_before": [
+     74631897,
+     97434754,
+     97556336
+    ],
+    "own_monsters_after": [
+     74631897,
+     97434754
+    ],
+    "medius_on_own_field_after": false,
+    "medius_in_own_gy_after": true,
+    "opponent_monsters_after": [
+     38814750,
+     49036338
+    ],
+    "opponent_gy_after": [],
+    "gamma_on_field": true,
+    "driver_on_field": true
+   },
+   "replay": {
+    "mismatch": null,
+    "failure": null,
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true
+   },
+   "visible": 0,
+   "lua": 0
+  }
+ },
+ "pairs": {
+  "H1-ASH": {
+   "base_vs_cand_identical_trace": true,
+   "base_vs_cand_identical_inputs": true,
+   "cand_adapter_activations": 1,
+   "cand_activations_before_opponent": 0
+  },
+  "H1-GAMMA": {
+   "base_vs_cand_identical_trace": true,
+   "base_vs_cand_identical_inputs": true,
+   "cand_adapter_activations": 1,
+   "cand_activations_before_opponent": 0
+  },
+  "H1-ASH-vs-GAMMA-before-activation": {
+   "activation_step": [
+    65,
+    65
+   ],
+   "trace_equal": true,
+   "inputs_equal": true
+  },
+  "H2-ASH": {
+   "base_vs_cand_identical_trace": true,
+   "base_vs_cand_identical_inputs": true,
+   "cand_adapter_activations": 1,
+   "cand_activations_before_opponent": 0
+  },
+  "H2-GAMMA": {
+   "base_vs_cand_identical_trace": true,
+   "base_vs_cand_identical_inputs": true,
+   "cand_adapter_activations": 1,
+   "cand_activations_before_opponent": 0
+  },
+  "H2-ASH-vs-GAMMA-before-activation": {
+   "activation_step": [
+    48,
+    48
+   ],
+   "trace_equal": true,
+   "inputs_equal": true
+  }
+ }
+}

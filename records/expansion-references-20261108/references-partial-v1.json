@@ -1,0 +1,439 @@
+{
+  "status": "references_registered",
+  "grading_policy": "normal-summon-agnostic-v2",
+  "normal_summon_usage_scored": false,
+  "publish_new_replays": false,
+  "training_from_these_articles_completed": false,
+  "validation_order": [
+    "既存リプレイの全手順とカード対応を確認",
+    "選択済みPDFレシピの枚数・必要カード・コストを照合",
+    "ローカルエンジンで合法な操作として再現",
+    "確認済みの手順だけを学習と別初手評価へ採用"
+  ],
+  "sources": [
+    {
+      "deck": "ClownTroupe",
+      "label": "道化の一座",
+      "article": "https://note.com/fugapoke/n/n444a2760344c",
+      "title": "【MD】道化の一座 展開メモ",
+      "author": "ふがーた",
+      "published": "2026-09-12",
+      "scope": "先攻の初動と誘発を受けた分岐。公開部分のみを参照し、有料Appendixは未取得。",
+      "goal_notes": "固定の盤面だけでなく、相手ターンに必要なアドバンス召喚ができる状態も確認対象。",
+      "routes": [
+        {
+          "label": "フレア1枚",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/CRWQjPaN",
+          "starter_codes": [
+            42759961
+          ],
+          "starter_cards": [
+            {
+              "code": 42759961,
+              "name": "道化の一座 フレア",
+              "count": 3
+            }
+          ],
+          "initial_named_starters_in_selected_recipe": true,
+          "status": "article_and_replay_link_indexed; full local-engine replay pending"
+        },
+        {
+          "label": "ハット1枚・分岐1",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/Qpqm2Dm7",
+          "starter_codes": [
+            19491080
+          ],
+          "starter_cards": [
+            {
+              "code": 19491080,
+              "name": "道化の一座 ハット",
+              "count": 3
+            }
+          ],
+          "initial_named_starters_in_selected_recipe": true,
+          "status": "article_and_replay_link_indexed; full local-engine replay pending"
+        },
+        {
+          "label": "ハット1枚・分岐2",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/jD6qEYbq",
+          "starter_codes": [
+            19491080
+          ],
+          "starter_cards": [
+            {
+              "code": 19491080,
+              "name": "道化の一座 ハット",
+              "count": 3
+            }
+          ],
+          "initial_named_starters_in_selected_recipe": true,
+          "status": "article_and_replay_link_indexed; full local-engine replay pending"
+        },
+        {
+          "label": "下稽古＋モンスターコスト",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/jcUpCPpQ",
+          "starter_codes": [
+            20448151
+          ],
+          "additional_start": "モンスターコスト",
+          "starter_cards": [
+            {
+              "code": 20448151,
+              "name": "道化の一座『下稽古』",
+              "count": 3
+            }
+          ],
+          "initial_named_starters_in_selected_recipe": true,
+          "status": "article_and_replay_link_indexed; full local-engine replay pending"
+        },
+        {
+          "label": "フレア＋ハット・うらら後",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/dWbA4y9a",
+          "starter_codes": [
+            42759961,
+            19491080
+          ],
+          "interruption": "灰流うらら",
+          "starter_cards": [
+            {
+              "code": 42759961,
+              "name": "道化の一座 フレア",
+              "count": 3
+            },
+            {
+              "code": 19491080,
+              "name": "道化の一座 ハット",
+              "count": 3
+            }
+          ],
+          "initial_named_starters_in_selected_recipe": true,
+          "status": "article_and_replay_link_indexed; full local-engine replay pending"
+        },
+        {
+          "label": "フレア＋ハット・ドロール後",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/KrCwwyjK",
+          "starter_codes": [
+            42759961,
+            19491080
+          ],
+          "interruption": "ドロール＆ロックバード",
+          "starter_cards": [
+            {
+              "code": 42759961,
+              "name": "道化の一座 フレア",
+              "count": 3
+            },
+            {
+              "code": 19491080,
+              "name": "道化の一座 ハット",
+              "count": 3
+            }
+          ],
+          "initial_named_starters_in_selected_recipe": true,
+          "status": "article_and_replay_link_indexed; full local-engine replay pending"
+        }
+      ],
+      "core_codes": [
+        82159583,
+        19491080,
+        42759961,
+        20448151,
+        57847269,
+        83232904,
+        70058649,
+        84031736,
+        31533473,
+        93172951,
+        91237821
+      ],
+      "core_presence": [
+        {
+          "code": 82159583,
+          "name": "道化の一座 ホワイトフェイス",
+          "present": true
+        },
+        {
+          "code": 19491080,
+          "name": "道化の一座 ハット",
+          "present": true
+        },
+        {
+          "code": 42759961,
+          "name": "道化の一座 フレア",
+          "present": true
+        },
+        {
+          "code": 20448151,
+          "name": "道化の一座『下稽古』",
+          "present": true
+        },
+        {
+          "code": 57847269,
+          "name": "道化の一座『開演』",
+          "present": true
+        },
+        {
+          "code": 83232904,
+          "name": "道化の一座『極芸』",
+          "present": true
+        },
+        {
+          "code": 70058649,
+          "name": "道化の一座『怪演』",
+          "present": true
+        },
+        {
+          "code": 84031736,
+          "name": "道化の一座『終演』",
+          "present": true
+        },
+        {
+          "code": 31533473,
+          "name": "道化の一座 ディアボロ",
+          "present": true
+        },
+        {
+          "code": 93172951,
+          "name": "道化の一座 メテオ",
+          "present": true
+        },
+        {
+          "code": 91237821,
+          "name": "道化の一座 デビルズ",
+          "present": true
+        }
+      ],
+      "selected_recipe_source": "C:\\Users\\hatk8\\Downloads\\DK0019036118_262_ja_ﾃﾞｯｷ_202611072232536_.pdf",
+      "selected_recipe_sha256": "7338afb703b2405b954e717f7c03b0f13e6bf1c409c562cffdca4da10b8e2fdd",
+      "recipe_changed": false,
+      "article_build_assumed_identical": false
+    },
+    {
+      "deck": "Artmage",
+      "label": "アルトメギア",
+      "article": "https://note.com/kind_borage903/n/n0b8910935f9a",
+      "title": "アルトメギアデッキ紹介",
+      "author": "鈴木",
+      "published": "2026-10-28",
+      "scope": "基本初動、コストの種類・枚数による違い、誘発への分岐を参照。",
+      "goal_notes": "各初動と手札コストを区別し、ドロー結果や相手ターンの動きを固定した万能盤面にまとめない。",
+      "routes": [
+        {
+          "label": "襲撃",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/g2rN57Xb",
+          "starter_codes": [
+            1122030
+          ],
+          "starter_cards": [
+            {
+              "code": 1122030,
+              "name": "アルトメギア・ヴァンダリズム－襲撃－",
+              "count": 3
+            }
+          ],
+          "initial_named_starters_in_selected_recipe": true,
+          "status": "article_and_replay_link_indexed; full local-engine replay pending"
+        },
+        {
+          "label": "メディウス＋コスト",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/wsMMwXxE",
+          "starter_codes": [
+            97556336
+          ],
+          "additional_start": "モンスター／魔法罠コストを別ケースで扱う",
+          "starter_cards": [
+            {
+              "code": 97556336,
+              "name": "無垢なる者 メディウス",
+              "count": 2
+            }
+          ],
+          "initial_named_starters_in_selected_recipe": true,
+          "status": "article_and_replay_link_indexed; full local-engine replay pending"
+        },
+        {
+          "label": "獄神獣初動",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/vxs2HMAV",
+          "starter_codes": [
+            23829452
+          ],
+          "starter_cards": [
+            {
+              "code": 23829452,
+              "name": "アルトメギアの獄神獣",
+              "count": 2
+            }
+          ],
+          "initial_named_starters_in_selected_recipe": true,
+          "status": "article_and_replay_link_indexed; full local-engine replay pending"
+        },
+        {
+          "label": "学都＋魔法罠コスト",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/XUS4azXa",
+          "starter_codes": [
+            74733322
+          ],
+          "additional_start": "魔法罠コスト1枚",
+          "starter_cards": [
+            {
+              "code": 74733322,
+              "name": "神芸学都アルトメギア",
+              "count": 3
+            }
+          ],
+          "initial_named_starters_in_selected_recipe": true,
+          "status": "article_and_replay_link_indexed; full local-engine replay pending"
+        },
+        {
+          "label": "学都＋魔法罠コスト2枚",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/dAvrxdzV",
+          "starter_codes": [
+            74733322
+          ],
+          "additional_start": "魔法罠コスト2枚",
+          "starter_cards": [
+            {
+              "code": 74733322,
+              "name": "神芸学都アルトメギア",
+              "count": 3
+            }
+          ],
+          "initial_named_starters_in_selected_recipe": true,
+          "status": "article_and_replay_link_indexed; full local-engine replay pending"
+        },
+        {
+          "label": "テルミナス",
+          "url": "https://duel-simulator.miyauchidp.dev/replay/xXerEKuW",
+          "starter_codes": [
+            25661743
+          ],
+          "starter_cards": [
+            {
+              "code": 25661743,
+              "name": "絶解なる獄神門－テルミナス",
+              "count": 3
+            }
+          ],
+          "initial_named_starters_in_selected_recipe": true,
+          "status": "article_and_replay_link_indexed; full local-engine replay pending"
+        }
+      ],
+      "core_codes": [
+        74733322,
+        74011784,
+        1122030,
+        25661743,
+        60946049,
+        97434754,
+        34541940,
+        23829452,
+        17473466,
+        70488851,
+        31822037,
+        36709484,
+        74631897,
+        27184601,
+        53589300,
+        87758525,
+        23599634,
+        44654994
+      ],
+      "core_presence": [
+        {
+          "code": 74733322,
+          "name": "神芸学都アルトメギア",
+          "present": true
+        },
+        {
+          "code": 74011784,
+          "name": "アルトメギア・バーニッシュ－改変－",
+          "present": true
+        },
+        {
+          "code": 1122030,
+          "name": "アルトメギア・ヴァンダリズム－襲撃－",
+          "present": true
+        },
+        {
+          "code": 25661743,
+          "name": "絶解なる獄神門－テルミナス",
+          "present": true
+        },
+        {
+          "code": 60946049,
+          "name": "神芸学徒 グラフレア",
+          "present": true
+        },
+        {
+          "code": 97434754,
+          "name": "神芸学徒 リテラ",
+          "present": true
+        },
+        {
+          "code": 34541940,
+          "name": "神芸学徒 ファインメルト",
+          "present": true
+        },
+        {
+          "code": 23829452,
+          "name": "アルトメギアの獄神獣",
+          "present": true
+        },
+        {
+          "code": 17473466,
+          "name": "獄神影獣－ネルヴェド",
+          "present": true
+        },
+        {
+          "code": 70488851,
+          "name": "混絶獄神ヴィードリウム",
+          "present": true
+        },
+        {
+          "code": 31822037,
+          "name": "無垢なる祈りの獄神使",
+          "present": true
+        },
+        {
+          "code": 36709484,
+          "name": "予幻なき日々のまぼろし",
+          "present": true
+        },
+        {
+          "code": 74631897,
+          "name": "神芸なる知恵の乙女",
+          "present": true
+        },
+        {
+          "code": 27184601,
+          "name": "神芸獄徒 ディアクトロス",
+          "present": true
+        },
+        {
+          "code": 53589300,
+          "name": "創獄神ネルヴァ",
+          "present": true
+        },
+        {
+          "code": 87758525,
+          "name": "Ｆ・ＨＥＲＯ シャイニング・フレア・ウィングマン",
+          "present": true
+        },
+        {
+          "code": 23599634,
+          "name": "アルトメギア・メセナ－覚醒－",
+          "present": true
+        },
+        {
+          "code": 44654994,
+          "name": "アルトメギア・インパスト－奪還－",
+          "present": true
+        }
+      ],
+      "selected_recipe_source": "C:\\Users\\hatk8\\Downloads\\DK0019036118_261_ja_ﾃﾞｯｷ_202611072230021_.pdf",
+      "selected_recipe_sha256": "b1a4c53e0fa2fe77aa00a900b10eb67936b8cb1846b189b849dd4f168c2e4ceb",
+      "recipe_changed": false,
+      "article_build_assumed_identical": false
+    }
+  ]
+}

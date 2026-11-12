@@ -1,0 +1,21 @@
+{
+  "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+  "devices": [
+    "cuda:0"
+  ],
+  "packages": {
+    "jax": "0.4.28",
+    "jaxlib": "0.4.28",
+    "flax": "0.8.4",
+    "optax": "0.2.2",
+    "numpy": "1.26.4",
+    "torch": "2.3.1+cpu",
+    "ygoenv": "0.0.1"
+  },
+  "gpu_matrix_multiplication": "passed",
+  "blueeyes_distinct_card_ids_including_side": 36,
+  "missing_database_card_ids": [],
+  "registered_environments": [
+    "YGOPro-v1"
+  ]
+}

@@ -1,0 +1,261 @@
+{
+  "test": "elfnotes-kewltune-fixed-test-20261109",
+  "manifest": "/home/hatk8/projects/yugioh-ai/experiments/opening-fixed-test-20261109/manifest.json",
+  "manifest_sha256": "9f920395f1318ddffcefa29f31c3ea03ee80482ac9311c41b3414e3f56ea1b71",
+  "cases_sha256": "f8bc47336b9922eb3adf4d8b0cd6f4d44a8aef5f8f38bdd18ceb91cd35713d3f",
+  "comparisons": [
+    {
+      "arm": "d-lr1.5e-5-l5",
+      "seed": 10001109,
+      "candidate": "/home/hatk8/projects/yugioh-ai/experiments/opening-d4096-20261109/d-lr1.5e-5-l5/cycles/4096-seed10001109/candidate",
+      "base_sha256": "3037699856ede9ef9ddd7a267fdc395bd7b3787a53555f54e75c96aa4b00d4f0",
+      "head_sha256": "6ef16c2ee26d4259bc6ffb0ae6435f3cdef62359278312cc86a2db462648c71b",
+      "fixed_test": {
+        "total": 88,
+        "before_passed": 87,
+        "after_passed": 87,
+        "lost_case_ids": [],
+        "new_case_ids": [],
+        "retained_all_before_passing": true,
+        "families": {
+          "elf-dina": {
+            "before": 4,
+            "after": 4,
+            "total": 4
+          },
+          "elf-par-fire-cost": {
+            "before": 4,
+            "after": 4,
+            "total": 4
+          },
+          "elf-par-light-cost": {
+            "before": 4,
+            "after": 4,
+            "total": 4
+          },
+          "elf-regina-par": {
+            "before": 4,
+            "after": 4,
+            "total": 4
+          },
+          "elf-rukina-regina": {
+            "before": 4,
+            "after": 4,
+            "total": 4
+          },
+          "jj-cue-mix": {
+            "before": 4,
+            "after": 4,
+            "total": 4
+          },
+          "jj-cue-reco": {
+            "before": 3,
+            "after": 3,
+            "total": 4
+          },
+          "jj-cue-rotary": {
+            "before": 4,
+            "after": 4,
+            "total": 4
+          },
+          "mixed-cue-spirit": {
+            "before": 4,
+            "after": 4,
+            "total": 4
+          },
+          "mixed-reco-spirit-ash": {
+            "before": 4,
+            "after": 4,
+            "total": 4
+          },
+          "mixed-rukina-cue": {
+            "before": 4,
+            "after": 4,
+            "total": 4
+          },
+          "rukina-ash_parallelism": {
+            "before": 4,
+            "after": 4,
+            "total": 4
+          },
+          "rukina-ash_rukina": {
+            "before": 4,
+            "after": 4,
+            "total": 4
+          },
+          "rukina-ash_spirit": {
+            "before": 4,
+            "after": 4,
+            "total": 4
+          },
+          "rukina-pass": {
+            "before": 4,
+            "after": 4,
+            "total": 4
+          },
+          "rukina-veiler_rukina": {
+            "before": 4,
+            "after": 4,
+            "total": 4
+          },
+          "rukina-veiler_strelitzia": {
+            "before": 4,
+            "after": 4,
+            "total": 4
+          },
+          "tune-cue": {
+            "before": 4,
+            "after": 4,
+            "total": 4
+          },
+          "tune-juke-veiler": {
+            "before": 4,
+            "after": 4,
+            "total": 4
+          },
+          "tune-reco": {
+            "before": 4,
+            "after": 4,
+            "total": 4
+          },
+          "tune-stone-sweeper": {
+            "before": 4,
+            "after": 4,
+            "total": 4
+          },
+          "tune-sync": {
+            "before": 4,
+            "after": 4,
+            "total": 4
+          }
+        }
+      },
+      "fixed_test_lua_errors": [
+        0,
+        0
+      ],
+      "existing_66": {
+        "total": 66,
+        "before_passed": 65,
+        "after_passed": 65,
+        "lost_case_ids": [],
+        "new_case_ids": [],
+        "retained_all_before_passing": true,
+        "families": {
+          "elf-dina": {
+            "before": 3,
+            "after": 3,
+            "total": 3
+          },
+          "elf-par-fire-cost": {
+            "before": 3,
+            "after": 3,
+            "total": 3
+          },
+          "elf-par-light-cost": {
+            "before": 3,
+            "after": 3,
+            "total": 3
+          },
+          "elf-regina-par": {
+            "before": 3,
+            "after": 3,
+            "total": 3
+          },
+          "elf-rukina-regina": {
+            "before": 3,
+            "after": 3,
+            "total": 3
+          },
+          "jj-cue-mix": {
+            "before": 3,
+            "after": 3,
+            "total": 3
+          },
+          "jj-cue-reco": {
+            "before": 2,
+            "after": 2,
+            "total": 3
+          },
+          "jj-cue-rotary": {
+            "before": 3,
+            "after": 3,
+            "total": 3
+          },
+          "mixed-cue-spirit": {
+            "before": 3,
+            "after": 3,
+            "total": 3
+          },
+          "mixed-reco-spirit-ash": {
+            "before": 3,
+            "after": 3,
+            "total": 3
+          },
+          "mixed-rukina-cue": {
+            "before": 3,
+            "after": 3,
+            "total": 3
+          },
+          "rukina-ash_parallelism": {
+            "before": 3,
+            "after": 3,
+            "total": 3
+          },
+          "rukina-ash_rukina": {
+            "before": 3,
+            "after": 3,
+            "total": 3
+          },
+          "rukina-ash_spirit": {
+            "before": 3,
+            "after": 3,
+            "total": 3
+          },
+          "rukina-pass": {
+            "before": 3,
+            "after": 3,
+            "total": 3
+          },
+          "rukina-veiler_rukina": {
+            "before": 3,
+            "after": 3,
+            "total": 3
+          },
+          "rukina-veiler_strelitzia": {
+            "before": 3,
+            "after": 3,
+            "total": 3
+          },
+          "tune-cue": {
+            "before": 3,
+            "after": 3,
+            "total": 3
+          },
+          "tune-juke-veiler": {
+            "before": 3,
+            "after": 3,
+            "total": 3
+          },
+          "tune-reco": {
+            "before": 3,
+            "after": 3,
+            "total": 3
+          },
+          "tune-stone-sweeper": {
+            "before": 3,
+            "after": 3,
+            "total": 3
+          },
+          "tune-sync": {
+            "before": 3,
+            "after": 3,
+            "total": 3
+          }
+        }
+      },
+      "existing_66_retention_gate": true,
+      "adopted": false
+    }
+  ]
+}

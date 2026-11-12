@@ -1,0 +1,15 @@
+{
+ "name": "A-S2",
+ "engine_run": 4,
+ "replayed_engine_run": 2,
+ "mismatch": null,
+ "failure": null,
+ "reproduced_steps": 269,
+ "of": 269,
+ "reason": "game_over",
+ "final_equal": null,
+ "checkpoints_equal": true,
+ "game_over_equal": true,
+ "observations_match": true,
+ "lua_errors": 0
+}

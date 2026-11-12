@@ -1,0 +1,1028 @@
+{
+  "created_jst": "2026-11-10T12:04:39+09:00",
+  "plan_sha256": "6bd9928ed7e029cc5852b837eedf427220de66ed492011d43a69aca95979f594",
+  "comparisons": {
+    "g03-before": {
+      "engine_run": 5,
+      "replay": {
+        "engine_run": 7,
+        "reproduced": "129/129",
+        "end_matches": true
+      },
+      "our_model": {
+        "path": "/home/hatk8/projects/yugioh-ai/experiments/adoption-d16384-20261109/model",
+        "base_sha256": "86b4358dcfec696cb4b3cc4c19781c34292b2509bf037b9e4f44d9ed8ec59d1c",
+        "head_sha256": "6ca3221f1828eecc5cea817003c8df5e8802b75fabef0f4aa33105ad0f979fce"
+      },
+      "failure": null,
+      "lua_errors": 0,
+      "duel_ended": null,
+      "visibility_failures": 0,
+      "opponent_script": {
+        "mode": "script",
+        "blocked": null
+      },
+      "T1": {
+        "lp": {
+          "ours": 8000,
+          "opponent": 8000
+        },
+        "turn": 2,
+        "ours": {
+          "monsters": [
+            "キラーチューン Ｂ２Ｂ(L10)"
+          ],
+          "spell_trap": [
+            "キラーチューン・シンクロ",
+            "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+          ],
+          "hand": [
+            "エフェクト・ヴェーラー",
+            "ドロール＆ロックバード",
+            "調和ノ天救竜"
+          ],
+          "graveyard": [
+            "キラーチューン・キュー",
+            "キラーチューン・トラックメイカー",
+            "キラーチューン・レコ",
+            "キラーチューン・ロタリー",
+            "灰流うらら",
+            "鎖縛竜ザレン"
+          ],
+          "banished": []
+        },
+        "opponent": {
+          "monsters": [],
+          "hand_count": 5,
+          "graveyard": []
+        }
+      },
+      "T2": {
+        "lp": {
+          "ours": 8000,
+          "opponent": 8000
+        },
+        "turn": 3,
+        "ours": {
+          "monsters": [
+            "キラーチューン Ｂ２Ｂ(L10)",
+            "調和ノ天救竜(L7)"
+          ],
+          "spell_trap": [
+            "キラーチューン・シンクロ",
+            "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+          ],
+          "hand": [
+            "エフェクト・ヴェーラー",
+            "ドロール＆ロックバード"
+          ],
+          "graveyard": [
+            "キラーチューン・キュー",
+            "キラーチューン・トラックメイカー",
+            "キラーチューン・レコ",
+            "キラーチューン・ロタリー",
+            "クリスタルウィング・シンクロ・ドラゴン",
+            "灰流うらら",
+            "鎖縛竜ザレン"
+          ],
+          "banished": []
+        },
+        "opponent": {
+          "monsters": [],
+          "hand_count": 5,
+          "graveyard": [
+            "耀聖の花詩ルキナ"
+          ]
+        }
+      },
+      "T3": {
+        "lp": {
+          "ours": 8000,
+          "opponent": 3000
+        },
+        "turn": 4,
+        "ours": {
+          "monsters": [
+            "キラーチューン Ｂ２Ｂ(L10)",
+            "キラーチューン・クリップ(L2)",
+            "調和ノ天救竜(L7)"
+          ],
+          "spell_trap": [
+            "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+          ],
+          "hand": [
+            "エフェクト・ヴェーラー",
+            "ドロール＆ロックバード"
+          ],
+          "graveyard": [
+            "キラーチューン・キュー",
+            "キラーチューン・シンクロ",
+            "キラーチューン・トラックメイカー",
+            "キラーチューン・ミクス",
+            "キラーチューン・レコ",
+            "キラーチューン・ロタリー",
+            "クリスタルウィング・シンクロ・ドラゴン",
+            "灰流うらら",
+            "鎖縛竜ザレン"
+          ],
+          "banished": []
+        },
+        "opponent": {
+          "monsters": [],
+          "hand_count": 5,
+          "graveyard": [
+            "耀聖の花詩ルキナ"
+          ]
+        }
+      },
+      "b2b3": {
+        "opportunities": [
+          {
+            "step": 63,
+            "message": "select_chain",
+            "chain": [
+              "耀聖の花詩ルキナ"
+            ],
+            "chosen": "Activate:調和ノ天救竜"
+          }
+        ],
+        "activated": false
+      },
+      "opponent_search": "search_resolved",
+      "turn2_actions": [
+        "63:Activate:調和ノ天救竜#0",
+        "64:choose:シューティング・ライザー・ドラゴン",
+        "65:choose:アクセルシンクロ・スターダスト・ドラゴン",
+        "66:choose:誇り高き耀聖の詩－エルフェンノーツ",
+        "67:choose:クリスタルウィング・シンクロ・ドラゴン",
+        "68:choose:獄花の大燿聖ストリチア",
+        "73:choose:クリスタルウィング・シンクロ・ドラゴン"
+      ],
+      "turn3_actions": [
+        "93:choose:Battle",
+        "97:DirectAttack:調和ノ天救竜",
+        "102:DirectAttack:調和ノ天救竜",
+        "107:Activate:キラーチューン・シンクロ#0",
+        "109:choose:キラーチューン・ミクス",
+        "111:choose:Main2",
+        "114:Summon:キラーチューン・ミクス",
+        "115:Activate:None",
+        "119:Activate:ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”#1",
+        "120:choose:キラーチューン・ミクス",
+        "122:Activate:None",
+        "126:choose:End"
+      ],
+      "turn3_battle": {
+        "commands": [
+          {
+            "step": 97,
+            "offered": [
+              "DirectAttack:キラーチューン Ｂ２Ｂ",
+              "DirectAttack:調和ノ天救竜"
+            ],
+            "chosen": "DirectAttack:調和ノ天救竜",
+            "lp": [
+              8000,
+              8000
+            ]
+          },
+          {
+            "step": 102,
+            "offered": [
+              "DirectAttack:キラーチューン Ｂ２Ｂ",
+              "DirectAttack:調和ノ天救竜"
+            ],
+            "chosen": "DirectAttack:調和ノ天救竜",
+            "lp": [
+              8000,
+              5500
+            ]
+          },
+          {
+            "step": 107,
+            "offered": [
+              "DirectAttack:キラーチューン Ｂ２Ｂ"
+            ],
+            "chosen": "None",
+            "lp": [
+              8000,
+              3000
+            ]
+          },
+          {
+            "step": 111,
+            "offered": [
+              "DirectAttack:キラーチューン Ｂ２Ｂ"
+            ],
+            "chosen": "Main2",
+            "lp": [
+              8000,
+              3000
+            ]
+          }
+        ],
+        "attacks_by_monster": {
+          "調和ノ天救竜": 2
+        },
+        "b2b_attack_offered": true,
+        "b2b_attacked": 0
+      }
+    },
+    "g03-after": {
+      "engine_run": 9,
+      "replay": {
+        "engine_run": 11,
+        "reproduced": "112/112",
+        "end_matches": true
+      },
+      "our_model": {
+        "path": "/home/hatk8/projects/yugioh-ai/experiments/b2b-train-20261109/root/cycles/000001-b2b-trial/candidate",
+        "base_sha256": "2227eff9d15a2a243d0463a580ddc119d660069e3a5c6ebf8a8176db835bcbb6",
+        "head_sha256": "52b3df744a7b0aead7e161abaf3a4b59ad539cc70c54a6d5d264772186819c98"
+      },
+      "failure": null,
+      "lua_errors": 0,
+      "duel_ended": {
+        "step": 111,
+        "terminated": true,
+        "truncated": false,
+        "reward": [
+          -8.0
+        ],
+        "win_reason": [
+          1
+        ],
+        "lp_before_final_step": [
+          8000,
+          3000
+        ]
+      },
+      "visibility_failures": 0,
+      "opponent_script": {
+        "mode": "script",
+        "blocked": null
+      },
+      "T1": {
+        "lp": {
+          "ours": 8000,
+          "opponent": 8000
+        },
+        "turn": 2,
+        "ours": {
+          "monsters": [
+            "キラーチューン Ｂ２Ｂ(L10)"
+          ],
+          "spell_trap": [
+            "キラーチューン・シンクロ",
+            "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+          ],
+          "hand": [
+            "エフェクト・ヴェーラー",
+            "ドロール＆ロックバード",
+            "調和ノ天救竜"
+          ],
+          "graveyard": [
+            "キラーチューン・キュー",
+            "キラーチューン・トラックメイカー",
+            "キラーチューン・レコ",
+            "キラーチューン・ロタリー",
+            "灰流うらら",
+            "鎖縛竜ザレン"
+          ],
+          "banished": []
+        },
+        "opponent": {
+          "monsters": [],
+          "hand_count": 5,
+          "graveyard": []
+        }
+      },
+      "T2": {
+        "lp": {
+          "ours": 8000,
+          "opponent": 8000
+        },
+        "turn": 3,
+        "ours": {
+          "monsters": [
+            "キラーチューン Ｂ２Ｂ(L10)",
+            "調和ノ天救竜(L7)"
+          ],
+          "spell_trap": [
+            "キラーチューン・シンクロ",
+            "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+          ],
+          "hand": [
+            "エフェクト・ヴェーラー",
+            "ドロール＆ロックバード"
+          ],
+          "graveyard": [
+            "キラーチューン・キュー",
+            "キラーチューン・トラックメイカー",
+            "キラーチューン・レコ",
+            "キラーチューン・ロタリー",
+            "クリスタルウィング・シンクロ・ドラゴン",
+            "灰流うらら",
+            "鎖縛竜ザレン"
+          ],
+          "banished": []
+        },
+        "opponent": {
+          "monsters": [],
+          "hand_count": 5,
+          "graveyard": [
+            "耀聖の花詩ルキナ"
+          ]
+        }
+      },
+      "T3": {
+        "lp": {
+          "ours": 8000,
+          "opponent": 3000
+        },
+        "turn": 3,
+        "ours": {
+          "monsters": [
+            "キラーチューン Ｂ２Ｂ(L10)",
+            "調和ノ天救竜(L7)"
+          ],
+          "spell_trap": [
+            "キラーチューン・シンクロ",
+            "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+          ],
+          "hand": [
+            "エフェクト・ヴェーラー",
+            "ドロール＆ロックバード"
+          ],
+          "graveyard": [
+            "キラーチューン・キュー",
+            "キラーチューン・トラックメイカー",
+            "キラーチューン・レコ",
+            "キラーチューン・ロタリー",
+            "クリスタルウィング・シンクロ・ドラゴン",
+            "灰流うらら",
+            "鎖縛竜ザレン"
+          ],
+          "banished": []
+        },
+        "opponent": {
+          "monsters": [],
+          "hand_count": 5,
+          "graveyard": [
+            "耀聖の花詩ルキナ"
+          ]
+        }
+      },
+      "b2b3": {
+        "opportunities": [
+          {
+            "step": 63,
+            "message": "select_chain",
+            "chain": [
+              "耀聖の花詩ルキナ"
+            ],
+            "chosen": "Activate:調和ノ天救竜"
+          }
+        ],
+        "activated": false
+      },
+      "opponent_search": "search_resolved",
+      "turn2_actions": [
+        "63:Activate:調和ノ天救竜#0",
+        "64:choose:誇り高き耀聖の詩－エルフェンノーツ",
+        "65:choose:シューティング・ライザー・ドラゴン",
+        "66:choose:獄花の大燿聖ストリチア",
+        "67:choose:アクセルシンクロ・スターダスト・ドラゴン",
+        "68:choose:クリスタルウィング・シンクロ・ドラゴン",
+        "73:choose:クリスタルウィング・シンクロ・ドラゴン"
+      ],
+      "turn3_actions": [
+        "93:choose:Battle",
+        "97:DirectAttack:調和ノ天救竜",
+        "102:DirectAttack:調和ノ天救竜",
+        "107:DirectAttack:キラーチューン Ｂ２Ｂ"
+      ],
+      "turn3_battle": {
+        "commands": [
+          {
+            "step": 97,
+            "offered": [
+              "DirectAttack:キラーチューン Ｂ２Ｂ",
+              "DirectAttack:調和ノ天救竜"
+            ],
+            "chosen": "DirectAttack:調和ノ天救竜",
+            "lp": [
+              8000,
+              8000
+            ]
+          },
+          {
+            "step": 102,
+            "offered": [
+              "DirectAttack:キラーチューン Ｂ２Ｂ",
+              "DirectAttack:調和ノ天救竜"
+            ],
+            "chosen": "DirectAttack:調和ノ天救竜",
+            "lp": [
+              8000,
+              5500
+            ]
+          },
+          {
+            "step": 107,
+            "offered": [
+              "DirectAttack:キラーチューン Ｂ２Ｂ"
+            ],
+            "chosen": "DirectAttack:キラーチューン Ｂ２Ｂ",
+            "lp": [
+              8000,
+              3000
+            ]
+          }
+        ],
+        "attacks_by_monster": {
+          "調和ノ天救竜": 2,
+          "キラーチューン Ｂ２Ｂ": 1
+        },
+        "b2b_attack_offered": true,
+        "b2b_attacked": 1
+      }
+    },
+    "g05-before": {
+      "engine_run": 6,
+      "replay": {
+        "engine_run": 8,
+        "reproduced": "151/151",
+        "end_matches": true
+      },
+      "our_model": {
+        "path": "/home/hatk8/projects/yugioh-ai/experiments/adoption-d16384-20261109/model",
+        "base_sha256": "86b4358dcfec696cb4b3cc4c19781c34292b2509bf037b9e4f44d9ed8ec59d1c",
+        "head_sha256": "6ca3221f1828eecc5cea817003c8df5e8802b75fabef0f4aa33105ad0f979fce"
+      },
+      "failure": null,
+      "lua_errors": 0,
+      "duel_ended": null,
+      "visibility_failures": 0,
+      "opponent_script": {
+        "mode": "script",
+        "blocked": null
+      },
+      "T1": {
+        "lp": {
+          "ours": 8000,
+          "opponent": 8000
+        },
+        "turn": 2,
+        "ours": {
+          "monsters": [
+            "キラーチューン Ｂ２Ｂ(L10)"
+          ],
+          "spell_trap": [
+            "キラーチューン・シンクロ",
+            "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+          ],
+          "hand": [
+            "ドロール＆ロックバード",
+            "増殖するＧ",
+            "幽鬼うさぎ"
+          ],
+          "graveyard": [
+            "キラーチューン・キュー",
+            "キラーチューン・トラックメイカー",
+            "キラーチューン・レコ",
+            "キラーチューン・ロタリー",
+            "灰流うらら",
+            "鎖縛竜ザレン"
+          ],
+          "banished": []
+        },
+        "opponent": {
+          "monsters": [],
+          "hand_count": 5,
+          "graveyard": []
+        }
+      },
+      "T2": {
+        "lp": {
+          "ours": 8000,
+          "opponent": 8000
+        },
+        "turn": 3,
+        "ours": {
+          "monsters": [
+            "キラーチューン Ｂ２Ｂ(L10)"
+          ],
+          "spell_trap": [
+            "キラーチューン・シンクロ",
+            "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+          ],
+          "hand": [
+            "ドロール＆ロックバード",
+            "増殖するＧ",
+            "幽鬼うさぎ"
+          ],
+          "graveyard": [
+            "キラーチューン・キュー",
+            "キラーチューン・トラックメイカー",
+            "キラーチューン・レコ",
+            "キラーチューン・ロタリー",
+            "灰流うらら",
+            "鎖縛竜ザレン"
+          ],
+          "banished": []
+        },
+        "opponent": {
+          "monsters": [
+            "耀聖の花詩ルキナ(L8)"
+          ],
+          "hand_count": 5,
+          "graveyard": []
+        }
+      },
+      "T3": {
+        "lp": {
+          "ours": 1500,
+          "opponent": 8000
+        },
+        "turn": 4,
+        "ours": {
+          "monsters": [
+            "キラーチューン・クリップ(L2)"
+          ],
+          "spell_trap": [
+            "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+          ],
+          "hand": [
+            "ドロール＆ロックバード",
+            "増殖するＧ",
+            "幽鬼うさぎ"
+          ],
+          "graveyard": [
+            "キラーチューン Ｂ２Ｂ",
+            "キラーチューン・キュー",
+            "キラーチューン・シンクロ",
+            "キラーチューン・トラックメイカー",
+            "キラーチューン・ミクス",
+            "キラーチューン・レコ",
+            "キラーチューン・ロタリー",
+            "灰流うらら",
+            "鎖縛竜ザレン"
+          ],
+          "banished": []
+        },
+        "opponent": {
+          "monsters": [
+            "耀聖の花詩ルキナ(L6)"
+          ],
+          "hand_count": 5,
+          "graveyard": []
+        }
+      },
+      "b2b3": {
+        "opportunities": [
+          {
+            "step": 69,
+            "message": "select_chain",
+            "chain": [
+              "耀聖の花詩ルキナ"
+            ],
+            "chosen": "Cancel"
+          }
+        ],
+        "activated": false
+      },
+      "opponent_search": "search_resolved",
+      "turn2_actions": [],
+      "turn3_actions": [
+        "90:Activate:ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”#1",
+        "93:choose:キラーチューン・ミクス",
+        "94:Activate:None",
+        "97:Activate:キラーチューン・ミクス",
+        "100:choose:キラーチューン・キュー",
+        "103:Summon:キラーチューン・キュー",
+        "104:Activate:None",
+        "106:Activate:キラーチューン・キュー",
+        "109:choose:灰流うらら",
+        "114:choose:Battle",
+        "118:Attack:キラーチューン・キュー",
+        "123:Attack:灰流うらら",
+        "128:Attack:キラーチューン・ミクス",
+        "133:Activate:キラーチューン・シンクロ#0",
+        "136:choose:キラーチューン・クリップ",
+        "139:choose:Main2",
+        "143:Summon:キラーチューン・クリップ",
+        "147:choose:End"
+      ],
+      "turn3_battle": {
+        "commands": [
+          {
+            "step": 118,
+            "offered": [
+              "Attack:キラーチューン・ミクス",
+              "Attack:キラーチューン・キュー",
+              "Attack:灰流うらら"
+            ],
+            "chosen": "Attack:キラーチューン・キュー",
+            "lp": [
+              8000,
+              8000
+            ]
+          },
+          {
+            "step": 123,
+            "offered": [
+              "Attack:キラーチューン・ミクス",
+              "Attack:灰流うらら"
+            ],
+            "chosen": "Attack:灰流うらら",
+            "lp": [
+              6400,
+              8000
+            ]
+          },
+          {
+            "step": 128,
+            "offered": [
+              "Attack:キラーチューン・ミクス"
+            ],
+            "chosen": "Attack:キラーチューン・ミクス",
+            "lp": [
+              3900,
+              8000
+            ]
+          },
+          {
+            "step": 133,
+            "offered": [],
+            "chosen": "None",
+            "lp": [
+              1500,
+              8000
+            ]
+          },
+          {
+            "step": 139,
+            "offered": [],
+            "chosen": "Main2",
+            "lp": [
+              1500,
+              8000
+            ]
+          }
+        ],
+        "attacks_by_monster": {
+          "キラーチューン・キュー": 1,
+          "灰流うらら": 1,
+          "キラーチューン・ミクス": 1
+        },
+        "b2b_attack_offered": false,
+        "b2b_attacked": 0
+      }
+    },
+    "g05-after": {
+      "engine_run": 10,
+      "replay": {
+        "engine_run": 12,
+        "reproduced": "170/170",
+        "end_matches": true
+      },
+      "our_model": {
+        "path": "/home/hatk8/projects/yugioh-ai/experiments/b2b-train-20261109/root/cycles/000001-b2b-trial/candidate",
+        "base_sha256": "2227eff9d15a2a243d0463a580ddc119d660069e3a5c6ebf8a8176db835bcbb6",
+        "head_sha256": "52b3df744a7b0aead7e161abaf3a4b59ad539cc70c54a6d5d264772186819c98"
+      },
+      "failure": null,
+      "lua_errors": 0,
+      "duel_ended": null,
+      "visibility_failures": 0,
+      "opponent_script": {
+        "mode": "script",
+        "blocked": null
+      },
+      "T1": {
+        "lp": {
+          "ours": 8000,
+          "opponent": 8000
+        },
+        "turn": 2,
+        "ours": {
+          "monsters": [
+            "キラーチューン Ｂ２Ｂ(L10)"
+          ],
+          "spell_trap": [
+            "キラーチューン・シンクロ",
+            "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+          ],
+          "hand": [
+            "ドロール＆ロックバード",
+            "増殖するＧ",
+            "幽鬼うさぎ"
+          ],
+          "graveyard": [
+            "キラーチューン・キュー",
+            "キラーチューン・トラックメイカー",
+            "キラーチューン・レコ",
+            "キラーチューン・ロタリー",
+            "灰流うらら",
+            "鎖縛竜ザレン"
+          ],
+          "banished": []
+        },
+        "opponent": {
+          "monsters": [],
+          "hand_count": 5,
+          "graveyard": []
+        }
+      },
+      "T2": {
+        "lp": {
+          "ours": 8000,
+          "opponent": 8000
+        },
+        "turn": 3,
+        "ours": {
+          "monsters": [
+            "キラーチューン Ｂ２Ｂ(L10)",
+            "キラーチューン・ラウドネスウォー(L6)"
+          ],
+          "spell_trap": [
+            "キラーチューン・シンクロ",
+            "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+          ],
+          "hand": [
+            "ドロール＆ロックバード",
+            "増殖するＧ"
+          ],
+          "graveyard": [
+            "キラーチューン・キュー",
+            "キラーチューン・トラックメイカー",
+            "キラーチューン・レコ",
+            "キラーチューン・ロタリー",
+            "幽鬼うさぎ",
+            "灰流うらら",
+            "鎖縛竜ザレン"
+          ],
+          "banished": []
+        },
+        "opponent": {
+          "monsters": [
+            "耀聖の花詩ルキナ(L8)"
+          ],
+          "hand_count": 5,
+          "graveyard": []
+        }
+      },
+      "T3": {
+        "lp": {
+          "ours": 5600,
+          "opponent": 4100
+        },
+        "turn": 4,
+        "ours": {
+          "monsters": [
+            "キラーチューン Ｂ２Ｂ(L10)",
+            "キラーチューン・キュー(L3)",
+            "キラーチューン・トラックメイカー(L4)"
+          ],
+          "spell_trap": [
+            "キラーチューン・シンクロ",
+            "ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”"
+          ],
+          "hand": [
+            "キラーチューン・プレイリスト",
+            "ドロール＆ロックバード",
+            "増殖するＧ"
+          ],
+          "graveyard": [
+            "キラーチューン・シンクロ",
+            "キラーチューン・ミクス",
+            "キラーチューン・ラウドネスウォー",
+            "キラーチューン・レコ",
+            "キラーチューン・ロタリー",
+            "幽鬼うさぎ",
+            "灰流うらら",
+            "鎖縛竜ザレン"
+          ],
+          "banished": []
+        },
+        "opponent": {
+          "monsters": [],
+          "hand_count": 5,
+          "graveyard": [
+            "耀聖の花詩ルキナ"
+          ]
+        }
+      },
+      "b2b3": {
+        "opportunities": [
+          {
+            "step": 69,
+            "message": "select_chain",
+            "chain": [
+              "耀聖の花詩ルキナ"
+            ],
+            "chosen": "Activate:キラーチューン Ｂ２Ｂ"
+          }
+        ],
+        "activated": true,
+        "step": 69,
+        "chain": [
+          "耀聖の花詩ルキナ"
+        ],
+        "target": {
+          "offered": [
+            "鎖縛竜ザレン",
+            "キラーチューン・キュー",
+            "キラーチューン・トラックメイカー",
+            "灰流うらら",
+            "キラーチューン・レコ",
+            "キラーチューン・ロタリー"
+          ],
+          "chosen": "キラーチューン・キュー"
+        },
+        "option": "special summon",
+        "s_summon": "yes",
+        "our_change": {
+          "field": {
+            "gained": [
+              "キラーチューン・ラウドネスウォー"
+            ],
+            "lost": []
+          },
+          "hand": {
+            "gained": [],
+            "lost": [
+              "幽鬼うさぎ"
+            ]
+          },
+          "graveyard": {
+            "gained": [
+              "幽鬼うさぎ"
+            ],
+            "lost": []
+          }
+        }
+      },
+      "opponent_search": "search_resolved",
+      "turn2_actions": [
+        "69:Activate:キラーチューン Ｂ２Ｂ#0",
+        "70:choose:キラーチューン・キュー",
+        "73:Activate:None",
+        "76:Activate:キラーチューン Ｂ２Ｂ#1",
+        "77:choose:キラーチューン・キュー",
+        "81:Activate:キラーチューン・キュー",
+        "84:choose:エルフェンノーツ～廻郷のパラレリズム～",
+        "85:Activate:キラーチューン・キュー#2"
+      ],
+      "turn3_actions": [
+        "104:Activate:ジュークジョイント“Ｋｉｌｌｅｒ Ｔｕｎｅ”#1",
+        "105:choose:キラーチューン・ラウドネスウォー",
+        "108:choose:キラーチューン・ミクス",
+        "109:Activate:None",
+        "112:Activate:キラーチューン・ミクス",
+        "115:choose:キラーチューン・キュー",
+        "118:choose:Battle",
+        "122:Attack:キラーチューン・ミクス",
+        "127:Attack:キラーチューン Ｂ２Ｂ",
+        "132:DirectAttack:キラーチューン Ｂ２Ｂ",
+        "137:Activate:キラーチューン・シンクロ#0",
+        "140:choose:キラーチューン・プレイリスト",
+        "143:choose:Main2",
+        "147:Summon:キラーチューン・キュー",
+        "148:Activate:None",
+        "150:Activate:キラーチューン・キュー",
+        "153:choose:キラーチューン・トラックメイカー",
+        "156:Activate:キラーチューン・トラックメイカー",
+        "159:choose:キラーチューン・シンクロ",
+        "162:Set:キラーチューン・シンクロ",
+        "166:choose:End"
+      ],
+      "turn3_battle": {
+        "commands": [
+          {
+            "step": 122,
+            "offered": [
+              "Attack:キラーチューン Ｂ２Ｂ",
+              "Attack:キラーチューン・ミクス"
+            ],
+            "chosen": "Attack:キラーチューン・ミクス",
+            "lp": [
+              8000,
+              8000
+            ]
+          },
+          {
+            "step": 127,
+            "offered": [
+              "Attack:キラーチューン Ｂ２Ｂ"
+            ],
+            "chosen": "Attack:キラーチューン Ｂ２Ｂ",
+            "lp": [
+              5600,
+              8000
+            ]
+          },
+          {
+            "step": 132,
+            "offered": [
+              "DirectAttack:キラーチューン Ｂ２Ｂ"
+            ],
+            "chosen": "DirectAttack:キラーチューン Ｂ２Ｂ",
+            "lp": [
+              5600,
+              7300
+            ]
+          },
+          {
+            "step": 137,
+            "offered": [],
+            "chosen": "None",
+            "lp": [
+              5600,
+              4100
+            ]
+          },
+          {
+            "step": 143,
+            "offered": [],
+            "chosen": "Main2",
+            "lp": [
+              5600,
+              4100
+            ]
+          }
+        ],
+        "attacks_by_monster": {
+          "キラーチューン・ミクス": 1,
+          "キラーチューン Ｂ２Ｂ": 2
+        },
+        "b2b_attack_offered": true,
+        "b2b_attacked": 2
+      }
+    }
+  },
+  "training": {
+    "candidate": "/home/hatk8/projects/yugioh-ai/experiments/b2b-train-20261109/root/cycles/000001-b2b-trial/candidate",
+    "base_sha256": "2227eff9d15a2a243d0463a580ddc119d660069e3a5c6ebf8a8176db835bcbb6",
+    "head_sha256": "52b3df744a7b0aead7e161abaf3a4b59ad539cc70c54a6d5d264772186819c98",
+    "updates": 32,
+    "sampled_source_counts": {
+      "0": 224,
+      "2": 16,
+      "1": 16
+    },
+    "loss_steps": {
+      "old": 10367.0,
+      "b2b": 256.0
+    },
+    "ce": {
+      "old_mean": 0.04567028193648337,
+      "b2b_mean_over_b2b_minibatches": 0.6062714192721614,
+      "b2b_first": 3.921318769454956,
+      "b2b_last": 0.0002085567102767527
+    },
+    "weighted_grad_norm": {
+      "old_mean": 7.134860627202215,
+      "b2b_mean_over_b2b_minibatches": 108.52803006954491
+    },
+    "ppo_grad_norm_mean": 5.945737708243541,
+    "training_result": {
+      "all_finite": true,
+      "changed_values": 3284837,
+      "initial_matches_source": true,
+      "sha256": "b8450a5637030af464180c4526f1cf8b265795e57710eb6d796641085a4751fc",
+      "checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/b2b-train-20261109/root/cycles/000001-b2b-trial/candidate",
+      "steps": 4096,
+      "base_sha256": "2227eff9d15a2a243d0463a580ddc119d660069e3a5c6ebf8a8176db835bcbb6",
+      "head_sha256": "52b3df744a7b0aead7e161abaf3a4b59ad539cc70c54a6d5d264772186819c98",
+      "both_networks_optimized": true,
+      "placement_and_position_adapters_used_in_rollout": true,
+      "adapter_steps_excluded_from_policy_loss": true
+    }
+  },
+  "retention": {
+    "evaluated_jst": "2026-11-10T12:04:33+09:00",
+    "episodes": 66,
+    "candidate": "/home/hatk8/projects/yugioh-ai/experiments/b2b-train-20261109/root/cycles/000001-b2b-trial/candidate",
+    "candidate_base_sha256": "2227eff9d15a2a243d0463a580ddc119d660069e3a5c6ebf8a8176db835bcbb6",
+    "candidate_head_sha256": "52b3df744a7b0aead7e161abaf3a4b59ad539cc70c54a6d5d264772186819c98",
+    "baseline": {
+      "path": "/home/hatk8/projects/yugioh-ai/experiments/continuous-elfnotes-openings-d16384-rehearsal-ready-20261109/opening-baseline.json",
+      "sha256": "9ac2abd9043a4576a5c5ebdbf35ebc34b329b8e1161ee7fba11d5d9aff7eaab8",
+      "passed": 65,
+      "total": 66,
+      "checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/continuous-elfnotes-openings-d16384-rehearsal-ready-20261109/models/initial"
+    },
+    "candidate_passed": 65,
+    "total": 66,
+    "lua_errors": 0,
+    "status": "complete",
+    "lost_case_ids": [],
+    "gained_case_ids": [],
+    "all_baseline_cases_retained": true,
+    "holdout_used": false,
+    "normal_summon_usage_scored": false
+  },
+  "engine_runs": 12
+}

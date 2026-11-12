@@ -1,0 +1,1915 @@
+{
+ "status": "registered_before_engine_runs",
+ "registered_jst": "2026-11-10T19:33:10+09:00",
+ "spec": "C:/Users/hatk8/Documents/Codex/2026-10-27/new-chat/outputs/artmage-basic-openings-batch-2026-11-10.md",
+ "start_model": {
+  "base_sha256": "12500c7724b2d723983a2963a960d75172a6df51fb55ea4f3acf102eeb34132e",
+  "head_sha256": "0bc7534cab102cd87586e5d22bd4ad0cd3b55d52d08e284146976506ae6193fc",
+  "source": "step-0200 (not the unadopted pilot candidate)"
+ },
+ "conditions": {
+  "F0": {
+   "label": "襲撃の基本展開",
+   "reference": "https://duel-simulator.miyauchidp.dev/replay/g2rN57Xb",
+   "train_reuse": [
+    "old train 12"
+   ]
+  },
+  "F1": {
+   "label": "襲撃＋罠コスト1枚",
+   "reference": "https://duel-simulator.miyauchidp.dev/replay/wsMMwXxE",
+   "train_reuse": [
+    "C1"
+   ]
+  },
+  "F2": {
+   "label": "メディウス（直接）＋魔法罠コスト1枚",
+   "reference": "constructed from card text; replay wsMMwXxE starts from 襲撃",
+   "train_reuse": []
+  },
+  "F3": {
+   "label": "学都＋魔法罠コスト1枚",
+   "reference": "https://duel-simulator.miyauchidp.dev/replay/XUS4azXa",
+   "train_reuse": [
+    "C2"
+   ]
+  },
+  "F4": {
+   "label": "学都＋魔法罠コスト2枚",
+   "reference": "https://duel-simulator.miyauchidp.dev/replay/dAvrxdzV",
+   "train_reuse": []
+  },
+  "F5": {
+   "label": "獄神獣＋ファインメルト",
+   "reference": "https://duel-simulator.miyauchidp.dev/replay/vxs2HMAV",
+   "train_reuse": []
+  },
+  "F6": {
+   "label": "テルミナス",
+   "reference": "https://duel-simulator.miyauchidp.dev/replay/xXerEKuW",
+   "train_reuse": []
+  }
+ },
+ "plans": {
+  "F0": "article_witness",
+  "F1": [
+   {
+    "act": "Activate",
+    "code": 1122030
+   },
+   {
+    "act": "Activate",
+    "code": 1122030
+   },
+   {
+    "act": "None",
+    "code": 97556336,
+    "_opt": true
+   },
+   {
+    "act": "Summon",
+    "code": 97556336
+   },
+   {
+    "act": "Activate",
+    "code": 97556336
+   },
+   {
+    "act": "None",
+    "code": 17473466
+   },
+   {
+    "act": "Activate",
+    "code": 0,
+    "effect": 1152
+   },
+   {
+    "act": "SpSummon",
+    "code": 74631897
+   },
+   {
+    "_group": [
+     {
+      "step": {
+       "act": "Activate",
+       "code": 17473466
+      },
+      "picks": [
+       {
+        "act": "None",
+        "code": 23829452,
+        "_opt": true
+       }
+      ]
+     },
+     {
+      "step": {
+       "act": "Activate",
+       "code": 74631897
+      },
+      "picks": [
+       {
+        "act": "None",
+        "code": 74733322,
+        "_opt": true
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "act": "Activate",
+    "code": 23829452,
+    "message": "select_idlecmd"
+   },
+   {
+    "act": "None",
+    "code": 27184601,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 23829452
+   },
+   {
+    "act": "None",
+    "code": 23599634
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 60946049
+   },
+   {
+    "act": "Activate",
+    "code": 60946049
+   },
+   {
+    "act": "Activate",
+    "code": 60946049
+   },
+   {
+    "act": "None",
+    "code": 74011784
+   },
+   {
+    "act": "Activate",
+    "code": 74011784
+   },
+   {
+    "act": "None",
+    "code": 1122030
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 97434754
+   },
+   {
+    "act": "SpSummon",
+    "code": 31822037
+   },
+   {
+    "act": "None",
+    "code": 60946049
+   },
+   {
+    "act": "None",
+    "code": 27184601
+   },
+   {
+    "act": "Activate",
+    "code": 31822037
+   },
+   {
+    "act": "None",
+    "code": 36709484,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 34541940
+   },
+   {
+    "act": "None",
+    "code": 34541940,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 36709484
+   },
+   {
+    "act": "None",
+    "code": 27184601,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 97434754
+   },
+   {
+    "act": "Activate",
+    "code": 97434754
+   },
+   {
+    "act": "None",
+    "code": 23599634
+   },
+   {
+    "act": "Activate",
+    "code": 34541940
+   },
+   {
+    "act": "Activate",
+    "code": 34541940,
+    "_mark": "before_draw"
+   },
+   {
+    "act": "Activate",
+    "code": 97556336
+   },
+   {
+    "_rule": "medius_cost",
+    "_opt": true
+   },
+   {
+    "act": "Set",
+    "code": 23599634
+   },
+   {
+    "act": "None",
+    "code": 0,
+    "phase": "End"
+   },
+   {
+    "act": "Activate",
+    "code": 31822037,
+    "_opp": true
+   },
+   {
+    "act": "None",
+    "code": 4993187,
+    "_opt": true,
+    "_opp": true
+   },
+   {
+    "act": "None",
+    "code": 31822037,
+    "_opt": true,
+    "_opp": true
+   },
+   {
+    "act": "None",
+    "code": 97556336,
+    "_opp": true
+   }
+  ],
+  "F2": [
+   {
+    "act": "Summon",
+    "code": 97556336
+   },
+   {
+    "act": "Activate",
+    "code": 97556336
+   },
+   {
+    "act": "None",
+    "code": 17473466
+   },
+   {
+    "act": "Activate",
+    "code": 0,
+    "effect": 1152
+   },
+   {
+    "act": "SpSummon",
+    "code": 74631897
+   },
+   {
+    "_group": [
+     {
+      "step": {
+       "act": "Activate",
+       "code": 17473466
+      },
+      "picks": [
+       {
+        "act": "None",
+        "code": 23829452,
+        "_opt": true
+       }
+      ]
+     },
+     {
+      "step": {
+       "act": "Activate",
+       "code": 74631897
+      },
+      "picks": [
+       {
+        "act": "None",
+        "code": 74733322,
+        "_opt": true
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "act": "Activate",
+    "code": 23829452,
+    "message": "select_idlecmd"
+   },
+   {
+    "act": "None",
+    "code": 27184601,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 23829452
+   },
+   {
+    "act": "None",
+    "code": 23599634
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 60946049
+   },
+   {
+    "act": "Activate",
+    "code": 60946049
+   },
+   {
+    "act": "Activate",
+    "code": 60946049
+   },
+   {
+    "act": "None",
+    "code": 74011784
+   },
+   {
+    "act": "Activate",
+    "code": 74011784
+   },
+   {
+    "act": "None",
+    "code": 1122030
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 97434754
+   },
+   {
+    "act": "SpSummon",
+    "code": 31822037
+   },
+   {
+    "act": "None",
+    "code": 60946049
+   },
+   {
+    "act": "None",
+    "code": 27184601
+   },
+   {
+    "act": "Activate",
+    "code": 31822037
+   },
+   {
+    "act": "None",
+    "code": 36709484,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 34541940
+   },
+   {
+    "act": "None",
+    "code": 34541940,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 36709484
+   },
+   {
+    "act": "None",
+    "code": 27184601,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 97434754
+   },
+   {
+    "act": "Activate",
+    "code": 97434754
+   },
+   {
+    "act": "None",
+    "code": 23599634
+   },
+   {
+    "act": "Activate",
+    "code": 34541940
+   },
+   {
+    "act": "Activate",
+    "code": 34541940,
+    "_mark": "before_draw"
+   },
+   {
+    "act": "Activate",
+    "code": 97556336
+   },
+   {
+    "_rule": "medius_cost",
+    "_opt": true
+   },
+   {
+    "act": "Set",
+    "code": 23599634
+   },
+   {
+    "act": "None",
+    "code": 0,
+    "phase": "End"
+   },
+   {
+    "act": "Activate",
+    "code": 31822037,
+    "_opp": true
+   },
+   {
+    "act": "None",
+    "code": 4993187,
+    "_opt": true,
+    "_opp": true
+   },
+   {
+    "act": "None",
+    "code": 31822037,
+    "_opt": true,
+    "_opp": true
+   },
+   {
+    "act": "None",
+    "code": 97556336,
+    "_opp": true
+   }
+  ],
+  "F3": [
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 60946049
+   },
+   {
+    "act": "Activate",
+    "code": 60946049
+   },
+   {
+    "act": "Activate",
+    "code": 60946049
+   },
+   {
+    "act": "None",
+    "code": 74011784
+   },
+   {
+    "act": "Activate",
+    "code": 74011784
+   },
+   {
+    "act": "None",
+    "code": 97434754
+   },
+   {
+    "act": "Activate",
+    "code": 97434754
+   },
+   {
+    "act": "Activate",
+    "code": 97434754
+   },
+   {
+    "act": "None",
+    "code": 74011784,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 23829452
+   },
+   {
+    "act": "None",
+    "code": 23829452,
+    "_opt": true
+   },
+   {
+    "act": "Summon",
+    "code": 23829452
+   },
+   {
+    "act": "Activate",
+    "code": 23829452,
+    "message": "select_idlecmd"
+   },
+   {
+    "act": "None",
+    "code": 74631897,
+    "_opt": true
+   },
+   {
+    "act": "None",
+    "code": 60946049,
+    "_opt": true
+   },
+   {
+    "act": "None",
+    "code": 23829452,
+    "_opt": true
+   },
+   {
+    "_group": [
+     {
+      "step": {
+       "act": "Activate",
+       "code": 74631897
+      },
+      "picks": [
+       {
+        "act": "None",
+        "code": 23599634
+       }
+      ]
+     },
+     {
+      "step": {
+       "act": "Activate",
+       "code": 23829452
+      },
+      "picks": [
+       {
+        "act": "None",
+        "code": 1122030
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "act": "Activate",
+    "code": 1122030
+   },
+   {
+    "act": "Activate",
+    "code": 1122030
+   },
+   {
+    "act": "None",
+    "code": 97556336,
+    "_opt": true
+   },
+   {
+    "act": "Summon",
+    "code": 97556336
+   },
+   {
+    "act": "Activate",
+    "code": 97556336
+   },
+   {
+    "act": "None",
+    "code": 17473466
+   },
+   {
+    "act": "Activate",
+    "code": 0,
+    "effect": 1152
+   },
+   {
+    "act": "SpSummon",
+    "code": 31822037
+   },
+   {
+    "act": "None",
+    "code": 97556336
+   },
+   {
+    "act": "None",
+    "code": 17473466
+   },
+   {
+    "_group": [
+     {
+      "step": {
+       "act": "Activate",
+       "code": 31822037
+      },
+      "picks": [
+       {
+        "act": "None",
+        "code": 36709484,
+        "_opt": true
+       }
+      ]
+     },
+     {
+      "step": {
+       "act": "Activate",
+       "code": 17473466
+      },
+      "picks": [
+       {
+        "act": "None",
+        "code": 34541940
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "act": "Activate",
+    "code": 97556336
+   },
+   {
+    "act": "None",
+    "code": 34541940
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 34541940
+   },
+   {
+    "act": "None",
+    "code": 34541940,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 34541940
+   },
+   {
+    "act": "Activate",
+    "code": 34541940,
+    "_mark": "before_draw"
+   },
+   {
+    "act": "None",
+    "code": 0,
+    "phase": "End"
+   }
+  ],
+  "F4": [
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 10045474,
+    "_opt": true
+   },
+   {
+    "act": "None",
+    "code": 60946049
+   },
+   {
+    "act": "Activate",
+    "code": 60946049
+   },
+   {
+    "act": "Activate",
+    "code": 60946049
+   },
+   {
+    "act": "None",
+    "code": 1122030
+   },
+   {
+    "act": "Activate",
+    "code": 1122030
+   },
+   {
+    "act": "Activate",
+    "code": 1122030
+   },
+   {
+    "act": "None",
+    "code": 97556336,
+    "_opt": true
+   },
+   {
+    "act": "Summon",
+    "code": 97556336
+   },
+   {
+    "act": "Activate",
+    "code": 97556336
+   },
+   {
+    "act": "None",
+    "code": 17473466
+   },
+   {
+    "act": "Activate",
+    "code": 0,
+    "effect": 1152
+   },
+   {
+    "act": "SpSummon",
+    "code": 74631897
+   },
+   {
+    "_group": [
+     {
+      "step": {
+       "act": "Activate",
+       "code": 74631897
+      },
+      "picks": [
+       {
+        "act": "None",
+        "code": 44654994
+       }
+      ]
+     },
+     {
+      "step": {
+       "act": "Activate",
+       "code": 17473466
+      },
+      "picks": [
+       {
+        "act": "None",
+        "code": 23829452,
+        "_opt": true
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "act": "Activate",
+    "code": 23829452,
+    "message": "select_idlecmd"
+   },
+   {
+    "act": "None",
+    "code": 27184601,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 23829452
+   },
+   {
+    "act": "None",
+    "code": 74011784
+   },
+   {
+    "act": "SpSummon",
+    "code": 31822037
+   },
+   {
+    "act": "None",
+    "code": 27184601
+   },
+   {
+    "act": "None",
+    "code": 60946049
+   },
+   {
+    "act": "Activate",
+    "code": 31822037
+   },
+   {
+    "act": "None",
+    "code": 36709484,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 36709484,
+    "_opt": true
+   },
+   {
+    "act": "None",
+    "code": 97434754
+   },
+   {
+    "act": "Activate",
+    "code": 74011784
+   },
+   {
+    "act": "None",
+    "code": 23599634
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 34541940
+   },
+   {
+    "act": "None",
+    "code": 34541940,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 34541940
+   },
+   {
+    "act": "Activate",
+    "code": 34541940,
+    "_mark": "before_draw"
+   },
+   {
+    "act": "Activate",
+    "code": 36709484
+   },
+   {
+    "act": "None",
+    "code": 27184601,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 97556336
+   },
+   {
+    "_rule": "medius_cost",
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 97434754
+   },
+   {
+    "act": "Activate",
+    "code": 97434754
+   },
+   {
+    "act": "None",
+    "code": 23599634
+   },
+   {
+    "act": "Set",
+    "code": 23599634
+   },
+   {
+    "act": "None",
+    "code": 0,
+    "phase": "End"
+   }
+  ],
+  "F5": [
+   {
+    "act": "Summon",
+    "code": 23829452
+   },
+   {
+    "act": "Activate",
+    "code": 23829452,
+    "message": "select_idlecmd"
+   },
+   {
+    "act": "None",
+    "code": 74631897,
+    "_opt": true
+   },
+   {
+    "act": "None",
+    "code": 34541940,
+    "_opt": true
+   },
+   {
+    "_group": [
+     {
+      "step": {
+       "act": "Activate",
+       "code": 23829452
+      },
+      "picks": [
+       {
+        "act": "None",
+        "code": 74733322
+       }
+      ]
+     },
+     {
+      "step": {
+       "act": "Activate",
+       "code": 74631897
+      },
+      "picks": [
+       {
+        "act": "None",
+        "code": 1122030
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "act": "Activate",
+    "code": 1122030
+   },
+   {
+    "act": "Activate",
+    "code": 1122030
+   },
+   {
+    "act": "None",
+    "code": 97556336,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "Summon",
+    "code": 97556336
+   },
+   {
+    "act": "Activate",
+    "code": 97556336
+   },
+   {
+    "act": "None",
+    "code": 17473466
+   },
+   {
+    "act": "Activate",
+    "code": 0,
+    "effect": 1152
+   },
+   {
+    "act": "SpSummon",
+    "code": 31822037
+   },
+   {
+    "act": "None",
+    "code": 97556336
+   },
+   {
+    "act": "None",
+    "code": 17473466
+   },
+   {
+    "_group": [
+     {
+      "step": {
+       "act": "Activate",
+       "code": 31822037
+      },
+      "picks": [
+       {
+        "act": "None",
+        "code": 36709484,
+        "_opt": true
+       }
+      ]
+     },
+     {
+      "step": {
+       "act": "Activate",
+       "code": 17473466
+      },
+      "picks": [
+       {
+        "act": "None",
+        "code": 34541940
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 36709484,
+    "_opt": true
+   },
+   {
+    "act": "None",
+    "code": 60946049
+   },
+   {
+    "act": "Activate",
+    "code": 60946049
+   },
+   {
+    "act": "Activate",
+    "code": 60946049
+   },
+   {
+    "act": "None",
+    "code": 74011784
+   },
+   {
+    "act": "Activate",
+    "code": 74011784
+   },
+   {
+    "act": "None",
+    "code": 23599634
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 97434754
+   },
+   {
+    "act": "Activate",
+    "code": 97434754
+   },
+   {
+    "act": "Activate",
+    "code": 97434754
+   },
+   {
+    "act": "None",
+    "code": 23599634
+   },
+   {
+    "act": "Activate",
+    "code": 97556336
+   },
+   {
+    "act": "None",
+    "code": 60946049
+   },
+   {
+    "act": "Set",
+    "code": 23599634
+   },
+   {
+    "act": "None",
+    "code": 0,
+    "phase": "End"
+   },
+   {
+    "act": "Activate",
+    "code": 74631897,
+    "_phase": 1,
+    "_opp": true
+   },
+   {
+    "act": "None",
+    "code": 27184601,
+    "_opt": true,
+    "_opp": true
+   },
+   {
+    "act": "None",
+    "code": 74631897,
+    "_opt": true,
+    "_opp": true
+   },
+   {
+    "act": "Activate",
+    "code": 23599634,
+    "_phase": 4,
+    "_opp": true
+   },
+   {
+    "act": "None",
+    "code": 97556336,
+    "_opp": true
+   },
+   {
+    "act": "Activate",
+    "code": 97556336,
+    "_opp": true
+   },
+   {
+    "act": "Activate",
+    "code": 31822037,
+    "_opt": true,
+    "_opp": true
+   },
+   {
+    "act": "None",
+    "code": 29301450,
+    "_opt": true,
+    "_opp": true
+   },
+   {
+    "act": "None",
+    "code": 31822037,
+    "_opt": true,
+    "_opp": true
+   },
+   {
+    "act": "None",
+    "code": 97556336,
+    "_opt": true,
+    "_opp": true
+   },
+   {
+    "act": "None",
+    "code": 23829452,
+    "_opp": true
+   },
+   {
+    "act": "Activate",
+    "code": 0,
+    "effect": 1152,
+    "_opp": true
+   }
+  ],
+  "F6": [
+   {
+    "act": "Activate",
+    "code": 25661743
+   },
+   {
+    "act": "None",
+    "code": 17473466
+   },
+   {
+    "act": "Activate",
+    "code": 25661743
+   },
+   {
+    "act": "None",
+    "code": 70488851
+   },
+   {
+    "act": "Activate",
+    "code": 70488851
+   },
+   {
+    "act": "Activate",
+    "code": 70488851
+   },
+   {
+    "act": "Activate",
+    "effect": 10011,
+    "message": "select_option"
+   },
+   {
+    "act": "None",
+    "code": 17473466,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 70488851
+   },
+   {
+    "act": "None",
+    "code": 23829452
+   },
+   {
+    "act": "Summon",
+    "code": 23829452
+   },
+   {
+    "act": "Activate",
+    "code": 23829452,
+    "message": "select_idlecmd"
+   },
+   {
+    "act": "None",
+    "code": 74631897,
+    "_opt": true
+   },
+   {
+    "act": "None",
+    "code": 17473466,
+    "_opt": true
+   },
+   {
+    "_group": [
+     {
+      "step": {
+       "act": "Activate",
+       "code": 23829452
+      },
+      "picks": [
+       {
+        "act": "None",
+        "code": 1122030
+       }
+      ]
+     },
+     {
+      "step": {
+       "act": "Activate",
+       "code": 74631897
+      },
+      "picks": [
+       {
+        "act": "None",
+        "code": 74733322
+       }
+      ]
+     },
+     {
+      "step": {
+       "act": "Activate",
+       "code": 17473466
+      },
+      "picks": [
+       {
+        "act": "None",
+        "code": 34541940
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "act": "Activate",
+    "code": 1122030
+   },
+   {
+    "act": "Activate",
+    "code": 1122030
+   },
+   {
+    "act": "None",
+    "code": 97556336,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "Summon",
+    "code": 97556336
+   },
+   {
+    "act": "Activate",
+    "code": 97556336
+   },
+   {
+    "act": "None",
+    "code": 23829452,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 0,
+    "effect": 1190
+   },
+   {
+    "act": "SpSummon",
+    "code": 31822037
+   },
+   {
+    "act": "None",
+    "code": 97556336
+   },
+   {
+    "act": "None",
+    "code": 34541940
+   },
+   {
+    "act": "Activate",
+    "code": 31822037
+   },
+   {
+    "act": "None",
+    "code": 36709484,
+    "_opt": true
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 36709484,
+    "_opt": true
+   },
+   {
+    "act": "None",
+    "code": 60946049
+   },
+   {
+    "act": "Activate",
+    "code": 60946049
+   },
+   {
+    "act": "Activate",
+    "code": 60946049
+   },
+   {
+    "act": "None",
+    "code": 74011784
+   },
+   {
+    "act": "Activate",
+    "code": 74011784
+   },
+   {
+    "act": "None",
+    "code": 23599634
+   },
+   {
+    "act": "Activate",
+    "code": 74733322
+   },
+   {
+    "act": "None",
+    "code": 97434754
+   },
+   {
+    "act": "Activate",
+    "code": 97434754
+   },
+   {
+    "act": "Activate",
+    "code": 97434754
+   },
+   {
+    "act": "None",
+    "code": 34541940
+   },
+   {
+    "act": "Activate",
+    "code": 34541940
+   },
+   {
+    "act": "Activate",
+    "code": 34541940,
+    "_mark": "before_draw"
+   },
+   {
+    "act": "Activate",
+    "code": 97556336
+   },
+   {
+    "act": "None",
+    "code": 23829452
+   },
+   {
+    "act": "None",
+    "code": 0,
+    "phase": "End"
+   }
+  ]
+ },
+ "train_hands": {
+  "F1-T1": {
+   "condition": "F1",
+   "hand": [
+    1122030,
+    10045474,
+    14558127,
+    59438930,
+    49036338
+   ],
+   "seed": 1111001
+  },
+  "F2-T1": {
+   "condition": "F2",
+   "hand": [
+    97556336,
+    10045474,
+    14558127,
+    23434538,
+    73642296
+   ],
+   "seed": 1111002
+  },
+  "F2-T2": {
+   "condition": "F2",
+   "hand": [
+    97556336,
+    97045737,
+    59438930,
+    38814750,
+    49036338
+   ],
+   "seed": 1111003
+  },
+  "F3-T1": {
+   "condition": "F3",
+   "hand": [
+    74733322,
+    97045737,
+    14558127,
+    23434538,
+    73642296
+   ],
+   "seed": 1111004
+  },
+  "F4-T1": {
+   "condition": "F4",
+   "hand": [
+    74733322,
+    10045474,
+    10045474,
+    14558127,
+    23434538
+   ],
+   "seed": 1111005
+  },
+  "F4-T2": {
+   "condition": "F4",
+   "hand": [
+    74733322,
+    10045474,
+    97045737,
+    59438930,
+    73642296
+   ],
+   "seed": 1111006
+  },
+  "F5-T1": {
+   "condition": "F5",
+   "hand": [
+    23829452,
+    34541940,
+    14558127,
+    23434538,
+    73642296
+   ],
+   "seed": 1111007
+  },
+  "F5-T2": {
+   "condition": "F5",
+   "hand": [
+    23829452,
+    34541940,
+    59438930,
+    38814750,
+    49036338
+   ],
+   "seed": 1111008
+  },
+  "F6-T1": {
+   "condition": "F6",
+   "hand": [
+    25661743,
+    14558127,
+    23434538,
+    73642296,
+    59438930
+   ],
+   "seed": 1111009
+  },
+  "F6-T2": {
+   "condition": "F6",
+   "hand": [
+    25661743,
+    14558127,
+    38814750,
+    49036338,
+    73642296
+   ],
+   "seed": 1111010
+  }
+ },
+ "validation_hands": {
+  "F0-V": {
+   "condition": "F0",
+   "hand": [
+    1122030,
+    59438930,
+    23434538,
+    38814750,
+    14558127
+   ],
+   "seed": 1111101
+  },
+  "F1-V": {
+   "condition": "F1",
+   "hand": [
+    1122030,
+    97045737,
+    14558127,
+    73642296,
+    49036338
+   ],
+   "seed": 1111102
+  },
+  "F2-V": {
+   "condition": "F2",
+   "hand": [
+    97556336,
+    10045474,
+    59438930,
+    73642296,
+    49036338
+   ],
+   "seed": 1111103
+  },
+  "F3-V": {
+   "condition": "F3",
+   "hand": [
+    74733322,
+    10045474,
+    59438930,
+    38814750,
+    73642296
+   ],
+   "seed": 1111104
+  },
+  "F4-V": {
+   "condition": "F4",
+   "hand": [
+    74733322,
+    97045737,
+    97045737,
+    14558127,
+    49036338
+   ],
+   "seed": 1111105
+  },
+  "F5-V": {
+   "condition": "F5",
+   "hand": [
+    23829452,
+    34541940,
+    14558127,
+    73642296,
+    49036338
+   ],
+   "seed": 1111106
+  },
+  "F6-V": {
+   "condition": "F6",
+   "hand": [
+    25661743,
+    23434538,
+    38814750,
+    59438930,
+    49036338
+   ],
+   "seed": 1111107
+  }
+ },
+ "split_check": {
+  "rule": "complete-hand multiset; permutations are the same group; compared with old train/validation/holdout, pilot C1/C2, pilot evaluation C1v/C2v and each other",
+  "result": {
+   "F1-T1": {
+    "group": [
+     1122030,
+     10045474,
+     14558127,
+     49036338,
+     59438930
+    ],
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "F2-T1": {
+    "group": [
+     10045474,
+     14558127,
+     23434538,
+     73642296,
+     97556336
+    ],
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "F2-T2": {
+    "group": [
+     38814750,
+     49036338,
+     59438930,
+     97045737,
+     97556336
+    ],
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "F3-T1": {
+    "group": [
+     14558127,
+     23434538,
+     73642296,
+     74733322,
+     97045737
+    ],
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "F4-T1": {
+    "group": [
+     10045474,
+     10045474,
+     14558127,
+     23434538,
+     74733322
+    ],
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "F4-T2": {
+    "group": [
+     10045474,
+     59438930,
+     73642296,
+     74733322,
+     97045737
+    ],
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "F5-T1": {
+    "group": [
+     14558127,
+     23434538,
+     23829452,
+     34541940,
+     73642296
+    ],
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "F5-T2": {
+    "group": [
+     23829452,
+     34541940,
+     38814750,
+     49036338,
+     59438930
+    ],
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "F6-T1": {
+    "group": [
+     14558127,
+     23434538,
+     25661743,
+     59438930,
+     73642296
+    ],
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "F6-T2": {
+    "group": [
+     14558127,
+     25661743,
+     38814750,
+     49036338,
+     73642296
+    ],
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "F0-V": {
+    "group": [
+     1122030,
+     14558127,
+     23434538,
+     38814750,
+     59438930
+    ],
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "F1-V": {
+    "group": [
+     1122030,
+     14558127,
+     49036338,
+     73642296,
+     97045737
+    ],
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "F2-V": {
+    "group": [
+     10045474,
+     49036338,
+     59438930,
+     73642296,
+     97556336
+    ],
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "F3-V": {
+    "group": [
+     10045474,
+     38814750,
+     59438930,
+     73642296,
+     74733322
+    ],
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "F4-V": {
+    "group": [
+     14558127,
+     49036338,
+     74733322,
+     97045737,
+     97045737
+    ],
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "F5-V": {
+    "group": [
+     14558127,
+     23829452,
+     34541940,
+     49036338,
+     73642296
+    ],
+    "overlaps": null,
+    "overlaps_new": null
+   },
+   "F6-V": {
+    "group": [
+     23434538,
+     25661743,
+     38814750,
+     49036338,
+     59438930
+    ],
+    "overlaps": null,
+    "overlaps_new": null
+   }
+  },
+  "passed": true
+ },
+ "out_of_scope": [
+  "メディウス＋モンスターコスト (heading only)",
+  "Fainmelt alone, Nerved and other supplementary lines",
+  "hand-trap responses"
+ ],
+ "engine": {
+  "cap": 48,
+  "planned": 47,
+  "ledger": "eval-runs.jsonl",
+  "plan": {
+   "train_record": 10,
+   "train_replay": 10,
+   "validation_script": 7,
+   "free_start": 7,
+   "free_candidate": 7,
+   "rt1_candidate": 6
+  },
+  "reserve": "1 run, only for confirming a failure, with its purpose and code version written into an amendment before use; never for choosing hands or candidates",
+  "order": [
+   "record + replay the 10 train demos",
+   "validate the 7 validation hands (script)",
+   "fix data/manifest.json",
+   "offline diagnostics (start, pilot candidate)",
+   "free runs of the start model (7)",
+   "training",
+   "free runs of the candidate (7)",
+   "RT1 candidate g06-g11 (6)"
+  ],
+  "demo_stop": "first decision of turn 3",
+  "free_stop": "first decision of turn 4 (end of own turn 3), game over from env.step returns, or 600 decisions",
+  "player1": "common pass policy every turn; first legal option as a logged fallback",
+  "fixture": "same five cards for both players; no normal draws (native draw count 0)",
+  "rt1_start": "reuse: g06/g07 from the pilot start runs and g08-g11 from the artmage-parallel regression (same start weights, engine, adapter, cases)"
+ },
+ "demo_rules": [
+  "A demo is training data only if its script completed (opponent-turn entries may stay unexecuted and are reported) and its replay matched every step, the end state and the observations.",
+  "If a condition cannot be completed, the manifest is fixed with the gap before any model result; no other hand is searched for.",
+  "BatchTeacher defaults: identical copies (same code and zone) resolve to the first; Medius② cost = drawn non-engine monster, else FILLER_PRIORITY."
+ ],
+ "training": {
+  "updates": 1024,
+  "batch_sequences": 2,
+  "learning_rate_base": 1.5e-05,
+  "learning_rate_head": 1.5e-05,
+  "adam_eps": 1e-05,
+  "max_grad_norm": 1.0,
+  "ppo": false,
+  "value_loss": false,
+  "entropy_loss": false,
+  "kl": 0.0,
+  "environment_decisions": 0,
+  "seed_sampling": 30121001,
+  "sampling_seed": 30121001,
+  "seed_note": "10121001 reserved as the training seed label; the run is deterministic given the sampling seed (no dropout, no sampling of actions)",
+  "sampling": "each of the 2 sequence slots: a group uniformly among the available groups, then a train sequence uniformly within the group",
+  "loss": "mean over the batch sequences of (mean CE of the demonstrated label over that sequence's loss steps); differs from the pilot (pooled over steps)",
+  "masks": "context = every player-0 decision; loss = own-turn non-position + scripted opponent-turn non-position; position steps are adapter-owned; select_place stays in the loss",
+  "diagnostics_at": [
+   0,
+   256,
+   512,
+   768,
+   1024
+  ],
+  "selection": "none: only the state after 1,024 updates is evaluated",
+  "stop_on": "non-finite loss, gradient or weights; STOP=now",
+  "device": "GPU, matmul precision highest",
+  "checks_after_save": [
+   "reload through the isolated entry with saved hashes",
+   "logits on every train history equal",
+   "position-adapter final actions equal",
+   "saved weights finite",
+   "base and head both changed"
+  ]
+ },
+ "not_done": [
+  "PPO / self-play",
+  "battles",
+  "adoption",
+  "B2B",
+  "server posts",
+  "common registry / Elfnotes changes"
+ ],
+ "limits": {
+  "memory_gib": 5,
+  "swap": 0,
+  "cpu_percent": 300,
+  "job_seconds": 1800,
+  "nice": 10,
+  "gpu_jobs": 1
+ },
+ "code": {
+  "artmage_entry.py": "ca47f56d29431b48d60337de6dcc6ce23d524fba31cbbbdce31e6d7399b78e0f",
+  "artmage_pins.py": "10c4e053d05f44498cff77c45301a3fb5222c7598a658decc52f4539fd96bde8",
+  "artmage_teacher.py": "a126284eff7a2d7ef3c602ade0aa5f196f7ddea77333213c27a197ade21b78f3",
+  "batch_data.py": "3f21a0f495111f82678e93c5434d9c2dd65b2467c4f7c3341a0eddab66b3aad7",
+  "batch_launch.py": "d4bad8c7058473bfe1b4bf5c0d831c5f52eedd038a658b2c243aae32b3ebb814",
+  "batch_model.py": "373c98ef75b4116c8c0ac54abe81a1f16053253f42ffb18635fab20304a4b238",
+  "batch_plans.py": "2c5671f4b00347d0ae67c3f3306688fa7fb23f3d690df1307877646a640c1fbd",
+  "batch_register.py": "5a7c1921c4b548e08e8cd02b086d23eb3700de0d7cb20b6527e573e32a80b14c",
+  "batch_runs.py": "509e3de82b28c37bc0b470a6bfb4ea4cf301078c7a5d088cf8b6ff70f78c1fd1",
+  "batch_train.py": "ce5fa203299f0252372ea971fa9c00a897405f8e129446fa688e19baac95895c",
+  "pilot_data.py": "dc749fb5ea77419741d0e7469edd7f423db241eae11ccafe399f76a04c3417e8",
+  "pilot_model.py": "8bec14fb9a1e6c02cbfa715c21146aafeb45b00f060d4cd7afa57b7c84e0ad56"
+ }
+}

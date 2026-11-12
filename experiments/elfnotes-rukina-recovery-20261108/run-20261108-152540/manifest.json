@@ -1,0 +1,3871 @@
+{
+  "status": "complete",
+  "task_scope": "Train the own Elfnotes Kewl Tune AI on the user Rukina line and five interruption branches; no full battle training.",
+  "grading_policy": "normal-summon-agnostic-v2",
+  "normal_summon_usage_scored": false,
+  "publish_new_replays": false,
+  "source_url": "https://duel-simulator.miyauchidp.dev/replay/AXEBgcKV",
+  "runtime": {
+    "runtime": "/home/hatk8/projects/yugioh-ai/evaluation/opponent-article-basics-20261108/runtime",
+    "native": "/home/hatk8/projects/yugioh-ai/evaluation/opponent-article-basics-20261108/runtime/agent/ygoenv/ygoenv/ygopro/ygopro_ygoenv.cpython-310-x86_64-linux-gnu.so",
+    "sha256": "19a60f38a3d39b61a2ee082168d5a788a1022b2eb569633816596c8b3de21294",
+    "source_native": "/home/hatk8/projects/yugioh-ai/experiments/chain-imitation-20261108/runtime/agent/ygoenv/ygoenv/ygopro/ygopro_ygoenv.cpython-310-x86_64-linux-gnu.so",
+    "source_sha256": "c6518039c615aa49a1569c9db995a937d56f2e8ba319d47a11b1028a0b911828",
+    "source_unchanged": true,
+    "engine_rules_unchanged": true,
+    "fixes": [
+      "MSG_SELECT_UNSELECT_CARD disclosed selection identities",
+      "Expose legal hand-limit discard choices instead of random adapter discard"
+    ],
+    "observation_shape_unchanged": true,
+    "opponent_hidden_cards_masked": true
+  },
+  "vocabulary": "/home/hatk8/projects/yugioh-ai/experiments/meta-opponents-20261107/run-20261107-224631/code_list.txt",
+  "vocabulary_sha256": "aeb5be89d4a5591ccc5cce6af96def74ef47463a55265f75c11b92029e772e7b",
+  "training_plan": {
+    "updates": 1000,
+    "batch_size": 2,
+    "base_learning_rate": 3e-05,
+    "head_learning_rate": 0.0003,
+    "kl_weight": 0.02,
+    "seed": 12108,
+    "checkpoint_selection": "minimum validation teacher-forcing CE; final holdout never used"
+  },
+  "decks": {
+    "ElfnotesKewlTune": {
+      "source_model": "/home/hatk8/projects/yugioh-ai/experiments/endboard-20261108/training/step-0200/base.flax_model",
+      "source_model_sha256": "9965af31068f4ea1d2cdd4a1a6827a2144e1c6d915a47ff770a0af83a612e2b3",
+      "source_head": "/home/hatk8/projects/yugioh-ai/experiments/endboard-20261108/training/step-0200/chain-head.flax_model",
+      "source_head_sha256": "78c125ae07fdf5cf24e5b29917a5c620ba154435db6fe73671cdcc3a2985144c",
+      "deck": "/home/hatk8/projects/yugioh-ai/assets/deck/ElfnotesKewlTune.ydk",
+      "deck_sha256": "6e6344d98ee5865e8ea1460c75c361a3f6e054c02cb8a041337c532646d15373",
+      "cases": {
+        "train": [
+          {
+            "case_id": "pass-g00-p0",
+            "arm": "pass",
+            "family": "pass",
+            "hand": [
+              94145021,
+              97268402,
+              13597785,
+              97268402,
+              97268402
+            ],
+            "seed": 121080,
+            "split": "train",
+            "group_id": 0
+          },
+          {
+            "case_id": "pass-g00-p1",
+            "arm": "pass",
+            "family": "pass",
+            "hand": [
+              94145021,
+              97268402,
+              13597785,
+              97268402,
+              97268402
+            ],
+            "seed": 121081,
+            "split": "train",
+            "group_id": 0
+          },
+          {
+            "case_id": "pass-g01-p0",
+            "arm": "pass",
+            "family": "pass",
+            "hand": [
+              97268402,
+              14558127,
+              97268402,
+              13597785,
+              14558127
+            ],
+            "seed": 121087,
+            "split": "train",
+            "group_id": 1
+          },
+          {
+            "case_id": "pass-g01-p1",
+            "arm": "pass",
+            "family": "pass",
+            "hand": [
+              97268402,
+              14558127,
+              13597785,
+              14558127,
+              97268402
+            ],
+            "seed": 121088,
+            "split": "train",
+            "group_id": 1
+          },
+          {
+            "case_id": "pass-g02-p0",
+            "arm": "pass",
+            "family": "pass",
+            "hand": [
+              14558127,
+              97268402,
+              14558127,
+              13597785,
+              23434538
+            ],
+            "seed": 121094,
+            "split": "train",
+            "group_id": 2
+          },
+          {
+            "case_id": "pass-g02-p1",
+            "arm": "pass",
+            "family": "pass",
+            "hand": [
+              23434538,
+              13597785,
+              97268402,
+              14558127,
+              14558127
+            ],
+            "seed": 121095,
+            "split": "train",
+            "group_id": 2
+          },
+          {
+            "case_id": "pass-g03-p0",
+            "arm": "pass",
+            "family": "pass",
+            "hand": [
+              97268402,
+              59438930,
+              13597785,
+              14558127,
+              14558127
+            ],
+            "seed": 121101,
+            "split": "train",
+            "group_id": 3
+          },
+          {
+            "case_id": "pass-g03-p1",
+            "arm": "pass",
+            "family": "pass",
+            "hand": [
+              14558127,
+              14558127,
+              97268402,
+              59438930,
+              13597785
+            ],
+            "seed": 121102,
+            "split": "train",
+            "group_id": 3
+          },
+          {
+            "case_id": "pass-g04-p0",
+            "arm": "pass",
+            "family": "pass",
+            "hand": [
+              59438930,
+              23434538,
+              94145021,
+              97268402,
+              13597785
+            ],
+            "seed": 121108,
+            "split": "train",
+            "group_id": 4
+          },
+          {
+            "case_id": "pass-g04-p1",
+            "arm": "pass",
+            "family": "pass",
+            "hand": [
+              94145021,
+              13597785,
+              23434538,
+              59438930,
+              97268402
+            ],
+            "seed": 121109,
+            "split": "train",
+            "group_id": 4
+          },
+          {
+            "case_id": "pass-g05-p0",
+            "arm": "pass",
+            "family": "pass",
+            "hand": [
+              97268402,
+              13597785,
+              14558127,
+              97268402,
+              23434538
+            ],
+            "seed": 121115,
+            "split": "train",
+            "group_id": 5
+          },
+          {
+            "case_id": "pass-g05-p1",
+            "arm": "pass",
+            "family": "pass",
+            "hand": [
+              97268402,
+              13597785,
+              97268402,
+              23434538,
+              14558127
+            ],
+            "seed": 121116,
+            "split": "train",
+            "group_id": 5
+          },
+          {
+            "case_id": "ash_rukina-g00-p0",
+            "arm": "ash_rukina",
+            "family": "ash_rukina",
+            "hand": [
+              94145021,
+              97268402,
+              13597785,
+              97268402,
+              97268402
+            ],
+            "seed": 121080,
+            "split": "train",
+            "group_id": 0
+          },
+          {
+            "case_id": "ash_rukina-g00-p1",
+            "arm": "ash_rukina",
+            "family": "ash_rukina",
+            "hand": [
+              94145021,
+              97268402,
+              13597785,
+              97268402,
+              97268402
+            ],
+            "seed": 121081,
+            "split": "train",
+            "group_id": 0
+          },
+          {
+            "case_id": "ash_rukina-g01-p0",
+            "arm": "ash_rukina",
+            "family": "ash_rukina",
+            "hand": [
+              97268402,
+              14558127,
+              97268402,
+              13597785,
+              14558127
+            ],
+            "seed": 121087,
+            "split": "train",
+            "group_id": 1
+          },
+          {
+            "case_id": "ash_rukina-g01-p1",
+            "arm": "ash_rukina",
+            "family": "ash_rukina",
+            "hand": [
+              97268402,
+              14558127,
+              13597785,
+              14558127,
+              97268402
+            ],
+            "seed": 121088,
+            "split": "train",
+            "group_id": 1
+          },
+          {
+            "case_id": "ash_rukina-g02-p0",
+            "arm": "ash_rukina",
+            "family": "ash_rukina",
+            "hand": [
+              14558127,
+              97268402,
+              14558127,
+              13597785,
+              23434538
+            ],
+            "seed": 121094,
+            "split": "train",
+            "group_id": 2
+          },
+          {
+            "case_id": "ash_rukina-g02-p1",
+            "arm": "ash_rukina",
+            "family": "ash_rukina",
+            "hand": [
+              23434538,
+              13597785,
+              97268402,
+              14558127,
+              14558127
+            ],
+            "seed": 121095,
+            "split": "train",
+            "group_id": 2
+          },
+          {
+            "case_id": "ash_rukina-g03-p0",
+            "arm": "ash_rukina",
+            "family": "ash_rukina",
+            "hand": [
+              97268402,
+              59438930,
+              13597785,
+              14558127,
+              14558127
+            ],
+            "seed": 121101,
+            "split": "train",
+            "group_id": 3
+          },
+          {
+            "case_id": "ash_rukina-g03-p1",
+            "arm": "ash_rukina",
+            "family": "ash_rukina",
+            "hand": [
+              14558127,
+              14558127,
+              97268402,
+              59438930,
+              13597785
+            ],
+            "seed": 121102,
+            "split": "train",
+            "group_id": 3
+          },
+          {
+            "case_id": "ash_rukina-g04-p0",
+            "arm": "ash_rukina",
+            "family": "ash_rukina",
+            "hand": [
+              59438930,
+              23434538,
+              94145021,
+              97268402,
+              13597785
+            ],
+            "seed": 121108,
+            "split": "train",
+            "group_id": 4
+          },
+          {
+            "case_id": "ash_rukina-g04-p1",
+            "arm": "ash_rukina",
+            "family": "ash_rukina",
+            "hand": [
+              94145021,
+              13597785,
+              23434538,
+              59438930,
+              97268402
+            ],
+            "seed": 121109,
+            "split": "train",
+            "group_id": 4
+          },
+          {
+            "case_id": "ash_rukina-g05-p0",
+            "arm": "ash_rukina",
+            "family": "ash_rukina",
+            "hand": [
+              97268402,
+              13597785,
+              14558127,
+              97268402,
+              23434538
+            ],
+            "seed": 121115,
+            "split": "train",
+            "group_id": 5
+          },
+          {
+            "case_id": "ash_rukina-g05-p1",
+            "arm": "ash_rukina",
+            "family": "ash_rukina",
+            "hand": [
+              97268402,
+              13597785,
+              97268402,
+              23434538,
+              14558127
+            ],
+            "seed": 121116,
+            "split": "train",
+            "group_id": 5
+          },
+          {
+            "case_id": "veiler_rukina-g00-p0",
+            "arm": "veiler_rukina",
+            "family": "veiler_rukina",
+            "hand": [
+              94145021,
+              97268402,
+              13597785,
+              97268402,
+              97268402
+            ],
+            "seed": 121080,
+            "split": "train",
+            "group_id": 0
+          },
+          {
+            "case_id": "veiler_rukina-g00-p1",
+            "arm": "veiler_rukina",
+            "family": "veiler_rukina",
+            "hand": [
+              94145021,
+              97268402,
+              13597785,
+              97268402,
+              97268402
+            ],
+            "seed": 121081,
+            "split": "train",
+            "group_id": 0
+          },
+          {
+            "case_id": "veiler_rukina-g01-p0",
+            "arm": "veiler_rukina",
+            "family": "veiler_rukina",
+            "hand": [
+              97268402,
+              14558127,
+              97268402,
+              13597785,
+              14558127
+            ],
+            "seed": 121087,
+            "split": "train",
+            "group_id": 1
+          },
+          {
+            "case_id": "veiler_rukina-g01-p1",
+            "arm": "veiler_rukina",
+            "family": "veiler_rukina",
+            "hand": [
+              97268402,
+              14558127,
+              13597785,
+              14558127,
+              97268402
+            ],
+            "seed": 121088,
+            "split": "train",
+            "group_id": 1
+          },
+          {
+            "case_id": "veiler_rukina-g02-p0",
+            "arm": "veiler_rukina",
+            "family": "veiler_rukina",
+            "hand": [
+              14558127,
+              97268402,
+              14558127,
+              13597785,
+              23434538
+            ],
+            "seed": 121094,
+            "split": "train",
+            "group_id": 2
+          },
+          {
+            "case_id": "veiler_rukina-g02-p1",
+            "arm": "veiler_rukina",
+            "family": "veiler_rukina",
+            "hand": [
+              23434538,
+              13597785,
+              97268402,
+              14558127,
+              14558127
+            ],
+            "seed": 121095,
+            "split": "train",
+            "group_id": 2
+          },
+          {
+            "case_id": "veiler_rukina-g03-p0",
+            "arm": "veiler_rukina",
+            "family": "veiler_rukina",
+            "hand": [
+              97268402,
+              59438930,
+              13597785,
+              14558127,
+              14558127
+            ],
+            "seed": 121101,
+            "split": "train",
+            "group_id": 3
+          },
+          {
+            "case_id": "veiler_rukina-g03-p1",
+            "arm": "veiler_rukina",
+            "family": "veiler_rukina",
+            "hand": [
+              14558127,
+              14558127,
+              97268402,
+              59438930,
+              13597785
+            ],
+            "seed": 121102,
+            "split": "train",
+            "group_id": 3
+          },
+          {
+            "case_id": "veiler_rukina-g04-p0",
+            "arm": "veiler_rukina",
+            "family": "veiler_rukina",
+            "hand": [
+              59438930,
+              23434538,
+              94145021,
+              97268402,
+              13597785
+            ],
+            "seed": 121108,
+            "split": "train",
+            "group_id": 4
+          },
+          {
+            "case_id": "veiler_rukina-g04-p1",
+            "arm": "veiler_rukina",
+            "family": "veiler_rukina",
+            "hand": [
+              94145021,
+              13597785,
+              23434538,
+              59438930,
+              97268402
+            ],
+            "seed": 121109,
+            "split": "train",
+            "group_id": 4
+          },
+          {
+            "case_id": "veiler_rukina-g05-p0",
+            "arm": "veiler_rukina",
+            "family": "veiler_rukina",
+            "hand": [
+              97268402,
+              13597785,
+              14558127,
+              97268402,
+              23434538
+            ],
+            "seed": 121115,
+            "split": "train",
+            "group_id": 5
+          },
+          {
+            "case_id": "veiler_rukina-g05-p1",
+            "arm": "veiler_rukina",
+            "family": "veiler_rukina",
+            "hand": [
+              97268402,
+              13597785,
+              97268402,
+              23434538,
+              14558127
+            ],
+            "seed": 121116,
+            "split": "train",
+            "group_id": 5
+          },
+          {
+            "case_id": "ash_spirit-g00-p0",
+            "arm": "ash_spirit",
+            "family": "ash_spirit",
+            "hand": [
+              94145021,
+              97268402,
+              13597785,
+              97268402,
+              97268402
+            ],
+            "seed": 121080,
+            "split": "train",
+            "group_id": 0
+          },
+          {
+            "case_id": "ash_spirit-g00-p1",
+            "arm": "ash_spirit",
+            "family": "ash_spirit",
+            "hand": [
+              94145021,
+              97268402,
+              13597785,
+              97268402,
+              97268402
+            ],
+            "seed": 121081,
+            "split": "train",
+            "group_id": 0
+          },
+          {
+            "case_id": "ash_spirit-g01-p0",
+            "arm": "ash_spirit",
+            "family": "ash_spirit",
+            "hand": [
+              97268402,
+              14558127,
+              97268402,
+              13597785,
+              14558127
+            ],
+            "seed": 121087,
+            "split": "train",
+            "group_id": 1
+          },
+          {
+            "case_id": "ash_spirit-g01-p1",
+            "arm": "ash_spirit",
+            "family": "ash_spirit",
+            "hand": [
+              97268402,
+              14558127,
+              13597785,
+              14558127,
+              97268402
+            ],
+            "seed": 121088,
+            "split": "train",
+            "group_id": 1
+          },
+          {
+            "case_id": "ash_spirit-g02-p0",
+            "arm": "ash_spirit",
+            "family": "ash_spirit",
+            "hand": [
+              14558127,
+              97268402,
+              14558127,
+              13597785,
+              23434538
+            ],
+            "seed": 121094,
+            "split": "train",
+            "group_id": 2
+          },
+          {
+            "case_id": "ash_spirit-g02-p1",
+            "arm": "ash_spirit",
+            "family": "ash_spirit",
+            "hand": [
+              23434538,
+              13597785,
+              97268402,
+              14558127,
+              14558127
+            ],
+            "seed": 121095,
+            "split": "train",
+            "group_id": 2
+          },
+          {
+            "case_id": "ash_spirit-g03-p0",
+            "arm": "ash_spirit",
+            "family": "ash_spirit",
+            "hand": [
+              97268402,
+              59438930,
+              13597785,
+              14558127,
+              14558127
+            ],
+            "seed": 121101,
+            "split": "train",
+            "group_id": 3
+          },
+          {
+            "case_id": "ash_spirit-g03-p1",
+            "arm": "ash_spirit",
+            "family": "ash_spirit",
+            "hand": [
+              14558127,
+              14558127,
+              97268402,
+              59438930,
+              13597785
+            ],
+            "seed": 121102,
+            "split": "train",
+            "group_id": 3
+          },
+          {
+            "case_id": "ash_spirit-g04-p0",
+            "arm": "ash_spirit",
+            "family": "ash_spirit",
+            "hand": [
+              59438930,
+              23434538,
+              94145021,
+              97268402,
+              13597785
+            ],
+            "seed": 121108,
+            "split": "train",
+            "group_id": 4
+          },
+          {
+            "case_id": "ash_spirit-g04-p1",
+            "arm": "ash_spirit",
+            "family": "ash_spirit",
+            "hand": [
+              94145021,
+              13597785,
+              23434538,
+              59438930,
+              97268402
+            ],
+            "seed": 121109,
+            "split": "train",
+            "group_id": 4
+          },
+          {
+            "case_id": "ash_spirit-g05-p0",
+            "arm": "ash_spirit",
+            "family": "ash_spirit",
+            "hand": [
+              97268402,
+              13597785,
+              14558127,
+              97268402,
+              23434538
+            ],
+            "seed": 121115,
+            "split": "train",
+            "group_id": 5
+          },
+          {
+            "case_id": "ash_spirit-g05-p1",
+            "arm": "ash_spirit",
+            "family": "ash_spirit",
+            "hand": [
+              97268402,
+              13597785,
+              97268402,
+              23434538,
+              14558127
+            ],
+            "seed": 121116,
+            "split": "train",
+            "group_id": 5
+          },
+          {
+            "case_id": "ash_parallelism-g00-p0",
+            "arm": "ash_parallelism",
+            "family": "ash_parallelism",
+            "hand": [
+              94145021,
+              97268402,
+              13597785,
+              97268402,
+              97268402
+            ],
+            "seed": 121080,
+            "split": "train",
+            "group_id": 0
+          },
+          {
+            "case_id": "ash_parallelism-g00-p1",
+            "arm": "ash_parallelism",
+            "family": "ash_parallelism",
+            "hand": [
+              94145021,
+              97268402,
+              13597785,
+              97268402,
+              97268402
+            ],
+            "seed": 121081,
+            "split": "train",
+            "group_id": 0
+          },
+          {
+            "case_id": "ash_parallelism-g01-p0",
+            "arm": "ash_parallelism",
+            "family": "ash_parallelism",
+            "hand": [
+              97268402,
+              14558127,
+              97268402,
+              13597785,
+              14558127
+            ],
+            "seed": 121087,
+            "split": "train",
+            "group_id": 1
+          },
+          {
+            "case_id": "ash_parallelism-g01-p1",
+            "arm": "ash_parallelism",
+            "family": "ash_parallelism",
+            "hand": [
+              97268402,
+              14558127,
+              13597785,
+              14558127,
+              97268402
+            ],
+            "seed": 121088,
+            "split": "train",
+            "group_id": 1
+          },
+          {
+            "case_id": "ash_parallelism-g02-p0",
+            "arm": "ash_parallelism",
+            "family": "ash_parallelism",
+            "hand": [
+              14558127,
+              97268402,
+              14558127,
+              13597785,
+              23434538
+            ],
+            "seed": 121094,
+            "split": "train",
+            "group_id": 2
+          },
+          {
+            "case_id": "ash_parallelism-g02-p1",
+            "arm": "ash_parallelism",
+            "family": "ash_parallelism",
+            "hand": [
+              23434538,
+              13597785,
+              97268402,
+              14558127,
+              14558127
+            ],
+            "seed": 121095,
+            "split": "train",
+            "group_id": 2
+          },
+          {
+            "case_id": "ash_parallelism-g03-p0",
+            "arm": "ash_parallelism",
+            "family": "ash_parallelism",
+            "hand": [
+              97268402,
+              59438930,
+              13597785,
+              14558127,
+              14558127
+            ],
+            "seed": 121101,
+            "split": "train",
+            "group_id": 3
+          },
+          {
+            "case_id": "ash_parallelism-g03-p1",
+            "arm": "ash_parallelism",
+            "family": "ash_parallelism",
+            "hand": [
+              14558127,
+              14558127,
+              97268402,
+              59438930,
+              13597785
+            ],
+            "seed": 121102,
+            "split": "train",
+            "group_id": 3
+          },
+          {
+            "case_id": "ash_parallelism-g04-p0",
+            "arm": "ash_parallelism",
+            "family": "ash_parallelism",
+            "hand": [
+              59438930,
+              23434538,
+              94145021,
+              97268402,
+              13597785
+            ],
+            "seed": 121108,
+            "split": "train",
+            "group_id": 4
+          },
+          {
+            "case_id": "ash_parallelism-g04-p1",
+            "arm": "ash_parallelism",
+            "family": "ash_parallelism",
+            "hand": [
+              94145021,
+              13597785,
+              23434538,
+              59438930,
+              97268402
+            ],
+            "seed": 121109,
+            "split": "train",
+            "group_id": 4
+          },
+          {
+            "case_id": "ash_parallelism-g05-p0",
+            "arm": "ash_parallelism",
+            "family": "ash_parallelism",
+            "hand": [
+              97268402,
+              13597785,
+              14558127,
+              97268402,
+              23434538
+            ],
+            "seed": 121115,
+            "split": "train",
+            "group_id": 5
+          },
+          {
+            "case_id": "ash_parallelism-g05-p1",
+            "arm": "ash_parallelism",
+            "family": "ash_parallelism",
+            "hand": [
+              97268402,
+              13597785,
+              97268402,
+              23434538,
+              14558127
+            ],
+            "seed": 121116,
+            "split": "train",
+            "group_id": 5
+          },
+          {
+            "case_id": "veiler_strelitzia-g00-p0",
+            "arm": "veiler_strelitzia",
+            "family": "veiler_strelitzia",
+            "hand": [
+              94145021,
+              97268402,
+              13597785,
+              97268402,
+              97268402
+            ],
+            "seed": 121080,
+            "split": "train",
+            "group_id": 0
+          },
+          {
+            "case_id": "veiler_strelitzia-g00-p1",
+            "arm": "veiler_strelitzia",
+            "family": "veiler_strelitzia",
+            "hand": [
+              94145021,
+              97268402,
+              13597785,
+              97268402,
+              97268402
+            ],
+            "seed": 121081,
+            "split": "train",
+            "group_id": 0
+          },
+          {
+            "case_id": "veiler_strelitzia-g01-p0",
+            "arm": "veiler_strelitzia",
+            "family": "veiler_strelitzia",
+            "hand": [
+              97268402,
+              14558127,
+              97268402,
+              13597785,
+              14558127
+            ],
+            "seed": 121087,
+            "split": "train",
+            "group_id": 1
+          },
+          {
+            "case_id": "veiler_strelitzia-g01-p1",
+            "arm": "veiler_strelitzia",
+            "family": "veiler_strelitzia",
+            "hand": [
+              97268402,
+              14558127,
+              13597785,
+              14558127,
+              97268402
+            ],
+            "seed": 121088,
+            "split": "train",
+            "group_id": 1
+          },
+          {
+            "case_id": "veiler_strelitzia-g02-p0",
+            "arm": "veiler_strelitzia",
+            "family": "veiler_strelitzia",
+            "hand": [
+              14558127,
+              97268402,
+              14558127,
+              13597785,
+              23434538
+            ],
+            "seed": 121094,
+            "split": "train",
+            "group_id": 2
+          },
+          {
+            "case_id": "veiler_strelitzia-g02-p1",
+            "arm": "veiler_strelitzia",
+            "family": "veiler_strelitzia",
+            "hand": [
+              23434538,
+              13597785,
+              97268402,
+              14558127,
+              14558127
+            ],
+            "seed": 121095,
+            "split": "train",
+            "group_id": 2
+          },
+          {
+            "case_id": "veiler_strelitzia-g03-p0",
+            "arm": "veiler_strelitzia",
+            "family": "veiler_strelitzia",
+            "hand": [
+              97268402,
+              59438930,
+              13597785,
+              14558127,
+              14558127
+            ],
+            "seed": 121101,
+            "split": "train",
+            "group_id": 3
+          },
+          {
+            "case_id": "veiler_strelitzia-g03-p1",
+            "arm": "veiler_strelitzia",
+            "family": "veiler_strelitzia",
+            "hand": [
+              14558127,
+              14558127,
+              97268402,
+              59438930,
+              13597785
+            ],
+            "seed": 121102,
+            "split": "train",
+            "group_id": 3
+          },
+          {
+            "case_id": "veiler_strelitzia-g04-p0",
+            "arm": "veiler_strelitzia",
+            "family": "veiler_strelitzia",
+            "hand": [
+              59438930,
+              23434538,
+              94145021,
+              97268402,
+              13597785
+            ],
+            "seed": 121108,
+            "split": "train",
+            "group_id": 4
+          },
+          {
+            "case_id": "veiler_strelitzia-g04-p1",
+            "arm": "veiler_strelitzia",
+            "family": "veiler_strelitzia",
+            "hand": [
+              94145021,
+              13597785,
+              23434538,
+              59438930,
+              97268402
+            ],
+            "seed": 121109,
+            "split": "train",
+            "group_id": 4
+          },
+          {
+            "case_id": "veiler_strelitzia-g05-p0",
+            "arm": "veiler_strelitzia",
+            "family": "veiler_strelitzia",
+            "hand": [
+              97268402,
+              13597785,
+              14558127,
+              97268402,
+              23434538
+            ],
+            "seed": 121115,
+            "split": "train",
+            "group_id": 5
+          },
+          {
+            "case_id": "veiler_strelitzia-g05-p1",
+            "arm": "veiler_strelitzia",
+            "family": "veiler_strelitzia",
+            "hand": [
+              97268402,
+              13597785,
+              97268402,
+              23434538,
+              14558127
+            ],
+            "seed": 121116,
+            "split": "train",
+            "group_id": 5
+          },
+          {
+            "case_id": "dina_review-g00-p0",
+            "arm": "pass",
+            "family": "dina_review",
+            "hand": [
+              59438930,
+              23434538,
+              59581480,
+              14558127,
+              97268402
+            ],
+            "seed": 121080,
+            "split": "train",
+            "group_id": 0,
+            "plan_override": [
+              {
+                "act": "SpSummon",
+                "code": 59581480
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 56651978,
+                "after_location": 4
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "dina_review-g00-p1",
+            "arm": "pass",
+            "family": "dina_review",
+            "hand": [
+              59438930,
+              23434538,
+              59581480,
+              97268402,
+              14558127
+            ],
+            "seed": 121081,
+            "split": "train",
+            "group_id": 0,
+            "plan_override": [
+              {
+                "act": "SpSummon",
+                "code": 59581480
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 56651978,
+                "after_location": 4
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "dina_review-g01-p0",
+            "arm": "pass",
+            "family": "dina_review",
+            "hand": [
+              97268402,
+              14558127,
+              97268402,
+              59581480,
+              59438930
+            ],
+            "seed": 121087,
+            "split": "train",
+            "group_id": 1,
+            "plan_override": [
+              {
+                "act": "SpSummon",
+                "code": 59581480
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 56651978,
+                "after_location": 4
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "dina_review-g01-p1",
+            "arm": "pass",
+            "family": "dina_review",
+            "hand": [
+              97268402,
+              59438930,
+              59581480,
+              14558127,
+              97268402
+            ],
+            "seed": 121088,
+            "split": "train",
+            "group_id": 1,
+            "plan_override": [
+              {
+                "act": "SpSummon",
+                "code": 59581480
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 56651978,
+                "after_location": 4
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "dina_review-g02-p0",
+            "arm": "pass",
+            "family": "dina_review",
+            "hand": [
+              59438930,
+              97268402,
+              94145021,
+              59581480,
+              59438930
+            ],
+            "seed": 121094,
+            "split": "train",
+            "group_id": 2,
+            "plan_override": [
+              {
+                "act": "SpSummon",
+                "code": 59581480
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 56651978,
+                "after_location": 4
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "dina_review-g02-p1",
+            "arm": "pass",
+            "family": "dina_review",
+            "hand": [
+              59438930,
+              59581480,
+              97268402,
+              59438930,
+              94145021
+            ],
+            "seed": 121095,
+            "split": "train",
+            "group_id": 2,
+            "plan_override": [
+              {
+                "act": "SpSummon",
+                "code": 59581480
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 56651978,
+                "after_location": 4
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "dina_review-g03-p0",
+            "arm": "pass",
+            "family": "dina_review",
+            "hand": [
+              14558127,
+              59438930,
+              59581480,
+              59438930,
+              23434538
+            ],
+            "seed": 121101,
+            "split": "train",
+            "group_id": 3,
+            "plan_override": [
+              {
+                "act": "SpSummon",
+                "code": 59581480
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 56651978,
+                "after_location": 4
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "dina_review-g03-p1",
+            "arm": "pass",
+            "family": "dina_review",
+            "hand": [
+              23434538,
+              59438930,
+              14558127,
+              59438930,
+              59581480
+            ],
+            "seed": 121102,
+            "split": "train",
+            "group_id": 3,
+            "plan_override": [
+              {
+                "act": "SpSummon",
+                "code": 59581480
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 56651978,
+                "after_location": 4
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "dina_review-g04-p0",
+            "arm": "pass",
+            "family": "dina_review",
+            "hand": [
+              59438930,
+              59438930,
+              97268402,
+              97268402,
+              59581480
+            ],
+            "seed": 121108,
+            "split": "train",
+            "group_id": 4,
+            "plan_override": [
+              {
+                "act": "SpSummon",
+                "code": 59581480
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 56651978,
+                "after_location": 4
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "dina_review-g04-p1",
+            "arm": "pass",
+            "family": "dina_review",
+            "hand": [
+              97268402,
+              59581480,
+              59438930,
+              59438930,
+              97268402
+            ],
+            "seed": 121109,
+            "split": "train",
+            "group_id": 4,
+            "plan_override": [
+              {
+                "act": "SpSummon",
+                "code": 59581480
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 56651978,
+                "after_location": 4
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "dina_review-g05-p0",
+            "arm": "pass",
+            "family": "dina_review",
+            "hand": [
+              14558127,
+              59581480,
+              23434538,
+              14558127,
+              59438930
+            ],
+            "seed": 121115,
+            "split": "train",
+            "group_id": 5,
+            "plan_override": [
+              {
+                "act": "SpSummon",
+                "code": 59581480
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 56651978,
+                "after_location": 4
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "dina_review-g05-p1",
+            "arm": "pass",
+            "family": "dina_review",
+            "hand": [
+              14558127,
+              59581480,
+              14558127,
+              59438930,
+              23434538
+            ],
+            "seed": 121116,
+            "split": "train",
+            "group_id": 5,
+            "plan_override": [
+              {
+                "act": "SpSummon",
+                "code": 59581480
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 56651978,
+                "after_location": 4
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "regina_review-g00-p0",
+            "arm": "pass",
+            "family": "regina_review",
+            "hand": [
+              59438930,
+              94145021,
+              56651978,
+              97268402,
+              64491754
+            ],
+            "seed": 121080,
+            "split": "train",
+            "group_id": 0,
+            "plan_override": [
+              {
+                "act": "Activate",
+                "code": 56651978
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "regina_review-g00-p1",
+            "arm": "pass",
+            "family": "regina_review",
+            "hand": [
+              59438930,
+              94145021,
+              56651978,
+              64491754,
+              97268402
+            ],
+            "seed": 121081,
+            "split": "train",
+            "group_id": 0,
+            "plan_override": [
+              {
+                "act": "Activate",
+                "code": 56651978
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "regina_review-g01-p0",
+            "arm": "pass",
+            "family": "regina_review",
+            "hand": [
+              64491754,
+              94145021,
+              14558127,
+              56651978,
+              59438930
+            ],
+            "seed": 121087,
+            "split": "train",
+            "group_id": 1,
+            "plan_override": [
+              {
+                "act": "Activate",
+                "code": 56651978
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "regina_review-g01-p1",
+            "arm": "pass",
+            "family": "regina_review",
+            "hand": [
+              64491754,
+              59438930,
+              56651978,
+              94145021,
+              14558127
+            ],
+            "seed": 121088,
+            "split": "train",
+            "group_id": 1,
+            "plan_override": [
+              {
+                "act": "Activate",
+                "code": 56651978
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "regina_review-g02-p0",
+            "arm": "pass",
+            "family": "regina_review",
+            "hand": [
+              94145021,
+              64491754,
+              14558127,
+              56651978,
+              94145021
+            ],
+            "seed": 121094,
+            "split": "train",
+            "group_id": 2,
+            "plan_override": [
+              {
+                "act": "Activate",
+                "code": 56651978
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "regina_review-g02-p1",
+            "arm": "pass",
+            "family": "regina_review",
+            "hand": [
+              94145021,
+              56651978,
+              64491754,
+              94145021,
+              14558127
+            ],
+            "seed": 121095,
+            "split": "train",
+            "group_id": 2,
+            "plan_override": [
+              {
+                "act": "Activate",
+                "code": 56651978
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "regina_review-g03-p0",
+            "arm": "pass",
+            "family": "regina_review",
+            "hand": [
+              64491754,
+              23434538,
+              56651978,
+              94145021,
+              94145021
+            ],
+            "seed": 121101,
+            "split": "train",
+            "group_id": 3,
+            "plan_override": [
+              {
+                "act": "Activate",
+                "code": 56651978
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "regina_review-g03-p1",
+            "arm": "pass",
+            "family": "regina_review",
+            "hand": [
+              94145021,
+              94145021,
+              64491754,
+              23434538,
+              56651978
+            ],
+            "seed": 121102,
+            "split": "train",
+            "group_id": 3,
+            "plan_override": [
+              {
+                "act": "Activate",
+                "code": 56651978
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "regina_review-g04-p0",
+            "arm": "pass",
+            "family": "regina_review",
+            "hand": [
+              59438930,
+              14558127,
+              97268402,
+              64491754,
+              56651978
+            ],
+            "seed": 121108,
+            "split": "train",
+            "group_id": 4,
+            "plan_override": [
+              {
+                "act": "Activate",
+                "code": 56651978
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "regina_review-g04-p1",
+            "arm": "pass",
+            "family": "regina_review",
+            "hand": [
+              97268402,
+              56651978,
+              14558127,
+              59438930,
+              64491754
+            ],
+            "seed": 121109,
+            "split": "train",
+            "group_id": 4,
+            "plan_override": [
+              {
+                "act": "Activate",
+                "code": 56651978
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "regina_review-g05-p0",
+            "arm": "pass",
+            "family": "regina_review",
+            "hand": [
+              64491754,
+              56651978,
+              23434538,
+              14558127,
+              59438930
+            ],
+            "seed": 121115,
+            "split": "train",
+            "group_id": 5,
+            "plan_override": [
+              {
+                "act": "Activate",
+                "code": 56651978
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "regina_review-g05-p1",
+            "arm": "pass",
+            "family": "regina_review",
+            "hand": [
+              64491754,
+              56651978,
+              14558127,
+              59438930,
+              23434538
+            ],
+            "seed": 121116,
+            "split": "train",
+            "group_id": 5,
+            "plan_override": [
+              {
+                "act": "Activate",
+                "code": 56651978
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          }
+        ],
+        "validation": [
+          {
+            "case_id": "pass-g06-p0",
+            "arm": "pass",
+            "family": "pass",
+            "hand": [
+              13597785,
+              97268402,
+              59438930,
+              97268402,
+              59438930
+            ],
+            "seed": 121122,
+            "split": "validation",
+            "group_id": 6
+          },
+          {
+            "case_id": "pass-g07-p0",
+            "arm": "pass",
+            "family": "pass",
+            "hand": [
+              97268402,
+              23434538,
+              94145021,
+              13597785,
+              94145021
+            ],
+            "seed": 121129,
+            "split": "validation",
+            "group_id": 7
+          },
+          {
+            "case_id": "ash_rukina-g06-p0",
+            "arm": "ash_rukina",
+            "family": "ash_rukina",
+            "hand": [
+              13597785,
+              97268402,
+              59438930,
+              97268402,
+              59438930
+            ],
+            "seed": 121122,
+            "split": "validation",
+            "group_id": 6
+          },
+          {
+            "case_id": "ash_rukina-g07-p0",
+            "arm": "ash_rukina",
+            "family": "ash_rukina",
+            "hand": [
+              97268402,
+              23434538,
+              94145021,
+              13597785,
+              94145021
+            ],
+            "seed": 121129,
+            "split": "validation",
+            "group_id": 7
+          },
+          {
+            "case_id": "veiler_rukina-g06-p0",
+            "arm": "veiler_rukina",
+            "family": "veiler_rukina",
+            "hand": [
+              13597785,
+              97268402,
+              59438930,
+              97268402,
+              59438930
+            ],
+            "seed": 121122,
+            "split": "validation",
+            "group_id": 6
+          },
+          {
+            "case_id": "veiler_rukina-g07-p0",
+            "arm": "veiler_rukina",
+            "family": "veiler_rukina",
+            "hand": [
+              97268402,
+              23434538,
+              94145021,
+              13597785,
+              94145021
+            ],
+            "seed": 121129,
+            "split": "validation",
+            "group_id": 7
+          },
+          {
+            "case_id": "ash_spirit-g06-p0",
+            "arm": "ash_spirit",
+            "family": "ash_spirit",
+            "hand": [
+              13597785,
+              97268402,
+              59438930,
+              97268402,
+              59438930
+            ],
+            "seed": 121122,
+            "split": "validation",
+            "group_id": 6
+          },
+          {
+            "case_id": "ash_spirit-g07-p0",
+            "arm": "ash_spirit",
+            "family": "ash_spirit",
+            "hand": [
+              97268402,
+              23434538,
+              94145021,
+              13597785,
+              94145021
+            ],
+            "seed": 121129,
+            "split": "validation",
+            "group_id": 7
+          },
+          {
+            "case_id": "ash_parallelism-g06-p0",
+            "arm": "ash_parallelism",
+            "family": "ash_parallelism",
+            "hand": [
+              13597785,
+              97268402,
+              59438930,
+              97268402,
+              59438930
+            ],
+            "seed": 121122,
+            "split": "validation",
+            "group_id": 6
+          },
+          {
+            "case_id": "ash_parallelism-g07-p0",
+            "arm": "ash_parallelism",
+            "family": "ash_parallelism",
+            "hand": [
+              97268402,
+              23434538,
+              94145021,
+              13597785,
+              94145021
+            ],
+            "seed": 121129,
+            "split": "validation",
+            "group_id": 7
+          },
+          {
+            "case_id": "veiler_strelitzia-g06-p0",
+            "arm": "veiler_strelitzia",
+            "family": "veiler_strelitzia",
+            "hand": [
+              13597785,
+              97268402,
+              59438930,
+              97268402,
+              59438930
+            ],
+            "seed": 121122,
+            "split": "validation",
+            "group_id": 6
+          },
+          {
+            "case_id": "veiler_strelitzia-g07-p0",
+            "arm": "veiler_strelitzia",
+            "family": "veiler_strelitzia",
+            "hand": [
+              97268402,
+              23434538,
+              94145021,
+              13597785,
+              94145021
+            ],
+            "seed": 121129,
+            "split": "validation",
+            "group_id": 7
+          },
+          {
+            "case_id": "dina_review-g06-p0",
+            "arm": "pass",
+            "family": "dina_review",
+            "hand": [
+              59581480,
+              94145021,
+              59438930,
+              14558127,
+              23434538
+            ],
+            "seed": 121122,
+            "split": "validation",
+            "group_id": 6,
+            "plan_override": [
+              {
+                "act": "SpSummon",
+                "code": 59581480
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 56651978,
+                "after_location": 4
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "dina_review-g07-p0",
+            "arm": "pass",
+            "family": "dina_review",
+            "hand": [
+              97268402,
+              59438930,
+              97268402,
+              59581480,
+              97268402
+            ],
+            "seed": 121129,
+            "split": "validation",
+            "group_id": 7,
+            "plan_override": [
+              {
+                "act": "SpSummon",
+                "code": 59581480
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 56651978,
+                "after_location": 4
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "regina_review-g06-p0",
+            "arm": "pass",
+            "family": "regina_review",
+            "hand": [
+              56651978,
+              97268402,
+              23434538,
+              64491754,
+              97268402
+            ],
+            "seed": 121122,
+            "split": "validation",
+            "group_id": 6,
+            "plan_override": [
+              {
+                "act": "Activate",
+                "code": 56651978
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "regina_review-g07-p0",
+            "arm": "pass",
+            "family": "regina_review",
+            "hand": [
+              64491754,
+              23434538,
+              14558127,
+              56651978,
+              14558127
+            ],
+            "seed": 121129,
+            "split": "validation",
+            "group_id": 7,
+            "plan_override": [
+              {
+                "act": "Activate",
+                "code": 56651978
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          }
+        ],
+        "holdout": [
+          {
+            "case_id": "pass-g08-p0",
+            "arm": "pass",
+            "family": "pass",
+            "hand": [
+              97268402,
+              23434538,
+              97268402,
+              97268402,
+              13597785
+            ],
+            "seed": 121136,
+            "split": "holdout",
+            "group_id": 8
+          },
+          {
+            "case_id": "pass-g09-p0",
+            "arm": "pass",
+            "family": "pass",
+            "hand": [
+              97268402,
+              59438930,
+              97268402,
+              14558127,
+              13597785
+            ],
+            "seed": 121143,
+            "split": "holdout",
+            "group_id": 9
+          },
+          {
+            "case_id": "pass-g10-p0",
+            "arm": "pass",
+            "family": "pass",
+            "hand": [
+              14558127,
+              97268402,
+              94145021,
+              13597785,
+              94145021
+            ],
+            "seed": 121150,
+            "split": "holdout",
+            "group_id": 10
+          },
+          {
+            "case_id": "pass-g11-p0",
+            "arm": "pass",
+            "family": "pass",
+            "hand": [
+              13597785,
+              97268402,
+              14558127,
+              14558127,
+              14558127
+            ],
+            "seed": 121157,
+            "split": "holdout",
+            "group_id": 11
+          },
+          {
+            "case_id": "ash_rukina-g08-p0",
+            "arm": "ash_rukina",
+            "family": "ash_rukina",
+            "hand": [
+              97268402,
+              23434538,
+              97268402,
+              97268402,
+              13597785
+            ],
+            "seed": 121136,
+            "split": "holdout",
+            "group_id": 8
+          },
+          {
+            "case_id": "ash_rukina-g09-p0",
+            "arm": "ash_rukina",
+            "family": "ash_rukina",
+            "hand": [
+              97268402,
+              59438930,
+              97268402,
+              14558127,
+              13597785
+            ],
+            "seed": 121143,
+            "split": "holdout",
+            "group_id": 9
+          },
+          {
+            "case_id": "ash_rukina-g10-p0",
+            "arm": "ash_rukina",
+            "family": "ash_rukina",
+            "hand": [
+              14558127,
+              97268402,
+              94145021,
+              13597785,
+              94145021
+            ],
+            "seed": 121150,
+            "split": "holdout",
+            "group_id": 10
+          },
+          {
+            "case_id": "ash_rukina-g11-p0",
+            "arm": "ash_rukina",
+            "family": "ash_rukina",
+            "hand": [
+              13597785,
+              97268402,
+              14558127,
+              14558127,
+              14558127
+            ],
+            "seed": 121157,
+            "split": "holdout",
+            "group_id": 11
+          },
+          {
+            "case_id": "veiler_rukina-g08-p0",
+            "arm": "veiler_rukina",
+            "family": "veiler_rukina",
+            "hand": [
+              97268402,
+              23434538,
+              97268402,
+              97268402,
+              13597785
+            ],
+            "seed": 121136,
+            "split": "holdout",
+            "group_id": 8
+          },
+          {
+            "case_id": "veiler_rukina-g09-p0",
+            "arm": "veiler_rukina",
+            "family": "veiler_rukina",
+            "hand": [
+              97268402,
+              59438930,
+              97268402,
+              14558127,
+              13597785
+            ],
+            "seed": 121143,
+            "split": "holdout",
+            "group_id": 9
+          },
+          {
+            "case_id": "veiler_rukina-g10-p0",
+            "arm": "veiler_rukina",
+            "family": "veiler_rukina",
+            "hand": [
+              14558127,
+              97268402,
+              94145021,
+              13597785,
+              94145021
+            ],
+            "seed": 121150,
+            "split": "holdout",
+            "group_id": 10
+          },
+          {
+            "case_id": "veiler_rukina-g11-p0",
+            "arm": "veiler_rukina",
+            "family": "veiler_rukina",
+            "hand": [
+              13597785,
+              97268402,
+              14558127,
+              14558127,
+              14558127
+            ],
+            "seed": 121157,
+            "split": "holdout",
+            "group_id": 11
+          },
+          {
+            "case_id": "ash_spirit-g08-p0",
+            "arm": "ash_spirit",
+            "family": "ash_spirit",
+            "hand": [
+              97268402,
+              23434538,
+              97268402,
+              97268402,
+              13597785
+            ],
+            "seed": 121136,
+            "split": "holdout",
+            "group_id": 8
+          },
+          {
+            "case_id": "ash_spirit-g09-p0",
+            "arm": "ash_spirit",
+            "family": "ash_spirit",
+            "hand": [
+              97268402,
+              59438930,
+              97268402,
+              14558127,
+              13597785
+            ],
+            "seed": 121143,
+            "split": "holdout",
+            "group_id": 9
+          },
+          {
+            "case_id": "ash_spirit-g10-p0",
+            "arm": "ash_spirit",
+            "family": "ash_spirit",
+            "hand": [
+              14558127,
+              97268402,
+              94145021,
+              13597785,
+              94145021
+            ],
+            "seed": 121150,
+            "split": "holdout",
+            "group_id": 10
+          },
+          {
+            "case_id": "ash_spirit-g11-p0",
+            "arm": "ash_spirit",
+            "family": "ash_spirit",
+            "hand": [
+              13597785,
+              97268402,
+              14558127,
+              14558127,
+              14558127
+            ],
+            "seed": 121157,
+            "split": "holdout",
+            "group_id": 11
+          },
+          {
+            "case_id": "ash_parallelism-g08-p0",
+            "arm": "ash_parallelism",
+            "family": "ash_parallelism",
+            "hand": [
+              97268402,
+              23434538,
+              97268402,
+              97268402,
+              13597785
+            ],
+            "seed": 121136,
+            "split": "holdout",
+            "group_id": 8
+          },
+          {
+            "case_id": "ash_parallelism-g09-p0",
+            "arm": "ash_parallelism",
+            "family": "ash_parallelism",
+            "hand": [
+              97268402,
+              59438930,
+              97268402,
+              14558127,
+              13597785
+            ],
+            "seed": 121143,
+            "split": "holdout",
+            "group_id": 9
+          },
+          {
+            "case_id": "ash_parallelism-g10-p0",
+            "arm": "ash_parallelism",
+            "family": "ash_parallelism",
+            "hand": [
+              14558127,
+              97268402,
+              94145021,
+              13597785,
+              94145021
+            ],
+            "seed": 121150,
+            "split": "holdout",
+            "group_id": 10
+          },
+          {
+            "case_id": "ash_parallelism-g11-p0",
+            "arm": "ash_parallelism",
+            "family": "ash_parallelism",
+            "hand": [
+              13597785,
+              97268402,
+              14558127,
+              14558127,
+              14558127
+            ],
+            "seed": 121157,
+            "split": "holdout",
+            "group_id": 11
+          },
+          {
+            "case_id": "veiler_strelitzia-g08-p0",
+            "arm": "veiler_strelitzia",
+            "family": "veiler_strelitzia",
+            "hand": [
+              97268402,
+              23434538,
+              97268402,
+              97268402,
+              13597785
+            ],
+            "seed": 121136,
+            "split": "holdout",
+            "group_id": 8
+          },
+          {
+            "case_id": "veiler_strelitzia-g09-p0",
+            "arm": "veiler_strelitzia",
+            "family": "veiler_strelitzia",
+            "hand": [
+              97268402,
+              59438930,
+              97268402,
+              14558127,
+              13597785
+            ],
+            "seed": 121143,
+            "split": "holdout",
+            "group_id": 9
+          },
+          {
+            "case_id": "veiler_strelitzia-g10-p0",
+            "arm": "veiler_strelitzia",
+            "family": "veiler_strelitzia",
+            "hand": [
+              14558127,
+              97268402,
+              94145021,
+              13597785,
+              94145021
+            ],
+            "seed": 121150,
+            "split": "holdout",
+            "group_id": 10
+          },
+          {
+            "case_id": "veiler_strelitzia-g11-p0",
+            "arm": "veiler_strelitzia",
+            "family": "veiler_strelitzia",
+            "hand": [
+              13597785,
+              97268402,
+              14558127,
+              14558127,
+              14558127
+            ],
+            "seed": 121157,
+            "split": "holdout",
+            "group_id": 11
+          },
+          {
+            "case_id": "dina_review-g08-p0",
+            "arm": "pass",
+            "family": "dina_review",
+            "hand": [
+              97268402,
+              23434538,
+              94145021,
+              94145021,
+              59581480
+            ],
+            "seed": 121136,
+            "split": "holdout",
+            "group_id": 8,
+            "plan_override": [
+              {
+                "act": "SpSummon",
+                "code": 59581480
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 56651978,
+                "after_location": 4
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "dina_review-g09-p0",
+            "arm": "pass",
+            "family": "dina_review",
+            "hand": [
+              14558127,
+              23434538,
+              94145021,
+              94145021,
+              59581480
+            ],
+            "seed": 121143,
+            "split": "holdout",
+            "group_id": 9,
+            "plan_override": [
+              {
+                "act": "SpSummon",
+                "code": 59581480
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 56651978,
+                "after_location": 4
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "dina_review-g10-p0",
+            "arm": "pass",
+            "family": "dina_review",
+            "hand": [
+              97268402,
+              97268402,
+              59438930,
+              59581480,
+              23434538
+            ],
+            "seed": 121150,
+            "split": "holdout",
+            "group_id": 10,
+            "plan_override": [
+              {
+                "act": "SpSummon",
+                "code": 59581480
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 56651978,
+                "after_location": 4
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "dina_review-g11-p0",
+            "arm": "pass",
+            "family": "dina_review",
+            "hand": [
+              59581480,
+              97268402,
+              14558127,
+              59438930,
+              14558127
+            ],
+            "seed": 121157,
+            "split": "holdout",
+            "group_id": 11,
+            "plan_override": [
+              {
+                "act": "SpSummon",
+                "code": 59581480
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 56651978,
+                "after_location": 4
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "regina_review-g08-p0",
+            "arm": "pass",
+            "family": "regina_review",
+            "hand": [
+              64491754,
+              59438930,
+              23434538,
+              59438930,
+              56651978
+            ],
+            "seed": 121136,
+            "split": "holdout",
+            "group_id": 8,
+            "plan_override": [
+              {
+                "act": "Activate",
+                "code": 56651978
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "regina_review-g09-p0",
+            "arm": "pass",
+            "family": "regina_review",
+            "hand": [
+              64491754,
+              14558127,
+              97268402,
+              14558127,
+              56651978
+            ],
+            "seed": 121143,
+            "split": "holdout",
+            "group_id": 9,
+            "plan_override": [
+              {
+                "act": "Activate",
+                "code": 56651978
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "regina_review-g10-p0",
+            "arm": "pass",
+            "family": "regina_review",
+            "hand": [
+              97268402,
+              64491754,
+              59438930,
+              56651978,
+              59438930
+            ],
+            "seed": 121150,
+            "split": "holdout",
+            "group_id": 10,
+            "plan_override": [
+              {
+                "act": "Activate",
+                "code": 56651978
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          },
+          {
+            "case_id": "regina_review-g11-p0",
+            "arm": "pass",
+            "family": "regina_review",
+            "hand": [
+              56651978,
+              64491754,
+              97268402,
+              94145021,
+              94145021
+            ],
+            "seed": 121157,
+            "split": "holdout",
+            "group_id": 11,
+            "plan_override": [
+              {
+                "act": "Activate",
+                "code": 56651978
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 59581480
+              },
+              {
+                "act": "None",
+                "code": 64491754,
+                "after_location": 8
+              },
+              {
+                "act": "Activate",
+                "code": 64491754
+              },
+              {
+                "act": "None",
+                "code": 59581480,
+                "after_location": 16
+              },
+              {
+                "act": "None",
+                "code": 13597785,
+                "after_location": 4
+              },
+              {
+                "act": "Activate",
+                "code": 13597785
+              },
+              {
+                "act": "None",
+                "code": 85976588,
+                "after_location": 2
+              }
+            ]
+          }
+        ]
+      },
+      "split_rule": "Complete initial hand multisets disjoint globally; all arms and permutations grouped.",
+      "train": {
+        "trajectories": 96,
+        "decisions": 3448,
+        "max_length": 70,
+        "sha256": "bd3239ae4a3b6d62d4dbb0a85a86c2823d15956df857ba4d8bf8eb29e2574305"
+      },
+      "validation": {
+        "trajectories": 16,
+        "decisions": 595,
+        "max_length": 70,
+        "sha256": "fe94caf8c7385ff8be35a532c217546de40c1d645214c88a99ba78707e4888a1"
+      },
+      "holdout": {
+        "trajectories": 32,
+        "decisions": 1090,
+        "max_length": 70,
+        "sha256": "f19264094fa58a2c04f150160610c06e581c5d2f1ce8820eb20dc96080649af2"
+      }
+    }
+  },
+  "lua_errors": 0,
+  "private_information_checks_passed": true
+}

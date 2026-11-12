@@ -1,0 +1,469 @@
+{
+  "created_jst": "2026-11-10T11:51:31+09:00",
+  "split": "train",
+  "npz_sha256": "01d2ce9abf038694168ec4d604037e803e7d8eac1f0f1229d4eb8d6eaf90f2b8",
+  "demos": [
+    {
+      "name": "DM-A",
+      "source_id": 1,
+      "case_id": "cue-reco-jj-zaren-g00-p0",
+      "hand": [
+        16387555,
+        97268402,
+        97268402,
+        97268402,
+        89392810
+      ],
+      "seed": 151080,
+      "decisions": 77,
+      "own_turn_context_steps": 39,
+      "loss_steps": 9,
+      "context_steps": 68,
+      "labelled": [
+        {
+          "position": 42,
+          "step": 63,
+          "turn": 2,
+          "message": "select_chain",
+          "kind": "b2b",
+          "demonstrated": {
+            "index": 3,
+            "act": "Activate",
+            "code": 65961304,
+            "name": "キラーチューン Ｂ２Ｂ",
+            "effect": 10010
+          },
+          "acceptable": [
+            {
+              "index": 3,
+              "code": 65961304,
+              "name": "キラーチューン Ｂ２Ｂ"
+            }
+          ],
+          "reason": "demonstrated action only"
+        },
+        {
+          "position": 43,
+          "step": 64,
+          "turn": 2,
+          "message": "select_card",
+          "kind": "b2b-pick",
+          "demonstrated": {
+            "index": 0,
+            "act": "None",
+            "code": 16387555,
+            "name": "キラーチューン・キュー",
+            "effect": -1
+          },
+          "acceptable": [
+            {
+              "index": 0,
+              "code": 16387555,
+              "name": "キラーチューン・キュー"
+            },
+            {
+              "index": 1,
+              "code": 4891376,
+              "name": "鎖縛竜ザレン"
+            }
+          ],
+          "reason": "B2B (3) target: Cue and Zaren both verified from this identical prompt (DM-A / DM-B share observations and history)"
+        },
+        {
+          "position": 45,
+          "step": 67,
+          "turn": 2,
+          "message": "select_option",
+          "kind": "b2b-option-special-summon",
+          "demonstrated": {
+            "index": 1,
+            "act": "Activate",
+            "code": 0,
+            "name": "",
+            "effect": 1152
+          },
+          "acceptable": [
+            {
+              "index": 1,
+              "code": 0,
+              "name": ""
+            }
+          ],
+          "reason": "demonstrated action only"
+        },
+        {
+          "position": 48,
+          "step": 70,
+          "turn": 2,
+          "message": "select_yesno",
+          "kind": "b2b-synchro-yes",
+          "demonstrated": {
+            "index": 0,
+            "act": "Activate",
+            "code": 65961304,
+            "name": "キラーチューン Ｂ２Ｂ",
+            "effect": 10011
+          },
+          "acceptable": [
+            {
+              "index": 0,
+              "code": 65961304,
+              "name": "キラーチューン Ｂ２Ｂ"
+            }
+          ],
+          "reason": "demonstrated action only"
+        },
+        {
+          "position": 49,
+          "step": 71,
+          "turn": 2,
+          "message": "select_unselect_card",
+          "kind": "b2b-synchro-pick",
+          "demonstrated": {
+            "index": 0,
+            "act": "None",
+            "code": 97268402,
+            "name": "エフェクト・ヴェーラー",
+            "effect": -1
+          },
+          "acceptable": [
+            {
+              "index": 0,
+              "code": 97268402,
+              "name": "エフェクト・ヴェーラー"
+            }
+          ],
+          "reason": "demonstrated action only"
+        },
+        {
+          "position": 52,
+          "step": 75,
+          "turn": 2,
+          "message": "select_chain",
+          "kind": "track-search",
+          "demonstrated": {
+            "index": 1,
+            "act": "Activate",
+            "code": 42781164,
+            "name": "キラーチューン・トラックメイカー",
+            "effect": 10010
+          },
+          "acceptable": [
+            {
+              "index": 1,
+              "code": 42781164,
+              "name": "キラーチューン・トラックメイカー"
+            }
+          ],
+          "reason": "demonstrated action only"
+        },
+        {
+          "position": 55,
+          "step": 79,
+          "turn": 2,
+          "message": "select_card",
+          "kind": "track-search-pick",
+          "demonstrated": {
+            "index": 1,
+            "act": "None",
+            "code": 78058681,
+            "name": "キラーチューン・シンクロ",
+            "effect": -1
+          },
+          "acceptable": [
+            {
+              "index": 1,
+              "code": 78058681,
+              "name": "キラーチューン・シンクロ"
+            }
+          ],
+          "reason": "demonstrated action only"
+        },
+        {
+          "position": 67,
+          "step": 102,
+          "turn": 3,
+          "message": "select_battlecmd",
+          "kind": "attack-monster",
+          "demonstrated": {
+            "index": 3,
+            "act": "Attack",
+            "code": 65961304,
+            "name": "キラーチューン Ｂ２Ｂ",
+            "effect": -1
+          },
+          "acceptable": [
+            {
+              "index": 3,
+              "code": 65961304,
+              "name": "キラーチューン Ｂ２Ｂ"
+            }
+          ],
+          "reason": "demonstrated action only"
+        },
+        {
+          "position": 70,
+          "step": 107,
+          "turn": 3,
+          "message": "select_battlecmd",
+          "kind": "attack-direct",
+          "demonstrated": {
+            "index": 3,
+            "act": "DirectAttack",
+            "code": 65961304,
+            "name": "キラーチューン Ｂ２Ｂ",
+            "effect": -1
+          },
+          "acceptable": [
+            {
+              "index": 3,
+              "code": 65961304,
+              "name": "キラーチューン Ｂ２Ｂ"
+            }
+          ],
+          "reason": "demonstrated action only"
+        }
+      ],
+      "record": {
+        "path": "/home/hatk8/projects/yugioh-ai/experiments/b2b-demo-20261109/conditions/DM-A.json",
+        "engine_run": 1,
+        "sha256": "65c6fadef46f3107ae7209be6011fb2b20cea43397bedff3d22d3c2ed83694f6"
+      },
+      "replay": {
+        "path": "/home/hatk8/projects/yugioh-ai/experiments/b2b-demo-20261109/replays/DM-A.json",
+        "engine_run": 4,
+        "sha256": "fcc1523565c95f124c0433bfadac7b9e9b5ac352094e48b6668d9d4042a5d6d4",
+        "observations_match": true
+      },
+      "observations": {
+        "path": "/home/hatk8/projects/yugioh-ai/experiments/b2b-demo-20261109/observations/DM-A.npz",
+        "sha256": "a12e44d35583cbf5a8c0cd06f567b4670c66cc8df99a8cce0771da3014ae27b9"
+      },
+      "game_over": null
+    },
+    {
+      "name": "DM-B",
+      "source_id": 2,
+      "case_id": "cue-reco-jj-zaren-g00-p0",
+      "hand": [
+        16387555,
+        97268402,
+        97268402,
+        97268402,
+        89392810
+      ],
+      "seed": 151080,
+      "decisions": 71,
+      "own_turn_context_steps": 39,
+      "loss_steps": 7,
+      "context_steps": 64,
+      "labelled": [
+        {
+          "position": 42,
+          "step": 63,
+          "turn": 2,
+          "message": "select_chain",
+          "kind": "b2b",
+          "demonstrated": {
+            "index": 3,
+            "act": "Activate",
+            "code": 65961304,
+            "name": "キラーチューン Ｂ２Ｂ",
+            "effect": 10010
+          },
+          "acceptable": [
+            {
+              "index": 3,
+              "code": 65961304,
+              "name": "キラーチューン Ｂ２Ｂ"
+            }
+          ],
+          "reason": "demonstrated action only"
+        },
+        {
+          "position": 43,
+          "step": 64,
+          "turn": 2,
+          "message": "select_card",
+          "kind": "b2b-pick",
+          "demonstrated": {
+            "index": 1,
+            "act": "None",
+            "code": 4891376,
+            "name": "鎖縛竜ザレン",
+            "effect": -1
+          },
+          "acceptable": [
+            {
+              "index": 0,
+              "code": 16387555,
+              "name": "キラーチューン・キュー"
+            },
+            {
+              "index": 1,
+              "code": 4891376,
+              "name": "鎖縛竜ザレン"
+            }
+          ],
+          "reason": "B2B (3) target: Cue and Zaren both verified from this identical prompt (DM-A / DM-B share observations and history)"
+        },
+        {
+          "position": 45,
+          "step": 67,
+          "turn": 2,
+          "message": "select_option",
+          "kind": "b2b-option-special-summon",
+          "demonstrated": {
+            "index": 1,
+            "act": "Activate",
+            "code": 0,
+            "name": "",
+            "effect": 1152
+          },
+          "acceptable": [
+            {
+              "index": 1,
+              "code": 0,
+              "name": ""
+            }
+          ],
+          "reason": "demonstrated action only"
+        },
+        {
+          "position": 59,
+          "step": 93,
+          "turn": 3,
+          "message": "select_battlecmd",
+          "kind": "attack-monster",
+          "demonstrated": {
+            "index": 2,
+            "act": "Attack",
+            "code": 65961304,
+            "name": "キラーチューン Ｂ２Ｂ",
+            "effect": -1
+          },
+          "acceptable": [
+            {
+              "index": 2,
+              "code": 65961304,
+              "name": "キラーチューン Ｂ２Ｂ"
+            }
+          ],
+          "reason": "demonstrated action only"
+        },
+        {
+          "position": 62,
+          "step": 98,
+          "turn": 3,
+          "message": "select_battlecmd",
+          "kind": "attack-direct",
+          "demonstrated": {
+            "index": 2,
+            "act": "DirectAttack",
+            "code": 65961304,
+            "name": "キラーチューン Ｂ２Ｂ",
+            "effect": -1
+          },
+          "acceptable": [
+            {
+              "index": 2,
+              "code": 65961304,
+              "name": "キラーチューン Ｂ２Ｂ"
+            }
+          ],
+          "reason": "demonstrated action only"
+        },
+        {
+          "position": 65,
+          "step": 103,
+          "turn": 3,
+          "message": "select_battlecmd",
+          "kind": "attack-direct",
+          "demonstrated": {
+            "index": 1,
+            "act": "DirectAttack",
+            "code": 4891376,
+            "name": "鎖縛竜ザレン",
+            "effect": -1
+          },
+          "acceptable": [
+            {
+              "index": 1,
+              "code": 4891376,
+              "name": "鎖縛竜ザレン"
+            }
+          ],
+          "reason": "demonstrated action only"
+        },
+        {
+          "position": 68,
+          "step": 108,
+          "turn": 3,
+          "message": "select_battlecmd",
+          "kind": "attack-direct",
+          "demonstrated": {
+            "index": 1,
+            "act": "DirectAttack",
+            "code": 4891376,
+            "name": "鎖縛竜ザレン",
+            "effect": -1
+          },
+          "acceptable": [
+            {
+              "index": 1,
+              "code": 4891376,
+              "name": "鎖縛竜ザレン"
+            }
+          ],
+          "reason": "demonstrated action only"
+        }
+      ],
+      "record": {
+        "path": "/home/hatk8/projects/yugioh-ai/experiments/b2b-demo-20261109/conditions/DM-B.json",
+        "engine_run": 3,
+        "sha256": "d972b254e3e1d13453eb092fc032e8dea0c5ae8dd768c8e2b10bd58502439961"
+      },
+      "replay": {
+        "path": "/home/hatk8/projects/yugioh-ai/experiments/b2b-demo-20261109/replays/DM-B.json",
+        "engine_run": 5,
+        "sha256": "acea4a0a6fcaa3c1dc7906ebf94d78b83038ad708103760c9ff824692aef7da2",
+        "observations_match": true
+      },
+      "observations": {
+        "path": "/home/hatk8/projects/yugioh-ai/experiments/b2b-demo-20261109/observations/DM-B.npz",
+        "sha256": "88fd6e2873e06f675cd9f36b422c232b6d4a8f88eba57af34aee9df758205c69"
+      },
+      "game_over": {
+        "step": 112,
+        "terminated": true,
+        "truncated": false,
+        "reward": [
+          -8.0
+        ],
+        "win_reason": [
+          1
+        ],
+        "to_play": [
+          1
+        ],
+        "lp_before_final_step": [
+          8000,
+          1300
+        ],
+        "note": "duel ended on this step; the engine state is not read afterwards"
+      }
+    }
+  ],
+  "excluded": [
+    "experiments/b2b-demo-20261109 engine run 2 (crashed; not a demonstration)"
+  ],
+  "masks": "weights = every recorded player-0 decision (history unrolled through the RNN); loss_weights = labelled B2B/attack decisions of turns 2-3 only",
+  "not_labelled": "own turn 1 (the same train hand has the P1 route in the old data), passes, phase changes (enter/leave battle), placement/position prompts",
+  "acceptable_sets": "demonstrated action only, except the shared B2B (3) target prompt {Cue, Zaren}; identical card copies were NOT added",
+  "trackmaker_search": "Kewl Tune Synchro only (verified); other search targets are not added",
+  "level3_tuner_note": "the demonstrations use the Ash Blossom version of the own-turn route; the Reco version is not verified",
+  "validation_or_holdout_used": false,
+  "legacy_gate_flag_used": false,
+  "old_train_npz_modified": false,
+  "builder_sha256": "6281499bcab87e44ed7239e0a60a05bca4ad2abe79c408814f595754d8daedf2"
+}

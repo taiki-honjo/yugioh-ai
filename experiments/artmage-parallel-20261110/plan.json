@@ -1,0 +1,31 @@
+{
+  "status": "prepared_not_executed",
+  "date": "2026-11-10",
+  "stage": "baseline and two new opening witnesses",
+  "model_regression_episodes": 4,
+  "new_opening_conditions": 2,
+  "witness_record_and_replay": 4,
+  "total_engine_run_cap": 8,
+  "training_decisions": 0,
+  "battles": 0,
+  "data_rules": [
+    "Keep existing train/validation/holdout isolation by complete hand multiset.",
+    "New witness hands must not overlap existing validation or holdout.",
+    "Do not treat former Artmage holdout as untouched final test.",
+    "Record legal alternatives, response capabilities and resources; do not impose one exact endboard on all openings."
+  ],
+  "preserve": [
+    "Elfnotes production config/root/STOP/pending",
+    "stopped cycle-5 candidate",
+    "B2B seed replication plan and jobs",
+    "global deck registry",
+    "existing models/decks/datasets/records/ledgers"
+  ],
+  "implementation_route": "Claude implements isolated Artmage-specific commands. No supervisor or Windows autostart is configured by this preparation.",
+  "priority": "Artmage first; B2B deferred by the user",
+  "proposal_origin": "Initial 8-run stage proposed by Codex; not a user-specified budget and not yet executed.",
+  "handoff": {
+    "path": "/home/hatk8/projects/yugioh-ai/experiments/artmage-parallel-20261110/CONTEXT.md",
+    "sha256": "acd92ad31821be662fbb501a9ac013791a42acc07972015f198892e9c99bcf40"
+  }
+}

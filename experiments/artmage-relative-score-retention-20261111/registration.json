@@ -1,0 +1,182 @@
+{
+ "status": "registered_before_prepare_training_and_engine_runs",
+ "registered_jst": "2026-11-11T18:26:11+09:00",
+ "spec": {
+  "copy": "spec/artmage-relative-score-retention-plan-2026-11-11.md",
+  "sha256": "20200c650563e899605a5771f4905e617c1a2af3646cb8bc4b4929fd5c729a0a"
+ },
+ "frozen": {
+  "base.flax_model": {
+   "sha256": "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+   "byte_identical_to_source": true
+  },
+  "chain-head.flax_model": {
+   "sha256": "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2",
+   "byte_identical_to_source": true
+  }
+ },
+ "pins": {
+  "base": "12500c7724b2d723983a2963a960d75172a6df51fb55ea4f3acf102eeb34132e",
+  "head": "0bc7534cab102cd87586e5d22bd4ad0cd3b55d52d08e284146976506ae6193fc",
+  "deck_copy": "a93c4d30d0945f58f741f1e135fdcbc0b0c438aff575cf6d0d02ce9a82c381d6",
+  "engine_deck": "a93c4d30d0945f58f741f1e135fdcbc0b0c438aff575cf6d0d02ce9a82c381d6",
+  "vocabulary": "aeb5be89d4a5591ccc5cce6af96def74ef47463a55265f75c11b92029e772e7b",
+  "meta_manifest": "ace4f6b8408011a55e9b61d3c4917580942d86960bb3f087afe75ce2774c824a",
+  "meta_latest_run": "32770bc4534c729e66f7addbc76770b78798ee4e618b40fd9baa45e83392e544",
+  "article_latest_run": "39db5d660d4bde37dbd9b6fc0c662781da48b71b0e6c50d8357a7a42f73b0159",
+  "model_code": "f4c3903e3a4841b97f6ffb8840bb4cfa5513b5abfead9ff41fa7c785ceba6cce",
+  "witness_code": "0e4f3a0e92c86aba7a95f96c1e5f93f6a0293eaea7f3ab8a63dee772455ae07a",
+  "adapter": "4fe74c83a460ee3565c3ff276ce2d080b233a6152439ec92147ba90d60d46f90",
+  "adapter_cards": "1baa04349bb31833ff01b05cb365ee0f9416de827ac4fbf52b835011a35f1fde",
+  "native": "19a60f38a3d39b61a2ee082168d5a788a1022b2eb569633816596c8b3de21294",
+  "runtime_json": "ebdfc37ed9c7ebcae73b81281876dd6f22bd8d9afcbdfe8f78905dcc9c220d14"
+ },
+ "unchanged_from_coverage": {
+  "sa_model.py": true,
+  "artmage_entry.py": true,
+  "artmage_pins.py": true,
+  "flc_runs.py": true,
+  "rl_data.py": true
+ },
+ "comparison_candidate": {
+  "folder": "/home/hatk8/projects/yugioh-ai/experiments/artmage-response-coverage-20261111/train/candidate",
+  "adapter_sha256": "00977941aab573d624a7e739dfbf3e9b2ba3502e9b22c2e0fbe8537072528b69"
+ },
+ "policy": "unchanged structure / inputs / gate / position adapter / 3-file entry (sa_model.py identical); new adapter from the same seed and zero output",
+ "screens": "the coverage study's 4 screens (S1 / S2 CE, M / P KL to the frozen base+head); the cache is recomputed the same way and must equal the coverage cache",
+ "objective": {
+  "formula": "loss = mean(CE_S1, CE_S2) + 1.0 * mean(KL_M, KL_P) + 1.0 * relative_retention",
+  "relative_retention": "mean over screens of mean over protected options of (delta(option) - delta(pass))^2; target 0 (= keeping each option-vs-pass logit difference of the frozen model)",
+  "protected": "S1: legal minus pass minus every option with the taught meaning (ディアクトロス②); S2: legal minus pass minus ファインメルト③; M / P: legal minus pass; pass = the snapshot Cancel checked against the NPZ legal row; illegal / padding never counted; no special rule for G (it is one of the untaught legal options where legal)",
+  "not_goals": [
+   "making the raw pass delta 0",
+   "shrinking all |delta|"
+  ]
+ },
+ "training": {
+  "device": "CPU",
+  "updates": 512,
+  "optimizer": "fresh Adam 1e-3, eps 1e-5",
+  "clip": "global norm 1.0 on the adapter",
+  "seed": 11111501,
+  "coefficients": {
+   "kl": 1.0,
+   "relative": 1.0
+  },
+  "no": [
+   "coefficient search",
+   "intermediate selection",
+   "extension",
+   "other seeds",
+   "more candidates"
+  ],
+  "logged": "CE, KL, relative term, each pre-clip gradient norm, combined norm, clip flag, update norm; before / after every legal option: frozen logit, delta, delta minus delta(pass), new margin, probability; protected max |relative delta|"
+ },
+ "target_threshold": "training screens: the maximum |relative delta| over protected options <= 1.0 point (an experiment guide, not an acceptance criterion; a smaller original margin can still flip)",
+ "existing_conditions": {
+  "flc8": {
+   "records": {
+    "BV1-1cost-VARNISH-OM": "/home/hatk8/projects/yugioh-ai/experiments/artmage-response-coverage-20261111/runs/B-BV1-1cost-VARNISH-OM",
+    "BV1-1cost-VARNISH-OI": "/home/hatk8/projects/yugioh-ai/experiments/artmage-response-coverage-20261111/runs/B-BV1-1cost-VARNISH-OI",
+    "BV1-1cost-ASSAULT-OM": "/home/hatk8/projects/yugioh-ai/experiments/artmage-response-coverage-20261111/runs/B-BV1-1cost-ASSAULT-OM",
+    "BV1-1cost-ASSAULT-OI": "/home/hatk8/projects/yugioh-ai/experiments/artmage-response-coverage-20261111/runs/B-BV1-1cost-ASSAULT-OI",
+    "BV1-2cost-VARNISH-OM": "/home/hatk8/projects/yugioh-ai/experiments/artmage-response-coverage-20261111/runs/B-BV1-2cost-VARNISH-OM",
+    "BV1-2cost-VARNISH-OI": "/home/hatk8/projects/yugioh-ai/experiments/artmage-response-coverage-20261111/runs/B-BV1-2cost-VARNISH-OI",
+    "BV1-2cost-ASSAULT-OM": "/home/hatk8/projects/yugioh-ai/experiments/artmage-response-coverage-20261111/runs/B-BV1-2cost-ASSAULT-OM",
+    "BV1-2cost-ASSAULT-OI": "/home/hatk8/projects/yugioh-ai/experiments/artmage-response-coverage-20261111/runs/B-BV1-2cost-ASSAULT-OI"
+   }
+  },
+  "probe4": {
+   "records": {
+    "H1-ASH": "/home/hatk8/projects/yugioh-ai/experiments/artmage-unseen-response-probe-20261111/runs/H1-ASH-CAND",
+    "H1-GAMMA": "/home/hatk8/projects/yugioh-ai/experiments/artmage-unseen-response-probe-20261111/runs/H1-GAMMA-CAND",
+    "H2-ASH": "/home/hatk8/projects/yugioh-ai/experiments/artmage-unseen-response-probe-20261111/runs/H2-ASH-CAND",
+    "H2-GAMMA": "/home/hatk8/projects/yugioh-ai/experiments/artmage-unseen-response-probe-20261111/runs/H2-GAMMA-CAND"
+   },
+   "base_records": {
+    "H1-ASH": "/home/hatk8/projects/yugioh-ai/experiments/artmage-unseen-response-probe-20261111/runs/H1-ASH-BASE",
+    "H1-GAMMA": "/home/hatk8/projects/yugioh-ai/experiments/artmage-unseen-response-probe-20261111/runs/H1-GAMMA-BASE",
+    "H2-ASH": "/home/hatk8/projects/yugioh-ai/experiments/artmage-unseen-response-probe-20261111/runs/H2-ASH-BASE",
+    "H2-GAMMA": "/home/hatk8/projects/yugioh-ai/experiments/artmage-unseen-response-probe-20261111/runs/H2-GAMMA-BASE"
+   }
+  },
+  "reuse_rule": "the new candidate is fed every own observation of the saved NPZ from the start (RNN reset, each once, position adapter on); reused only if EVERY own action index equals the recorded one, the record replayed exactly and its hashes are pinned; one differing action -> record + replay with the engine; reused results are referenced, not reported as new runs nor as independent samples",
+  "C": "the 13 retention cases are reused (no gated screen; frozen inference and gate unchanged)",
+  "A": "referenced from the corresponding reused / new B records (S1 / S2) after checking the pre-window inputs and 0 earlier activations"
+ },
+ "new_condition": {
+  "name": "H1-USAGI",
+  "policies": [
+   "BASE (frozen base + head)",
+   "CAND (this study's 3-file candidate)"
+  ],
+  "runs": "record + replay each = 4",
+  "opponent": "as in the unseen-response probe H1, but at the target the opponent activates 幽鬼うさぎ 59438930 (already in its fixed hand); other optional effects pass; same forced-choice rules; end at the first decision after the target chain resolved",
+  "usagi_script": {
+   "file": "c59438930.lua",
+   "sha256": "b254cacbb6e6793269e29f59322bb402be0dbaccef3cd93991777b926dfe48c7",
+   "reading": "condition: the activating card is on the field and it is a monster effect (or a face-up S/T effect); cost: send itself to the GY; operation: DESTROY the activating card (no negation)"
+  },
+  "not_established": "if the effect is illegal or the target is not reached, recorded as such; no other hand is searched",
+  "coverage_column": "the coverage candidate only as an offline score computation on the BASE saved inputs, never as a played result"
+ },
+ "engine": {
+  "cap": 30,
+  "plan": "non-matching existing conditions record + replay (at most 24) + H1-USAGI 4 = at most 28; 2 spare for a harness fix only",
+  "failures_count": true,
+  "previous_unused_not_carried": true
+ },
+ "flc_to_run": [],
+ "probe_to_run": [],
+ "items": [
+  "1. S1 / S2 improvements, the 2-cost 改変 O-M stop, M / P kept",
+  "2. training screens: protected max |relative delta| <= 1.0",
+  "3. ASH / GAMMA 4 screens and the new USAGI screen: G-vs-pass relative delta (also whether within 1.0); not fed back into training",
+  "4. untrained O-I responses and their results (e.g. 無限泡影 negated by ディアクトロス②) with resources; using an effect is not called an improvement"
+ ],
+ "items_note": "a same choice under a 33-35 margin is not counted as success; the relative-delta change is the main check",
+ "not_done": [
+  "PPO",
+  "normal battles",
+  "adoption",
+  "acceptance changes",
+  "input / structure / gate changes",
+  "B2B",
+  "production / registry changes"
+ ],
+ "limits": {
+  "memory_gib": 5,
+  "swap": 0,
+  "cpu_percent": 300,
+  "job_seconds": 1800,
+  "nice": 10,
+  "jobs": 1
+ },
+ "code": {
+  "artmage_entry.py": "ca47f56d29431b48d60337de6dcc6ce23d524fba31cbbbdce31e6d7399b78e0f",
+  "artmage_pins.py": "10c4e053d05f44498cff77c45301a3fb5222c7598a658decc52f4539fd96bde8",
+  "artmage_teacher.py": "a126284eff7a2d7ef3c602ade0aa5f196f7ddea77333213c27a197ade21b78f3",
+  "batch_data.py": "3f21a0f495111f82678e93c5434d9c2dd65b2467c4f7c3341a0eddab66b3aad7",
+  "batch_model.py": "7ee574aceb809b4b44cdeb0de8eae77b66e70f065463ca65bc310e80aa52e8d3",
+  "batch_plans.py": "68d5945d80d663ba7f85b56ffbd6490a00998aaa1d5cca14663e18e6956f1123",
+  "flc_runs.py": "8af7cbae6ce9d6d8322b043326f6b78d3f819ef8758ceb0e11597488f33e840f",
+  "hb_data.py": "502de35cabab73e9448e5d20e61aa53ce594aa8eb08ad2beebe0740618ebc893",
+  "hb_plans.py": "8fc90ad7f704a2f141669d1075827cf3513f015989a95d472f353aaae6ab40cd",
+  "hb_runs.py": "88e694125079d2a9687490f1120186b536939b8750f731266efae56b167a0c14",
+  "pilot_data.py": "dc749fb5ea77419741d0e7469edd7f423db241eae11ccafe399f76a04c3417e8",
+  "pilot_model.py": "8bec14fb9a1e6c02cbfa715c21146aafeb45b00f060d4cd7afa57b7c84e0ad56",
+  "rl_data.py": "9259488786bd1c3fa250ab474e2e3813f3e19d6012ca9b9afeb355014068374c",
+  "rs_check.py": "c0f5bd1266b8c2ad817b49b87d3f1529c3c6ba24ba7aa311ebd524b43dca3114",
+  "rs_flc_runs.py": "6fdfe7385a165339c0e3930ffd4736a82e9597f0dd442537a7f8d6ae615a3ba7",
+  "rs_launch.py": "4183f3e2579baccddc39ec7a8ddffced871b10468014a7990c4223ac0c786af9",
+  "rs_probe_runs.py": "b33d7d170962824bc90012ef5f198f6a0ea9c109292e9ec2daa15eeefa92939f",
+  "rs_register.py": "7a0054adbdc784fcfc39486689714b8534ceba32323470b6ac25f820025686fc",
+  "rs_train.py": "c9841c0922567071b84a76399b0908f9ca30190e8e6de6bd4b7cfc812e935752",
+  "sa_model.py": "fe9856bd168f33257d09ec41fe38253bf8da2e42a1174a9f27d29786dd1de36c"
+ },
+ "code_changes": {
+  "code-changes-rs_train.diff": "b5f9d885890e11cdc470fa2b168589f1815fc9878a0bd47ee5ed2ea6f8db99af",
+  "code-changes-rs_probe_runs.py.diff": "a092a455b4cfaa5ab432c612bcdb0e038f4fabd80b08e0e289be198bc56f5032",
+  "code-changes-rs_flc_runs.py.diff": "d77bef6427e64b3e2df6612bfe9f3b536390032f2e39a573e4d70f4890556646"
+ }
+}

@@ -1,0 +1,24 @@
+{"event": "start", "run": 1, "purpose": "b-record BV1-1cost-ASSAULT-OM", "case_id": "BV1-1cost-ASSAULT-OM", "time_jst": "2026-11-11T18:43:17+09:00"}
+{"event": "finish", "run": 1, "status": "ok", "time_jst": "2026-11-11T18:43:22+09:00"}
+{"event": "start", "run": 2, "purpose": "b-record BV1-1cost-ASSAULT-OI", "case_id": "BV1-1cost-ASSAULT-OI", "time_jst": "2026-11-11T18:43:22+09:00"}
+{"event": "finish", "run": 2, "status": "ok", "time_jst": "2026-11-11T18:43:25+09:00"}
+{"event": "start", "run": 3, "purpose": "b-record BV1-2cost-ASSAULT-OM", "case_id": "BV1-2cost-ASSAULT-OM", "time_jst": "2026-11-11T18:43:25+09:00"}
+{"event": "finish", "run": 3, "status": "ok", "time_jst": "2026-11-11T18:43:30+09:00"}
+{"event": "start", "run": 4, "purpose": "b-record BV1-2cost-ASSAULT-OI", "case_id": "BV1-2cost-ASSAULT-OI", "time_jst": "2026-11-11T18:43:30+09:00"}
+{"event": "finish", "run": 4, "status": "ok", "time_jst": "2026-11-11T18:43:34+09:00"}
+{"event": "start", "run": 5, "purpose": "b-replay BV1-1cost-ASSAULT-OM", "case_id": "BV1-1cost-ASSAULT-OM", "time_jst": "2026-11-11T18:43:36+09:00"}
+{"event": "finish", "run": 5, "status": "ok", "time_jst": "2026-11-11T18:43:36+09:00"}
+{"event": "start", "run": 6, "purpose": "b-replay BV1-1cost-ASSAULT-OI", "case_id": "BV1-1cost-ASSAULT-OI", "time_jst": "2026-11-11T18:43:36+09:00"}
+{"event": "finish", "run": 6, "status": "ok", "time_jst": "2026-11-11T18:43:37+09:00"}
+{"event": "start", "run": 7, "purpose": "b-replay BV1-2cost-ASSAULT-OM", "case_id": "BV1-2cost-ASSAULT-OM", "time_jst": "2026-11-11T18:43:37+09:00"}
+{"event": "finish", "run": 7, "status": "ok", "time_jst": "2026-11-11T18:43:37+09:00"}
+{"event": "start", "run": 8, "purpose": "b-replay BV1-2cost-ASSAULT-OI", "case_id": "BV1-2cost-ASSAULT-OI", "time_jst": "2026-11-11T18:43:37+09:00"}
+{"event": "finish", "run": 8, "status": "ok", "time_jst": "2026-11-11T18:43:37+09:00"}
+{"event": "start", "run": 9, "purpose": "record H1-USAGI-BASE", "case_id": "H1-USAGI-BASE", "time_jst": "2026-11-11T18:43:39+09:00"}
+{"event": "finish", "run": 9, "status": "ok", "time_jst": "2026-11-11T18:43:42+09:00"}
+{"event": "start", "run": 10, "purpose": "record H1-USAGI-CAND", "case_id": "H1-USAGI-CAND", "time_jst": "2026-11-11T18:43:42+09:00"}
+{"event": "finish", "run": 10, "status": "ok", "time_jst": "2026-11-11T18:43:45+09:00"}
+{"event": "start", "run": 11, "purpose": "replay H1-USAGI-BASE", "case_id": "H1-USAGI-BASE", "time_jst": "2026-11-11T18:43:49+09:00"}
+{"event": "finish", "run": 11, "status": "ok", "time_jst": "2026-11-11T18:43:50+09:00"}
+{"event": "start", "run": 12, "purpose": "replay H1-USAGI-CAND", "case_id": "H1-USAGI-CAND", "time_jst": "2026-11-11T18:43:50+09:00"}
+{"event": "finish", "run": 12, "status": "ok", "time_jst": "2026-11-11T18:43:50+09:00"}

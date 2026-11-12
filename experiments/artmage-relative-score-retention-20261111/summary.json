@@ -1,0 +1,2457 @@
+{
+ "registration_sha256": "b2aca25cd71dc110a654caaeb24c5ce124e45c9c0d8ed575c421bc6f410d96c0",
+ "amendment_1_sha256": "6bde184fda51e552d9be8b4e094dd3c781e822e1c9a5894e4e7755577b8094f6",
+ "amendment_2_sha256": "729f5fab6caae691edd744d9db7e771612a57df0132428d9b85372b395101b54",
+ "engine": {
+  "used": 12,
+  "cap": 30,
+  "statuses": {
+   "ok": 12
+  }
+ },
+ "training": {
+  "screens": {
+   "0": {
+    "S1": {
+     "kind": "ce",
+     "argmax": 4,
+     "target_index": 1,
+     "argmax_is_target": false,
+     "p_target": 1.6709731766928796e-20,
+     "p_frozen": {
+      "0": 7.169927878836338e-20,
+      "1": 1.6709731766928796e-20,
+      "2": 1.4456169594723178e-07,
+      "3": 3.904624138977136e-19,
+      "4": 0.9999998807907104
+     },
+     "p_now": {
+      "0": 7.169927878836338e-20,
+      "1": 1.6709731766928796e-20,
+      "2": 1.4456169594723178e-07,
+      "3": 3.904624138977136e-19,
+      "4": 0.9999999403953552
+     },
+     "delta": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "pass_index": 4,
+     "relative_delta": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "old_margin_vs_pass": {
+      "0": -44.08180618286133,
+      "1": -45.53829574584961,
+      "2": -15.74955940246582,
+      "3": -42.38695526123047,
+      "4": 0.0
+     },
+     "max_abs_rel_protected": 0.0,
+     "ce": 45.53829574584961,
+     "kl": null
+    },
+    "S2": {
+     "kind": "ce",
+     "argmax": 3,
+     "target_index": 3,
+     "argmax_is_target": true,
+     "p_target": 0.4139344394207001,
+     "p_frozen": {
+      "0": 2.1313987872417783e-06,
+      "1": 0.2431221604347229,
+      "2": 4.214315563189075e-09,
+      "3": 0.4139344394207001,
+      "4": 5.176238777881981e-12,
+      "5": 0.3429412543773651
+     },
+     "p_now": {
+      "0": 2.1313967408786993e-06,
+      "1": 0.2431221604347229,
+      "2": 4.214315563189075e-09,
+      "3": 0.4139344394207001,
+      "4": 5.176229670583732e-12,
+      "5": 0.3429412543773651
+     },
+     "delta": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0,
+      "5": 0.0
+     },
+     "pass_index": 5,
+     "relative_delta": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0,
+      "5": 0.0
+     },
+     "old_margin_vs_pass": {
+      "0": -11.988536834716797,
+      "1": -0.3439950942993164,
+      "2": -18.214582443237305,
+      "3": 0.18814849853515625,
+      "4": -24.916748046875,
+      "5": 0.0
+     },
+     "max_abs_rel_protected": 0.0,
+     "ce": 0.882047712802887,
+     "kl": null
+    },
+    "M": {
+     "kind": "kl",
+     "argmax": 3,
+     "target_index": 3,
+     "argmax_is_target": true,
+     "p_target": 0.9999129772186279,
+     "p_frozen": {
+      "0": 3.6923991642012766e-11,
+      "1": 8.625323243904859e-05,
+      "2": 5.634088893202716e-07,
+      "3": 0.9999130964279175,
+      "4": 1.042093202840988e-07
+     },
+     "p_now": {
+      "0": 3.6923991642012766e-11,
+      "1": 8.625323243904859e-05,
+      "2": 5.634088893202716e-07,
+      "3": 0.9999129772186279,
+      "4": 1.0420912843756014e-07
+     },
+     "delta": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "pass_index": 4,
+     "relative_delta": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0,
+      "3": 0.0,
+      "4": 0.0
+     },
+     "old_margin_vs_pass": {
+      "0": -7.94529390335083,
+      "1": 6.71864128112793,
+      "2": 1.6876049041748047,
+      "3": 16.076778411865234,
+      "4": 0.0
+     },
+     "max_abs_rel_protected": 0.0,
+     "ce": null,
+     "kl": 9.435389358714019e-08
+    },
+    "P": {
+     "kind": "kl",
+     "argmax": 2,
+     "target_index": 2,
+     "argmax_is_target": true,
+     "p_target": 1.0,
+     "p_frozen": {
+      "0": 1.0555291085623253e-09,
+      "1": 1.813716974544355e-16,
+      "2": 1.0
+     },
+     "p_now": {
+      "0": 1.0555291085623253e-09,
+      "1": 1.813716974544355e-16,
+      "2": 1.0
+     },
+     "delta": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0
+     },
+     "pass_index": 2,
+     "relative_delta": {
+      "0": 0.0,
+      "1": 0.0,
+      "2": 0.0
+     },
+     "old_margin_vs_pass": {
+      "0": -20.66922378540039,
+      "1": -36.2459831237793,
+      "2": 0.0
+     },
+     "max_abs_rel_protected": 0.0,
+     "ce": null,
+     "kl": -1.0555325502537016e-09
+    }
+   },
+   "512": {
+    "S1": {
+     "kind": "ce",
+     "argmax": 1,
+     "target_index": 1,
+     "argmax_is_target": true,
+     "p_target": 0.9962478876113892,
+     "p_frozen": {
+      "0": 7.169927878836338e-20,
+      "1": 1.6709731766928796e-20,
+      "2": 1.4456169594723178e-07,
+      "3": 3.904624138977136e-19,
+      "4": 0.9999998807907104
+     },
+     "p_now": {
+      "0": 2.6907982368216295e-22,
+      "1": 0.9962478876113892,
+      "2": 5.443427930629241e-10,
+      "3": 1.4647269394782018e-21,
+      "4": 0.003752110293135047
+     },
+     "delta": {
+      "0": -25.538728713989258,
+      "1": 25.581035614013672,
+      "2": -25.535381317138672,
+      "3": -25.539165496826172,
+      "4": -25.538936614990234
+     },
+     "pass_index": 4,
+     "relative_delta": {
+      "0": 0.0002079010009765625,
+      "1": 51.119972229003906,
+      "2": 0.0035552978515625,
+      "3": -0.0002288818359375,
+      "4": 0.0
+     },
+     "old_margin_vs_pass": {
+      "0": -44.08180618286133,
+      "1": -45.53829574584961,
+      "2": -15.74955940246582,
+      "3": -42.38695526123047,
+      "4": 0.0
+     },
+     "max_abs_rel_protected": 0.0035552978515625,
+     "ce": 0.0037592235021293163,
+     "kl": null
+    },
+    "S2": {
+     "kind": "ce",
+     "argmax": 3,
+     "target_index": 3,
+     "argmax_is_target": true,
+     "p_target": 0.9999916553497314,
+     "p_frozen": {
+      "0": 2.1313987872417783e-06,
+      "1": 0.2431221604347229,
+      "2": 4.214315563189075e-09,
+      "3": 0.4139344394207001,
+      "4": 5.176238777881981e-12,
+      "5": 0.3429412543773651
+     },
+     "p_now": {
+      "0": 3.0552851915111034e-11,
+      "1": 3.4870020044763805e-06,
+      "2": 6.053685520533356e-14,
+      "3": 0.9999916553497314,
+      "4": 7.4167237182991e-17,
+      "5": 4.9149243750434835e-06
+     },
+     "delta": {
+      "0": -25.538728713989258,
+      "1": -25.538175582885742,
+      "2": -25.536643981933594,
+      "3": -13.503859519958496,
+      "4": -25.539165496826172,
+      "5": -25.538936614990234
+     },
+     "pass_index": 5,
+     "relative_delta": {
+      "0": 0.0002079010009765625,
+      "1": 0.0007610321044921875,
+      "2": 0.002292633056640625,
+      "3": 12.035077095031738,
+      "4": -0.0002288818359375,
+      "5": 0.0
+     },
+     "old_margin_vs_pass": {
+      "0": -11.988536834716797,
+      "1": -0.3439950942993164,
+      "2": -18.214582443237305,
+      "3": 0.18814849853515625,
+      "4": -24.916748046875,
+      "5": 0.0
+     },
+     "max_abs_rel_protected": 0.002292633056640625,
+     "ce": 8.34461570775602e-06,
+     "kl": null
+    },
+    "M": {
+     "kind": "kl",
+     "argmax": 3,
+     "target_index": 3,
+     "argmax_is_target": true,
+     "p_target": 0.9999131560325623,
+     "p_frozen": {
+      "0": 3.6923991642012766e-11,
+      "1": 8.625323243904859e-05,
+      "2": 5.634088893202716e-07,
+      "3": 0.9999130964279175,
+      "4": 1.042093202840988e-07
+     },
+     "p_now": {
+      "0": 3.6800600761166535e-11,
+      "1": 8.60111613292247e-05,
+      "2": 5.623813876809436e-07,
+      "3": 0.9999131560325623,
+      "4": 1.0383948989556302e-07
+     },
+     "delta": {
+      "0": -25.538728713989258,
+      "1": -25.538190841674805,
+      "2": -25.537206649780273,
+      "3": -25.535381317138672,
+      "4": -25.538936614990234
+     },
+     "pass_index": 4,
+     "relative_delta": {
+      "0": 0.0002079010009765625,
+      "1": 0.0007457733154296875,
+      "2": 0.0017299652099609375,
+      "3": 0.0035552978515625,
+      "4": 0.0
+     },
+     "old_margin_vs_pass": {
+      "0": -7.94529390335083,
+      "1": 6.71864128112793,
+      "2": 1.6876049041748047,
+      "3": 16.076778411865234,
+      "4": 0.0
+     },
+     "max_abs_rel_protected": 0.0035552978515625,
+     "ce": null,
+     "kl": 9.978223403095399e-08
+    },
+    "P": {
+     "kind": "kl",
+     "argmax": 2,
+     "target_index": 2,
+     "argmax_is_target": true,
+     "p_target": 1.0,
+     "p_frozen": {
+      "0": 1.0555291085623253e-09,
+      "1": 1.813716974544355e-16,
+      "2": 1.0
+     },
+     "p_now": {
+      "0": 1.0553157236969923e-09,
+      "1": 1.81404228813566e-16,
+      "2": 1.0
+     },
+     "delta": {
+      "0": -21.415447235107422,
+      "1": -21.415067672729492,
+      "2": -21.415245056152344
+     },
+     "pass_index": 2,
+     "relative_delta": {
+      "0": -0.000202178955078125,
+      "1": 0.0001773834228515625,
+      "2": 0.0
+     },
+     "old_margin_vs_pass": {
+      "0": -20.66922378540039,
+      "1": -36.2459831237793,
+      "2": 0.0
+     },
+     "max_abs_rel_protected": 0.000202178955078125,
+     "ce": null,
+     "kl": -1.0553191653883687e-09
+    }
+   }
+  },
+  "clipped": 337,
+  "post": {
+   "off_target_logit_differences": 0,
+   "rnn_state_differences": 0,
+   "on_target": [
+    {
+     "sequence": "response-S1",
+     "index": 112,
+     "frozen_argmax": 4,
+     "final_argmax": 1,
+     "max_abs_change": 25.581035614013672
+    },
+    {
+     "sequence": "response-S2",
+     "index": 127,
+     "frozen_argmax": 3,
+     "final_argmax": 3,
+     "max_abs_change": 25.539165496826172
+    },
+    {
+     "sequence": "flc:BV1-1cost-VARNISH-OM",
+     "index": 112,
+     "frozen_argmax": 4,
+     "final_argmax": 1,
+     "max_abs_change": 25.581035614013672
+    },
+    {
+     "sequence": "flc:BV1-1cost-VARNISH-OI",
+     "index": 112,
+     "frozen_argmax": 1,
+     "final_argmax": 0,
+     "max_abs_change": 26.44021224975586
+    },
+    {
+     "sequence": "flc:BV1-1cost-ASSAULT-OM",
+     "index": 98,
+     "frozen_argmax": 3,
+     "final_argmax": 3,
+     "max_abs_change": 25.538936614990234
+    },
+    {
+     "sequence": "flc:BV1-1cost-ASSAULT-OI",
+     "index": 98,
+     "frozen_argmax": 0,
+     "final_argmax": 0,
+     "max_abs_change": 21.577743530273438
+    },
+    {
+     "sequence": "flc:BV1-2cost-VARNISH-OM",
+     "index": 76,
+     "frozen_argmax": 1,
+     "final_argmax": 1,
+     "max_abs_change": 25.53916358947754
+    },
+    {
+     "sequence": "flc:BV1-2cost-VARNISH-OI",
+     "index": 76,
+     "frozen_argmax": 2,
+     "final_argmax": 2,
+     "max_abs_change": 21.415447235107422
+    },
+    {
+     "sequence": "flc:BV1-2cost-ASSAULT-OM",
+     "index": 127,
+     "frozen_argmax": 3,
+     "final_argmax": 3,
+     "max_abs_change": 25.539165496826172
+    },
+    {
+     "sequence": "flc:BV1-2cost-ASSAULT-OI",
+     "index": 127,
+     "frozen_argmax": 2,
+     "final_argmax": 2,
+     "max_abs_change": 21.415447235107422
+    }
+   ],
+   "decisions": 5396,
+   "gated": 10
+  },
+  "position_off": 0,
+  "reload": {
+   "S1": {
+    "gated": true,
+    "max_abs_logit_diff": 0.0
+   },
+   "S2": {
+    "gated": true,
+    "max_abs_logit_diff": 0.0
+   },
+   "M": {
+    "gated": true,
+    "max_abs_logit_diff": 0.0
+   },
+   "P": {
+    "gated": true,
+    "max_abs_logit_diff": 0.0
+   }
+  },
+  "adapter": "c110f9647c8806f9ed76011f47a4a3a2d3818343d2033917db721d0807c363ec",
+  "manifest": "3266c90d3ae9e0be475fdfe2aee2cf17b01b6ead60284f7fe4355343d034665b",
+  "terms": {
+   "ce": [
+    23.210172653198242,
+    0.0018951854435727
+   ],
+   "kl": [
+    4.6649180518443245e-08,
+    5.0772673176879835e-08
+   ],
+   "rel": [
+    0.0,
+    2.531569407437928e-06
+   ],
+   "rel_max": 0.19823995232582092
+  },
+  "grad_norms": {
+   "ce_grad_norm": {
+    "mean": 3.825754406832857,
+    "max": 7.812690734863281
+   },
+   "kl_grad_norm": {
+    "mean": 5.563297192123784e-05,
+    "max": 0.00013886440137866884
+   },
+   "rel_grad_norm": {
+    "mean": 1.6081640415532092,
+    "max": 2.940016984939575
+   },
+   "grad_norm": {
+    "mean": 3.375791599486547,
+    "max": 7.590238094329834
+   }
+  },
+  "update_norm_mean": 0.027586331430370592
+ },
+ "train_screens_relative": {
+  "S1": {
+   "new": {
+    "max_abs_rel_protected": 0.0035552978515625,
+    "mean_abs_rel_protected": 0.0013306936016306281,
+    "rel": {
+     "0": 0.0002079010009765625,
+     "1": 51.119972229003906,
+     "2": 0.0035552978515625,
+     "3": -0.0002288818359375,
+     "4": 0.0
+    },
+    "pass_delta": -25.538936614990234
+   },
+   "coverage": {
+    "max_abs_rel_protected": 23.37732696533203,
+    "mean_abs_rel_protected": 18.402565002441406,
+    "rel": {
+     "0": 20.892000198364258,
+     "1": 51.039283752441406,
+     "2": 10.93836784362793,
+     "3": 23.37732696533203,
+     "4": 0.0
+    },
+    "pass_delta": -25.55759048461914
+   }
+  },
+  "S2": {
+   "new": {
+    "max_abs_rel_protected": 0.002292633056640625,
+    "mean_abs_rel_protected": 0.0008726119995117188,
+    "rel": {
+     "0": 0.0002079010009765625,
+     "1": 0.0007610321044921875,
+     "2": 0.002292633056640625,
+     "3": 12.035077095031738,
+     "4": -0.0002288818359375,
+     "5": 0.0
+    },
+    "pass_delta": -25.538936614990234
+   },
+   "coverage": {
+    "max_abs_rel_protected": 29.800994873046875,
+    "mean_abs_rel_protected": 20.691368103027344,
+    "rel": {
+     "0": 20.892000198364258,
+     "1": 29.800994873046875,
+     "2": 8.69515609741211,
+     "3": 46.30073165893555,
+     "4": 23.37732696533203,
+     "5": 0.0
+    },
+    "pass_delta": -25.55759048461914
+   }
+  },
+  "M": {
+   "new": {
+    "max_abs_rel_protected": 0.0035552978515625,
+    "mean_abs_rel_protected": 0.0015597343444824219,
+    "rel": {
+     "0": 0.0002079010009765625,
+     "1": 0.0007457733154296875,
+     "2": 0.0017299652099609375,
+     "3": 0.0035552978515625,
+     "4": 0.0
+    },
+    "pass_delta": -25.538936614990234
+   },
+   "coverage": {
+    "max_abs_rel_protected": 20.892000198364258,
+    "mean_abs_rel_protected": 14.385599136352539,
+    "rel": {
+     "0": 20.892000198364258,
+     "1": 10.971494674682617,
+     "2": 14.740532875061035,
+     "3": 10.93836784362793,
+     "4": 0.0
+    },
+    "pass_delta": -25.55759048461914
+   }
+  },
+  "P": {
+   "new": {
+    "max_abs_rel_protected": 0.000202178955078125,
+    "mean_abs_rel_protected": 0.00018978118896484375,
+    "rel": {
+     "0": -0.000202178955078125,
+     "1": 0.0001773834228515625,
+     "2": 0.0
+    },
+    "pass_delta": -21.415245056152344
+   },
+   "coverage": {
+    "max_abs_rel_protected": 22.25033187866211,
+    "mean_abs_rel_protected": 15.209772109985352,
+    "rel": {
+     "0": 8.169212341308594,
+     "1": 22.25033187866211,
+     "2": 0.0
+    },
+    "pass_delta": -25.59252166748047
+   }
+  }
+ },
+ "check": {
+  "reused": {
+   "flc:BV1-1cost-VARNISH-OM": "/home/hatk8/projects/yugioh-ai/experiments/artmage-response-coverage-20261111/runs/B-BV1-1cost-VARNISH-OM",
+   "flc:BV1-1cost-VARNISH-OI": "/home/hatk8/projects/yugioh-ai/experiments/artmage-response-coverage-20261111/runs/B-BV1-1cost-VARNISH-OI",
+   "flc:BV1-2cost-VARNISH-OM": "/home/hatk8/projects/yugioh-ai/experiments/artmage-response-coverage-20261111/runs/B-BV1-2cost-VARNISH-OM",
+   "flc:BV1-2cost-VARNISH-OI": "/home/hatk8/projects/yugioh-ai/experiments/artmage-response-coverage-20261111/runs/B-BV1-2cost-VARNISH-OI",
+   "probe:H1-ASH": "/home/hatk8/projects/yugioh-ai/experiments/artmage-unseen-response-probe-20261111/runs/H1-ASH-CAND",
+   "probe:H1-GAMMA": "/home/hatk8/projects/yugioh-ai/experiments/artmage-unseen-response-probe-20261111/runs/H1-GAMMA-CAND",
+   "probe:H2-ASH": "/home/hatk8/projects/yugioh-ai/experiments/artmage-unseen-response-probe-20261111/runs/H2-ASH-CAND",
+   "probe:H2-GAMMA": "/home/hatk8/projects/yugioh-ai/experiments/artmage-unseen-response-probe-20261111/runs/H2-GAMMA-CAND"
+  },
+  "flc_to_run": [
+   "BV1-1cost-ASSAULT-OM",
+   "BV1-1cost-ASSAULT-OI",
+   "BV1-2cost-ASSAULT-OM",
+   "BV1-2cost-ASSAULT-OI"
+  ],
+  "probe_to_run": [
+   "H1-USAGI-BASE",
+   "H1-USAGI-CAND"
+  ],
+  "first_differences": {
+   "flc:BV1-1cost-ASSAULT-OM": {
+    "step": 15,
+    "npz_index": 14,
+    "message": "select_card",
+    "new": {
+     "index": 2,
+     "act": "None",
+     "code": 74011784,
+     "effect": -1
+    },
+    "recorded": {
+     "index": 5,
+     "act": "None",
+     "code": 1122030,
+     "effect": -1
+    }
+   },
+   "flc:BV1-1cost-ASSAULT-OI": {
+    "step": 15,
+    "npz_index": 14,
+    "message": "select_card",
+    "new": {
+     "index": 2,
+     "act": "None",
+     "code": 74011784,
+     "effect": -1
+    },
+    "recorded": {
+     "index": 5,
+     "act": "None",
+     "code": 1122030,
+     "effect": -1
+    }
+   },
+   "flc:BV1-2cost-ASSAULT-OM": {
+    "step": 16,
+    "npz_index": 15,
+    "message": "select_card",
+    "new": {
+     "index": 2,
+     "act": "None",
+     "code": 74011784,
+     "effect": -1
+    },
+    "recorded": {
+     "index": 5,
+     "act": "None",
+     "code": 1122030,
+     "effect": -1
+    }
+   },
+   "flc:BV1-2cost-ASSAULT-OI": {
+    "step": 16,
+    "npz_index": 15,
+    "message": "select_card",
+    "new": {
+     "index": 2,
+     "act": "None",
+     "code": 74011784,
+     "effect": -1
+    },
+    "recorded": {
+     "index": 5,
+     "act": "None",
+     "code": 1122030,
+     "effect": -1
+    }
+   }
+  }
+ },
+ "flc": {
+  "BV1-1cost-VARNISH-OM": {
+   "source": "reused coverage record (all own actions equal)",
+   "record": "/home/hatk8/projects/yugioh-ai/experiments/artmage-response-coverage-20261111/runs/B-BV1-1cost-VARNISH-OM",
+   "identical_to_coverage_record": true,
+   "identical_to_start_model": false,
+   "replay": null,
+   "screens": [
+    {
+     "step": 149,
+     "latest_chain_card": 97556336,
+     "executed": "ディアクトロス②",
+     "who": "model",
+     "adapters": {
+      "new": {
+       "choice": "ディアクトロス②",
+       "frozen_choice": "pass",
+       "options": [
+        {
+         "option": "うさぎ",
+         "spec": "h2",
+         "frozen_logit": -13.542292594909668,
+         "delta": -25.538728713989258,
+         "relative_delta_vs_pass": 0.0002079010009765625,
+         "old_margin_vs_pass": -44.08180618286133,
+         "new_margin_vs_pass": -44.08159637451172,
+         "p_frozen": 7.169927232601485e-20,
+         "p_final": 2.6907936929828154e-22
+        },
+        {
+         "option": "ディアクトロス②",
+         "spec": "m3",
+         "frozen_logit": -14.998780250549316,
+         "delta": 25.581035614013672,
+         "relative_delta_vs_pass": 51.119972229003906,
+         "old_margin_vs_pass": -45.53829574584961,
+         "new_margin_vs_pass": 5.581677436828613,
+         "p_frozen": 1.6709730151341662e-20,
+         "p_final": 0.9962478280067444
+        },
+        {
+         "option": "獄神獣②",
+         "spec": "m5",
+         "frozen_logit": 14.789955139160156,
+         "delta": -25.535381317138672,
+         "relative_delta_vs_pass": 0.0035552978515625,
+         "old_margin_vs_pass": -15.74955940246582,
+         "new_margin_vs_pass": -15.746004104614258,
+         "p_frozen": 1.4456168173637707e-07,
+         "p_final": 5.443429040852266e-10
+        },
+        {
+         "option": "G",
+         "spec": "h1",
+         "frozen_logit": -11.847440719604492,
+         "delta": -25.539165496826172,
+         "relative_delta_vs_pass": -0.0002288818359375,
+         "old_margin_vs_pass": -42.38695526123047,
+         "new_margin_vs_pass": -42.387184143066406,
+         "p_frozen": 3.9046236219892533e-19,
+         "p_final": 1.4647242131749134e-21
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": 30.539514541625977,
+         "delta": -25.538936614990234,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 0.9999998807907104,
+         "p_final": 0.003752110991626978
+        }
+       ]
+      },
+      "coverage": {
+       "choice": "ディアクトロス②",
+       "frozen_choice": "pass",
+       "options": [
+        {
+         "option": "うさぎ",
+         "spec": "h2",
+         "frozen_logit": -13.542292594909668,
+         "delta": -4.665589809417725,
+         "relative_delta_vs_pass": 20.892000198364258,
+         "old_margin_vs_pass": -44.08180618286133,
+         "new_margin_vs_pass": -23.18980598449707,
+         "p_frozen": 7.169927232601485e-20,
+         "p_final": 3.4511336930581615e-13
+        },
+        {
+         "option": "ディアクトロス②",
+         "spec": "m3",
+         "frozen_logit": -14.998780250549316,
+         "delta": 25.4816951751709,
+         "relative_delta_vs_pass": 51.039283752441406,
+         "old_margin_vs_pass": -45.53829574584961,
+         "new_margin_vs_pass": 5.500990867614746,
+         "p_frozen": 1.6709730151341662e-20,
+         "p_final": 0.9959009289741516
+        },
+        {
+         "option": "獄神獣②",
+         "spec": "m5",
+         "frozen_logit": 14.789955139160156,
+         "delta": -14.619222640991211,
+         "relative_delta_vs_pass": 10.93836784362793,
+         "old_margin_vs_pass": -15.74955940246582,
+         "new_margin_vs_pass": -4.811191558837891,
+         "p_frozen": 1.4456168173637707e-07,
+         "p_final": 3.308965460746549e-05
+        },
+        {
+         "option": "G",
+         "spec": "h1",
+         "frozen_logit": -11.847440719604492,
+         "delta": -2.1802642345428467,
+         "relative_delta_vs_pass": 23.37732696533203,
+         "old_margin_vs_pass": -42.38695526123047,
+         "new_margin_vs_pass": -19.009628295898438,
+         "p_frozen": 3.9046236219892533e-19,
+         "p_final": 2.256259588884202e-11
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": 30.539514541625977,
+         "delta": -25.55759048461914,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 0.9999998807907104,
+         "p_final": 0.004065988585352898
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "t3_lp": 2900,
+   "game_over": null
+  },
+  "BV1-1cost-VARNISH-OI": {
+   "source": "reused coverage record (all own actions equal)",
+   "record": "/home/hatk8/projects/yugioh-ai/experiments/artmage-response-coverage-20261111/runs/B-BV1-1cost-VARNISH-OI",
+   "identical_to_coverage_record": true,
+   "identical_to_start_model": false,
+   "replay": null,
+   "screens": [
+    {
+     "step": 149,
+     "latest_chain_card": 10045474,
+     "executed": "ディアクトロス②",
+     "who": "model",
+     "adapters": {
+      "new": {
+       "choice": "ディアクトロス②",
+       "frozen_choice": "獄神獣②",
+       "options": [
+        {
+         "option": "ディアクトロス②",
+         "spec": "m3",
+         "frozen_logit": -14.006512641906738,
+         "delta": 26.44021224975586,
+         "relative_delta_vs_pass": 47.8554573059082,
+         "old_margin_vs_pass": -13.930736541748047,
+         "new_margin_vs_pass": 33.924720764160156,
+         "p_frozen": 9.341782379666645e-15,
+         "p_final": 0.9999997615814209
+        },
+        {
+         "option": "獄神獣②",
+         "spec": "m5",
+         "frozen_logit": 18.297767639160156,
+         "delta": -21.366395950317383,
+         "relative_delta_vs_pass": 0.04884910583496094,
+         "old_margin_vs_pass": 18.373544692993164,
+         "new_margin_vs_pass": 18.422393798828125,
+         "p_frozen": 1.0,
+         "p_final": 1.8510768029500468e-07
+        },
+        {
+         "option": "G",
+         "spec": "h1",
+         "frozen_logit": -11.791467666625977,
+         "delta": -21.415067672729492,
+         "relative_delta_vs_pass": 0.0001773834228515625,
+         "old_margin_vs_pass": -11.715691566467285,
+         "new_margin_vs_pass": -11.715513229370117,
+         "p_frozen": 8.558765133247215e-14,
+         "p_final": 1.5090280148611892e-20
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": -0.07577630877494812,
+         "delta": -21.415245056152344,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 1.0482646750631375e-08,
+         "p_final": 1.847910371136031e-15
+        }
+       ]
+      },
+      "coverage": {
+       "choice": "ディアクトロス②",
+       "frozen_choice": "獄神獣②",
+       "options": [
+        {
+         "option": "ディアクトロス②",
+         "spec": "m3",
+         "frozen_logit": -14.006512641906738,
+         "delta": 25.38038444519043,
+         "relative_delta_vs_pass": 50.97290802001953,
+         "old_margin_vs_pass": -13.930736541748047,
+         "new_margin_vs_pass": 37.042171478271484,
+         "p_frozen": 9.341782379666645e-15,
+         "p_final": 0.9997714161872864
+        },
+        {
+         "option": "獄神獣②",
+         "spec": "m5",
+         "frozen_logit": 18.297767639160156,
+         "delta": -15.307439804077148,
+         "relative_delta_vs_pass": 10.28508186340332,
+         "old_margin_vs_pass": 18.373544692993164,
+         "new_margin_vs_pass": 28.658626556396484,
+         "p_frozen": 1.0,
+         "p_final": 0.00022854609414935112
+        },
+        {
+         "option": "G",
+         "spec": "h1",
+         "frozen_logit": -11.791467666625977,
+         "delta": -3.342190742492676,
+         "relative_delta_vs_pass": 22.25033187866211,
+         "old_margin_vs_pass": -11.715691566467285,
+         "new_margin_vs_pass": 10.534640312194824,
+         "p_frozen": 8.558765133247215e-14,
+         "p_final": 3.074869135352709e-12
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": -0.07577630877494812,
+         "delta": -25.59252166748047,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 1.0482646750631375e-08,
+         "p_final": 8.178808525366655e-17
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "t3_lp": 400,
+   "game_over": null
+  },
+  "BV1-1cost-ASSAULT-OM": {
+   "source": "new record + replay (this study)",
+   "record": "/home/hatk8/projects/yugioh-ai/experiments/artmage-relative-score-retention-20261111/runs/B-BV1-1cost-ASSAULT-OM",
+   "identical_to_coverage_record": true,
+   "identical_to_start_model": true,
+   "replay": {
+    "name": "B-BV1-1cost-ASSAULT-OM",
+    "engine_run": 5,
+    "replayed_engine_run": 1,
+    "mismatch": null,
+    "failure": null,
+    "reproduced_steps": 230,
+    "of": 230,
+    "reason": "own_turn3_end",
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true,
+    "lua_errors": 0
+   },
+   "screens": [
+    {
+     "step": 139,
+     "latest_chain_card": 97556336,
+     "executed": "獄神獣②",
+     "who": "model",
+     "adapters": {
+      "new": {
+       "choice": "獄神獣②",
+       "frozen_choice": "獄神獣②",
+       "options": [
+        {
+         "option": "うさぎ",
+         "spec": "h1",
+         "frozen_logit": -12.807819366455078,
+         "delta": -25.538728713989258,
+         "relative_delta_vs_pass": 0.0002079010009765625,
+         "old_margin_vs_pass": -7.94529390335083,
+         "new_margin_vs_pass": -7.945087432861328,
+         "p_frozen": 3.6924026336482285e-11,
+         "p_final": 3.680056953614397e-11
+        },
+        {
+         "option": "リテラ③",
+         "spec": "m2",
+         "frozen_logit": 1.8561160564422607,
+         "delta": -25.538190841674805,
+         "relative_delta_vs_pass": 0.0007457733154296875,
+         "old_margin_vs_pass": 6.71864128112793,
+         "new_margin_vs_pass": 6.719387054443359,
+         "p_frozen": 8.625322516309097e-05,
+         "p_final": 8.601117588113993e-05
+        },
+        {
+         "option": "覚醒②",
+         "spec": "g7",
+         "frozen_logit": -3.1749205589294434,
+         "delta": -25.537206649780273,
+         "relative_delta_vs_pass": 0.0017299652099609375,
+         "old_margin_vs_pass": 1.6876049041748047,
+         "new_margin_vs_pass": 1.6893348693847656,
+         "p_frozen": 5.634088324768527e-07,
+         "p_final": 5.623814445243625e-07
+        },
+        {
+         "option": "獄神獣②",
+         "spec": "m3",
+         "frozen_logit": 11.214252471923828,
+         "delta": -25.535381317138672,
+         "relative_delta_vs_pass": 0.0035552978515625,
+         "old_margin_vs_pass": 16.076778411865234,
+         "new_margin_vs_pass": 16.080333709716797,
+         "p_frozen": 0.9999130964279175,
+         "p_final": 0.9999133348464966
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": -4.862525463104248,
+         "delta": -25.538936614990234,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 1.0420921370268843e-07,
+         "p_final": 1.0383939752500737e-07
+        }
+       ]
+      },
+      "coverage": {
+       "choice": "獄神獣②",
+       "frozen_choice": "獄神獣②",
+       "options": [
+        {
+         "option": "うさぎ",
+         "spec": "h1",
+         "frozen_logit": -12.807819366455078,
+         "delta": -4.665589809417725,
+         "relative_delta_vs_pass": 20.892000198364258,
+         "old_margin_vs_pass": -7.94529390335083,
+         "new_margin_vs_pass": 12.946706771850586,
+         "p_frozen": 3.6924026336482285e-11,
+         "p_final": 7.764336373838887e-07
+        },
+        {
+         "option": "リテラ③",
+         "spec": "m2",
+         "frozen_logit": 1.8561160564422607,
+         "delta": -14.586095809936523,
+         "relative_delta_vs_pass": 10.971494674682617,
+         "old_margin_vs_pass": 6.71864128112793,
+         "new_margin_vs_pass": 17.690135955810547,
+         "p_frozen": 8.625322516309097e-05,
+         "p_final": 8.915585203794762e-05
+        },
+        {
+         "option": "覚醒②",
+         "spec": "g7",
+         "frozen_logit": -3.1749205589294434,
+         "delta": -10.817057609558105,
+         "relative_delta_vs_pass": 14.740532875061035,
+         "old_margin_vs_pass": 1.6876049041748047,
+         "new_margin_vs_pass": 16.428138732910156,
+         "p_frozen": 5.634088324768527e-07,
+         "p_final": 2.5238938178517856e-05
+        },
+        {
+         "option": "獄神獣②",
+         "spec": "m3",
+         "frozen_logit": 11.214252471923828,
+         "delta": -14.619222640991211,
+         "relative_delta_vs_pass": 10.93836784362793,
+         "old_margin_vs_pass": 16.076778411865234,
+         "new_margin_vs_pass": 27.015146255493164,
+         "p_frozen": 0.9999130964279175,
+         "p_final": 0.999884843826294
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": -4.862525463104248,
+         "delta": -25.55759048461914,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 1.0420921370268843e-07,
+         "p_final": 1.851062489052757e-12
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "t3_lp": 5750,
+   "game_over": null
+  },
+  "BV1-1cost-ASSAULT-OI": {
+   "source": "new record + replay (this study)",
+   "record": "/home/hatk8/projects/yugioh-ai/experiments/artmage-relative-score-retention-20261111/runs/B-BV1-1cost-ASSAULT-OI",
+   "identical_to_coverage_record": true,
+   "identical_to_start_model": true,
+   "replay": {
+    "name": "B-BV1-1cost-ASSAULT-OI",
+    "engine_run": 6,
+    "replayed_engine_run": 2,
+    "mismatch": null,
+    "failure": null,
+    "reproduced_steps": 218,
+    "of": 218,
+    "reason": "own_turn3_end",
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true,
+    "lua_errors": 0
+   },
+   "screens": [
+    {
+     "step": 139,
+     "latest_chain_card": 10045474,
+     "executed": "リテラ③",
+     "who": "model",
+     "adapters": {
+      "new": {
+       "choice": "リテラ③",
+       "frozen_choice": "リテラ③",
+       "options": [
+        {
+         "option": "リテラ③",
+         "spec": "m2",
+         "frozen_logit": -0.1866544932126999,
+         "delta": -21.577743530273438,
+         "relative_delta_vs_pass": -0.16249847412109375,
+         "old_margin_vs_pass": 13.215887069702148,
+         "new_margin_vs_pass": 13.053388595581055,
+         "p_frozen": 0.9969457983970642,
+         "p_final": 0.9962319731712341
+        },
+        {
+         "option": "覚醒②",
+         "spec": "g7",
+         "frozen_logit": -11.283235549926758,
+         "delta": -21.48860740661621,
+         "relative_delta_vs_pass": -0.07336235046386719,
+         "old_margin_vs_pass": 2.1193056106567383,
+         "new_margin_vs_pass": 2.0459442138671875,
+         "p_frozen": 1.5117760085558984e-05,
+         "p_final": 1.651536331337411e-05
+        },
+        {
+         "option": "獄神獣②",
+         "spec": "m3",
+         "frozen_logit": -5.9803853034973145,
+         "delta": -21.366395950317383,
+         "relative_delta_vs_pass": 0.04884910583496094,
+         "old_margin_vs_pass": 7.422155857086182,
+         "new_margin_vs_pass": 7.471006393432617,
+         "p_frozen": 0.003037289949133992,
+         "p_final": 0.0037494080606848
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": -13.402541160583496,
+         "delta": -21.415245056152344,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 1.815869950405613e-06,
+         "p_final": 2.1347441361285746e-06
+        }
+       ]
+      },
+      "coverage": {
+       "choice": "リテラ③",
+       "frozen_choice": "リテラ③",
+       "options": [
+        {
+         "option": "リテラ③",
+         "spec": "m2",
+         "frozen_logit": -0.1866544932126999,
+         "delta": -15.284401893615723,
+         "relative_delta_vs_pass": 10.308119773864746,
+         "old_margin_vs_pass": 13.215887069702148,
+         "new_margin_vs_pass": 23.52400779724121,
+         "p_frozen": 0.9969457983970642,
+         "p_final": 0.9964714050292969
+        },
+        {
+         "option": "覚醒②",
+         "spec": "g7",
+         "frozen_logit": -11.283235549926758,
+         "delta": -11.66859245300293,
+         "relative_delta_vs_pass": 13.923929214477539,
+         "old_margin_vs_pass": 2.1193056106567383,
+         "new_margin_vs_pass": 16.043235778808594,
+         "p_frozen": 1.5117760085558984e-05,
+         "p_final": 0.0005618324503302574
+        },
+        {
+         "option": "獄神獣②",
+         "spec": "m3",
+         "frozen_logit": -5.9803853034973145,
+         "delta": -15.307439804077148,
+         "relative_delta_vs_pass": 10.28508186340332,
+         "old_margin_vs_pass": 7.422155857086182,
+         "new_margin_vs_pass": 17.707239151000977,
+         "p_frozen": 0.003037289949133992,
+         "p_final": 0.0029667045455425978
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": -13.402541160583496,
+         "delta": -25.59252166748047,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 1.815869950405613e-06,
+         "p_final": 6.055053680675826e-11
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "t3_lp": 8000,
+   "game_over": null
+  },
+  "BV1-2cost-VARNISH-OM": {
+   "source": "reused coverage record (all own actions equal)",
+   "record": "/home/hatk8/projects/yugioh-ai/experiments/artmage-response-coverage-20261111/runs/B-BV1-2cost-VARNISH-OM",
+   "identical_to_coverage_record": true,
+   "identical_to_start_model": true,
+   "replay": null,
+   "screens": [
+    {
+     "step": 102,
+     "latest_chain_card": 97556336,
+     "executed": "ファインメルト③",
+     "who": "model",
+     "adapters": {
+      "new": {
+       "choice": "ファインメルト③",
+       "frozen_choice": "ファインメルト③",
+       "options": [
+        {
+         "option": "うさぎ",
+         "spec": "h2",
+         "frozen_logit": -14.458739280700684,
+         "delta": -25.538728713989258,
+         "relative_delta_vs_pass": 0.0002079010009765625,
+         "old_margin_vs_pass": 3.446150779724121,
+         "new_margin_vs_pass": 3.4463577270507812,
+         "p_frozen": 5.666228594723537e-15,
+         "p_final": 3.3621447468511116e-20
+        },
+        {
+         "option": "ファインメルト③",
+         "spec": "m4",
+         "frozen_logit": 18.34551429748535,
+         "delta": -13.503859519958496,
+         "relative_delta_vs_pass": 12.035077095031738,
+         "old_margin_vs_pass": 36.250404357910156,
+         "new_margin_vs_pass": 48.28548049926758,
+         "p_frozen": 1.0,
+         "p_final": 1.0
+        },
+        {
+         "option": "獄神使②",
+         "spec": "m6",
+         "frozen_logit": -1.9453058242797852,
+         "delta": -25.536643981933594,
+         "relative_delta_vs_pass": 0.002292633056640625,
+         "old_margin_vs_pass": 15.95958423614502,
+         "new_margin_vs_pass": 15.961875915527344,
+         "p_frozen": 1.5410204223798019e-09,
+         "p_final": 9.16298388889663e-15
+        },
+        {
+         "option": "G",
+         "spec": "h1",
+         "frozen_logit": -10.846014022827148,
+         "delta": -25.539165496826172,
+         "relative_delta_vs_pass": -0.0002288818359375,
+         "old_margin_vs_pass": 7.058876037597656,
+         "new_margin_vs_pass": 7.058647155761719,
+         "p_frozen": 2.1002950355460126e-13,
+         "p_final": 1.2457007084852044e-18
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": -17.904890060424805,
+         "delta": -25.538936614990234,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 1.8057159542641502e-16,
+         "p_final": 1.0712287816181479e-21
+        }
+       ]
+      },
+      "coverage": {
+       "choice": "ファインメルト③",
+       "frozen_choice": "ファインメルト③",
+       "options": [
+        {
+         "option": "うさぎ",
+         "spec": "h2",
+         "frozen_logit": -14.458739280700684,
+         "delta": -4.665589809417725,
+         "relative_delta_vs_pass": 20.892000198364258,
+         "old_margin_vs_pass": 3.446150779724121,
+         "new_margin_vs_pass": 24.338150024414062,
+         "p_frozen": 5.666228594723537e-15,
+         "p_final": 5.229053257109314e-26
+        },
+        {
+         "option": "ファインメルト③",
+         "spec": "m4",
+         "frozen_logit": 18.34551429748535,
+         "delta": 20.743141174316406,
+         "relative_delta_vs_pass": 46.30073165893555,
+         "old_margin_vs_pass": 36.250404357910156,
+         "new_margin_vs_pass": 82.55113220214844,
+         "p_frozen": 1.0,
+         "p_final": 1.0
+        },
+        {
+         "option": "獄神使②",
+         "spec": "m6",
+         "frozen_logit": -1.9453058242797852,
+         "delta": -16.86243438720703,
+         "relative_delta_vs_pass": 8.69515609741211,
+         "old_margin_vs_pass": 15.95958423614502,
+         "new_margin_vs_pass": 24.654739379882812,
+         "p_frozen": 1.5410204223798019e-09,
+         "p_final": 7.176556698361598e-26
+        },
+        {
+         "option": "G",
+         "spec": "h1",
+         "frozen_logit": -10.846014022827148,
+         "delta": -2.1802642345428467,
+         "relative_delta_vs_pass": 23.37732696533203,
+         "old_margin_vs_pass": 7.058876037597656,
+         "new_margin_vs_pass": 30.436199188232422,
+         "p_frozen": 2.1002950355460126e-13,
+         "p_final": 2.3268703532889424e-23
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": -17.904890060424805,
+         "delta": -25.55759048461914,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 1.8057159542641502e-16,
+         "p_final": 1.4076633637367593e-36
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "t3_lp": 8000,
+   "game_over": null
+  },
+  "BV1-2cost-VARNISH-OI": {
+   "source": "reused coverage record (all own actions equal)",
+   "record": "/home/hatk8/projects/yugioh-ai/experiments/artmage-response-coverage-20261111/runs/B-BV1-2cost-VARNISH-OI",
+   "identical_to_coverage_record": true,
+   "identical_to_start_model": true,
+   "replay": null,
+   "screens": [
+    {
+     "step": 102,
+     "latest_chain_card": 10045474,
+     "executed": "pass",
+     "who": "model",
+     "adapters": {
+      "new": {
+       "choice": "pass",
+       "frozen_choice": "pass",
+       "options": [
+        {
+         "option": "獄神使②",
+         "spec": "m6",
+         "frozen_logit": 12.71231460571289,
+         "delta": -21.415447235107422,
+         "relative_delta_vs_pass": -0.000202178955078125,
+         "old_margin_vs_pass": -20.66922378540039,
+         "new_margin_vs_pass": -20.66942596435547,
+         "p_frozen": 1.0555291085623253e-09,
+         "p_final": 1.0553157236969923e-09
+        },
+        {
+         "option": "G",
+         "spec": "h1",
+         "frozen_logit": -2.864443302154541,
+         "delta": -21.415067672729492,
+         "relative_delta_vs_pass": 0.0001773834228515625,
+         "old_margin_vs_pass": -36.2459831237793,
+         "new_margin_vs_pass": -36.24580383300781,
+         "p_frozen": 1.813716974544355e-16,
+         "p_final": 1.81404228813566e-16
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": 33.38153839111328,
+         "delta": -21.415245056152344,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 1.0,
+         "p_final": 1.0
+        }
+       ]
+      },
+      "coverage": {
+       "choice": "pass",
+       "frozen_choice": "pass",
+       "options": [
+        {
+         "option": "獄神使②",
+         "spec": "m6",
+         "frozen_logit": 12.71231460571289,
+         "delta": -17.423309326171875,
+         "relative_delta_vs_pass": 8.169212341308594,
+         "old_margin_vs_pass": -20.66922378540039,
+         "new_margin_vs_pass": -12.500011444091797,
+         "p_frozen": 1.0555291085623253e-09,
+         "p_final": 3.72659383174323e-06
+        },
+        {
+         "option": "G",
+         "spec": "h1",
+         "frozen_logit": -2.864443302154541,
+         "delta": -3.342190742492676,
+         "relative_delta_vs_pass": 22.25033187866211,
+         "old_margin_vs_pass": -36.2459831237793,
+         "new_margin_vs_pass": -13.995651245117188,
+         "p_frozen": 1.813716974544355e-16,
+         "p_final": 8.351488531843643e-07
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": 33.38153839111328,
+         "delta": -25.59252166748047,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 1.0,
+         "p_final": 0.9999954700469971
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "t3_lp": 5600,
+   "game_over": null
+  },
+  "BV1-2cost-ASSAULT-OM": {
+   "source": "new record + replay (this study)",
+   "record": "/home/hatk8/projects/yugioh-ai/experiments/artmage-relative-score-retention-20261111/runs/B-BV1-2cost-ASSAULT-OM",
+   "identical_to_coverage_record": true,
+   "identical_to_start_model": true,
+   "replay": {
+    "name": "B-BV1-2cost-ASSAULT-OM",
+    "engine_run": 7,
+    "replayed_engine_run": 3,
+    "mismatch": null,
+    "failure": null,
+    "reproduced_steps": 266,
+    "of": 266,
+    "reason": "game_over",
+    "final_equal": null,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true,
+    "lua_errors": 0
+   },
+   "screens": [
+    {
+     "step": 169,
+     "latest_chain_card": 97556336,
+     "executed": "ファインメルト③",
+     "who": "model",
+     "adapters": {
+      "new": {
+       "choice": "ファインメルト③",
+       "frozen_choice": "ファインメルト③",
+       "options": [
+        {
+         "option": "うさぎ",
+         "spec": "h1",
+         "frozen_logit": 3.9712796211242676,
+         "delta": -25.538728713989258,
+         "relative_delta_vs_pass": 0.0002079010009765625,
+         "old_margin_vs_pass": -11.988536834716797,
+         "new_margin_vs_pass": -11.98832893371582,
+         "p_frozen": 2.131396968252375e-06,
+         "p_final": 3.055283109842932e-11
+        },
+        {
+         "option": "奪還①",
+         "spec": "s2",
+         "frozen_logit": 15.61582088470459,
+         "delta": -25.538175582885742,
+         "relative_delta_vs_pass": 0.0007610321044921875,
+         "old_margin_vs_pass": -0.3439950942993164,
+         "new_margin_vs_pass": -0.3432340621948242,
+         "p_frozen": 0.2431221753358841,
+         "p_final": 3.4870029139710823e-06
+        },
+        {
+         "option": "獄神使②",
+         "spec": "m6",
+         "frozen_logit": -2.2547667026519775,
+         "delta": -25.536643981933594,
+         "relative_delta_vs_pass": 0.002292633056640625,
+         "old_margin_vs_pass": -18.214582443237305,
+         "new_margin_vs_pass": -18.212289810180664,
+         "p_frozen": 4.214316007278285e-09,
+         "p_final": 6.053681454775209e-14
+        },
+        {
+         "option": "ファインメルト③",
+         "spec": "m2",
+         "frozen_logit": 16.147964477539062,
+         "delta": -13.503859519958496,
+         "relative_delta_vs_pass": 12.035077095031738,
+         "old_margin_vs_pass": 0.18814849853515625,
+         "new_margin_vs_pass": 12.223225593566895,
+         "p_frozen": 0.41393446922302246,
+         "p_final": 0.9999916553497314
+        },
+        {
+         "option": "G",
+         "spec": "h2",
+         "frozen_logit": -8.956931114196777,
+         "delta": -25.539165496826172,
+         "relative_delta_vs_pass": -0.0002288818359375,
+         "old_margin_vs_pass": -24.916748046875,
+         "new_margin_vs_pass": -24.916976928710938,
+         "p_frozen": 5.176230104264601e-12,
+         "p_final": 7.41671842434318e-17
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": 15.959815979003906,
+         "delta": -25.538936614990234,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 0.3429412543773651,
+         "p_final": 4.914925739285536e-06
+        }
+       ]
+      },
+      "coverage": {
+       "choice": "ファインメルト③",
+       "frozen_choice": "ファインメルト③",
+       "options": [
+        {
+         "option": "うさぎ",
+         "spec": "h1",
+         "frozen_logit": 3.9712796211242676,
+         "delta": -4.665589809417725,
+         "relative_delta_vs_pass": 20.892000198364258,
+         "old_margin_vs_pass": -11.988536834716797,
+         "new_margin_vs_pass": 8.903464317321777,
+         "p_frozen": 2.131396968252375e-06,
+         "p_final": 4.751838952228864e-17
+        },
+        {
+         "option": "奪還①",
+         "spec": "s2",
+         "frozen_logit": 15.61582088470459,
+         "delta": 4.243404388427734,
+         "relative_delta_vs_pass": 29.800994873046875,
+         "old_margin_vs_pass": -0.3439950942993164,
+         "new_margin_vs_pass": 29.457000732421875,
+         "p_frozen": 0.2431221753358841,
+         "p_final": 4.010040299817774e-08
+        },
+        {
+         "option": "獄神使②",
+         "spec": "m6",
+         "frozen_logit": -2.2547667026519775,
+         "delta": -16.86243438720703,
+         "relative_delta_vs_pass": 8.69515609741211,
+         "old_margin_vs_pass": -18.214582443237305,
+         "new_margin_vs_pass": -9.519426345825195,
+         "p_frozen": 4.214316007278285e-09,
+         "p_final": 4.7413360581518975e-25
+        },
+        {
+         "option": "ファインメルト③",
+         "spec": "m2",
+         "frozen_logit": 16.147964477539062,
+         "delta": 20.743141174316406,
+         "relative_delta_vs_pass": 46.30073165893555,
+         "old_margin_vs_pass": 0.18814849853515625,
+         "new_margin_vs_pass": 46.4888801574707,
+         "p_frozen": 0.41393446922302246,
+         "p_final": 1.0
+        },
+        {
+         "option": "G",
+         "spec": "h2",
+         "frozen_logit": -8.956931114196777,
+         "delta": -2.1802642345428467,
+         "relative_delta_vs_pass": 23.37732696533203,
+         "old_margin_vs_pass": -24.916748046875,
+         "new_margin_vs_pass": -1.5394210815429688,
+         "p_frozen": 5.176230104264601e-12,
+         "p_final": 1.3853955527523215e-21
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": 15.959815979003906,
+         "delta": -25.55759048461914,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 0.3429412543773651,
+         "p_final": 6.458562003225468e-21
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "t3_lp": null,
+   "game_over": {
+    "step": 265,
+    "reward": -8.0,
+    "acting_player": 1,
+    "winner": 0,
+    "turn": 3
+   }
+  },
+  "BV1-2cost-ASSAULT-OI": {
+   "source": "new record + replay (this study)",
+   "record": "/home/hatk8/projects/yugioh-ai/experiments/artmage-relative-score-retention-20261111/runs/B-BV1-2cost-ASSAULT-OI",
+   "identical_to_coverage_record": true,
+   "identical_to_start_model": true,
+   "replay": {
+    "name": "B-BV1-2cost-ASSAULT-OI",
+    "engine_run": 8,
+    "replayed_engine_run": 4,
+    "mismatch": null,
+    "failure": null,
+    "reproduced_steps": 227,
+    "of": 227,
+    "reason": "own_turn3_end",
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true,
+    "lua_errors": 0
+   },
+   "screens": [
+    {
+     "step": 169,
+     "latest_chain_card": 10045474,
+     "executed": "pass",
+     "who": "model",
+     "adapters": {
+      "new": {
+       "choice": "pass",
+       "frozen_choice": "pass",
+       "options": [
+        {
+         "option": "獄神使②",
+         "spec": "m6",
+         "frozen_logit": 14.291998863220215,
+         "delta": -21.415447235107422,
+         "relative_delta_vs_pass": -0.000202178955078125,
+         "old_margin_vs_pass": -14.793627738952637,
+         "new_margin_vs_pass": -14.793829917907715,
+         "p_frozen": 3.760182778478338e-07,
+         "p_final": 3.759422497751075e-07
+        },
+        {
+         "option": "G",
+         "spec": "h2",
+         "frozen_logit": -0.3743014931678772,
+         "delta": -21.415067672729492,
+         "relative_delta_vs_pass": 0.0001773834228515625,
+         "old_margin_vs_pass": -29.459928512573242,
+         "new_margin_vs_pass": -29.45975112915039,
+         "p_frozen": 1.605888816022527e-13,
+         "p_final": 1.6061736901433477e-13
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": 29.08562660217285,
+         "delta": -21.415245056152344,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 0.9999996423721313,
+         "p_final": 0.9999996423721313
+        }
+       ]
+      },
+      "coverage": {
+       "choice": "pass",
+       "frozen_choice": "pass",
+       "options": [
+        {
+         "option": "獄神使②",
+         "spec": "m6",
+         "frozen_logit": 14.291998863220215,
+         "delta": -17.423309326171875,
+         "relative_delta_vs_pass": 8.169212341308594,
+         "old_margin_vs_pass": -14.793627738952637,
+         "new_margin_vs_pass": -6.624415397644043,
+         "p_frozen": 3.760182778478338e-07,
+         "p_final": 0.001324817887507379
+        },
+        {
+         "option": "G",
+         "spec": "h2",
+         "frozen_logit": -0.3743014931678772,
+         "delta": -3.342190742492676,
+         "relative_delta_vs_pass": 22.25033187866211,
+         "old_margin_vs_pass": -29.459928512573242,
+         "new_margin_vs_pass": -7.209597110748291,
+         "p_frozen": 1.605888816022527e-13,
+         "p_final": 0.0007379297167062759
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": 29.08562660217285,
+         "delta": -25.59252166748047,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 0.9999996423721313,
+         "p_final": 0.9979373216629028
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "t3_lp": 4000,
+   "game_over": null
+  }
+ },
+ "probe": {
+  "H1-ASH": {
+   "source": "reused unseen-probe record (all own actions equal)",
+   "screens": [
+    {
+     "step": 66,
+     "latest_chain_card": 14558127,
+     "executed": "pass",
+     "who": "model",
+     "adapters": {
+      "new": {
+       "choice": "pass",
+       "frozen_choice": "pass",
+       "options": [
+        {
+         "option": "G",
+         "spec": "h1",
+         "frozen_logit": -7.953522682189941,
+         "delta": -20.774490356445312,
+         "relative_delta_vs_pass": -0.11238288879394531,
+         "old_margin_vs_pass": -35.467159271240234,
+         "new_margin_vs_pass": -35.57954406738281,
+         "p_frozen": 3.951922742061176e-16,
+         "p_final": 3.5318346342880376e-16
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": 27.51363754272461,
+         "delta": -20.662107467651367,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 1.0,
+         "p_final": 1.0
+        }
+       ]
+      },
+      "coverage": {
+       "choice": "pass",
+       "frozen_choice": "pass",
+       "options": [
+        {
+         "option": "G",
+         "spec": "h1",
+         "frozen_logit": -7.953522682189941,
+         "delta": -3.111846685409546,
+         "relative_delta_vs_pass": 22.437000274658203,
+         "old_margin_vs_pass": -35.467159271240234,
+         "new_margin_vs_pass": -13.030159950256348,
+         "p_frozen": 3.951922742061176e-16,
+         "p_final": 2.1931709852651693e-06
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": 27.51363754272461,
+         "delta": -25.548847198486328,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 1.0,
+         "p_final": 0.9999978542327881
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "outcome": {
+    "hand_before": [
+     23434538,
+     49036338,
+     59438930
+    ],
+    "hand_after": [
+     23434538,
+     49036338,
+     59438930
+    ],
+    "monsters_after": [
+     74631897,
+     97434754,
+     97556336
+    ],
+    "graveyard_after": [
+     23829452,
+     60946049,
+     74011784,
+     97045737
+    ],
+    "opponent_monsters_after": [],
+    "opponent_gy_after": [
+     14558127
+    ],
+    "g_kept": true,
+    "medius_on_field": true,
+    "medius_in_gy": false
+   }
+  },
+  "H1-GAMMA": {
+   "source": "reused unseen-probe record (all own actions equal)",
+   "screens": [
+    {
+     "step": 66,
+     "latest_chain_card": 38814750,
+     "executed": "pass",
+     "who": "model",
+     "adapters": {
+      "new": {
+       "choice": "pass",
+       "frozen_choice": "pass",
+       "options": [
+        {
+         "option": "G",
+         "spec": "h1",
+         "frozen_logit": -7.921224594116211,
+         "delta": -21.998554229736328,
+         "relative_delta_vs_pass": -0.11500930786132812,
+         "old_margin_vs_pass": -35.340599060058594,
+         "new_margin_vs_pass": -35.455604553222656,
+         "p_frozen": 4.485107218347301e-16,
+         "p_final": 3.9978509860436723e-16
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": 27.41937255859375,
+         "delta": -21.883544921875,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 1.0,
+         "p_final": 1.0
+        }
+       ]
+      },
+      "coverage": {
+       "choice": "pass",
+       "frozen_choice": "pass",
+       "options": [
+        {
+         "option": "G",
+         "spec": "h1",
+         "frozen_logit": -7.921224594116211,
+         "delta": -3.1487841606140137,
+         "relative_delta_vs_pass": 22.40898895263672,
+         "old_margin_vs_pass": -35.340599060058594,
+         "new_margin_vs_pass": -12.931608200073242,
+         "p_frozen": 4.485107218347301e-16,
+         "p_final": 2.4203204702644143e-06
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": 27.41937255859375,
+         "delta": -25.55777359008789,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 1.0,
+         "p_final": 0.999997615814209
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "outcome": {
+    "hand_before": [
+     23434538,
+     49036338,
+     59438930
+    ],
+    "hand_after": [
+     23434538,
+     49036338,
+     59438930
+    ],
+    "monsters_after": [
+     74631897,
+     97434754
+    ],
+    "graveyard_after": [
+     23829452,
+     60946049,
+     74011784,
+     97045737,
+     97556336
+    ],
+    "opponent_monsters_after": [
+     38814750,
+     49036338
+    ],
+    "opponent_gy_after": [],
+    "g_kept": true,
+    "medius_on_field": false,
+    "medius_in_gy": true
+   }
+  },
+  "H2-ASH": {
+   "source": "reused unseen-probe record (all own actions equal)",
+   "screens": [
+    {
+     "step": 49,
+     "latest_chain_card": 14558127,
+     "executed": "pass",
+     "who": "model",
+     "adapters": {
+      "new": {
+       "choice": "pass",
+       "frozen_choice": "pass",
+       "options": [
+        {
+         "option": "G",
+         "spec": "h2",
+         "frozen_logit": -6.20790958404541,
+         "delta": -20.774490356445312,
+         "relative_delta_vs_pass": -0.11238288879394531,
+         "old_margin_vs_pass": -32.876678466796875,
+         "new_margin_vs_pass": -32.98905944824219,
+         "p_frozen": 5.2703563118794514e-15,
+         "p_final": 4.710136767378456e-15
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": 26.66876792907715,
+         "delta": -20.662107467651367,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 1.0,
+         "p_final": 1.0
+        }
+       ]
+      },
+      "coverage": {
+       "choice": "pass",
+       "frozen_choice": "pass",
+       "options": [
+        {
+         "option": "G",
+         "spec": "h2",
+         "frozen_logit": -6.20790958404541,
+         "delta": -3.111846685409546,
+         "relative_delta_vs_pass": 22.437000274658203,
+         "old_margin_vs_pass": -32.876678466796875,
+         "new_margin_vs_pass": -10.439677238464355,
+         "p_frozen": 5.2703563118794514e-15,
+         "p_final": 2.9247792554087937e-05
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": 26.66876792907715,
+         "delta": -25.548847198486328,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 1.0,
+         "p_final": 0.9999707937240601
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "outcome": {
+    "hand_before": [
+     23434538,
+     59438930,
+     74011784
+    ],
+    "hand_after": [
+     23434538,
+     59438930,
+     74011784
+    ],
+    "monsters_after": [
+     60946049,
+     97434754,
+     97556336
+    ],
+    "graveyard_after": [
+     10045474,
+     97045737
+    ],
+    "opponent_monsters_after": [],
+    "opponent_gy_after": [
+     14558127
+    ],
+    "g_kept": true,
+    "medius_on_field": true,
+    "medius_in_gy": false
+   }
+  },
+  "H2-GAMMA": {
+   "source": "reused unseen-probe record (all own actions equal)",
+   "screens": [
+    {
+     "step": 49,
+     "latest_chain_card": 38814750,
+     "executed": "pass",
+     "who": "model",
+     "adapters": {
+      "new": {
+       "choice": "pass",
+       "frozen_choice": "pass",
+       "options": [
+        {
+         "option": "G",
+         "spec": "h2",
+         "frozen_logit": -6.306747913360596,
+         "delta": -21.998554229736328,
+         "relative_delta_vs_pass": -0.11500930786132812,
+         "old_margin_vs_pass": -32.9764518737793,
+         "new_margin_vs_pass": -33.091461181640625,
+         "p_frozen": 4.769896212356668e-15,
+         "p_final": 4.251684419841802e-15
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": 26.66970443725586,
+         "delta": -21.883544921875,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 1.0,
+         "p_final": 1.0
+        }
+       ]
+      },
+      "coverage": {
+       "choice": "pass",
+       "frozen_choice": "pass",
+       "options": [
+        {
+         "option": "G",
+         "spec": "h2",
+         "frozen_logit": -6.306747913360596,
+         "delta": -3.1487841606140137,
+         "relative_delta_vs_pass": 22.40898895263672,
+         "old_margin_vs_pass": -32.9764518737793,
+         "new_margin_vs_pass": -10.567462921142578,
+         "p_frozen": 4.769896212356668e-15,
+         "p_final": 2.573937308625318e-05
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": 26.66970443725586,
+         "delta": -25.55777359008789,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 1.0,
+         "p_final": 0.999974250793457
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "outcome": {
+    "hand_before": [
+     23434538,
+     59438930,
+     74011784
+    ],
+    "hand_after": [
+     23434538,
+     59438930,
+     74011784
+    ],
+    "monsters_after": [
+     60946049,
+     97434754
+    ],
+    "graveyard_after": [
+     10045474,
+     97045737,
+     97556336
+    ],
+    "opponent_monsters_after": [
+     38814750,
+     49036338
+    ],
+    "opponent_gy_after": [],
+    "g_kept": true,
+    "medius_on_field": false,
+    "medius_in_gy": true
+   }
+  },
+  "H1-USAGI-BASE": {
+   "source": "new record + replay",
+   "policy": {
+    "type": "2-file original entry",
+    "adapter_sha256": null,
+    "base_sha256": "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+    "head_sha256": "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2"
+   },
+   "adapter_active": null,
+   "target": "established",
+   "reason": "target_chain_resolved",
+   "opponent": [
+    "target: USAGI activated"
+   ],
+   "screens": [
+    {
+     "step": 66,
+     "latest_chain_card": 59438930,
+     "executed": "pass",
+     "who": "model",
+     "adapters": {
+      "new": {
+       "choice": "pass",
+       "frozen_choice": "pass",
+       "options": [
+        {
+         "option": "G",
+         "spec": "h1",
+         "frozen_logit": -8.14853286743164,
+         "delta": -19.0557804107666,
+         "relative_delta_vs_pass": -0.2365550994873047,
+         "old_margin_vs_pass": -35.61940002441406,
+         "new_margin_vs_pass": -35.855953216552734,
+         "p_frozen": 3.393838144103735e-16,
+         "p_final": 2.6789055436274593e-16
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": 27.47086524963379,
+         "delta": -18.819225311279297,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 1.0,
+         "p_final": 1.0
+        }
+       ]
+      },
+      "coverage": {
+       "choice": "pass",
+       "frozen_choice": "pass",
+       "options": [
+        {
+         "option": "G",
+         "spec": "h1",
+         "frozen_logit": -8.14853286743164,
+         "delta": -3.0134148597717285,
+         "relative_delta_vs_pass": 22.498023986816406,
+         "old_margin_vs_pass": -35.61940002441406,
+         "new_margin_vs_pass": -13.121374130249023,
+         "p_frozen": 3.393838144103735e-16,
+         "p_final": 2.0019754174427362e-06
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": 27.47086524963379,
+         "delta": -25.511438369750977,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 1.0,
+         "p_final": 0.9999979734420776
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "outcome": {
+    "hand_before": [
+     23434538,
+     49036338,
+     59438930
+    ],
+    "hand_after": [
+     23434538,
+     49036338,
+     59438930
+    ],
+    "monsters_after": [
+     17473466,
+     74631897,
+     97434754
+    ],
+    "graveyard_after": [
+     23829452,
+     60946049,
+     74011784,
+     97045737,
+     97556336
+    ],
+    "opponent_monsters_after": [],
+    "opponent_gy_after": [
+     59438930
+    ],
+    "g_kept": true,
+    "medius_on_field": false,
+    "medius_in_gy": true
+   },
+   "replay": {
+    "name": "H1-USAGI-BASE",
+    "engine_run": 11,
+    "replayed_engine_run": 9,
+    "mismatch": null,
+    "failure": null,
+    "reproduced_steps": 71,
+    "of": 71,
+    "reason": "target_chain_resolved",
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true,
+    "lua_errors": 0
+   }
+  },
+  "H1-USAGI-CAND": {
+   "source": "new record + replay",
+   "policy": {
+    "type": "artmage-scoped-response-adapter",
+    "adapter_sha256": "c110f9647c8806f9ed76011f47a4a3a2d3818343d2033917db721d0807c363ec",
+    "base_sha256": "b9c7751f5c1f7179faa4911e1a52e8603e332fd9700a0f301dd4e759f8208f66",
+    "head_sha256": "77191d5d9a9aaa65d63902c93e47c0e3274009e7a91ee1e8e8abb48fcd73c6a2"
+   },
+   "adapter_active": [
+    {
+     "call": 57,
+     "chain": [
+      2,
+      2,
+      8,
+      0
+     ],
+     "legal": 2,
+     "frozen_argmax": 1,
+     "final_argmax": 1,
+     "max_abs_delta_legal": 19.0557804107666,
+     "delta_frozen_choice": -18.819225311279297,
+     "delta_final_choice": -18.819225311279297
+    }
+   ],
+   "target": "established",
+   "reason": "target_chain_resolved",
+   "opponent": [
+    "target: USAGI activated"
+   ],
+   "screens": [
+    {
+     "step": 66,
+     "latest_chain_card": 59438930,
+     "executed": "pass",
+     "who": "model",
+     "adapters": {
+      "new": {
+       "choice": "pass",
+       "frozen_choice": "pass",
+       "options": [
+        {
+         "option": "G",
+         "spec": "h1",
+         "frozen_logit": -8.14853286743164,
+         "delta": -19.0557804107666,
+         "relative_delta_vs_pass": -0.2365550994873047,
+         "old_margin_vs_pass": -35.61940002441406,
+         "new_margin_vs_pass": -35.855953216552734,
+         "p_frozen": 3.393838144103735e-16,
+         "p_final": 2.6789055436274593e-16
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": 27.47086524963379,
+         "delta": -18.819225311279297,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 1.0,
+         "p_final": 1.0
+        }
+       ]
+      },
+      "coverage": {
+       "choice": "pass",
+       "frozen_choice": "pass",
+       "options": [
+        {
+         "option": "G",
+         "spec": "h1",
+         "frozen_logit": -8.14853286743164,
+         "delta": -3.0134148597717285,
+         "relative_delta_vs_pass": 22.498023986816406,
+         "old_margin_vs_pass": -35.61940002441406,
+         "new_margin_vs_pass": -13.121374130249023,
+         "p_frozen": 3.393838144103735e-16,
+         "p_final": 2.0019754174427362e-06
+        },
+        {
+         "option": "pass",
+         "spec": "",
+         "frozen_logit": 27.47086524963379,
+         "delta": -25.511438369750977,
+         "relative_delta_vs_pass": 0.0,
+         "old_margin_vs_pass": 0.0,
+         "new_margin_vs_pass": 0.0,
+         "p_frozen": 1.0,
+         "p_final": 0.9999979734420776
+        }
+       ]
+      }
+     }
+    }
+   ],
+   "outcome": {
+    "hand_before": [
+     23434538,
+     49036338,
+     59438930
+    ],
+    "hand_after": [
+     23434538,
+     49036338,
+     59438930
+    ],
+    "monsters_after": [
+     17473466,
+     74631897,
+     97434754
+    ],
+    "graveyard_after": [
+     23829452,
+     60946049,
+     74011784,
+     97045737,
+     97556336
+    ],
+    "opponent_monsters_after": [],
+    "opponent_gy_after": [
+     59438930
+    ],
+    "g_kept": true,
+    "medius_on_field": false,
+    "medius_in_gy": true
+   },
+   "replay": {
+    "name": "H1-USAGI-CAND",
+    "engine_run": 12,
+    "replayed_engine_run": 10,
+    "mismatch": null,
+    "failure": null,
+    "reproduced_steps": 71,
+    "of": 71,
+    "reason": "target_chain_resolved",
+    "final_equal": true,
+    "checkpoints_equal": true,
+    "game_over_equal": true,
+    "observations_match": true,
+    "lua_errors": 0
+   }
+  },
+  "H1-USAGI-BASE-vs-CAND-identical": true
+ }
+}

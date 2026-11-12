@@ -1,0 +1,16 @@
+{"event": "start", "run": 1, "purpose": "run condition=none", "case_id": "elf-rukina-regina-g00-p0", "time_jst": "2026-11-09T20:56:52+09:00"}
+{"event": "finish", "run": 1, "status": "ok", "time_jst": "2026-11-09T20:56:52+09:00", "failure": null, "mismatch": null}
+{"event": "start", "run": 2, "purpose": "run condition=g", "case_id": "elf-rukina-regina-g00-p0", "time_jst": "2026-11-09T20:57:00+09:00"}
+{"event": "finish", "run": 2, "status": "ok", "time_jst": "2026-11-09T20:57:00+09:00", "failure": null, "mismatch": null}
+{"event": "start", "run": 3, "purpose": "run condition=droll", "case_id": "elf-rukina-regina-g00-p0", "time_jst": "2026-11-09T20:57:21+09:00"}
+{"event": "finish", "run": 3, "status": "ok", "time_jst": "2026-11-09T20:57:21+09:00", "failure": null, "mismatch": null}
+{"event": "start", "run": 4, "purpose": "run condition=both", "case_id": "elf-rukina-regina-g00-p0", "time_jst": "2026-11-09T20:57:51+09:00"}
+{"event": "finish", "run": 4, "status": "ok", "time_jst": "2026-11-09T20:57:52+09:00", "failure": null, "mismatch": null}
+{"event": "start", "run": 5, "purpose": "replay condition=none", "case_id": "elf-rukina-regina-g00-p0", "time_jst": "2026-11-09T20:58:03+09:00"}
+{"event": "finish", "run": 5, "status": "ok", "time_jst": "2026-11-09T20:58:03+09:00", "failure": null, "mismatch": null}
+{"event": "start", "run": 6, "purpose": "replay condition=g", "case_id": "elf-rukina-regina-g00-p0", "time_jst": "2026-11-09T20:58:05+09:00"}
+{"event": "finish", "run": 6, "status": "ok", "time_jst": "2026-11-09T20:58:06+09:00", "failure": null, "mismatch": null}
+{"event": "start", "run": 7, "purpose": "replay condition=droll", "case_id": "elf-rukina-regina-g00-p0", "time_jst": "2026-11-09T20:58:08+09:00"}
+{"event": "finish", "run": 7, "status": "ok", "time_jst": "2026-11-09T20:58:08+09:00", "failure": null, "mismatch": null}
+{"event": "start", "run": 8, "purpose": "replay condition=both", "case_id": "elf-rukina-regina-g00-p0", "time_jst": "2026-11-09T20:58:10+09:00"}
+{"event": "finish", "run": 8, "status": "ok", "time_jst": "2026-11-09T20:58:10+09:00", "failure": null, "mismatch": null}

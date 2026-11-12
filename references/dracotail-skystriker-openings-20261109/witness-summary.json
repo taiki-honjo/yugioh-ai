@@ -1,0 +1,88 @@
+[
+  {
+    "id": "d-lukias-monster",
+    "passed": true,
+    "failure": null,
+    "remaining": [],
+    "goal": {
+      "monsters": true,
+      "sets": true,
+      "hand": true,
+      "opponent_turn": true
+    }
+  },
+  {
+    "id": "s-raye-minimal",
+    "passed": true,
+    "failure": null,
+    "remaining": [],
+    "goal": {
+      "monsters": true,
+      "sets": true,
+      "hand": true,
+      "opponent_turn": true
+    }
+  },
+  {
+    "id": "d-white-minimal",
+    "passed": false,
+    "failure": "Unresolved witness choice",
+    "remaining": [
+      {
+        "act": "Activate",
+        "code": 73819701
+      },
+      {
+        "act": "None",
+        "code": 87746184
+      },
+      {
+        "act": "Activate",
+        "code": 73819701
+      },
+      {
+        "act": "None",
+        "code": 55273560
+      },
+      {
+        "act": "SpSummon",
+        "code": 78397661
+      },
+      {
+        "act": "None",
+        "code": 55273560
+      },
+      {
+        "act": "None",
+        "code": 73819701
+      },
+      {
+        "act": "Activate",
+        "code": 78397661
+      },
+      {
+        "act": "None",
+        "code": 95515789
+      },
+      {
+        "act": "None",
+        "code": 0,
+        "phase": "End"
+      },
+      {
+        "act": "Activate",
+        "code": 87746184
+      },
+      {
+        "act": "None",
+        "code": 30271097
+      }
+    ],
+    "goal": {
+      "monsters": false,
+      "sets": false,
+      "hand": true,
+      "opponent_turn": false
+    }
+  }
+]

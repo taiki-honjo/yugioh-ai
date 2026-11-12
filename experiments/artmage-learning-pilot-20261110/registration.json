@@ -1,0 +1,352 @@
+{
+ "status": "registered_before_engine_runs",
+ "registered_jst": "2026-11-10T18:20:49+09:00",
+ "spec": "C:/Users/hatk8/Documents/Codex/2026-10-27/new-chat/outputs/artmage-first-learning-decision-2026-11-10.md",
+ "start_model": {
+  "base": "/home/hatk8/projects/yugioh-ai/experiments/artmage-learning-pilot-20261110/models/initial/base.flax_model",
+  "base_sha256": "12500c7724b2d723983a2963a960d75172a6df51fb55ea4f3acf102eeb34132e",
+  "head": "/home/hatk8/projects/yugioh-ai/experiments/artmage-learning-pilot-20261110/models/initial/chain-head.flax_model",
+  "head_sha256": "0bc7534cab102cd87586e5d22bd4ad0cd3b55d52d08e284146976506ae6193fc",
+  "source": "experiments/opponent-article-training-20261108/run-20261108-145203/training/Artmage/step-0200"
+ },
+ "training": {
+  "candidates": 1,
+  "seed": 10111001,
+  "rehearsal_seed": 30111001,
+  "first_learner_seat": 0,
+  "seed_check": "10111001, 30111001, 1110003, 1110004: no occurrence in any json/jsonl/py/md/txt/log file under experiments, scripts, config, docs, evaluation before this registration",
+  "environment_decisions_cap": 4096,
+  "counting": "learner and frozen decisions are logged separately; the cap is on their total",
+  "collection": "natural duels (normal dealing and draws; fresh env per episode; player 0 moves first), learner seat alternates per episode starting with seat 0; frozen side = start model; both sides sample from their own logits; common position adapter for both sides",
+  "window": "closes at the first learner decision or episode end after >= 128 environment decisions, or at the cap",
+  "update": "per window: one PPO epoch, 4 contiguous chunks (<= 32 learner decisions, stored rollout RNN state at chunk start); each chunk is one minibatch with 2 rehearsal sequences; one Adam step per minibatch",
+  "ppo": {
+   "learning_rate": 1.5e-05,
+   "adam_eps": 1e-05,
+   "max_grad_norm": 1.0,
+   "clip_coef": 0.25,
+   "dual_clip_coef": 3.0,
+   "ent_coef": 0.01,
+   "vf_coef": 1.0,
+   "vloss_clip": 1.0,
+   "gamma": 1.0,
+   "gae_lambda": 0.95,
+   "rehearsal_lambda": 5.0,
+   "rehearsal_kl": 0.0,
+   "norm_adv": false,
+   "upgo": false,
+   "update_epochs": 1,
+   "minibatches_per_window": 4,
+   "chunk_length": 32
+  },
+  "device": "GPU (one GPU job; jax_default_matmul_precision=highest)",
+  "loss_exclusions": "select_position (adapter-owned) steps of the learner are history only",
+  "rehearsal": {
+   "per_block": "14 old / 1 C1 / 1 C2 per 16 sequences, slot order shuffled by rehearsal_seed; old slots uniform with replacement from the 12 old train sequences",
+   "sequences_per_minibatch": 2,
+   "lambda_": 5.0,
+   "kl": 0.0,
+   "loss": "CE of the demonstrated label (single acceptable action), mean over the minibatch loss steps",
+   "data": {
+    "old": {
+     "sequences": 12,
+     "decisions": 1077,
+     "loss_steps": 969,
+     "context_only_steps": 108,
+     "position_steps_excluded": 108,
+     "messages_in_loss": {
+      "1": 180,
+      "2": 321,
+      "3": 144,
+      "6": 36,
+      "7": 48,
+      "9": 36,
+      "10": 12,
+      "11": 156,
+      "16": 36
+     }
+    },
+    "C1": {
+     "sequences": 1,
+     "decisions": 113,
+     "loss_steps": 94,
+     "context_only_steps": 19,
+     "position_steps_excluded": 9,
+     "messages_in_loss": {
+      "1": 17,
+      "2": 38,
+      "3": 11,
+      "6": 3,
+      "7": 4,
+      "9": 5,
+      "10": 1,
+      "11": 13,
+      "16": 2
+     }
+    },
+    "C2": {
+     "sequences": 1,
+     "decisions": 100,
+     "loss_steps": 85,
+     "context_only_steps": 15,
+     "position_steps_excluded": 7,
+     "messages_in_loss": {
+      "1": 15,
+      "2": 35,
+      "3": 11,
+      "6": 1,
+      "7": 4,
+      "9": 3,
+      "10": 1,
+      "11": 13,
+      "16": 2
+     }
+    }
+   },
+   "files": {
+    "old": {
+     "path": "/home/hatk8/projects/yugioh-ai/experiments/opponent-article-training-20261108/run-20261108-145203/dataset/Artmage/train.npz",
+     "sha256": "61bc7cb52209c4c15b97e952694dd4a748752f59ea1734f99f4dd5ed197f3a14"
+    },
+    "C1": {
+     "observations": "8425bd1cf43608f417c0fca9bdf2f00fa7fe3cd95463e31460ab622307cd935d",
+     "record": "41fe4c4fc1c0e956ac983202676afeb23b5cdef4413c54c0d699d41b63776d84"
+    },
+    "C2": {
+     "observations": "41be0b84d1d45803b3afe66d1c279c6f5764fed6feb6a96c0837ddc9e2dceff4",
+     "record": "7b6b5e633fef3662e1077390e6340eeb6cb97405de6e65307101158e87bdee0d"
+    }
+   }
+  },
+  "candidate": "state after the last window; no checkpoint selection; not adopted",
+  "checks_after_save": [
+   "reload through the isolated entry with the saved hashes",
+   "logits on the C1/C2 histories: memory vs saved equal",
+   "neural argmax and position-adapter final actions checked separately",
+   "base and head both changed"
+  ],
+  "exposure_check": "each episode records each player's own hand at its first decision (exact 5 cards when that is in turn 1, otherwise a superset after the draw); compared with the evaluation hands by multiset; overlaps are reported, never replaced"
+ },
+ "evaluation": {
+  "cap": 18,
+  "ledger": "/home/hatk8/projects/yugioh-ai/experiments/artmage-learning-pilot-20261110/eval-runs.jsonl",
+  "order": [
+   "variant C1v, C2v (scripted, 2)",
+   "RT1 start g06, g07 (2)",
+   "NT1 start C1, C2, C1v, C2v (4)",
+   "training",
+   "RT1 candidate g06-g11 (6)",
+   "NT1 candidate C1, C2, C1v, C2v (4)"
+  ],
+  "rt1": {
+   "cases": [
+    "Artmage-g06-p0",
+    "Artmage-g07-p0",
+    "Artmage-g08-p0",
+    "Artmage-g09-p0",
+    "Artmage-g10-p0",
+    "Artmage-g11-p0"
+   ],
+   "baseline": "start-model passing set: g06/g07 from this pilot, g08-g11 reused from experiments/artmage-parallel-20261110/regression (identical to the original records)",
+   "retention": "candidate keeps every baseline-passing case; new passes on baseline failures allowed; never judged by counts",
+   "stop": "identical to check_other_positions (goal_reached / opponent_main_phase_passed / two_turns_passed / episode_finished, 320 decisions)"
+  },
+  "nt1": {
+   "conditions": {
+    "C1": {
+     "hand": [
+      1122030,
+      10045474,
+      14558127,
+      23434538,
+      73642296
+     ],
+     "seed": 1110001,
+     "reference": "C1"
+    },
+    "C2": {
+     "hand": [
+      74733322,
+      10045474,
+      14558127,
+      23434538,
+      73642296
+     ],
+     "seed": 1110002,
+     "reference": "C2"
+    },
+    "C1v": {
+     "hand": [
+      1122030,
+      97045737,
+      59438930,
+      38814750,
+      49036338
+     ],
+     "seed": 1110003,
+     "reference": "C1"
+    },
+    "C2v": {
+     "hand": [
+      74733322,
+      25311006,
+      59438930,
+      38814750,
+      49036338
+     ],
+     "seed": 1110004,
+     "reference": "C2"
+    }
+   },
+   "variants": {
+    "C1v": {
+     "hand": [
+      1122030,
+      97045737,
+      59438930,
+      38814750,
+      49036338
+     ],
+     "seed": 1110003,
+     "cost_card": "聖王の粉砕（罠）",
+     "plan": "registered C1 plan",
+     "filler_priority_for_medius_cost": [
+      49036338,
+      38814750,
+      59438930
+     ],
+     "shares_group_with_old_split": null,
+     "shares_group_with_demo": null
+    },
+    "C2v": {
+     "hand": [
+      74733322,
+      25311006,
+      59438930,
+      38814750,
+      49036338
+     ],
+     "seed": 1110004,
+     "cost_card": "三戦の才（魔法）",
+     "plan": "registered C2 plan",
+     "filler_priority_for_medius_cost": [
+      49036338,
+      38814750,
+      59438930
+     ],
+     "shares_group_with_old_split": null,
+     "shares_group_with_demo": null
+    }
+   },
+   "stop": "first decision of turn 4 (end of own turn 3), game over from env.step returns, or 600 environment decisions (cap is not success)",
+   "player1": "common pass policy every turn; first legal option as a logged fallback when it cannot decide",
+   "model": "free, position adapter on; no scripts or goals in its inputs",
+   "fixture_property": "both players hold the same 5 cards; no normal draws in fixture duels (native draw count 0); turn 3 is observed without a draw",
+   "records": [
+    "own turn 1 end / opponent turn 2 end / own turn 3 end boards with LP",
+    "every action with its legal alternatives",
+    "offered vs used vs resolved effects",
+    "divergence from the scripted route",
+    "legacy Assault goal as a diagnostic only"
+   ]
+  },
+  "evaluation_hands": {
+   "Artmage-g06-p0": [
+    59438930,
+    1122030,
+    14558127,
+    14558127,
+    14558127
+   ],
+   "Artmage-g07-p0": [
+    73642296,
+    1122030,
+    38814750,
+    59438930,
+    73642296
+   ],
+   "Artmage-g08-p0": [
+    1122030,
+    14558127,
+    73642296,
+    73642296,
+    59438930
+   ],
+   "Artmage-g09-p0": [
+    1122030,
+    73642296,
+    23434538,
+    73642296,
+    59438930
+   ],
+   "Artmage-g10-p0": [
+    14558127,
+    73642296,
+    14558127,
+    59438930,
+    1122030
+   ],
+   "Artmage-g11-p0": [
+    14558127,
+    49036338,
+    1122030,
+    23434538,
+    59438930
+   ],
+   "C1": [
+    1122030,
+    10045474,
+    14558127,
+    23434538,
+    73642296
+   ],
+   "C2": [
+    74733322,
+    10045474,
+    14558127,
+    23434538,
+    73642296
+   ],
+   "C1v": [
+    1122030,
+    97045737,
+    59438930,
+    38814750,
+    49036338
+   ],
+   "C2v": [
+    74733322,
+    25311006,
+    59438930,
+    38814750,
+    49036338
+   ]
+  },
+  "variant_failure_rule": "if a variant script fails, record it and revise the plan before training or viewing other results; no search for another hand"
+ },
+ "not_done": [
+  "battles",
+  "adoption",
+  "B2B",
+  "server posts",
+  "common registry / Elfnotes changes"
+ ],
+ "limits": {
+  "memory_gib": 5,
+  "swap": 0,
+  "cpu_percent": 300,
+  "job_seconds": 1800,
+  "nice": 10
+ },
+ "code": {
+  "artmage_entry.py": "ca47f56d29431b48d60337de6dcc6ce23d524fba31cbbbdce31e6d7399b78e0f",
+  "artmage_pins.py": "10c4e053d05f44498cff77c45301a3fb5222c7598a658decc52f4539fd96bde8",
+  "artmage_teacher.py": "a126284eff7a2d7ef3c602ade0aa5f196f7ddea77333213c27a197ade21b78f3",
+  "pilot_data.py": "dc749fb5ea77419741d0e7469edd7f423db241eae11ccafe399f76a04c3417e8",
+  "pilot_eval.py": "14eab68342a9b6bf5ddaca8f57630909dbf99231e25379089d759d0d36de2ef3",
+  "pilot_launch.py": "8eb52cb1f9b2cf9492308f0f2cdaad3eee92515ae9cf7a2bc2247a421fcf94c3",
+  "pilot_model.py": "8bec14fb9a1e6c02cbfa715c21146aafeb45b00f060d4cd7afa57b7c84e0ad56",
+  "pilot_register.py": "50fe04ccd45e88d15db6c070c60c210df0da1ae8575de4bde11d185a52bbd93b",
+  "pilot_train.py": "fa036d2c74d915b8e47e2cdec1f6758fa13b8dabfcb4ac7d34a25aeea0bb3ff3"
+ }
+}

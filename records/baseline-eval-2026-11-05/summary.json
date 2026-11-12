@@ -1,0 +1,1402 @@
+{
+  "meta": {
+    "timestamp_jst": "2026-11-06T18:11:15.298600+09:00",
+    "base_seed": 1000,
+    "num_episodes": 32,
+    "num_envs": 8,
+    "env_threads": 4,
+    "max_steps": 1000,
+    "timeout": 600,
+    "deck_path": "/home/hatk8/projects/yugioh-ai/assets/deck/BlueEyes.ydk",
+    "jit_warmup_seconds": 1.5181,
+    "init_model_rng_seed": 51706749
+  },
+  "matchups": [
+    {
+      "matchup": "random vs random",
+      "candidate": {
+        "kind": "builtin",
+        "strategy": "random",
+        "label": "random",
+        "path": null,
+        "sha256": null
+      },
+      "opponent": {
+        "kind": "builtin",
+        "strategy": "random",
+        "label": "random",
+        "path": null,
+        "sha256": null
+      },
+      "config": {
+        "deck": "BlueEyes",
+        "num_episodes": 32,
+        "num_envs": 8,
+        "env_threads": 4,
+        "max_steps": 1000,
+        "timeout": 600,
+        "num_waves": 2,
+        "base_seed": 1000,
+        "wave_seeds": [
+          3072724,
+          891631
+        ],
+        "unused_in_training": true,
+        "oppo_info": false,
+        "skip_mask": true,
+        "seat_swapped": true
+      },
+      "results": {
+        "total_episodes": 32,
+        "verified_episodes": 32,
+        "excluded_suspected_episodes": 0,
+        "excluded_timeout_or_suspected_episodes": 0,
+        "wins": 15,
+        "losses": 17,
+        "draws": 0,
+        "win_rate": 0.4688,
+        "win_rate_includes_truncated_lp": true,
+        "truncation_rate": 0.0,
+        "win_rate_ci95": [
+          0.1975,
+          0.7535
+        ],
+        "win_rate_se_paired": 0.085,
+        "effective_sample_size": 16.0,
+        "avg_reward": -0.0634,
+        "has_suspected_timeout": false,
+        "requires_rerun_or_exclusion": false,
+        "timeout_suspected_policy": "exclude_engine_timeout_and_suspected_pairs_from_verified_and_natural_results_keep_raw_in_episodes_and_raw_including_suspected_flag_rerun",
+        "natural_only": {
+          "episodes": 32,
+          "wins": 15,
+          "losses": 17,
+          "draws": 0,
+          "win_rate": 0.4688
+        },
+        "raw_including_suspected": {
+          "episodes": 32,
+          "wins": 15,
+          "losses": 17,
+          "draws": 0,
+          "win_rate": 0.4688,
+          "win_rate_ci95": [
+            0.1975,
+            0.7535
+          ]
+        },
+        "first_player": {
+          "episodes": 16,
+          "wins": 10,
+          "losses": 6,
+          "draws": 0,
+          "win_rate": 0.625,
+          "win_rate_ci95": [
+            0.3864,
+            0.8152
+          ]
+        },
+        "second_player": {
+          "episodes": 16,
+          "wins": 5,
+          "losses": 11,
+          "draws": 0,
+          "win_rate": 0.3125,
+          "win_rate_ci95": [
+            0.1416,
+            0.556
+          ]
+        },
+        "seed_pairs": {
+          "total_pairs": 16,
+          "verified_pairs": 16,
+          "suspected_or_timeout_pairs": 0,
+          "sweep_2_0_wins": 3,
+          "split_1_1_first_player_won_both": 7,
+          "split_1_1_second_player_won_both": 2,
+          "sweep_0_2_losses": 4,
+          "other_with_draws": 0
+        }
+      },
+      "terminations": {
+        "normal_total": 32,
+        "normal_lp0": 32,
+        "normal_deckout_or_special": 0,
+        "abnormal_total": 0,
+        "truncated": 0,
+        "engine_timeout": 0,
+        "timeout_suspected": 0,
+        "aborted_max_steps": 0,
+        "draws": 0
+      },
+      "timing_and_decisions": {
+        "jit_warmup_seconds_once": 0.0,
+        "matchup_wall_seconds": 0.9391,
+        "active_wave_wall_seconds": 0.913,
+        "candidate_model_total_seconds": 0.0,
+        "opponent_model_total_seconds": 0.0,
+        "env_step_total_seconds": 0.4368,
+        "candidate_model_batch_wall_seconds": 0.0,
+        "opponent_model_batch_wall_seconds": 0.0,
+        "env_step_batch_wall_seconds": 0.783,
+        "candidate_ms_per_decision": 0.0,
+        "opponent_ms_per_decision": 0.0,
+        "env_ms_per_step": 0.1102,
+        "sps": 4343.0,
+        "candidate_decisions_per_duel": {
+          "mean": 123.91,
+          "median": 123.0,
+          "min": 28,
+          "max": 245
+        },
+        "env_steps_per_duel": {
+          "mean": 123.91,
+          "median": 123.0,
+          "min": 28,
+          "max": 245
+        },
+        "engine_reported_candidate_ms_per_duel": {
+          "mean": 13.65,
+          "max": 30.801
+        },
+        "candidate_allocated_ms_per_decision": 0.0,
+        "opponent_allocated_ms_per_decision": 0.0,
+        "candidate_batch_wall_ms_per_decision": 0.0,
+        "opponent_batch_wall_ms_per_decision": 0.0,
+        "env_batch_wall_ms_per_step": 0.1975
+      }
+    },
+    {
+      "matchup": "init (0-step untrained) vs random",
+      "candidate": {
+        "kind": "model_init",
+        "strategy": "init",
+        "label": "init (0-step untrained)",
+        "path": null,
+        "sha256": null
+      },
+      "opponent": {
+        "kind": "builtin",
+        "strategy": "random",
+        "label": "random",
+        "path": null,
+        "sha256": null
+      },
+      "config": {
+        "deck": "BlueEyes",
+        "num_episodes": 32,
+        "num_envs": 8,
+        "env_threads": 4,
+        "max_steps": 1000,
+        "timeout": 600,
+        "num_waves": 2,
+        "base_seed": 1000,
+        "wave_seeds": [
+          3072724,
+          891631
+        ],
+        "unused_in_training": true,
+        "oppo_info": false,
+        "skip_mask": true,
+        "seat_swapped": true
+      },
+      "results": {
+        "total_episodes": 32,
+        "verified_episodes": 32,
+        "excluded_suspected_episodes": 0,
+        "excluded_timeout_or_suspected_episodes": 0,
+        "wins": 3,
+        "losses": 29,
+        "draws": 0,
+        "win_rate": 0.0938,
+        "win_rate_includes_truncated_lp": true,
+        "truncation_rate": 0.0,
+        "win_rate_ci95": [
+          0.0016,
+          0.3835
+        ],
+        "win_rate_se_paired": 0.0504,
+        "effective_sample_size": 16.0,
+        "avg_reward": -0.5409,
+        "has_suspected_timeout": false,
+        "requires_rerun_or_exclusion": false,
+        "timeout_suspected_policy": "exclude_engine_timeout_and_suspected_pairs_from_verified_and_natural_results_keep_raw_in_episodes_and_raw_including_suspected_flag_rerun",
+        "natural_only": {
+          "episodes": 32,
+          "wins": 3,
+          "losses": 29,
+          "draws": 0,
+          "win_rate": 0.0938
+        },
+        "raw_including_suspected": {
+          "episodes": 32,
+          "wins": 3,
+          "losses": 29,
+          "draws": 0,
+          "win_rate": 0.0938,
+          "win_rate_ci95": [
+            0.0016,
+            0.3835
+          ]
+        },
+        "first_player": {
+          "episodes": 16,
+          "wins": 2,
+          "losses": 14,
+          "draws": 0,
+          "win_rate": 0.125,
+          "win_rate_ci95": [
+            0.035,
+            0.3602
+          ]
+        },
+        "second_player": {
+          "episodes": 16,
+          "wins": 1,
+          "losses": 15,
+          "draws": 0,
+          "win_rate": 0.0625,
+          "win_rate_ci95": [
+            0.0111,
+            0.2833
+          ]
+        },
+        "seed_pairs": {
+          "total_pairs": 16,
+          "verified_pairs": 16,
+          "suspected_or_timeout_pairs": 0,
+          "sweep_2_0_wins": 0,
+          "split_1_1_first_player_won_both": 2,
+          "split_1_1_second_player_won_both": 1,
+          "sweep_0_2_losses": 13,
+          "other_with_draws": 0
+        }
+      },
+      "terminations": {
+        "normal_total": 32,
+        "normal_lp0": 32,
+        "normal_deckout_or_special": 0,
+        "abnormal_total": 0,
+        "truncated": 0,
+        "engine_timeout": 0,
+        "timeout_suspected": 0,
+        "aborted_max_steps": 0,
+        "draws": 0
+      },
+      "timing_and_decisions": {
+        "jit_warmup_seconds_once": 1.5181,
+        "matchup_wall_seconds": 2.8645,
+        "active_wave_wall_seconds": 2.8394,
+        "candidate_model_total_seconds": 0.9217,
+        "opponent_model_total_seconds": 0.0,
+        "env_step_total_seconds": 0.3737,
+        "candidate_model_batch_wall_seconds": 1.8955,
+        "opponent_model_batch_wall_seconds": 0.0,
+        "env_step_batch_wall_seconds": 0.8347,
+        "candidate_ms_per_decision": 0.3231,
+        "opponent_ms_per_decision": 0.0,
+        "env_ms_per_step": 0.131,
+        "sps": 1004.8,
+        "candidate_decisions_per_duel": {
+          "mean": 89.16,
+          "median": 68.5,
+          "min": 24,
+          "max": 281
+        },
+        "env_steps_per_duel": {
+          "mean": 89.16,
+          "median": 68.5,
+          "min": 24,
+          "max": 281
+        },
+        "engine_reported_candidate_ms_per_duel": {
+          "mean": 11.678,
+          "max": 38.867
+        },
+        "candidate_allocated_ms_per_decision": 0.3231,
+        "opponent_allocated_ms_per_decision": 0.0,
+        "candidate_batch_wall_ms_per_decision": 0.6644,
+        "opponent_batch_wall_ms_per_decision": 0.0,
+        "env_batch_wall_ms_per_step": 0.2926
+      }
+    },
+    {
+      "matchup": "blueeyes-4096.flax_model vs random",
+      "candidate": {
+        "kind": "checkpoint",
+        "strategy": "checkpoint",
+        "label": "blueeyes-4096.flax_model",
+        "path": "/home/hatk8/projects/yugioh-ai/checkpoints/trial-2026-10-27/blueeyes-4096.flax_model",
+        "sha256": "dd100d9f2e3a86cc5d292a36bacd78bd49d4375d380b2ee12747696abea1d49c"
+      },
+      "opponent": {
+        "kind": "builtin",
+        "strategy": "random",
+        "label": "random",
+        "path": null,
+        "sha256": null
+      },
+      "config": {
+        "deck": "BlueEyes",
+        "num_episodes": 32,
+        "num_envs": 8,
+        "env_threads": 4,
+        "max_steps": 1000,
+        "timeout": 600,
+        "num_waves": 2,
+        "base_seed": 1000,
+        "wave_seeds": [
+          3072724,
+          891631
+        ],
+        "unused_in_training": true,
+        "oppo_info": false,
+        "skip_mask": true,
+        "seat_swapped": true
+      },
+      "results": {
+        "total_episodes": 32,
+        "verified_episodes": 32,
+        "excluded_suspected_episodes": 0,
+        "excluded_timeout_or_suspected_episodes": 0,
+        "wins": 6,
+        "losses": 26,
+        "draws": 0,
+        "win_rate": 0.1875,
+        "win_rate_includes_truncated_lp": true,
+        "truncation_rate": 0.0,
+        "win_rate_ci95": [
+          0.0405,
+          0.4565
+        ],
+        "win_rate_se_paired": 0.0625,
+        "effective_sample_size": 16.0,
+        "avg_reward": -0.3637,
+        "has_suspected_timeout": false,
+        "requires_rerun_or_exclusion": false,
+        "timeout_suspected_policy": "exclude_engine_timeout_and_suspected_pairs_from_verified_and_natural_results_keep_raw_in_episodes_and_raw_including_suspected_flag_rerun",
+        "natural_only": {
+          "episodes": 32,
+          "wins": 6,
+          "losses": 26,
+          "draws": 0,
+          "win_rate": 0.1875
+        },
+        "raw_including_suspected": {
+          "episodes": 32,
+          "wins": 6,
+          "losses": 26,
+          "draws": 0,
+          "win_rate": 0.1875,
+          "win_rate_ci95": [
+            0.0405,
+            0.4565
+          ]
+        },
+        "first_player": {
+          "episodes": 16,
+          "wins": 1,
+          "losses": 15,
+          "draws": 0,
+          "win_rate": 0.0625,
+          "win_rate_ci95": [
+            0.0111,
+            0.2833
+          ]
+        },
+        "second_player": {
+          "episodes": 16,
+          "wins": 5,
+          "losses": 11,
+          "draws": 0,
+          "win_rate": 0.3125,
+          "win_rate_ci95": [
+            0.1416,
+            0.556
+          ]
+        },
+        "seed_pairs": {
+          "total_pairs": 16,
+          "verified_pairs": 16,
+          "suspected_or_timeout_pairs": 0,
+          "sweep_2_0_wins": 0,
+          "split_1_1_first_player_won_both": 1,
+          "split_1_1_second_player_won_both": 5,
+          "sweep_0_2_losses": 10,
+          "other_with_draws": 0
+        }
+      },
+      "terminations": {
+        "normal_total": 32,
+        "normal_lp0": 32,
+        "normal_deckout_or_special": 0,
+        "abnormal_total": 0,
+        "truncated": 0,
+        "engine_timeout": 0,
+        "timeout_suspected": 0,
+        "aborted_max_steps": 0,
+        "draws": 0
+      },
+      "timing_and_decisions": {
+        "jit_warmup_seconds_once": 1.5181,
+        "matchup_wall_seconds": 6.634,
+        "active_wave_wall_seconds": 6.6073,
+        "candidate_model_total_seconds": 2.2995,
+        "opponent_model_total_seconds": 0.0,
+        "env_step_total_seconds": 0.7823,
+        "candidate_model_batch_wall_seconds": 4.7477,
+        "opponent_model_batch_wall_seconds": 0.0,
+        "env_step_batch_wall_seconds": 1.6713,
+        "candidate_ms_per_decision": 0.3512,
+        "opponent_ms_per_decision": 0.0,
+        "env_ms_per_step": 0.1195,
+        "sps": 990.9,
+        "candidate_decisions_per_duel": {
+          "mean": 204.59,
+          "median": 193.0,
+          "min": 20,
+          "max": 521
+        },
+        "env_steps_per_duel": {
+          "mean": 204.59,
+          "median": 193.0,
+          "min": 20,
+          "max": 521
+        },
+        "engine_reported_candidate_ms_per_duel": {
+          "mean": 24.448,
+          "max": 65.677
+        },
+        "candidate_allocated_ms_per_decision": 0.3512,
+        "opponent_allocated_ms_per_decision": 0.0,
+        "candidate_batch_wall_ms_per_decision": 0.7252,
+        "opponent_batch_wall_ms_per_decision": 0.0,
+        "env_batch_wall_ms_per_step": 0.2553
+      }
+    },
+    {
+      "matchup": "blueeyes-4096-plus512.flax_model vs random",
+      "candidate": {
+        "kind": "checkpoint",
+        "strategy": "checkpoint",
+        "label": "blueeyes-4096-plus512.flax_model",
+        "path": "/home/hatk8/projects/yugioh-ai/checkpoints/trial-2026-10-27/blueeyes-4096-plus512.flax_model",
+        "sha256": "a181b3304d7f95ce2140d950ddcca0257e2c167d96ea433250b0bbd1867e2185"
+      },
+      "opponent": {
+        "kind": "builtin",
+        "strategy": "random",
+        "label": "random",
+        "path": null,
+        "sha256": null
+      },
+      "config": {
+        "deck": "BlueEyes",
+        "num_episodes": 32,
+        "num_envs": 8,
+        "env_threads": 4,
+        "max_steps": 1000,
+        "timeout": 600,
+        "num_waves": 2,
+        "base_seed": 1000,
+        "wave_seeds": [
+          3072724,
+          891631
+        ],
+        "unused_in_training": true,
+        "oppo_info": false,
+        "skip_mask": true,
+        "seat_swapped": true
+      },
+      "results": {
+        "total_episodes": 32,
+        "verified_episodes": 32,
+        "excluded_suspected_episodes": 0,
+        "excluded_timeout_or_suspected_episodes": 0,
+        "wins": 9,
+        "losses": 23,
+        "draws": 0,
+        "win_rate": 0.2812,
+        "win_rate_includes_truncated_lp": true,
+        "truncation_rate": 0.0,
+        "win_rate_ci95": [
+          0.0727,
+          0.5866
+        ],
+        "win_rate_se_paired": 0.064,
+        "effective_sample_size": 16.0,
+        "avg_reward": -0.3265,
+        "has_suspected_timeout": false,
+        "requires_rerun_or_exclusion": false,
+        "timeout_suspected_policy": "exclude_engine_timeout_and_suspected_pairs_from_verified_and_natural_results_keep_raw_in_episodes_and_raw_including_suspected_flag_rerun",
+        "natural_only": {
+          "episodes": 32,
+          "wins": 9,
+          "losses": 23,
+          "draws": 0,
+          "win_rate": 0.2812
+        },
+        "raw_including_suspected": {
+          "episodes": 32,
+          "wins": 9,
+          "losses": 23,
+          "draws": 0,
+          "win_rate": 0.2812,
+          "win_rate_ci95": [
+            0.0727,
+            0.5866
+          ]
+        },
+        "first_player": {
+          "episodes": 16,
+          "wins": 6,
+          "losses": 10,
+          "draws": 0,
+          "win_rate": 0.375,
+          "win_rate_ci95": [
+            0.1848,
+            0.6136
+          ]
+        },
+        "second_player": {
+          "episodes": 16,
+          "wins": 3,
+          "losses": 13,
+          "draws": 0,
+          "win_rate": 0.1875,
+          "win_rate_ci95": [
+            0.0659,
+            0.4301
+          ]
+        },
+        "seed_pairs": {
+          "total_pairs": 16,
+          "verified_pairs": 16,
+          "suspected_or_timeout_pairs": 0,
+          "sweep_2_0_wins": 0,
+          "split_1_1_first_player_won_both": 6,
+          "split_1_1_second_player_won_both": 3,
+          "sweep_0_2_losses": 7,
+          "other_with_draws": 0
+        }
+      },
+      "terminations": {
+        "normal_total": 32,
+        "normal_lp0": 30,
+        "normal_deckout_or_special": 2,
+        "abnormal_total": 0,
+        "truncated": 0,
+        "engine_timeout": 0,
+        "timeout_suspected": 0,
+        "aborted_max_steps": 0,
+        "draws": 0
+      },
+      "timing_and_decisions": {
+        "jit_warmup_seconds_once": 1.5181,
+        "matchup_wall_seconds": 6.8826,
+        "active_wave_wall_seconds": 6.8574,
+        "candidate_model_total_seconds": 2.0691,
+        "opponent_model_total_seconds": 0.0,
+        "env_step_total_seconds": 0.7407,
+        "candidate_model_batch_wall_seconds": 4.8142,
+        "opponent_model_batch_wall_seconds": 0.0,
+        "env_step_batch_wall_seconds": 1.8563,
+        "candidate_ms_per_decision": 0.3163,
+        "opponent_ms_per_decision": 0.0,
+        "env_ms_per_step": 0.1132,
+        "sps": 953.9,
+        "candidate_decisions_per_duel": {
+          "mean": 204.41,
+          "median": 194.5,
+          "min": 49,
+          "max": 616
+        },
+        "env_steps_per_duel": {
+          "mean": 204.41,
+          "median": 194.5,
+          "min": 49,
+          "max": 616
+        },
+        "engine_reported_candidate_ms_per_duel": {
+          "mean": 23.148,
+          "max": 74.416
+        },
+        "candidate_allocated_ms_per_decision": 0.3163,
+        "opponent_allocated_ms_per_decision": 0.0,
+        "candidate_batch_wall_ms_per_decision": 0.736,
+        "opponent_batch_wall_ms_per_decision": 0.0,
+        "env_batch_wall_ms_per_step": 0.2838
+      }
+    },
+    {
+      "matchup": "init (0-step untrained) vs greedy",
+      "candidate": {
+        "kind": "model_init",
+        "strategy": "init",
+        "label": "init (0-step untrained)",
+        "path": null,
+        "sha256": null
+      },
+      "opponent": {
+        "kind": "builtin",
+        "strategy": "greedy",
+        "label": "greedy",
+        "path": null,
+        "sha256": null
+      },
+      "config": {
+        "deck": "BlueEyes",
+        "num_episodes": 32,
+        "num_envs": 8,
+        "env_threads": 4,
+        "max_steps": 1000,
+        "timeout": 600,
+        "num_waves": 2,
+        "base_seed": 1000,
+        "wave_seeds": [
+          3072724,
+          891631
+        ],
+        "unused_in_training": true,
+        "oppo_info": false,
+        "skip_mask": true,
+        "seat_swapped": true
+      },
+      "results": {
+        "total_episodes": 32,
+        "verified_episodes": 32,
+        "excluded_suspected_episodes": 0,
+        "excluded_timeout_or_suspected_episodes": 0,
+        "wins": 1,
+        "losses": 31,
+        "draws": 0,
+        "win_rate": 0.0312,
+        "win_rate_includes_truncated_lp": true,
+        "truncation_rate": 0.0,
+        "win_rate_ci95": [
+          0.0,
+          0.3023
+        ],
+        "win_rate_se_paired": 0.0312,
+        "effective_sample_size": 16.0,
+        "avg_reward": -0.7943,
+        "has_suspected_timeout": false,
+        "requires_rerun_or_exclusion": false,
+        "timeout_suspected_policy": "exclude_engine_timeout_and_suspected_pairs_from_verified_and_natural_results_keep_raw_in_episodes_and_raw_including_suspected_flag_rerun",
+        "natural_only": {
+          "episodes": 32,
+          "wins": 1,
+          "losses": 31,
+          "draws": 0,
+          "win_rate": 0.0312
+        },
+        "raw_including_suspected": {
+          "episodes": 32,
+          "wins": 1,
+          "losses": 31,
+          "draws": 0,
+          "win_rate": 0.0312,
+          "win_rate_ci95": [
+            0.0,
+            0.3023
+          ]
+        },
+        "first_player": {
+          "episodes": 16,
+          "wins": 0,
+          "losses": 16,
+          "draws": 0,
+          "win_rate": 0.0,
+          "win_rate_ci95": [
+            0.0,
+            0.1936
+          ]
+        },
+        "second_player": {
+          "episodes": 16,
+          "wins": 1,
+          "losses": 15,
+          "draws": 0,
+          "win_rate": 0.0625,
+          "win_rate_ci95": [
+            0.0111,
+            0.2833
+          ]
+        },
+        "seed_pairs": {
+          "total_pairs": 16,
+          "verified_pairs": 16,
+          "suspected_or_timeout_pairs": 0,
+          "sweep_2_0_wins": 0,
+          "split_1_1_first_player_won_both": 0,
+          "split_1_1_second_player_won_both": 1,
+          "sweep_0_2_losses": 15,
+          "other_with_draws": 0
+        }
+      },
+      "terminations": {
+        "normal_total": 32,
+        "normal_lp0": 32,
+        "normal_deckout_or_special": 0,
+        "abnormal_total": 0,
+        "truncated": 0,
+        "engine_timeout": 0,
+        "timeout_suspected": 0,
+        "aborted_max_steps": 0,
+        "draws": 0
+      },
+      "timing_and_decisions": {
+        "jit_warmup_seconds_once": 1.5181,
+        "matchup_wall_seconds": 2.9903,
+        "active_wave_wall_seconds": 2.9652,
+        "candidate_model_total_seconds": 0.9857,
+        "opponent_model_total_seconds": 0.0,
+        "env_step_total_seconds": 0.2826,
+        "candidate_model_batch_wall_seconds": 2.1934,
+        "opponent_model_batch_wall_seconds": 0.0,
+        "env_step_batch_wall_seconds": 0.6814,
+        "candidate_ms_per_decision": 0.4776,
+        "opponent_ms_per_decision": 0.0,
+        "env_ms_per_step": 0.1369,
+        "sps": 696.1,
+        "candidate_decisions_per_duel": {
+          "mean": 64.5,
+          "median": 55.5,
+          "min": 11,
+          "max": 204
+        },
+        "env_steps_per_duel": {
+          "mean": 64.5,
+          "median": 55.5,
+          "min": 11,
+          "max": 204
+        },
+        "engine_reported_candidate_ms_per_duel": {
+          "mean": 8.831,
+          "max": 32.381
+        },
+        "candidate_allocated_ms_per_decision": 0.4776,
+        "opponent_allocated_ms_per_decision": 0.0,
+        "candidate_batch_wall_ms_per_decision": 1.0627,
+        "opponent_batch_wall_ms_per_decision": 0.0,
+        "env_batch_wall_ms_per_step": 0.3301
+      }
+    },
+    {
+      "matchup": "blueeyes-4096.flax_model vs greedy",
+      "candidate": {
+        "kind": "checkpoint",
+        "strategy": "checkpoint",
+        "label": "blueeyes-4096.flax_model",
+        "path": "/home/hatk8/projects/yugioh-ai/checkpoints/trial-2026-10-27/blueeyes-4096.flax_model",
+        "sha256": "dd100d9f2e3a86cc5d292a36bacd78bd49d4375d380b2ee12747696abea1d49c"
+      },
+      "opponent": {
+        "kind": "builtin",
+        "strategy": "greedy",
+        "label": "greedy",
+        "path": null,
+        "sha256": null
+      },
+      "config": {
+        "deck": "BlueEyes",
+        "num_episodes": 32,
+        "num_envs": 8,
+        "env_threads": 4,
+        "max_steps": 1000,
+        "timeout": 600,
+        "num_waves": 2,
+        "base_seed": 1000,
+        "wave_seeds": [
+          3072724,
+          891631
+        ],
+        "unused_in_training": true,
+        "oppo_info": false,
+        "skip_mask": true,
+        "seat_swapped": true
+      },
+      "results": {
+        "total_episodes": 32,
+        "verified_episodes": 32,
+        "excluded_suspected_episodes": 0,
+        "excluded_timeout_or_suspected_episodes": 0,
+        "wins": 1,
+        "losses": 31,
+        "draws": 0,
+        "win_rate": 0.0312,
+        "win_rate_includes_truncated_lp": true,
+        "truncation_rate": 0.0,
+        "win_rate_ci95": [
+          0.0,
+          0.3023
+        ],
+        "win_rate_se_paired": 0.0312,
+        "effective_sample_size": 16.0,
+        "avg_reward": -0.6678,
+        "has_suspected_timeout": false,
+        "requires_rerun_or_exclusion": false,
+        "timeout_suspected_policy": "exclude_engine_timeout_and_suspected_pairs_from_verified_and_natural_results_keep_raw_in_episodes_and_raw_including_suspected_flag_rerun",
+        "natural_only": {
+          "episodes": 32,
+          "wins": 1,
+          "losses": 31,
+          "draws": 0,
+          "win_rate": 0.0312
+        },
+        "raw_including_suspected": {
+          "episodes": 32,
+          "wins": 1,
+          "losses": 31,
+          "draws": 0,
+          "win_rate": 0.0312,
+          "win_rate_ci95": [
+            0.0,
+            0.3023
+          ]
+        },
+        "first_player": {
+          "episodes": 16,
+          "wins": 0,
+          "losses": 16,
+          "draws": 0,
+          "win_rate": 0.0,
+          "win_rate_ci95": [
+            0.0,
+            0.1936
+          ]
+        },
+        "second_player": {
+          "episodes": 16,
+          "wins": 1,
+          "losses": 15,
+          "draws": 0,
+          "win_rate": 0.0625,
+          "win_rate_ci95": [
+            0.0111,
+            0.2833
+          ]
+        },
+        "seed_pairs": {
+          "total_pairs": 16,
+          "verified_pairs": 16,
+          "suspected_or_timeout_pairs": 0,
+          "sweep_2_0_wins": 0,
+          "split_1_1_first_player_won_both": 0,
+          "split_1_1_second_player_won_both": 1,
+          "sweep_0_2_losses": 15,
+          "other_with_draws": 0
+        }
+      },
+      "terminations": {
+        "normal_total": 32,
+        "normal_lp0": 32,
+        "normal_deckout_or_special": 0,
+        "abnormal_total": 0,
+        "truncated": 0,
+        "engine_timeout": 0,
+        "timeout_suspected": 0,
+        "aborted_max_steps": 0,
+        "draws": 0
+      },
+      "timing_and_decisions": {
+        "jit_warmup_seconds_once": 1.5181,
+        "matchup_wall_seconds": 5.149,
+        "active_wave_wall_seconds": 5.1231,
+        "candidate_model_total_seconds": 1.4171,
+        "opponent_model_total_seconds": 0.0,
+        "env_step_total_seconds": 0.5331,
+        "candidate_model_batch_wall_seconds": 3.4548,
+        "opponent_model_batch_wall_seconds": 0.0,
+        "env_step_batch_wall_seconds": 1.5122,
+        "candidate_ms_per_decision": 0.3614,
+        "opponent_ms_per_decision": 0.0,
+        "env_ms_per_step": 0.136,
+        "sps": 765.4,
+        "candidate_decisions_per_duel": {
+          "mean": 122.53,
+          "median": 95.5,
+          "min": 13,
+          "max": 480
+        },
+        "env_steps_per_duel": {
+          "mean": 122.53,
+          "median": 95.5,
+          "min": 13,
+          "max": 480
+        },
+        "engine_reported_candidate_ms_per_duel": {
+          "mean": 16.66,
+          "max": 73.33
+        },
+        "candidate_allocated_ms_per_decision": 0.3614,
+        "opponent_allocated_ms_per_decision": 0.0,
+        "candidate_batch_wall_ms_per_decision": 0.8811,
+        "opponent_batch_wall_ms_per_decision": 0.0,
+        "env_batch_wall_ms_per_step": 0.3857
+      }
+    },
+    {
+      "matchup": "blueeyes-4096-plus512.flax_model vs greedy",
+      "candidate": {
+        "kind": "checkpoint",
+        "strategy": "checkpoint",
+        "label": "blueeyes-4096-plus512.flax_model",
+        "path": "/home/hatk8/projects/yugioh-ai/checkpoints/trial-2026-10-27/blueeyes-4096-plus512.flax_model",
+        "sha256": "a181b3304d7f95ce2140d950ddcca0257e2c167d96ea433250b0bbd1867e2185"
+      },
+      "opponent": {
+        "kind": "builtin",
+        "strategy": "greedy",
+        "label": "greedy",
+        "path": null,
+        "sha256": null
+      },
+      "config": {
+        "deck": "BlueEyes",
+        "num_episodes": 32,
+        "num_envs": 8,
+        "env_threads": 4,
+        "max_steps": 1000,
+        "timeout": 600,
+        "num_waves": 2,
+        "base_seed": 1000,
+        "wave_seeds": [
+          3072724,
+          891631
+        ],
+        "unused_in_training": true,
+        "oppo_info": false,
+        "skip_mask": true,
+        "seat_swapped": true
+      },
+      "results": {
+        "total_episodes": 32,
+        "verified_episodes": 32,
+        "excluded_suspected_episodes": 0,
+        "excluded_timeout_or_suspected_episodes": 0,
+        "wins": 2,
+        "losses": 30,
+        "draws": 0,
+        "win_rate": 0.0625,
+        "win_rate_includes_truncated_lp": true,
+        "truncation_rate": 0.0,
+        "win_rate_ci95": [
+          0.0016,
+          0.3023
+        ],
+        "win_rate_se_paired": 0.0427,
+        "effective_sample_size": 16.0,
+        "avg_reward": -0.6702,
+        "has_suspected_timeout": false,
+        "requires_rerun_or_exclusion": false,
+        "timeout_suspected_policy": "exclude_engine_timeout_and_suspected_pairs_from_verified_and_natural_results_keep_raw_in_episodes_and_raw_including_suspected_flag_rerun",
+        "natural_only": {
+          "episodes": 32,
+          "wins": 2,
+          "losses": 30,
+          "draws": 0,
+          "win_rate": 0.0625
+        },
+        "raw_including_suspected": {
+          "episodes": 32,
+          "wins": 2,
+          "losses": 30,
+          "draws": 0,
+          "win_rate": 0.0625,
+          "win_rate_ci95": [
+            0.0016,
+            0.3023
+          ]
+        },
+        "first_player": {
+          "episodes": 16,
+          "wins": 1,
+          "losses": 15,
+          "draws": 0,
+          "win_rate": 0.0625,
+          "win_rate_ci95": [
+            0.0111,
+            0.2833
+          ]
+        },
+        "second_player": {
+          "episodes": 16,
+          "wins": 1,
+          "losses": 15,
+          "draws": 0,
+          "win_rate": 0.0625,
+          "win_rate_ci95": [
+            0.0111,
+            0.2833
+          ]
+        },
+        "seed_pairs": {
+          "total_pairs": 16,
+          "verified_pairs": 16,
+          "suspected_or_timeout_pairs": 0,
+          "sweep_2_0_wins": 0,
+          "split_1_1_first_player_won_both": 1,
+          "split_1_1_second_player_won_both": 1,
+          "sweep_0_2_losses": 14,
+          "other_with_draws": 0
+        }
+      },
+      "terminations": {
+        "normal_total": 32,
+        "normal_lp0": 31,
+        "normal_deckout_or_special": 1,
+        "abnormal_total": 0,
+        "truncated": 0,
+        "engine_timeout": 0,
+        "timeout_suspected": 0,
+        "aborted_max_steps": 0,
+        "draws": 0
+      },
+      "timing_and_decisions": {
+        "jit_warmup_seconds_once": 1.5181,
+        "matchup_wall_seconds": 7.1487,
+        "active_wave_wall_seconds": 7.1232,
+        "candidate_model_total_seconds": 2.0656,
+        "opponent_model_total_seconds": 0.0,
+        "env_step_total_seconds": 0.5593,
+        "candidate_model_batch_wall_seconds": 5.3618,
+        "opponent_model_batch_wall_seconds": 0.0,
+        "env_step_batch_wall_seconds": 1.5948,
+        "candidate_ms_per_decision": 0.5125,
+        "opponent_ms_per_decision": 0.0,
+        "env_ms_per_step": 0.1388,
+        "sps": 565.8,
+        "candidate_decisions_per_duel": {
+          "mean": 125.94,
+          "median": 99.5,
+          "min": 12,
+          "max": 569
+        },
+        "env_steps_per_duel": {
+          "mean": 125.94,
+          "median": 99.5,
+          "min": 12,
+          "max": 569
+        },
+        "engine_reported_candidate_ms_per_duel": {
+          "mean": 17.478,
+          "max": 89.649
+        },
+        "candidate_allocated_ms_per_decision": 0.5125,
+        "opponent_allocated_ms_per_decision": 0.0,
+        "candidate_batch_wall_ms_per_decision": 1.3305,
+        "opponent_batch_wall_ms_per_decision": 0.0,
+        "env_batch_wall_ms_per_step": 0.3957
+      }
+    },
+    {
+      "matchup": "blueeyes-4096.flax_model vs init (0-step untrained)",
+      "candidate": {
+        "kind": "checkpoint",
+        "strategy": "checkpoint",
+        "label": "blueeyes-4096.flax_model",
+        "path": "/home/hatk8/projects/yugioh-ai/checkpoints/trial-2026-10-27/blueeyes-4096.flax_model",
+        "sha256": "dd100d9f2e3a86cc5d292a36bacd78bd49d4375d380b2ee12747696abea1d49c"
+      },
+      "opponent": {
+        "kind": "model_init",
+        "strategy": "init",
+        "label": "init (0-step untrained)",
+        "path": null,
+        "sha256": null
+      },
+      "config": {
+        "deck": "BlueEyes",
+        "num_episodes": 32,
+        "num_envs": 8,
+        "env_threads": 4,
+        "max_steps": 1000,
+        "timeout": 600,
+        "num_waves": 2,
+        "base_seed": 1000,
+        "wave_seeds": [
+          3072724,
+          891631
+        ],
+        "unused_in_training": true,
+        "oppo_info": false,
+        "skip_mask": true,
+        "seat_swapped": true
+      },
+      "results": {
+        "total_episodes": 32,
+        "verified_episodes": 32,
+        "excluded_suspected_episodes": 0,
+        "excluded_timeout_or_suspected_episodes": 0,
+        "wins": 22,
+        "losses": 10,
+        "draws": 0,
+        "win_rate": 0.6875,
+        "win_rate_includes_truncated_lp": true,
+        "truncation_rate": 0.0,
+        "win_rate_ci95": [
+          0.4134,
+          0.8898
+        ],
+        "win_rate_se_paired": 0.0625,
+        "effective_sample_size": 16.0,
+        "avg_reward": 0.235,
+        "has_suspected_timeout": false,
+        "requires_rerun_or_exclusion": false,
+        "timeout_suspected_policy": "exclude_engine_timeout_and_suspected_pairs_from_verified_and_natural_results_keep_raw_in_episodes_and_raw_including_suspected_flag_rerun",
+        "natural_only": {
+          "episodes": 32,
+          "wins": 22,
+          "losses": 10,
+          "draws": 0,
+          "win_rate": 0.6875
+        },
+        "raw_including_suspected": {
+          "episodes": 32,
+          "wins": 22,
+          "losses": 10,
+          "draws": 0,
+          "win_rate": 0.6875,
+          "win_rate_ci95": [
+            0.4134,
+            0.8898
+          ]
+        },
+        "first_player": {
+          "episodes": 16,
+          "wins": 11,
+          "losses": 5,
+          "draws": 0,
+          "win_rate": 0.6875,
+          "win_rate_ci95": [
+            0.444,
+            0.8584
+          ]
+        },
+        "second_player": {
+          "episodes": 16,
+          "wins": 11,
+          "losses": 5,
+          "draws": 0,
+          "win_rate": 0.6875,
+          "win_rate_ci95": [
+            0.444,
+            0.8584
+          ]
+        },
+        "seed_pairs": {
+          "total_pairs": 16,
+          "verified_pairs": 16,
+          "suspected_or_timeout_pairs": 0,
+          "sweep_2_0_wins": 6,
+          "split_1_1_first_player_won_both": 5,
+          "split_1_1_second_player_won_both": 5,
+          "sweep_0_2_losses": 0,
+          "other_with_draws": 0
+        }
+      },
+      "terminations": {
+        "normal_total": 32,
+        "normal_lp0": 31,
+        "normal_deckout_or_special": 1,
+        "abnormal_total": 0,
+        "truncated": 0,
+        "engine_timeout": 0,
+        "timeout_suspected": 0,
+        "aborted_max_steps": 0,
+        "draws": 0
+      },
+      "timing_and_decisions": {
+        "jit_warmup_seconds_once": 1.5181,
+        "matchup_wall_seconds": 17.7172,
+        "active_wave_wall_seconds": 17.6914,
+        "candidate_model_total_seconds": 2.9738,
+        "opponent_model_total_seconds": 1.542,
+        "env_step_total_seconds": 1.0009,
+        "candidate_model_batch_wall_seconds": 8.8,
+        "opponent_model_batch_wall_seconds": 6.3105,
+        "env_step_batch_wall_seconds": 2.2883,
+        "candidate_ms_per_decision": 0.5062,
+        "opponent_ms_per_decision": 0.5,
+        "env_ms_per_step": 0.1117,
+        "sps": 506.4,
+        "candidate_decisions_per_duel": {
+          "mean": 183.59,
+          "median": 150.0,
+          "min": 29,
+          "max": 494
+        },
+        "env_steps_per_duel": {
+          "mean": 279.97,
+          "median": 234.0,
+          "min": 69,
+          "max": 666
+        },
+        "engine_reported_candidate_ms_per_duel": {
+          "mean": 20.685,
+          "max": 59.148
+        },
+        "candidate_allocated_ms_per_decision": 0.5062,
+        "opponent_allocated_ms_per_decision": 0.5,
+        "candidate_batch_wall_ms_per_decision": 1.4979,
+        "opponent_batch_wall_ms_per_decision": 2.0462,
+        "env_batch_wall_ms_per_step": 0.2554
+      }
+    },
+    {
+      "matchup": "blueeyes-4096-plus512.flax_model vs blueeyes-4096.flax_model",
+      "candidate": {
+        "kind": "checkpoint",
+        "strategy": "checkpoint",
+        "label": "blueeyes-4096-plus512.flax_model",
+        "path": "/home/hatk8/projects/yugioh-ai/checkpoints/trial-2026-10-27/blueeyes-4096-plus512.flax_model",
+        "sha256": "a181b3304d7f95ce2140d950ddcca0257e2c167d96ea433250b0bbd1867e2185"
+      },
+      "opponent": {
+        "kind": "checkpoint",
+        "strategy": "checkpoint",
+        "label": "blueeyes-4096.flax_model",
+        "path": "/home/hatk8/projects/yugioh-ai/checkpoints/trial-2026-10-27/blueeyes-4096.flax_model",
+        "sha256": "dd100d9f2e3a86cc5d292a36bacd78bd49d4375d380b2ee12747696abea1d49c"
+      },
+      "config": {
+        "deck": "BlueEyes",
+        "num_episodes": 32,
+        "num_envs": 8,
+        "env_threads": 4,
+        "max_steps": 1000,
+        "timeout": 600,
+        "num_waves": 2,
+        "base_seed": 1000,
+        "wave_seeds": [
+          3072724,
+          891631
+        ],
+        "unused_in_training": true,
+        "oppo_info": false,
+        "skip_mask": true,
+        "seat_swapped": true
+      },
+      "results": {
+        "total_episodes": 32,
+        "verified_episodes": 32,
+        "excluded_suspected_episodes": 0,
+        "excluded_timeout_or_suspected_episodes": 0,
+        "wins": 13,
+        "losses": 19,
+        "draws": 0,
+        "win_rate": 0.4062,
+        "win_rate_includes_truncated_lp": true,
+        "truncation_rate": 0.0312,
+        "win_rate_ci95": [
+          0.152,
+          0.7012
+        ],
+        "win_rate_se_paired": 0.0504,
+        "effective_sample_size": 16.0,
+        "avg_reward": -0.1062,
+        "has_suspected_timeout": false,
+        "requires_rerun_or_exclusion": false,
+        "timeout_suspected_policy": "exclude_engine_timeout_and_suspected_pairs_from_verified_and_natural_results_keep_raw_in_episodes_and_raw_including_suspected_flag_rerun",
+        "natural_only": {
+          "episodes": 31,
+          "wins": 13,
+          "losses": 18,
+          "draws": 0,
+          "win_rate": 0.4194
+        },
+        "raw_including_suspected": {
+          "episodes": 32,
+          "wins": 13,
+          "losses": 19,
+          "draws": 0,
+          "win_rate": 0.4062,
+          "win_rate_ci95": [
+            0.152,
+            0.7012
+          ]
+        },
+        "first_player": {
+          "episodes": 16,
+          "wins": 9,
+          "losses": 7,
+          "draws": 0,
+          "win_rate": 0.5625,
+          "win_rate_ci95": [
+            0.3318,
+            0.769
+          ]
+        },
+        "second_player": {
+          "episodes": 16,
+          "wins": 4,
+          "losses": 12,
+          "draws": 0,
+          "win_rate": 0.25,
+          "win_rate_ci95": [
+            0.1018,
+            0.495
+          ]
+        },
+        "seed_pairs": {
+          "total_pairs": 16,
+          "verified_pairs": 16,
+          "suspected_or_timeout_pairs": 0,
+          "sweep_2_0_wins": 0,
+          "split_1_1_first_player_won_both": 9,
+          "split_1_1_second_player_won_both": 4,
+          "sweep_0_2_losses": 3,
+          "other_with_draws": 0
+        }
+      },
+      "terminations": {
+        "normal_total": 31,
+        "normal_lp0": 28,
+        "normal_deckout_or_special": 3,
+        "abnormal_total": 1,
+        "truncated": 1,
+        "engine_timeout": 0,
+        "timeout_suspected": 0,
+        "aborted_max_steps": 0,
+        "draws": 0
+      },
+      "timing_and_decisions": {
+        "jit_warmup_seconds_once": 1.5181,
+        "matchup_wall_seconds": 20.6845,
+        "active_wave_wall_seconds": 20.658,
+        "candidate_model_total_seconds": 2.204,
+        "opponent_model_total_seconds": 2.3675,
+        "env_step_total_seconds": 1.1638,
+        "candidate_model_batch_wall_seconds": 8.7049,
+        "opponent_model_batch_wall_seconds": 8.5399,
+        "env_step_batch_wall_seconds": 3.046,
+        "candidate_ms_per_decision": 0.4348,
+        "opponent_ms_per_decision": 0.4213,
+        "env_ms_per_step": 0.1089,
+        "sps": 517.4,
+        "candidate_decisions_per_duel": {
+          "mean": 158.41,
+          "median": 131.5,
+          "min": 19,
+          "max": 448
+        },
+        "env_steps_per_duel": {
+          "mean": 334.03,
+          "median": 251.5,
+          "min": 64,
+          "max": 1000
+        },
+        "engine_reported_candidate_ms_per_duel": {
+          "mean": 17.222,
+          "max": 54.339
+        },
+        "candidate_allocated_ms_per_decision": 0.4348,
+        "opponent_allocated_ms_per_decision": 0.4213,
+        "candidate_batch_wall_ms_per_decision": 1.7173,
+        "opponent_batch_wall_ms_per_decision": 1.5196,
+        "env_batch_wall_ms_per_step": 0.285
+      }
+    }
+  ]
+}

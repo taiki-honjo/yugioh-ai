@@ -1,0 +1,523 @@
+{
+  "arm": "a-ppo",
+  "seed": 10000777,
+  "steps": 256,
+  "ppo_updates": 2,
+  "rehearsal_settings": null,
+  "candidate": "/home/hatk8/projects/yugioh-ai/experiments/opening-rehearsal-ab-20261109/a-ppo/cycles/256-seed10000777/candidate",
+  "base_sha256": "04cb774835e7529e8a6862d056fc3927317b3332a7d053d728beea18cd869142",
+  "head_sha256": "61c73f6ad1109b2afd354b9404c442816e5579e7b43c29fedc4658698324720a",
+  "changed_values": 3280001,
+  "all_finite": true,
+  "regression_passed": false,
+  "adoption_eligible_by_openings": false,
+  "adopted": false,
+  "opening_passed": 45,
+  "opening_total": 66,
+  "opening_lua_errors": 0,
+  "lost_case_ids": [
+    "cue-mix-jj-track-g08-p0",
+    "cue-rotary-jj-zaren-g10-p0",
+    "elf-par-fire-cost-g09-p0",
+    "elf-par-fire-cost-g10-p0",
+    "elf-rukina-regina-g08-p0",
+    "elf-rukina-regina-g10-p0",
+    "mixed-rukina-cue-g08-p0",
+    "mixed-rukina-cue-g09-p0",
+    "mixed-rukina-cue-g10-p0",
+    "rukina-ash_parallelism-g09-p0",
+    "rukina-ash_spirit-g09-p0",
+    "rukina-ash_spirit-g10-p0",
+    "rukina-pass-g08-p0",
+    "rukina-pass-g09-p0",
+    "rukina-veiler_strelitzia-g08-p0",
+    "rukina-veiler_strelitzia-g09-p0",
+    "rukina-veiler_strelitzia-g10-p0",
+    "tune-juke-veiler-g08-p0",
+    "tune-juke-veiler-g09-p0",
+    "tune-stone-sweeper-g09-p0"
+  ],
+  "new_case_ids": [],
+  "cases": {
+    "rukina-pass-g08-p0": false,
+    "rukina-pass-g09-p0": false,
+    "rukina-pass-g10-p0": true,
+    "rukina-ash_rukina-g08-p0": true,
+    "rukina-ash_rukina-g09-p0": true,
+    "rukina-ash_rukina-g10-p0": true,
+    "rukina-veiler_rukina-g08-p0": true,
+    "rukina-veiler_rukina-g09-p0": true,
+    "rukina-veiler_rukina-g10-p0": true,
+    "rukina-ash_spirit-g08-p0": true,
+    "rukina-ash_spirit-g09-p0": false,
+    "rukina-ash_spirit-g10-p0": false,
+    "rukina-ash_parallelism-g08-p0": true,
+    "rukina-ash_parallelism-g09-p0": false,
+    "rukina-ash_parallelism-g10-p0": true,
+    "rukina-veiler_strelitzia-g08-p0": false,
+    "rukina-veiler_strelitzia-g09-p0": false,
+    "rukina-veiler_strelitzia-g10-p0": false,
+    "elf-rukina-regina-g08-p0": false,
+    "elf-rukina-regina-g09-p0": true,
+    "elf-rukina-regina-g10-p0": false,
+    "elf-dina-g08-p0": true,
+    "elf-dina-g09-p0": true,
+    "elf-dina-g10-p0": true,
+    "elf-par-light-cost-g08-p0": true,
+    "elf-par-light-cost-g09-p0": true,
+    "elf-par-light-cost-g10-p0": true,
+    "elf-par-fire-cost-g08-p0": true,
+    "elf-par-fire-cost-g09-p0": false,
+    "elf-par-fire-cost-g10-p0": false,
+    "elf-regina-par-g08-p0": true,
+    "elf-regina-par-g09-p0": true,
+    "elf-regina-par-g10-p0": true,
+    "tune-cue-g08-p0": true,
+    "tune-cue-g09-p0": true,
+    "tune-cue-g10-p0": true,
+    "tune-reco-g08-p0": true,
+    "tune-reco-g09-p0": true,
+    "tune-reco-g10-p0": true,
+    "tune-sync-g08-p0": true,
+    "tune-sync-g09-p0": true,
+    "tune-sync-g10-p0": true,
+    "tune-stone-sweeper-g08-p0": true,
+    "tune-stone-sweeper-g09-p0": false,
+    "tune-stone-sweeper-g10-p0": true,
+    "tune-juke-veiler-g08-p0": false,
+    "tune-juke-veiler-g09-p0": false,
+    "tune-juke-veiler-g10-p0": true,
+    "mixed-rukina-cue-g08-p0": false,
+    "mixed-rukina-cue-g09-p0": false,
+    "mixed-rukina-cue-g10-p0": false,
+    "mixed-reco-spirit-ash-g08-p0": true,
+    "mixed-reco-spirit-ash-g09-p0": true,
+    "mixed-reco-spirit-ash-g10-p0": true,
+    "mixed-cue-spirit-g08-p0": true,
+    "mixed-cue-spirit-g09-p0": true,
+    "mixed-cue-spirit-g10-p0": true,
+    "cue-reco-jj-zaren-g08-p0": false,
+    "cue-reco-jj-zaren-g09-p0": true,
+    "cue-reco-jj-zaren-g10-p0": true,
+    "cue-mix-jj-track-g08-p0": false,
+    "cue-mix-jj-track-g09-p0": true,
+    "cue-mix-jj-track-g10-p0": true,
+    "cue-rotary-jj-zaren-g08-p0": true,
+    "cue-rotary-jj-zaren-g09-p0": true,
+    "cue-rotary-jj-zaren-g10-p0": false
+  },
+  "families": {
+    "elf-dina": {
+      "passed": 3,
+      "total": 3
+    },
+    "elf-par-fire-cost": {
+      "passed": 1,
+      "total": 3
+    },
+    "elf-par-light-cost": {
+      "passed": 3,
+      "total": 3
+    },
+    "elf-regina-par": {
+      "passed": 3,
+      "total": 3
+    },
+    "elf-rukina-regina": {
+      "passed": 1,
+      "total": 3
+    },
+    "jj-cue-mix": {
+      "passed": 2,
+      "total": 3
+    },
+    "jj-cue-reco": {
+      "passed": 2,
+      "total": 3
+    },
+    "jj-cue-rotary": {
+      "passed": 2,
+      "total": 3
+    },
+    "mixed-cue-spirit": {
+      "passed": 3,
+      "total": 3
+    },
+    "mixed-reco-spirit-ash": {
+      "passed": 3,
+      "total": 3
+    },
+    "mixed-rukina-cue": {
+      "passed": 0,
+      "total": 3
+    },
+    "rukina-ash_parallelism": {
+      "passed": 2,
+      "total": 3
+    },
+    "rukina-ash_rukina": {
+      "passed": 3,
+      "total": 3
+    },
+    "rukina-ash_spirit": {
+      "passed": 1,
+      "total": 3
+    },
+    "rukina-pass": {
+      "passed": 1,
+      "total": 3
+    },
+    "rukina-veiler_rukina": {
+      "passed": 3,
+      "total": 3
+    },
+    "rukina-veiler_strelitzia": {
+      "passed": 0,
+      "total": 3
+    },
+    "tune-cue": {
+      "passed": 3,
+      "total": 3
+    },
+    "tune-juke-veiler": {
+      "passed": 1,
+      "total": 3
+    },
+    "tune-reco": {
+      "passed": 3,
+      "total": 3
+    },
+    "tune-stone-sweeper": {
+      "passed": 2,
+      "total": 3
+    },
+    "tune-sync": {
+      "passed": 3,
+      "total": 3
+    }
+  },
+  "teacher_forced": {
+    "checkpoint": "/home/hatk8/projects/yugioh-ai/experiments/opening-rehearsal-ab-20261109/a-ppo/cycles/256-seed10000777/candidate",
+    "base_sha256": "04cb774835e7529e8a6862d056fc3927317b3332a7d053d728beea18cd869142",
+    "head_sha256": "61c73f6ad1109b2afd354b9404c442816e5579e7b43c29fedc4658698324720a",
+    "used_for_training": false,
+    "holdout_used": false,
+    "adapter_steps_excluded": true,
+    "train": {
+      "sequences": 416,
+      "loss_steps": 19178,
+      "ce": 0.06530693649374658,
+      "accuracy": 0.9934821149233497,
+      "families": {
+        "cue-mix-jj-track": {
+          "ce": 0.08000986514080219,
+          "accuracy": 0.9905437352245863,
+          "loss_steps": 846
+        },
+        "cue-reco-jj-track": {
+          "ce": 0.06713133255640666,
+          "accuracy": 0.9964285714285714,
+          "loss_steps": 840
+        },
+        "cue-reco-jj-zaren": {
+          "ce": 0.08955586778706517,
+          "accuracy": 0.9908045977011494,
+          "loss_steps": 870
+        },
+        "cue-rotary-jj-track": {
+          "ce": 0.062025487709503904,
+          "accuracy": 0.9975961538461539,
+          "loss_steps": 832
+        },
+        "cue-rotary-jj-zaren": {
+          "ce": 0.0634444706985086,
+          "accuracy": 0.9953810623556582,
+          "loss_steps": 866
+        },
+        "elf-dina": {
+          "ce": 0.09991962909698486,
+          "accuracy": 0.9920634920634921,
+          "loss_steps": 630
+        },
+        "elf-par-fire-cost": {
+          "ce": 0.06776770604284187,
+          "accuracy": 0.9947368421052631,
+          "loss_steps": 570
+        },
+        "elf-par-light-cost": {
+          "ce": 0.08791518793820559,
+          "accuracy": 0.996742671009772,
+          "loss_steps": 614
+        },
+        "elf-regina-par": {
+          "ce": 0.0007662680299984196,
+          "accuracy": 1.0,
+          "loss_steps": 590
+        },
+        "elf-rukina-regina": {
+          "ce": 0.2006153059149797,
+          "accuracy": 0.9712990936555891,
+          "loss_steps": 662
+        },
+        "mixed-cue-spirit": {
+          "ce": 0.05388061357581097,
+          "accuracy": 0.9973913043478261,
+          "loss_steps": 1150
+        },
+        "mixed-cue-spirit-baronne": {
+          "ce": 0.056281681533332344,
+          "accuracy": 0.9972972972972973,
+          "loss_steps": 1110
+        },
+        "mixed-reco-spirit-ash": {
+          "ce": 0.06270209149690716,
+          "accuracy": 0.9984051036682615,
+          "loss_steps": 1254
+        },
+        "mixed-reco-spirit-ash-baronne": {
+          "ce": 0.06477345198639169,
+          "accuracy": 0.9983471074380166,
+          "loss_steps": 1210
+        },
+        "mixed-rukina-cue": {
+          "ce": 0.06836296311933986,
+          "accuracy": 0.9823232323232324,
+          "loss_steps": 1188
+        },
+        "rukina-ash_parallelism": {
+          "ce": 0.04172070704876108,
+          "accuracy": 1.0,
+          "loss_steps": 752
+        },
+        "rukina-ash_rukina": {
+          "ce": 0.019071689928355423,
+          "accuracy": 1.0,
+          "loss_steps": 184
+        },
+        "rukina-ash_spirit": {
+          "ce": 0.0009991969143609619,
+          "accuracy": 1.0,
+          "loss_steps": 288
+        },
+        "rukina-pass": {
+          "ce": 0.04999348294475804,
+          "accuracy": 0.9918478260869565,
+          "loss_steps": 736
+        },
+        "rukina-veiler_rukina": {
+          "ce": 0.01867874711751938,
+          "accuracy": 1.0,
+          "loss_steps": 184
+        },
+        "rukina-veiler_strelitzia": {
+          "ce": 0.07951593257132031,
+          "accuracy": 0.9761904761904762,
+          "loss_steps": 672
+        },
+        "tune-cue": {
+          "ce": 0.056460982906940446,
+          "accuracy": 0.9965870307167235,
+          "loss_steps": 586
+        },
+        "tune-juke-veiler": {
+          "ce": 0.06824882294385488,
+          "accuracy": 0.9923664122137404,
+          "loss_steps": 524
+        },
+        "tune-reco": {
+          "ce": 0.05275616828043749,
+          "accuracy": 0.9968152866242038,
+          "loss_steps": 628
+        },
+        "tune-stone-sweeper": {
+          "ce": 0.054704738455796174,
+          "accuracy": 0.9903047091412742,
+          "loss_steps": 722
+        },
+        "tune-sync": {
+          "ce": 0.03303120696722572,
+          "accuracy": 0.9955223880597015,
+          "loss_steps": 670
+        }
+      }
+    },
+    "validation": {
+      "sequences": 78,
+      "loss_steps": 3606,
+      "ce": 0.07342010417630812,
+      "accuracy": 0.9897393233499723,
+      "families": {
+        "cue-mix-jj-track": {
+          "ce": 0.07501089125871659,
+          "accuracy": 0.9875,
+          "loss_steps": 160
+        },
+        "cue-reco-jj-track": {
+          "ce": 0.06575976633558087,
+          "accuracy": 0.9934640522875817,
+          "loss_steps": 153
+        },
+        "cue-reco-jj-zaren": {
+          "ce": 0.12130183811429181,
+          "accuracy": 0.9873417721518988,
+          "loss_steps": 158
+        },
+        "cue-rotary-jj-track": {
+          "ce": 0.06291983665958528,
+          "accuracy": 0.9935483870967742,
+          "loss_steps": 155
+        },
+        "cue-rotary-jj-zaren": {
+          "ce": 0.05256549517313639,
+          "accuracy": 1.0,
+          "loss_steps": 162
+        },
+        "elf-dina": {
+          "ce": 0.09698085474774121,
+          "accuracy": 0.991869918699187,
+          "loss_steps": 123
+        },
+        "elf-par-fire-cost": {
+          "ce": 0.16997555048778804,
+          "accuracy": 0.9494949494949495,
+          "loss_steps": 99
+        },
+        "elf-par-light-cost": {
+          "ce": 0.12638003619637075,
+          "accuracy": 0.984251968503937,
+          "loss_steps": 127
+        },
+        "elf-regina-par": {
+          "ce": 0.00036475134301718656,
+          "accuracy": 1.0,
+          "loss_steps": 123
+        },
+        "elf-rukina-regina": {
+          "ce": 0.18223244913162723,
+          "accuracy": 0.9758064516129032,
+          "loss_steps": 124
+        },
+        "mixed-cue-spirit": {
+          "ce": 0.05145786723819389,
+          "accuracy": 0.995260663507109,
+          "loss_steps": 211
+        },
+        "mixed-cue-spirit-baronne": {
+          "ce": 0.05421678890735645,
+          "accuracy": 0.9950738916256158,
+          "loss_steps": 203
+        },
+        "mixed-reco-spirit-ash": {
+          "ce": 0.0796145006667736,
+          "accuracy": 0.9961240310077519,
+          "loss_steps": 258
+        },
+        "mixed-reco-spirit-ash-baronne": {
+          "ce": 0.07567223514693666,
+          "accuracy": 0.9960159362549801,
+          "loss_steps": 251
+        },
+        "mixed-rukina-cue": {
+          "ce": 0.0820760552476092,
+          "accuracy": 0.9715447154471545,
+          "loss_steps": 246
+        },
+        "rukina-ash_parallelism": {
+          "ce": 0.04412740423479153,
+          "accuracy": 1.0,
+          "loss_steps": 131
+        },
+        "rukina-ash_rukina": {
+          "ce": 0.020123457600330484,
+          "accuracy": 1.0,
+          "loss_steps": 29
+        },
+        "rukina-ash_spirit": {
+          "ce": 0.0008728180308731235,
+          "accuracy": 1.0,
+          "loss_steps": 49
+        },
+        "rukina-pass": {
+          "ce": 0.050567284795164154,
+          "accuracy": 1.0,
+          "loss_steps": 131
+        },
+        "rukina-veiler_rukina": {
+          "ce": 0.019737384442625374,
+          "accuracy": 1.0,
+          "loss_steps": 29
+        },
+        "rukina-veiler_strelitzia": {
+          "ce": 0.08004949846838275,
+          "accuracy": 0.9743589743589743,
+          "loss_steps": 117
+        },
+        "tune-cue": {
+          "ce": 0.04044422815585959,
+          "accuracy": 1.0,
+          "loss_steps": 116
+        },
+        "tune-juke-veiler": {
+          "ce": 0.12509412591050312,
+          "accuracy": 0.975609756097561,
+          "loss_steps": 82
+        },
+        "tune-reco": {
+          "ce": 0.06907116537508758,
+          "accuracy": 0.991304347826087,
+          "loss_steps": 115
+        },
+        "tune-stone-sweeper": {
+          "ce": 0.05521632981126326,
+          "accuracy": 0.9781021897810219,
+          "loss_steps": 137
+        },
+        "tune-sync": {
+          "ce": 0.023868873078598935,
+          "accuracy": 1.0,
+          "loss_steps": 117
+        }
+      }
+    }
+  },
+  "rehearsal": null,
+  "battle": {
+    "status": "evaluation_error",
+    "error": "battle raised an exception; terminating its remaining actor threads; see /home/hatk8/projects/yugioh-ai/experiments/opening-rehearsal-ab-20261109/a-ppo/cycles/256-seed10000777/battle.log",
+    "exception": "ValueError: list.remove(x): x not in list",
+    "log": "/home/hatk8/projects/yugioh-ai/experiments/opening-rehearsal-ab-20261109/a-ppo/cycles/256-seed10000777/battle.log",
+    "results": null,
+    "terminations": null,
+    "verified_episodes": 0
+  },
+  "resources": {
+    "train": {
+      "name": "train",
+      "wall_seconds": 40.2,
+      "max_rss_mib": 1926.0,
+      "gpu_memory_used_before_mib": 1423.0,
+      "gpu_memory_used_peak_mib": 2198.0,
+      "gpu_utilization_peak_percent": 42.0,
+      "gpu_samples": 19
+    },
+    "opening-regression": {
+      "name": "opening-regression",
+      "wall_seconds": 40.2,
+      "max_rss_mib": 991.0,
+      "gpu_memory_used_before_mib": 1439.0,
+      "gpu_memory_used_peak_mib": 1852.0,
+      "gpu_utilization_peak_percent": 45.0,
+      "gpu_samples": 19
+    },
+    "teacher-forced": {
+      "name": "teacher-forced",
+      "wall_seconds": 28.1,
+      "max_rss_mib": 1331.4,
+      "gpu_memory_used_before_mib": 1434.0,
+      "gpu_memory_used_peak_mib": 1831.0,
+      "gpu_utilization_peak_percent": 94.0,
+      "gpu_samples": 13
+    }
+  },
+  "native_lua_errors_in_training": 0
+}
