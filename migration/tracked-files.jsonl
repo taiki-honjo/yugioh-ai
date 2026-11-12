@@ -67,6 +67,7 @@
 {"path": "docs/card-visualization-workflow.md", "sha256": "d6525708a04ab1150c0dc26ac653b40ffee91a9d1783cca940e4e66429307932", "bytes": 800}
 {"path": "docs/center-placement-2026-11-08.md", "sha256": "33cd17a50450b61332a2af403d5f6af510bb31a924064cf9ea21d5cca1e0e34f", "bytes": 2688}
 {"path": "docs/chain-imitation-2026-11-08.md", "sha256": "928692f85a838225ed1ce9cbd06046aceef5e22235addebd1f9e50351a08c4e1", "bytes": 8458}
+{"path": "docs/claude-artmage-autonomous-training-context-2026-11-12.md", "sha256": "27bce0481be6a6a09505c5fc61a2a801f90fa2ecfc24263380f133d776bccc87", "bytes": 23375}
 {"path": "docs/claude_artmage_context_2026-11-10.md", "sha256": "acd92ad31821be662fbb501a9ac013791a42acc07972015f198892e9c99bcf40", "bytes": 17932}
 {"path": "docs/claude_b2b_probe_plan_2026-11-09.md", "sha256": "a81088445c6a4c39937a295ce1097145a5a53d4443edd5eb5e428ec1271a87c0", "bytes": 9124}
 {"path": "docs/claude_capability_addendum_zaren_b2b_g_droll_2026-11-09.md", "sha256": "ed6742bc8a7a1a11c90dc728d471d899ac78d61a3c5fb9aedcaac5df0947f602", "bytes": 10254}
@@ -16904,7 +16905,7 @@
 {"path": "experiments/zaren-chain-20261109/code/zaren_analysis.py", "sha256": "b7c1d87f34f286d60fd1362377ea030da4b5cafdb11a0a0306e27559074fa10a", "bytes": 3882}
 {"path": "experiments/zaren-chain-20261109/engine-runs.jsonl", "sha256": "3cd20574d66f5e22176bf02f39fe05197da955df392f15b44b411b4b578970ce", "bytes": 2160}
 {"path": "experiments/zaren-chain-20261109/summary.json", "sha256": "c8f1af9378384d5d5f85e076ff51ca381d094ee356de4fce996d7568f5c2c24a", "bytes": 6571}
-{"path": "migration/README.md", "sha256": "9414d013c03b94814e740b21dc3f5ef5945b8e5bdd124aa9fe8caaa9158dec65", "bytes": 5898}
+{"path": "migration/README.md", "sha256": "2471f6b10be4bb33f2ed07ed959f3e6afb2ed8aae9f80228da007e0418734b54", "bytes": 6230}
 {"path": "migration/critical-files.json", "sha256": "525506b7c450f5416630ae5dace54554e96c70990b79bcb7a07dae4b67c592dd", "bytes": 4638}
 {"path": "migration/requirements-home-20261112.txt", "sha256": "2d5c008b4ed53d8d03ee26d1294b46bab145016a32083d3ad26d1a699c7ccbe8", "bytes": 1616}
 {"path": "migration/selection.json", "sha256": "7f33bec492e8cf8eb6e4ecdebe8ed60bfa7f831be596a414542c11d84272ece1", "bytes": 6202}
